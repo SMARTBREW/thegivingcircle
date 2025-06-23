@@ -247,6 +247,14 @@ export const ImpactWall: React.FC = () => {
 
   const totalPages = Math.ceil(impactStories.length / itemsPerPage);
   
+  // Auto-slide carousel every 3 seconds
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPage((prev) => (prev + 1) % totalPages);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, [totalPages]);
+
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
