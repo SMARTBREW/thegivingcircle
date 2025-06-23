@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Heart,
   ArrowRight,
@@ -169,6 +169,20 @@ const FundraisingHero = () => {
   const [currentCampaign, setCurrentCampaign] = useState(fundraisingData[0]);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Auto-rotate images on mobile
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % fundraisingData.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Update current campaign when index changes on mobile
+  useEffect(() => {
+    setCurrentCampaign(fundraisingData[currentIndex]);
+  }, [currentIndex]);
 
   type Campaign = (typeof fundraisingData)[number];
 
@@ -225,26 +239,24 @@ const FundraisingHero = () => {
         <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
 
-
-
       {/* Main Content */}
       <div
-        className="relative z-20 h-full flex flex-col justify-center px-8 pt-20 pb-40 cursor-pointer"
+        className="relative z-20 h-full flex flex-col justify-center px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-20 sm:pb-40 cursor-pointer"
         onClick={handleHeroClick}
       >
-        {/* Text Content - Moved down slightly */}
-        <div className="max-w-2xl ml-0 space-y-8 mt-32">
+        {/* Text Content */}
+        <div className="max-w-2xl ml-0 space-y-4 sm:space-y-6 lg:space-y-8 mt-16 sm:mt-24 lg:mt-32">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
+          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
             <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse"></span>
             {currentCampaign.category} • Urgent • Verified
           </div>
 
           {/* Title with transition */}
-          <div className="relative h-40 overflow-hidden">
+          <div className="relative h-20 sm:h-32 lg:h-40 overflow-hidden">
             <h1
               key={`${currentCampaign.id}-title`}
-              className={`text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight absolute inset-0 transition-all duration-500 ${
+              className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight absolute inset-0 transition-all duration-500 ${
                 isTransitioning
                   ? "opacity-0 translate-y-8"
                   : "opacity-100 translate-y-0"
@@ -255,10 +267,10 @@ const FundraisingHero = () => {
           </div>
 
           {/* Description with transition */}
-          <div className="relative h-32 overflow-hidden">
+          <div className="relative h-20 sm:h-24 lg:h-32 overflow-hidden">
             <p
               key={`${currentCampaign.id}-desc`}
-              className={`text-lg text-white/90 leading-relaxed absolute inset-0 transition-all duration-500 delay-100 ${
+              className={`text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed absolute inset-0 transition-all duration-500 delay-100 ${
                 isTransitioning
                   ? "opacity-0 translate-y-6"
                   : "opacity-100 translate-y-0"
@@ -269,15 +281,15 @@ const FundraisingHero = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-slide-in-up">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-in-up">
             <button
               onClick={(e) => {
                 e.stopPropagation();
                 window.location.href = '/onboarding';
               }}
-              className="group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
+              className="group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
             >
-              <Users2 className="h-5 w-5" />
+              <Users2 className="h-4 w-4 sm:h-5 sm:w-5" />
               <span>Become a Champion</span>
             </button>
 
@@ -286,22 +298,22 @@ const FundraisingHero = () => {
                 e.stopPropagation();
                 window.location.href = '/ngo-partner';
               }}
-              className="group bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+              className="group bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
             >
               <span>Partner as NGO</span>
-              <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Click to learn more hint */}
-          <p className="text-white/60 text-sm animate-fade-in-delayed">
+          <p className="text-white/60 text-xs sm:text-sm animate-fade-in-delayed">
             ✨ Click anywhere to learn more about this cause
           </p>
         </div>
       </div>
 
-      {/* Scrolling Cards - Repositioned to align with "Become a Champion" button */}
-      <div className="absolute right-8 top-3/4 transform -translate-y-1/4 z-30 w-3/4 max-w-3xl">
+      {/* Scrolling Cards - Hidden on mobile (below md), visible on desktop */}
+      <div className="hidden md:block absolute right-8 top-3/4 transform -translate-y-1/4 z-30 w-3/4 max-w-3xl">
         <div className="relative flex items-center">
           <button className="absolute left-0 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110">
             <ChevronLeft className="h-6 w-6" />
@@ -388,6 +400,19 @@ const FundraisingHero = () => {
         </div>
       </div>
 
+      {/* Carousel indicators for mobile */}
+      <div className="md:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
+        {fundraisingData.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+              index === currentIndex ? 'bg-white' : 'bg-white/40'
+            }`}
+          />
+        ))}
+      </div>
+
       {/* Modal */}
       {isModalOpen && (
         <div
@@ -403,7 +428,7 @@ const FundraisingHero = () => {
               <img
                 src={currentCampaign.image}
                 alt={currentCampaign.title}
-                className="w-full h-64 object-cover rounded-t-2xl"
+                className="w-full h-48 sm:h-64 object-cover rounded-t-2xl"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-t-2xl" />
               <button
@@ -412,30 +437,30 @@ const FundraisingHero = () => {
               >
                 <X className="h-6 w-6" />
               </button>
-              <div className="absolute bottom-4 left-6 right-6">
+              <div className="absolute bottom-4 left-4 sm:left-6 right-4 sm:right-6">
                 <div className="flex items-center space-x-2 mb-2">
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
                     {currentCampaign.category}
                   </span>
-                  <span className="bg-white/20 text-white px-3 py-1 rounded-full text-sm font-medium backdrop-blur-sm">
+                  <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm">
                     Verified Campaign
                   </span>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
                   {currentCampaign.title}
                 </h2>
               </div>
             </div>
 
             {/* Modal Content */}
-            <div className="p-6 space-y-6">
+            <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
               {/* Progress Bar */}
               <div className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-2xl font-bold text-gray-900">
+                  <span className="text-xl sm:text-2xl font-bold text-gray-900">
                     {formatCurrency(currentCampaign.raised)}
                   </span>
-                  <span className="text-gray-600">
+                  <span className="text-sm sm:text-base text-gray-600">
                     of {formatCurrency(currentCampaign.goal)} goal
                   </span>
                 </div>
@@ -450,7 +475,7 @@ const FundraisingHero = () => {
                     }}
                   />
                 </div>
-                <div className="flex justify-between text-sm text-gray-600">
+                <div className="flex justify-between text-xs sm:text-sm text-gray-600">
                   <span>{currentCampaign.donors} donors</span>
                   <span>{currentCampaign.daysLeft} days left</span>
                 </div>
@@ -469,26 +494,26 @@ const FundraisingHero = () => {
               </div>
 
               {/* Campaign Details */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
                     About This Campaign
                   </h3>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                     {currentCampaign.fullDescription}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <h3 className="text-xl font-semibold text-gray-900">
+                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
                     Campaign Info
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center space-x-3">
                       <Users className="h-5 w-5 text-gray-500" />
                       <div>
-                        <p className="font-medium text-gray-900">Organizer</p>
-                        <p className="text-gray-600">
+                        <p className="font-medium text-gray-900 text-sm sm:text-base">Organizer</p>
+                        <p className="text-gray-600 text-sm sm:text-base">
                           {currentCampaign.organizer}
                         </p>
                       </div>
@@ -496,8 +521,8 @@ const FundraisingHero = () => {
                     <div className="flex items-center space-x-3">
                       <MapPin className="h-5 w-5 text-gray-500" />
                       <div>
-                        <p className="font-medium text-gray-900">Location</p>
-                        <p className="text-gray-600">
+                        <p className="font-medium text-gray-900 text-sm sm:text-base">Location</p>
+                        <p className="text-gray-600 text-sm sm:text-base">
                           {currentCampaign.location}
                         </p>
                       </div>
@@ -505,8 +530,8 @@ const FundraisingHero = () => {
                     <div className="flex items-center space-x-3">
                       <Calendar className="h-5 w-5 text-gray-500" />
                       <div>
-                        <p className="font-medium text-gray-900">Days Left</p>
-                        <p className="text-gray-600">
+                        <p className="font-medium text-gray-900 text-sm sm:text-base">Days Left</p>
+                        <p className="text-gray-600 text-sm sm:text-base">
                           {currentCampaign.daysLeft} days remaining
                         </p>
                       </div>
@@ -517,7 +542,7 @@ const FundraisingHero = () => {
 
               {/* Recent Updates */}
               <div className="space-y-4">
-                <h3 className="text-xl font-semibold text-gray-900">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
                   Recent Updates
                 </h3>
                 <div className="space-y-3">
@@ -527,7 +552,7 @@ const FundraisingHero = () => {
                       className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
                     >
                       <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-gray-700">{update}</p>
+                      <p className="text-gray-700 text-sm sm:text-base">{update}</p>
                     </div>
                   ))}
                 </div>

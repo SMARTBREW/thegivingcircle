@@ -81,56 +81,59 @@ export const NGOPartner: React.FC = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20">
-        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16 sm:pt-20 lg:pt-24">
+        <div className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             className="text-center"
           >
             <Card>
-              <CardContent className="p-12">
-                <div className="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle className="w-12 h-12 text-white" />
+              <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
                 </div>
                 
-                <h2 className="text-3xl font-display font-bold text-gray-900 mb-4">
+                <h2 className="text-2xl sm:text-3xl lg:text-3xl font-display font-bold text-gray-900 mb-3 sm:mb-4">
                   Application Submitted!
                 </h2>
                 
-                <p className="text-lg text-gray-600 mb-8">
+                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-2 sm:px-0">
                   Thank you for your interest in partnering with The Giving Circle. 
                   Our team will review your application and contact you within 48 hours.
                 </p>
 
-                <div className="bg-gradient-to-r from-primary-50 to-burgundy-50 rounded-2xl p-6 mb-8">
-                  <h3 className="font-semibold text-gray-900 mb-4">What happens next?</h3>
-                  <div className="text-left space-y-3">
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5">1</div>
+                <div className="bg-gradient-to-r from-primary-50 to-burgundy-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
+                  <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">What happens next?</h3>
+                  <div className="text-left space-y-2 sm:space-y-3">
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">1</div>
                       <div>
-                        <div className="font-medium text-gray-900">Document Verification</div>
-                        <div className="text-sm text-gray-600">We'll verify all submitted documents</div>
+                        <div className="font-medium text-gray-900 text-sm sm:text-base">Document Verification</div>
+                        <div className="text-xs sm:text-sm text-gray-600">We'll verify all submitted documents</div>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5">2</div>
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">2</div>
                       <div>
-                        <div className="font-medium text-gray-900">Virtual Interview</div>
-                        <div className="text-sm text-gray-600">Schedule a call to discuss your work</div>
+                        <div className="font-medium text-gray-900 text-sm sm:text-base">Virtual Interview</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Schedule a call to discuss your work</div>
                       </div>
                     </div>
-                    <div className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5">3</div>
+                    <div className="flex items-start space-x-2 sm:space-x-3">
+                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">3</div>
                       <div>
-                        <div className="font-medium text-gray-900">Partnership Onboarding</div>
-                        <div className="text-sm text-gray-600">Get access to our platform and start connecting with champions</div>
+                        <div className="font-medium text-gray-900 text-sm sm:text-base">Partnership Onboarding</div>
+                        <div className="text-xs sm:text-sm text-gray-600">Get access to our platform and start connecting with champions</div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <Button onClick={() => window.location.href = '/'}>
+                <Button 
+                  onClick={() => window.location.href = '/'}
+                  className="w-full sm:w-auto"
+                >
                   Return to Homepage
                 </Button>
               </CardContent>
@@ -142,39 +145,39 @@ export const NGOPartner: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-20">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16 sm:pt-20 lg:pt-24">
+      <div className="max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-8 sm:mb-12"
         >
-          <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-burgundy-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <Building2 className="w-8 h-8 text-white" />
+          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-burgundy-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+            <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
           </div>
-          <h1 className="text-4xl md:text-5xl font-display font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2 sm:px-0">
             Become an{' '}
             <span className="bg-gradient-to-r from-primary-500 to-burgundy-500 bg-clip-text text-transparent">
               NGO Partner
             </span>
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-xs sm:max-w-2xl mx-auto px-2 sm:px-0">
             Join our network of verified NGOs and connect with passionate champions 
             who want to support your impactful work.
           </p>
         </motion.div>
 
         <Card>
-          <CardContent className="p-8 md:p-12">
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
+          <CardContent className="p-4 sm:p-8 md:p-10 lg:p-12">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
               {/* Organization Details */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <Building2 className="w-6 h-6 mr-2 text-primary-600" />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
+                  <Building2 className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
                   Organization Details
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                   <Input
                     label="Organization Name"
                     placeholder="Your NGO name"
@@ -194,7 +197,7 @@ export const NGOPartner: React.FC = () => {
                   />
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-4 sm:mt-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Organization Description
                   </label>
@@ -203,7 +206,7 @@ export const NGOPartner: React.FC = () => {
                       required: 'Please describe your organization' 
                     })}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200 text-sm sm:text-base"
                     placeholder="Describe your mission, vision, and key activities..."
                   />
                   {errors.description && (
@@ -211,7 +214,7 @@ export const NGOPartner: React.FC = () => {
                   )}
                 </div>
 
-                <div className="mt-6">
+                <div className="mt-4 sm:mt-6">
                   <label className="block text-sm font-medium text-gray-700 mb-2">
                     Full Address
                   </label>
@@ -220,7 +223,7 @@ export const NGOPartner: React.FC = () => {
                       required: 'Address is required' 
                     })}
                     rows={3}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200 text-sm sm:text-base"
                     placeholder="Complete address with pin code..."
                   />
                   {errors.address && (
@@ -231,26 +234,28 @@ export const NGOPartner: React.FC = () => {
 
               {/* Contact Information */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <Phone className="w-6 h-6 mr-2 text-primary-600" />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
+                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
                   Contact Information
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Input
-                    label="Contact Person Name"
-                    placeholder="Primary contact name"
-                    {...register('contactPersonName', { 
-                      required: 'Contact person name is required' 
-                    })}
-                    error={errors.contactPersonName?.message}
-                  />
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+                  <div className="sm:col-span-2 lg:col-span-1">
+                    <Input
+                      label="Contact Person Name"
+                      placeholder="Primary contact name"
+                      {...register('contactPersonName', { 
+                        required: 'Contact person name is required' 
+                      })}
+                      error={errors.contactPersonName?.message}
+                    />
+                  </div>
                   
                   <Input
                     label="Email Address"
                     type="email"
                     placeholder="contact@yourngo.org"
-                    leftIcon={<Mail className="w-5 h-5" />}
+                    leftIcon={<Mail className="w-4 h-4 sm:w-5 sm:h-5" />}
                     {...register('contactEmail', { 
                       required: 'Email is required',
                       pattern: {
@@ -265,7 +270,7 @@ export const NGOPartner: React.FC = () => {
                     label="Phone Number"
                     type="tel"
                     placeholder="Contact phone number"
-                    leftIcon={<Phone className="w-5 h-5" />}
+                    leftIcon={<Phone className="w-4 h-4 sm:w-5 sm:h-5" />}
                     {...register('contactPhone', { 
                       required: 'Phone number is required' 
                     })}
@@ -276,15 +281,15 @@ export const NGOPartner: React.FC = () => {
 
               {/* Causes Supported */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                   Causes You Support
                 </h3>
                 
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
                   {causes.map((cause) => (
                     <label
                       key={cause}
-                      className="flex items-center space-x-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors"
+                      className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 border border-gray-200 rounded-lg sm:rounded-xl hover:bg-gray-50 cursor-pointer transition-colors"
                     >
                       <input
                         type="checkbox"
@@ -292,9 +297,9 @@ export const NGOPartner: React.FC = () => {
                         {...register('causesSupported', { 
                           required: 'Please select at least one cause' 
                         })}
-                        className="text-primary-500 focus:ring-primary-500"
+                        className="text-primary-500 focus:ring-primary-500 h-4 w-4"
                       />
-                      <span className="text-sm text-gray-700">{cause}</span>
+                      <span className="text-xs sm:text-sm text-gray-700">{cause}</span>
                     </label>
                   ))}
                 </div>
@@ -305,18 +310,18 @@ export const NGOPartner: React.FC = () => {
 
               {/* Document Upload */}
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-6 flex items-center">
-                  <FileText className="w-6 h-6 mr-2 text-primary-600" />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
+                  <FileText className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
                   Required Documents
                 </h3>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       PAN Card
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
+                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
                       <input
                         type="file"
                         accept=".pdf,.jpg,.jpeg,.png"
@@ -328,7 +333,7 @@ export const NGOPartner: React.FC = () => {
                       />
                       <label
                         htmlFor="panCard"
-                        className="text-sm text-gray-600 cursor-pointer hover:text-primary-600"
+                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
                       >
                         Click to upload PAN Card
                       </label>
@@ -342,8 +347,8 @@ export const NGOPartner: React.FC = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       12A Certificate
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
+                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
                       <input
                         type="file"
                         accept=".pdf,.jpg,.jpeg,.png"
@@ -355,7 +360,7 @@ export const NGOPartner: React.FC = () => {
                       />
                       <label
                         htmlFor="certificate12A"
-                        className="text-sm text-gray-600 cursor-pointer hover:text-primary-600"
+                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
                       >
                         Click to upload 12A Certificate
                       </label>
@@ -369,8 +374,8 @@ export const NGOPartner: React.FC = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       80G Certificate
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
+                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
                       <input
                         type="file"
                         accept=".pdf,.jpg,.jpeg,.png"
@@ -382,7 +387,7 @@ export const NGOPartner: React.FC = () => {
                       />
                       <label
                         htmlFor="certificate80G"
-                        className="text-sm text-gray-600 cursor-pointer hover:text-primary-600"
+                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
                       >
                         Click to upload 80G Certificate
                       </label>
@@ -396,8 +401,8 @@ export const NGOPartner: React.FC = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-2">
                       Organization Logo
                     </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-8 h-8 text-gray-400 mx-auto mb-2" />
+                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
+                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
                       <input
                         type="file"
                         accept=".jpg,.jpeg,.png"
@@ -409,7 +414,7 @@ export const NGOPartner: React.FC = () => {
                       />
                       <label
                         htmlFor="profileLogo"
-                        className="text-sm text-gray-600 cursor-pointer hover:text-primary-600"
+                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
                       >
                         Click to upload Logo
                       </label>
@@ -422,17 +427,17 @@ export const NGOPartner: React.FC = () => {
               </div>
 
               {/* Submit Button */}
-              <div className="pt-6 border-t border-gray-200">
+              <div className="pt-4 sm:pt-6 border-t border-gray-200">
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full md:w-auto"
+                  className="w-full sm:w-full md:w-auto"
                   loading={isLoading}
                 >
                   Submit Application
                 </Button>
                 
-                <p className="text-sm text-gray-500 mt-4">
+                <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
                   By submitting this application, you agree to our terms and conditions. 
                   We'll review your application and contact you within 48 hours.
                 </p>
