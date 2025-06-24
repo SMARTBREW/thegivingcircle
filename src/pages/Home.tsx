@@ -3,14 +3,16 @@ import Hero from '../components/home/Hero';
 import { ImpactWall } from '../components/home/ImpactWall';
 import { HowItWorks } from '../components/home/HowItWorks';
 import { Testimonials } from '../components/home/Testimonials';
-import { CausesWeSupport } from '../components/home/Causes';
+// import { CausesWeSupport } from '../components/home/Causes';
+import { OurImpact } from '../components/home/OurImpact';
 
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Hero />
       <ImpactWall />
-      <CausesWeSupport />
+      <OurImpact />
+      {/* <CausesWeSupport /> */}
       <HowItWorks />
       <Testimonials />
     </div>
