@@ -7,7 +7,8 @@ import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
 import { NFTWall } from './pages/NFTWall';
 import { NGOPartner } from './pages/NGOPartner';
 import { Causes } from './pages/Causes';
-import ChampionSuccessStoryPage from './components/champions/championStories';
+import ChampionStoryDetail from './pages/ChampionStoryDetail';
+import CauseChampionsPage from './components/champions/browseChampions';
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
             <Route path="/impact-stories" element={<NFTWall />} />
             <Route path="/ngo-partner" element={<NGOPartner />} />
             <Route path="/causes" element={<Causes />} />
-            <Route path="/causes-stories" element={<ChampionSuccessStoryPage />} />
+            <Route path="/browse-champions" element={<CauseChampionsPage />} />
+            <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
           </Routes>
         </main>
         <Footer />

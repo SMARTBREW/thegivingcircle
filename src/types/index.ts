@@ -69,3 +69,50 @@ export interface Testimonial {
   quote: string;
   organization?: string;
 }
+
+export interface ChampionMilestone {
+  date: string;
+  title: string;
+  description: string;
+  amount: string;
+  percentage: number;
+}
+
+export interface ChampionUpdate {
+  date: string;
+  title: string;
+  content: string;
+  image: string;
+}
+
+export interface ImpactStat {
+  icon: string;
+  label: string;
+  value: string;
+  description: string;
+}
+
+export interface ChampionStory {
+  id: string;
+  title: string;
+  organizer: string;
+  organizerBio?: string;
+  organizerAvatar?: string;
+  location: string;
+  category: string;
+  impact: string;
+  successRate: string;
+  supporters: number;
+  status: string;
+  goalAmount: string;
+  raisedAmount: string;
+  startDate: string;
+  completionDate?: string;
+  beneficiaryAge?: number;
+  image: string;
+  storyContent: string;
+  milestones: ChampionMilestone[];
+  impactStats: ImpactStat[];
+  updates: ChampionUpdate[];
+  tags: string[];
+}

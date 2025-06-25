@@ -267,7 +267,7 @@ const FundraisingHero = () => {
               className="group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
             >
               <Users2 className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span>Become a Champion</span>
+              <span>Become a Cause Champion</span>
             </button>
 
             <button
@@ -416,7 +416,7 @@ const FundraisingHero = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
                   <User2 className="h-5 w-5" />
-                  <span>Become a Champion</span>
+                  <span>Become a Cause Champion</span>
                 </button>
                 <button className="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
                   <Share2 className="h-5 w-5" />

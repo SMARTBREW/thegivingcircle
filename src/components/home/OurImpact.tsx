@@ -164,7 +164,7 @@ export const OurImpact: React.FC = () => {
             <div className="relative w-full max-w-lg mx-auto">
               {/* India Map Image */}
               <img
-                src="/india.jpg"
+                src="/india-removebg-preview.png"
                 alt="India Map"
                 className="w-full h-auto opacity-90"
               />
