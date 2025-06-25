@@ -1,409 +1,456 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { Phone, User, MapPin, Heart, CheckCircle, ArrowRight, ArrowLeft } from 'lucide-react';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Card, CardContent } from '../components/ui/Card';
-import { ApiClient, validatePhoneNumber } from '../utils/api';
-import { OnboardingData } from '../types';
 
-type OnboardingStep = 'phone' | 'otp' | 'details' | 'success';
+interface FormData {
+  name: string;
+  email: string;
+  countryCode: string;
+  phone: string;
+  fundsUse: string;
+  hospitalStatus: string;
+}
 
-export const CauseChampionOnboarding: React.FC = () => {
-  const [currentStep, setCurrentStep] = useState<OnboardingStep>('phone');
-  const [isLoading, setIsLoading] = useState(false);
-  const [onboardingData, setOnboardingData] = useState<Partial<OnboardingData>>({});
+const CauseChampionOnboarding: React.FC = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: '',
+    email: '',
+    countryCode: '+91',
+    phone: '',
+    fundsUse: '',
+    hospitalStatus: ''
+  });
 
-  const { register, handleSubmit, formState: { errors }, watch, setValue } = useForm<OnboardingData>();
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
-  const phoneNumber = watch('phoneNumber');
-  const otp = watch('otp');
+  const testimonials = [
+    "Dhiraj (Aarohi's father) raised ₹ 25,00,000 for Aarohi's Cancer Treatment in Just 20 days",
+    "Priya collected ₹ 15,00,000 for her mother's heart surgery in 15 days",
+    "Ramesh raised ₹ 8,00,000 for his son's kidney transplant in 12 days",
+    "Sunita gathered ₹ 20,00,000 for cancer treatment in 25 days"
+  ];
 
-  const handlePhoneSubmit = async (data: { phoneNumber: string }) => {
-    if (!validatePhoneNumber(data.phoneNumber)) {
-      return;
-    }
+  // Card images that rotate with testimonials
+  const cardImages = [
+    "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=80&h=80&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=80&h=80&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=80&h=80&fit=crop&crop=face",
+    "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=80&h=80&fit=crop&crop=face"
+  ];
 
-    setIsLoading(true);
-    try {
-      await ApiClient.sendOTP(data.phoneNumber);
-      setOnboardingData(prev => ({ ...prev, phoneNumber: data.phoneNumber }));
-      setCurrentStep('otp');
-    } catch (error) {
-      console.error('Failed to send OTP:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleOTPVerify = async (data: OnboardingData) => {
-    if (!onboardingData.phoneNumber || !data.otp) {
-      return;
-    }
-    setIsLoading(true);
-    try {
-      await ApiClient.verifyOTP(onboardingData.phoneNumber, data.otp);
-      setOnboardingData(prev => ({ ...prev, otp: data.otp }));
-      setCurrentStep('details');
-    } catch (error) {
-      console.error('OTP verification failed:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleDetailsSubmit = async (data: OnboardingData) => {
-    setIsLoading(true);
-    try {
-      const completeData = { ...onboardingData, ...data };
-      await ApiClient.submitCauseChampionData(completeData);
-      setCurrentStep('success');
-    } catch (error) {
-      console.error('Failed to submit data:', error);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
+  // Causes data with descriptions
   const causes = [
-    'Education for All',
-    'Women Empowerment',
-    'Child Healthcare',
-    'Clean Water Access',
-    'Skill Development',
-    'Elderly Care',
-    'Environmental Protection',
-    'Rural Development',
+    {
+      value: "cancer",
+      label: "Cancer Treatment",
+      description: "Support life-saving cancer treatments, chemotherapy, radiation therapy, and surgical procedures for patients fighting various forms of cancer."
+    },
+    {
+      value: "surgery",
+      label: "Surgery",
+      description: "Help fund critical surgical procedures including heart surgery, organ transplants, orthopedic surgeries, and emergency operations."
+    },
+    {
+      value: "emergency",
+      label: "Medical Emergency",
+      description: "Provide immediate financial assistance for urgent medical situations, accidents, trauma care, and critical health emergencies."
+    },
+    {
+      value: "chronic",
+      label: "Chronic Disease",
+      description: "Support ongoing treatment for chronic conditions like diabetes, kidney disease, neurological disorders, and long-term medical care."
+    },
+    {
+      value: "child",
+      label: "Child Healthcare",
+      description: "Fund pediatric treatments, congenital disorders, childhood cancers, and specialized medical care for children and infants."
+    },
+    {
+      value: "organ",
+      label: "Organ Transplant",
+      description: "Support organ transplant procedures including kidney, liver, heart transplants and post-transplant care and medications."
+    },
+    {
+      value: "mental",
+      label: "Mental Health",
+      description: "Fund mental health treatments, therapy sessions, psychiatric care, and rehabilitation programs for psychological wellbeing."
+    },
+    {
+      value: "other",
+      label: "Other Medical Needs",
+      description: "Support various other medical treatments, rare diseases, medical equipment, and healthcare needs not covered above."
+    }
   ];
 
-  const steps = [
-    { id: 'phone', title: 'Phone Verification', completed: currentStep !== 'phone' },
-    { id: 'otp', title: 'OTP Verification', completed: ['details', 'success'].includes(currentStep) },
-    { id: 'details', title: 'Your Details', completed: currentStep === 'success' },
-    { id: 'success', title: 'Welcome!', completed: false },
+  // Country codes data
+  const countryCodes = [
+    { code: '+91', flag: '🇮🇳', country: 'India' },
+    { code: '+1', flag: '🇺🇸', country: 'USA' },
+    { code: '+44', flag: '🇬🇧', country: 'UK' },
+    { code: '+61', flag: '🇦🇺', country: 'Australia' },
+    { code: '+49', flag: '🇩🇪', country: 'Germany' },
+    { code: '+33', flag: '🇫🇷', country: 'France' },
+    { code: '+81', flag: '🇯🇵', country: 'Japan' },
+    { code: '+86', flag: '🇨🇳', country: 'China' },
+    { code: '+82', flag: '🇰🇷', country: 'South Korea' },
+    { code: '+65', flag: '🇸🇬', country: 'Singapore' },
+    { code: '+971', flag: '🇦🇪', country: 'UAE' },
+    { code: '+966', flag: '🇸🇦', country: 'Saudi Arabia' }
   ];
 
-  const renderProgressBar = () => (
-    <div className="mb-6 sm:mb-8">
-      {/* Mobile Progress Bar - Simplified */}
-      <div className="sm:hidden">
-        <div className="flex items-center justify-between mb-4">
-          <span className="text-xs font-medium text-gray-600">
-            Step {steps.findIndex(s => s.id === currentStep) + 1} of {steps.length}
-          </span>
-          <span className="text-xs text-gray-500">
-            {steps.find(s => s.id === currentStep)?.title}
-          </span>
-        </div>
-        <div className="w-full bg-gray-200 rounded-full h-2">
-          <div 
-            className="bg-primary-500 h-2 rounded-full transition-all duration-300"
-            style={{ width: `${((steps.findIndex(s => s.id === currentStep) + 1) / steps.length) * 100}%` }}
-          />
-        </div>
-      </div>
+  // Auto-rotate testimonials every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
-      {/* Desktop Progress Bar - Full */}
-      <div className="hidden sm:flex items-center justify-between">
-        {steps.map((step, index) => (
-          <React.Fragment key={step.id}>
-            <div className="flex flex-col items-center">
-              <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold transition-all duration-200 ${
-                step.completed
-                  ? 'bg-green-500 text-white'
-                  : currentStep === step.id
-                  ? 'bg-primary-500 text-white'
-                  : 'bg-gray-200 text-gray-500'
-              }`}>
-                {step.completed ? <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" /> : index + 1}
-              </div>
-              <span className="text-xs text-gray-600 mt-2 text-center max-w-20 sm:max-w-none">
-                {step.title}
-              </span>
-            </div>
-            {index < steps.length - 1 && (
-              <div className={`flex-1 h-1 mx-2 sm:mx-4 rounded-full transition-all duration-200 ${
-                steps[index + 1].completed || currentStep === steps[index + 1].id
-                  ? 'bg-primary-500'
-                  : 'bg-gray-200'
-              }`} />
-            )}
-          </React.Fragment>
-        ))}
-      </div>
-    </div>
-  );
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-  const renderPhoneStep = () => (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="space-y-4 sm:space-y-6"
-    >
-      <div className="text-center mb-6 sm:mb-8">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-burgundy-500 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-          <Phone className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-        </div>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gray-900 mb-2">
-          Let's Get Started
-        </h2>
-        <p className="text-sm sm:text-base text-gray-600 px-4 sm:px-0">
-          Enter your mobile number to begin your journey as a Cause Champion
-        </p>
-      </div>
+  const handleSubmit = () => {
+    console.log('Form submitted:', formData);
+  };
 
-      <form onSubmit={handleSubmit(handlePhoneSubmit)} className="space-y-4 sm:space-y-6">
-        <Input
-          label="Mobile Number"
-          type="tel"
-          placeholder="Enter your 10-digit mobile number"
-          leftIcon={<Phone className="w-4 h-4 sm:w-5 sm:h-5" />}
-          {...register('phoneNumber', {
-            required: 'Mobile number is required',
-            validate: value => validatePhoneNumber(value) || 'Please enter a valid 10-digit mobile number'
-          })}
-          error={errors.phoneNumber?.message}
-        />
+  const getSelectedCauseDescription = () => {
+    const selectedCause = causes.find(cause => cause.value === formData.fundsUse);
+    return selectedCause?.description || '';
+  };
 
-        <Button
-          type="submit"
-          className="w-full"
-          size="lg"
-          loading={isLoading}
-          disabled={!phoneNumber || !!errors.phoneNumber}
-        >
-          <span className="text-sm sm:text-base">Send OTP</span>
-          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
-        </Button>
-      </form>
-    </motion.div>
-  );
+  const getSelectedCountry = () => {
+    const selectedCountry = countryCodes.find(country => country.code === formData.countryCode);
+    return selectedCountry || countryCodes[0];
+  };
 
-  const renderOTPStep = () => (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="space-y-4 sm:space-y-6"
-    >
-      <div className="text-center mb-6 sm:mb-8">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-teal-500 to-teal-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-          <CheckCircle className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-        </div>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gray-900 mb-2">
-          Verify Your Number
-        </h2>
-        <p className="text-sm sm:text-base text-gray-600 px-4 sm:px-0">
-          We've sent a 6-digit code to <strong className="break-all">{onboardingData.phoneNumber}</strong>
-        </p>
-      </div>
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2
+      }
+    }
+  };
 
-      <form onSubmit={handleSubmit(handleOTPVerify)} className="space-y-4 sm:space-y-6">
-        <Input
-          label="Enter OTP"
-          type="text"
-          placeholder="6-digit code"
-          maxLength={6}
-          {...register('otp', {
-            required: 'OTP is required',
-            minLength: { value: 6, message: 'OTP must be 6 digits' }
-          })}
-          error={errors.otp?.message}
-        />
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
 
-        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-          <Button
-            type="button"
-            variant="outline"
-            className="flex-1 order-2 sm:order-1"
-            onClick={() => setCurrentStep('phone')}
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            <span className="text-sm sm:text-base">Back</span>
-          </Button>
-          <Button
-            type="submit"
-            className="flex-1 order-1 sm:order-2"
-            loading={isLoading}
-            disabled={!otp || otp.length < 6}
-          >
-            <span className="text-sm sm:text-base">Verify OTP</span>
-          </Button>
-        </div>
-      </form>
-    </motion.div>
-  );
+  const formVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
 
-  const renderDetailsStep = () => (
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      className="space-y-4 sm:space-y-6"
-    >
-      <div className="text-center mb-6 sm:mb-8">
-        <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-indigo-500 to-indigo-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-          <User className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-        </div>
-        <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-gray-900 mb-2">
-          Tell Us About Yourself
-        </h2>
-        <p className="text-sm sm:text-base text-gray-600 px-4 sm:px-0">
-          Help us understand your interests so we can connect you with the right causes
-        </p>
-      </div>
-
-      <form onSubmit={handleSubmit(handleDetailsSubmit)} className="space-y-4 sm:space-y-6">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
-          <Input
-            label="Full Name"
-            placeholder="Your full name"
-            leftIcon={<User className="w-4 h-4 sm:w-5 sm:h-5" />}
-            {...register('name', { required: 'Name is required' })}
-            error={errors.name?.message}
-          />
-
-          <Input
-            label="City"
-            placeholder="Your city"
-            leftIcon={<MapPin className="w-4 h-4 sm:w-5 sm:h-5" />}
-            {...register('city', { required: 'City is required' })}
-            error={errors.city?.message}
-          />
-        </div>
-
-        <Input
-          label="State"
-          placeholder="Your state"
-          leftIcon={<MapPin className="w-4 h-4 sm:w-5 sm:h-5" />}
-          {...register('state', { required: 'State is required' })}
-          error={errors.state?.message}
-        />
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-3">
-            Which cause do you care about most?
-          </label>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
-            {causes.map((cause) => (
-              <label
-                key={cause}
-                className="flex items-center space-x-3 p-3 border border-gray-200 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors"
-              >
-                <input
-                  type="radio"
-                  value={cause}
-                  {...register('causeInterest', { required: 'Please select a cause' })}
-                  className="text-primary-500 focus:ring-primary-500 flex-shrink-0"
-                />
-                <span className="text-xs sm:text-sm text-gray-700 leading-tight">{cause}</span>
-              </label>
-            ))}
-          </div>
-          {errors.causeInterest && (
-            <p className="mt-2 text-sm text-red-600">{errors.causeInterest.message}</p>
-          )}
-        </div>
-
-        <div>
-          <label className="block text-sm font-medium text-gray-700 mb-2">
-            Why do you care about this cause?
-          </label>
-          <textarea
-            {...register('whyICare', { required: 'Please tell us why this cause matters to you' })}
-            rows={4}
-            className="w-full px-3 sm:px-4 py-2 sm:py-3 text-sm sm:text-base rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200 resize-none"
-            placeholder="Share your story or motivation..."
-          />
-          {errors.whyICare && (
-            <p className="mt-2 text-sm text-red-600">{errors.whyICare.message}</p>
-          )}
-        </div>
-
-        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 pt-2">
-          <Button
-            type="button"
-            variant="outline"
-            className="flex-1 order-2 sm:order-1"
-            onClick={() => setCurrentStep('otp')}
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            <span className="text-sm sm:text-base">Back</span>
-          </Button>
-          <Button
-            type="submit"
-            className="flex-1 order-1 sm:order-2"
-            loading={isLoading}
-          >
-            <span className="text-sm sm:text-base">Complete Registration</span>
-          </Button>
-        </div>
-      </form>
-    </motion.div>
-  );
-
-  const renderSuccessStep = () => (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      className="text-center space-y-4 sm:space-y-6"
-    >
-      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto">
-        <CheckCircle className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
-      </div>
-      
-      <div>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-4 sm:px-0">
-          Welcome to The Giving Circle!
-        </h2>
-        <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-4 sm:px-0 leading-relaxed">
-          You're now a Cause Champion. We'll connect with you shortly to discuss how you can make a real impact.
-        </p>
-      </div>
-
-      <div className="bg-gradient-to-r from-primary-50 to-burgundy-50 rounded-2xl p-4 sm:p-6 mx-2 sm:mx-0">
-        <h3 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">
-          What happens next?
-        </h3>
-        <ul className="text-left text-gray-600 space-y-1 sm:space-y-2 text-sm sm:text-base">
-          <li>• Our team will call you within 24 hours</li>
-          <li>• We'll match you with verified NGOs working on your chosen cause</li>
-          <li>• You'll receive regular updates and impact stories</li>
-          <li>• Your contributions will be documented and verified as NFTs</li>
-        </ul>
-      </div>
-
-      <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 px-2 sm:px-0">
-        <Button
-          variant="outline"
-          className="flex-1 order-2 sm:order-1"
-          onClick={() => window.location.href = '/nft-wall'}
-        >
-          <span className="text-sm sm:text-base">Explore Impact Stories</span>
-        </Button>
-        <Button
-          className="flex-1 order-1 sm:order-2"
-          onClick={() => window.location.href = '/'}
-        >
-          <span className="text-sm sm:text-base">Return Home</span>
-        </Button>
-      </div>
-    </motion.div>
-  );
+  const floatingVariants = {
+    animate: {
+      y: [-10, 10, -10],
+      rotate: [0, 180, 360],
+      transition: {
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut"
+      }
+    }
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16 sm:pt-20">
-      <div className="max-w-sm sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
-        <Card className="overflow-hidden shadow-lg sm:shadow-xl">
-          <CardContent className="p-4 sm:p-6 md:p-8 lg:p-12">
-            {renderProgressBar()}
-            
-            {currentStep === 'phone' && renderPhoneStep()}
-            {currentStep === 'otp' && renderOTPStep()}
-            {currentStep === 'details' && renderDetailsStep()}
-            {currentStep === 'success' && renderSuccessStep()}
-          </CardContent>
-        </Card>
+    <div className="min-h-screen relative overflow-hidden">
+      {/* Single Background Image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1920&h=1080&fit=crop')"
+        }}
+      />
+      
+      {/* Dark Gradient Overlay for better text readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black/60 via-purple-900/40 to-pink-900/50" />
+
+      {/* Background Shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <motion.div 
+          className="absolute w-72 h-72 bg-white/5 rounded-full -top-24 -right-24"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute w-48 h-48 bg-white/5 rounded-full -bottom-12 -left-12"
+          animate={{ rotate: -360 }}
+          transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.div 
+          className="absolute w-36 h-36 bg-white/5 rounded-full top-1/2 left-1/10"
+          variants={floatingVariants}
+          animate="animate"
+        />
       </div>
+
+      <motion.div 
+        className="relative z-10 flex flex-col lg:flex-row min-h-screen items-start justify-between px-4 sm:px-6 md:px-12 lg:px-20 pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-12 md:pb-16 max-w-7xl mx-auto gap-8 sm:gap-12 lg:gap-20"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Hero Content */}
+        <motion.div 
+          className="flex-1 max-w-2xl text-white text-center lg:text-left mt-20"
+          variants={itemVariants}
+        >
+          <motion.h1 
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-6 sm:mb-8 text-shadow-lg"
+            variants={itemVariants}
+          >
+            Start a FREE Medical Fundraiser & Raise Funds for Medical Treatments
+          </motion.h1>
+          
+          {/* <motion.div 
+            className="inline-flex items-center bg-white/15 backdrop-blur-sm border border-white/20 px-4 sm:px-6 py-2 sm:py-3 rounded-full mb-6 sm:mb-8 md:mb-10"
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="text-2xl sm:text-3xl font-bold text-purple-200 mr-2">0%</span>
+            <span className="font-medium text-sm sm:text-base">platform fees*</span>
+          </motion.div> */}
+
+          <motion.div 
+            className="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-4 sm:p-6 flex items-center gap-3 sm:gap-4"
+            variants={itemVariants}
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <motion.div 
+              className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-xl flex-shrink-0 overflow-hidden"
+              whileHover={{ rotate: 5 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <motion.img
+                key={currentTestimonial}
+                src={cardImages[currentTestimonial]}
+                alt="Success story"
+                className="w-full h-full object-cover"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                transition={{ duration: 0.5 }}
+              />
+            </motion.div>
+            <motion.div 
+              className="text-xs sm:text-sm md:text-base font-medium leading-relaxed"
+              key={currentTestimonial}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              {testimonials[currentTestimonial]}
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            className="flex justify-center lg:justify-start gap-2 mt-4 sm:mt-6"
+            variants={itemVariants}
+          >
+            {[0, 1, 2, 3].map((index) => (
+              <motion.div
+                key={index}
+                className={`w-2 h-2 rounded-full cursor-pointer transition-all duration-300 ${
+                  index === currentTestimonial ? 'bg-purple-200 scale-125' : 'bg-white/40'
+                }`}
+                onClick={() => setCurrentTestimonial(index)}
+                whileHover={{ scale: 1.3 }}
+                whileTap={{ scale: 0.9 }}
+              />
+            ))}
+          </motion.div>
+        </motion.div>
+
+        {/* Form Card - Now Rectangular and Positioned Lower */}
+        <motion.div 
+          className="w-full max-w-lg mt-8 lg:mt-16"
+          variants={formVariants}
+        >
+          <motion.div 
+            className="bg-white rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-sm border border-white/20"
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            <div className="text-center mb-6 sm:mb-8">
+              <motion.div 
+                className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-pink-600 rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4"
+                whileHover={{ rotate: 10 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <span className="text-xl sm:text-2xl">🩺</span>
+              </motion.div>
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-800">Need Money Urgently?</h2>
+            </div>
+
+            <div className="space-y-4 sm:space-y-5">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <label className="block text-sm font-medium text-gray-600 mb-2">Name *</label>
+                <motion.input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleInputChange}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 text-sm sm:text-base"
+                  placeholder="Enter your full name"
+                  whileFocus={{ scale: 1.02 }}
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
+                <label className="block text-sm font-medium text-gray-600 mb-2">Email Address *</label>
+                <motion.input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 text-sm sm:text-base"
+                  placeholder="Enter your email address"
+                  whileFocus={{ scale: 1.02 }}
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
+                <label className="block text-sm font-medium text-gray-600 mb-2">Your Mobile Number *</label>
+                <div className="flex gap-2 sm:gap-3">
+                  <motion.select
+                    name="countryCode"
+                    value={formData.countryCode}
+                    onChange={handleInputChange}
+                    className="flex items-center px-2 sm:px-3 py-2 sm:py-3 bg-gray-50 border-2 border-gray-200 rounded-lg min-w-20 sm:min-w-24 focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 appearance-none cursor-pointer text-xs sm:text-sm"
+                    whileFocus={{ scale: 1.02 }}
+                  >
+                    {countryCodes.map((country) => (
+                      <option key={country.code} value={country.code}>
+                        {country.flag} {country.code}
+                      </option>
+                    ))}
+                  </motion.select>
+                  <motion.input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="flex-1 px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 text-sm sm:text-base"
+                    placeholder="Enter mobile number"
+                    whileFocus={{ scale: 1.02 }}
+                  />
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
+                <label className="block text-sm font-medium text-gray-600 mb-2">What will the funds be used for? *</label>
+                <motion.select
+                  name="fundsUse"
+                  value={formData.fundsUse}
+                  onChange={handleInputChange}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 appearance-none cursor-pointer text-sm sm:text-base"
+                  whileFocus={{ scale: 1.02 }}
+                >
+                  <option value="">Select purpose</option>
+                  {causes.map((cause) => (
+                    <option key={cause.value} value={cause.value}>
+                      {cause.label}
+                    </option>
+                  ))}
+                </motion.select>
+                {formData.fundsUse && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    transition={{ duration: 0.3 }}
+                    className="mt-2 p-3 bg-purple-50 border border-purple-100 rounded-lg"
+                  >
+                    <p className="text-xs sm:text-sm text-purple-700 leading-relaxed">
+                      {getSelectedCauseDescription()}
+                    </p>
+                  </motion.div>
+                )}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.6 }}
+              >
+                <label className="block text-sm font-medium text-gray-600 mb-2">Hospitalisation status *</label>
+                <motion.select
+                  name="hospitalStatus"
+                  value={formData.hospitalStatus}
+                  onChange={handleInputChange}
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-gray-50 border-2 border-gray-200 rounded-lg focus:border-purple-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all duration-200 appearance-none cursor-pointer text-sm sm:text-base"
+                  whileFocus={{ scale: 1.02 }}
+                >
+                  <option value="">Select status</option>
+                  <option value="admitted">Currently Admitted</option>
+                  <option value="planned">Treatment Planned</option>
+                  <option value="ongoing">Ongoing Treatment</option>
+                  <option value="discharged">Recently Discharged</option>
+                </motion.select>
+              </motion.div>
+
+              <motion.div 
+                className="text-center text-purple-600 text-sm font-semibold"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.7 }}
+              >
+                189 People started a fundraiser in last 2 days
+              </motion.div>
+
+              <motion.button
+                onClick={handleSubmit}
+                className="w-full bg-gradient-to-r from-purple-500 to-pink-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg text-base sm:text-lg font-semibold tracking-wide shadow-lg"
+                whileHover={{ 
+                  scale: 1.02,
+                  boxShadow: "0 10px 30px rgba(147, 51, 234, 0.3)"
+                }}
+                whileTap={{ scale: 0.98 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                START A FUNDRAISER
+              </motion.button>
+            </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
+
+export default CauseChampionOnboarding;
