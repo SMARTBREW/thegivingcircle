@@ -199,91 +199,7 @@ export const Testimonials: React.FC = () => {
           </div>
         </div>
 
-        {/* Secondary Testimonials Grid - Responsive visibility and layout */}
-        <div className="mt-12 sm:mt-16 md:mt-20 lg:mt-24 hidden sm:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -10, scale: 1.02 }}
-              className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 lg:p-8 shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
-            >
-              <div className="flex items-center space-x-3 sm:space-x-4 mb-3 sm:mb-4 md:mb-6">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 rounded-full object-cover border-2 border-primary-100"
-                />
-                <div className="min-w-0 flex-1">
-                  <div className="font-semibold text-text text-sm sm:text-base md:text-lg lg:text-xl truncate">
-                    {testimonial.name}
-                  </div>
-                  <div className="text-xs sm:text-sm md:text-base text-primary-500 truncate">
-                    {testimonial.role}
-                  </div>
-                  <div className="text-xs sm:text-sm text-text/60 truncate">
-                    {testimonial.organization}
-                  </div>
-                </div>
-              </div>
-              <p className="text-text/70 text-xs sm:text-sm md:text-base lg:text-lg italic leading-relaxed">
-                "{testimonial.quote.slice(0, window.innerWidth < 640 ? 80 : window.innerWidth < 1024 ? 100 : 120)}..."
-              </p>
-              
-              {/* Read More Button for smaller cards */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setCurrentIndex(testimonials.findIndex(t => t.id === testimonial.id))}
-                className="mt-3 sm:mt-4 text-xs sm:text-sm text-primary-500 hover:text-primary-600 font-medium transition-colors duration-200"
-              >
-                Read full testimonial →
-              </motion.button>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Mobile-only additional testimonials - Horizontal scroll */}
-        <div className="mt-8 sm:hidden">
-          <h3 className="text-lg font-semibold text-text mb-4 px-4">More Stories</h3>
-          <div className="flex space-x-4 overflow-x-auto pb-4 px-4 scrollbar-hide">
-            {testimonials.filter((_, index) => index !== currentIndex).slice(0, 2).map((testimonial, index) => (
-              <motion.div
-                key={testimonial.id}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setCurrentIndex(testimonials.findIndex(t => t.id === testimonial.id))}
-                className="bg-white rounded-xl p-4 shadow-md min-w-[280px] cursor-pointer"
-              >
-                <div className="flex items-center space-x-3 mb-3">
-                  <img
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    className="w-10 h-10 rounded-full object-cover border-2 border-primary-100"
-                  />
-                  <div className="min-w-0 flex-1">
-                    <div className="font-semibold text-text text-sm truncate">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-xs text-primary-500 truncate">
-                      {testimonial.role}
-                    </div>
-                  </div>
-                </div>
-                <p className="text-text/70 text-xs italic leading-relaxed">
-                  "{testimonial.quote.slice(0, 80)}..."
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
+       
 
       {/* Custom scrollbar hide styles */}
       <style>{`
@@ -295,6 +211,7 @@ export const Testimonials: React.FC = () => {
           display: none;
         }
       `}</style>
+      </div>
     </section>
   );
 };

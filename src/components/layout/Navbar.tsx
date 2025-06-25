@@ -18,7 +18,7 @@ const NavbarComponent = () => {
     { name: 'Home', href: '/' },
     { name: 'Live Causes', href: '/causes' },
     { name: 'Impact Stories', href: '/impact' },
-    { name: 'Champions', href: '/onboarding' },
+    { name: 'Champions', href: '/causes' },
     { name: 'NGO Partners', href: '/ngo-partner' },
   ];
 

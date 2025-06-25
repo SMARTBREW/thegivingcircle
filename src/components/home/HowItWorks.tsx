@@ -19,43 +19,50 @@ const Step: React.FC<StepProps> = ({ number, icon, title, description, color, de
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
       viewport={{ once: true }}
-      className="relative"
+      className="relative flex flex-col items-center text-center h-full"
     >
       <motion.div 
-        className="flex flex-col items-center text-center"
+        className="flex flex-col items-center text-center w-full"
         whileHover={{ y: -5 }}
         transition={{ type: "spring", stiffness: 300 }}
       >
-        <motion.div 
-          className={`w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl sm:rounded-2xl ${color} flex items-center justify-center mb-4 sm:mb-6 shadow-lg`}
-          whileHover={{ scale: 1.05, rotate: 5 }}
-          transition={{ type: "spring", stiffness: 400, damping: 10 }}
-        >
-          <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white">
-            {icon}
+        {/* Icon container with number badge */}
+        <div className="relative mb-4 sm:mb-6">
+          <motion.div 
+            className={`w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 lg:w-24 lg:h-24 rounded-xl sm:rounded-2xl ${color} flex items-center justify-center shadow-lg relative z-10`}
+            whileHover={{ scale: 1.05, rotate: 5 }}
+            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+          >
+            <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-12 lg:h-12 text-white">
+              {icon}
+            </div>
+          </motion.div>
+          
+          {/* Number badge */}
+          <div className={`absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 ${color} rounded-full flex items-center justify-center shadow-lg z-20`}>
+            <span className="text-white font-bold text-xs sm:text-sm">{number}</span>
           </div>
-        </motion.div>
-        
-        <div className={`absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-6 h-6 sm:w-8 sm:h-8 ${color} rounded-full flex items-center justify-center shadow-lg`}>
-          <span className="text-white font-bold text-xs sm:text-sm">{number}</span>
         </div>
         
+        {/* Title */}
         <h3 className="text-lg sm:text-xl md:text-2xl lg:text-xl font-semibold text-text mb-3 sm:mb-4 px-2">
           {title}
         </h3>
+        
+        {/* Description */}
         <p className="text-sm sm:text-base md:text-lg lg:text-base text-text/70 leading-relaxed max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm px-2">
           {description}
         </p>
       </motion.div>
       
-      {/* Connection line - hidden on mobile, visible on larger screens */}
+      {/* Connection lines - positioned to avoid overlap */}
       {number < 4 && (
         <>
           {/* Horizontal line for lg+ screens */}
-          <div className="hidden lg:block absolute top-8 md:top-10 lg:top-12 left-full w-16 xl:w-24 2xl:w-32 h-0.5 bg-gradient-to-r from-gray-300 to-transparent transform translate-x-4 lg:translate-x-8" />
+          <div className="hidden lg:block absolute top-8 md:top-10 lg:top-12 left-full w-8 xl:w-16 2xl:w-24 h-0.5 bg-gradient-to-r from-gray-300 to-transparent transform translate-x-4 z-0" />
           
           {/* Vertical line for md screens */}
-          <div className="hidden md:block lg:hidden absolute left-1/2 top-full w-0.5 h-8 bg-gradient-to-b from-gray-300 to-transparent transform -translate-x-0.5 translate-y-4" />
+          <div className="hidden md:block lg:hidden absolute left-1/2 bottom-0 w-0.5 h-6 bg-gradient-to-b from-gray-300 to-transparent transform -translate-x-0.5 translate-y-6 z-0" />
         </>
       )}
     </motion.div>
@@ -266,18 +273,19 @@ export const HowItWorks: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Steps Grid - Responsive Layout */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 lg:gap-6 xl:gap-8 mb-12 sm:mb-16 md:mb-20 lg:mb-24">
+        {/* Steps Grid - Fixed spacing and layout */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 md:gap-20 lg:gap-8 xl:gap-12 mb-12 sm:mb-16 md:mb-20 lg:mb-24 relative">
           {steps.map((step, index) => (
-            <Step
-              key={index}
-              number={index + 1}
-              icon={step.icon}
-              title={step.title}
-              description={step.description}
-              color={step.color}
-              delay={index * 0.15}
-            />
+            <div key={index} className="min-h-[280px] sm:min-h-[320px] md:min-h-[360px] lg:min-h-[300px] flex">
+              <Step
+                number={index + 1}
+                icon={step.icon}
+                title={step.title}
+                description={step.description}
+                color={step.color}
+                delay={index * 0.15}
+              />
+            </div>
           ))}
         </div>
 
@@ -324,7 +332,7 @@ export const HowItWorks: React.FC = () => {
           </h3>
           
           {/* Marquee animation for NGO partners */}
-          <div className="relative w-full overflow-hidden">
+          <div className="relative w-full overflow-none">
             <div className="animate-marquee flex">
               {/* First set */}
               {ngoPartners.map((partner, index) => (
@@ -350,19 +358,6 @@ export const HowItWorks: React.FC = () => {
             </div>
           </div>
         </motion.div>
-
-        {/* Mobile Slide Indicators */}
-        {/* <div className="flex justify-center mt-6 sm:mt-8 space-x-2 sm:hidden">
-          {ngoPartners.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                currentSlide === index ? 'bg-primary-500 w-6' : 'bg-gray-300'
-              }`}
-            />
-          ))}
-        </div> */}
       </div>
     </section>
   );
