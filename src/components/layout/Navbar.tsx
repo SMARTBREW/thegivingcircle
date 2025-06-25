@@ -16,7 +16,7 @@ const NavbarComponent = () => {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Live Causes', href: '/causes' },
+    { name: 'Live Causes', href: '/impact-stories' },
     { name: 'Impact Stories', href: '/impact' },
     { name: 'Champions', href: '/causes' },
     { name: 'NGO Partners', href: '/ngo-partner' },
