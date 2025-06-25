@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Indian States Map</title>
+    <link rel="stylesheet" href="map-styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Interactive Map of Indian States</h1>
+        <p>Hover over different states to see information about them</p>
+        
+        <ul id="map">
+            <li><a class="jk" href="#" title="Jammu & Kashmir">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Jammu & Kashmir</font>
+                    is a state of India. The capital of Jammu & Kashmir is 
+                    <font color="purple" size="5">Srinagar.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Jammu & Kashmir</div>
+                </span>
+            </a></li>
+
+            <li><a class="hp" href="#" title="Himachal Pradesh">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Himachal Pradesh</font>
+                    is a state of India. The capital of Himachal Pradesh is 
+                    <font color="purple" size="5">Shimla.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Himachal Pradesh</div>
+                </span>
+            </a></li>
+
+            <li><a class="pun" href="#" title="Punjab">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Punjab</font>
+                    is a state of India. The capital of Punjab is 
+                    <font color="purple" size="5">Chandigarh.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Punjab</div>
+                </span>
+            </a></li>
+
+            <li><a class="hariyana" href="#" title="Haryana">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Haryana</font>
+                    is a state of India. The capital of Haryana is 
+                    <font color="purple" size="5">Chandigarh.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Haryana</div>
+                </span>
+            </a></li>
+
+            <li><a class="raj" href="#" title="Rajasthan">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Rajasthan</font>
+                    is a state of India. The capital of Rajasthan is 
+                    <font color="purple" size="5">Jaipur.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Rajasthan</div>
+                </span>
+            </a></li>
+
+            <li><a class="uttaranchal" href="#" title="Uttarakhand">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Uttarakhand</font>
+                    is a state of India, also called Uttaranchal. The capital is 
+                    <font color="purple" size="5">Dehradun.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Uttarakhand</div>
+                </span>
+            </a></li>
+
+            <li><a class="asam" href="#" title="Assam">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Assam</font>
+                    is a state of India. The capital of Assam is 
+                    <font color="purple" size="5">Dispur.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Assam</div>
+                </span>
+            </a></li>
+
+            <li><a class="maharashtra" href="#" title="Maharashtra">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Maharashtra</font>
+                    is a state of India. The capital of Maharashtra is 
+                    <font color="purple" size="5">Mumbai.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Maharashtra</div>
+                </span>
+            </a></li>
+
+            <li><a class="goa" href="#" title="Goa">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Goa</font>
+                    is a state of India. The capital of Goa is 
+                    <font color="purple" size="5">Panaji.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Goa</div>
+                </span>
+            </a></li>
+
+            <li><a class="pond" href="#" title="Pondicherry">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Pondicherry</font>
+                    is a union territory of India. The capital is 
+                    <font color="purple" size="5">Puducherry.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Pondicherry</div>
+                </span>
+            </a></li>
+
+            <li><a class="kerala" href="#" title="Kerala">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Kerala</font>
+                    is a state of India. The capital of Kerala is 
+                    <font color="purple" size="4">Thiruvananthapuram.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Kerala</div>
+                </span>
+            </a></li>
+
+            <li><a class="tamil" href="#" title="Tamil Nadu">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Tamil Nadu</font>
+                    is a state of India. The capital of Tamil Nadu is 
+                    <font color="purple" size="5">Chennai.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Tamil Nadu</div>
+                </span>
+            </a></li>
+
+            <li><a class="ap" href="#" title="Andhra Pradesh">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Andhra Pradesh</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="4">Hyderabad.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Andhra Pradesh</div>
+                </span>
+            </a></li>
+
+            <li><a class="karnataka" href="#" title="Karnataka">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Karnataka</font>
+                    is a state of India. The capital of Karnataka is 
+                    <font color="purple" size="5">Bangalore.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Karnataka</div>
+                </span>
+            </a></li>
+
+            <li><a class="up" href="#" title="Uttar Pradesh">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Uttar Pradesh</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Lucknow.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Uttar Pradesh</div>
+                </span>
+            </a></li>
+
+            <li><a class="bih" href="#" title="Bihar">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Bihar</font>
+                    is a state of India. The capital of Bihar is 
+                    <font color="purple" size="5">Patna.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Bihar</div>
+                </span>
+            </a></li>
+
+            <li><a class="guj" href="#" title="Gujarat">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Gujarat</font>
+                    is a state of India. The capital of Gujarat is 
+                    <font color="purple" size="5">Gandhinagar.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Gujarat</div>
+                </span>
+            </a></li>
+
+            <li><a class="mp" href="#" title="Madhya Pradesh">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Madhya Pradesh</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Bhopal.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Madhya Pradesh</div>
+                </span>
+            </a></li>
+
+            <li><a class="chattis" href="#" title="Chhattisgarh">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Chhattisgarh</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Raipur.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Chhattisgarh</div>
+                </span>
+            </a></li>
+
+            <li><a class="jhar" href="#" title="Jharkhand">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Jharkhand</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Ranchi.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Jharkhand</div>
+                </span>
+            </a></li>
+
+            <li><a class="wb" href="#" title="West Bengal">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">West Bengal</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Kolkata.</font>
+                </b><br>
+                <div class="placeholder-img">Image: West Bengal</div>
+                </span>
+            </a></li>
+
+            <li><a class="orissa" href="#" title="Odisha">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Odisha</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Bhubaneswar.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Odisha</div>
+                </span>
+            </a></li>
+
+            <li><a class="sikkim" href="#" title="Sikkim">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Sikkim</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Gangtok.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Sikkim</div>
+                </span>
+            </a></li>
+
+            <li><a class="meghalaya" href="#" title="Meghalaya">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Meghalaya</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Shillong.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Meghalaya</div>
+                </span>
+            </a></li>
+
+            <li><a class="tripura" href="#" title="Tripura">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Tripura</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Agartala.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Tripura</div>
+                </span>
+            </a></li>
+
+            <li><a class="mizoram" href="#" title="Mizoram">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Mizoram</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Aizawl.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Mizoram</div>
+                </span>
+            </a></li>
+
+            <li><a class="manipur" href="#" title="Manipur">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Manipur</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Imphal.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Manipur</div>
+                </span>
+            </a></li>
+
+            <li><a class="nagaland" href="#" title="Nagaland">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Nagaland</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Kohima.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Nagaland</div>
+                </span>
+            </a></li>
+
+            <li><a class="aruna" href="#" title="Arunachal Pradesh">
+                <span><b>
+                    <font size="5" color="red" face="Bookman Old Style">Arunachal Pradesh</font>
+                    is a state of India. The capital is 
+                    <font color="purple" size="5">Itanagar.</font>
+                </b><br>
+                <div class="placeholder-img">Image: Arunachal Pradesh</div>
+                </span>
+            </a></li>
+        </ul>
+        
+        <div class="credits">
+            <p><strong>Assignment designed By:</strong> Komal S. Dawkhar (MCA Student)</p>
+            <p><strong>HTML5 CSS3 Session 2015</strong></p>
+        </div>
+    </div>
+</body>
+</html> 
