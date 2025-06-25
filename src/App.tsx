@@ -6,7 +6,9 @@ import { Home } from './pages/Home';
 import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
 import { NFTWall } from './pages/NFTWall';
 import { NGOPartner } from './pages/NGOPartner';
-// import { Causes } from './pages/Causes';
+import { Causes } from './pages/Causes';
+import ChampionSuccessStoryPage from './components/champions/championStories';
+
 
 function App() {
   return (
@@ -20,7 +22,8 @@ function App() {
             <Route path="/nft-wall" element={<NFTWall />} />
             <Route path="/impact-stories" element={<NFTWall />} />
             <Route path="/ngo-partner" element={<NGOPartner />} />
-            {/* <Route path="/causes" element={<Causes />} /> */}
+            <Route path="/causes" element={<Causes />} />
+            <Route path="/causes-stories" element={<ChampionSuccessStoryPage />} />
           </Routes>
         </main>
         <Footer />
