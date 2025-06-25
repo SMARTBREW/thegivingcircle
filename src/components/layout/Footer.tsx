@@ -1,173 +1,264 @@
 import React from 'react';
-import { Heart, Mail, Phone, MapPin, Instagram, Twitter, Linkedin } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Building, Users, Shield, FileText, Scale, Heart, ArrowUpRight, Globe, Network } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-white text-text border-t border-gray-100">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+    <footer className="bg-white border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 sm:gap-8 lg:gap-8">
-          
-          {/* Brand Section */}
-          <div className="space-y-3 sm:space-y-4 sm:col-span-1 lg:col-span-1">
-            <div className="flex items-center justify-start space-x-3">
-              <img 
-                src="/Giving_Circle..-removebg-preview.png" 
-                alt="The Giving Circle Logo" 
-                className="h-8 sm:h-9 lg:h-10 w-auto"
-              />
-            </div>
-            <p className="text-text/80 leading-relaxed text-sm sm:text-base text-left max-w-md">
-              Connecting hearts, creating change. Join us in building a circle of giving that transforms lives and communities across India.
-            </p>
-            <div className="flex justify-start space-x-3 sm:space-x-4">
-              <a 
-                href="#" 
-                className="text-text/70 hover:text-primary-500 transition-colors p-1 hover:scale-110 transform"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="text-text/70 hover:text-accent-500 transition-colors p-1 hover:scale-110 transform"
-                aria-label="Twitter"
-              >
-                <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-              <a 
-                href="#" 
-                className="text-text/70 hover:text-primary-500 transition-colors p-1 hover:scale-110 transform"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links and For Champions in one row */}
-          <div className="sm:col-span-1 lg:col-span-1 flex flex-col">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-primary-500">
-              Quick Links
-            </h3>
-            <div className="space-y-2 sm:space-y-3">
-              <Link 
-                to="/impact-stories" 
-                className="block text-sm sm:text-base text-text/70 hover:text-primary-500 transition-colors py-1"
-              >
-                Live Causes
-              </Link>
-              <Link 
-                to="/nft-wall" 
-                className="block text-sm sm:text-base text-text/70 hover:text-primary-500 transition-colors py-1"
-              >
-                Impact Stories
-              </Link>
-              <Link 
-                to="/champions" 
-                className="block text-sm sm:text-base text-text/70 hover:text-primary-500 transition-colors py-1"
-              >
-                Champions
-              </Link>
-              <Link 
-                to="/ngo-partner" 
-                className="block text-sm sm:text-base text-text/70 hover:text-primary-500 transition-colors py-1"
-              >
-                NGO Partners
-              </Link>
-            </div>
-          </div>
-
-          <div className="sm:col-span-1 lg:col-span-1 flex flex-col">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-accent-500">
-              For Champions
-            </h3>
-            <div className="space-y-2 sm:space-y-3">
-              <Link 
-                to="/onboarding" 
-                className="block text-sm sm:text-base text-text/70 hover:text-accent-500 transition-colors py-1"
-              >
-                Become a Champion
-              </Link>
-              <Link 
-                to="/dashboard" 
-                className="block text-sm sm:text-base text-text/70 hover:text-accent-500 transition-colors py-1"
-              >
-                Champion Dashboard
-              </Link>
-              <a 
-                href="#" 
-                className="block text-sm sm:text-base text-text/70 hover:text-accent-500 transition-colors py-1"
-              >
-                Success Stories
-              </a>
-              <a 
-                href="#" 
-                className="block text-sm sm:text-base text-text/70 hover:text-accent-500 transition-colors py-1"
-              >
-                Community Guidelines
-              </a>
-            </div>
-          </div>
-
-          {/* Get in Touch horizontally aligned on sm+ screens */}
-          <div className="sm:col-span-1 lg:col-span-1 flex flex-col text-left">
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-primary-500">
-              Get in Touch
-            </h3>
-            <div className="space-y-2 sm:space-y-3">
-              <div className="flex items-center justify-start space-x-2 sm:space-x-3 text-text/70">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-primary-500" />
-                <span className="text-sm sm:text-base break-all sm:break-normal">
-                  hello@thegivingcircle.org
-                </span>
+        <div className="py-12 lg:py-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            
+            {/* Brand Section */}
+            <div className="md:col-span-1 space-y-6">
+              <div className="flex items-center space-x-3">
+                <img 
+                  src="/Giving_Circle..-removebg-preview.png" 
+                  alt="The Giving Circle" 
+                  className="h-10 w-auto"
+                />
               </div>
-              <div className="flex items-center justify-start space-x-2 sm:space-x-3 text-text/70">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-primary-500" />
-                <span className="text-sm sm:text-base">+91 98765 43210</span>
+              <div className="space-y-4">
+                <p className="text-gray-700 leading-relaxed text-sm">
+                  A trusted community platform connecting NGOs, cause champions, and donors across India. Building transparency and trust in the philanthropic ecosystem through verified partnerships and measurable impact.
+                </p>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <Network className="w-4 h-4 text-blue-600" />
+                  <span>Community-Driven Platform</span>
+                </div>
+                <div className="flex items-center space-x-2 text-sm text-gray-600">
+                  <Shield className="w-4 h-4 text-green-600" />
+                  <span>Trust & Transparency Focused</span>
+                </div>
               </div>
-              <div className="flex items-start justify-start space-x-2 sm:space-x-3 text-text/70">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 mt-0.5 text-primary-500" />
-                <span className="text-sm sm:text-base text-left">
-                  Mumbai, Maharashtra<br />
-                  India
-                </span>
+              
+              {/* Professional Social Links */}
+              <div className="space-y-3">
+                <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                  Connect With Us
+                </h4>
+                <div className="flex space-x-3">
+                  <a 
+                    href="#" 
+                    className="text-gray-500 hover:text-blue-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="text-gray-500 hover:text-blue-500 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="w-4 h-4" />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="text-gray-500 hover:text-pink-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Community Platform */}
+            <div className="md:col-span-1">
+              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-6">
+                Community Platform
+              </h3>
+              <div className="space-y-4">
+                <Link 
+                  to="/causes" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Live Campaigns</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <Link 
+                  to="/impact" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Impact Stories</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <Link 
+                  to="/champions" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Cause Champions</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <Link 
+                  to="/ngo-partner" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">NGO Network</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+              </div>
+            </div>
+
+            {/* Trust & Partnership */}
+            <div className="md:col-span-1">
+              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-6">
+                Trust & Partnership
+              </h3>
+              <div className="space-y-4">
+                <Link 
+                  to="/onboarding" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Join as Champion</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <a 
+                  href="#" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">NGO Partnership</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="#" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Verification Process</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="#" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Community Guidelines</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+                <a 
+                  href="#" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">Trust & Safety</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </a>
+              </div>
+            </div>
+
+            {/* Contact & Support */}
+            <div className="md:col-span-1">
+              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-6">
+                Contact & Support
+              </h3>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <div className="flex items-start space-x-2">
+                    <Mail className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-xs text-gray-600">General Inquiries</div>
+                      <a href="mailto:hello@thegivingcircle.org" className="text-sm font-medium text-gray-900 hover:text-blue-600 transition-colors">
+                        hello@thegivingcircle.org
+                      </a>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-2">
+                    <Phone className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-xs text-gray-600">Support</div>
+                      <div className="text-sm font-medium text-gray-900">+91 98765 43210</div>
+                      <div className="text-xs text-gray-500">Mon-Fri 9AM-6PM IST</div>
+                    </div>
+                  </div>
+                  
+                  <div className="flex items-start space-x-2">
+                    <MapPin className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                    <div>
+                      <div className="text-xs text-gray-600">Platform Base</div>
+                      <div className="text-sm font-medium text-gray-900">Mumbai, Maharashtra</div>
+                      <div className="text-xs text-gray-500">India</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-4 space-y-3">
+                  <a 
+                    href="#" 
+                    className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                  >
+                    <span className="text-sm">Help Center</span>
+                    <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                  <a 
+                    href="#" 
+                    className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                  >
+                    <span className="text-sm">Community Support</span>
+                    <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-gray-100 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 gap-4">
+        {/* Bottom Section - Enhanced Legal and Trust Indicators */}
+        <div className="border-t border-gray-200 py-6">
+          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-4 lg:space-y-0">
             
-            {/* Copyright */}
-            <p className="text-text/70 text-xs sm:text-sm text-center sm:text-left order-2 sm:order-1">
-              © {currentYear} The Giving Circle. All rights reserved.
-            </p>
+            {/* Left: Copyright and Platform Status */}
+            <div className="space-y-2">
+              <p className="text-sm text-gray-600">
+                © {currentYear} The Giving Circle Community Platform. All rights reserved.
+              </p>
+              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+                <div className="flex items-center space-x-1">
+                  <Globe className="w-3 h-3" />
+                  <span>Community Platform</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Shield className="w-3 h-3" />
+                  <span>Trust Verified</span>
+                </div>
+                <div className="flex items-center space-x-1">
+                  <Users className="w-3 h-3" />
+                  <span>NGO Network Partner</span>
+                </div>
+              </div>
+            </div>
             
-            {/* Legal Links */}
-            <div className="flex flex-wrap justify-center sm:justify-end space-x-4 sm:space-x-6 text-xs sm:text-sm order-1 sm:order-2">
+            {/* Right: Legal Links */}
+            <div className="flex flex-wrap items-center gap-6 text-sm">
               <a 
                 href="#" 
-                className="text-text/70 hover:text-primary-500 transition-colors py-1 whitespace-nowrap"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
-                Privacy Policy
+                <Scale className="w-3 h-3" />
+                <span>Privacy Policy</span>
               </a>
               <a 
                 href="#" 
-                className="text-text/70 hover:text-primary-500 transition-colors py-1 whitespace-nowrap"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
-                Terms of Service
+                <FileText className="w-3 h-3" />
+                <span>Terms of Use</span>
               </a>
               <a 
                 href="#" 
-                className="text-text/70 hover:text-primary-500 transition-colors py-1 whitespace-nowrap"
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
-                Cookie Policy
+                <Shield className="w-3 h-3" />
+                <span>Trust & Safety</span>
+              </a>
+              <a 
+                href="#" 
+                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
+              >
+                <Heart className="w-3 h-3" />
+                <span>Community Values</span>
               </a>
             </div>
           </div>
