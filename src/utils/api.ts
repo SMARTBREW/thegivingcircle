@@ -53,7 +53,7 @@ export class ApiClient {
 
   static async getImpactStories(filters?: any) {
     const queryParams = filters ? `?${new URLSearchParams(filters)}` : '';
-    return this.request(`/impact-stories${queryParams}`);
+    return this.request(`/live-causes${queryParams}`);
   }
 
   static async getTestimonials() {
