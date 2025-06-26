@@ -116,44 +116,29 @@ const CauseChampionOnboarding: React.FC = () => {
   // NGO data with their associated causes
   const ngos: NGO[] = [
     {
-      id: 'ngo1',
-      name: 'Healthcare Heroes Foundation',
-      causes: ['Medical Emergency', 'Healthcare Access', 'Child Healthcare', 'Mental Health']
+      id: 'khushii',
+      name: 'KHUSHII',
+      causes: ['Education', 'Women Health', 'Individual Support', 'Healthcare', 'Digital Literacy', 'Menstrual Hygiene', 'Student Support', 'Community Health']
     },
     {
-      id: 'ngo2',
-      name: 'Education For All Initiative',
-      causes: ['Education', 'Child Healthcare', 'Mental Health']
+      id: 'jwp',
+      name: 'JWP',
+      causes: ['Rural Development', 'Individual Support', 'Women Support', 'Women Empowerment', 'Student Support', 'Single Mom Support']
     },
     {
-      id: 'ngo3',
-      name: 'Emergency Response Coalition',
-      causes: ['Disaster Relief', 'Medical Emergency', 'Food Security']
+      id: 'animalcare',
+      name: 'Animal Care',
+      causes: ['Animal Welfare', 'Animal Rescue', 'Street Animal Feeding']
     },
     {
-      id: 'ngo4',
-      name: 'Water Access Foundation',
-      causes: ['Water Crisis', 'Disaster Relief']
+      id: 'kokan',
+      name: 'KOKAN',
+      causes: ['Child Welfare', 'Orphanage Support', 'Nutrition', 'Meal Programs']
     },
     {
-      id: 'ngo5',
-      name: 'Global Nutrition Network',
-      causes: ['Food Security', 'Child Healthcare', 'Disaster Relief']
-    },
-    {
-      id: 'ngo6',
-      name: 'Mobile Health Alliance',
-      causes: ['Healthcare Access', 'Medical Emergency', 'Child Healthcare']
-    },
-    {
-      id: 'ngo7',
-      name: 'Paws & Hearts Rescue',
-      causes: ['Animal Welfare', 'Animal Rescue']
-    },
-    {
-      id: 'ngo8',
-      name: 'Rural Development Trust',
-      causes: ['Education', 'Water Crisis', 'Food Security', 'Healthcare Access']
+      id: 'mamta',
+      name: 'Mamta HIMC',
+      causes: ['Healthcare', 'Medical Aid', 'Generic Healthcare Support']
     }
   ];
 

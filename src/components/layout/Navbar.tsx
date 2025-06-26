@@ -1,10 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X, Heart, AlertCircle, Bell } from 'lucide-react';
+
+// Custom Siren Icon Component
+const SirenIcon = ({ size = 18, className = "" }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width={size} 
+    height={size} 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    strokeWidth="2" 
+    strokeLinecap="round" 
+    strokeLinejoin="round"
+    className={className}
+  >
+    <path d="M7 12a5 5 0 0 1 5-5v0a5 5 0 0 1 5 5v6H7v-6Z"></path>
+    <path d="M5 20a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2H5v2Z"></path>
+    <path d="M21 12h1"></path>
+    <path d="M18.5 4.5 18 5"></path>
+    <path d="M2 12h1"></path>
+    <path d="M12 2v1"></path>
+    <path d="m4.929 4.929.707.707"></path>
+    <path d="M12 12v6"></path>
+  </svg>
+);
 
 const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [blinkState, setBlinkState] = useState(true);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,13 +40,37 @@ const NavbarComponent = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Siren blinking effect
+  useEffect(() => {
+    const blinkInterval = setInterval(() => {
+      setBlinkState(prev => !prev);
+    }, 500);
+    return () => clearInterval(blinkInterval);
+  }, []);
+
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Live Causes', href: '/impact-stories' },
-    { name: 'Impact Stories', href: '/impact' },
+    { 
+      name: 'Live Causes', 
+      href: '/impact-stories', 
+      highlight: true,
+      urgent: true
+    },
+    { name: 'Impact Stories', href: '/nft-wall' },
     { name: 'Champions', href: '/causes' },
     { name: 'NGO Partners', href: '/ngo-partner' },
   ];
+
+  // Animation for the pulse effect
+  const pulseAnimation = {
+    scale: [1, 1.1, 1],
+    opacity: [0.7, 1, 0.7],
+    transition: {
+      duration: 2,
+      repeat: Infinity,
+      ease: "easeInOut"
+    }
+  };
 
   return (
     <motion.nav
@@ -66,11 +116,28 @@ const NavbarComponent = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ 
                       y: -2,
-                      color: '#1f2937'
+                      color: item.highlight ? '#e11d48' : '#1f2937'
                     }}
-                    className="text-gray-700 hover:text-gray-900 px-3 lg:px-4 py-2 text-sm lg:text-sm font-bold transition-all duration-300"
+                    className={`px-3 lg:px-4 py-2 text-sm lg:text-sm font-bold transition-all duration-300 relative ${
+                      item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                    }`}
                   >
-                    {item.name}
+                    <div className="flex items-center gap-1.5">
+                      {item.urgent && (
+                        <motion.div 
+                          animate={{
+                            scale: blinkState ? 1.1 : 1
+                          }}
+                          transition={{
+                            duration: 0.2
+                          }}
+                          className="relative flex items-center"
+                        >
+                          <SirenIcon size={18} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                        </motion.div>
+                      )}
+                      {item.name}
+                    </div>
                   </motion.a>
                 ))}
               </div>
@@ -87,11 +154,28 @@ const NavbarComponent = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   whileHover={{ 
                     y: -2,
-                    color: '#1f2937'
+                    color: item.highlight ? '#e11d48' : '#1f2937'
                   }}
-                  className="text-gray-700 hover:text-gray-900 px-2 py-2 text-xs font-bold transition-all duration-300"
+                  className={`px-2 py-2 text-xs font-bold transition-all duration-300 relative ${
+                    item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                  }`}
                 >
-                  {item.name}
+                  <div className="flex items-center gap-1">
+                    {item.urgent && (
+                      <motion.div 
+                        animate={{
+                          scale: blinkState ? 1.1 : 1
+                        }}
+                        transition={{
+                          duration: 0.2
+                        }}
+                        className="relative flex items-center"
+                      >
+                        <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                      </motion.div>
+                    )}
+                    {item.name}
+                  </div>
                 </motion.a>
               ))}
             </div>
@@ -160,10 +244,27 @@ const NavbarComponent = () => {
                   initial={{ x: -50, opacity: 0 }}
                   animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
-                  className="text-gray-700 hover:text-gray-900 block px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg"
+                  className={`block px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
+                    item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                  }`}
                   onClick={() => setIsOpen(false)}
                 >
-                  {item.name}
+                  <div className="flex items-center gap-2">
+                    {item.urgent && (
+                      <motion.div 
+                        animate={{
+                          scale: blinkState ? 1.1 : 1
+                        }}
+                        transition={{
+                          duration: 0.2
+                        }}
+                        className="relative flex items-center"
+                      >
+                        <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                      </motion.div>
+                    )}
+                    {item.name}
+                  </div>
                 </motion.a>
               ))}
               <div className="pt-2 sm:pt-3">

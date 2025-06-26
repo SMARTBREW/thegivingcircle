@@ -34,51 +34,51 @@ export const OurImpact: React.FC = () => {
   const causeIcons: CauseIcon[] = [
     {
       id: 'education',
-      icon: <GraduationCap className="w-5 h-5" />,
+      icon: <GraduationCap />,
       title: 'Education',
       description: 'Empowering children through quality education and skill development programs.',
       position: { top: '25%', left: '32%' },
-      color: 'bg-blue-500 hover:bg-blue-600',
+      color: 'bg-white hover:bg-gray-50',
     },
     {
       id: 'healthcare',
-      icon: <Stethoscope className="w-5 h-5" />,
+      icon: <Stethoscope />,
       title: 'Healthcare',
       description: 'Providing essential medical care and health services to underserved communities.',
       position: { top: '40%', left: '25%' },
-      color: 'bg-red-500 hover:bg-red-600',
+      color: 'bg-white hover:bg-gray-50',
     },
     {
       id: 'water',
-      icon: <Droplets className="w-5 h-5" />,
+      icon: <Droplets />,
       title: 'Clean Water',
       description: 'Ensuring access to clean and safe drinking water for rural communities.',
       position: { top: '65%', left: '23%' },
-      color: 'bg-cyan-500 hover:bg-cyan-600',
+      color: 'bg-white hover:bg-gray-50',
     },
     {
       id: 'shelter',
-      icon: <Building2 className="w-5 h-5" />,
+      icon: <Building2 />,
       title: 'Shelter & Housing',
       description: 'Building homes and providing safe shelter for homeless families.',
       position: { top: '40%', left: '55%' },
-      color: 'bg-orange-500 hover:bg-orange-600',
+      color: 'bg-white hover:bg-gray-50',
     },
     {
       id: 'women',
-      icon: <Users className="w-5 h-5" />,
+      icon: <Users />,
       title: 'Women Empowerment',
       description: 'Supporting women through skill training and entrepreneurship programs.',
       position: { top: '50%', left: '67%' },
-      color: 'bg-purple-500 hover:bg-purple-600',
+      color: 'bg-white hover:bg-gray-50',
     },
     {
       id: 'environment',
-      icon: <TreePine className="w-5 h-5" />,
+      icon: <TreePine />,
       title: 'Environment',
       description: 'Protecting nature through tree plantation and conservation initiatives.',
       position: { top: '55%', left: '45%' },
-      color: 'bg-green-500 hover:bg-green-600',
+      color: 'bg-white hover:bg-gray-50',
     },
   ];
 
@@ -87,25 +87,25 @@ export const OurImpact: React.FC = () => {
       value: '4,21,908',
       label: 'members contributing monthly',
       icon: <Users className="w-8 h-8" />,
-      color: 'text-blue-600',
+      color: 'text-black',
     },
     {
       value: '670+',
       label: 'children have been saved',
       icon: <Shield className="w-8 h-8" />,
-      color: 'text-green-600',
+      color: 'text-black',
     },
     {
       value: '₹25 million+',
       label: 'raised for patients',
       icon: <Heart className="w-8 h-8" />,
-      color: 'text-red-600',
+      color: 'text-black',
     },
     {
       value: '540',
       label: 'life-changing treatments funded',
       icon: <Stethoscope className="w-8 h-8" />,
-      color: 'text-purple-600',
+      color: 'text-black',
     },
   ];
 
@@ -137,8 +137,7 @@ export const OurImpact: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            "I was powerless against my daughter's cancer & I could not afford treatment. When I found out that kind strangers
-            contributed Rs 31 lakh for her life-saving transplant, I cried tears of relief. Without them, I would have lost Zoya."
+            "The Giving Circle has transformed how we create impact together. By connecting passionate cause champions with dedicated supporters, we've built a community where every contribution makes a meaningful difference. Together, we're not just funding causes - we're building lasting change."
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -147,7 +146,7 @@ export const OurImpact: React.FC = () => {
             viewport={{ once: true }}
             className="text-sm text-gray-500 mt-2"
           >
-            - Shanu (Mother of 5-year-old Zoya)
+            - The Giving Circle Community
           </motion.p>
         </div>
 
@@ -177,20 +176,14 @@ export const OurImpact: React.FC = () => {
                   style={{ top: cause.position.top, left: cause.position.left }}
                 >
                   <motion.div
-                    initial={{ scale: 0 }}
-                    whileInView={{ scale: 1 }}
-                    transition={{ duration: 0.4, delay: index * 0.15 }}
-                    viewport={{ once: true }}
-                    whileHover={{ scale: 1.15 }}
-                    className={`relative w-14 h-14 ${cause.color} text-white rounded-full flex items-center justify-center shadow-xl cursor-pointer transition-all duration-300 border-4 border-white`}
+                    whileHover={{ scale: 1.1 }}
+                    className={`relative w-10 h-10 ${cause.color} text-black rounded-full flex items-center justify-center shadow-lg cursor-pointer transition-all duration-300 border-2 border-gray-300`}
                     onMouseEnter={() => setHoveredCause(cause.id)}
                     onMouseLeave={() => setHoveredCause(null)}
                   >
                     <div className="relative z-10">
-                      {cause.icon}
+                      {React.cloneElement(cause.icon as React.ReactElement, { className: "w-4 h-4" })}
                     </div>
-                    <div className="absolute inset-0 rounded-full animate-ping bg-white opacity-25" />
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/10 to-transparent" />
                     
                     {/* Tooltip */}
                     <AnimatePresence>
@@ -235,10 +228,10 @@ export const OurImpact: React.FC = () => {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ scale: 1.05 }}
-                className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+                className="bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-300 border-2 border-gray-300"
               >
                 <div className="flex flex-col items-center text-center">
-                  <div className={`${stat.color} mb-4 p-3 rounded-full bg-opacity-10`}>
+                  <div className="mb-4 p-3 rounded-full bg-gray-50">
                     <div className={stat.color}>
                       {stat.icon}
                     </div>
@@ -246,7 +239,7 @@ export const OurImpact: React.FC = () => {
                   <div className={`text-3xl font-bold ${stat.color} mb-2`}>
                     {stat.value}
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     {stat.label}
                   </p>
                 </div>
