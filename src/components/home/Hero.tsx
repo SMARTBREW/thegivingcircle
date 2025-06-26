@@ -235,8 +235,13 @@ const FundraisingHero = () => {
 
       {/* Main Content */}
       <div className="relative z-20 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-20 sm:pb-40 cursor-pointer min-h-screen" onClick={handleHeroClick}>
-        {/* Top Section - Badge and Title */}
+        {/* Top Section - Spacer */}
         <div className="max-w-2xl ml-0 space-y-4 sm:space-y-6 lg:space-y-8 mt-8 sm:mt-16 lg:mt-20">
+          {/* Empty spacer to maintain layout */}
+        </div>
+
+        {/* Bottom Section - Badge, Title, Description, Buttons, and Helper Text */}
+        <div className="max-w-2xl ml-0 space-y-6 sm:space-y-8 mb-12 sm:mb-0">
           {/* Badge */}
           <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
             <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse" />
@@ -244,15 +249,12 @@ const FundraisingHero = () => {
           </div>
 
           {/* Title */}
-          <div className="relative h-20 sm:h-32 lg:h-40 overflow-hidden">
-            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight absolute inset-0 transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
+          <div>
+            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
               {currentCampaign.title}
             </h1>
           </div>
-        </div>
 
-        {/* Bottom Section - Description, Buttons, and Helper Text */}
-        <div className="max-w-2xl ml-0 space-y-6 sm:space-y-8 mb-12 sm:mb-0">
           {/* Description */}
           <div>
             <p className={`text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed transition-all duration-500 delay-100 ${isTransitioning ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}`}>
