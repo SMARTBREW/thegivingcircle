@@ -4,24 +4,24 @@ import { motion } from 'framer-motion';
 const AboutIconsPage: React.FC = () => {
   const reasonsData = [
     {
-      icon: "💰",
-      title: "High Cost Of Treatment",
-      description: "Medical emergencies come without a warning. At times, health insurance and savings are not enough to cover the expensive bill. Crowdfunding helps you reach your goal by getting small contributions from a large group of people."
+      icon: "❤️",
+      title: "Community Support When Needed Most",
+      description: "Medical emergencies arrive unexpectedly, and sometimes health insurance and savings aren't enough. Through The Giving Circle, small contributions from many compassionate individuals can create life-changing impact for someone in need."
     },
     {
-      icon: "🤝",
-      title: "Asking For Money Isn't Easy",
-      description: "When in need, asking for help from people and describing financial problems face-to-face can be awkward and inconvenient. Online crowdfunding makes the process of asking for money easier and way more seamless."
+      icon: "🤲",
+      title: "Dignity in Seeking Help",
+      description: "Asking for financial assistance can be challenging. Our platform provides a respectful and supportive environment where people can share their stories and receive help from a caring community without discomfort or stigma."
     },
     {
-      icon: "⏰",
-      title: "Emergencies Demand A Prompt Response",
-      description: "When your loved ones are diagnosed with life threatening diseases, it's overwhelming emotionally as well as financially. Most medical emergencies require the treatment to start at the earliest. By giving you a platform to share your emergency, online crowdfunding helps you gather funds quickly."
+      icon: "⏱️",
+      title: "Swift Response to Urgent Needs",
+      description: "Critical medical situations require immediate action. The Giving Circle connects those in need with generous donors quickly, enabling treatment to begin promptly and giving families peace of mind during difficult times."
     },
     {
-      icon: "😟",
-      title: "Loan Repayment Is Stressful",
-      description: "Getting drowned in personal loans is very common in times of medical emergencies. Once the money is gathered, repaying that loan may take months, sometimes years together. Online crowdfunding comes without debts."
+      icon: "🌱",
+      title: "Sustainable Support Without Debt",
+      description: "Unlike loans that create long-term financial strain, collective giving through our platform offers debt-free assistance. This allows recipients to focus on recovery rather than repayment, creating a genuine cycle of giving."
     }
   ];
 
@@ -70,10 +70,10 @@ const AboutIconsPage: React.FC = () => {
           animate="visible"
           variants={titleVariants}
         >
-          <h2 className="text-3xl md:text-4xl font-medium text-gray-700 mb-4">
-            Why are people choosing medical crowdfunding?
+          <h2 className="text-3xl md:text-4xl font-medium text-gray-800 mb-4">
+            Why Join The Giving Circle for Medical Support?
           </h2>
-          <div className="w-16 h-1 bg-yellow-400 mx-auto"></div>
+          <div className="w-20 h-1.5 bg-gray-400 mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Cards Grid */}
@@ -87,12 +87,12 @@ const AboutIconsPage: React.FC = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="text-center"
+              className="text-center bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300"
             >
               {/* Icon */}
               <motion.div
-                className="text-6xl mb-6"
-                whileHover={{ scale: 1.1 }}
+                className="text-6xl mb-6 bg-gray-100 inline-block p-4 rounded-full"
+                whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ duration: 0.3 }}
               >
                 {reason.icon}

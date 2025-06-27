@@ -12,7 +12,7 @@ const causes = [
       "Creating digital learning platforms and resources"
     ],
     src: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop",
-    color: "#4A90E2"
+    color: "#4A4A4A"
   },
   {
     title: "Healthcare Access",
@@ -23,7 +23,7 @@ const causes = [
       "Building sustainable healthcare infrastructure"
     ],
     src: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=800&h=600&fit=crop",
-    color: "#7ED321"
+    color: "#666666"
   },
   {
     title: "Clean Water Initiative",
@@ -34,7 +34,7 @@ const causes = [
       "Ensuring sustainable water management"
     ],
     src: "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&h=600&fit=crop",
-    color: "#50E3C2"
+    color: "#888888"
   },
   {
     title: "Environmental Protection",
@@ -45,7 +45,7 @@ const causes = [
       "Climate change awareness campaigns"
     ],
     src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&h=600&fit=crop",
-    color: "#F5A623"
+    color: "#AAAAAA"
   },
   {
     title: "Community Development",
@@ -56,7 +56,7 @@ const causes = [
       "Fostering social cohesion and leadership"
     ],
     src: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=800&h=600&fit=crop",
-    color: "#BD10E0"
+    color: "#CCCCCC"
   }
 ];
 
@@ -89,7 +89,7 @@ const CauseCard = ({
     offset: ["start end", "start start"],
   });
 
-  const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
+  const imageScale = useTransform(scrollYProgress, [0, 1], [1.5, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
@@ -104,11 +104,11 @@ const CauseCard = ({
             backgroundColor: "white",
             scale: disableAnimation || isMobile ? 1 : scale,
           }}
-          className={`flex flex-col h-auto border-2 border-gray-200 rounded-[20px] p-6 origin-top shadow-lg hover:shadow-xl transition-shadow duration-300 ${
+          className={`flex flex-col h-auto border border-gray-200 rounded-xl p-6 origin-top shadow-md hover:shadow-lg transition-shadow duration-300 ${
             isMobile ? "w-[90%]" : "w-[1000px]"
           }`}
         >
-          <h2 className="text-gray-800 font-semibold text-2xl m-0 mb-4">
+          <h2 className="text-gray-800 font-medium text-2xl m-0 mb-4">
             {title}
           </h2>
 
@@ -123,7 +123,7 @@ const CauseCard = ({
                 isMobile ? "w-full" : "w-[40%]"
               } relative`}
             >
-              <ul className="list-disc pl-6 text-gray-700 text-lg font-light text-left space-y-2">
+              <ul className="list-disc pl-6 text-gray-700 text-base font-normal text-left space-y-2">
                 {description.map((point: string, index: number) => (
                   <li key={index}>{point}</li>
                 ))}
@@ -132,7 +132,7 @@ const CauseCard = ({
 
             {/* Image section */}
             <div
-              className={`relative rounded-[20px] overflow-hidden ${
+              className={`relative rounded-lg overflow-hidden ${
                 isMobile ? "w-full h-[200px] mt-4" : "w-[60%] h-[250px]"
               } flex items-center justify-center`}
             >
@@ -147,6 +147,7 @@ const CauseCard = ({
                   alt={title}
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent opacity-20"></div>
               </motion.div>
             </div>
           </div>
@@ -177,7 +178,7 @@ const CausesPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
       
 
@@ -185,7 +186,7 @@ const CausesPage = () => {
       <main ref={container} className="py-12">
         <div className="max-w-6xl mx-auto">
           <motion.h2
-            className="text-gray-800 text-center font-semibold text-4xl mb-16"
+            className="text-gray-800 text-center font-medium text-3xl md:text-4xl mb-16"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -211,6 +212,12 @@ const CausesPage = () => {
                 />
               );
             })}
+          </div>
+          
+          <div className="text-center mt-16 mb-8">
+            <button className="px-8 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition-colors duration-300 shadow-md">
+              Learn More About Our Impact
+            </button>
           </div>
         </div>
       </main>

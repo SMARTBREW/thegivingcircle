@@ -23,18 +23,18 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, icon, delay, isOpen
       <motion.button
         onClick={onToggle}
         className="w-full flex items-center justify-between text-left focus:outline-none group"
-        whileHover={{ x: 5 }}
+        whileHover={{ x: 3 }}
         transition={{ duration: 0.2 }}
       >
         <div className="flex items-center space-x-4 flex-1">
           <div className="flex-shrink-0">
-            <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white">
+            <div className="w-10 h-10 bg-gray-800 rounded-md flex items-center justify-center text-white shadow-sm">
               <div className="w-5 h-5">
                 {icon}
               </div>
             </div>
           </div>
-          <h3 className="text-lg md:text-xl font-semibold text-gray-900 pr-4 group-hover:text-purple-600 transition-colors duration-200">
+          <h3 className="text-lg md:text-xl font-medium text-gray-800 pr-4 group-hover:text-gray-600 transition-colors duration-200">
             {question}
           </h3>
         </div>
@@ -43,7 +43,7 @@ const FAQItem: React.FC<FAQItemProps> = ({ question, answer, icon, delay, isOpen
           transition={{ duration: 0.3, ease: "easeInOut" }}
           className="flex-shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-gray-500 group-hover:text-purple-600 transition-colors duration-200" />
+          <ChevronDown className="w-5 h-5 text-gray-500 group-hover:text-gray-600 transition-colors duration-200" />
         </motion.div>
       </motion.button>
       
@@ -82,43 +82,43 @@ export const FAQ: React.FC = () => {
   const faqData = [
     {
       icon: <HelpCircle className="w-full h-full" />,
-      question: "What is an Impact Champion and how do I become one?",
-      answer: "An Impact Champion is someone who creates meaningful change through our platform. Simply sign up with your mobile number, tell us about causes you care about, and start your journey. You'll be matched with verified NGO partners to create real impact in areas like education, healthcare, environment, and social welfare."
+      question: "What defines a Giving Circle Champion and how can I participate?",
+      answer: "A Giving Circle Champion is an individual committed to creating meaningful change through philanthropic advocacy. To become a Champion, complete our formal application process, detailing your professional background and areas of interest. Upon approval, you'll be connected with our verified non-profit partners to create sustainable impact across sectors including healthcare, education, social welfare, and environmental conservation."
     },
     {
       icon: <Shield className="w-full h-full" />,
-      question: "How do you verify NGO partners and ensure my donations are used properly?",
-      answer: "All our NGO partners undergo rigorous verification including legal compliance checks, financial audits, and impact assessments. We maintain ongoing monitoring through regular site visits, beneficiary feedback, and transparent reporting. Every project is documented with photos, videos, and beneficiary testimonials before being converted to your impact NFT."
+      question: "How does The Giving Circle ensure proper stewardship of contributions?",
+      answer: "We maintain rigorous due diligence protocols for all partner organizations, including comprehensive legal compliance verification, financial audit reviews, and regular impact assessments. Our governance structure implements ongoing monitoring through site evaluations, beneficiary feedback collection, and transparent reporting mechanisms. All initiatives are meticulously documented with photographic evidence, progress reports, and testimonials from beneficiaries."
     },
     {
       icon: <Coins className="w-full h-full" />,
-      question: "What are Impact NFTs and why should I care about them?",
-      answer: "Impact NFTs are unique digital certificates that permanently document your real-world impact. Unlike regular NFTs, these represent verified social change - like a child's education funded, trees planted, or meals provided. They serve as permanent proof of your contribution and can be shared, displayed, or kept as a meaningful digital legacy."
+      question: "What are Impact Certificates and what significance do they hold?",
+      answer: "Impact Certificates are formal documentation of your tangible contributions to social change. Each certificate represents verifiable outcomes—such as educational scholarships funded, healthcare services provided, or environmental initiatives supported. These serve as authenticated records of your philanthropic legacy and can be shared with your personal or professional network as evidence of your commitment to social responsibility."
     },
     {
       icon: <Camera className="w-full h-full" />,
-      question: "How is my impact documented and verified?",
-      answer: "Every project is thoroughly documented through multiple touchpoints: pre-project planning photos, during-execution videos, post-completion impact assessments, and direct beneficiary testimonials. Our field teams work with NGO partners to capture authentic stories, which are then verified by our impact team before being minted as your NFT."
+      question: "How is impact verification conducted for each initiative?",
+      answer: "Each supported initiative undergoes a structured documentation process including baseline assessment, implementation monitoring, and outcome evaluation. Our field representatives collaborate with partner organizations to capture comprehensive evidence, including pre-implementation conditions, progress milestones, and final outcomes. This information undergoes verification by our impact assessment committee before being formalized in your impact records."
     },
     {
       icon: <Users className="w-full h-full" />,
-      question: "Can I choose which specific projects or causes to support?",
-      answer: "Absolutely! During onboarding, you'll select your preferred causes from categories like education, healthcare, environment, women empowerment, and more. You can also choose specific projects, geographical areas, or even work directly with particular NGO partners. Your preferences guide how we match you with impactful opportunities."
+      question: "May I designate specific causes or regions for my support?",
+      answer: "Certainly. During your onboarding process, you'll have the opportunity to indicate your preferred focus areas from categories including healthcare accessibility, educational advancement, environmental sustainability, and community development. You may specify geographical preferences, organizational partnerships, or particular demographic groups you wish to support. These preferences guide our matching process."
     },
     {
       icon: <Award className="w-full h-full" />,
-      question: "What happens after I receive my Impact NFT?",
-      answer: "Your Impact NFT becomes part of your permanent digital impact portfolio. You can share it on social media, display it in digital galleries, or keep it as a personal reminder of your contribution. You'll also receive ongoing updates about the long-term effects of your support, creating a lasting connection to the change you've helped create."
+      question: "What follows the receipt of my Impact Certificate?",
+      answer: "Your Impact Certificate becomes part of your philanthropic portfolio within The Giving Circle community. You'll receive periodic updates regarding the ongoing influence of your contribution, including detailed progress reports and outcome analyses. These certificates serve as a testament to your commitment to creating sustainable change and may be shared with your professional and personal networks."
     },
     {
       icon: <MessageCircle className="w-full h-full" />,
-      question: "How can I stay updated on my impact and connect with other champions?",
-      answer: "You'll receive regular updates through our platform including progress reports, beneficiary stories, and community highlights. Join our Champion community to connect with like-minded changemakers, share experiences, and discover new opportunities for impact. We also host virtual and in-person events to celebrate collective achievements."
+      question: "How can I remain engaged with The Giving Circle community?",
+      answer: "You'll receive regular communications including quarterly progress reports, impact assessments, and community updates. Our Champions' Forum provides opportunities to connect with fellow philanthropists, exchange insights, and discover collaborative initiatives. The Giving Circle hosts periodic events, both virtual and in-person, to facilitate meaningful discussions and celebrate collective achievements in philanthropy."
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section className="py-20 bg-gray-50">
       <div className="max-w-4xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -127,19 +127,24 @@ export const FAQ: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
             Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="text-gray-700">
               Questions
             </span>
           </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Everything you need to know about becoming an Impact Champion and creating verified change.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Essential information regarding The Giving Circle Champion program and creating verified philanthropic impact.
           </p>
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="mb-20">
+        <motion.div 
+          className="mb-16 bg-white rounded-lg shadow-sm border border-gray-100 p-6 md:p-8"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
           {faqData.map((item, index) => (
             <FAQItem
               key={index}
@@ -151,9 +156,9 @@ export const FAQ: React.FC = () => {
               onToggle={() => toggleItem(index)}
             />
           ))}
-        </div>
+        </motion.div>
 
-        {/* Still Have Questions Section */}
+        {/* Additional Questions Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -162,35 +167,35 @@ export const FAQ: React.FC = () => {
           className="text-center"
         >
           <motion.div 
-            className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-12 border border-purple-100"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 300, damping: 10 }}
+            className="bg-white rounded-lg p-10 border border-gray-200 shadow-sm"
+            whileHover={{ y: -5 }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
             <div className="flex justify-center mb-6">
-              <div className="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center">
-                <MessageCircle className="w-10 h-10 text-white" />
+              <div className="w-16 h-16 bg-gray-800 rounded-full flex items-center justify-center shadow-md">
+                <MessageCircle className="w-8 h-8 text-white" />
               </div>
             </div>
             
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
-              Still Have Questions?
+            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+              Additional Inquiries
             </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Our team is here to help you understand how you can create meaningful impact. Get personalized answers to your questions.
+            <p className="text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
+              Our dedicated team is available to provide comprehensive information about The Giving Circle Champion program. Please reach out for personalized consultation.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <button
-                onClick={() => window.location.href = 'mailto:support@impactchampions.com'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:shadow-lg transition-all duration-200 transform hover:scale-105"
+                onClick={() => window.location.href = 'mailto:support@thegivingcircle.org'}
+                className="bg-gray-800 hover:bg-gray-700 text-white px-6 py-3 rounded-md font-medium transition-colors duration-200"
               >
-                Contact Support
+                Contact Our Team
               </button>
               <button
-                onClick={() => window.location.href = '/onboarding'}
-                className="border-2 border-purple-200 text-purple-600 px-8 py-4 rounded-xl font-semibold hover:bg-purple-50 transition-all duration-200"
+                onClick={() => window.location.href = '/champion-application'}
+                className="border border-gray-300 text-gray-700 px-6 py-3 rounded-md font-medium hover:bg-gray-50 transition-all duration-200"
               >
-                Start Your Journey
+                Begin Application Process
               </button>
             </div>
           </motion.div>
@@ -199,3 +204,5 @@ export const FAQ: React.FC = () => {
     </section>
   );
 };
+
+export default FAQ;
