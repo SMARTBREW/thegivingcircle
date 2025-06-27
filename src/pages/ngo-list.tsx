@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Filter, CheckCircle, MapPin, Users, Calendar, ChevronDown } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Search, Filter, CheckCircle, MapPin, Users, Calendar, ChevronDown, Shield, Award, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
+// Removed unused imports
 
 interface NGO {
   id: string;
@@ -34,6 +36,7 @@ interface NGO {
 }
 
 export const NGOList: React.FC = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [showMobileFilters, setShowMobileFilters] = useState(false);
@@ -56,7 +59,7 @@ export const NGOList: React.FC = () => {
     {
       id: '1',
       name: 'Smile Foundation',
-      description: 'Working towards the welfare of children, their families, and the community as a whole through health, education, and livelihood programs.',
+      description: 'Working towards the welfare of children, their families, and the community as a whole through comprehensive health, education, and livelihood programs. We focus on creating sustainable change by empowering communities and building long-term partnerships. Our initiatives span across education support, healthcare services, and women empowerment programs that have transformed thousands of lives across India.',
       verified: true,
       logo: '/Smileshero.jpg',
       location: 'Delhi',
@@ -82,7 +85,7 @@ export const NGOList: React.FC = () => {
     {
       id: '2',
       name: 'Khushii Foundation',
-      description: 'Dedicated to providing quality education, healthcare, and skill development to underprivileged children and communities across India.',
+      description: 'Dedicated to providing quality education, healthcare, and skill development to underprivileged children and communities across India. We believe in creating opportunities for holistic development through innovative programs and sustainable solutions. Our work encompasses child welfare initiatives, skill development training, and rural development projects that address the root causes of poverty and inequality.',
       verified: true,
       logo: '/khushii.jpg',
       location: 'Multiple Locations',
@@ -107,7 +110,7 @@ export const NGOList: React.FC = () => {
     {
       id: '3',
       name: 'Animal Care Foundation',
-      description: 'Working towards the rescue, rehabilitation, and welfare of street animals while promoting animal rights and humane treatment.',
+      description: 'Working towards the rescue, rehabilitation, and welfare of street animals while promoting animal rights and humane treatment across communities. We focus on creating awareness about animal welfare, providing medical care to injured animals, and implementing sterilization programs to control population. Our environmental initiatives also include promoting sustainable practices that protect both animals and their natural habitats.',
       verified: true,
       logo: '/Animal care.jpg',
       location: 'Mumbai',
@@ -132,7 +135,7 @@ export const NGOList: React.FC = () => {
     {
       id: '4',
       name: 'Mamta Health Institute',
-      description: 'Focused on maternal and child health, reproductive health, and HIV/AIDS prevention through community-based interventions.',
+      description: 'Focused on maternal and child health, reproductive health, and HIV/AIDS prevention through community-based interventions and awareness programs. We work closely with healthcare systems to improve access to quality medical services for women and children. Our comprehensive approach includes health education, medical support, vaccination drives, and empowerment programs that strengthen communities from within.',
       verified: true,
       logo: '/mamta.jpg',
       location: 'New Delhi',
@@ -157,7 +160,7 @@ export const NGOList: React.FC = () => {
     {
       id: '5',
       name: 'Kokan Unnati Foundation',
-      description: 'Working towards sustainable development in the Konkan region through education, agriculture, and livelihood programs.',
+      description: 'Working towards sustainable development in the Konkan region through education, agriculture, and livelihood programs that preserve traditional knowledge while embracing modern techniques. We focus on farmer training, sustainable agriculture practices, and environmental conservation. Our community-driven approach ensures that development projects are tailored to local needs and create lasting positive impact.',
       verified: true,
       logo: '/kokan.jpg',
       location: 'Maharashtra',
@@ -182,9 +185,9 @@ export const NGOList: React.FC = () => {
     {
       id: '6',
       name: 'Janakalyan Welfare Program',
-      description: 'Focused on tribal welfare, education, and sustainable livelihood development in remote areas of central India.',
+      description: 'Focused on tribal welfare, education, and sustainable livelihood development in remote areas of central India where access to basic services is limited. We work with indigenous communities to preserve their cultural heritage while providing modern educational opportunities and healthcare access. Our programs emphasize community participation and traditional knowledge integration with contemporary development approaches.',
       verified: true,
-      logo: 'https://media.licdn.com/dms/image/v2/D560BAQFEnIbIPzkRZA/company-logo_200_200/company-logo_200_200/0/1719257011806?e=2147483647&v=beta&t=1lViJeLxB5FCP4D8Rh3utPfol0SGc3l6sVLyQsO0ztc',
+      logo: '/JWP.jpg',
       location: 'Chhattisgarh',
       causes: ['Tribal Welfare', 'Education', 'Rural Development'],
       yearEstablished: 2008,
@@ -193,7 +196,7 @@ export const NGOList: React.FC = () => {
         { label: 'Children in School', value: 5800, unit: 'children' },
         { label: 'Livelihood Projects', value: 35, unit: 'projects' },
       ],
-      featuredImage: 'https://www.animalcareindia.org.in/wp-content/uploads/2024/12/Untitled-design-2024-12-04T011722.451.png',
+      featuredImage: '/JWP.jpg',
       contactInfo: {
         email: 'info@janakalyan.org',
         phone: '+91-7712-423865',
@@ -229,18 +232,28 @@ export const NGOList: React.FC = () => {
     return true;
   });
 
+  // Removed convertToNGODetails function - now using routing with NGODetailContainer
+
+  const handleLearnMore = (ngo: NGO) => {
+    navigate(`/ngo-detail/${ngo.id}`);
+  };
+
   const NGOCard: React.FC<{ ngo: NGO; index: number }> = ({ ngo, index }) => (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
+      className="h-full"
     >
-      <Card hover className="overflow-hidden group cursor-pointer h-full">
-        <div className="relative">
+      <div 
+        className="overflow-hidden group cursor-pointer h-full flex flex-col bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+        onClick={() => handleLearnMore(ngo)}
+      >
+        <div className="relative flex-shrink-0">
           <img
             src={ngo.featuredImage}
             alt={ngo.name}
-            className="w-full h-32 sm:h-40 lg:h-44 object-cover group-hover:scale-105 transition-transform duration-300"
+            className="w-full h-28 sm:h-32 lg:h-36 object-cover group-hover:scale-105 transition-transform duration-300"
           />
           
           {/* Verified Badge */}
@@ -258,72 +271,78 @@ export const NGOList: React.FC = () => {
           </div>
         </div>
 
-        <CardContent className="p-3 sm:p-4 lg:p-5 flex flex-col h-full">
-          <div className="flex items-center justify-between mb-1 sm:mb-2">
+        <div className="p-2 sm:p-3 lg:p-4 flex flex-col flex-1">
+          {/* Header Section */}
+          <div className="flex items-center justify-between mb-1">
             <div className="flex items-center space-x-2 min-w-0 flex-1">
-              <div className="w-6 h-6 sm:w-7 sm:h-7 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                <span className="text-blue-600 text-xs font-bold">
-                  {ngo.name.charAt(0)}
-                </span>
+              <div className="w-8 h-8 sm:w-9 sm:h-9 bg-white border border-gray-200 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img
+                  src={ngo.logo}
+                  alt={`${ngo.name} logo`}
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-xs font-medium text-gray-800 truncate">Est. {ngo.yearEstablished}</div>
+                <div className="text-xs text-blue-600 font-medium">{new Date().getFullYear() - ngo.yearEstablished}+ years</div>
               </div>
             </div>
           </div>
 
-          <h3 className="text-sm sm:text-base font-semibold text-gray-800 mb-1 line-clamp-1 flex-shrink-0">
+          {/* Title */}
+          <h3 className="text-sm font-semibold text-gray-800 mb-2 line-clamp-1">
             {ngo.name}
           </h3>
           
-          <p className="text-gray-600 text-xs mb-2 line-clamp-2 flex-1">
+          {/* Tagline with highlighted background */}
+          <div className="mb-2">
+            <span className="inline-block bg-blue-100/70 backdrop-blur-sm text-blue-700 px-2 py-1 rounded-lg text-xs font-medium">
+              {ngo.causes.slice(0, 2).join(' & ')}
+            </span>
+          </div>
+          
+          {/* Description */}
+          <p className="text-gray-600 text-xs mb-2 line-clamp-3 leading-relaxed">
             {ngo.description}
           </p>
 
-          {/* Impact Metrics */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-2 sm:mb-3">
-            {ngo.impactMetrics.slice(0, 2).map((metric, idx) => (
-              <div key={idx} className="text-center p-1.5 sm:p-2 bg-gray-50 rounded-lg">
-                <div className="text-sm font-bold text-blue-600">
-                  {metric.value.toLocaleString()}
-                </div>
-                <div className="text-xs text-gray-600 truncate" title={metric.label}>
-                  {metric.label.length > 12 ? metric.label.substring(0, 10) + '...' : metric.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Causes */}
-          <div className="flex flex-wrap gap-1 mb-2 sm:mb-3">
-            {ngo.causes.slice(0, isMobile ? 1 : 2).map((cause, idx) => (
-              <span
-                key={idx}
-                className="bg-blue-100 text-blue-700 px-2 py-0.5 rounded-full text-xs font-medium truncate"
-                title={cause}
-              >
-                {cause.length > 15 ? cause.substring(0, 12) + '...' : cause}
+          {/* Certifications & Website */}
+          <div className="mb-2">
+            <div className="flex items-center gap-1 mb-1">
+              <span className="text-xs bg-green-100 text-green-700 px-1.5 py-0.5 rounded-full font-medium flex items-center gap-1">
+                <Shield className="w-3 h-3" />
+                Registered NGO
               </span>
-            ))}
-            {ngo.causes.length > (isMobile ? 1 : 2) && (
-              <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full text-xs font-medium">
-                +{ngo.causes.length - (isMobile ? 1 : 2)}
+              <span className="text-xs bg-orange-100 text-orange-700 px-1.5 py-0.5 rounded-full font-medium flex items-center gap-1">
+                <Award className="w-3 h-3" />
+                Certified
               </span>
-            )}
-          </div>
-
-          <div className="flex items-center justify-between pt-2 border-t border-gray-100 mt-auto">
-            <div className="flex items-center space-x-1 min-w-0 flex-1">
-              <Users className="w-3 h-3 text-gray-400" />
-              <div className="text-xs text-gray-600">Programs</div>
             </div>
-            
-            <Button variant="ghost" size="sm" className="text-blue-600 px-2 py-1 text-xs flex-shrink-0">
-              <span>View</span>
-            </Button>
+            <div className="flex items-center justify-between gap-2">
+              <a 
+                href={`https://${ngo.contactInfo.website}`} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+                className="text-xs text-blue-600 hover:text-blue-800 cursor-pointer truncate flex items-center gap-1"
+                title={`Visit ${ngo.contactInfo.website}`}
+              >
+                <ExternalLink className="w-3 h-3" />
+                {ngo.contactInfo.website}
+              </a>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleLearnMore(ngo);
+                }}
+                className="text-xs bg-blue-600 hover:bg-blue-700 text-white px-2 py-1 rounded-lg font-medium transition-colors duration-200 flex items-center gap-1 flex-shrink-0"
+              >
+                Learn More
+              </button>
+            </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </motion.div>
   );
 

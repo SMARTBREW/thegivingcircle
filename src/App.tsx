@@ -12,6 +12,7 @@ import { NGOPartner } from './pages/NGOPartner';
 import { NGOList } from './pages/ngo-list';
 import { Causes } from './pages/Causes';
 import ChampionStoryDetail from './pages/ChampionStoryDetail';
+import NGODetailContainer from './pages/NGODetailContainer';
 import CauseChampionsPage from './components/champions/browseChampions';
 import LiveCausesPage from './components/liveCauses/browseCauses';
 import CauseDetailPage from './components/liveCauses/causesDetails';
@@ -42,11 +43,13 @@ function App() {
            
             <Route path="/ngo-partner" element={<NGOPartner />} />
             <Route path="/ngo-list" element={<NGOList />} />
+            <Route path="/ngo-detail/:id" element={<NGODetailContainer />} />
             <Route path="/causes" element={<Causes />} />
             <Route path="/browse-champions" element={<CauseChampionsPage />} />
             <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
             <Route path="/impact-stories" element={<LiveCausesPage />} />
             <Route path="/causes-details" element={<CauseDetailPage />} />
+            <Route path="/causes-details/:id" element={<CauseDetailPage />} />
             <Route path="/about-champion" element={<AboutChampions />} />
             <Route path="/the-giving-circle" element={<OurStory />} />
 
