@@ -20,6 +20,7 @@ import  {AboutChampions } from './pages/aboutChampion';
 import { OurStory } from './pages/aboutGivingCircle';
 import CircleIcon from './components/ui/CircleIcon';
 import FeaturePanel from './components/ui/FeaturePanel';
+import NotFoundPage from './pages/notFoundPage';
 
 function App() {
   const [isFeaturePanelOpen, setIsFeaturePanelOpen] = useState(false);
@@ -52,6 +53,7 @@ function App() {
             <Route path="/causes-details/:id" element={<CauseDetailPage />} />
             <Route path="/about-champion" element={<AboutChampions />} />
             <Route path="/the-giving-circle" element={<OurStory />} />
+            <Route path="*" element={<NotFoundPage />} />
 
           </Routes>
         </main>

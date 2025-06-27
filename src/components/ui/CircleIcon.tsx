@@ -10,7 +10,7 @@ const CircleIcon: React.FC<CircleIconProps> = ({ onClick }) => {
   
   return (
     <motion.div 
-      className="fixed bottom-24 right-8 z-50 cursor-pointer"
+      className="fixed bottom-16 right-8 z-50 cursor-pointer"
       initial={{ scale: 1 }}
       animate={{ scale: isHovered ? 1.1 : 1 }}
       transition={{ type: 'spring', stiffness: 300, damping: 15 }}

@@ -158,7 +158,7 @@ export const OurImpact: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="relative"
+            className="relative mt-8"
           >
             <div className="relative w-full max-w-lg mx-auto">
               {/* India Map Image */}
