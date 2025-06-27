@@ -31,7 +31,7 @@ const NavbarComponent = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [blinkState, setBlinkState] = useState(true);
-  const [ngoDropdownOpen, setNgoDropdownOpen] = useState(false);
+  const [dropdownStates, setDropdownStates] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,20 +53,50 @@ const NavbarComponent = () => {
     { name: 'Home', href: '/' },
     { 
       name: 'Live Causes', 
-      href: '/impact-stories', 
+      hasDropdown: true,
       highlight: true,
-      urgent: true
+      urgent: true,
+      dropdownItems: [
+        { name: 'Browse All Causes', href: '/impact-stories' },
+        { name: 'Cause Details', href: '/causes-details' }
+      ]
     },
-    { name: 'Impact Stories', href: '/nft-wall' },
-    { name: 'Champions', href: '/causes' },
+    { 
+      name: 'Impact Stories', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'NFT Impact Wall', href: '/nft-wall' },
+        { name: 'Story Details', href: '/nft-wall-details' }
+      ]
+    },
+    { 
+      name: 'Champions', 
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'Browse Champions', href: '/browse-champions' },
+        { name: 'About Champions', href: '/about-champion' },
+        { name: 'Champion Stories', href: '/causes' },
+        { name: 'Become a Champion', href: '/onboarding' }
+      ]
+    },
     { 
       name: 'NGO Partners', 
       hasDropdown: true,
       dropdownItems: [
         { name: 'Become a NGO Partner', href: '/ngo-partner' },
-        { name: 'NGOs lists with us', href: '/ngo-list' }
+        { name: 'NGOs Listed With Us', href: '/ngo-list' },
+        { name: 'NGO Details', href: '/ngo-detail/1' }
       ]
     },
+    {
+      name: 'About Us',
+      hasDropdown: true,
+      dropdownItems: [
+        { name: 'The Giving Circle', href: '/the-giving-circle' },
+        { name: 'Our Vision', href: '/the-giving-circle#vision' },
+        { name: 'Our Story', href: '/the-giving-circle#story' }
+      ]
+    }
   ];
 
   // Animation for the pulse effect
@@ -84,14 +114,21 @@ const NavbarComponent = () => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
-      if (!target.closest('.ngo-dropdown')) {
-        setNgoDropdownOpen(false);
+      if (!target.closest('.dropdown-menu')) {
+        setDropdownStates({});
       }
     };
 
     document.addEventListener('click', handleClickOutside);
     return () => document.removeEventListener('click', handleClickOutside);
   }, []);
+
+  const toggleDropdown = (itemName: string) => {
+    setDropdownStates(prev => ({
+      ...prev,
+      [itemName]: !prev[itemName]
+    }));
+  };
 
   return (
     <motion.nav
@@ -122,39 +159,56 @@ const NavbarComponent = () => {
                 <img 
                   src="/Giving_Circle..-removebg-preview.png" 
                   alt="The Giving Circle Logo" 
-                  className="h-8 sm:h-9 md:h-10 lg:h-12 drop-shadow-lg"
+                  className="h-8 sm:h-9 md:h-10 lg:h-10 xl:h-11 drop-shadow-lg"
                 />
               </a>
             </motion.div>
 
             {/* Desktop Navigation - Hidden on mobile and small tablets */}
-            <div className="hidden lg:block">
-              <div className="flex items-center space-x-1">
+            <div className="hidden xl:block">
+              <div className="flex items-center space-x-0">
                 {navItems.map((item, index) => (
                   item.hasDropdown ? (
-                    <div key={item.name} className="relative ngo-dropdown">
+                    <div key={item.name} className="relative dropdown-menu">
                       <motion.button
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ 
                           y: -2,
-                          color: '#1f2937'
+                          color: item.highlight ? '#e11d48' : '#1f2937'
                         }}
                         onClick={(e) => {
                           e.stopPropagation();
-                          setNgoDropdownOpen(!ngoDropdownOpen);
+                          toggleDropdown(item.name);
                         }}
-                        className="px-3 lg:px-4 py-2 text-sm lg:text-sm font-bold transition-all duration-300 relative text-gray-700 hover:text-gray-900 flex items-center"
+                        className={`px-2 xl:px-3 py-2 text-xs lg:text-sm font-bold transition-all duration-300 relative ${
+                          item.highlight ? 'text-gray-700 hover:text-red-600' : 'text-gray-700 hover:text-gray-900'
+                        } flex items-center`}
                       >
-                        <span>{item.name}</span>
-                        <ChevronDown 
-                          className={`ml-1 w-4 h-4 transition-transform ${ngoDropdownOpen ? 'rotate-180' : ''}`}
-                        />
+                        <div className="flex items-center gap-1.5">
+                          {item.urgent && (
+                            <motion.div 
+                              animate={{
+                                scale: blinkState ? 1.1 : 1
+                              }}
+                              transition={{
+                                duration: 0.2
+                              }}
+                              className="relative flex items-center"
+                            >
+                              <SirenIcon size={18} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                            </motion.div>
+                          )}
+                          <span className={item.highlight ? 'text-red-600' : ''}>{item.name}</span>
+                          <ChevronDown 
+                            className={`ml-0.5 w-3 h-3 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`}
+                          />
+                        </div>
                       </motion.button>
                       
-                      {/* NGO Dropdown Menu */}
-                      {ngoDropdownOpen && (
+                      {/* Dropdown Menu */}
+                      {dropdownStates[item.name] && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
@@ -169,7 +223,7 @@ const NavbarComponent = () => {
                               animate={{ opacity: 1, x: 0 }}
                               transition={{ duration: 0.2, delay: dropIdx * 0.05 }}
                               className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                              onClick={() => setNgoDropdownOpen(false)}
+                              onClick={() => setDropdownStates({})}
                             >
                               {dropdownItem.name}
                             </motion.a>
@@ -188,7 +242,7 @@ const NavbarComponent = () => {
                         y: -2,
                         color: item.highlight ? '#e11d48' : '#1f2937'
                       }}
-                      className={`px-3 lg:px-4 py-2 text-sm lg:text-sm font-bold transition-all duration-300 relative ${
+                      className={`px-2 xl:px-3 py-2 text-xs lg:text-sm font-bold transition-all duration-300 relative ${
                         item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                       }`}
                     >
@@ -215,32 +269,49 @@ const NavbarComponent = () => {
             </div>
 
             {/* Medium screen navigation - Shows condensed nav for tablets */}
-            <div className="hidden md:flex lg:hidden items-center space-x-1">
+            <div className="hidden lg:flex xl:hidden items-center space-x-1">
               {navItems.map((item, index) => (
                 item.hasDropdown ? (
-                  <div key={item.name} className="relative ngo-dropdown">
+                  <div key={item.name} className="relative dropdown-menu">
                     <motion.button
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       whileHover={{ 
                         y: -2,
-                        color: '#1f2937'
+                        color: item.highlight ? '#e11d48' : '#1f2937'
                       }}
                       onClick={(e) => {
                         e.stopPropagation();
-                        setNgoDropdownOpen(!ngoDropdownOpen);
+                        toggleDropdown(item.name);
                       }}
-                      className="px-2 py-2 text-xs font-bold transition-all duration-300 relative text-gray-700 hover:text-gray-900 flex items-center"
+                      className={`px-2 py-2 text-xs font-bold transition-all duration-300 relative ${
+                        item.highlight ? 'text-gray-700 hover:text-red-600' : 'text-gray-700 hover:text-gray-900'
+                      } flex items-center`}
                     >
-                      <span>{item.name}</span>
-                      <ChevronDown 
-                        className={`ml-1 w-3 h-3 transition-transform ${ngoDropdownOpen ? 'rotate-180' : ''}`}
-                      />
+                      <div className="flex items-center gap-1">
+                        {item.urgent && (
+                          <motion.div 
+                            animate={{
+                              scale: blinkState ? 1.1 : 1
+                            }}
+                            transition={{
+                              duration: 0.2
+                            }}
+                            className="relative flex items-center"
+                          >
+                            <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                          </motion.div>
+                        )}
+                        <span className={item.highlight ? 'text-red-600' : ''}>{item.name}</span>
+                        <ChevronDown 
+                          className={`ml-1 w-3 h-3 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`}
+                        />
+                      </div>
                     </motion.button>
                     
-                    {/* NGO Dropdown Menu - Tablet */}
-                    {ngoDropdownOpen && (
+                    {/* Dropdown Menu - Tablet */}
+                    {dropdownStates[item.name] && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -255,7 +326,7 @@ const NavbarComponent = () => {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.2, delay: dropIdx * 0.05 }}
                             className="block px-3 py-2 text-xs text-gray-700 hover:bg-gray-50 hover:text-primary-600 transition-colors"
-                            onClick={() => setNgoDropdownOpen(false)}
+                            onClick={() => setDropdownStates({})}
                           >
                             {dropdownItem.name}
                           </motion.a>
@@ -300,7 +371,7 @@ const NavbarComponent = () => {
             </div>
 
             {/* CTA Button - Responsive sizing and visibility */}
-            <div className="hidden lg:flex items-center">
+            <div className="hidden xl:flex items-center ml-2">
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -311,15 +382,14 @@ const NavbarComponent = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 lg:px-6 py-2 rounded-lg font-medium text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 rounded-lg font-medium text-xs lg:text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
-                <span className="hidden lg:inline">Become a Cause Champion</span>
-                <span className="lg:hidden">Join Us</span>
+                Become a Cause Champion
               </motion.button>
             </div>
 
             {/* Mobile menu button - Only shows on small screens */}
-            <div className="md:hidden">
+            <div className="lg:hidden">
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
@@ -330,7 +400,7 @@ const NavbarComponent = () => {
             </div>
 
             {/* Tablet CTA - Shows on medium screens only */}
-            <div className="hidden md:flex lg:hidden items-center ml-2">
+            <div className="hidden lg:flex xl:hidden items-center ml-2">
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -353,7 +423,7 @@ const NavbarComponent = () => {
             initial={false}
             animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden overflow-hidden"
+            className="lg:hidden overflow-hidden"
           >
             <div className="pt-3 sm:pt-4 pb-2 space-y-1 sm:space-y-2">
               {navItems.map((item, index) => (
@@ -363,17 +433,34 @@ const NavbarComponent = () => {
                       initial={{ x: -50, opacity: 0 }}
                       animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
-                      onClick={() => setNgoDropdownOpen(!ngoDropdownOpen)}
-                      className="flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg text-gray-700 hover:text-gray-900"
+                      onClick={() => toggleDropdown(item.name)}
+                      className={`flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
+                        item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                      }`}
                     >
-                      <span>{item.name}</span>
+                      <div className="flex items-center gap-2">
+                        {item.urgent && (
+                          <motion.div 
+                            animate={{
+                              scale: blinkState ? 1.1 : 1
+                            }}
+                            transition={{
+                              duration: 0.2
+                            }}
+                            className="relative flex items-center"
+                          >
+                            <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                          </motion.div>
+                        )}
+                        <span>{item.name}</span>
+                      </div>
                       <ChevronDown 
-                        className={`w-4 h-4 transition-transform ${ngoDropdownOpen ? 'rotate-180' : ''}`} 
+                        className={`w-4 h-4 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`} 
                       />
                     </motion.button>
                     
                     {/* Mobile dropdown menu items */}
-                    {ngoDropdownOpen && (
+                    {dropdownStates[item.name] && (
                       <div className="pl-4 space-y-1">
                         {item.dropdownItems.map((dropdownItem, dropIdx) => (
                           <motion.a

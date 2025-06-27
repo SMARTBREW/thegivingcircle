@@ -76,31 +76,38 @@ export const Footer: React.FC = () => {
               </h3>
               <div className="space-y-4">
                 <Link 
-                  to="/causes" 
+                  to="/impact-stories" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Live Campaigns</span>
+                  <span className="text-sm">Live Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/impact" 
+                  to="/nft-wall" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm">Impact Stories</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/champions" 
+                  to="/browse-champions" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm">Cause Champions</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/ngo-partner" 
+                  to="/ngo-list" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">NGO Network</span>
+                  <span className="text-sm">NGO Partners</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </Link>
+                <Link 
+                  to="/the-giving-circle" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-sm">About Us</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </div>
@@ -116,30 +123,30 @@ export const Footer: React.FC = () => {
                   to="/onboarding" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Join as Champion</span>
+                  <span className="text-sm">Become a Champion</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/ngo-partner" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm">NGO Partnership</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  to="/about-champion" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Verification Process</span>
+                  <span className="text-sm">About Champions</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  to="/causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Community Guidelines</span>
+                  <span className="text-sm">Champion Stories</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
+                </Link>
                 <a 
                   href="#" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"

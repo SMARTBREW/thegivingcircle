@@ -15,6 +15,7 @@ interface FormData {
   agreeToTerms: boolean;
   isOTPSent: boolean;
   isOTPVerified: boolean;
+  isSubmitted: boolean;
 }
 
 interface NGO {
@@ -37,7 +38,8 @@ const CauseChampionOnboarding: React.FC = () => {
     selectedCauses: [],
     agreeToTerms: false,
     isOTPSent: false,
-    isOTPVerified: false
+    isOTPVerified: false,
+    isSubmitted: false
   });
 
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -263,8 +265,20 @@ const CauseChampionOnboarding: React.FC = () => {
 
   const handleSubmit = () => {
     console.log('Form submitted:', formData);
+    
     // Here you would typically send the data to your backend
-    alert('Thank you for becoming a Cause Champion! We will contact you soon.');
+    // try {
+    //   const response = await fetch('/api/submit-champion-form', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(formData)
+    //   });
+    // } catch (error) {
+    //   console.error('Submission error:', error);
+    // }
+    
+    // Set submission state to show success message
+    setFormData(prev => ({ ...prev, isSubmitted: true }));
   };
 
   const getSelectedNGOCauses = () => {
@@ -389,6 +403,75 @@ const CauseChampionOnboarding: React.FC = () => {
           <motion.div 
             className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
           >
+            {/* Success Message */}
+            {formData.isSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="text-center py-8"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+                >
+                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </motion.div>
+                
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                >
+                  Details Submitted Successfully!
+                </motion.h2>
+                
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-lg text-gray-600 mb-8 leading-relaxed"
+                >
+                  Thank you for becoming a Cause Champion with us. Our executive will connect with you shortly to discuss your journey and next steps.
+                </motion.p>
+                
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex flex-col sm:flex-row gap-3 justify-center"
+                >
+                  <button
+                    onClick={() => window.location.href = '/'}
+                    className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+                  >
+                    Return to Home
+                  </button>
+                  <button
+                    onClick={() => window.location.href = '/about-champion'}
+                    className="px-6 py-3 bg-white text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold"
+                  >
+                    Learn More About Champions
+                  </button>
+                </motion.div>
+                
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="text-sm text-gray-500 mt-6"
+                >
+                  You'll receive confirmation details at <span className="font-medium">{formData.email}</span>
+                </motion.p>
+              </motion.div>
+            ) : (
+              // Original Form Content
+              <>
             <div className="text-center mb-6 sm:mb-8">
               <div className="flex justify-center mb-4">
                 <img 
@@ -681,6 +764,8 @@ const CauseChampionOnboarding: React.FC = () => {
                 Become a Cause Champion
               </motion.button>
             </div>
+            </>
+            )}
           </motion.div>
         </motion.div>
       </motion.div>

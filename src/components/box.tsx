@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { ArrowRight, Heart, Users, Target } from "lucide-react";
 
 const ChampionFundraiserBox = ({
-  text = "Join Champion Fundraiser Today!",
-  description = "Champion Fundraiser empowers communities to create meaningful impact through innovative crowdfunding solutions. Connect with supporters, track your progress, and make your cause a success story.",
+  text = "Become a Cause Champion Today!",
+  description = "Cause Champions are passionate advocates who lead transformative change in their communities. Share your story, inspire supporters, and amplify your impact through our champion network.",
 }) => {
   // Animation variants
   const fadeIn = {
@@ -16,14 +16,14 @@ const ChampionFundraiserBox = ({
     },
   };
 
-  const handleStartFundraising = () => {
-    // Navigate to fundraising page
-    console.log("Navigate to start fundraising");
+  const handleBecomeChampion = () => {
+    // Navigate to champion onboarding page
+    console.log("Navigate to become a champion");
   };
 
   const handleLearnMore = () => {
-    // Navigate to about page
-    console.log("Navigate to learn more");
+    // Navigate to about champions page
+    console.log("Navigate to learn more about champions");
   };
 
   return (
@@ -91,15 +91,15 @@ const ChampionFundraiserBox = ({
           >
             <div className="flex items-center gap-1 bg-pink-100 dark:bg-pink-900/30 px-3 py-1 rounded-full">
               <Heart className="w-4 h-4 text-pink-500" />
-              <span className="text-xs text-black">Impact Focused</span>
+              <span className="text-xs text-black">Cause Advocacy</span>
             </div>
             <div className="flex items-center gap-1 bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full">
               <Users className="w-4 h-4 text-purple-500" />
-              <span className="text-xs text-black">Community Driven</span>
+              <span className="text-xs text-black">Champion Network</span>
             </div>
             <div className="flex items-center gap-1 bg-indigo-100 dark:bg-indigo-900/30 px-3 py-1 rounded-full">
               <Target className="w-4 h-4 text-indigo-500" />
-              <span className="text-xs text-black">Goal Oriented</span>
+              <span className="text-xs text-black">Impact Stories</span>
             </div>
           </motion.div>
         </div>
@@ -118,8 +118,8 @@ const ChampionFundraiserBox = ({
         >
           {/* Primary Button */}
           <motion.button
-            onClick={handleStartFundraising}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95"
+            onClick={handleBecomeChampion}
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 10px 25px rgba(147, 51, 234, 0.3)",
@@ -127,7 +127,7 @@ const ChampionFundraiserBox = ({
             }}
             whileTap={{ scale: 0.98 }}
           >
-            <span>Start Fundraising</span>
+            <span className="whitespace-nowrap">Become Champion</span>
             <motion.div
               animate={{
                 x: [0, 5, 0],
@@ -146,7 +146,7 @@ const ChampionFundraiserBox = ({
           {/* Secondary Button */}
           <motion.button
             onClick={handleLearnMore}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-white white:bg-gray-800 hover:bg-gray-50 white:hover:bg-gray-700 text-black font-semibold rounded-lg shadow-md border  transition-all duration-300 transform hover:scale-105 active:scale-95"
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white font-semibold rounded-lg shadow-md border transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
@@ -154,7 +154,7 @@ const ChampionFundraiserBox = ({
             }}
             whileTap={{ scale: 0.98 }}
           >
-            <span>Learn More</span>
+            <span className="whitespace-nowrap">Learn More</span>
           </motion.button>
         </motion.div>
       </div>
