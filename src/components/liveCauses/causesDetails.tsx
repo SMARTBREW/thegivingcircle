@@ -1,7 +1,17 @@
 import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Heart, Share2, Bookmark, Shield, Award, CheckCircle, AlertCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Clock, Target, Building2, User, Users, Calendar, TrendingUp, Briefcase, BookOpen, HeartHandshake, Star, Quote, Trophy, Camera, Image, Eye, AlertTriangle, HelpCircle } from 'lucide-react';
 
 const CauseDetailPage = () => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  // DYNAMIC IMPLEMENTATION ROADMAP:
+  // Current: Static cause data for demonstration
+  // Future: Fetch cause data based on ID parameter from API
+  // Example: const cause = await fetchCauseById(id);
+  // This will enable each NGO's program areas to show their specific cause details
+  
   // Sample cause data focused on the cause itself
   const cause = {
     id: 1,
@@ -219,10 +229,20 @@ const CauseDetailPage = () => {
       <div className="bg-white shadow-sm border-b mt-[100px]">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <a href="/causes" className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors">
+                          <button 
+              onClick={() => navigate(-1)} 
+              className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
+            >
               <ArrowLeft size={20} />
-              <span className="font-medium">Back to Causes</span>
-            </a>
+              <span className="font-medium">Back to Previous Page</span>
+            </button>
+            {id && (
+              <div className="bg-blue-50 border border-blue-200 rounded-lg px-3 py-1">
+                <span className="text-sm text-blue-700 font-medium">
+                  Cause ID: {id} (Development Mode)
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>

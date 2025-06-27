@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useForm } from 'react-hook-form';
-import { Upload, FileText, Building2, Phone, Mail, CheckCircle } from 'lucide-react';
+import { Upload, FileText, Phone, Mail, CheckCircle } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { Card, CardContent } from '../components/ui/Card';
@@ -25,7 +25,6 @@ interface NGOFormData {
 export const NGOPartner: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  
   const { register, handleSubmit, formState: { errors }, watch } = useForm<NGOFormData>();
 
   const causes = [
@@ -79,10 +78,41 @@ export const NGOPartner: React.FC = () => {
     }
   };
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
+  const formVariants = {
+    hidden: { opacity: 0, x: 50 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  };
+
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16 sm:pt-20 lg:pt-24">
-        <div className="max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="min-h-screen bg-gray-50">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
+        
+        <div className="relative z-10 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 pt-20 sm:pt-24 md:pt-28">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -90,52 +120,78 @@ export const NGOPartner: React.FC = () => {
           >
             <Card>
               <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                <motion.div 
+                  className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
+                >
                   <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
-                </div>
+                </motion.div>
                 
-                <h2 className="text-2xl sm:text-3xl lg:text-3xl font-display font-bold text-gray-900 mb-3 sm:mb-4">
+                <motion.h2 
+                  className="text-2xl sm:text-3xl lg:text-3xl font-display font-bold text-gray-900 mb-3 sm:mb-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
                   Application Submitted!
-                </h2>
+                </motion.h2>
                 
-                <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-2 sm:px-0">
+                <motion.p 
+                  className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-2 sm:px-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.7 }}
+                >
                   Thank you for your interest in partnering with The Giving Circle. 
                   Our team will review your application and contact you within 48 hours.
-                </p>
+                </motion.p>
 
-                <div className="bg-gradient-to-r from-primary-50 to-burgundy-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8">
+                <motion.div 
+                  className="bg-gradient-to-r from-primary-50 to-burgundy-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.9 }}
+                >
                   <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">What happens next?</h3>
                   <div className="text-left space-y-2 sm:space-y-3">
-                    <div className="flex items-start space-x-2 sm:space-x-3">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">1</div>
-                      <div>
-                        <div className="font-medium text-gray-900 text-sm sm:text-base">Document Verification</div>
-                        <div className="text-xs sm:text-sm text-gray-600">We'll verify all submitted documents</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-2 sm:space-x-3">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">2</div>
-                      <div>
-                        <div className="font-medium text-gray-900 text-sm sm:text-base">Virtual Interview</div>
-                        <div className="text-xs sm:text-sm text-gray-600">Schedule a call to discuss your work</div>
-                      </div>
-                    </div>
-                    <div className="flex items-start space-x-2 sm:space-x-3">
-                      <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">3</div>
-                      <div>
-                        <div className="font-medium text-gray-900 text-sm sm:text-base">Partnership Onboarding</div>
-                        <div className="text-xs sm:text-sm text-gray-600">Get access to our platform and start connecting with champions</div>
-                      </div>
-                    </div>
+                    {[
+                      { title: "Document Verification", desc: "We'll verify all submitted documents" },
+                      { title: "Virtual Interview", desc: "Schedule a call to discuss your work" },
+                      { title: "Partnership Onboarding", desc: "Get access to our platform and start connecting with champions" }
+                    ].map((step, index) => (
+                      <motion.div 
+                        key={index}
+                        className="flex items-start space-x-2 sm:space-x-3"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1.1 + (index * 0.2) }}
+                      >
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">
+                          {index + 1}
+                        </div>
+                        <div>
+                          <div className="font-medium text-gray-900 text-sm sm:text-base">{step.title}</div>
+                          <div className="text-xs sm:text-sm text-gray-600">{step.desc}</div>
+                        </div>
+                      </motion.div>
+                    ))}
                   </div>
-                </div>
+                </motion.div>
 
-                <Button 
-                  onClick={() => window.location.href = '/'}
-                  className="w-full sm:w-auto"
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1.7 }}
                 >
-                  Return to Homepage
-                </Button>
+                  <Button 
+                    onClick={() => window.location.href = '/'}
+                    className="w-full sm:w-auto"
+                  >
+                    Return to Homepage
+                  </Button>
+                </motion.div>
               </CardContent>
             </Card>
           </motion.div>
@@ -145,35 +201,47 @@ export const NGOPartner: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 pt-16 sm:pt-20 lg:pt-24">
-      <div className="max-w-sm sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-8 sm:mb-12"
-        >
-          <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-500 to-burgundy-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
-            <Building2 className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
-          </div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-display font-bold text-gray-900 mb-3 sm:mb-4 px-2 sm:px-0">
-            Become an{' '}
-            <span className="bg-gradient-to-r from-primary-500 to-burgundy-500 bg-clip-text text-transparent">
-              NGO Partner
-            </span>
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-xs sm:max-w-2xl mx-auto px-2 sm:px-0">
-            Join our network of verified NGOs and connect with passionate champions 
-            who want to support your impactful work.
-          </p>
-        </motion.div>
+    <div className="min-h-screen bg-gray-50">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
 
-        <Card>
-          <CardContent className="p-4 sm:p-8 md:p-10 lg:p-12">
+      <motion.div 
+        className="relative z-10 flex flex-col min-h-screen items-center justify-start px-4 sm:px-6 md:px-12 lg:px-20 pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-12 md:pb-16 max-w-6xl mx-auto gap-8 sm:gap-12"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {/* Form Card */}
+        <motion.div 
+          className="w-full max-w-4xl"
+          variants={formVariants}
+        >
+          <motion.div 
+            className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
+          >
+            <div className="text-center mb-6 sm:mb-8">
+              <div className="flex justify-center mb-4">
+                <img 
+                  src="/Giving Circle logo.png" 
+                  alt="Giving Circle Logo" 
+                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                />
+              </div>
+              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">Join as NGO Partner</h2>
+              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                Transform lives by connecting with dedicated champions who are eager to amplify your mission, 
+                fund your initiatives, and create lasting social impact together.
+              </p>
+            </div>
+
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
               {/* Organization Details */}
-              <div>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
-                  <Building2 className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+              >
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                   Organization Details
                 </h3>
                 
@@ -230,10 +298,14 @@ export const NGOPartner: React.FC = () => {
                     <p className="mt-2 text-sm text-red-600">{errors.address.message}</p>
                   )}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Contact Information */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+              >
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
                   <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
                   Contact Information
@@ -277,19 +349,26 @@ export const NGOPartner: React.FC = () => {
                     error={errors.contactPhone?.message}
                   />
                 </div>
-              </div>
+              </motion.div>
 
               {/* Causes Supported */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 }}
+              >
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
                   Causes You Support
                 </h3>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                  {causes.map((cause) => (
-                    <label
+                  {causes.map((cause, index) => (
+                    <motion.label
                       key={cause}
                       className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 border border-gray-200 rounded-lg sm:rounded-xl hover:bg-gray-50 cursor-pointer transition-colors"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.5 + (index * 0.05) }}
                     >
                       <input
                         type="checkbox"
@@ -300,134 +379,80 @@ export const NGOPartner: React.FC = () => {
                         className="text-primary-500 focus:ring-primary-500 h-4 w-4"
                       />
                       <span className="text-xs sm:text-sm text-gray-700">{cause}</span>
-                    </label>
+                    </motion.label>
                   ))}
                 </div>
                 {errors.causesSupported && (
                   <p className="mt-2 text-sm text-red-600">{errors.causesSupported.message}</p>
                 )}
-              </div>
+              </motion.div>
 
               {/* Document Upload */}
-              <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+              >
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
                   <FileText className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
                   Required Documents
                 </h3>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      PAN Card
-                    </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
-                      <input
-                        type="file"
-                        accept=".pdf,.jpg,.jpeg,.png"
-                        {...register('panCard', { 
-                          required: 'PAN Card is required' 
-                        })}
-                        className="hidden"
-                        id="panCard"
-                      />
-                      <label
-                        htmlFor="panCard"
-                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
-                      >
-                        Click to upload PAN Card
+                  {[
+                    { name: 'panCard', label: 'PAN Card', id: 'panCard' },
+                    { name: 'certificate12A', label: '12A Certificate', id: 'certificate12A' },
+                    { name: 'certificate80G', label: '80G Certificate', id: 'certificate80G' },
+                    { name: 'profileLogo', label: 'Organization Logo', id: 'profileLogo', accept: '.jpg,.jpeg,.png' }
+                  ].map((doc, index) => (
+                    <motion.div 
+                      key={doc.name}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.6 + (index * 0.1) }}
+                    >
+                      <label className="block text-sm font-medium text-gray-700 mb-2">
+                        {doc.label}
                       </label>
-                    </div>
-                    {errors.panCard && (
-                      <p className="mt-2 text-sm text-red-600">{errors.panCard.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      12A Certificate
-                    </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
-                      <input
-                        type="file"
-                        accept=".pdf,.jpg,.jpeg,.png"
-                        {...register('certificate12A', { 
-                          required: '12A Certificate is required' 
-                        })}
-                        className="hidden"
-                        id="certificate12A"
-                      />
-                      <label
-                        htmlFor="certificate12A"
-                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
-                      >
-                        Click to upload 12A Certificate
-                      </label>
-                    </div>
-                    {errors.certificate12A && (
-                      <p className="mt-2 text-sm text-red-600">{errors.certificate12A.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      80G Certificate
-                    </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
-                      <input
-                        type="file"
-                        accept=".pdf,.jpg,.jpeg,.png"
-                        {...register('certificate80G', { 
-                          required: '80G Certificate is required' 
-                        })}
-                        className="hidden"
-                        id="certificate80G"
-                      />
-                      <label
-                        htmlFor="certificate80G"
-                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
-                      >
-                        Click to upload 80G Certificate
-                      </label>
-                    </div>
-                    {errors.certificate80G && (
-                      <p className="mt-2 text-sm text-red-600">{errors.certificate80G.message}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">
-                      Organization Logo
-                    </label>
-                    <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
-                      <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
-                      <input
-                        type="file"
-                        accept=".jpg,.jpeg,.png"
-                        {...register('profileLogo', { 
-                          required: 'Organization logo is required' 
-                        })}
-                        className="hidden"
-                        id="profileLogo"
-                      />
-                      <label
-                        htmlFor="profileLogo"
-                        className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
-                      >
-                        Click to upload Logo
-                      </label>
-                    </div>
-                    {errors.profileLogo && (
-                      <p className="mt-2 text-sm text-red-600">{errors.profileLogo.message}</p>
-                    )}
-                  </div>
+                      <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
+                        <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
+                        <input
+                          type="file"
+                          accept={doc.accept || ".pdf,.jpg,.jpeg,.png"}
+                          {...register(doc.name as keyof NGOFormData, { 
+                            required: `${doc.label} is required` 
+                          })}
+                          className="hidden"
+                          id={doc.id}
+                        />
+                        <label
+                          htmlFor={doc.id}
+                          className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
+                        >
+                          Click to upload {doc.label}
+                        </label>
+                      </div>
+                      {errors[doc.name as keyof NGOFormData] && (
+                        <p className="mt-2 text-sm text-red-600">
+                          {errors[doc.name as keyof NGOFormData]?.message}
+                        </p>
+                      )}
+                    </motion.div>
+                  ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Submit Button */}
-              <div className="pt-4 sm:pt-6 border-t border-gray-200">
+              <motion.div 
+                className="pt-4 sm:pt-6 border-t border-gray-200"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+              >
+                <div className="text-center text-gray-600 text-sm font-medium mb-4">
+                  <span className="text-green-600 font-semibold">25</span> NGOs joined our platform in the last month
+                </div>
+
                 <Button
                   type="submit"
                   size="lg"
@@ -441,11 +466,11 @@ export const NGOPartner: React.FC = () => {
                   By submitting this application, you agree to our terms and conditions. 
                   We'll review your application and contact you within 48 hours.
                 </p>
-              </div>
+              </motion.div>
             </form>
-          </CardContent>
-        </Card>
-      </div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
