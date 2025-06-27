@@ -5,6 +5,9 @@ import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
 import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
 import { NFTWall } from './pages/NFTWall';
+import ImpactStoryDetails from './pages/NFTWallDetails';
+
+
 import { NGOPartner } from './pages/NGOPartner';
 import { NGOList } from './pages/ngo-list';
 import { Causes } from './pages/Causes';
@@ -33,6 +36,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/onboarding" element={<CauseChampionOnboarding />} />
             <Route path="/nft-wall" element={<NFTWall />} />
+            <Route path="/nft-wall-details" element={<ImpactStoryDetails />} />
+
             {/* <Route path="/impact-stories" element={<NFTWall />} /> */}
            
             <Route path="/ngo-partner" element={<NGOPartner />} />
