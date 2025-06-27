@@ -16,7 +16,7 @@ const CauseDetailPage = () => {
     progressPercentage: 62,
     supporters: 143,
     daysLeft: 18,
-    image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop',
+    image: 'https://khushi.org.in/images/sliders/48218_home1.jpg',
     urgency: 'High',
     
     // Problem Statement

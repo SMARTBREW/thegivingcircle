@@ -38,7 +38,7 @@ export const OurImpact: React.FC = () => {
       title: 'Education',
       description: 'Empowering children through quality education and skill development programs.',
       position: { top: '25%', left: '32%' },
-      color: 'bg-white hover:bg-gray-50',
+      color: 'bg-blue-500 text-white hover:bg-blue-600',
     },
     {
       id: 'healthcare',
@@ -46,7 +46,7 @@ export const OurImpact: React.FC = () => {
       title: 'Healthcare',
       description: 'Providing essential medical care and health services to underserved communities.',
       position: { top: '40%', left: '25%' },
-      color: 'bg-white hover:bg-gray-50',
+      color: 'bg-pink-500 text-white hover:bg-pink-600',
     },
     {
       id: 'water',
@@ -54,7 +54,7 @@ export const OurImpact: React.FC = () => {
       title: 'Clean Water',
       description: 'Ensuring access to clean and safe drinking water for rural communities.',
       position: { top: '65%', left: '23%' },
-      color: 'bg-white hover:bg-gray-50',
+      color: 'bg-cyan-500 text-white hover:bg-cyan-600',
     },
     {
       id: 'shelter',
@@ -62,7 +62,7 @@ export const OurImpact: React.FC = () => {
       title: 'Shelter & Housing',
       description: 'Building homes and providing safe shelter for homeless families.',
       position: { top: '40%', left: '55%' },
-      color: 'bg-white hover:bg-gray-50',
+      color: 'bg-orange-500 text-white hover:bg-orange-600',
     },
     {
       id: 'women',
@@ -70,7 +70,7 @@ export const OurImpact: React.FC = () => {
       title: 'Women Empowerment',
       description: 'Supporting women through skill training and entrepreneurship programs.',
       position: { top: '50%', left: '67%' },
-      color: 'bg-white hover:bg-gray-50',
+      color: 'bg-purple-500 text-white hover:bg-purple-600',
     },
     {
       id: 'environment',
@@ -78,34 +78,34 @@ export const OurImpact: React.FC = () => {
       title: 'Environment',
       description: 'Protecting nature through tree plantation and conservation initiatives.',
       position: { top: '55%', left: '45%' },
-      color: 'bg-white hover:bg-gray-50',
+      color: 'bg-green-500 text-white hover:bg-green-600',
     },
   ];
 
   const impactStats: ImpactStat[] = [
     {
-      value: '4,21,908',
-      label: 'members contributing monthly',
-      icon: <Users className="w-8 h-8" />,
-      color: 'text-black',
+      value: '15,000+',
+      label: 'children educated annually',
+      icon: <GraduationCap className="w-8 h-8" />,
+      color: 'text-blue-500',
     },
     {
-      value: '670+',
-      label: 'children have been saved',
+      value: '92%',
+      label: 'of donations directly fund programs',
       icon: <Shield className="w-8 h-8" />,
-      color: 'text-black',
+      color: 'text-purple-500',
     },
     {
-      value: '₹25 million+',
-      label: 'raised for patients',
+      value: '₹4.5 Cr+',
+      label: 'raised through giving circles',
       icon: <Heart className="w-8 h-8" />,
-      color: 'text-black',
+      color: 'text-pink-500',
     },
     {
-      value: '540',
-      label: 'life-changing treatments funded',
-      icon: <Stethoscope className="w-8 h-8" />,
-      color: 'text-black',
+      value: '250+',
+      label: 'active cause champions nationwide',
+      icon: <Users className="w-8 h-8" />,
+      color: 'text-green-500',
     },
   ];
 
