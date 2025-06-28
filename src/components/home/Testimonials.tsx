@@ -78,7 +78,7 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-neutral to-white overflow-hidden">
+    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

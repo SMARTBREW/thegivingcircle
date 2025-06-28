@@ -146,7 +146,7 @@ const ChampionFundraiserBox = ({
           {/* Secondary Button */}
           <motion.button
             onClick={handleLearnMore}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white font-semibold rounded-lg shadow-md border transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-white  text-black dark:text-black font-semibold rounded-lg shadow-md border transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",

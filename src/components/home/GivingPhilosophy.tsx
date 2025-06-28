@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const GivingPhilosophy = () => {
   const [scrollY, setScrollY] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
@@ -43,7 +46,11 @@ const GivingPhilosophy = () => {
         .glassmorphism {
           background: rgba(255, 255, 255, 0.2);
           backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          box-shadow: 
+            0 8px 32px rgba(139, 92, 246, 0.15),
+            0 4px 16px rgba(0, 0, 0, 0.1),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6);
         }
       `}</style>
       
@@ -52,23 +59,32 @@ const GivingPhilosophy = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Philosophy Text */}
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-black text-glow">
+              <h2 className="text-4xl font-bold text-primary ">
                 Why Giving Matters
               </h2>
-              <p className="text-black text-lg leading-relaxed">
+              <p className="text-primary/80 text-lg leading-relaxed">
                 Every act of giving creates ripples that extend far beyond what we can see.
                 When we come together as a circle, our individual contributions become a
                 powerful force for change.
               </p>
-              <p className="text-black leading-relaxed">
+              <p className="text-primary/70 leading-relaxed">
                 The Giving Circle isn't just about donations—it's about building a community
                 where every person's generosity multiplies through connection, collaboration,
                 and shared purpose. Together, we transform lives, communities, and the world.
               </p>
               <div className="pt-4">
-                <button className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg">
-                  Join Our Mission
-                </button>
+              <motion.button
+            onClick={() => navigate("/onboarding")}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-1/2 rounded-full"
+            whileHover={{
+              scale: 1.05,
+              boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
+              transition: { type: "spring", stiffness: 400, damping: 20 },
+            }}
+            whileTap={{ scale: 0.98 }}
+          >
+            <span className="whitespace-nowrap">Join Our Mission</span>
+          </motion.button>
               </div>
             </div>
 
@@ -87,7 +103,7 @@ const GivingPhilosophy = () => {
                         key={`${repeatIndex}-${itemIndex}`}
                         className="glassmorphism p-4 rounded-lg text-center min-h-20 flex items-center justify-center"
                       >
-                        <span className="text-black text-sm font-medium text-center leading-tight">
+                        <span className="text-primary text-sm font-medium text-center leading-tight">
                           {item}
                         </span>
                       </div>
