@@ -20,7 +20,7 @@ export const Home: React.FC = () => {
       <ImpactGallery />
       <GivingPhilosophy/>
       <Testimonials />
-      <ChampionFundraiserBox/>
+      {/* <ChampionFundraiserBox/> */}
     </div>
   );
 };

@@ -78,22 +78,22 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-b from-neutral to-white overflow-hidden">
+    <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-b from-neutral to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24"
+          className="text-center mb-6 sm:mb-8 md:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-text mb-4 sm:mb-6 md:mb-8 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text mb-3 sm:mb-4 md:mb-5 px-4">
             Voices of{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Change
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-xl text-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto px-4 sm:px-6 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-text/70 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4 sm:px-6 leading-relaxed">
             Hear from champions, NGO partners, and community members whose lives have been transformed
             through our circle of giving.
           </p>
@@ -102,7 +102,7 @@ export const Testimonials: React.FC = () => {
         <div className="relative">
           {/* Main Testimonial */}
           <div 
-            className="relative min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[400px] flex items-center justify-center px-2 sm:px-4"
+            className="relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] flex items-center justify-center px-2 sm:px-4"
             ref={testimonialRef}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -118,7 +118,7 @@ export const Testimonials: React.FC = () => {
                 className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto"
               >
                 <motion.div 
-                  className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 relative"
+                  className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-4 sm:p-5 md:p-6 relative"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 >
@@ -128,10 +128,10 @@ export const Testimonials: React.FC = () => {
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                     className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6"
                   >
-                    <Quote className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 text-primary-100" />
+                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary-100" />
                   </motion.div>
                   
-                  <div className="flex flex-col sm:flex-row md:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4 md:space-x-6 lg:space-x-8 pt-8 sm:pt-0">
+                  <div className="flex flex-col sm:flex-row md:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-4 pt-6 sm:pt-0">
                     <motion.div 
                       className="flex-shrink-0 order-first sm:order-first"
                       whileHover={{ scale: 1.1, rotate: 5 }}
@@ -140,23 +140,23 @@ export const Testimonials: React.FC = () => {
                       <img
                         src={testimonials[currentIndex].image}
                         alt={testimonials[currentIndex].name}
-                        className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 rounded-full object-cover shadow-lg border-2 sm:border-4 border-white"
+                        className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 rounded-full object-cover shadow-lg border-2 border-white"
                       />
                     </motion.div>
                     
                     <div className="flex-1 text-center sm:text-left">
-                      <blockquote className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl text-text/80 italic leading-relaxed mb-4 sm:mb-6 md:mb-8 px-2 sm:px-0">
+                      <blockquote className="text-sm sm:text-base md:text-lg text-text/80 italic leading-relaxed mb-3 sm:mb-4 px-2 sm:px-0">
                         "{testimonials[currentIndex].quote}"
                       </blockquote>
                       
                       <div className="space-y-1 sm:space-y-2">
-                        <div className="font-semibold text-text text-base sm:text-lg md:text-xl lg:text-2xl">
+                        <div className="font-semibold text-text text-base sm:text-lg">
                           {testimonials[currentIndex].name}
                         </div>
-                        <div className="text-primary-500 font-medium text-sm sm:text-base md:text-lg lg:text-xl">
+                        <div className="text-primary-500 font-medium text-sm sm:text-base">
                           {testimonials[currentIndex].role}
                         </div>
-                        <div className="text-text/60 text-xs sm:text-sm md:text-base lg:text-lg">
+                        <div className="text-text/60 text-xs sm:text-sm">
                           {testimonials[currentIndex].organization}
                         </div>
                       </div>
@@ -179,7 +179,7 @@ export const Testimonials: React.FC = () => {
           </div>
 
           {/* Navigation Indicators */}
-          <div className="flex items-center justify-center space-x-4 mt-6 sm:mt-8 md:mt-10">
+          <div className="flex items-center justify-center space-x-4 mt-4 sm:mt-5">
             <div className="flex space-x-2 sm:space-x-3">
               {testimonials.map((_, index) => (
                 <motion.button

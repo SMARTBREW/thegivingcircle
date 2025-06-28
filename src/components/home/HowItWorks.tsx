@@ -5,8 +5,6 @@ import { motion } from "framer-motion";
 import { cn } from "../../lib/utils";
 
 const AboutImpactGallery = () => {
-  const [activeFilter, setActiveFilter] = useState<string>("All");
-  const filters = ["All", "Health", "Education", "Environment"];
 
   return (
     <section className="w-full py-20 bg-gradient-to-br from-blue-50/30 via-green-50/20 to-teal-50/30">
@@ -68,51 +66,12 @@ const AboutImpactGallery = () => {
             </div>
             
             <div className="md:order-2">
-              <ShuffleGrid category={activeFilter} />
+              <ShuffleGrid category="All" />
             </div>
           </div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-text mb-6 sm:mb-8">
-            See the Change
-          </h3>
-          <p className="text-sm sm:text-base md:text-lg text-text/70 mb-6 sm:mb-8 max-w-3xl mx-auto">
-            Witness the real impact of our collective giving through these moments of change in health, education, and environmental initiatives.
-          </p>
-          
-          {/* Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={cn(
-                  "px-4 py-2 rounded-md font-medium transition-all",
-                  activeFilter === filter 
-                    ? "bg-purple-600 text-white" 
-                    : "bg-gray-100 hover:bg-gray-200 text-gray-700"
-                )}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-          
-          <button className={cn(
-            "bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium py-3 px-6 rounded-md",
-            "transition-all hover:shadow-lg active:scale-95",
-            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2"
-          )}>
-            Join our circle
-          </button>
-        </motion.div>
+
       </div>
     </section>
   );
