@@ -14,5 +14,6 @@ export default defineConfig({
       },
     },
   },
-  base: './', // Use relative paths for S3 compatibility
+  // Use relative paths for S3, absolute for Render
+  base: process.env.VITE_DEPLOY_TARGET === 's3' ? './' : '/',
 });
