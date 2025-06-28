@@ -159,7 +159,7 @@ const NavbarComponent = () => {
       <div className="max-w-7xl mx-auto">
         <div className={`
           bg-white/80 backdrop-blur-2xl border border-white/20 
-          px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 
+          rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 
           shadow-2xl shadow-black/10 transition-all duration-500 backdrop-saturate-150
           ${scrolled ? 'bg-white/90 backdrop-blur-3xl shadow-3xl border-white/30' : ''}
         `}>
@@ -228,7 +228,7 @@ const NavbarComponent = () => {
                           initial={{ opacity: 0, y: 10 }}
                           animate={{ opacity: 1, y: 0 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-1 bg-white shadow-xl border border-gray-200 py-2 min-w-48 z-50"
+                          className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-48 z-50"
                         >
                           {item.dropdownItems.map((dropdownItem, dropIdx) => (
                             <motion.a
@@ -331,7 +331,7 @@ const NavbarComponent = () => {
                         initial={{ opacity: 0, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.2 }}
-                        className="absolute top-full left-0 mt-1 bg-white shadow-xl border border-gray-200 py-2 min-w-40 z-50"
+                        className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-40 z-50"
                       >
                         {item.dropdownItems.map((dropdownItem, dropIdx) => (
                           <motion.a
@@ -397,7 +397,7 @@ const NavbarComponent = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 font-medium text-xs lg:text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 rounded-lg font-medium text-xs lg:text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
                 Become a Cause Champion
               </motion.button>
@@ -408,7 +408,7 @@ const NavbarComponent = () => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-600 hover:text-gray-900 focus:outline-none p-2 hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
+                className="text-gray-600 hover:text-gray-900 focus:outline-none p-2 rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
               >
                 {isOpen ? <X size={22} /> : <Menu size={22} />}
               </motion.button>
@@ -426,7 +426,7 @@ const NavbarComponent = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-2 font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-2 rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
               >
                 Champion
               </motion.button>
@@ -449,7 +449,7 @@ const NavbarComponent = () => {
                       animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       onClick={() => toggleDropdown(item.name)}
-                      className={`flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 ${
+                      className={`flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
                         item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                       }`}
                     >
@@ -484,7 +484,7 @@ const NavbarComponent = () => {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.2, delay: dropIdx * 0.05 }}
-                            className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                            className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors rounded-lg"
                             onClick={() => setIsOpen(false)}
                           >
                             {dropdownItem.name}
@@ -500,7 +500,7 @@ const NavbarComponent = () => {
                     initial={{ x: -50, opacity: 0 }}
                     animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={`block px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 ${
+                    className={`block px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
                       item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                     }`}
                     onClick={() => setIsOpen(false)}
@@ -533,7 +533,7 @@ const NavbarComponent = () => {
                     setIsOpen(false);
                     window.location.href = '/onboarding';
                   }}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-full"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-full"
                 >
                   Become a Cause Champion
                 </motion.button>
