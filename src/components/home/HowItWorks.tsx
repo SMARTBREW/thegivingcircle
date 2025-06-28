@@ -1,21 +1,15 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Button } from '../ui/Button';
+"use client"
 
-interface ValueProps {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-  color: string;
-  delay: number;
-}
+import { useState, useEffect, useRef } from "react";
+import { motion } from "framer-motion";
+import { cn } from "../../lib/utils";
 
-export const AboutUs: React.FC = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const teamSliderRef = useRef<HTMLDivElement>(null);
+const AboutImpactGallery = () => {
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+  const filters = ["All", "Health", "Education", "Environment"];
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 xl:py-32 bg-white">
+    <section className="w-full py-20 bg-gradient-to-br from-blue-50/30 via-green-50/20 to-teal-50/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,6 +29,7 @@ export const AboutUs: React.FC = () => {
             creating a world where every act of kindness leaves a permanent, traceable mark.
           </p>
         </motion.div>
+        
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,33 +66,261 @@ export const AboutUs: React.FC = () => {
                 </p>
               </div>
             </div>
-            <div className="relative">
-              <motion.div 
-                className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl"
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                viewport={{ once: true }}
-                whileHover={{ scale: 1.02 }}
-              >
-                {/* Replace this src with your actual image path */}
-                <img 
-                  src="/Smileshero.jpg" 
-                  alt="Our Story - Making Impact Together"
-                  className="w-full h-64 sm:h-80 md:h-96 lg:h-[500px] object-cover"
-                />
-                {/* Overlay gradient for better text readability if needed */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                
-                {/* Optional: Add a floating element for visual interest */}
-                
-              </motion.div>          
-              {/* Optional: Add a decorative element behind the image */}
-              <div className="absolute -top-4 -right-4 w-full h-full bg-gradient-to-br from-primary-200 to-accent-200 rounded-2xl sm:rounded-3xl -z-10"></div>
+            
+            <div className="md:order-2">
+              <ShuffleGrid category={activeFilter} />
             </div>
           </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <h3 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-text mb-6 sm:mb-8">
+            See the Change
+          </h3>
+          <p className="text-sm sm:text-base md:text-lg text-text/70 mb-6 sm:mb-8 max-w-3xl mx-auto">
+            Witness the real impact of our collective giving through these moments of change in health, education, and environmental initiatives.
+          </p>
+          
+          {/* Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-3 mb-8">
+            {filters.map((filter) => (
+              <button
+                key={filter}
+                onClick={() => setActiveFilter(filter)}
+                className={cn(
+                  "px-4 py-2 rounded-md font-medium transition-all",
+                  activeFilter === filter 
+                    ? "bg-purple-600 text-white" 
+                    : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+                )}
+              >
+                {filter}
+              </button>
+            ))}
+          </div>
+          
+          <button className={cn(
+            "bg-gradient-to-r from-purple-600 to-pink-600 text-white font-medium py-3 px-6 rounded-md",
+            "transition-all hover:shadow-lg active:scale-95",
+            "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-purple-500 focus-visible:ring-offset-2"
+          )}>
+            Join our circle
+          </button>
         </motion.div>
       </div>
     </section>
   );
 };
+
+// Define the type for our impact items
+interface ImpactItem {
+  id: number;
+  title: string;
+  category: string;
+  src: string;
+}
+
+// Helper function to shuffle array
+const shuffle = (array: ImpactItem[]) => {
+  // Create a copy of the array to avoid mutating the original
+  const newArray = [...array];
+  let currentIndex = newArray.length;
+  let randomIndex;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [newArray[currentIndex], newArray[randomIndex]] = [
+      newArray[randomIndex],
+      newArray[currentIndex],
+    ];
+  }
+
+  return newArray;
+};
+
+// Impact project data with categories
+const impactData: ImpactItem[] = [
+  {
+    id: 1,
+    title: "Tree Plantation Drive",
+    category: "Environment",
+    src: "https://kokanngo.org/articles/wp-content/uploads/2024/01/Pioneering-Change-Education.png",
+  },
+  {
+    id: 2,
+    title: "Medical Camp",
+    category: "Health",
+    src: "https://www.kokanngo.org/public/website/images/food-donation.png",
+  },
+  {
+    id: 3,
+    title: "School Library Setup",
+    category: "Education",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQFAdoTdcoEjHxmw67XXMWJ-WnSGBdipUaFiyzA2-r-TI1De95ZwXqfp8SJVomhBXiJVs&usqp=CAU",
+  },
+  {
+    id: 4,
+    title: "Clean Water Project",
+    category: "Environment",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4sFgOjHemVWRJiBDp4GTnefpSHRJLN-NBTtZq9y2zOUMQ3YEXb2MxHJ6gu9E6deN_xyE&usqp=CAU",
+  },
+  {
+    id: 5,
+    title: "Children's Health Checkup",
+    category: "Health",
+    src: "https://www.animalcareindia.org.in/wp-content/uploads/2025/03/Untitled-design-4.png",
+  },
+  {
+    id: 6,
+    title: "Digital Learning Center",
+    category: "Education",
+    src: "https://mamtahimc.in/image/rmnch-m.jpg",
+  },
+  {
+    id: 7,
+    title: "Community Garden",
+    category: "Environment",
+    src: "https://www.animalcareindia.org.in/wp-content/uploads/2025/03/Untitled-design-5.png",
+  },
+  {
+    id: 8,
+    title: "Nutrition Program",
+    category: "Health",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KYdM7ttZiKqM_iV54OC5Gp03vcgMjDjq3bRpZQskQQp9MK61Yp9cOq6PVfrokmAP-aI&usqp=CAU",
+  },
+  {
+    id: 9,
+    title: "Scholarship Program",
+    category: "Education",
+    src: "https://media.licdn.com/dms/image/v2/D5622AQGJyDl8RVn79A/feedshare-shrink_800/B56ZYaPfI8GoAg-/0/1744196991489?e=2147483647&v=beta&t=dRCGgTukqeyAdz4b-PjY_UWmakEK0VXXJkv1Bl9mHJM ",
+  },
+  {
+    id: 10,
+    title: "Reforestation Project",
+    category: "Environment",
+    src: "https://mamtahimc.in/wp-content/uploads/2023/12/abmb-m.jpg",
+  },
+  {
+    id: 11,
+    title: "Mobile Health Clinic",
+    category: "Health",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXeVOz7GMpfSRpYY1RVvrMbqRFwEdqkMj1vDrl2iDE-3nsbxyq81H33gvEx1bPQrxonaA&usqp=CAU",
+  },
+  {
+    id: 12,
+    title: "STEM Education Workshop",
+    category: "Education",
+    src: "https://khushii.org/wp-content/uploads/2023/03/ppf-donatemm.jpg",
+  },
+  {
+    id: 13,
+    title: "Solar Energy Initiative",
+    category: "Environment",
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDIt0-4UbfJjTK5jtZScdINO3UhAj7oxPRuw&s",
+  },
+  {
+    id: 14,
+    title: "Mental Health Support",
+    category: "Health",
+    src: "https://khushii.org/wp-content/uploads/2022/05/MobBanner_C.jpg",
+  },
+  {
+    id: 15,
+    title: "Teacher Training Program",
+    category: "Education",
+    src: "https://www.kokanngo.org/public/URL/popupboximagenew_1.png",
+  },
+  {
+    id: 16,
+    title: "Waste Management Project",
+    category: "Environment",
+    src: "https://www.kokanngo.org/public/OurGallery/3.png",
+  },
+];
+
+// Generate squares based on active filter
+const generateSquares = (category: string) => {
+  const filteredData = category === "All" 
+    ? impactData 
+    : impactData.filter(item => item.category === category);
+  
+  // If we have less than 16 items after filtering, duplicate some to fill the grid
+  let dataToUse = [...filteredData];
+  while (dataToUse.length < 16) {
+    dataToUse = [...dataToUse, ...filteredData];
+  }
+  
+  // Take only the first 16 items
+  dataToUse = dataToUse.slice(0, 16);
+  
+  return shuffle(dataToUse).map((item) => (
+    <motion.div
+      key={item.id}
+      layout
+      transition={{ duration: 1.5, type: "spring" }}
+      className="w-full h-full rounded-md overflow-hidden bg-gray-100 relative group"
+      style={{
+        backgroundImage: `url(${item.src})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end">
+        <div className="p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <h4 className="font-medium text-sm">{item.title}</h4>
+          <span className="text-xs text-white/80">{item.category}</span>
+        </div>
+      </div>
+    </motion.div>
+  ));
+};
+
+interface ShuffleGridProps {
+  category: string;
+}
+
+// ShuffleGrid component with category filter support
+const ShuffleGrid = ({ category = "All" }: ShuffleGridProps) => {
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [squares, setSquares] = useState(generateSquares(category));
+
+  useEffect(() => {
+    // Reset squares when category changes
+    setSquares(generateSquares(category));
+    
+    // Clear existing timeout
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    
+    // Start new shuffle cycle
+    shuffleSquares();
+
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+    };
+  }, [category]);
+
+  const shuffleSquares = () => {
+    setSquares(generateSquares(category));
+    timeoutRef.current = setTimeout(shuffleSquares, 3000);
+  };
+
+  return (
+    <div className="grid grid-cols-4 grid-rows-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] gap-1">
+      {squares.map((sq) => sq)}
+    </div>
+  );
+};
+
+export default AboutImpactGallery;
