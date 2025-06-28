@@ -5,7 +5,8 @@ import {
   Share2, Heart, Download, ExternalLink, Badge, TrendingUp, 
   Target, Award, Globe, Clock, Camera, FileText, MessageSquare,
   Twitter, Facebook, Link, Copy, Eye, ThumbsUp, BookOpen,
-  Wallet, Shield, AlertCircle, Play, Pause, Volume2, VolumeX
+  Wallet, Shield, AlertCircle, Play, Pause, Volume2, VolumeX,
+  Building2
 } from 'lucide-react';
 
 type ButtonProps = {
@@ -228,21 +229,21 @@ const ImpactStoryDetails: React.FC = () => {
 
             {/* Key Metrics */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-purple-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-purple-600">{storyData.impactNumber}</div>
-                <div className="text-sm text-gray-600">{storyData.impactUnit}</div>
+              <div className="bg-white p-4 rounded-xl border">
+                <div className="text-2xl font-bold text-black">{storyData.impactNumber}</div>
+                <div className="text-sm text-black">{storyData.impactUnit}</div>
               </div>
-              <div className="bg-green-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-green-600">{storyData.impactMetrics.completionRate}%</div>
-                <div className="text-sm text-gray-600">Completion Rate</div>
+              <div className="bg-white p-4 rounded-xl border">
+                <div className="text-2xl font-bold text-black">{storyData.impactMetrics.completionRate}%</div>
+                <div className="text-sm text-black">Completion Rate</div>
               </div>
-              <div className="bg-blue-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-blue-600">₹{(storyData.totalFunding / 100000).toFixed(1)}L</div>
-                <div className="text-sm text-gray-600">Total Investment</div>
+              <div className="bg-white p-4 rounded-xl border">
+                <div className="text-2xl font-bold text-black">₹{(storyData.totalFunding / 100000).toFixed(1)}L</div>
+                <div className="text-sm text-black">Total Investment</div>
               </div>
-              <div className="bg-pink-50 p-4 rounded-xl">
-                <div className="text-2xl font-bold text-pink-600">{storyData.impactMetrics.villages}</div>
-                <div className="text-sm text-gray-600">Villages Covered</div>
+              <div className="bg-white p-4 rounded-xl border">
+                <div className="text-2xl font-bold text-black">{storyData.impactMetrics.villages}</div>
+                <div className="text-sm text-black">Villages Covered</div>
               </div>
             </div>
 
@@ -294,40 +295,40 @@ const ImpactStoryDetails: React.FC = () => {
   const renderImpactMetrics = () => (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-gradient-to-br from-purple-500 to-purple-600 p-6 rounded-xl text-white">
+        <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <Users className="w-8 h-8" />
-            <span className="text-purple-200 text-sm">Direct Impact</span>
+            <span className="text-black text-sm">Direct Impact</span>
           </div>
           <div className="text-3xl font-bold">{storyData.impactMetrics.direct}</div>
-          <div className="text-purple-200 text-sm">People Directly Impacted</div>
+          <div className="text-black text-sm">People Directly Impacted</div>
         </div>
         
-        <div className="bg-gradient-to-br from-green-500 to-green-600 p-6 rounded-xl text-white">
+        <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <Globe className="w-8 h-8" />
-            <span className="text-green-200 text-sm">Indirect Impact</span>
+            <span className="text-black text-sm">Indirect Impact</span>
           </div>
           <div className="text-3xl font-bold">{storyData.impactMetrics.indirect}</div>
-          <div className="text-green-200 text-sm">People Indirectly Impacted</div>
+          <div className="text-black text-sm">People Indirectly Impacted</div>
         </div>
         
-        <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-6 rounded-xl text-white">
+        <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <MapPin className="w-8 h-8" />
-            <span className="text-blue-200 text-sm">Geographic Reach</span>
+            <span className="text-black text-sm">Geographic Reach</span>
           </div>
           <div className="text-3xl font-bold">{storyData.impactMetrics.communities}</div>
-          <div className="text-blue-200 text-sm">Communities Served</div>
+          <div className="text-black text-sm">Communities Served</div>
         </div>
         
-        <div className="bg-gradient-to-br from-pink-500 to-pink-600 p-6 rounded-xl text-white">
+        <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <TrendingUp className="w-8 h-8" />
-            <span className="text-pink-200 text-sm">Income Growth</span>
+            <span className="text-black text-sm">Income Growth</span>
           </div>
           <div className="text-3xl font-bold">{storyData.impactMetrics.averageIncomeIncrease}%</div>
-          <div className="text-pink-200 text-sm">Average Income Increase</div>
+          <div className="text-black text-sm">Average Income Increase</div>
         </div>
       </div>
 
@@ -399,26 +400,71 @@ const ImpactStoryDetails: React.FC = () => {
     <div className="space-y-6">
       <h3 className="text-xl font-semibold">Project Timeline</h3>
       <div className="relative">
-        <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-gray-200"></div>
+        {/* Animated connecting line */}
+        <motion.div 
+          className="absolute left-4 top-0 w-0.5 bg-gray-200"
+          initial={{ height: 0 }}
+          animate={{ height: '100%' }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        ></motion.div>
+        
         {storyData.milestones.map((milestone, index) => (
-          <div key={index} className="relative flex items-start space-x-4 pb-8">
-            <div className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-              milestone.status === 'completed' ? 'bg-green-500' : 'bg-gray-300'
-            }`}>
-              {milestone.status === 'completed' ? (
-                <CheckCircle className="w-4 h-4 text-white" />
-              ) : (
-                <Clock className="w-4 h-4 text-gray-600" />
-              )}
-            </div>
-            <div className="flex-1 min-w-0">
+          <motion.div 
+            key={index} 
+            className="relative flex items-start space-x-4 pb-8"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ 
+              duration: 0.3, 
+              delay: index * 0.3,
+              ease: "easeOut"
+            }}
+          >
+            {/* Animated node */}
+            <motion.div 
+              className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                milestone.status === 'completed' ? 'bg-green-500' : 'bg-gray-300'
+              }`}
+              initial={{ scale: 0, rotate: 180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: index * 0.3 + 0.1,
+                type: "spring",
+                stiffness: 300
+              }}
+            >
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: index * 0.3 + 0.2 }}
+              >
+                {milestone.status === 'completed' ? (
+                  <CheckCircle className="w-4 h-4 text-white" />
+                ) : (
+                  <Clock className="w-4 h-4 text-gray-600" />
+                )}
+              </motion.div>
+            </motion.div>
+            
+            {/* Animated content */}
+            <motion.div 
+              className="flex-1 min-w-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ 
+                duration: 0.3, 
+                delay: index * 0.3 + 0.15,
+                ease: "easeOut"
+              }}
+            >
               <div className="flex items-center justify-between mb-2">
                 <h4 className="font-semibold text-gray-900">{milestone.title}</h4>
                 <span className="text-sm text-gray-500">{new Date(milestone.date).toLocaleDateString()}</span>
               </div>
               <p className="text-gray-600 text-sm">{milestone.description}</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         ))}
       </div>
     </div>
@@ -430,16 +476,13 @@ const ImpactStoryDetails: React.FC = () => {
       <div className="bg-white p-6 rounded-xl shadow-lg">
         <h3 className="text-xl font-semibold mb-6">Project Champion</h3>
         <div className="flex items-start space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xl font-bold">
             {storyData.championName.charAt(0)}
           </div>
           <div className="flex-1">
             <h4 className="text-lg font-semibold text-gray-900">{storyData.championName}</h4>
             <p className="text-gray-600 mb-4">{storyData.championBio}</p>
             <div className="flex space-x-4">
-              <Button variant="outline" size="sm" icon={<MessageSquare className="w-4 h-4" />}>
-                Contact Champion
-              </Button>
               <Button variant="ghost" size="sm" icon={<ExternalLink className="w-4 h-4" />}>
                 View Profile
               </Button>
@@ -452,7 +495,7 @@ const ImpactStoryDetails: React.FC = () => {
       <div className="bg-white p-6 rounded-xl shadow-lg">
         <h3 className="text-xl font-semibold mb-6">Partner NGO</h3>
         <div className="flex items-start space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center text-white text-xl font-bold">
             {storyData.ngoName.charAt(0)}
           </div>
           <div className="flex-1">
@@ -468,12 +511,15 @@ const ImpactStoryDetails: React.FC = () => {
                 <div className="text-sm text-gray-600">Founded</div>
               </div>
             </div>
-            <div className="flex space-x-4">
+            <div className="flex flex-wrap gap-2">
               <Button variant="outline" size="sm" icon={<ExternalLink className="w-4 h-4" />}>
                 Visit Website
               </Button>
               <Button variant="ghost" size="sm" icon={<FileText className="w-4 h-4" />}>
                 View All Projects
+              </Button>
+              <Button variant="outline" size="sm" icon={<Eye className="w-4 h-4" />}>
+                View NGO Details
               </Button>
             </div>
           </div>
@@ -536,18 +582,18 @@ const ImpactStoryDetails: React.FC = () => {
             </div>
           </div>
           
-          <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-4 rounded-lg">
+          <div className="bg-white p-4 rounded-lg border">
             <h4 className="font-semibold mb-3">Blockchain Verification</h4>
             <div className="space-y-2 text-sm">
-              <div className="flex items-center text-green-600">
+              <div className="flex items-center text-blue-600">
                 <CheckCircle className="w-4 h-4 mr-2" />
                 Impact data verified on-chain
               </div>
-              <div className="flex items-center text-green-600">
+              <div className="flex items-center text-blue-600">
                 <CheckCircle className="w-4 h-4 mr-2" />
                 Financial transparency confirmed
               </div>
-              <div className="flex items-center text-green-600">
+              <div className="flex items-center text-blue-600">
                 <CheckCircle className="w-4 h-4 mr-2" />
                 Milestone achievements recorded
               </div>
@@ -626,7 +672,11 @@ const ImpactStoryDetails: React.FC = () => {
       <div className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Button variant="ghost" icon={<ArrowLeft className="w-4 h-4" />}>
+            <Button 
+              variant="ghost" 
+              icon={<ArrowLeft className="w-4 h-4" />}
+              onClick={() => window.history.back()}
+            >
               Back to Stories
             </Button>
             
@@ -665,15 +715,25 @@ const ImpactStoryDetails: React.FC = () => {
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-2">
-                <Badge className="w-5 h-5 text-purple-600" />
-                <span className="font-medium text-purple-600">{storyData.ngoName}</span>
+                <Badge className="w-5 h-5 text-black" />
+                <span className="font-bold text-black">{storyData.ngoName}</span>
               </div>
-              {storyData.verified && (
+              <div className="flex items-center space-x-2">
+                {storyData.verified && (
+                  <div className="flex items-center space-x-1 bg-blue-100 px-2 py-1 rounded-full">
+                    <CheckCircle className="w-4 h-4 text-blue-600" />
+                    <span className="text-xs font-medium text-blue-700">Verified</span>
+                  </div>
+                )}
                 <div className="flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
-                  <CheckCircle className="w-4 h-4 text-green-600" />
-                  <span className="text-xs font-medium text-green-700">Verified</span>
+                  <Building2 className="w-4 h-4 text-green-600" />
+                  <span className="text-xs font-medium text-green-700">Registered NGO</span>
                 </div>
-              )}
+                <div className="flex items-center space-x-1 bg-amber-100 px-2 py-1 rounded-full">
+                  <Award className="w-4 h-4 text-amber-600" />
+                  <span className="text-xs font-medium text-amber-700">Certified</span>
+                </div>
+              </div>
             </div>
             
             <div className="flex items-center space-x-4">
@@ -683,18 +743,18 @@ const ImpactStoryDetails: React.FC = () => {
               </div>
               <div className="flex items-center space-x-1 text-gray-600">
                 <Calendar className="w-4 h-4" />
-                <span className="text-sm">{storyData.status}</span>
+                <span className="text-sm">{new Date(storyData.endDate).toLocaleDateString()}</span>
               </div>
             </div>
           </div>
           
           {/* Status Banner */}
           {storyData.status === 'Completed' && (
-            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-4">
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
               <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-green-600 mr-2" />
-                <span className="font-medium text-green-800">Project Successfully Completed</span>
-                <span className="ml-2 text-sm text-green-600">
+                <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
+                <span className="font-medium text-blue-900">Project Successfully Completed</span>
+                <span className="ml-2 text-sm text-blue-700">
                   All milestones achieved and impact verified on blockchain
                 </span>
               </div>
@@ -713,7 +773,7 @@ const ImpactStoryDetails: React.FC = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
                   activeTab === tab.id
-                    ? 'border-purple-500 text-purple-600'
+                    ? 'border-blue-500 text-blue-600'
                     : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                 }`}
               >
