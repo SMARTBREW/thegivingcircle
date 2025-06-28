@@ -6,8 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:s3": "VITE_DEPLOY_TARGET=s3 vite build",
-    "build:render": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
