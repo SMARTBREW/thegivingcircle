@@ -241,11 +241,11 @@ export const NFTWall: React.FC = () => {
         {/* NGO Info and Impact Metrics */}
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">
-            <Badge className="w-4 h-4 text-purple-600" />
-            <span className="text-xs sm:text-sm font-medium text-purple-600 truncate">{story.ngoName}</span>
+            <Badge className="w-4 h-4 text-blue-600" />
+            <span className="text-xs sm:text-sm font-medium text-blue-600 truncate">{story.ngoName}</span>
           </div>
           <div className="text-right flex-shrink-0">
-            <div className="text-lg sm:text-xl md:text-2xl font-bold text-pink-600">
+            <div className="text-lg sm:text-xl md:text-2xl font-bold text-blue-600">
               {story.impactNumber.toLocaleString()}
             </div>
             <div className="text-xs text-gray-500">{story.impactUnit}</div>
@@ -281,7 +281,7 @@ export const NFTWall: React.FC = () => {
         {/* Tags based on content */}
         <div className="flex flex-wrap gap-1 mb-4">
           {story.title.includes('Education') && (
-            <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
+            <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full text-xs font-medium">
               Education
             </span>
           )}
@@ -306,7 +306,7 @@ export const NFTWall: React.FC = () => {
             </span>
           )}
           {story.title.includes('Women') && (
-            <span className="bg-pink-100 text-pink-700 px-2 py-1 rounded-full text-xs font-medium">
+            <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded-full text-xs font-medium">
               Women Empowerment
             </span>
           )}
@@ -318,7 +318,7 @@ export const NFTWall: React.FC = () => {
         {/* Champion Info and Action */}
         <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
           <div className="flex items-center space-x-2 min-w-0 flex-1">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
+            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
               {story.championName.charAt(0)}
             </div>
             <div className="min-w-0">
@@ -330,7 +330,7 @@ export const NFTWall: React.FC = () => {
           <Button
             variant="ghost"
             size="sm"
-            className="text-purple-600 hover:text-purple-700 flex-shrink-0 ml-2"
+            className="text-blue-600 hover:text-blue-700 flex-shrink-0 ml-2"
             onClick={(e) => { e.stopPropagation(); navigate('/nft-wall-details'); }}
           >
             <span className="hidden sm:inline">View Details</span>
@@ -352,9 +352,9 @@ export const NFTWall: React.FC = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-4 sm:mb-6">
             Verified Impact{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
               Stories
             </span>
           </h1>
@@ -413,8 +413,8 @@ export const NFTWall: React.FC = () => {
                   }}
                   className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
                     selectedFilter === filter.id
-                      ? 'bg-purple-600 text-white shadow-lg'
-                      : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 hover:border-purple-300'
+                      ? 'bg-blue-600 text-white shadow-lg'
+                      : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200 hover:border-blue-300'
                   }`}
                 >
                   {filter.label} ({filter.count})
@@ -432,21 +432,21 @@ export const NFTWall: React.FC = () => {
         >
           <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-2xl sm:text-3xl font-bold text-black mb-1">{impactStories.length}</div>
-            <div className="text-sm text-black">Verified Stories</div>
+            <div className="text-sm text-gray-800">Verified Stories</div>
           </div>
           <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-2xl sm:text-3xl font-bold text-black mb-1">{impactStories.length}</div>
-            <div className="text-sm text-black">Verified NGOs</div>
+            <div className="text-sm text-gray-800">Verified NGOs</div>
           </div>
           <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-2xl sm:text-3xl font-bold text-black mb-1">{impactStories.length}</div>
-            <div className="text-sm text-black">Active Champions</div>
+            <div className="text-sm text-gray-800">Active Champions</div>
           </div>
           <div className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 text-center shadow-lg hover:shadow-xl transition-shadow duration-300">
             <div className="text-2xl sm:text-3xl font-bold text-black mb-1">
               {impactStories.reduce((total, story) => total + story.impactNumber, 0).toLocaleString()}
             </div>
-            <div className="text-sm text-black">Lives Impacted</div>
+            <div className="text-sm text-gray-800">Lives Impacted</div>
           </div>
         </motion.div>
 
@@ -466,7 +466,7 @@ export const NFTWall: React.FC = () => {
         >
           <Button 
             size="lg" 
-            variant="accent" 
+            variant="primary" 
             className="shadow-lg hover:shadow-xl group"
           >
             Load More Stories
