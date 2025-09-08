@@ -2,27 +2,27 @@ import { NGODetails } from '../types';
 
 export const sampleNGODetails: NGODetails = {
   id: '1',
-  name: 'Smile Foundation',
-  shortDescription: 'Transforming lives through comprehensive healthcare, education, and livelihood programs across India since 2002.',
-  fullDescription: 'Smile Foundation is a national development organization directly benefiting over 1.5 million children and their families every year, through more than 400 welfare projects on education, healthcare, livelihood and women empowerment, spread across 2,000 villages and slums in 25 states of India. The organization is committed to creating sustainable change by empowering communities and building long-term partnerships with local stakeholders.',
+  name: 'JWP (Janakalyan Welfare Program)',
+  shortDescription: 'Empowering tribal communities through education, sustainable development, and cultural preservation across central India since 2008.',
+  fullDescription: 'JWP is a dedicated organization working with indigenous communities in remote areas of central India where access to basic services is limited. We focus on tribal welfare, education, and sustainable livelihood development while preserving cultural heritage. Our programs emphasize community participation and traditional knowledge integration with contemporary development approaches, directly benefiting over 5,800 children and 240 tribal communities across Chhattisgarh and surrounding regions.',
   verified: true,
-  logo: '/Smileshero.jpg',
-  heroImage: '/Smileshero.jpg',
-  location: 'New Delhi, India',
-  yearEstablished: 2002,
-  registrationNumber: 'S-15871/2002',
+  logo: '/JWP.jpg',
+  heroImage: '/JWP.jpg',
+  location: 'Chhattisgarh, India',
+  yearEstablished: 2008,
+  registrationNumber: 'JWP-2008-001',
   
-  mission: 'To work towards the welfare of underprivileged children, their families and communities through comprehensive programs in education, healthcare and livelihood development.',
+  mission: 'To empower tribal communities through education, sustainable development, and cultural preservation while ensuring access to modern opportunities.',
   
-  vision: 'A world where every child enjoys their fundamental right to balanced development, protection and participation in a life of dignity.',
+  vision: 'A world where indigenous communities thrive with dignity, preserving their heritage while accessing quality education and sustainable livelihoods.',
   
   values: [
-    'Transparency & Accountability',
-    'Child-Centric Approach', 
-    'Community Participation',
-    'Innovation & Excellence',
-    'Inclusivity & Diversity',
-    'Sustainable Development'
+    'Cultural Preservation',
+    'Community Empowerment', 
+    'Educational Excellence',
+    'Sustainable Development',
+    'Inclusivity & Respect',
+    'Transparency & Accountability'
   ],
 
   causes: [

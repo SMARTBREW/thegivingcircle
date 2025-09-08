@@ -124,7 +124,7 @@ export default function SimplifiedAboutPage() {
                   every project from start to finish, we've created accountability in philanthropy.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Today, thousands of champions trust us to turn their compassion into verified change.
+                  Today, thousands of champions trust us to turn their compassion into verified change through our partnerships with JWP, Animal Care, KHUSHII, and GUS.
                 </p>
               </div>
             </motion.div>

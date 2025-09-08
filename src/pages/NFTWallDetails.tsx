@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { 
   ArrowLeft, CheckCircle, MapPin, Users, Calendar, Star, 
-  Share2, Heart, Download, ExternalLink, Badge, TrendingUp, 
-  Target, Award, Globe, Clock, Camera, FileText, MessageSquare,
-  Twitter, Facebook, Link, Copy, Eye, ThumbsUp, BookOpen,
-  Wallet, Shield, AlertCircle, Play, Pause, Volume2, VolumeX,
-  Building2
+  Share2, Download, ExternalLink, Badge, TrendingUp, 
+  Award, Globe, Clock, FileText,
+  Twitter, Facebook, Link, Copy, Eye, BookOpen,
+  Play, Pause, Building2
 } from 'lucide-react';
 
 type ButtonProps = {
@@ -56,44 +55,42 @@ const Button: React.FC<ButtonProps> = ({
 
 const ImpactStoryDetails: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
-  const [isLiked, setIsLiked] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
-  // Sample story data - in real app this would come from props/API
+  // Story data aligned with "Wings of Hope" (JWP)
   const storyData = {
     id: '1',
-    title: 'Empowering Rural Girls Through Education',
-    description: 'Providing quality education and life skills training to underprivileged girls in remote villages of Rajasthan. This comprehensive program focuses on breaking the cycle of poverty through education, ensuring girls have access to modern learning tools, qualified teachers, and a safe learning environment.',
-    ngoName: 'Saheli Foundation',
-    ngoDescription: 'Founded in 2018, Saheli Foundation is dedicated to empowering women and girls through education and skill development programs across rural India.',
-    championName: 'Priya Sharma',
-    championBio: 'A passionate educator and social worker with 8 years of experience in rural development. Priya has been instrumental in establishing 15 learning centers across Rajasthan.',
-    impactNumber: 150,
-    impactUnit: 'Girls Educated',
-    location: 'Rajasthan, India',
-    coordinates: '26.9124, 75.7873',
-    startDate: '2023-01-15',
-    endDate: '2024-01-15',
+    title: 'Wings of Hope',
+    description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand. This initiative builds sustainable livelihoods and strengthens community resilience.',
+    ngoName: 'JWP',
+    ngoDescription: 'JWP works with indigenous communities enabling access to education, livelihoods and empowerment with a focus on dignity and inclusion.',
+    championName: 'Meera Singh',
+    championBio: 'Program lead with 10+ years across women empowerment & livelihood initiatives, enabling micro-enterprises and self-help groups.',
+    impactNumber: 1000,
+    impactUnit: 'Women Empowered',
+    location: 'Uttarakhand, India',
+    coordinates: '30.0668, 79.0193',
+    startDate: '2023-04-01',
+    endDate: '2024-06-30',
     status: 'Completed',
     verified: true,
     nftTokenId: 'TGC001',
     blockchainNetwork: 'Polygon',
     contractAddress: '0x742d35Cc6634C0532925a3b8D1eC8d24eF8b6b12',
-    totalFunding: 2500000,
-    currentFunding: 2500000,
-    backers: 45,
-    likes: 234,
-    views: 1847,
-    shares: 67,
+    totalFunding: 6500000,
+    currentFunding: 6500000,
+    backers: 234,
+    likes: 1240,
+    views: 10845,
+    shares: 312,
     images: [
-      'https://images.pexels.com/photos/8923827/pexels-photo-8923827.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/8923834/pexels-photo-8923834.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/8923849/pexels-photo-8923849.jpeg?auto=compress&cs=tinysrgb&w=800',
-      'https://images.pexels.com/photos/8923858/pexels-photo-8923858.jpeg?auto=compress&cs=tinysrgb&w=800',
+      '/JWP.jpg',
+      '/khushii.jpg',
+      '/Animal care.jpg',
+      '/images/Uttarakhand-rescue.jpg',
     ],
     videoUrl: 'https://example.com/impact-video.mp4',
     documents: [
@@ -102,38 +99,38 @@ const ImpactStoryDetails: React.FC = () => {
       { name: 'Beneficiary List', type: 'PDF', size: '850 KB', url: '#' },
     ],
     milestones: [
-      { date: '2023-01-15', title: 'Project Initiated', description: 'Initial assessment and planning completed', status: 'completed' },
-      { date: '2023-03-01', title: 'Infrastructure Setup', description: 'Learning centers established in 5 villages', status: 'completed' },
-      { date: '2023-06-15', title: 'First Batch Enrollment', description: '50 girls enrolled in the first batch', status: 'completed' },
-      { date: '2023-09-30', title: 'Mid-term Assessment', description: 'Progress evaluation and curriculum adjustments', status: 'completed' },
-      { date: '2024-01-15', title: 'Project Completion', description: 'All 150 girls successfully completed the program', status: 'completed' },
+      { date: '2023-04-15', title: 'Program Kickoff', description: 'Community outreach and baseline study completed', status: 'completed' },
+      { date: '2023-07-01', title: 'Training Cohorts Formed', description: '20 cohorts formed across 10 blocks', status: 'completed' },
+      { date: '2023-10-30', title: 'Enterprise Support', description: 'Micro-enterprise kits distributed and mentorship active', status: 'completed' },
+      { date: '2024-03-31', title: 'Financial Literacy', description: 'Savings groups and SHGs established with bank linkages', status: 'completed' },
+      { date: '2024-06-30', title: 'Program Completion', description: '1000 women completed the program; 200 micro-enterprises started', status: 'completed' },
     ],
     impactMetrics: {
-      direct: 150,
-      indirect: 600,
-      communities: 12,
-      villages: 5,
-      literacyRate: 95,
-      completionRate: 98,
-      employmentRate: 72,
-      averageIncomeIncrease: 45,
+      direct: 1000,
+      indirect: 4000,
+      communities: 45,
+      villages: 30,
+      literacyRate: 0,
+      completionRate: 96,
+      employmentRate: 68,
+      averageIncomeIncrease: 38,
     },
-    tags: ['Education', 'Women Empowerment', 'Rural Development', 'Skill Training', 'Digital Literacy'],
-    sdgGoals: [4, 5, 8, 10], // SDG numbers
+    tags: ['Women Empowerment', 'Livelihoods', 'Entrepreneurship', 'Financial Literacy'],
+    sdgGoals: [5, 8, 10],
     testimonials: [
       {
-        name: 'Meera Kumari',
-        role: 'Program Beneficiary',
-        content: 'This program changed my life completely. I learned not just reading and writing, but also computer skills that helped me get a job in the city.',
+        name: 'Kamla Devi',
+        role: 'Beneficiary Entrepreneur',
+        content: 'I started a tailoring unit with two women in my village. We now supply to nearby towns and support our families with dignity.',
         rating: 5,
-        image: 'https://images.pexels.com/photos/8923827/pexels-photo-8923827.jpeg?auto=compress&cs=tinysrgb&w=100',
+        image: '/JWP.jpg',
       },
       {
-        name: 'Rajesh Sharma',
-        role: 'Village Head',
-        content: 'The transformation in our village is remarkable. Girls who were once confined to homes are now confident and skilled individuals.',
+        name: 'Vijay Rawat',
+        role: 'Block Coordinator',
+        content: 'Self-help groups are now active and saving regularly. The confidence among participants is the biggest impact.',
         rating: 5,
-        image: 'https://images.pexels.com/photos/8923834/pexels-photo-8923834.jpeg?auto=compress&cs=tinysrgb&w=100',
+        image: '/images/Uttarakhand-rescue.jpg',
       },
     ],
   };

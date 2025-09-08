@@ -1,25 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Search, ArrowRight, User, MapPin, Heart, Clock, Target, Building2, Calendar, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
+import { Search, User, MapPin, Heart, Clock, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
 
-type Cause = {
-  id: number;
-  title: string;
-  organizer: string;
-  ngo: string;
-  location: string;
-  category: string;
-  goalAmount: string;
-  raisedAmount: string;
-  progressPercentage: number;
-  supporters: number;
-  daysLeft: number;
-  image: string;
-  urgency: string;
-  description: string;
-  beneficiaries: string;
-  timeline: string;
-  updates: string[];
-};
+// Cause type definition removed as it's not used in this component
 
 const LiveCausesPage = () => {
   const [selectedNGO, setSelectedNGO] = useState('All NGOs');
@@ -29,421 +11,44 @@ const LiveCausesPage = () => {
 
   const ngos = [
     'All NGOs',
-    'KHUSHII',
     'JWP',
     'Animal Care',
-    'KOKAN',
-    'Mamta HIMC'
+    'KHUSHII',
+    'GUS'
   ];
 
   const ngoShowcase = [
     {
-      name: 'KHUSHII',
-      image: 'https://analyticsindiamag.com/wp-content/uploads/2018/11/data-analysis-ngo.jpg',
-      description: 'Empowering underprivileged children through education and healthcare initiatives',
-      focus: 'Child Development & Education'
-    },
-    {
       name: 'JWP',
-      image: 'https://theunitedindian.com/images/NGO-25-04-24-E-blog3.webp',
+      image: '/JWP.jpg',
       description: 'Supporting women empowerment through skill development and entrepreneurship programs',
       focus: 'Women Empowerment & Skills'
     },
     {
       name: 'Animal Care',
-      image: 'https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-4u70uaphr0u0pts0lbk5t9j3n6-20170728010817.Medi.jpeg',
+      image: '/Animal care.jpg',
       description: 'Rescuing, treating and rehabilitating street animals across India',
       focus: 'Animal Welfare & Rescue'
     },
     {
-      name: 'KOKAN',
-      image: 'https://serudsindia.org/wp-content/uploads/2020/10/Donate-to-SERUDS-Joy-Home-Orphanage-in-Kurnool-AP.jpg',
-      description: 'Supporting orphanages and child welfare through meal programs and care',
-      focus: 'Child Welfare & Nutrition'
+      name: 'KHUSHII',
+      image: '/khushii.jpg',
+      description: 'Empowering underprivileged children through education and healthcare initiatives',
+      focus: 'Child Development & Education'
     },
     {
-      name: 'Mamta HIMC',
-      image: 'https://un-ngo.org/wp-content/uploads/2024/01/6.jpg',
-      description: 'Providing quality healthcare services to rural and urban communities',
-      focus: 'Healthcare & Medical Aid'
+      name: 'GUS',
+      image: '/kokan.jpg',
+      description: 'Providing disaster relief and emergency response in Uttarakhand',
+      focus: 'Disaster Relief & Emergency Response'
     }
   ];
 
   const causes = [
-    // KHUSHII causes (Priority 1)
+    // JWP causes
     {
       id: 1,
-      title: 'Sikhshantra Plus - Advanced Education Program',
-      organizer: 'Priya Sharma',
-      ngo: 'KHUSHII',
-      location: 'Mumbai, Maharashtra',
-      category: 'Education',
-      goalAmount: '₹8,50,000',
-      raisedAmount: '₹5,20,000',
-      progressPercentage: 61,
-      supporters: 245,
-      daysLeft: 22,
-      image: 'https://analyticsindiamag.com/wp-content/uploads/2018/11/data-analysis-ngo.jpg',
-      urgency: 'High',
-      description: 'Advanced education program providing comprehensive learning resources and skill development for underprivileged children. Focuses on digital literacy, life skills, and academic excellence.',
-      beneficiaries: '500 students',
-      timeline: '12 months',
-      updates: [
-        'Digital learning centers established',
-        '300 students enrolled',
-        'Teacher training programs ongoing'
-      ]
-    },
-    {
-      id: 2,
-      title: 'Pads for Freedom - Menstrual Hygiene Initiative',
-      organizer: 'Dr. Meera Singh',
-      ngo: 'KHUSHII',
-      location: 'Delhi, India',
-      category: 'Women Health',
-      goalAmount: '₹3,50,000',
-      raisedAmount: '₹2,80,000',
-      progressPercentage: 80,
-      supporters: 189,
-      daysLeft: 15,
-      image: 'https://theunitedindian.com/images/NGO-25-04-24-E-blog3.webp',
-      urgency: 'High',
-      description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
-      beneficiaries: '2000 girls and women',
-      timeline: '6 months',
-      updates: [
-        '1500 pad kits distributed',
-        '50 awareness sessions conducted',
-        'School dropout prevention program active'
-      ]
-    },
-    {
-      id: 3,
-      title: 'Student Support - Poonam\'s Education Journey',
-      organizer: 'Rajesh Kumar',
-      ngo: 'KHUSHII',
-      location: 'Bangalore, Karnataka',
-      category: 'Individual Support',
-      goalAmount: '₹1,20,000',
-      raisedAmount: '₹95,000',
-      progressPercentage: 79,
-      supporters: 67,
-      daysLeft: 18,
-      image: 'https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-4u70uaphr0u0pts0lbk5t9j3n6-20170728010817.Medi.jpeg',
-      urgency: 'Medium',
-      description: 'Supporting Poonam\'s higher education dreams by covering tuition fees, books, and living expenses for her engineering studies.',
-      beneficiaries: '1 student - Poonam',
-      timeline: '4 years',
-      updates: [
-        'First semester fees paid',
-        'Books and supplies provided',
-        'Mentorship program started'
-      ]
-    },
-    {
-      id: 4,
-      title: 'Student Support - Nikita\'s Medical Studies',
-      organizer: 'Dr. Sunita Reddy',
-      ngo: 'KHUSHII',
-      location: 'Chennai, Tamil Nadu',
-      category: 'Individual Support',
-      goalAmount: '₹2,50,000',
-      raisedAmount: '₹1,80,000',
-      progressPercentage: 72,
-      supporters: 98,
-      daysLeft: 25,
-      image: 'https://serudsindia.org/wp-content/uploads/2020/10/Donate-to-SERUDS-Joy-Home-Orphanage-in-Kurnool-AP.jpg',
-      urgency: 'High',
-      description: 'Supporting Nikita\'s medical education to help her become a doctor and serve underprivileged communities.',
-      beneficiaries: '1 student - Nikita',
-      timeline: '5 years',
-      updates: [
-        'Medical college admission secured',
-        'First year fees partially paid',
-        'Study materials provided'
-      ]
-    },
-    {
-      id: 5,
-      title: 'Student Support - Aarti\'s Academic Journey',
-      organizer: 'Rajesh Kumar',
-      ngo: 'KHUSHII',
-      location: 'Pune, Maharashtra',
-      category: 'Individual Support',
-      goalAmount: '₹1,50,000',
-      raisedAmount: '₹1,10,000',
-      progressPercentage: 73,
-      supporters: 78,
-      daysLeft: 20,
-      image: 'https://un-ngo.org/wp-content/uploads/2024/01/6.jpg',
-      urgency: 'Medium',
-      description: 'Supporting Aarti\'s higher education by covering tuition fees, books, and living expenses for her commerce studies.',
-      beneficiaries: '1 student - Aarti',
-      timeline: '3 years',
-      updates: [
-        'College admission secured',
-        'First year fees paid',
-        'Study materials provided'
-      ]
-    },
-    {
-      id: 6,
-      title: 'Student Support - Shivangi\'s Future Dreams',
-      organizer: 'Dr. Meera Singh',
-      ngo: 'KHUSHII',
-      location: 'Jaipur, Rajasthan',
-      category: 'Individual Support',
-      goalAmount: '₹1,80,000',
-      raisedAmount: '₹1,25,000',
-      progressPercentage: 69,
-      supporters: 92,
-      daysLeft: 25,
-      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=250&fit=crop',
-      urgency: 'High',
-      description: 'Supporting Shivangi\'s education in computer science to help her build a career in technology.',
-      beneficiaries: '1 student - Shivangi',
-      timeline: '4 years',
-      updates: [
-        'Computer science program enrollment',
-        'Laptop provided for studies',
-        'Coding bootcamp participation'
-      ]
-    },
-    {
-      id: 7,
-      title: 'Swatantra Shikshaantra - Independent Learning Initiative',
-      organizer: 'Priya Sharma',
-      ngo: 'KHUSHII',
-      location: 'Kolkata, West Bengal',
-      category: 'Education',
-      goalAmount: '₹6,80,000',
-      raisedAmount: '₹4,50,000',
-      progressPercentage: 66,
-      supporters: 234,
-      daysLeft: 35,
-      image: 'https://analyticsindiamag.com/wp-content/uploads/2018/11/data-analysis-ngo.jpg',
-      urgency: 'High',
-      description: 'Independent learning program focusing on self-reliant education methods and skill development for underprivileged children.',
-      beneficiaries: '400 students',
-      timeline: '15 months',
-      updates: [
-        'Self-learning modules developed',
-        '250 students enrolled',
-        'Community learning centers established'
-      ]
-    },
-    {
-      id: 8,
-      title: 'Student Support - Jyoti\'s Engineering Aspirations',
-      organizer: 'Dr. Vikram Nair',
-      ngo: 'KHUSHII',
-      location: 'Lucknow, Uttar Pradesh',
-      category: 'Individual Support',
-      goalAmount: '₹2,20,000',
-      raisedAmount: '₹1,65,000',
-      progressPercentage: 75,
-      supporters: 105,
-      daysLeft: 18,
-      image: 'https://theunitedindian.com/images/NGO-25-04-24-E-blog3.webp',
-      urgency: 'High',
-      description: 'Supporting Jyoti\'s mechanical engineering education and helping her achieve her dreams in the technical field.',
-      beneficiaries: '1 student - Jyoti',
-      timeline: '4 years',
-      updates: [
-        'Engineering entrance exam cleared',
-        'College fees for first semester paid',
-        'Technical workshop participation'
-      ]
-    },
-    {
-      id: 9,
-      title: 'Student Support - Iram\'s Medical Dreams',
-      organizer: 'Dr. Sunita Reddy',
-      ngo: 'KHUSHII',
-      location: 'Bhopal, Madhya Pradesh',
-      category: 'Individual Support',
-      goalAmount: '₹2,80,000',
-      raisedAmount: '₹1,95,000',
-      progressPercentage: 70,
-      supporters: 128,
-      daysLeft: 22,
-      image: 'https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-4u70uaphr0u0pts0lbk5t9j3n6-20170728010817.Medi.jpeg',
-      urgency: 'Critical',
-      description: 'Supporting Iram\'s medical education to help her become a doctor and serve in rural healthcare.',
-      beneficiaries: '1 student - Iram',
-      timeline: '5 years',
-      updates: [
-        'Medical college admission confirmed',
-        'First year textbooks provided',
-        'Mentorship program enrollment'
-      ]
-    },
-    {
-      id: 10,
-      title: 'Helpindiaheal - Community Health Initiative',
-      organizer: 'Dr. Pooja Reddy',
-      ngo: 'KHUSHII',
-      location: 'Hyderabad, Telangana',
-      category: 'Healthcare',
-      goalAmount: '₹12,00,000',
-      raisedAmount: '₹8,40,000',
-      progressPercentage: 70,
-      supporters: 456,
-      daysLeft: 30,
-      image: 'https://serudsindia.org/wp-content/uploads/2020/10/Donate-to-SERUDS-Joy-Home-Orphanage-in-Kurnool-AP.jpg',
-      urgency: 'Critical',
-      description: 'Comprehensive healthcare program providing medical checkups, treatments, and health education to underserved communities across India.',
-      beneficiaries: '5000+ community members',
-      timeline: '18 months',
-      updates: [
-        '2000 health checkups completed',
-        '15 health camps organized',
-        'Community health workers trained'
-      ]
-    },
-
-    // JWP causes (Priority 2)
-    {
-      id: 11,
-      title: 'Mission-392 - Rural Development Project',
-      organizer: 'Kavya Joshi',
-      ngo: 'JWP',
-      location: 'Uttar Pradesh, India',
-      category: 'Rural Development',
-      goalAmount: '₹15,00,000',
-      raisedAmount: '₹11,20,000',
-      progressPercentage: 75,
-      supporters: 567,
-      daysLeft: 35,
-      image: 'https://un-ngo.org/wp-content/uploads/2024/01/6.jpg',
-      urgency: 'High',
-      description: 'Comprehensive rural development initiative focusing on infrastructure, education, and livelihood opportunities in 392 villages.',
-      beneficiaries: '50,000 rural families',
-      timeline: '24 months',
-      updates: [
-        '150 villages covered',
-        'Water supply projects initiated',
-        'Skill training centers established'
-      ]
-    },
-    {
-      id: 12,
-      title: 'Student Support - Nazia\'s Engineering Dreams',
-      organizer: 'Meera Singh',
-      ngo: 'JWP',
-      location: 'Bangalore, Karnataka',
-      category: 'Individual Support',
-      goalAmount: '₹1,80,000',
-      raisedAmount: '₹1,35,000',
-      progressPercentage: 75,
-      supporters: 89,
-      daysLeft: 20,
-      image: 'https://analyticsindiamag.com/wp-content/uploads/2018/11/data-analysis-ngo.jpg',
-      urgency: 'Medium',
-      description: 'Supporting Nazia\'s engineering education and helping her achieve her dreams of becoming a software engineer.',
-      beneficiaries: '1 student - Nazia',
-      timeline: '4 years',
-      updates: [
-        'Engineering college admission confirmed',
-        'First semester fees paid',
-        'Laptop and study materials provided'
-      ]
-    },
-    {
-      id: 13,
-      title: 'Student Support - Khushboo\'s Medical Journey',
-      organizer: 'Dr. Rajesh Kumar',
-      ngo: 'JWP',
-      location: 'Delhi, India',
-      category: 'Individual Support',
-      goalAmount: '₹2,40,000',
-      raisedAmount: '₹1,75,000',
-      progressPercentage: 73,
-      supporters: 112,
-      daysLeft: 24,
-      image: 'https://theunitedindian.com/images/NGO-25-04-24-E-blog3.webp',
-      urgency: 'High',
-      description: 'Supporting Khushboo\'s medical education to help her become a healthcare professional and serve underprivileged communities.',
-      beneficiaries: '1 student - Khushboo',
-      timeline: '5 years',
-      updates: [
-        'Medical entrance exam cleared',
-        'First semester fees covered',
-        'Medical textbooks provided'
-      ]
-    },
-    {
-      id: 14,
-      title: 'Single Mom Support - Uttarakhand Initiative',
-      organizer: 'Prashant Koli',
-      ngo: 'JWP',
-      location: 'Uttarakhand, India',
-      category: 'Women Support',
-      goalAmount: '₹4,20,000',
-      raisedAmount: '₹3,15,000',
-      progressPercentage: 75,
-      supporters: 156,
-      daysLeft: 22,
-      image: 'https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-4u70uaphr0u0pts0lbk5t9j3n6-20170728010817.Medi.jpeg',
-      urgency: 'High',
-      description: 'Supporting single mothers in Uttarakhand with livelihood training, childcare assistance, and financial support.',
-      beneficiaries: '150 single mothers',
-      timeline: '12 months',
-      updates: [
-        '100 mothers enrolled',
-        'Skill training programs started',
-        'Childcare centers established'
-      ]
-    },
-    {
-      id: 15,
-      title: 'Uttarakhand Support - Sagar\'s Education',
-      organizer: 'Sagar Patil',
-      ngo: 'JWP',
-      location: 'Uttarakhand, India',
-      category: 'Individual Support',
-      goalAmount: '₹1,60,000',
-      raisedAmount: '₹1,20,000',
-      progressPercentage: 75,
-      supporters: 85,
-      daysLeft: 28,
-      image: 'https://serudsindia.org/wp-content/uploads/2020/10/Donate-to-SERUDS-Joy-Home-Orphanage-in-Kurnool-AP.jpg',
-      urgency: 'Medium',
-      description: 'Supporting Sagar\'s higher education and skill development in Uttarakhand region.',
-      beneficiaries: '1 student - Sagar',
-      timeline: '3 years',
-      updates: [
-        'College enrollment completed',
-        'Study materials provided',
-        'Mentorship program active'
-      ]
-    },
-    {
-      id: 16,
-      title: 'Uttarakhand Support - Vandana\'s Future',
-      organizer: 'Kavya Joshi',
-      ngo: 'JWP',
-      location: 'Uttarakhand, India',
-      category: 'Individual Support',
-      goalAmount: '₹1,40,000',
-      raisedAmount: '₹1,05,000',
-      progressPercentage: 75,
-      supporters: 76,
-      daysLeft: 32,
-      image: 'https://un-ngo.org/wp-content/uploads/2024/01/6.jpg',
-      urgency: 'Medium',
-      description: 'Supporting Vandana\'s educational journey and skill development in Uttarakhand.',
-      beneficiaries: '1 student - Vandana',
-      timeline: '3 years',
-      updates: [
-        'Vocational training started',
-        'Learning materials provided',
-        'Career counseling sessions ongoing'
-      ]
-    },
-    {
-      id: 17,
-      title: 'Wings of Hope - Women Empowerment Program',
+      title: 'Wings of Hope',
       organizer: 'Meera Singh',
       ngo: 'JWP',
       location: 'Uttarakhand, India',
@@ -453,7 +58,7 @@ const LiveCausesPage = () => {
       progressPercentage: 74,
       supporters: 234,
       daysLeft: 28,
-      image: 'https://analyticsindiamag.com/wp-content/uploads/2018/11/data-analysis-ngo.jpg',
+      image: '/JWP.jpg',
       urgency: 'High',
       description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand.',
       beneficiaries: '1000 women',
@@ -464,11 +69,33 @@ const LiveCausesPage = () => {
         '200 micro-enterprises started'
       ]
     },
-
-    // Animal Care causes (Priority 3)
+    // Animal Care causes
     {
-      id: 18,
-      title: 'Bowls of Hope - Street Animal Feeding Program',
+      id: 2,
+      title: 'Pawsitive Protectors',
+      organizer: 'Dr. Sunita Reddy',
+      ngo: 'Animal Care',
+      location: 'Mumbai, Maharashtra',
+      category: 'Animal Welfare',
+      goalAmount: '₹5,20,000',
+      raisedAmount: '₹3,90,000',
+      progressPercentage: 75,
+      supporters: 312,
+      daysLeft: 20,
+      image: '/Animal care.jpg',
+      urgency: 'High',
+      description: 'Comprehensive animal protection program focusing on rescue operations, medical care, and community awareness for street animals.',
+      beneficiaries: '1500+ animals',
+      timeline: '12 months',
+      updates: [
+        '800 animals rescued',
+        '25 rescue operations completed',
+        'Community awareness programs active'
+      ]
+    },
+    {
+      id: 3,
+      title: 'Bowls of Hope',
       organizer: 'Dr. Sunita Reddy',
       ngo: 'Animal Care',
       location: 'Chennai, Tamil Nadu',
@@ -478,7 +105,7 @@ const LiveCausesPage = () => {
       progressPercentage: 79,
       supporters: 445,
       daysLeft: 18,
-      image: 'https://s3.ap-southeast-1.amazonaws.com/images.asianage.com/images/aa-Cover-4u70uaphr0u0pts0lbk5t9j3n6-20170728010817.Medi.jpeg',
+      image: '/Animal care.jpg',
       urgency: 'Critical',
       description: 'Daily feeding program for street dogs and cats across Chennai, providing nutritious meals and basic veterinary care.',
       beneficiaries: '2000+ street animals',
@@ -489,54 +116,75 @@ const LiveCausesPage = () => {
         '100 animals vaccinated'
       ]
     },
-
-    // KOKAN causes (Priority 4)
     {
-      id: 19,
-      title: 'Orphanage Meal Program - Nutritious Future',
-      organizer: 'Ravi Gupta',
-      ngo: 'KOKAN',
-      location: 'Ratnagiri, Maharashtra',
-      category: 'Child Welfare',
-      goalAmount: '₹5,60,000',
-      raisedAmount: '₹3,90,000',
-      progressPercentage: 70,
-      supporters: 267,
+      id: 4,
+      title: 'Flood Animal Rescue',
+      organizer: 'Dr. Sunita Reddy',
+      ngo: 'Animal Care',
+      location: 'Uttarakhand, India',
+      category: 'Emergency Response',
+      goalAmount: '₹4,50,000',
+      raisedAmount: '₹3,20,000',
+      progressPercentage: 71,
+      supporters: 198,
       daysLeft: 25,
-      image: 'https://serudsindia.org/wp-content/uploads/2020/10/Donate-to-SERUDS-Joy-Home-Orphanage-in-Kurnool-AP.jpg',
-      urgency: 'High',
-      description: 'Providing nutritious daily meals to orphaned children, ensuring their healthy growth and development.',
-      beneficiaries: '200 orphaned children',
-      timeline: '12 months',
+      image: '/images/flood animal.jpg',
+      urgency: 'Critical',
+      description: 'Emergency rescue operations for animals affected by floods in Uttarakhand, providing immediate medical care and rehabilitation.',
+      beneficiaries: '500+ flood-affected animals',
+      timeline: '8 months',
       updates: [
-        '3 orphanages covered',
-        '150 children receiving daily meals',
-        'Nutrition monitoring program active'
+        '300 animals rescued from flood zones',
+        'Emergency medical camps established',
+        'Rehabilitation centers operational'
       ]
     },
-
-    // Mamta HIMC causes (Priority 5)
+    // KHUSHII causes
     {
-      id: 20,
-      title: 'Generic Healthcare Support Program',
-      organizer: 'Dr. Pooja Reddy',
-      ngo: 'Mamta HIMC',
-      location: 'Hyderabad, Telangana',
-      category: 'Healthcare',
-      goalAmount: '₹9,50,000',
-      raisedAmount: '₹6,80,000',
-      progressPercentage: 72,
-      supporters: 389,
+      id: 5,
+      title: 'Pads for Freedom',
+      organizer: 'Dr. Meera Singh',
+      ngo: 'KHUSHII',
+      location: 'Delhi, India',
+      category: 'Women Health',
+      goalAmount: '₹3,50,000',
+      raisedAmount: '₹2,80,000',
+      progressPercentage: 80,
+      supporters: 189,
+      daysLeft: 15,
+      image: '/khushii.jpg',
+      urgency: 'High',
+      description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
+      beneficiaries: '2000 girls and women',
+      timeline: '6 months',
+      updates: [
+        '1500 pad kits distributed',
+        '50 awareness sessions conducted',
+        'School dropout prevention program active'
+      ]
+    },
+    // GUS causes
+    {
+      id: 6,
+      title: 'Flood Relief in Uttarakhand',
+      organizer: 'Prashant Koli',
+      ngo: 'GUS',
+      location: 'Uttarakhand, India',
+      category: 'Disaster Relief',
+      goalAmount: '₹8,50,000',
+      raisedAmount: '₹6,20,000',
+      progressPercentage: 73,
+      supporters: 267,
       daysLeft: 30,
-      image: 'https://un-ngo.org/wp-content/uploads/2024/01/6.jpg',
-      urgency: 'Medium',
-      description: 'General healthcare support program providing medical assistance, medicines, and health checkups to underprivileged communities.',
-      beneficiaries: '3000+ patients',
+      image: '/images/Uttarakhand-rescue.jpg',
+      urgency: 'Critical',
+      description: 'Comprehensive flood relief operations providing emergency shelter, food, medical aid, and rehabilitation support to affected communities in Uttarakhand.',
+      beneficiaries: '2000+ flood-affected families',
       timeline: '18 months',
       updates: [
-        '1500 patients treated',
-        '20 health camps organized',
-        'Medicine distribution ongoing'
+        '500 families provided emergency shelter',
+        'Medical camps serving 1000+ people',
+        'Infrastructure rebuilding initiated'
       ]
     }
   ];
@@ -824,7 +472,7 @@ const LiveCausesPage = () => {
 
             {/* Professional Cause Cards - 3x3 Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-              {visibleCausesList.map((cause, index) => (
+              {visibleCausesList.map((cause) => (
                 <div
                   key={cause.id}
                   onClick={handleCardClick}

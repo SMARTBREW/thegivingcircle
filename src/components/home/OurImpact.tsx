@@ -102,8 +102,8 @@ export const OurImpact: React.FC = () => {
       color: 'text-pink-500',
     },
     {
-      value: '250+',
-      label: 'active cause champions nationwide',
+      value: '4',
+      label: 'verified NGO partners (JWP, Animal Care, KHUSHII, GUS)',
       icon: <Users className="w-8 h-8" />,
       color: 'text-green-500',
     },
@@ -137,7 +137,7 @@ export const OurImpact: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
           >
-            "The Giving Circle has transformed how we create impact together. By connecting passionate cause champions with dedicated supporters, we've built a community where every contribution makes a meaningful difference. Together, we're not just funding causes - we're building lasting change."
+            "The Giving Circle has transformed how we create impact together. By connecting passionate cause champions with our verified NGO partners (JWP, Animal Care, KHUSHII, and GUS), we've built a community where every contribution makes a meaningful difference. Together, we're not just funding causes - we're building lasting change."
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

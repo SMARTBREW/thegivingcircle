@@ -82,7 +82,7 @@ export const Footer: React.FC = () => {
               </div>
               <div className="space-y-4">
                 <p className="text-gray-700 leading-relaxed text-sm">
-                  A trusted community platform connecting NGOs, cause champions, and donors across India. Building transparency and trust in the philanthropic ecosystem through verified partnerships and measurable impact.
+                  A trusted community platform connecting verified NGO partners like JWP, Animal Care, KHUSHII, and GUS with cause champions and donors across India. Building transparency and trust in the philanthropic ecosystem through verified partnerships and measurable impact.
                 </p>
                 <div className="flex items-center space-x-2 text-sm text-gray-600">
                   <Network className="w-4 h-4 text-blue-600" />
