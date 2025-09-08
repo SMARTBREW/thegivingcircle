@@ -146,10 +146,10 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/browse-champions" 
+                  to="/causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Cause Champions</span>
+                  <span className="text-sm">Browse Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
@@ -190,17 +190,17 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/about-champion" 
+                  to="/onboarding" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">About Champions</span>
+                  <span className="text-sm">Become a Champion</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Champion Stories</span>
+                  <span className="text-sm">Browse Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <a 

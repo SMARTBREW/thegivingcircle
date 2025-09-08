@@ -70,14 +70,8 @@ const NavbarComponent = () => {
       ]
     },
     { 
-      name: 'Champions', 
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Browse Champions', href: '/browse-champions' },
-        { name: 'About Champions', href: '/about-champion' },
-        { name: 'Champion Stories', href: '/causes' },
-        { name: 'Become a Champion', href: '/onboarding' }
-      ]
+      name: 'Causes', 
+      href: '/causes'
     },
     { 
       name: 'NGO Partners', 

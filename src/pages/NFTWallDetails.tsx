@@ -144,7 +144,6 @@ const ImpactStoryDetails: React.FC = () => {
     { id: 'timeline', label: 'Timeline', icon: <Calendar className="w-4 h-4" /> },
     { id: 'team', label: 'Team & NGO', icon: <Users className="w-4 h-4" /> },
     { id: 'documents', label: 'Documents', icon: <FileText className="w-4 h-4" /> },
-    { id: 'blockchain', label: 'Blockchain', icon: <Shield className="w-4 h-4" /> },
   ];
 
   const ShareModal = () => (
@@ -554,118 +553,6 @@ const ImpactStoryDetails: React.FC = () => {
     </div>
   );
 
-  const renderBlockchain = () => (
-    <div className="space-y-8">
-      {/* NFT Details */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">NFT & Blockchain Details</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Token ID</span>
-              <span className="font-mono font-medium">{storyData.nftTokenId}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Network</span>
-              <span className="font-medium">{storyData.blockchainNetwork}</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Contract Address</span>
-              <span className="font-mono text-sm">{storyData.contractAddress.slice(0, 10)}...</span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span className="text-gray-600">Verification Status</span>
-              <span className="flex items-center text-green-600">
-                <CheckCircle className="w-4 h-4 mr-1" />
-                Verified
-              </span>
-            </div>
-          </div>
-          
-          <div className="bg-white p-4 rounded-lg border">
-            <h4 className="font-semibold mb-3">Blockchain Verification</h4>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center text-blue-600">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Impact data verified on-chain
-              </div>
-              <div className="flex items-center text-blue-600">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Financial transparency confirmed
-              </div>
-              <div className="flex items-center text-blue-600">
-                <CheckCircle className="w-4 h-4 mr-2" />
-                Milestone achievements recorded
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div className="mt-6 flex space-x-4">
-          <Button variant="outline" icon={<ExternalLink className="w-4 h-4" />}>
-            View on Blockchain Explorer
-          </Button>
-          <Button variant="ghost" icon={<Wallet className="w-4 h-4" />}>
-            View NFT on OpenSea
-          </Button>
-        </div>
-      </div>
-
-      {/* Transaction History */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">Transaction History</h3>
-        <div className="space-y-4">
-          {[
-            { date: '2024-01-15', type: 'Project Completion', hash: '0xabc123...', status: 'Confirmed' },
-            { date: '2023-12-30', type: 'Milestone Update', hash: '0xdef456...', status: 'Confirmed' },
-            { date: '2023-09-30', type: 'Mid-term Verification', hash: '0xghi789...', status: 'Confirmed' },
-            { date: '2023-06-15', type: 'Fund Allocation', hash: '0xjkl012...', status: 'Confirmed' },
-            { date: '2023-01-15', type: 'NFT Minted', hash: '0xmno345...', status: 'Confirmed' },
-          ].map((tx, index) => (
-            <div key={index} className="flex items-center justify-between p-4 bg-gray-50 rounded-lg">
-              <div className="flex items-center space-x-4">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <div>
-                  <div className="font-medium text-gray-900">{tx.type}</div>
-                  <div className="text-sm text-gray-600">{tx.date}</div>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="font-mono text-sm text-gray-600">{tx.hash}</div>
-                <div className="text-sm text-green-600">{tx.status}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Smart Contract Details */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">Smart Contract Details</h3>
-        <div className="bg-gray-50 p-4 rounded-lg">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            <div>
-              <span className="text-gray-600">Contract Type:</span>
-              <span className="ml-2 font-medium">ERC-721 (NFT)</span>
-            </div>
-            <div>
-              <span className="text-gray-600">Gas Used:</span>
-              <span className="ml-2 font-medium">2,847,592</span>
-            </div>
-            <div>
-              <span className="text-gray-600">Block Number:</span>
-              <span className="ml-2 font-medium">52,847,293</span>
-            </div>
-            <div>
-              <span className="text-gray-600">Confirmations:</span>
-              <span className="ml-2 font-medium">1,247,592</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-
   return (
     <div className="min-h-screen bg-gray-50 mt-[150px]">
       {/* Navigation */}
@@ -755,7 +642,7 @@ const ImpactStoryDetails: React.FC = () => {
                 <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
                 <span className="font-medium text-blue-900">Project Successfully Completed</span>
                 <span className="ml-2 text-sm text-blue-700">
-                  All milestones achieved and impact verified on blockchain
+                  All milestones achieved and impact verified
                 </span>
               </div>
             </div>
@@ -798,7 +685,6 @@ const ImpactStoryDetails: React.FC = () => {
           {activeTab === 'timeline' && renderTimeline()}
           {activeTab === 'team' && renderTeam()}
           {activeTab === 'documents' && renderDocuments()}
-          {activeTab === 'blockchain' && renderBlockchain()}
         </motion.div>
       </div>
 

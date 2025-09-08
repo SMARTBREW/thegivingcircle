@@ -1,12 +1,10 @@
 import React from 'react';
-import ChampionsPage from '../components/champions/browseChampions';
-
+import LiveCausesPage from '../components/liveCauses/browseCauses';
 
 export const Causes: React.FC = () => {
   return (
     <div className="min-h-screen">
-      <ChampionsPage />
-      
+      <LiveCausesPage />
     </div>
   );
 };
