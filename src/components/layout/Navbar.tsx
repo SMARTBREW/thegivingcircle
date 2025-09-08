@@ -53,21 +53,13 @@ const NavbarComponent = () => {
     { name: 'Home', href: '/' },
     { 
       name: 'Live Causes', 
-      hasDropdown: true,
+      href: '/live-causes',
       highlight: true,
       urgent: true,
-      dropdownItems: [
-        { name: 'Browse All Causes', href: '/impact-stories' },
-        { name: 'Cause Details', href: '/causes-details' }
-      ]
     },
     { 
       name: 'Impact Stories', 
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'NFT Impact Wall', href: '/nft-wall' },
-        { name: 'Story Details', href: '/nft-wall-details' }
-      ]
+      href: '/impact-stories'
     },
     { 
       name: 'Causes', 

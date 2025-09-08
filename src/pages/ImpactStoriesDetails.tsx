@@ -53,7 +53,7 @@ const Button: React.FC<ButtonProps> = ({
   );
 };
 
-const ImpactStoryDetails: React.FC = () => {
+const ImpactStoriesDetails: React.FC = () => {
   const [activeTab, setActiveTab] = useState('overview');
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
@@ -691,4 +691,4 @@ const ImpactStoryDetails: React.FC = () => {
   );
 };
 
-export default ImpactStoryDetails;
+export default ImpactStoriesDetails;

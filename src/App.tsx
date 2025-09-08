@@ -4,8 +4,8 @@ import  {Navbar}  from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
 import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
-import { NFTWall } from './pages/NFTWall';
-import ImpactStoryDetails from './pages/NFTWallDetails';
+import ImpactStories from './pages/ImpactStories';
+import ImpactStoriesDetails from './pages/ImpactStoriesDetails';
 
 
 import { NGOPartner } from './pages/NGOPartner';
@@ -36,19 +36,19 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/onboarding" element={<CauseChampionOnboarding />} />
-            <Route path="/nft-wall" element={<NFTWall />} />
-            <Route path="/nft-wall-details" element={<ImpactStoryDetails />} />
+            <Route path="/impact-stories" element={<ImpactStories />} />
+            <Route path="/impact-stories-details" element={<ImpactStoriesDetails />} />
 
-            {/* <Route path="/impact-stories" element={<NFTWall />} /> */}
+            {/* legacy route aliases */}
            
             <Route path="/ngo-partner" element={<NGOPartner />} />
             <Route path="/ngo-list" element={<NGOList />} />
             <Route path="/ngo-detail/:id" element={<NGODetailContainer />} />
             <Route path="/causes" element={<Causes />} />
-            <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
-            <Route path="/impact-stories" element={<LiveCausesPage />} />
             <Route path="/causes-details" element={<CauseDetailPage />} />
-            <Route path="/causes-details/:id" element={<CauseDetailPage />} />
+            <Route path="/live-causes" element={<LiveCausesPage />} />
+            <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
+            <Route path="/live-causes-details" element={<CauseDetailPage />} />
             <Route path="/about-champion" element={<AboutChampions />} />
             <Route path="/the-giving-circle" element={<OurStory />} />
             <Route path="*" element={<NotFoundPage />} />

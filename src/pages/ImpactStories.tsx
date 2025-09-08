@@ -85,7 +85,7 @@ const Input: React.FC<{
   );
 };
 
-export const NFTWall: React.FC = () => {
+const ImpactStories: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [showMobileFilters, setShowMobileFilters] = useState(false);
@@ -101,7 +101,7 @@ export const NFTWall: React.FC = () => {
       championName: 'Meera Singh',
       impactNumber: 1000,
       impactUnit: 'Women Empowered',
-      image: '/JWP.jpg',
+      image: '/images/animals-2.jpeg',
       verified: true,
       location: 'Uttarakhand',
     },
@@ -113,7 +113,7 @@ export const NFTWall: React.FC = () => {
       championName: 'Dr. Sunita Reddy',
       impactNumber: 1500,
       impactUnit: 'Animals Helped',
-      image: '/Animal care.jpg',
+      image: '/images/animal3.webp',
       verified: true,
       location: 'Mumbai',
     },
@@ -125,7 +125,7 @@ export const NFTWall: React.FC = () => {
       championName: 'Dr. Meera Singh',
       impactNumber: 2000,
       impactUnit: 'Girls & Women Served',
-      image: '/khushii.jpg',
+      image: '/images/animals-2.jpeg',
       verified: true,
       location: 'Delhi',
     },
@@ -137,7 +137,7 @@ export const NFTWall: React.FC = () => {
       championName: 'Dr. Sunita Reddy',
       impactNumber: 2000,
       impactUnit: 'Meals Served / Day',
-      image: '/Animal care.jpg',
+      image: '/images/animal3.webp',
       verified: true,
       location: 'Chennai',
     },
@@ -208,7 +208,7 @@ export const NFTWall: React.FC = () => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-white group cursor-pointer"
-      onClick={() => navigate('/nft-wall-details')}
+      onClick={() => navigate('/impact-stories-details')}
     >
       <div className="relative">
         <img
@@ -331,7 +331,7 @@ export const NFTWall: React.FC = () => {
             variant="ghost"
             size="sm"
             className="text-blue-600 hover:text-blue-700 flex-shrink-0 ml-2"
-            onClick={(e) => { e.stopPropagation(); navigate('/nft-wall-details'); }}
+            onClick={(e) => { e.stopPropagation(); navigate('/impact-stories-details'); }}
           >
             <span className="hidden sm:inline">View Details</span>
             <span className="sm:hidden">Details</span>
@@ -477,3 +477,5 @@ export const NFTWall: React.FC = () => {
     </div>
   );
 };
+
+export default ImpactStories;

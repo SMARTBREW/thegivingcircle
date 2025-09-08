@@ -11,7 +11,7 @@ const ChampionStoryDetail: React.FC = () => {
   const navigate = useNavigate();
 
   const handleBack = () => {
-    navigate('/causes');
+    navigate('/live-causes');
   };
 
   return (

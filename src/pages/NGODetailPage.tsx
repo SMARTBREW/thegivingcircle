@@ -1,41 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { 
-  ArrowLeft, 
-  Heart, 
-  Award, 
-  Users, 
-  Calendar, 
-  MapPin, 
-  Target, 
-  Share2, 
-  CheckCircle, 
-  Globe, 
-  Mail, 
-  Phone, 
-  ExternalLink,
-  Play,
-  Star,
+  ArrowLeft,
+  Heart,
+  Award,
+  Users,
+  Calendar,
+  MapPin,
+  Target,
+  Globe,
+  Mail,
+  Phone,
   TrendingUp,
-  BookOpen,
   Handshake,
   Shield,
   Building,
-  Clock,
-  Download,
   BarChart3,
-  PieChart,
-  FileText,
-  Camera,
-  Quote,
   Trophy,
   Verified,
-  AlertCircle,
-  Eye,
-  DollarSign,
-  Briefcase,
-  GraduationCap,
-  Activity
+  Badge as BadgeIcon,
+  CheckCircle as CheckCircleIcon,
+  Clock as ClockIcon,
+  Star
 } from 'lucide-react';
 import { NGODetails } from '../types';
 
@@ -80,11 +66,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
   loading = false 
 }) => {
   const navigate = useNavigate();
-  const [activeGalleryFilter, setActiveGalleryFilter] = useState('all');
   const [selectedGalleryItem, setSelectedGalleryItem] = useState<any>(null);
-  const [isFollowing, setIsFollowing] = useState(false);
-  const [activeSection, setActiveSection] = useState('overview');
-  const [selectedTestimonial, setSelectedTestimonial] = useState(0);
 
   if (loading) {
     return (
@@ -122,10 +104,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
     );
   }
 
-  const galleryFilters = ['all', ...Array.from(new Set(ngoDetails.gallery.map(item => item.cause)))];
-  const filteredGallery = activeGalleryFilter === 'all' 
-    ? ngoDetails.gallery 
-    : ngoDetails.gallery.filter(item => item.cause === activeGalleryFilter);
+  const filteredGallery = ngoDetails.gallery;
 
   return (
     <div className="min-h-screen bg-white">
@@ -437,92 +416,116 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
         </div>
       </div>
 
-      {/* Program Areas & Impact Section */}
+      {/* Program Areas & Measurable Impact (JWP only as requested) */}
       <div className="bg-white py-20">
         <div className="container mx-auto px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-4">Program Areas & Measurable Impact</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Strategic interventions creating sustainable change across multiple sectors
-            </p>
+            <p className="text-lg text-gray-600">Strategic interventions creating sustainable change across multiple sectors</p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {ngoDetails.causes.map((cause, index) => (
-              <div 
-                key={cause.id} 
-                className="bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg overflow-hidden group hover:shadow-xl transition-all border border-gray-100 cursor-pointer"
-                onClick={() => navigate(`/causes-details/${cause.id}`)}
-              >
-                <div className="h-64 overflow-hidden relative">
-                  <img 
-                    src={cause.image} 
-                    alt={cause.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs font-bold text-gray-800">PROGRAM AREA</span>
-                  </div>
-                  <div className="absolute top-4 right-4 bg-black/60 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <ExternalLink className="text-white" size={16} />
-                  </div>
-                </div>
-                
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-4">
-                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{cause.name}</h3>
-                    <div className="ml-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                      <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-                        <ExternalLink className="text-blue-600" size={12} />
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-gray-700 mb-6 leading-relaxed text-sm">{cause.description}</p>
-                  
-                  {/* Impact Metrics */}
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    {cause.impactMetrics.map((metric, idx) => (
-                      <div key={idx} className="bg-white rounded-lg p-4 shadow-sm border border-gray-100 group-hover:border-blue-200 transition-colors">
-                        <div className="text-xl font-bold text-slate-800 mb-1">
-                          {metric.value}{metric.unit}
-                        </div>
-                        <div className="text-xs text-gray-600 font-medium">{metric.label}</div>
-                      </div>
-                    ))}
-                  </div>
+          {(() => {
+            type Cause = {
+              id: number;
+              title: string;
+              organizer: string;
+              ngo: string;
+              location: string;
+              category: string;
+              goalAmount: string;
+              raisedAmount: string;
+              progressPercentage: number;
+              supporters: number;
+              daysLeft: number;
+              image: string;
+              urgency: string;
+              beneficiaries: string;
+              timeline: string;
+            };
 
-                  {/* Approach */}
-                  <div className="mb-4">
-                    <h4 className="font-bold text-gray-900 mb-2 text-sm">Strategic Approach</h4>
-                    <p className="text-gray-700 text-xs leading-relaxed">{cause.approach}</p>
-                  </div>
+            const causes: Cause[] = [
+              { id: 1, title: 'Wings of Hope', organizer: 'Meera Singh', ngo: 'JWP', location: 'Uttarakhand, India', category: 'Women Empowerment', goalAmount: '₹6,50,000', raisedAmount: '₹4,80,000', progressPercentage: 74, supporters: 234, daysLeft: 28, image: '/JWP.jpg', urgency: 'High', beneficiaries: '1000 women', timeline: '15 months' },
+            ];
 
-                  {/* Beneficiaries */}
-                  <div className="mb-6">
-                    <h4 className="font-bold text-gray-900 mb-2 text-sm">Target Demographics</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {cause.beneficiaries.map((beneficiary, idx) => (
-                        <span key={idx} className="bg-slate-100 text-slate-800 px-2 py-1 rounded-full text-xs font-medium">
-                          {beneficiary}
+            const filtered = causes; // JWP only for now
+
+            return (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {filtered.map((cause) => (
+                  <div key={cause.id} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-200 overflow-hidden">
+                    <div className="relative h-48 overflow-hidden">
+                      <img src={cause.image} alt={cause.title} className="w-full h-full object-cover" />
+                      <div className="absolute top-3 left-3 flex items-center gap-2">
+                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${cause.urgency === 'Critical' ? 'text-red-700 bg-red-100 border border-red-200' : 'text-orange-700 bg-orange-100 border border-orange-200'}`}>
+                          {cause.urgency} Priority
                         </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Call to Action */}
-                  <div className="pt-4 border-t border-gray-100">
-                    <div className="flex items-center justify-between">
-                      <span className="text-sm font-medium text-gray-600">Click to view detailed impact story</span>
-                      <div className="flex items-center gap-2 text-blue-600 group-hover:text-blue-700 transition-colors">
-                        <span className="text-sm font-semibold">Learn More</span>
-                        <ExternalLink size={16} />
+                        <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
+                          <CheckCircleIcon size={14} className="text-green-600" />
+                          <span className="text-xs font-medium text-green-700">Verified</span>
+                        </div>
+                      </div>
+                      <div className="absolute top-3 right-3 bg-black/70 text-white px-3 py-1 rounded-full text-xs flex items-center gap-1 font-medium">
+                        <ClockIcon size={12} />
+                        {cause.daysLeft} days left
                       </div>
                     </div>
+
+                    <div className="p-6">
+                      <h3 className="font-semibold text-lg text-gray-800 mb-3 line-clamp-2">{cause.title}</h3>
+                      <div className="space-y-2 mb-4">
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <BadgeIcon className="w-4 h-4 text-blue-600" />
+                          <span className="font-medium">{cause.ngo}</span>
+                          <span className="text-green-600">•</span>
+                          <span className="text-green-600 text-xs">Verified</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <MapPin size={14} />
+                          <span>{cause.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-gray-600">
+                          <Target size={14} />
+                          <span>{cause.beneficiaries} • {cause.timeline}</span>
+                        </div>
+                      </div>
+
+                      <div className="mb-4">
+                        <div className="flex justify-between items-center mb-2">
+                          <div>
+                            <span className="text-2xl font-bold text-gray-800">{cause.raisedAmount}</span>
+                            <span className="text-sm text-gray-600 ml-2">raised</span>
+                          </div>
+                          <div className="text-right">
+                            <span className="text-sm font-medium text-gray-600">{cause.progressPercentage}% of {cause.goalAmount}</span>
+                          </div>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2.5 mb-3">
+                          <div className="bg-gradient-to-r from-blue-500 to-blue-600 h-2.5 rounded-full" style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}></div>
+                        </div>
+                        <div className="flex justify-between items-center text-sm">
+                          <div className="flex items-center gap-1">
+                            <Heart size={14} className="text-red-500" />
+                            <span className="font-medium">{cause.supporters} donors</span>
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <Star size={14} className="text-yellow-500" />
+                            <span className="font-medium">Impact Score: 93</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center justify-between text-xs mb-3">
+                        <span className="text-gray-600">Status</span>
+                        <span className="font-medium text-green-600">Active • Verified</span>
+                      </div>
+
+                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg text-sm font-medium transition-all">Contribute Now</button>
+                    </div>
                   </div>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
+            );
+          })()}
         </div>
       </div>
 

@@ -1,26 +1,23 @@
 import React, { useState }  from 'react';
-import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Building,  ArrowRight, Users, Shield, FileText, Scale, Heart, ArrowUpRight, Globe, Network } from 'lucide-react';
+import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Users, Shield, FileText, Scale, Heart, ArrowUpRight, Globe, Network } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Button } from "../../components/ui/Button";
+// import { Button } from "../../components/ui/Button";
 import { Input } from "../../components/ui/Input";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
   const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
+  // const [subscribed, setSubscribed] = useState(false);
   const navigate = useNavigate();
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     // In a real app, you would send this to your API
     if (email) {
-      setSubscribed(true);
-      setTimeout(() => {
-        setSubscribed(false);
-        setEmail("");
-      }, 3000);
+      // show simple visual feedback via clearing input
+      setEmail("");
     }
   };
 
@@ -139,14 +136,14 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/nft-wall" 
+                  to="/impact-stories" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm">Impact Stories</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/causes" 
+                  to="/live-causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm">Browse Causes</span>
@@ -197,7 +194,7 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/causes" 
+                  to="/live-causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm">Browse Causes</span>

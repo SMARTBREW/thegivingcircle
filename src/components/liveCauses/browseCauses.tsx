@@ -20,25 +20,25 @@ const LiveCausesPage = () => {
   const ngoShowcase = [
     {
       name: 'JWP',
-      image: '/JWP.jpg',
+      image: '/images/animals-2.jpeg',
       description: 'Supporting women empowerment through skill development and entrepreneurship programs',
       focus: 'Women Empowerment & Skills'
     },
     {
       name: 'Animal Care',
-      image: '/Animal care.jpg',
+      image: '/images/animal3.webp',
       description: 'Rescuing, treating and rehabilitating street animals across India',
       focus: 'Animal Welfare & Rescue'
     },
     {
       name: 'KHUSHII',
-      image: '/khushii.jpg',
+      image: '/images/animals-2.jpeg',
       description: 'Empowering underprivileged children through education and healthcare initiatives',
       focus: 'Child Development & Education'
     },
     {
       name: 'GUS',
-      image: '/kokan.jpg',
+      image: '/images/Uttarakhand-rescue.jpg',
       description: 'Providing disaster relief and emergency response in Uttarakhand',
       focus: 'Disaster Relief & Emergency Response'
     }
@@ -58,7 +58,7 @@ const LiveCausesPage = () => {
       progressPercentage: 74,
       supporters: 234,
       daysLeft: 28,
-      image: '/JWP.jpg',
+      image: '/images/animals-2.jpeg',
       urgency: 'High',
       description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand.',
       beneficiaries: '1000 women',
@@ -82,7 +82,7 @@ const LiveCausesPage = () => {
       progressPercentage: 75,
       supporters: 312,
       daysLeft: 20,
-      image: '/Animal care.jpg',
+      image: '/images/animal3.webp',
       urgency: 'High',
       description: 'Comprehensive animal protection program focusing on rescue operations, medical care, and community awareness for street animals.',
       beneficiaries: '1500+ animals',
@@ -105,7 +105,7 @@ const LiveCausesPage = () => {
       progressPercentage: 79,
       supporters: 445,
       daysLeft: 18,
-      image: '/Animal care.jpg',
+      image: '/images/animal3.webp',
       urgency: 'Critical',
       description: 'Daily feeding program for street dogs and cats across Chennai, providing nutritious meals and basic veterinary care.',
       beneficiaries: '2000+ street animals',
@@ -152,7 +152,7 @@ const LiveCausesPage = () => {
       progressPercentage: 80,
       supporters: 189,
       daysLeft: 15,
-      image: '/khushii.jpg',
+      image: '/images/animals-2.jpeg',
       urgency: 'High',
       description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
       beneficiaries: '2000 girls and women',
@@ -219,7 +219,7 @@ const LiveCausesPage = () => {
   // Function to handle navigation to cause details page
   const handleViewDetails = () => {
     // Simulate navigation - in a real app, you would use React Router
-    window.location.href = `/causes-details`;
+    window.location.href = `/live-causes-details`;
   };
 
   // Handle card click (entire card becomes clickable)

@@ -365,7 +365,7 @@ export const ImpactWall: React.FC = () => {
           <Button
             variant="accent"
             size="lg"
-            onClick={() => window.location.href = '/nft-wall'}
+            onClick={() => window.location.href = '/impact-stories'}
             className="group shadow-lg hover:shadow-xl"
           >
             <span className="hidden sm:inline">View All Impact Stories</span>
