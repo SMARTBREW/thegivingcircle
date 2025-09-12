@@ -132,7 +132,6 @@ const FUNDRAISING_DATA = [
 const FundraisingHero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const currentCampaign = useMemo(() => FUNDRAISING_DATA[currentIndex], [currentIndex]);
 
@@ -156,16 +155,9 @@ const FundraisingHero = () => {
     setTimeout(() => {
       setCurrentIndex(newIndex);
       setIsTransitioning(false);
-    }, 300);
+    }, 500);
   }, [currentIndex]);
 
-  const handleHeroClick = useCallback(() => {
-    setIsModalOpen(true);
-  }, []);
-
-  const closeModal = useCallback(() => {
-    setIsModalOpen(false);
-  }, []);
 
   const handleBecomChampion = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
@@ -181,7 +173,7 @@ const FundraisingHero = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % FUNDRAISING_DATA.length);
-    }, 4000);
+    }, 8000);
     return () => clearInterval(interval);
   }, []);
 
@@ -191,9 +183,9 @@ const FundraisingHero = () => {
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 cursor-pointer transition-all duration-300 hover:scale-105" onClick={handleHeroClick}>
+      <div className="absolute inset-0 transition-all duration-500">
         <div
-          className="absolute inset-0 transition-opacity duration-800"
+          className="absolute inset-0 transition-opacity duration-1000"
           style={{
             backgroundImage: `url(${currentCampaign.image})`,
             backgroundSize: "cover",
@@ -207,7 +199,7 @@ const FundraisingHero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-20 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-20 sm:pb-40 cursor-pointer min-h-screen" onClick={handleHeroClick}>
+      <div className="relative z-20 h-full flex flex-col justify-between px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-20 sm:pb-40 min-h-screen">
         {/* Top Section - Spacer */}
         <div className="max-w-2xl ml-0 space-y-4 sm:space-y-6 lg:space-y-8 mt-8 sm:mt-16 lg:mt-20">
           {/* Empty spacer to maintain layout */}
@@ -242,26 +234,15 @@ const FundraisingHero = () => {
               className="group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
             >
               <Users2 className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span>Become a Cause Champion</span>
-            </button>
-
-            <button
-              onClick={handlePartnerNGO}
-              className="group bg-transparent border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:bg-white hover:text-black transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
-            >
-              <span>Partner as NGO</span>
-              <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
+              <span>Donate Now</span>
             </button>
           </div>
 
-          <p className="text-white/60 text-xs sm:text-sm animate-fade-in-delayed font-bold">
-            ✨ Click anywhere to learn more about this cause
-          </p>
         </div>
       </div>
 
       {/* Desktop Scrolling Cards */}
-      <div className="hidden md:block absolute right-8 top-3/4 transform -translate-y-1/4 z-30 w-3/4 max-w-3xl">
+      <div className="hidden md:block absolute right-8 bottom-32 z-30 w-3/4 max-w-3xl">
         <div className="relative flex items-center">
           <button className="absolute left-0 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110">
             <ChevronLeft className="h-6 w-6" />
@@ -328,146 +309,6 @@ const FundraisingHero = () => {
         ))}
       </div>
 
-      {/* Modal */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fade-in" onClick={closeModal}>
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto animate-modal-appear" onClick={(e) => e.stopPropagation()}>
-            {/* Modal Header */}
-            <div className="relative">
-              <img
-                src={currentCampaign.image}
-                alt={currentCampaign.title}
-                className="w-full h-48 sm:h-64 object-cover rounded-t-2xl"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent rounded-t-2xl" />
-              <button
-                onClick={closeModal}
-                className="absolute top-4 right-4 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all duration-300 hover:scale-110"
-              >
-                <X className="h-6 w-6" />
-              </button>
-              <div className="absolute bottom-4 left-4 sm:left-6 right-4 sm:right-6">
-                <div className="flex items-center space-x-2 mb-2">
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium">
-                    {currentCampaign.category}
-                  </span>
-                  <span className="bg-white/20 text-white px-3 py-1 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm">
-                    Verified Campaign
-                  </span>
-                </div>
-                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white">
-                  {currentCampaign.title}
-                </h2>
-              </div>
-            </div>
-
-            {/* Modal Content */}
-            <div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
-              {/* Progress Bar */}
-              <div className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-xl sm:text-2xl font-bold text-gray-900">
-                    {formatCurrency(currentCampaign.raised)}
-                  </span>
-                  <span className="text-sm sm:text-base text-gray-600">
-                    of {formatCurrency(currentCampaign.goal)} goal
-                  </span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-3">
-                  <div
-                    className="bg-gradient-to-r from-purple-600 to-pink-600 h-3 rounded-full transition-all duration-1000 ease-out animate-progress-bar"
-                    style={{
-                      width: `${getProgressPercentage(currentCampaign.raised, currentCampaign.goal)}%`,
-                    }}
-                  />
-                </div>
-                <div className="flex justify-between text-xs sm:text-sm text-gray-600">
-                  <span>{currentCampaign.donors} donors</span>
-                  <span>{currentCampaign.daysLeft} days left</span>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 px-6 rounded-full font-semibold hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
-                  <User2 className="h-5 w-5" />
-                  <span>Become a Cause Champion</span>
-                </button>
-                <button className="flex-1 border-2 border-gray-300 text-gray-700 py-3 px-6 rounded-full font-semibold hover:bg-gray-50 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2">
-                  <Share2 className="h-5 w-5" />
-                  <span>Share Campaign</span>
-                </button>
-              </div>
-
-              {/* Campaign Details */}
-              <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
-                <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                    About This Campaign
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
-                    {currentCampaign.fullDescription}
-                  </p>
-                </div>
-
-                <div className="space-y-4">
-                  <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                    Campaign Info
-                  </h3>
-                  <div className="space-y-3">
-                    <div className="flex items-center space-x-3">
-                      <Users className="h-5 w-5 text-gray-500" />
-                      <div>
-                        <p className="font-medium text-gray-900 text-sm sm:text-base">Organizer</p>
-                        <p className="text-gray-600 text-sm sm:text-base">
-                          {currentCampaign.organizer}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <MapPin className="h-5 w-5 text-gray-500" />
-                      <div>
-                        <p className="font-medium text-gray-900 text-sm sm:text-base">Location</p>
-                        <p className="text-gray-600 text-sm sm:text-base">
-                          {currentCampaign.location}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="flex items-center space-x-3">
-                      <Calendar className="h-5 w-5 text-gray-500" />
-                      <div>
-                        <p className="font-medium text-gray-900 text-sm sm:text-base">Days Left</p>
-                        <p className="text-gray-600 text-sm sm:text-base">
-                          {currentCampaign.daysLeft} days remaining
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Recent Updates */}
-              <div className="space-y-4">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">
-                  Recent Updates
-                </h3>
-                <div className="space-y-3">
-                  {currentCampaign.updates.map((update, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors"
-                    >
-                      <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 flex-shrink-0" />
-                      <p className="text-gray-700 text-sm sm:text-base">{update}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
       <style>{`
         @keyframes fade-in {
           from { opacity: 0; transform: translateY(20px); }
@@ -492,11 +333,11 @@ const FundraisingHero = () => {
         @keyframes progress-bar {
           from { width: 0; }
         }
-        .animate-fade-in { animation: fade-in 0.6s ease-out; }
+        .animate-fade-in { animation: fade-in 10s ease-out; }
         .animate-fade-in-delayed { animation: fade-in 1s ease-out 1s both; }
         .animate-slide-in-left { animation: slide-in-left 0.8s ease-out; }
         .animate-slide-in-up { animation: slide-in-up 0.8s ease-out 0.6s both; }
-        .animate-scroll-horizontal { animation: scroll-horizontal 30s linear infinite; width: 200%; }
+        .animate-scroll-horizontal { animation: scroll-horizontal 45s linear infinite; width: 200%; }
         .animate-modal-appear { animation: modal-appear 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .animate-progress-bar { animation: progress-bar 1s ease-out 0.3s both; }
       `}</style>

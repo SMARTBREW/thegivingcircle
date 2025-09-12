@@ -12,7 +12,7 @@ export const Home: React.FC = () => {
     <div className="min-h-screen">
       <Hero />
       <ImpactWall />
-      <OurImpact />
+      {/* <OurImpact /> */}
       <ImpactGallery />
       <GivingPhilosophy/>
       <Testimonials />

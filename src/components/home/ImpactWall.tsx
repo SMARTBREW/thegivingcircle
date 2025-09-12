@@ -112,7 +112,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
           {description}
         </p>
         
-        <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
+        {/* <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
           <div className="flex items-center space-x-2 min-w-0 flex-1">
             <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
               {championName.charAt(0)}
@@ -133,7 +133,7 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
             <span className="sm:hidden">View</span>
             <ArrowRight className="w-4 h-4 ml-1" />
           </Button>
-        </div>
+        </div> */}
       </div>
     </motion.div>
   );
@@ -289,14 +289,13 @@ export const ImpactWall: React.FC = () => {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Real Impact,{' '}
+            Our{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Real Stories
+              Impact
             </span>
           </h2>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4">
-            Every story represents lives transformed, communities uplifted, and champions who believed in change.
-            These verified impact stories show the real difference your support makes.
+          The Giving Circle has transformed how we create impact together. By connecting passionate cause champions with our verified NGO partners (JWP, Animal Care, KHUSHII, and GUS), we've built a community where every contribution makes a meaningful difference. Together, we're not just funding causes - we're building lasting change.
           </p>
         </motion.div>
 
@@ -355,7 +354,7 @@ export const ImpactWall: React.FC = () => {
         </div>
 
         {/* Call to Action */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -368,11 +367,11 @@ export const ImpactWall: React.FC = () => {
             onClick={() => window.location.href = '/impact-stories'}
             className="group shadow-lg hover:shadow-xl"
           >
-            <span className="hidden sm:inline">View All Impact Stories</span>
+            <span className="hidden sm:inline">View All Causes</span>
             <span className="sm:hidden">View All Stories</span>
             <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
           </Button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

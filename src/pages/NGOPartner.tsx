@@ -1,81 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { Upload, FileText, Phone, Mail, CheckCircle } from 'lucide-react';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Card, CardContent } from '../components/ui/Card';
 
 interface NGOFormData {
   organizationName: string;
-  registrationNumber: string;
+  email: string;
   contactPersonName: string;
-  contactEmail: string;
-  contactPhone: string;
-  address: string;
-  description: string;
-  causesSupported: string[];
-  panCard: FileList;
-  aadhaarCard: FileList;
-  certificate12A: FileList;
-  certificate80G: FileList;
-  profileLogo: FileList;
+  phoneNumber: string;
 }
 
 export const NGOPartner: React.FC = () => {
+  const [formData, setFormData] = useState<NGOFormData>({
+    organizationName: '',
+    email: '',
+    contactPersonName: '',
+    phoneNumber: ''
+  });
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-  const { register, handleSubmit, formState: { errors }, watch } = useForm<NGOFormData>();
 
-  const causes = [
-    'Education',
-    'Healthcare',
-    'Women Empowerment',
-    'Child Welfare',
-    'Environment',
-    'Rural Development',
-    'Skill Development',
-    'Elderly Care',
-    'Clean Water',
-    'Sanitation',
-  ];
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
-  const onSubmit = async (data: NGOFormData) => {
-    setIsLoading(true);
-    
-    try {
-      const formData = new FormData();
-      
-      // Add text fields
-      Object.entries(data).forEach(([key, value]) => {
-        if (key !== 'panCard' && key !== 'aadhaarCard' && key !== 'certificate12A' && key !== 'certificate80G' && key !== 'profileLogo') {
-          if (Array.isArray(value)) {
-            formData.append(key, value.join(','));
-          } else {
-            formData.append(key, value as string);
-          }
-        }
-      });
-
-      // Add files
-      if (data.panCard?.[0]) formData.append('panCard', data.panCard[0]);
-      if (data.aadhaarCard?.[0]) formData.append('aadhaarCard', data.aadhaarCard[0]);
-      if (data.certificate12A?.[0]) formData.append('certificate12A', data.certificate12A[0]);
-      if (data.certificate80G?.[0]) formData.append('certificate80G', data.certificate80G[0]);
-      if (data.profileLogo?.[0]) formData.append('profileLogo', data.profileLogo[0]);
-
-      // Submit to API
-      await fetch('https://app.smartbro.in/api/ngo/apply', {
-        method: 'POST',
-        body: formData,
-      });
-
-      setIsSubmitted(true);
-    } catch (error) {
-      console.error('Failed to submit NGO application:', error);
-    } finally {
-      setIsLoading(false);
-    }
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('NGO Form submitted:', formData);
+    setIsSubmitted(true);
   };
 
   const containerVariants = {
@@ -89,15 +42,6 @@ export const NGOPartner: React.FC = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
-
   const formVariants = {
     hidden: { opacity: 0, x: 50 },
     visible: {
@@ -107,367 +51,209 @@ export const NGOPartner: React.FC = () => {
     }
   };
 
-  if (isSubmitted) {
-    return (
-      <div className="min-h-screen bg-gray-50">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
-        
-        <div className="relative z-10 max-w-sm sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 pt-20 sm:pt-24 md:pt-28">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="text-center"
-          >
-            <Card>
-              <CardContent className="p-6 sm:p-8 md:p-10 lg:p-12">
-                <motion.div 
-                  className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6"
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
-                >
-                  <CheckCircle className="w-10 h-10 sm:w-12 sm:h-12 text-white" />
-                </motion.div>
-                
-                <motion.h2 
-                  className="text-2xl sm:text-3xl lg:text-3xl font-display font-bold text-gray-900 mb-3 sm:mb-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  Application Submitted!
-                </motion.h2>
-                
-                <motion.p 
-                  className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-2 sm:px-0"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.7 }}
-                >
-                  Thank you for your interest in partnering with The Giving Circle. 
-                  Our team will review your application and contact you within 48 hours.
-                </motion.p>
-
-                <motion.div 
-                  className="bg-gradient-to-r from-primary-50 to-burgundy-50 rounded-xl sm:rounded-2xl p-4 sm:p-6 mb-6 sm:mb-8"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.9 }}
-                >
-                  <h3 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">What happens next?</h3>
-                  <div className="text-left space-y-2 sm:space-y-3">
-                    {[
-                      { title: "Document Verification", desc: "We'll verify all submitted documents" },
-                      { title: "Virtual Interview", desc: "Schedule a call to discuss your work" },
-                      { title: "Partnership Onboarding", desc: "Get access to our platform and start connecting with champions" }
-                    ].map((step, index) => (
-                      <motion.div 
-                        key={index}
-                        className="flex items-start space-x-2 sm:space-x-3"
-                        initial={{ opacity: 0, x: -20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1.1 + (index * 0.2) }}
-                      >
-                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-primary-500 rounded-full flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0">
-                          {index + 1}
-                        </div>
-                        <div>
-                          <div className="font-medium text-gray-900 text-sm sm:text-base">{step.title}</div>
-                          <div className="text-xs sm:text-sm text-gray-600">{step.desc}</div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 1.7 }}
-                >
-                  <Button 
-                    onClick={() => window.location.href = '/'}
-                    className="w-full sm:w-auto"
-                  >
-                    Return to Homepage
-                  </Button>
-                </motion.div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </div>
-    );
-  }
-
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Background */}
+      {/* Simple Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
 
       <motion.div 
-        className="relative z-10 flex flex-col min-h-screen items-center justify-start px-4 sm:px-6 md:px-12 lg:px-20 pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-12 md:pb-16 max-w-6xl mx-auto gap-8 sm:gap-12"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         {/* Form Card */}
         <motion.div 
-          className="w-full max-w-4xl"
+          className="w-full max-w-2xl"
           variants={formVariants}
         >
           <motion.div 
             className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
           >
-            <div className="text-center mb-6 sm:mb-8">
-              <div className="flex justify-center mb-4">
-                <img 
-                  src="/Giving Circle logo.png" 
-                  alt="Giving Circle Logo" 
-                  className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-                />
-              </div>
-              <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-2">Join as NGO Partner</h2>
-              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
-                Transform lives by connecting with dedicated champions who are eager to amplify your mission, 
-                fund your initiatives, and create lasting social impact together.
-              </p>
-            </div>
-
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 sm:space-y-8">
-              {/* Organization Details */}
+            {/* Success Message */}
+            {isSubmitted ? (
               <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="text-center py-8"
               >
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
-                  Organization Details
-                </h3>
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
+                >
+                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </motion.div>
                 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
-                  <Input
-                    label="Organization Name"
-                    placeholder="Your NGO name"
-                    {...register('organizationName', { 
-                      required: 'Organization name is required' 
-                    })}
-                    error={errors.organizationName?.message}
-                  />
-                  
-                  <Input
-                    label="Registration Number"
-                    placeholder="Government registration number"
-                    {...register('registrationNumber', { 
-                      required: 'Registration number is required' 
-                    })}
-                    error={errors.registrationNumber?.message}
-                  />
-                </div>
-
-                <div className="mt-4 sm:mt-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Organization Description
-                  </label>
-                  <textarea
-                    {...register('description', { 
-                      required: 'Please describe your organization' 
-                    })}
-                    rows={4}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200 text-sm sm:text-base"
-                    placeholder="Describe your mission, vision, and key activities..."
-                  />
-                  {errors.description && (
-                    <p className="mt-2 text-sm text-red-600">{errors.description.message}</p>
-                  )}
-                </div>
-
-                <div className="mt-4 sm:mt-6">
-                  <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Address
-                  </label>
-                  <textarea
-                    {...register('address', { 
-                      required: 'Address is required' 
-                    })}
-                    rows={3}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-4 focus:ring-primary-500 focus:ring-opacity-20 transition-all duration-200 text-sm sm:text-base"
-                    placeholder="Complete address with pin code..."
-                  />
-                  {errors.address && (
-                    <p className="mt-2 text-sm text-red-600">{errors.address.message}</p>
-                  )}
-                </div>
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                >
+                  Application Submitted Successfully!
+                </motion.h2>
+                
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-lg text-gray-600 mb-8 leading-relaxed"
+                >
+                  Thank you for your interest in partnering with The Giving Circle. Our team will review your application and contact you within 48 hours.
+                </motion.p>
+                
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="flex flex-col sm:flex-row gap-3 justify-center"
+                >
+                  <button
+                    onClick={() => window.location.href = '/'}
+                    className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+                  >
+                    Return to Home
+                  </button>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="px-6 py-3 bg-white text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold"
+                  >
+                    Submit Another Application
+                  </button>
+                </motion.div>
+                
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="text-sm text-gray-500 mt-6"
+                >
+                  You'll receive confirmation details at <span className="font-medium">{formData.email}</span>
+                </motion.p>
               </motion.div>
-
-              {/* Contact Information */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
-                  <Phone className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
-                  Contact Information
-                </h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                  <div className="sm:col-span-2 lg:col-span-1">
-                    <Input
-                      label="Contact Person Name"
-                      placeholder="Primary contact name"
-                      {...register('contactPersonName', { 
-                        required: 'Contact person name is required' 
-                      })}
-                      error={errors.contactPersonName?.message}
+            ) : (
+              // Original Form Content
+              <>
+                <div className="text-center mb-6 sm:mb-8">
+                  <div className="flex justify-center mb-4">
+                    <img 
+                      src="/Giving Circle logo.png" 
+                      alt="Giving Circle Logo" 
+                      className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                     />
                   </div>
-                  
-                  <Input
-                    label="Email Address"
-                    type="email"
-                    placeholder="contact@yourngo.org"
-                    leftIcon={<Mail className="w-4 h-4 sm:w-5 sm:h-5" />}
-                    {...register('contactEmail', { 
-                      required: 'Email is required',
-                      pattern: {
-                        value: /^\S+@\S+$/i,
-                        message: 'Please enter a valid email'
-                      }
-                    })}
-                    error={errors.contactEmail?.message}
-                  />
-                  
-                  <Input
-                    label="Phone Number"
-                    type="tel"
-                    placeholder="Contact phone number"
-                    leftIcon={<Phone className="w-4 h-4 sm:w-5 sm:h-5" />}
-                    {...register('contactPhone', { 
-                      required: 'Phone number is required' 
-                    })}
-                    error={errors.contactPhone?.message}
-                  />
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Join as NGO Partner</h2>
+                  <p className="text-base text-gray-600">Connect with passionate champions who want to support your cause</p>
                 </div>
-              </motion.div>
 
-              {/* Causes Supported */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-              >
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">
-                  Causes You Support
-                </h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
-                  {causes.map((cause, index) => (
-                    <motion.label
-                      key={cause}
-                      className="flex items-center space-x-2 sm:space-x-3 p-2 sm:p-3 border border-gray-200 rounded-lg sm:rounded-xl hover:bg-gray-50 cursor-pointer transition-colors"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.5 + (index * 0.05) }}
-                    >
+                <form onSubmit={handleSubmit} className="space-y-5">
+                  {/* Organization Name */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.2 }}
+                  >
+                    <label className="block text-base font-medium text-gray-700 mb-2">Organization Name *</label>
+                    <input
+                      type="text"
+                      name="organizationName"
+                      value={formData.organizationName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                      placeholder="Enter your organization name"
+                      required
+                    />
+                  </motion.div>
+
+                  {/* Email */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3 }}
+                  >
+                    <label className="block text-base font-medium text-gray-700 mb-2">Email Address *</label>
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                      placeholder="Enter your email address"
+                      required
+                    />
+                  </motion.div>
+
+                  {/* Contact Person Name and Phone Number in same row */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.4 }}
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                  >
+                    <div>
+                      <label className="block text-base font-medium text-gray-700 mb-2">Contact Person Name *</label>
                       <input
-                        type="checkbox"
-                        value={cause}
-                        {...register('causesSupported', { 
-                          required: 'Please select at least one cause' 
-                        })}
-                        className="text-primary-500 focus:ring-primary-500 h-4 w-4"
+                        type="text"
+                        name="contactPersonName"
+                        value={formData.contactPersonName}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                        placeholder="Enter contact person name"
+                        required
                       />
-                      <span className="text-xs sm:text-sm text-gray-700">{cause}</span>
-                    </motion.label>
-                  ))}
-                </div>
-                {errors.causesSupported && (
-                  <p className="mt-2 text-sm text-red-600">{errors.causesSupported.message}</p>
-                )}
-              </motion.div>
+                    </div>
+                    <div>
+                      <label className="block text-base font-medium text-gray-700 mb-2">Phone Number *</label>
+                      <input
+                        type="tel"
+                        name="phoneNumber"
+                        value={formData.phoneNumber}
+                        onChange={handleInputChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                        placeholder="Enter phone number"
+                        required
+                      />
+                    </div>
+                  </motion.div>
 
-              {/* Document Upload */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6 flex items-center">
-                  <FileText className="w-5 h-5 sm:w-6 sm:h-6 mr-2 text-primary-600" />
-                  Required Documents
-                </h3>
-                
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                  {[
-                    { name: 'panCard', label: 'PAN Card', id: 'panCard' },
-                    { name: 'certificate12A', label: '12A Certificate', id: 'certificate12A' },
-                    { name: 'certificate80G', label: '80G Certificate', id: 'certificate80G' },
-                    { name: 'profileLogo', label: 'Organization Logo', id: 'profileLogo', accept: '.jpg,.jpeg,.png' }
-                  ].map((doc, index) => (
-                    <motion.div 
-                      key={doc.name}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: 0.6 + (index * 0.1) }}
-                    >
-                      <label className="block text-sm font-medium text-gray-700 mb-2">
-                        {doc.label}
-                      </label>
-                      <div className="border-2 border-dashed border-gray-300 rounded-lg sm:rounded-xl p-4 sm:p-6 text-center hover:border-primary-400 transition-colors">
-                        <Upload className="w-6 h-6 sm:w-8 sm:h-8 text-gray-400 mx-auto mb-2" />
-                        <input
-                          type="file"
-                          accept={doc.accept || ".pdf,.jpg,.jpeg,.png"}
-                          {...register(doc.name as keyof NGOFormData, { 
-                            required: `${doc.label} is required` 
-                          })}
-                          className="hidden"
-                          id={doc.id}
-                        />
-                        <label
-                          htmlFor={doc.id}
-                          className="text-xs sm:text-sm text-gray-600 cursor-pointer hover:text-primary-600 block"
-                        >
-                          Click to upload {doc.label}
-                        </label>
-                      </div>
-                      {errors[doc.name as keyof NGOFormData] && (
-                        <p className="mt-2 text-sm text-red-600">
-                          {errors[doc.name as keyof NGOFormData]?.message}
-                        </p>
-                      )}
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                  {/* Statistics */}
+                  <motion.div 
+                    className="text-center text-gray-600 text-base font-medium"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <span className="text-green-600 font-semibold">25</span> NGOs joined our platform in the last month
+                  </motion.div>
 
-              {/* Submit Button */}
-              <motion.div 
-                className="pt-4 sm:pt-6 border-t border-gray-200"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-              >
-                <div className="text-center text-gray-600 text-sm font-medium mb-4">
-                  <span className="text-green-600 font-semibold">25</span> NGOs joined our platform in the last month
-                </div>
+                  {/* Submit Button */}
+                  <motion.button
+                    type="submit"
+                    disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber}
+                    className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg text-lg font-semibold transition-colors disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.6 }}
+                  >
+                    Contact Us
+                  </motion.button>
 
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full sm:w-full md:w-auto"
-                  loading={isLoading}
-                >
-                  Submit Application
-                </Button>
-                
-                <p className="text-xs sm:text-sm text-gray-500 mt-3 sm:mt-4">
-                  By submitting this application, you agree to our terms and conditions. 
-                  We'll review your application and contact you within 48 hours.
-                </p>
-              </motion.div>
-            </form>
+                  <motion.p
+                    className="text-sm text-gray-500 text-center mt-3"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.7 }}
+                  >
+                    By submitting this form, you agree to be contacted by our team regarding partnership opportunities.
+                  </motion.p>
+                </form>
+              </>
+            )}
           </motion.div>
         </motion.div>
       </motion.div>

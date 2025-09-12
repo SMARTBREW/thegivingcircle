@@ -496,12 +496,6 @@ const LiveCausesPage = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="absolute top-3 right-3">
-                      <div className="bg-black/70 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs flex items-center gap-1 font-medium">
-                        <Clock size={12} />
-                        {cause.daysLeft} days left
-                      </div>
-                    </div>
                   </div>
 
                   <div className="p-6">
@@ -515,11 +509,6 @@ const LiveCausesPage = () => {
                         <span className="font-medium">{cause.ngo}</span>
                         <span className="text-green-600">•</span>
                         <span className="text-green-600 text-xs">Verified</span>
-                      </div>
-                      
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <User size={14} />
-                        <span className="font-medium">{cause.organizer}</span>
                       </div>
                       
                       <div className="flex items-center gap-2 text-sm text-gray-600">

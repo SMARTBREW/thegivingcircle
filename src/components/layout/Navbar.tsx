@@ -65,6 +65,10 @@ const NavbarComponent = () => {
       name: 'Causes', 
       href: '/causes'
     },
+    {
+      name: 'About Us',
+      href: '/the-giving-circle',
+    },
     { 
       name: 'NGO Partners', 
       hasDropdown: true,
@@ -74,15 +78,6 @@ const NavbarComponent = () => {
         { name: 'NGO Details', href: '/ngo-detail/1' }
       ]
     },
-    {
-      name: 'About Us',
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'The Giving Circle', href: '/the-giving-circle' },
-        { name: 'Our Vision', href: '/the-giving-circle#vision' },
-        { name: 'Our Story', href: '/the-giving-circle#story' }
-      ]
-    }
   ];
 
   // Animation for the pulse effect
