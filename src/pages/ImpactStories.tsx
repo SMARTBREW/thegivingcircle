@@ -221,7 +221,7 @@ const ImpactStories: React.FC = () => {
         {story.verified && (
           <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-medium flex items-center shadow-lg">
             <CheckCircle className="w-3 h-3 mr-1" />
-            <span className="hidden sm:inline">NFT Verified</span>
+            <span className="hidden sm:inline">Verified</span>
             <span className="sm:hidden">Verified</span>
           </div>
         )}

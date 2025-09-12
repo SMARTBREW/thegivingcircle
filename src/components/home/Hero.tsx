@@ -112,7 +112,7 @@ const FUNDRAISING_DATA = [
     id: 6,
     title: "Flood Animal Rescue",
     description: "Rescuing animals trapped in floodwaters and providing emergency veterinary care. Your support funds rescue boats, medical supplies, and temporary shelters for flood-affected animals.",
-    image: "/images/flood animal.jpg",
+    image: "/images/flood-animal.jpg",
     category: "Animal Rescue • Emergency",
     fullDescription: "When floods strike, animals are often the forgotten victims, trapped in rising waters without food or medical care. Our specialized rescue team uses boats and specialized equipment to save animals from floodwaters, providing immediate medical attention, food, and temporary shelter. We work with local veterinarians and animal welfare organizations to ensure rescued animals receive proper care and find loving homes.",
     raised: 41600,

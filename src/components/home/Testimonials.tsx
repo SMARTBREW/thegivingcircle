@@ -32,7 +32,7 @@ export const Testimonials: React.FC = () => {
       name: 'Anita Verma',
       role: 'Cause Champion',
       image: 'https://images.pexels.com/photos/8924532/pexels-photo-8924532.jpeg?auto=compress&cs=tinysrgb&w=400',
-      quote: 'The NFT verification gives me proof that my contributions are making a real difference. I can share my impact stories with friends and inspire them to join too.',
+      quote: 'The verification gives me proof that my contributions are making a real difference. I can share my impact stories with friends and inspire them to join too.',
       organization: 'Youth Skill Development',
     },
     {

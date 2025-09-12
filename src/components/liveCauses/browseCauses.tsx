@@ -597,29 +597,6 @@ const LiveCausesPage = () => {
               </div>
             )}
 
-
-
-            {/* Trust Footer */}
-            <div className="bg-white rounded-xl shadow-sm border p-6 text-center">
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <Shield className="text-blue-600" size={24} />
-                <h3 className="text-lg font-semibold text-gray-800">Verified Impact Guarantee</h3>
-              </div>
-              <p className="text-gray-600 mb-6">
-                Every cause listed undergoes rigorous verification through our multi-stage screening process.
-                All fund allocations are monitored with quarterly impact assessments and third-party audits.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="text-blue-600 hover:text-blue-800 font-medium border border-blue-600 hover:border-blue-800 px-6 py-3 rounded-lg transition-colors">
-                  Learn about our verification process →
-                </button>
-                
-                {/* <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                  Start a Verified Cause
-                </button> */}
-              </div>
-            </div>
           </div>
         </div>
       </div>
