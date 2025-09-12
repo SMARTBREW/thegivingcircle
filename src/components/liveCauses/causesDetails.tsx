@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Heart, Share2, Bookmark, Shield, Award, CheckCircle, AlertCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Clock, Target, Building2, User, Users, Calendar, TrendingUp, Briefcase, BookOpen, HeartHandshake, Star, Quote, Trophy, Camera, Image, Eye, AlertTriangle, HelpCircle } from 'lucide-react';
+import PrimaryButton from '../ui/PrimaryButton';
 
 const CauseDetailPage = () => {
   const { id } = useParams();
@@ -269,10 +270,10 @@ const CauseDetailPage = () => {
                       {cause.category}
                     </span>
                   </div>
-                  <h1 className="text-3xl md:text-4xl font-bold mb-2">
+                  <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2">
                     {cause.title}
                   </h1>
-                  <p className="text-lg text-gray-200">
+                  <p className="text-base sm:text-lg md:text-xl text-gray-200">
                     {cause.subtitle}
                   </p>
                 </div>
@@ -283,16 +284,16 @@ const CauseDetailPage = () => {
             <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-8">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
-                  <CheckCircle className="text-black-600" size={20} />
-                  <span className="text-black font-medium">Verified Campaign</span>
+                  <CheckCircle className="text-purple-600" size={20} />
+                  <span className="text-gray-600 font-medium">Verified Campaign</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <Award className="text-black-600" size={20} />
-                  <span className="text-black font-medium">Tax Deductible</span>
+                  <Award className="text-purple-600" size={20} />
+                  <span className="text-gray-600 font-medium">Tax Deductible</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <TrendingUp className="text-gradient-to-r from-blue-500 to-pink-500" size={20} />
-                  <span className="text-black font-medium">Impact Tracked</span>
+                  <TrendingUp className="text-purple-600" size={20} />
+                  <span className="text-gray-600 font-medium">Impact Tracked</span>
                 </div>
               </div>
             </div>
@@ -656,14 +657,17 @@ const CauseDetailPage = () => {
                 </div>
               </div>
               
-              <button className="w-full bg-gradient-to-r from-blue-500 to-pink-500 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl mb-3">
+              <PrimaryButton className="w-full mb-3" size="lg">
                 Support This Cause
-              </button>
+              </PrimaryButton>
               
-              <button className="w-full bg-white text-gray-700 py-3 px-4 rounded-lg font-medium border border-gray-300 hover:bg-gray-50 transition-colors flex items-center justify-center gap-2">
-                <Share2 size={18} />
+              <PrimaryButton 
+                variant="secondary" 
+                className="w-full" 
+                icon={<Share2 size={18} />}
+              >
                 Share This Cause
-              </button>
+              </PrimaryButton>
 
               <div className="mt-4 pt-4 border-t text-center">
                 <p className="text-xs text-gray-500">

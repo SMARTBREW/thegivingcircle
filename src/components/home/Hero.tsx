@@ -1,16 +1,10 @@
-import React, { useState, useEffect, useCallback, useMemo } from "react";
+import { useState, useEffect, useCallback, useMemo } from "react";
 import {
-  ArrowRight,
-  Users,
   ChevronLeft,
   ChevronRight,
-  X,
-  Calendar,
-  MapPin,
-  Share2,
-  User2,
   Users2,
 } from "lucide-react";
+import PrimaryButton from '../ui/PrimaryButton';
 
 const FUNDRAISING_DATA = [
   {
@@ -135,17 +129,6 @@ const FundraisingHero = () => {
 
   const currentCampaign = useMemo(() => FUNDRAISING_DATA[currentIndex], [currentIndex]);
 
-  const formatCurrency = useCallback((amount: number) => {
-    return new Intl.NumberFormat("en-IN", {
-      style: "currency",
-      currency: "INR",
-      minimumFractionDigits: 0,
-    }).format(amount);
-  }, []);
-
-  const getProgressPercentage = useCallback((raised: number, goal: number) => {
-    return Math.min((raised / goal) * 100, 100);
-  }, []);
 
   const handleCardClick = useCallback((campaign: { id: number }) => {
     const newIndex = FUNDRAISING_DATA.findIndex(c => c.id === campaign.id);
@@ -159,15 +142,10 @@ const FundraisingHero = () => {
   }, [currentIndex]);
 
 
-  const handleBecomChampion = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
+  const handleBecomChampion = useCallback(() => {
     window.location.href = '/onboarding';
   }, []);
 
-  const handlePartnerNGO = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
-    e.stopPropagation();
-    window.location.href = '/ngo-partner';
-  }, []);
 
   // Auto-rotate campaigns
   useEffect(() => {
@@ -215,27 +193,26 @@ const FundraisingHero = () => {
 
           {/* Title */}
           <div>
-            <h1 className={`text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
+            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
               {currentCampaign.title}
             </h1>
           </div>
 
           {/* Description */}
           <div>
-            <p className={`text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed transition-all duration-500 delay-100 ${isTransitioning ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}`}>
+            <p className={`text-base sm:text-lg md:text-xl text-white/90 leading-relaxed transition-all duration-500 delay-100 ${isTransitioning ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}`}>
               {currentCampaign.description}
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-in-up">
-            <button
+            <PrimaryButton
               onClick={handleBecomChampion}
-              className="group bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold text-sm sm:text-base lg:text-lg hover:from-purple-700 hover:to-pink-700 transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-lg"
+              icon={<Users2 className="h-4 w-4 sm:h-5 sm:w-5" />}
             >
-              <Users2 className="h-4 w-4 sm:h-5 sm:w-5" />
-              <span>Donate Now</span>
-            </button>
+              Become a Cause Champion
+            </PrimaryButton>
           </div>
 
         </div>

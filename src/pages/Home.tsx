@@ -11,10 +11,14 @@ export const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <Hero />
+      <GivingPhilosophy/>
       <ImpactWall />
+      
+      
       {/* <OurImpact /> */}
       <ImpactGallery />
-      <GivingPhilosophy/>
+     
+      
       <Testimonials />
       <ChampionFundraiserBox/>
     </div>

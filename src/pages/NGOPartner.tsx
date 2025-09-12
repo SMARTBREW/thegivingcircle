@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import PrimaryButton from '../components/ui/PrimaryButton';
 
 interface NGOFormData {
   organizationName: string;
@@ -232,16 +233,21 @@ export const NGOPartner: React.FC = () => {
                   </motion.div>
 
                   {/* Submit Button */}
-                  <motion.button
-                    type="submit"
-                    disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber}
-                    className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg text-lg font-semibold transition-colors disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+                  <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.6 }}
+                    className="w-full"
                   >
-                    Contact Us
-                  </motion.button>
+                    <PrimaryButton
+                      type="submit"
+                      disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber}
+                      className="w-full"
+                      size="lg"
+                    >
+                      Contact Us
+                    </PrimaryButton>
+                  </motion.div>
 
                   <motion.p
                     className="text-sm text-gray-500 text-center mt-3"

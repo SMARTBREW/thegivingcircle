@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, MapPin, Users, Calendar, Heart, Star, TrendingUp, Award, Target, Building2 } from 'lucide-react';
+import PrimaryButton from '../components/ui/PrimaryButton';
 
 interface ImpactStory {
   id: string;
@@ -151,7 +152,7 @@ const ImpactStories: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section with Animated Statistics */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white py-20">
+      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -160,13 +161,13 @@ const ImpactStories: React.FC = () => {
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Real Impact,{' '}
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Real Stories
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
               Every number represents a life changed, every story showcases the power of collective giving.
               Discover the transformational impact we're creating together.
             </p>
@@ -177,7 +178,7 @@ const ImpactStories: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6"
           >
             {platformStats.map((stat, index) => (
               <motion.div
@@ -185,12 +186,12 @@ const ImpactStories: React.FC = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                className={`text-center p-6 rounded-xl backdrop-blur-sm border border-white/20 ${
+                className={`text-center p-3 sm:p-4 md:p-6 rounded-xl backdrop-blur-sm border border-white/20 ${
                   index === currentStatIndex ? 'bg-white/20 scale-105' : 'bg-white/10'
                 } transition-all duration-500`}
               >
-                <div className="text-2xl sm:text-3xl font-bold mb-2">{stat.value}</div>
-                <div className="text-sm font-medium mb-1">{stat.label}</div>
+                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{stat.value}</div>
+                <div className="text-xs sm:text-sm font-medium mb-1">{stat.label}</div>
                 <div className="text-xs text-gray-300">{stat.description}</div>
               </motion.div>
             ))}
@@ -199,23 +200,26 @@ const ImpactStories: React.FC = () => {
       </section>
 
       {/* Impact Stories Section */}
-      <section className="py-16">
+      <section className="py-8 sm:py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Stories That Inspire Change
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+              Stories That{' '}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Inspire Change
+              </span>
             </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Behind every statistic is a human story of transformation, hope, and resilience.
             </p>
           </motion.div>
 
           {/* Stories - Natural Flow Layout */}
-          <div className="space-y-16">
+          <div className="space-y-12 sm:space-y-16">
             {impactStories.map((story, index) => (
               <motion.div
                 key={story.id}
@@ -224,31 +228,31 @@ const ImpactStories: React.FC = () => {
                 transition={{ delay: index * 0.2 }}
                 className="relative"
               >
-                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}>
+                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 sm:gap-10 md:gap-12 items-center`}>
                   {/* Image Section */}
                   <div className="lg:w-1/2">
                     <div className="relative">
                       <img
                         src={story.image}
                         alt={story.title}
-                        className="w-full h-96 object-cover rounded-2xl shadow-lg"
+                        className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg"
                       />
-                      <div className="absolute top-6 left-6">
-                        <span className="bg-green-500 text-white px-4 py-2 rounded-full text-sm font-medium flex items-center shadow-lg">
-                          <CheckCircle className="w-4 h-4 mr-1" />
+                      <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6">
+                        <span className="bg-green-500 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium flex items-center shadow-lg">
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                           Verified Impact
                         </span>
                       </div>
-                      <div className="absolute top-6 right-6">
-                        <span className="bg-purple-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+                      <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6">
+                        <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg">
                           {story.category}
                         </span>
                       </div>
                       {/* Main Impact Number */}
-                      <div className="absolute bottom-6 left-6">
-                        <div className="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg">
-                          <div className="text-3xl font-bold text-purple-600">{story.impactNumber.toLocaleString()}+</div>
-                          <div className="text-sm text-gray-600 font-medium">{story.impactUnit}</div>
+                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6">
+                        <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2 sm:p-3 md:p-4 shadow-lg">
+                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">{story.impactNumber.toLocaleString()}+</div>
+                          <div className="text-xs sm:text-sm text-gray-600 font-medium">{story.impactUnit}</div>
                         </div>
                       </div>
                     </div>
@@ -257,61 +261,65 @@ const ImpactStories: React.FC = () => {
                   {/* Content Section */}
                   <div className="lg:w-1/2">
                     {/* NGO Badge */}
-                    <div className="flex items-center space-x-2 mb-6">
-                      <Building2 className="w-6 h-6 text-purple-600" />
-                      <span className="text-xl font-bold text-purple-600">{story.ngoName}</span>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-gray-500 flex items-center">
-                        <MapPin className="w-5 h-5 mr-1" />
+                    <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 mb-4 sm:mb-6">
+                      <div className="flex items-center space-x-2">
+                        <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
+                        <span className="text-lg sm:text-xl font-bold text-purple-600">{story.ngoName}</span>
+                      </div>
+                      <span className="text-gray-400 hidden sm:inline">•</span>
+                      <span className="text-gray-500 flex items-center text-sm sm:text-base">
+                        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-1" />
                         {story.location}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
                       {story.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+                    <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                       {story.description}
                     </p>
 
                     {/* Key Statistics - Inline Flow */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                       {story.stats.slice(0, 4).map((stat, statIndex) => (
                         <div key={statIndex} className="text-center">
-                          <div className="flex justify-center mb-2 text-purple-600">
+                          <div className="flex justify-center mb-1 sm:mb-2 text-purple-600">
                             {stat.icon}
                           </div>
-                          <div className="text-xl font-bold text-gray-900">{stat.value}</div>
-                          <div className="text-sm text-gray-500">{stat.label}</div>
+                          <div className="text-lg sm:text-xl font-bold text-gray-900">{stat.value}</div>
+                          <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
                         </div>
                       ))}
                     </div>
 
                     {/* Testimonial */}
-                    <div className="border-l-4 border-purple-500 pl-6 mb-8">
-                      <div className="text-lg text-gray-700 italic mb-3 leading-relaxed">
+                    <div className="border-l-4 border-purple-500 pl-4 sm:pl-6 mb-6 sm:mb-8">
+                      <div className="text-base sm:text-lg text-gray-700 italic mb-2 sm:mb-3 leading-relaxed">
                         "{story.testimonial.quote}"
                       </div>
-                      <div className="text-sm text-gray-600">
+                      <div className="text-xs sm:text-sm text-gray-600">
                         <strong>{story.testimonial.author}</strong> - {story.testimonial.role}
                       </div>
                     </div>
 
                     {/* Footer */}
-                    <div className="flex items-center justify-between text-sm text-gray-500 pt-4 border-t border-gray-200">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 text-xs sm:text-sm text-gray-500 pt-3 sm:pt-4 border-t border-gray-200">
                       <div className="flex items-center">
-                        <Calendar className="w-4 h-4 mr-1" />
+                        <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                         {story.dateCompleted}
                       </div>
-                      <button 
+                      <PrimaryButton 
                         onClick={() => setSelectedStory(selectedStory === story.id ? null : story.id)}
-                        className="text-purple-600 hover:text-purple-700 font-medium text-base"
+                        variant="secondary"
+                        size="sm"
+                        className="text-xs sm:text-sm"
                       >
                         {selectedStory === story.id ? 'Show Less' : 'Read Full Story'}
-                      </button>
+                      </PrimaryButton>
                     </div>
 
                     {/* Full Story - Expandable */}
@@ -319,9 +327,9 @@ const ImpactStories: React.FC = () => {
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
-                        className="mt-6 pt-6 border-t border-gray-200"
+                        className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200"
                       >
-                        <p className="text-lg text-gray-600 leading-relaxed">
+                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                           {story.fullStory}
                         </p>
                       </motion.div>

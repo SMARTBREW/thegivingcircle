@@ -16,13 +16,13 @@ const AboutImpactGallery = () => {
           viewport={{ once: true }}
           className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-text mb-4 sm:mb-6 md:mb-8 px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
             About{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Us
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-xl text-text/70 max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto px-4 sm:px-6 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
             We're on a mission to bridge the gap between good intentions and verified impact, 
             creating a world where every act of kindness leaves a permanent, traceable mark.
           </p>
@@ -37,21 +37,24 @@ const AboutImpactGallery = () => {
         >
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text mb-6 sm:mb-8">
-                Our Story
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
+                Our{' '}
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Story
+                </span>
               </h2>
-              <div className="space-y-4 sm:space-y-6 text-text/70">
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+              <div className="space-y-4 sm:space-y-6 text-gray-600">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
                   Founded in 2023, we started with a simple question: "How can we make social impact 
                   more transparent and verifiable?" After witnessing countless well-intentioned donations 
                   disappear into organizational overhead, we knew there had to be a better way.
                 </p>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
                   Our breakthrough came when we realized that blockchain technology could create permanent, 
                   immutable records of impact stories. By partnering with verified NGOs and documenting 
                   every project from start to finish, we've created a new model of accountable philanthropy.
                 </p>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
                   Today, thousands of champions trust us to turn their compassion into verified change, 
                   one impact story at a time.
                   {' '}
@@ -234,8 +237,8 @@ const generateSquares = (category: string) => {
     >
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end">
         <div className="p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <h4 className="font-medium text-sm">{item.title}</h4>
-          <span className="text-xs text-white/80">{item.category}</span>
+          <h4 className="font-medium text-sm sm:text-base">{item.title}</h4>
+          <span className="text-xs sm:text-sm text-white/80">{item.category}</span>
         </div>
       </div>
     </motion.div>

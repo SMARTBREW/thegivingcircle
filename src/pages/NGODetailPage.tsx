@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import PrimaryButton from '../components/ui/PrimaryButton';
 import { 
   ArrowLeft,
   Heart,
@@ -519,7 +520,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                         <span className="font-medium text-green-600">Active • Verified</span>
                       </div>
 
-                      <button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg text-sm font-medium transition-all">Contribute Now</button>
+                      <PrimaryButton className="w-full">Contribute Now</PrimaryButton>
                     </div>
                   </div>
                 ))}

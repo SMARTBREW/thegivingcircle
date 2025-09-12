@@ -1,9 +1,7 @@
-import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Heart, Users, Target } from "lucide-react";
 
 const ChampionFundraiserBox = ({
-  text = "Become a Cause Champion Today!",
   description = "Cause Champions are passionate advocates who lead transformative change in their communities. Share your story, inspire supporters, and amplify your impact through our champion network.",
 }) => {
   // Animation variants
@@ -50,7 +48,7 @@ const ChampionFundraiserBox = ({
         {/* Text Section */}
         <div className="flex flex-col items-center md:items-start gap-4 md:gap-3 w-full md:max-w-[65%] ml-0 md:ml-4 text-center md:text-left">
           <motion.h3
-            className="font-bold text-black text-xl sm:text-2xl md:text-3xl"
+            className="font-bold text-gray-900 text-xl sm:text-2xl md:text-3xl mb-3 sm:mb-4"
             variants={{
               hidden: { opacity: 0, y: -20 },
               visible: {
@@ -60,11 +58,15 @@ const ChampionFundraiserBox = ({
               },
             }}
           >
-            {text}
+            Become a Cause{' '}
+            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Champion
+            </span>{' '}
+            Today!
           </motion.h3>
 
           <motion.p
-            className="font-normal text-black text-sm sm:text-base px-2 md:px-0"
+            className="text-sm sm:text-base md:text-lg text-gray-600 px-2 md:px-0"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: {
@@ -91,15 +93,15 @@ const ChampionFundraiserBox = ({
           >
             <div className="flex items-center gap-1 bg-pink-100 dark:bg-pink-900/30 px-3 py-1 rounded-full">
               <Heart className="w-4 h-4 text-pink-500" />
-              <span className="text-xs text-black">Cause Advocacy</span>
+              <span className="text-xs text-gray-600">Cause Advocacy</span>
             </div>
             <div className="flex items-center gap-1 bg-purple-100 dark:bg-purple-900/30 px-3 py-1 rounded-full">
               <Users className="w-4 h-4 text-purple-500" />
-              <span className="text-xs text-black">Champion Network</span>
+              <span className="text-xs text-gray-600">Champion Network</span>
             </div>
             <div className="flex items-center gap-1 bg-indigo-100 dark:bg-indigo-900/30 px-3 py-1 rounded-full">
               <Target className="w-4 h-4 text-indigo-500" />
-              <span className="text-xs text-black">Impact Stories</span>
+              <span className="text-xs text-gray-600">Impact Stories</span>
             </div>
           </motion.div>
         </div>
@@ -146,7 +148,7 @@ const ChampionFundraiserBox = ({
           {/* Secondary Button */}
           <motion.button
             onClick={handleLearnMore}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-white  text-black dark:text-black font-semibold rounded-lg shadow-md border transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-white text-gray-600 dark:text-gray-600 font-semibold rounded-lg shadow-md border transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",

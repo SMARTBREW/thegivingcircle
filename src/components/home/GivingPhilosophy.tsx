@@ -59,15 +59,18 @@ const GivingPhilosophy = () => {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Philosophy Text */}
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-primary ">
-                Why Giving Matters
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Why Giving{' '}
+                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  Matters
+                </span>
               </h2>
-              <p className="text-primary/80 text-lg leading-relaxed">
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
                 Every act of giving creates ripples that extend far beyond what we can see.
                 When we come together as a circle, our individual contributions become a
                 powerful force for change.
               </p>
-              <p className="text-primary/70 leading-relaxed">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 The Giving Circle isn't just about donations—it's about building a community
                 where every person's generosity multiplies through connection, collaboration,
                 and shared purpose. Together, we transform lives, communities, and the world.

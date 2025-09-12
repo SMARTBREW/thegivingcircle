@@ -25,42 +25,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-white border-t border-gray-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="mb-16 p-8 glassmorphism rounded-2xl mt-10">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div>
-              <h3 className="text-2xl font-bold text-primary mb-2">Stay Connected</h3>
-              <p className="text-muted-foreground">
-                Subscribe to our newsletter for updates on new causes, impact stories, and ways to get involved.
-              </p>
-            </div>
-            <div>
-              <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
-                <div className="flex-1">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="w-full border-primary/20 focus:border-primary"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                  />
-                </div>
-                <motion.button
-            onClick={() => navigate("/onboarding")}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-1/2 rounded-full"
-            whileHover={{
-              scale: 1.05,
-              boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",
-              transition: { type: "spring", stiffness: 400, damping: 20 },
-            }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="whitespace-nowrap">Subscribe</span>
-          </motion.button>
-              </form>
-            </div>
-          </div>
-        </div>
+     
         
         {/* Main Footer Content */}
         <div className="py-12 lg:py-16">

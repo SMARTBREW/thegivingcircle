@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Search, User, MapPin, Heart, Clock, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
 
 // Cause type definition removed as it's not used in this component
 
@@ -7,7 +7,6 @@ const LiveCausesPage = () => {
   const [selectedNGO, setSelectedNGO] = useState('All NGOs');
   const [selectedFilter, setSelectedFilter] = useState('Most Urgent');
   const [visibleCauses, setVisibleCauses] = useState(9);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const ngos = [
     'All NGOs',
@@ -17,32 +16,7 @@ const LiveCausesPage = () => {
     'GUS'
   ];
 
-  const ngoShowcase = [
-    {
-      name: 'JWP',
-      image: '/images/animals-2.jpeg',
-      description: 'Supporting women empowerment through skill development and entrepreneurship programs',
-      focus: 'Women Empowerment & Skills'
-    },
-    {
-      name: 'Animal Care',
-      image: '/images/animal3.webp',
-      description: 'Rescuing, treating and rehabilitating street animals across India',
-      focus: 'Animal Welfare & Rescue'
-    },
-    {
-      name: 'KHUSHII',
-      image: '/images/animals-2.jpeg',
-      description: 'Empowering underprivileged children through education and healthcare initiatives',
-      focus: 'Child Development & Education'
-    },
-    {
-      name: 'GUS',
-      image: '/images/Uttarakhand-rescue.jpg',
-      description: 'Providing disaster relief and emergency response in Uttarakhand',
-      focus: 'Disaster Relief & Emergency Response'
-    }
-  ];
+  
 
   const causes = [
     // JWP causes
@@ -189,13 +163,7 @@ const LiveCausesPage = () => {
     }
   ];
 
-  // Auto-slide functionality
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % ngoShowcase.length);
-    }, 4000);
-    return () => clearInterval(timer);
-  }, []);
+  
 
   const getUrgencyColor = (urgency: string) => {
     switch (urgency) {
@@ -239,36 +207,23 @@ const LiveCausesPage = () => {
       {/* Professional Hero Section with NGO Showcase */}
       <div className="relative text-white overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">
         
-        {/* Sliding NGO Background Images */}
-        <div className="absolute inset-0">
-          {ngoShowcase.map((ngo, index) => (
-            <div
-              key={index}
-              className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-                index === currentSlide ? 'opacity-100' : 'opacity-0'
-              }`}
-              style={{ 
-                backgroundImage: `url(${ngo.image})`,
-              }}
-            />
-          ))}
-          {/* Professional overlay for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70"></div>
-        </div>
         
-        <div className="relative container mx-auto px-6 py-20 lg:py-28">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-28">
           <div className="max-w-4xl">
 
             
-            <h1 className="text-4xl lg:text-5xl font-bold mb-8 leading-tight animate-fade-in text-white drop-shadow-lg">
-              Transforming Lives Through Verified Causes
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
+              Transforming Lives Through{' '}
+              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                Verified Causes
+              </span>
             </h1>
             
-            <p className="text-lg lg:text-xl mb-10 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
               Join <span className="font-semibold text-white">1,23,456+ verified donors</span> creating measurable social impact through rigorously monitored initiatives across India.
             </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-2xl mb-8 animate-fade-in-delay">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mb-6 sm:mb-8 animate-fade-in-delay">
               <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                 <div className="flex items-center gap-2 mb-1">
                   <CheckCircle className="text-green-400" size={18} />
@@ -297,85 +252,18 @@ const LiveCausesPage = () => {
 
           </div>
 
-          {/* Enhanced NGO Info Card */}
-          <div className="absolute bottom-12 right-8 bg-white bg-opacity-98 rounded-xl p-6 max-w-md animate-fade-in-delay border-l-4 border-blue-600 shadow-xl backdrop-blur-md">
-            
-            <div className="flex items-center gap-3 mb-3">
-              <div className="w-16 h-16 rounded-lg bg-gray-100 overflow-hidden border-2 border-blue-100 shadow-md">
-                <img 
-                  src={ngoShowcase[currentSlide].image} 
-                  alt={ngoShowcase[currentSlide].name}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div>
-                <div className="flex items-center gap-2">
-                  <h3 className="font-bold text-gray-800 text-lg">{ngoShowcase[currentSlide].name}</h3>
-                  <div className="w-3 h-3 bg-green-500 rounded-full border-2 border-white" title="Verified Partner"></div>
-                </div>
-                <div className="flex items-center gap-2 text-xs text-gray-500 mt-1">
-                  <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full flex items-center gap-1">
-                    <CheckCircle size={12} />
-                    Verified
-                  </span>
-                  <span className="bg-blue-100 text-blue-700 px-2 py-1 rounded-full flex items-center gap-1">
-                    <Building2 size={12} />
-                    Registered NGO
-                  </span>
-                  <span className="bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full flex items-center gap-1">
-                    <Award size={12} />
-                    Certified
-                  </span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="bg-blue-50 p-3 rounded-lg mb-3 border border-blue-100">
-              <p className="text-blue-800 font-semibold text-sm">{ngoShowcase[currentSlide].focus}</p>
-            </div>
-            
-            <p className="text-gray-700 text-sm leading-relaxed mb-4">{ngoShowcase[currentSlide].description}</p>
-            
-            <div className="grid grid-cols-3 gap-2">
-              <div className="bg-gray-50 p-2 text-center rounded border border-gray-200">
-                <div className="text-blue-700 font-bold text-sm">95%</div>
-                <div className="text-xs text-gray-600">Fund Usage</div>
-              </div>
-              <div className="bg-gray-50 p-2 text-center rounded border border-gray-200">
-                <div className="text-blue-700 font-bold text-sm">4.9/5</div>
-                <div className="text-xs text-gray-600">Trust Score</div>
-              </div>
-              <div className="bg-gray-50 p-2 text-center rounded border border-gray-200">
-                <div className="text-blue-700 font-bold text-sm">5+ Yrs</div>
-                <div className="text-xs text-gray-600">Experience</div>
-              </div>
-            </div>
-          </div>
-
-          {/* Slide Indicators */}
-          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
-            {ngoShowcase.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? 'bg-white' : 'bg-white/50'
-                }`}
-              />
-            ))}
-          </div>
         </div>
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 py-12">
-        <div className="flex flex-col lg:flex-row gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
           {/* Professional Sidebar */}
           <div className="lg:w-1/4">
-            <div className="bg-white rounded-xl shadow-sm border p-6 sticky top-6">
+            <div className="bg-white rounded-xl shadow-sm border p-4 sm:p-6 sticky top-6">
               <div className="flex items-center gap-2 mb-4">
                 <Shield className="text-blue-600" size={20} />
-                <h3 className="text-lg font-semibold text-gray-800">Verified NGO Partners</h3>
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900">Verified NGO Partners</h3>
               </div>
               <div className="space-y-2 max-h-96 overflow-y-auto">
                 {ngos.map((ngo) => (
@@ -385,10 +273,10 @@ const LiveCausesPage = () => {
                       setSelectedNGO(ngo);
                       setVisibleCauses(9);
                     }}
-                    className={`w-full text-left px-4 py-3 rounded-lg transition-all duration-200 font-medium ${
+                    className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                       selectedNGO === ngo
-                        ? 'bg-blue-600 text-white shadow-md'
-                        : 'text-gray-700 hover:bg-gray-100 border border-gray-200'
+                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
+                        : 'text-gray-600 hover:bg-gray-100 border border-gray-200'
                     }`}
                   >
                     {ngo}
@@ -409,22 +297,22 @@ const LiveCausesPage = () => {
           {/* Main Content Area */}
           <div className="lg:w-3/4">
             {/* Professional Search and Filters */}
-            <div className="mb-8 bg-white rounded-xl shadow-sm border p-6">
-              <h2 className="text-xl font-semibold text-gray-800 mb-4">Find Verified Causes</h2>
+            <div className="mb-6 sm:mb-8 bg-white rounded-xl shadow-sm border p-4 sm:p-6">
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Find Verified Causes</h2>
               
               {/* Search Bar */}
-              <div className="relative mb-6">
-                <Search className="absolute left-4 top-4 text-gray-400" size={20} />
+              <div className="relative mb-4 sm:mb-6">
+                <Search className="absolute left-3 sm:left-4 top-3 sm:top-4 text-gray-400" size={18} />
                 <input
                   type="text"
                   placeholder="Search by cause title, NGO partner, or location..."
-                  className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-lg"
+                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
                 />
               </div>
 
               {/* Professional Filters */}
-              <div className="flex flex-wrap items-center gap-4 text-sm">
-                <span className="text-gray-700 font-medium">Viewing causes from</span>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm">
+                <span className="text-gray-600 font-medium">Viewing causes from</span>
                 
                 <select 
                   value={selectedNGO}
@@ -432,19 +320,19 @@ const LiveCausesPage = () => {
                     setSelectedNGO(e.target.value);
                     setVisibleCauses(9);
                   }}
-                  className="border border-gray-300 text-gray-700 rounded-lg px-4 py-2 bg-white focus:ring-2 focus:ring-blue-500 font-medium"
+                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-purple-500 font-medium text-xs sm:text-sm"
                 >
                   {ngos.map(ngo => (
                     <option key={ngo} value={ngo}>{ngo}</option>
                   ))}
                 </select>
                 
-                <span className="text-gray-700 font-medium">sorted by</span>
+                <span className="text-gray-600 font-medium">sorted by</span>
                 
                 <select 
                   value={selectedFilter}
                   onChange={(e) => setSelectedFilter(e.target.value)}
-                  className="border border-gray-300 text-gray-700 rounded-lg px-4 py-2 bg-white focus:ring-2 focus:ring-blue-500 font-medium"
+                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-purple-500 font-medium text-xs sm:text-sm"
                 >
                   <option>Most Urgent</option>
                   <option>Highest Goal</option>
@@ -453,25 +341,25 @@ const LiveCausesPage = () => {
                   <option>Recently Added</option>
                 </select>
 
-                <button className="text-blue-600 ml-auto hover:text-blue-800 transition-colors font-medium">
+                <button className="text-purple-600 ml-auto hover:text-purple-800 transition-colors font-medium text-xs sm:text-sm">
                   Reset All Filters
                 </button>
               </div>
             </div>
 
             {/* Results Count */}
-            <div className="mb-6 flex items-center justify-between">
-              <div className="text-gray-600">
+            <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+              <div className="text-gray-600 text-sm sm:text-base">
                 Displaying <span className="font-semibold">{Math.min(visibleCauses, filteredCauses.length)}</span> of <span className="font-semibold">{filteredCauses.length}</span> verified active causes
               </div>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
+              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span>All causes verified & monitored</span>
               </div>
             </div>
 
-            {/* Professional Cause Cards - 3x3 Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            {/* Professional Cause Cards - Responsive Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
               {visibleCausesList.map((cause) => (
                 <div
                   key={cause.id}
@@ -479,79 +367,79 @@ const LiveCausesPage = () => {
                   className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer group"
                 >
                   {/* Image */}
-                  <div className="relative h-48 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 overflow-hidden">
                     <img 
                       src={cause.image} 
                       alt={cause.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
-                    <div className="absolute top-3 left-3">
-                      <div className="flex items-center gap-2">
-                        <span className={`px-3 py-1 rounded-full text-xs font-semibold ${getUrgencyColor(cause.urgency)}`}>
+                    <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
+                      <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2">
+                        <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold ${getUrgencyColor(cause.urgency)}`}>
                           {cause.urgency} Priority
                         </span>
-                        <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-2 py-1">
-                          <CheckCircle size={14} className="text-green-600" />
+                        <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-1 sm:px-2 py-1">
+                          <CheckCircle size={12} className="text-green-600" />
                           <span className="text-xs font-medium text-green-700">Verified</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="font-semibold text-lg text-gray-800 mb-3 line-clamp-2 group-hover:text-blue-600 transition-colors">
+                  <div className="p-4 sm:p-6">
+                    <h3 className="font-semibold text-base sm:text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors">
                       {cause.title}
                     </h3>
                     
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Building2 size={14} className="text-blue-600" />
+                    <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                        <Building2 size={12} className="text-purple-600" />
                         <span className="font-medium">{cause.ngo}</span>
                         <span className="text-green-600">•</span>
                         <span className="text-green-600 text-xs">Verified</span>
                       </div>
                       
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <MapPin size={14} />
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                        <MapPin size={12} />
                         <span>{cause.location}</span>
                       </div>
                       
-                      <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <Target size={14} />
+                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
+                        <Target size={12} />
                         <span>{cause.beneficiaries} • {cause.timeline}</span>
                       </div>
                     </div>
 
                     {/* Progress Section */}
-                    <div className="mb-4">
-                      <div className="flex justify-between items-center mb-2">
+                    <div className="mb-3 sm:mb-4">
+                      <div className="flex justify-between items-center mb-1 sm:mb-2">
                         <div>
-                          <span className="text-2xl font-bold text-gray-800">{cause.raisedAmount}</span>
-                          <span className="text-sm text-gray-600 ml-2">raised</span>
+                          <span className="text-lg sm:text-2xl font-bold text-gray-900">{cause.raisedAmount}</span>
+                          <span className="text-xs sm:text-sm text-gray-600 ml-1 sm:ml-2">raised</span>
                         </div>
                         <div className="text-right">
-                          <span className="text-sm font-medium text-gray-600">{cause.progressPercentage}% of {cause.goalAmount}</span>
+                          <span className="text-xs sm:text-sm font-medium text-gray-600">{cause.progressPercentage}% of {cause.goalAmount}</span>
                         </div>
                       </div>
-                      <div className="w-full bg-gray-200 rounded-full h-2.5 mb-3">
+                      <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 mb-2 sm:mb-3">
                         <div 
-                          className="bg-gradient-to-r from-blue-500 to-blue-600 h-2.5 rounded-full transition-all duration-500"
+                          className="bg-gradient-to-r from-purple-600 to-pink-600 h-2 sm:h-2.5 rounded-full transition-all duration-500"
                           style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                         ></div>
                       </div>
-                      <div className="flex justify-between items-center text-sm">
+                      <div className="flex justify-between items-center text-xs sm:text-sm">
                         <div className="flex items-center gap-1">
-                          <Heart size={14} className="text-red-500" />
+                          <Heart size={12} className="text-red-500" />
                           <span className="font-medium">{cause.supporters} donors</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Star size={14} className="text-yellow-500" />
+                          <Star size={12} className="text-yellow-500" />
                           <span className="font-medium">Impact Score: {Math.floor(85 + Math.random() * 15)}</span>
                         </div>
                       </div>
                     </div>
                     
-                                        <div className="mb-4">
+                    <div className="mb-3 sm:mb-4">
                       <div className="flex justify-between text-xs mb-1">
                         <span className="text-gray-600">Status</span>
                         <span className="font-medium text-green-600">Active • Verified</span>
@@ -564,7 +452,7 @@ const LiveCausesPage = () => {
                           e.stopPropagation();
                           handleDonateClick(e, cause.id);
                         }}
-                        className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-4 rounded-lg text-sm font-medium transition-all"
+                        className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all"
                       >
                         Contribute Now
                       </button>
@@ -576,10 +464,10 @@ const LiveCausesPage = () => {
 
             {/* Load More Button */}
             {visibleCauses < filteredCauses.length && (
-              <div className="text-center mb-8">
+              <div className="text-center mb-6 sm:mb-8">
                 <button 
                   onClick={loadMore}
-                  className="bg-gray-100 hover:bg-gray-200 text-gray-700 px-8 py-3 rounded-lg font-semibold hover:shadow-md transition-all duration-300"
+                  className="bg-white hover:bg-gray-50 text-gray-600 border border-gray-300 hover:border-purple-300 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:shadow-md transition-all duration-300 text-sm sm:text-base"
                 >
                   Load More Causes
                 </button>

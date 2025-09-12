@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import PrimaryButton from '../components/ui/PrimaryButton';
 
 interface FormData {
   fullName: string;
@@ -32,14 +33,6 @@ const CauseChampionOnboarding: React.FC = () => {
     isSubmitted: false
   });
 
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  const testimonials = [
-    "Sarah raised ₹ 25,00,000 for education programs in rural villages",
-    "Priya collected ₹ 15,00,000 for clean water initiatives in 15 days",
-    "Ramesh raised ₹ 8,00,000 for animal rescue and rehabilitation",
-    "Sunita gathered ₹ 20,00,000 for disaster relief efforts in 25 days"
-  ];
 
   // Countries data
   const countries = [
@@ -115,13 +108,6 @@ const CauseChampionOnboarding: React.FC = () => {
     }
   ];
 
-  // Auto-rotate testimonials every 4 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
 
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
@@ -180,14 +166,6 @@ const CauseChampionOnboarding: React.FC = () => {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: "easeOut" }
-    }
-  };
 
   const formVariants = {
     hidden: { opacity: 0, x: 50 },
@@ -480,16 +458,21 @@ const CauseChampionOnboarding: React.FC = () => {
                 <span className="text-green-600 font-semibold">156</span> people became Cause Champions in the last 2 days
               </motion.div>
 
-              <motion.button
-                onClick={handleSubmit}
-                disabled={!formData.agreeToTerms || !formData.fullName || !formData.email || !formData.country || !formData.city || !formData.selectedCause || formData.selectedNGOs.length === 0}
-                className="w-full bg-purple-600 hover:bg-purple-700 disabled:bg-gray-400 text-white py-4 px-6 rounded-lg text-lg font-semibold transition-colors disabled:cursor-not-allowed shadow-lg hover:shadow-xl"
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 }}
+                className="w-full"
               >
-                Become a Cause Champion
-              </motion.button>
+                <PrimaryButton
+                  onClick={handleSubmit}
+                  disabled={!formData.agreeToTerms || !formData.fullName || !formData.email || !formData.country || !formData.city || !formData.selectedCause || formData.selectedNGOs.length === 0}
+                  className="w-full"
+                  size="lg"
+                >
+                  Become a Cause Champion
+                </PrimaryButton>
+              </motion.div>
             </div>
             </>
             )}

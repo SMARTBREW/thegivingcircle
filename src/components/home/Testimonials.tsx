@@ -87,13 +87,13 @@ export const Testimonials: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-6 sm:mb-8 md:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold text-text mb-3 sm:mb-4 md:mb-5 px-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
             Voices of{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
               Change
             </span>
           </h2>
-          <p className="text-sm sm:text-base md:text-lg text-text/70 max-w-xs sm:max-w-lg md:max-w-2xl mx-auto px-4 sm:px-6 leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
             Hear from champions, NGO partners, and community members whose lives have been transformed
             through our circle of giving.
           </p>
@@ -145,18 +145,18 @@ export const Testimonials: React.FC = () => {
                     </motion.div>
                     
                     <div className="flex-1 text-center sm:text-left">
-                      <blockquote className="text-sm sm:text-base md:text-lg text-text/80 italic leading-relaxed mb-3 sm:mb-4 px-2 sm:px-0">
+                      <blockquote className="text-base sm:text-lg md:text-xl text-gray-600 italic leading-relaxed mb-3 sm:mb-4 px-2 sm:px-0">
                         "{testimonials[currentIndex].quote}"
                       </blockquote>
                       
                       <div className="space-y-1 sm:space-y-2">
-                        <div className="font-semibold text-text text-base sm:text-lg">
+                        <div className="font-semibold text-gray-900 text-base sm:text-lg">
                           {testimonials[currentIndex].name}
                         </div>
-                        <div className="text-primary-500 font-medium text-sm sm:text-base">
+                        <div className="text-purple-600 font-medium text-sm sm:text-base">
                           {testimonials[currentIndex].role}
                         </div>
-                        <div className="text-text/60 text-xs sm:text-sm">
+                        <div className="text-gray-600 text-xs sm:text-sm">
                           {testimonials[currentIndex].organization}
                         </div>
                       </div>
