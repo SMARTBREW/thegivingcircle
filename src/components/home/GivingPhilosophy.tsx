@@ -47,12 +47,12 @@ const GivingPhilosophy = () => {
                   Matters
                 </span>
               </h2>
-              <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed mb-4">
+              <p className="text-lg text-gray-600 leading-relaxed mb-4">
                 Every act of giving creates ripples that extend far beyond what we can see.
                 When we come together as a circle, our individual contributions become a
                 powerful force for change.
               </p>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+              <p className="text-sm sm:text-lg text-gray-600 leading-relaxed">
                 The Giving Circle isn't just about donations—it's about building a community
                 where every person's generosity multiplies through connection, collaboration,
                 and shared purpose. Together, we transform lives, communities, and the world.
@@ -60,7 +60,7 @@ const GivingPhilosophy = () => {
               <div className="pt-4">
               <motion.button
             onClick={() => navigate("/onboarding")}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-1/2 rounded-full"
+            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-bold px-4 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-1/2 rounded-full"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",

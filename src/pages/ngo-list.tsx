@@ -311,7 +311,7 @@ export const NGOList: React.FC = () => {
               NGO Partners
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed">
             Discover our network of verified NGO partners creating meaningful change across India.
             Every organization here has been thoroughly vetted for transparency and impact.
           </p>

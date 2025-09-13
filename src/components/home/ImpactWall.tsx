@@ -250,7 +250,7 @@ export const ImpactWall: React.FC = () => {
               Impact
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4">
+          <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4">
           The Giving Circle has transformed how we create impact together. By connecting passionate cause champions with our verified NGO partners (JWP, Animal Care, KHUSHII, and GUS), we've built a community where every contribution makes a meaningful difference. Together, we're not just funding causes - we're building lasting change.
           </p>
         </motion.div>

@@ -219,7 +219,7 @@ const LiveCausesPage = () => {
               </span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
+            <p className="text-lg mb-6 sm:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
               Join <span className="font-semibold text-white">1,23,456+ verified donors</span> creating measurable social impact through rigorously monitored initiatives across India.
             </p>
             
@@ -263,7 +263,7 @@ const LiveCausesPage = () => {
             <div className="bg-white rounded-xl shadow-sm border p-4 sm:p-6 sticky top-6">
               <div className="flex items-center gap-2 mb-4">
                 <Shield className="text-blue-600" size={20} />
-                <h3 className="text-base sm:text-lg font-semibold text-gray-900">Verified NGO Partners</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Verified NGO Partners</h3>
               </div>
               <div className="space-y-2 max-h-96 overflow-y-auto">
                 {ngos.map((ngo) => (
@@ -387,7 +387,7 @@ const LiveCausesPage = () => {
                   </div>
 
                   <div className="p-4 sm:p-6">
-                    <h3 className="font-semibold text-base sm:text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                    <h3 className="font-semibold text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors">
                       {cause.title}
                     </h3>
                     

@@ -93,7 +93,7 @@ export const Testimonials: React.FC = () => {
               Change
             </span>
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
             Hear from champions, NGO partners, and community members whose lives have been transformed
             through our circle of giving.
           </p>
@@ -145,12 +145,12 @@ export const Testimonials: React.FC = () => {
                     </motion.div>
                     
                     <div className="flex-1 text-center sm:text-left">
-                      <blockquote className="text-base sm:text-lg md:text-xl text-gray-600 italic leading-relaxed mb-3 sm:mb-4 px-2 sm:px-0">
+                      <blockquote className="text-lg text-gray-600 italic leading-relaxed mb-3 sm:mb-4 px-2 sm:px-0">
                         "{testimonials[currentIndex].quote}"
                       </blockquote>
                       
                       <div className="space-y-1 sm:space-y-2">
-                        <div className="font-semibold text-gray-900 text-base sm:text-lg">
+                        <div className="font-semibold text-gray-900 text-lg">
                           {testimonials[currentIndex].name}
                         </div>
                         <div className="text-purple-600 font-medium text-sm sm:text-base">

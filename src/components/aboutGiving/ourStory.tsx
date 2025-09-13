@@ -83,7 +83,7 @@ export default function SimplifiedAboutPage() {
               Us
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed opacity-90 max-w-2xl mx-auto">
+          <p className="text-lg mb-6 sm:mb-8 leading-relaxed opacity-90 max-w-2xl mx-auto">
             Bridging the gap between good intentions and verified impact
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export default function SimplifiedAboutPage() {
                 Story
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               From a simple question to a revolutionary platform transforming philanthropy
             </p>
           </motion.div>
@@ -118,17 +118,17 @@ export default function SimplifiedAboutPage() {
               viewport={{ once: true }}
             >
               <div className="space-y-4 sm:space-y-6 text-gray-700">
-                <p className="text-base sm:text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Founded in 2023, we started with a simple question: "How can we make social impact 
                   more transparent and verifiable?" After witnessing countless well-intentioned donations 
                   disappear into organizational overhead, we knew there had to be a better way.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Our breakthrough came when we realized that blockchain technology could create permanent, 
                   immutable records of impact stories. By partnering with verified NGOs and documenting 
                   every project from start to finish, we've created accountability in philanthropy.
                 </p>
-                <p className="text-base sm:text-lg leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Today, thousands of champions trust us to turn their compassion into verified change through our partnerships with JWP, Animal Care, KHUSHII, and GUS.
                 </p>
               </div>

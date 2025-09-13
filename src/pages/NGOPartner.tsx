@@ -106,7 +106,7 @@ export const NGOPartner: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed"
+                  className="text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed"
                 >
                   Thank you for your interest in partnering with The Giving Circle. Our team will review your application and contact you within 48 hours.
                 </motion.p>
@@ -157,7 +157,7 @@ export const NGOPartner: React.FC = () => {
                       NGO Partner
                     </span>
                   </h2>
-                  <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">Connect with passionate champions who want to support your cause</p>
+                  <p className="text-lg text-gray-600 leading-relaxed">Connect with passionate champions who want to support your cause</p>
                 </div>
 
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">

@@ -167,7 +167,7 @@ const ImpactStories: React.FC = () => {
                 Real Stories
               </span>
             </h1>
-            <p className="text-base sm:text-lg md:text-xl text-gray-100 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-100 max-w-2xl mx-auto leading-relaxed">
               Every number represents a life changed, every story showcases the power of collective giving.
               Discover the transformational impact we're creating together.
             </p>
@@ -213,7 +213,7 @@ const ImpactStories: React.FC = () => {
                 Inspire Change
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Behind every statistic is a human story of transformation, hope, and resilience.
             </p>
           </motion.div>
@@ -281,7 +281,7 @@ const ImpactStories: React.FC = () => {
                     </h3>
 
                     {/* Description */}
-                    <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                    <p className="text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
                       {story.description}
                     </p>
 
@@ -300,7 +300,7 @@ const ImpactStories: React.FC = () => {
 
                     {/* Testimonial */}
                     <div className="border-l-4 border-purple-500 pl-4 sm:pl-6 mb-6 sm:mb-8">
-                      <div className="text-base sm:text-lg text-gray-700 italic mb-2 sm:mb-3 leading-relaxed">
+                      <div className="text-lg text-gray-700 italic mb-2 sm:mb-3 leading-relaxed">
                         "{story.testimonial.quote}"
                       </div>
                       <div className="text-xs sm:text-sm text-gray-600">
@@ -331,7 +331,7 @@ const ImpactStories: React.FC = () => {
                         animate={{ opacity: 1, height: 'auto' }}
                         className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200"
                       >
-                        <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                        <p className="text-lg text-gray-600 leading-relaxed">
                           {story.fullStory}
                         </p>
                       </motion.div>

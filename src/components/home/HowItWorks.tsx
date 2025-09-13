@@ -22,7 +22,7 @@ const AboutImpactGallery = () => {
               Story
             </span>
           </h1>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
             We're on a mission to bridge the gap between good intentions and verified impact, 
             creating a world where every act of kindness leaves a permanent, traceable mark.
           </p>
@@ -44,17 +44,17 @@ const AboutImpactGallery = () => {
                 </span>
               </h2> */}
               <div className="space-y-4 sm:space-y-6 text-gray-600">
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Founded in 2023, we started with a simple question: "How can we make social impact 
                   more transparent and verifiable?" After witnessing countless well-intentioned donations 
                   disappear into organizational overhead, we knew there had to be a better way.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Our breakthrough came when we realized that blockchain technology could create permanent, 
                   immutable records of impact stories. By partnering with verified NGOs and documenting 
                   every project from start to finish, we've created a new model of accountable philanthropy.
                 </p>
-                <p className="text-base sm:text-lg md:text-xl leading-relaxed">
+                <p className="text-lg leading-relaxed">
                   Today, thousands of champions trust us to turn their compassion into verified change, 
                   one impact story at a time.
                   {' '}

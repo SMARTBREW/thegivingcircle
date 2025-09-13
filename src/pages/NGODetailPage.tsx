@@ -150,7 +150,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight text-white">
                 {ngoDetails.name}
               </h1>
-              <h2 className="text-base sm:text-lg md:text-xl text-slate-300 mb-6 sm:mb-8 leading-relaxed">
+              <h2 className="text-lg text-slate-300 mb-6 sm:mb-8 leading-relaxed">
                 {ngoDetails.shortDescription}
               </h2>
 
@@ -405,7 +405,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                 Evidence
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Gallery of our causes and projects showcasing real community impact
             </p>
           </div>
@@ -432,7 +432,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
           {/* Selected Image Details - 2 lines of text at bottom */}
           {selectedGalleryItem && (
             <div className="bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
-              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{selectedGalleryItem.title}</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">{selectedGalleryItem.title}</h3>
               <p className="text-sm sm:text-base text-gray-700">{selectedGalleryItem.description}</p>
             </div>
           )}
@@ -449,7 +449,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                 Governance
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Executive leadership driving organizational excellence and strategic vision
             </p>
           </div>
@@ -471,7 +471,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                   )}
                 </div>
                 
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2">{leader.name}</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{leader.name}</h3>
                 <div className="text-slate-600 font-semibold mb-3 sm:mb-4 text-xs sm:text-sm">{leader.role}</div>
                 <p className="text-gray-700 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">{leader.bio}</p>
                 
@@ -523,7 +523,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
             </span>{' '}
             Platform
           </h2>
-          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 max-w-2xl mx-auto text-slate-300 leading-relaxed">
+          <p className="text-lg mb-6 sm:mb-8 max-w-2xl mx-auto text-slate-300 leading-relaxed">
             Are you an NGO looking to expand your impact? Join our verified network of transparent organizations committed to measurable social change.
           </p>
           

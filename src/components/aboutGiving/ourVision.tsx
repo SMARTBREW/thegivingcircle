@@ -46,7 +46,7 @@ export default function MissionVisionPage() {
                 Values
               </span>
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               These fundamental principles guide every decision we make and every action we take 
               in our mission to transform philanthropy.
             </p>
@@ -83,7 +83,7 @@ export default function MissionVisionPage() {
                   Mission
                 </span>
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 To revolutionize philanthropy by creating the world's most transparent and accountable 
                 giving platform, where every donation creates measurable impact and builds lasting 
                 connections between donors and communities.
@@ -155,7 +155,7 @@ export default function MissionVisionPage() {
                   Vision
                 </span>
               </h2>
-              <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
+              <p className="text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 We envision a world where philanthropy is completely transparent, deeply impactful, 
                 and universally trusted. A future where every act of giving creates a ripple effect 
                 of positive change that extends far beyond the initial donation.

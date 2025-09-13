@@ -288,7 +288,7 @@ const CauseDetailPage = () => {
               </h2>
               
               <div className="prose prose-lg text-gray-600 mb-6 sm:mb-8">
-                <p className="leading-relaxed text-base sm:text-lg">
+                <p className="leading-relaxed text-lg">
                   {cause.problemStatement}
                 </p>
               </div>
@@ -372,7 +372,7 @@ const CauseDetailPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
                 <div>
                   <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6">
-                    <p className="leading-relaxed text-base sm:text-lg">
+                    <p className="leading-relaxed text-lg">
                       {cause.solution.approach}
                     </p>
                   </div>
@@ -452,7 +452,7 @@ const CauseDetailPage = () => {
               </h2>
               
               <div className="mb-4 sm:mb-6">
-                <p className="text-gray-600 leading-relaxed text-base sm:text-lg">
+                <p className="text-gray-600 leading-relaxed text-lg">
                   Every donation creates visible, measurable change in children's lives. Our impact gallery showcases 
                   real moments of transformation, from the joy of a child receiving their first school uniform to 
                   the pride of parents attending their first literacy class.
