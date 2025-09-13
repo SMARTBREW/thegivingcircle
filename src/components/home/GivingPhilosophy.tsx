@@ -18,43 +18,25 @@ const GivingPhilosophy = () => {
     ["Clean Water Access", "Educational Support", "Healthcare Aid", "Environmental Care", "Community Building", "Women Empowerment", "Child Welfare", "Elder Care", "Disability Support"]
   ];
 
-  const scrollUpAnimation = {
-    animation: 'scrollUp 25s linear infinite'
-  };
-
-  const scrollDownAnimation = {
-    animation: 'scrollDown 25s linear infinite'
-  };
+  // Removed scroll animations to keep cards static
 
   return (
     <>
       <style>{`
-        @keyframes scrollUp {
-          0% { transform: translateY(0); }
-          100% { transform: translateY(-50%); }
-        }
-        
-        @keyframes scrollDown {
-          0% { transform: translateY(-50%); }
-          100% { transform: translateY(0); }
-        }
-        
         .text-glow {
           text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
         }
         
         .glassmorphism {
-          background: rgba(255, 255, 255, 0.2);
-          backdrop-filter: blur(10px);
-          border: 2px solid rgba(255, 255, 255, 0.4);
+          background: white;
+          border: 2px solid #e5e7eb;
           box-shadow: 
-            0 8px 32px rgba(139, 92, 246, 0.15),
-            0 4px 16px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.6);
+            0 4px 6px rgba(0, 0, 0, 0.05),
+            0 1px 3px rgba(0, 0, 0, 0.1);
         }
       `}</style>
       
-      <section className="py-20 px-6 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             {/* Left: Philosophy Text */}
@@ -91,27 +73,27 @@ const GivingPhilosophy = () => {
               </div>
             </div>
 
-            {/* Right: Animated Impact Columns */}
+            {/* Right: Static Impact Columns with Zigzag Layout */}
             <div className="grid grid-cols-3 gap-3 h-96 overflow-hidden">
               {impactLines.map((column, columnIndex) => (
                 <div
                   key={columnIndex}
                   className="flex flex-col space-y-2"
-                  style={columnIndex % 2 === 0 ? scrollUpAnimation : scrollDownAnimation}
+                  style={{
+                    transform: columnIndex === 1 ? 'translateY(-20px)' : 'translateY(0)'
+                  }}
                 >
-                  {/* Repeat column items multiple times for seamless infinite scroll */}
-                  {Array.from({ length: 8 }).map((_, repeatIndex) =>
-                    column.map((item, itemIndex) => (
-                      <div
-                        key={`${repeatIndex}-${itemIndex}`}
-                        className="glassmorphism p-4 rounded-lg text-center min-h-20 flex items-center justify-center"
-                      >
-                        <span className="text-primary text-sm font-medium text-center leading-tight">
-                          {item}
-                        </span>
-                      </div>
-                    ))
-                  )}
+                  {/* Display only the first set of items without repetition */}
+                  {column.map((item, itemIndex) => (
+                    <div
+                      key={itemIndex}
+                      className="glassmorphism p-4 rounded-lg text-center min-h-20 flex items-center justify-center"
+                    >
+                      <span className="text-primary text-sm font-medium text-center leading-tight">
+                        {item}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               ))}
             </div>

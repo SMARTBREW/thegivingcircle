@@ -150,7 +150,7 @@ const ImpactStories: React.FC = () => {
   }, [platformStats.length]);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen">
       {/* Hero Section with Animated Statistics */}
       <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-16 sm:py-20 md:py-24 lg:py-28">
         <div className="absolute inset-0 bg-black/20"></div>
@@ -159,7 +159,7 @@ const ImpactStories: React.FC = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
               Real Impact,{' '}
@@ -200,12 +200,12 @@ const ImpactStories: React.FC = () => {
       </section>
 
       {/* Impact Stories Section */}
-      <section className="py-8 sm:py-12 md:py-16">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-12"
+            className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
               Stories That{' '}
@@ -217,17 +217,19 @@ const ImpactStories: React.FC = () => {
               Behind every statistic is a human story of transformation, hope, and resilience.
             </p>
           </motion.div>
+        </div>
 
-          {/* Stories - Natural Flow Layout */}
-          <div className="space-y-12 sm:space-y-16">
-            {impactStories.map((story, index) => (
-              <motion.div
-                key={story.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.2 }}
-                className="relative"
-              >
+        {/* Stories - Natural Flow Layout */}
+        <div className="space-y-0">
+          {impactStories.map((story, index) => (
+            <motion.div
+              key={story.id}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2 }}
+              className={`w-full py-8 sm:py-10 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 sm:gap-10 md:gap-12 items-center`}>
                   {/* Image Section */}
                   <div className="lg:w-1/2">
@@ -335,10 +337,10 @@ const ImpactStories: React.FC = () => {
                       </motion.div>
                     )}
                   </div>
+                  </div>
                 </div>
               </motion.div>
             ))}
-          </div>
         </div>
       </section>
 

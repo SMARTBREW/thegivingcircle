@@ -90,14 +90,14 @@ export default function SimplifiedAboutPage() {
       </section>
 
       {/* Our Story Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-24 bg-gray-50">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="text-center mb-8 sm:mb-12 md:mb-16"
+            className="text-center mb-6 sm:mb-8 md:mb-10"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
               Our{' '}

@@ -1,25 +1,9 @@
-import React, { useState }  from 'react';
+import React from 'react';
 import { Mail, Phone, MapPin, Instagram, Twitter, Linkedin, Users, Shield, FileText, Scale, Heart, ArrowUpRight, Globe, Network } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
-// import { Button } from "../../components/ui/Button";
-import { Input } from "../../components/ui/Input";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState("");
-  // const [subscribed, setSubscribed] = useState(false);
-  const navigate = useNavigate();
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    // In a real app, you would send this to your API
-    if (email) {
-      // show simple visual feedback via clearing input
-      setEmail("");
-    }
-  };
 
   return (
     <footer className="bg-white border-t border-gray-200">
@@ -43,42 +27,42 @@ export const Footer: React.FC = () => {
                 </Link>
               </div>
               <div className="space-y-4">
-                <p className="text-gray-700 leading-relaxed text-sm">
+                <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                   A trusted community platform connecting verified NGO partners like JWP, Animal Care, KHUSHII, and GUS with cause champions and donors across India. Building transparency and trust in the philanthropic ecosystem through verified partnerships and measurable impact.
                 </p>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <Network className="w-4 h-4 text-blue-600" />
+                <div className="flex items-center space-x-2 text-sm sm:text-base text-gray-600">
+                  <Network className="w-4 h-4 text-purple-600" />
                   <span>Community-Driven Platform</span>
                 </div>
-                <div className="flex items-center space-x-2 text-sm text-gray-600">
-                  <Shield className="w-4 h-4 text-green-600" />
+                <div className="flex items-center space-x-2 text-sm sm:text-base text-gray-600">
+                  <Shield className="w-4 h-4 text-purple-600" />
                   <span>Trust & Transparency Focused</span>
                 </div>
               </div>
               
               {/* Professional Social Links */}
               <div className="space-y-3">
-                <h4 className="text-sm font-semibold text-gray-900 uppercase tracking-wide">
+                <h4 className="text-sm sm:text-base font-semibold text-gray-900 uppercase tracking-wide">
                   Connect With Us
                 </h4>
                 <div className="flex space-x-3">
                   <a 
                     href="#" 
-                    className="text-gray-500 hover:text-blue-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-4 h-4" />
                   </a>
                   <a 
                     href="#" 
-                    className="text-gray-500 hover:text-blue-500 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="Twitter"
                   >
                     <Twitter className="w-4 h-4" />
                   </a>
                   <a 
                     href="#" 
-                    className="text-gray-500 hover:text-pink-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="Instagram"
                   >
                     <Instagram className="w-4 h-4" />
@@ -89,7 +73,7 @@ export const Footer: React.FC = () => {
 
             {/* Community Platform */}
             <div className="md:col-span-1">
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-6">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 uppercase tracking-wide mb-4 sm:mb-6">
                 Community Platform
               </h3>
               <div className="space-y-4">
@@ -97,35 +81,35 @@ export const Footer: React.FC = () => {
                   to="/impact-stories" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Live Causes</span>
+                  <span className="text-sm sm:text-base">Live Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/impact-stories" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Impact Stories</span>
+                  <span className="text-sm sm:text-base">Impact Stories</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/live-causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Browse Causes</span>
+                  <span className="text-sm sm:text-base">Browse Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/ngo-list" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">NGO Partners</span>
+                  <span className="text-sm sm:text-base">NGO Partners</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/the-giving-circle" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">About Us</span>
+                  <span className="text-sm sm:text-base">About Us</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
               </div>
@@ -133,7 +117,7 @@ export const Footer: React.FC = () => {
 
             {/* Trust & Partnership */}
             <div className="md:col-span-1">
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-6">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 uppercase tracking-wide mb-4 sm:mb-6">
                 Trust & Partnership
               </h3>
               <div className="space-y-4">
@@ -141,35 +125,35 @@ export const Footer: React.FC = () => {
                   to="/onboarding" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Become a Champion</span>
+                  <span className="text-sm sm:text-base">Become a Champion</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/ngo-partner" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">NGO Partnership</span>
+                  <span className="text-sm sm:text-base">NGO Partnership</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/onboarding" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Become a Champion</span>
+                  <span className="text-sm sm:text-base">Become a Champion</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
                   to="/live-causes" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Browse Causes</span>
+                  <span className="text-sm sm:text-base">Browse Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <a 
                   href="#" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-sm">Trust & Safety</span>
+                  <span className="text-sm sm:text-base">Trust & Safety</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
               </div>
@@ -177,7 +161,7 @@ export const Footer: React.FC = () => {
 
             {/* Contact & Support */}
             <div className="md:col-span-1">
-              <h3 className="text-sm font-semibold text-gray-900 uppercase tracking-wide mb-6">
+              <h3 className="text-sm sm:text-base font-semibold text-gray-900 uppercase tracking-wide mb-4 sm:mb-6">
                 Contact & Support
               </h3>
               <div className="space-y-4">
@@ -185,8 +169,8 @@ export const Footer: React.FC = () => {
                   <div className="flex items-start space-x-2">
                     <Mail className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-xs text-gray-600">General Inquiries</div>
-                      <a href="mailto:hello@thegivingcircle.org" className="text-sm font-medium text-gray-900 hover:text-blue-600 transition-colors">
+                      <div className="text-xs sm:text-sm text-gray-600">General Inquiries</div>
+                      <a href="mailto:hello@thegivingcircle.org" className="text-sm sm:text-base font-medium text-gray-900 hover:text-purple-600 transition-colors">
                         hello@thegivingcircle.org
                       </a>
                     </div>
@@ -195,18 +179,18 @@ export const Footer: React.FC = () => {
                   <div className="flex items-start space-x-2">
                     <Phone className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-xs text-gray-600">Support</div>
-                      <div className="text-sm font-medium text-gray-900">+91 98765 43210</div>
-                      <div className="text-xs text-gray-500">Mon-Fri 9AM-6PM IST</div>
+                      <div className="text-xs sm:text-sm text-gray-600">Support</div>
+                      <div className="text-sm sm:text-base font-medium text-gray-900">+91 98765 43210</div>
+                      <div className="text-xs sm:text-sm text-gray-500">Mon-Fri 9AM-6PM IST</div>
                     </div>
                   </div>
                   
                   <div className="flex items-start space-x-2">
                     <MapPin className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
-                      <div className="text-xs text-gray-600">Platform Base</div>
-                      <div className="text-sm font-medium text-gray-900">Mumbai, Maharashtra</div>
-                      <div className="text-xs text-gray-500">India</div>
+                      <div className="text-xs sm:text-sm text-gray-600">Platform Base</div>
+                      <div className="text-sm sm:text-base font-medium text-gray-900">Mumbai, Maharashtra</div>
+                      <div className="text-xs sm:text-sm text-gray-500">India</div>
                     </div>
                   </div>
                 </div>
@@ -216,14 +200,14 @@ export const Footer: React.FC = () => {
                     href="#" 
                     className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                   >
-                    <span className="text-sm">Help Center</span>
+                    <span className="text-sm sm:text-base">Help Center</span>
                     <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                   <a 
                     href="#" 
                     className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                   >
-                    <span className="text-sm">Community Support</span>
+                    <span className="text-sm sm:text-base">Community Support</span>
                     <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </a>
                 </div>
@@ -238,10 +222,10 @@ export const Footer: React.FC = () => {
             
             {/* Left: Copyright and Platform Status */}
             <div className="space-y-2">
-              <p className="text-sm text-gray-600">
+              <p className="text-sm sm:text-base text-gray-600">
                 © {currentYear} The Giving Circle Community Platform. All rights reserved.
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-xs text-gray-500">
+              <div className="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-gray-500">
                 <div className="flex items-center space-x-1">
                   <Globe className="w-3 h-3" />
                   <span>Community Platform</span>
@@ -258,7 +242,7 @@ export const Footer: React.FC = () => {
             </div>
             
             {/* Right: Legal Links */}
-            <div className="flex flex-wrap items-center gap-6 text-sm">
+            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm sm:text-base">
               <a 
                 href="#" 
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"

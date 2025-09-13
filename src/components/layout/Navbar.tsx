@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Heart, AlertCircle, Bell, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 
 // Custom Siren Icon Component
 const SirenIcon = ({ size = 18, className = "" }) => (
@@ -80,16 +80,6 @@ const NavbarComponent = () => {
     },
   ];
 
-  // Animation for the pulse effect
-  const pulseAnimation = {
-    scale: [1, 1.1, 1],
-    opacity: [0.7, 1, 0.7],
-    transition: {
-      duration: 2,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
 
   // Close dropdown when clicking elsewhere
   useEffect(() => {
@@ -172,14 +162,14 @@ const NavbarComponent = () => {
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         whileHover={{ 
                           y: -2,
-                          color: item.highlight ? '#e11d48' : '#1f2937'
+                          color: item.highlight ? '#dc2626' : '#1f2937'
                         }}
                         onClick={(e) => {
                           e.stopPropagation();
                           toggleDropdown(item.name);
                         }}
-                        className={`px-2 xl:px-3 py-2 text-xs lg:text-sm font-bold transition-all duration-300 relative ${
-                          item.highlight ? 'text-gray-700 hover:text-red-600' : 'text-gray-700 hover:text-gray-900'
+                        className={`px-2 xl:px-3 py-2 text-sm lg:text-base font-semibold transition-all duration-300 relative ${
+                          item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
                         } flex items-center`}
                       >
                         <div className="flex items-center gap-1.5">
@@ -236,9 +226,9 @@ const NavbarComponent = () => {
                       transition={{ duration: 0.5, delay: index * 0.1 }}
                       whileHover={{ 
                         y: -2,
-                        color: item.highlight ? '#e11d48' : '#1f2937'
+                        color: item.highlight ? '#dc2626' : '#1f2937'
                       }}
-                      className={`px-2 xl:px-3 py-2 text-xs lg:text-sm font-bold transition-all duration-300 relative ${
+                      className={`px-2 xl:px-3 py-2 text-sm lg:text-base font-semibold transition-all duration-300 relative ${
                         item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                       }`}
                     >
@@ -281,8 +271,8 @@ const NavbarComponent = () => {
                         e.stopPropagation();
                         toggleDropdown(item.name);
                       }}
-                      className={`px-2 py-2 text-xs font-bold transition-all duration-300 relative ${
-                        item.highlight ? 'text-gray-700 hover:text-red-600' : 'text-gray-700 hover:text-gray-900'
+                      className={`px-2 py-2 text-sm font-semibold transition-all duration-300 relative ${
+                        item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
                       } flex items-center`}
                     >
                       <div className="flex items-center gap-1">
@@ -339,9 +329,9 @@ const NavbarComponent = () => {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     whileHover={{ 
                       y: -2,
-                      color: item.highlight ? '#e11d48' : '#1f2937'
+                      color: item.highlight ? '#dc2626' : '#1f2937'
                     }}
-                    className={`px-2 py-2 text-xs font-bold transition-all duration-300 relative ${
+                    className={`px-2 py-2 text-sm font-semibold transition-all duration-300 relative ${
                       item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                     }`}
                   >
@@ -377,10 +367,10 @@ const NavbarComponent = () => {
                   boxShadow: '0 10px 30px rgba(168, 85, 247, 0.4)'
                 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/onboarding'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 rounded-lg font-medium text-xs lg:text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
+                onClick={() => window.location.href = '/live-causes'}
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 rounded-lg font-semibold text-sm lg:text-base shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
-                Become a Cause Champion
+                Donate For Good Causes
               </motion.button>
             </div>
 
@@ -407,7 +397,7 @@ const NavbarComponent = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-2 rounded-lg font-medium text-xs shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-2 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
               >
                 Champion
               </motion.button>
@@ -430,7 +420,7 @@ const NavbarComponent = () => {
                       animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       onClick={() => toggleDropdown(item.name)}
-                      className={`flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
+                      className={`flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
                         item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                       }`}
                     >
@@ -481,7 +471,7 @@ const NavbarComponent = () => {
                     initial={{ x: -50, opacity: 0 }}
                     animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={`block px-3 sm:px-4 py-2 text-sm sm:text-base font-bold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
+                    className={`block px-3 sm:px-4 py-2 text-sm sm:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
                       item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                     }`}
                     onClick={() => setIsOpen(false)}
@@ -514,7 +504,7 @@ const NavbarComponent = () => {
                     setIsOpen(false);
                     window.location.href = '/onboarding';
                   }}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-full"
+                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-full"
                 >
                   Become a Cause Champion
                 </motion.button>

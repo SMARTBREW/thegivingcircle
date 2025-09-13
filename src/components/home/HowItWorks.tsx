@@ -7,19 +7,19 @@ import { cn } from "../../lib/utils";
 const AboutImpactGallery = () => {
 
   return (
-    <section className="w-full py-20 bg-gradient-to-br from-blue-50/30 via-green-50/20 to-teal-50/30">
+    <section className="w-full py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16 md:mb-20 lg:mb-24"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-            About{' '}
+            Our{' '}
             <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Us
+              Story
             </span>
           </h1>
           <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
@@ -33,16 +33,16 @@ const AboutImpactGallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-16 sm:mb-20 md:mb-24 lg:mb-28"
+          className="mb-8 sm:mb-10 md:mb-12 lg:mb-14"
         >
           <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
             <div>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
+              {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Our{' '}
                 <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                   Story
                 </span>
-              </h2>
+              </h2> */}
               <div className="space-y-4 sm:space-y-6 text-gray-600">
                 <p className="text-base sm:text-lg md:text-xl leading-relaxed">
                   Founded in 2023, we started with a simple question: "How can we make social impact 

@@ -54,11 +54,11 @@ export const NGOPartner: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Simple Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br-gray-100" />
 
       <motion.div 
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-12"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -69,7 +69,7 @@ export const NGOPartner: React.FC = () => {
           variants={formVariants}
         >
           <motion.div 
-            className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
+            className="bg-white rounded-xl p-6 sm:p-8 md:p-10 shadow-2xl border border-gray-200"
           >
             {/* Success Message */}
             {isSubmitted ? (
@@ -94,16 +94,19 @@ export const NGOPartner: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6"
                 >
-                  Application Submitted Successfully!
+                  Application Submitted{' '}
+                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                    Successfully!
+                  </span>
                 </motion.h2>
                 
                 <motion.p
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-lg text-gray-600 mb-8 leading-relaxed"
+                  className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed"
                 >
                   Thank you for your interest in partnering with The Giving Circle. Our team will review your application and contact you within 48 hours.
                 </motion.p>
@@ -112,17 +115,17 @@ export const NGOPartner: React.FC = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.5 }}
-                  className="flex flex-col sm:flex-row gap-3 justify-center"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
                 >
                   <button
                     onClick={() => window.location.href = '/'}
-                    className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg transition-all font-semibold text-sm sm:text-base"
                   >
                     Return to Home
                   </button>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-3 bg-white text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold"
+                    className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold text-sm sm:text-base"
                   >
                     Submit Another Application
                   </button>
@@ -132,7 +135,7 @@ export const NGOPartner: React.FC = () => {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.6 }}
-                  className="text-sm text-gray-500 mt-6"
+                  className="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-6"
                 >
                   You'll receive confirmation details at <span className="font-medium">{formData.email}</span>
                 </motion.p>
@@ -140,32 +143,37 @@ export const NGOPartner: React.FC = () => {
             ) : (
               // Original Form Content
               <>
-                <div className="text-center mb-6 sm:mb-8">
-                  <div className="flex justify-center mb-4">
+                <div className="text-center mb-6 sm:mb-8 md:mb-10">
+                  <div className="flex justify-center mb-4 sm:mb-6">
                     <img 
                       src="/Giving Circle logo.png" 
                       alt="Giving Circle Logo" 
-                      className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
                     />
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Join as NGO Partner</h2>
-                  <p className="text-base text-gray-600">Connect with passionate champions who want to support your cause</p>
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
+                    Join as{' '}
+                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                      NGO Partner
+                    </span>
+                  </h2>
+                  <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed">Connect with passionate champions who want to support your cause</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">
                   {/* Organization Name */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <label className="block text-base font-medium text-gray-700 mb-2">Organization Name *</label>
+                    <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Organization Name *</label>
                     <input
                       type="text"
                       name="organizationName"
                       value={formData.organizationName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
                       placeholder="Enter your organization name"
                       required
                     />
@@ -177,13 +185,13 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <label className="block text-base font-medium text-gray-700 mb-2">Email Address *</label>
+                    <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Email Address *</label>
                     <input
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
                       placeholder="Enter your email address"
                       required
                     />
@@ -194,28 +202,28 @@ export const NGOPartner: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
+                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
                   >
                     <div>
-                      <label className="block text-base font-medium text-gray-700 mb-2">Contact Person Name *</label>
+                      <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Contact Person Name *</label>
                       <input
                         type="text"
                         name="contactPersonName"
                         value={formData.contactPersonName}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
                         placeholder="Enter contact person name"
                         required
                       />
                     </div>
                     <div>
-                      <label className="block text-base font-medium text-gray-700 mb-2">Phone Number *</label>
+                      <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Phone Number *</label>
                       <input
                         type="tel"
                         name="phoneNumber"
                         value={formData.phoneNumber}
                         onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
                         placeholder="Enter phone number"
                         required
                       />
@@ -224,12 +232,12 @@ export const NGOPartner: React.FC = () => {
 
                   {/* Statistics */}
                   <motion.div 
-                    className="text-center text-gray-600 text-base font-medium"
+                    className="text-center text-gray-600 text-sm sm:text-base font-medium"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <span className="text-green-600 font-semibold">25</span> NGOs joined our platform in the last month
+                    <span className="text-purple-600 font-semibold">25</span> NGOs joined our platform in the last month
                   </motion.div>
 
                   {/* Submit Button */}
@@ -250,7 +258,7 @@ export const NGOPartner: React.FC = () => {
                   </motion.div>
 
                   <motion.p
-                    className="text-sm text-gray-500 text-center mt-3"
+                    className="text-xs sm:text-sm text-gray-500 text-center mt-3 sm:mt-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}

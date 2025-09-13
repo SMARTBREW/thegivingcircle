@@ -208,18 +208,18 @@ const LiveCausesPage = () => {
       <div className="relative text-white overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">
         
         
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 md:py-24 lg:py-28">
+        <div className="relative container mx-auto px-4 ml-[90px] sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
           <div className="max-w-4xl">
 
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 mt-12 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
               Transforming Lives Through{' '}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
                 Verified Causes
               </span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
               Join <span className="font-semibold text-white">1,23,456+ verified donors</span> creating measurable social impact through rigorously monitored initiatives across India.
             </p>
             
@@ -256,7 +256,7 @@ const LiveCausesPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
           {/* Professional Sidebar */}
           <div className="lg:w-1/4">
@@ -297,7 +297,7 @@ const LiveCausesPage = () => {
           {/* Main Content Area */}
           <div className="lg:w-3/4">
             {/* Professional Search and Filters */}
-            <div className="mb-6 sm:mb-8 bg-white rounded-xl shadow-sm border p-4 sm:p-6">
+            <div className="mb-4 sm:mb-6 bg-white rounded-xl shadow-sm border p-4 sm:p-6">
               <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Find Verified Causes</h2>
               
               {/* Search Bar */}
@@ -348,7 +348,7 @@ const LiveCausesPage = () => {
             </div>
 
             {/* Results Count */}
-            <div className="mb-4 sm:mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
+            <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
               <div className="text-gray-600 text-sm sm:text-base">
                 Displaying <span className="font-semibold">{Math.min(visibleCauses, filteredCauses.length)}</span> of <span className="font-semibold">{filteredCauses.length}</span> verified active causes
               </div>
@@ -359,7 +359,7 @@ const LiveCausesPage = () => {
             </div>
 
             {/* Professional Cause Cards - Responsive Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
               {visibleCausesList.map((cause) => (
                 <div
                   key={cause.id}
@@ -464,7 +464,7 @@ const LiveCausesPage = () => {
 
             {/* Load More Button */}
             {visibleCauses < filteredCauses.length && (
-              <div className="text-center mb-6 sm:mb-8">
+              <div className="text-center mb-4 sm:mb-6">
                 <button 
                   onClick={loadMore}
                   className="bg-white hover:bg-gray-50 text-gray-600 border border-gray-300 hover:border-purple-300 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:shadow-md transition-all duration-300 text-sm sm:text-base"

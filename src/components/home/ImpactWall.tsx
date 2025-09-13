@@ -235,14 +235,14 @@ export const ImpactWall: React.FC = () => {
 
 
   return (
-    <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gray-50">
+    <section className="py-8 sm:py-10 md:py-12 lg:py-14">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
             Our{' '}

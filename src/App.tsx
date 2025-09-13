@@ -18,7 +18,7 @@ import CauseDetailPage from './components/liveCauses/causesDetails';
 import  {AboutChampions } from './pages/aboutChampion';
 import { OurStory } from './pages/aboutGivingCircle';
 import CircleIcon from './components/ui/CircleIcon';
-import FeaturePanel from './components/ui/FeaturePanel';
+// import FeaturePanel from './components/ui/FeaturePanel';
 import NotFoundPage from './pages/notFoundPage';
 
 function App() {
@@ -58,13 +58,13 @@ function App() {
         <Footer />
         
         {/* Meta AI-like Circle Icon */}
-        <CircleIcon onClick={toggleFeaturePanel} />
+        {/* <CircleIcon onClick={toggleFeaturePanel} /> */}
         
         {/* Feature Panel */}
-        <FeaturePanel 
+        {/* <FeaturePanel 
           isOpen={isFeaturePanelOpen} 
           onClose={() => setIsFeaturePanelOpen(false)} 
-        />
+        /> */}
       </div>
     </Router>
   );

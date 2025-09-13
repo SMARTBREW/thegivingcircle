@@ -37,9 +37,9 @@ export default function MissionVisionPage() {
   return (
     <div className="min-h-screen bg-white">
       
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
               Our Core{' '}
               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
@@ -70,7 +70,7 @@ export default function MissionVisionPage() {
       </section> 
 
       {/* Mission Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gray-50">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div>
@@ -119,7 +119,7 @@ export default function MissionVisionPage() {
       </section>
 
       {/* Vision Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-white">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div className="order-2 lg:order-1">

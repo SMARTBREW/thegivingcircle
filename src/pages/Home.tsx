@@ -10,17 +10,24 @@ import ImpactGallery from '../components/home/HowItWorks';
 export const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
-      <Hero />
-      <GivingPhilosophy/>
-      <ImpactWall />
-      
-      
-      {/* <OurImpact /> */}
-      <ImpactGallery />
-     
-      
-      <Testimonials />
-      <ChampionFundraiserBox/>
+      <div className="bg-white">
+        <Hero />
+      </div>
+      <div className="bg-gray-50">
+        <GivingPhilosophy/>
+      </div>
+      <div className="bg-white">
+        <ImpactWall />
+      </div>
+      <div className="bg-gray-50">
+        <ImpactGallery />
+      </div>
+      <div className="bg-white">
+        <Testimonials />
+      </div>
+      <div className="bg-white">
+        <ChampionFundraiserBox/>
+      </div>
     </div>
   );
 };

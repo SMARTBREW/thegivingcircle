@@ -26,7 +26,7 @@ const ChampionFundraiserBox = ({
 
   return (
     <motion.div
-      className="relative mb-10 w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[70vw] mx-auto h-auto py-8 md:py-10 flex flex-col md:flex-row items-center px-6 sm:px-8 md:px-10 bg-white/90 backdrop-blur-md dark:bg-white/10 dark:backdrop-blur-md rounded-xl shadow-xl border border-white/30 dark:border-white/20 mt-8 sm:mt-10 md:mt-12 overflow-hidden"
+      className="relative mb-4 w-full max-w-[90vw] sm:max-w-[85vw] md:max-w-[70vw] mx-auto h-auto py-6 md:py-8 flex flex-col md:flex-row items-center px-6 sm:px-8 md:px-10 bg-white/90 backdrop-blur-md dark:bg-white/10 dark:backdrop-blur-md rounded-xl shadow-xl border border-white/30 dark:border-white/20 mt-4 sm:mt-6 md:mt-8 overflow-hidden"
       initial="hidden"
       animate="visible"
       variants={fadeIn}
