@@ -82,7 +82,7 @@ export const NGOList: React.FC = () => {
       },
     },
     {
-      id: '2',
+      id: '3',
       name: 'Animal Care',
       description: 'Working towards the rescue, rehabilitation, and welfare of street animals while promoting animal rights and humane treatment across communities. We focus on creating awareness about animal welfare, providing medical care to injured animals, and implementing sterilization programs to control population. Our environmental initiatives also include promoting sustainable practices that protect both animals and their natural habitats.',
       verified: true,
@@ -107,7 +107,7 @@ export const NGOList: React.FC = () => {
       },
     },
     {
-      id: '3',
+      id: '2',
       name: 'KHUSHII',
       description: 'Dedicated to providing quality education, healthcare, and skill development to underprivileged children and communities across India. We believe in creating opportunities for holistic development through innovative programs and sustainable solutions. Our work encompasses child welfare initiatives, skill development training, and women empowerment projects that address the root causes of poverty and inequality.',
       verified: true,

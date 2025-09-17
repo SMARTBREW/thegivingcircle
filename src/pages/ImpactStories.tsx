@@ -35,27 +35,27 @@ const ImpactStories: React.FC = () => {
   const impactStories: ImpactStory[] = [
     {
       id: '1',
-      title: 'Wings of Hope: Transforming Lives Through Education',
-      description: 'A groundbreaking education initiative that has empowered over 1,000 women across rural Uttarakhand through skill development and entrepreneurship training.',
-      fullStory: 'In the remote villages of Uttarakhand, where opportunities for women were scarce, the Wings of Hope initiative launched by JWP has created a revolution. Starting with just 50 women in 2022, the program has now reached over 1,000 women across 25 villages. Through comprehensive skill development, financial literacy, and entrepreneurship training, these women have not only gained economic independence but have become change-makers in their communities. The program includes digital literacy, handicraft training, organic farming techniques, and micro-business development. Today, 78% of participants have started their own micro-enterprises, generating an average monthly income of ₹8,500. The ripple effect has been extraordinary - these empowered women are now educating their daughters, improving family nutrition, and investing in community development.',
+      title: 'Wings of Hope: Breaking Barriers Through Menstrual Health Education',
+      description: 'A revolutionary initiative addressing period poverty and menstrual health inequality, empowering 1,200+ women and girls with education, dignity, and sustainable solutions.',
+      fullStory: 'In communities across India, menstruation was forcing girls to drop out of school and women to miss work, perpetuating cycles of poverty and inequality. The Wings of Hope initiative by JWP has transformed this reality through comprehensive menstrual health education and sustainable product distribution. Starting in 2022, the program has reached 1,200+ women and girls across 30 communities, providing education about menstrual health, distributing reusable sanitary products, and training local women as health ambassadors. The program includes workshops on reproductive health, distribution of eco-friendly menstrual products, and community awareness campaigns. Today, 95% of beneficiary girls attend school regularly during menstruation (up from 35%), and 200+ women have been trained as health educators. The initiative has also created livelihood opportunities for 150+ women who manufacture and distribute the reusable products, generating an average monthly income of ₹6,500.',
       ngoName: 'JWP',
-      location: 'Uttarakhand, India',
-      impactNumber: 1000,
-      impactUnit: 'Women Empowered',
-      image: '/JWP.jpg',
+      location: 'Multiple States, India',
+      impactNumber: 1200,
+      impactUnit: 'Women & Girls Served',
+      image: '/images/jwp/_DSC8339.jpg',
       stats: [
-        { label: 'Women Trained', value: '1,000+', icon: <Users className="w-5 h-5" /> },
-        { label: 'Villages Reached', value: '25', icon: <MapPin className="w-5 h-5" /> },
-        { label: 'Micro-Enterprises Started', value: '780', icon: <TrendingUp className="w-5 h-5" /> },
-        { label: 'Average Monthly Income', value: '₹8,500', icon: <Target className="w-5 h-5" /> }
+        { label: 'Women & Girls Reached', value: '1,200+', icon: <Users className="w-5 h-5" /> },
+        { label: 'Communities Served', value: '30', icon: <MapPin className="w-5 h-5" /> },
+        { label: 'Health Educators Trained', value: '200+', icon: <Award className="w-5 h-5" /> },
+        { label: 'School Attendance Rate', value: '95%', icon: <TrendingUp className="w-5 h-5" /> }
       ],
       testimonial: {
-        quote: "This program didn't just teach me skills, it gave me confidence to dream. Today, my handicraft business supports my family and employs 5 other women from my village.",
-        author: "Kamala Devi",
-        role: "Program Participant & Entrepreneur"
+        quote: "Before this program, I used to miss school every month and felt ashamed. Now I have dignity, knowledge, and I'm helping other girls in my community. Wings of Hope gave me my confidence back.",
+        author: "Priya Sharma",
+        role: "Program Participant & Health Educator"
       },
-      dateCompleted: 'December 2023',
-      category: 'Women Empowerment'
+      dateCompleted: 'March 2024',
+      category: 'Women Health'
     },
     {
       id: '2',
@@ -83,27 +83,27 @@ const ImpactStories: React.FC = () => {
     },
     {
       id: '3',
-      title: 'Pads for Freedom: Breaking Barriers, Building Futures',
-      description: 'A revolutionary menstrual hygiene program that has reached 5,000+ girls and women, ensuring dignity, health, and continued education.',
-      fullStory: 'In rural and urban slum areas across North India, menstruation was forcing girls to drop out of school and women to miss work. The Pads for Freedom initiative by KHUSHII has shattered these barriers through comprehensive menstrual hygiene management. The program provides free biodegradable sanitary pads, conducts awareness workshops, and trains local women as "Pad Ambassadors." Since 2020, the initiative has reached 5,000+ beneficiaries across 150+ schools and communities. The results are transformative: 94% of beneficiary girls now attend school during menstruation (up from 23%), absenteeism has dropped by 80%, and reproductive health awareness has increased dramatically. The program has also created livelihood opportunities for 200+ women who manufacture the biodegradable pads locally.',
+      title: 'Education for Every Child: Transforming Lives Through Learning',
+      description: 'A comprehensive education initiative that has empowered 2,500+ children across Delhi NCR through quality education, nutrition, and holistic development programs.',
+      fullStory: 'In underserved communities across Delhi NCR, thousands of children from underprivileged backgrounds lacked access to quality education and proper development opportunities. The Education for Every Child initiative by KHUSHII has transformed this reality through comprehensive child development programs. The initiative establishes quality learning centers with proper infrastructure, provides nutritious meals, healthcare support, and engages parents and communities in the education process. Since 2020, the program has reached 2,500+ children across 25+ communities, providing both academic excellence and character development. The results are remarkable: 90% of beneficiary children now attend school regularly, literacy rates have improved by 85%, and 200+ parents have been trained in skill development programs. The initiative has also created 50+ community learning centers and trained 100+ local teachers, ensuring sustainable impact.',
       ngoName: 'KHUSHII',
       location: 'Delhi & NCR',
-      impactNumber: 5000,
-      impactUnit: 'Women & Girls Served',
-      image: '/khushii.jpg',
+      impactNumber: 2500,
+      impactUnit: 'Children Empowered',
+      image: '/images/khushi/HomePageTop.jpg',
       stats: [
-        { label: 'Beneficiaries Reached', value: '5,000+', icon: <Users className="w-5 h-5" /> },
-        { label: 'Schools Covered', value: '150+', icon: <Award className="w-5 h-5" /> },
-        { label: 'Pad Ambassadors Trained', value: '200', icon: <Star className="w-5 h-5" /> },
-        { label: 'School Attendance Increase', value: '94%', icon: <TrendingUp className="w-5 h-5" /> }
+        { label: 'Children Reached', value: '2,500+', icon: <Users className="w-5 h-5" /> },
+        { label: 'Learning Centers', value: '50+', icon: <Award className="w-5 h-5" /> },
+        { label: 'Teachers Trained', value: '100+', icon: <Star className="w-5 h-5" /> },
+        { label: 'Literacy Improvement', value: '85%', icon: <TrendingUp className="w-5 h-5" /> }
       ],
       testimonial: {
-        quote: "I used to miss 4-5 days of school every month. Now I never miss a day, and I'm the class topper. This program gave me my future back.",
-        author: "Anita Kumari",
-        role: "Class 10 Student"
+        quote: "My daughter now attends the KHUSHII learning center daily. She has gained confidence, improved her reading skills, and dreams of becoming a teacher. This program has transformed our family's future.",
+        author: "Priya Sharma",
+        role: "Parent, Delhi Community"
       },
       dateCompleted: 'March 2024',
-      category: 'Women Health'
+      category: 'Education'
     },
     {
       id: '4',

@@ -34,14 +34,18 @@ const NGODetailContainer: React.FC = () => {
         // In development mode, prioritize sample data to avoid API errors
         if (import.meta.env.DEV) {
           console.log('Development mode: Loading sample data for NGO ID:', id);
-          const { sampleNGODetails } = await import('../utils/sampleNGOData');
+          const { sampleNGODetails, khushiNGODetails } = await import('../utils/sampleNGOData');
           
           if (sampleNGODetails.id === id) {
             setNgoDetails(sampleNGODetails);
             setLoading(false);
             return;
+          } else if (khushiNGODetails.id === id) {
+            setNgoDetails(khushiNGODetails);
+            setLoading(false);
+            return;
           } else {
-            console.warn('No sample data found for ID:', id, 'Available ID:', sampleNGODetails.id);
+            console.warn('No sample data found for ID:', id, 'Available IDs:', sampleNGODetails.id, khushiNGODetails.id);
             // Fall through to try API if sample data not found
           }
         }
@@ -60,13 +64,16 @@ const NGODetailContainer: React.FC = () => {
         // If API fails, try sample data as fallback (for production or if dev sample data failed)
         try {
           console.log('API failed, trying sample data fallback...');
-          const { sampleNGODetails } = await import('../utils/sampleNGOData');
+          const { sampleNGODetails, khushiNGODetails } = await import('../utils/sampleNGOData');
           
           if (sampleNGODetails.id === id) {
             console.log('Using sample data as fallback');
             setNgoDetails(sampleNGODetails);
+          } else if (khushiNGODetails.id === id) {
+            console.log('Using KHUSHII data as fallback');
+            setNgoDetails(khushiNGODetails);
           } else {
-            setError(`NGO not found. Available sample ID: ${sampleNGODetails.id}`);
+            setError(`NGO not found. Available sample IDs: ${sampleNGODetails.id}, ${khushiNGODetails.id}`);
           }
         } catch (sampleError) {
           console.error('Failed to load sample data:', sampleError);

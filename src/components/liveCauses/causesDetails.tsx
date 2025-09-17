@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, AlertCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Clock, Target, Users, Calendar, TrendingUp, Quote, Trophy, Camera, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 
 const CauseDetailPage = () => {
@@ -25,40 +25,41 @@ const CauseDetailPage = () => {
     raisedAmount: '₹2,80,000',
     progressPercentage: 62,
     supporters: 143,
+
     daysLeft: 18,
-    image: 'https://khushi.org.in/images/sliders/48218_home1.jpg',
+    image: '/images/jwp/_DSC8339.jpg',
     urgency: 'High',
     
     // Problem Statement
-    problemStatement: 'In Mumbai\'s slum communities, over 15,000 children aged 6-14 lack access to basic education due to poverty, inadequate infrastructure, and social barriers. Without immediate intervention, these children face a lifetime of limited opportunities.',
+    problemStatement: 'In underserved communities across India, thousands of children lack access to quality education and proper school infrastructure. Many students attend schools without adequate resources, proper uniforms, or learning materials, creating barriers to their educational success and future opportunities.',
     
     // Root Causes
     rootCauses: [
-      'Families prioritize immediate income over education',
-      'Lack of nearby schools and educational infrastructure',
-      'Inability to afford books, uniforms, and supplies',
-      'Child labor to support family income',
-      'Social stigma and discrimination'
+      'Insufficient school infrastructure and learning resources',
+      'Lack of proper uniforms and educational materials',
+      'Limited access to quality teaching and learning tools',
+      'Inadequate support for students with special needs',
+      'Community barriers to educational advancement'
     ],
     
     // Consequences if not addressed
     consequences: [
-      'Perpetuation of intergenerational poverty',
-      'Increased child labor and exploitation',
-      'Higher crime rates in communities',
-      'Loss of human potential and talent',
-      'Widening social inequality gap'
+      'Students continue to struggle with inadequate learning resources',
+      'Limited educational opportunities for future generations',
+      'Reduced community development and economic growth',
+      'Loss of potential leaders and skilled professionals',
+      'Persistent educational inequality across communities'
     ],
     
     // Our Solution
     solution: {
-      approach: 'Comprehensive educational intervention through community-based learning centers, direct support, and family engagement programs.',
+      approach: 'Comprehensive educational support through school infrastructure development, resource provision, and community engagement programs.',
       components: [
-        'Establish mobile learning centers in slum areas',
-        'Provide complete educational kits and meals',
-        'Offer skill development for parents',
-        'Create safe learning environments',
-        'Bridge formal education pathways'
+        'Provide proper school uniforms and educational materials',
+        'Establish well-equipped learning centers and classrooms',
+        'Train teachers and support staff for better education delivery',
+        'Create safe and conducive learning environments',
+        'Support students with scholarships and educational resources'
       ]
     },
     
@@ -73,24 +74,34 @@ const CauseDetailPage = () => {
     // Impact Gallery
     impactGallery: [
       {
-        image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=300&fit=crop',
-        caption: 'Children attending classes at our learning center in Dharavi',
-        type: 'Before/After'
+        image: '/images/jwp/_DSC9767.JPG',
+        caption: 'A young student proudly displays her educational materials and achievements in the classroom',
+        type: 'Student Success'
       },
       {
-        image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=400&h=300&fit=crop',
-        caption: 'Distribution of educational materials and uniforms',
-        type: 'Implementation'
+        image: '/images/jwp/_MG_6955.JPG',
+        caption: 'Students actively participating in learning activities with microphones and presentation equipment',
+        type: 'Active Learning'
       },
       {
-        image: 'https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=400&h=300&fit=crop',
-        caption: 'Nutritious meal program ensuring regular attendance',
-        type: 'Support Program'
+        image: '/images/jwp/_MG_7015.JPG',
+        caption: 'Community members celebrating educational achievements and program milestones together',
+        type: 'Community Celebration'
       },
       {
-        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=400&h=300&fit=crop',
-        caption: 'Parent engagement and community awareness sessions',
-        type: 'Community Impact'
+        image: '/images/jwp/_MG_8025.JPG',
+        caption: 'Students engaged in collaborative learning and peer interaction activities',
+        type: 'Collaborative Learning'
+      },
+      {
+        image: '/images/jwp/20250909_100901.jpg',
+        caption: 'Regular classroom activities demonstrating consistent student engagement and learning',
+        type: 'Daily Activities'
+      },
+      {
+        image: '/images/jwp/20250910_110430.jpg',
+        caption: 'Special educational events and cultural programs promoting holistic student development',
+        type: 'Special Events'
       }
     ],
     
@@ -125,19 +136,19 @@ const CauseDetailPage = () => {
         date: '15 March 2024',
         title: 'First Learning Center Operational',
         description: 'Successfully established our first learning center in Dharavi, serving 75 children with basic education and meals.',
-        image: 'https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=150&h=100&fit=crop'
+        image: '/images/jwp/_MG_6955.JPG'
       },
       {
         date: '20 March 2024',
         title: 'Educational Kits Distribution Complete',
         description: '150 complete educational kits distributed including books, uniforms, and learning materials to enrolled children.',
-        image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=150&h=100&fit=crop'
+        image: '/images/jwp/_DSC9767.JPG'
       },
       {
         date: '25 March 2024',
         title: 'Community Engagement Program Launched',
         description: 'Parent awareness sessions conducted reaching 200+ families about importance of education.',
-        image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=150&h=100&fit=crop'
+        image: '/images/jwp/_MG_7015.JPG'
       }
     ],
     
@@ -299,29 +310,28 @@ const CauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      The educational crisis in Mumbai's slum communities stems from a complex web of socio-economic challenges. 
-                      <strong className="text-gray-900"> Families living in extreme poverty are forced to prioritize immediate survival over long-term education</strong>, 
-                      often sending children to work instead of school to supplement household income.
+                      Many schools in underserved communities face significant challenges in providing quality education. 
+                      <strong className="text-gray-900"> Students often lack access to proper learning materials, adequate classroom resources, and consistent educational support</strong>, 
+                      which hinders their ability to reach their full academic potential.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      The lack of accessible educational infrastructure compounds this problem. Many slum areas have no nearby schools, 
-                      forcing children to travel long distances through unsafe areas. Even when schools exist, 
-                      <strong className="text-gray-900"> the inability to afford basic educational materials like books, uniforms, and supplies</strong> creates 
-                      insurmountable barriers for these families.
+                      The classroom environment plays a crucial role in student success. When schools lack proper infrastructure, 
+                      learning materials, and trained teachers, students struggle to engage effectively with their studies. 
+                      <strong className="text-gray-900"> Without adequate resources and support, even motivated students find it difficult to excel academically</strong>.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Social stigma and discrimination further marginalize these children, creating a cycle where education seems 
-                      unattainable and irrelevant to their daily struggle for survival.
+                      These educational gaps create long-term challenges for students, limiting their opportunities for higher education 
+                      and future career prospects, ultimately affecting their ability to contribute meaningfully to their communities.
                     </p>
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&h=400&fit=crop" 
-                      alt="Children in slum area lacking educational access"
+                      src="/images/jwp/WhatsApp Image 2025-06-29 at 22.44.35_68c59220.jpg" 
+                      alt="Students engaged in classroom learning activities with proper educational resources"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
                     <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                      Children in Mumbai slums face daily barriers to education
+                      Students engaged in classroom learning activities with proper educational resources
                     </p>
                   </div>
                 </div>
@@ -333,29 +343,29 @@ const CauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Without immediate intervention, we face devastating long-term consequences.</strong> 
-                      The perpetuation of intergenerational poverty becomes inevitable as uneducated children grow into adults 
-                      with limited earning potential, passing the same struggles to their children.
+                      <strong className="text-gray-900">Without comprehensive educational and health support, communities face significant challenges.</strong> 
+                      Students continue to struggle with inadequate learning resources, while health education gaps, 
+                      particularly around menstrual health, create additional barriers to education and empowerment.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Increased child labor and exploitation become normalized as families see no alternative path. 
-                      Communities experience higher crime rates as youth with no educational prospects turn to 
-                      destructive activities for survival and identity.
+                      Limited access to proper health education and resources affects students' ability to attend school regularly. 
+                      Many girls miss school due to lack of menstrual health support, while boys and girls alike 
+                      lack essential health knowledge that impacts their overall development.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Most tragically, we lose immense human potential and talent. Behind every child denied education 
-                      could be a future doctor, teacher, engineer, or leader who could transform not just their own life, 
-                      but their entire community. The widening social inequality gap threatens the fabric of our society.
+                      The combination of educational and health challenges creates a cycle where students cannot reach their full potential. 
+                      Without proper support, we miss the opportunity to develop future leaders, healthcare workers, 
+                      and community advocates who could transform their communities through knowledge and empowerment.
                     </p>
                   </div>
                   <div>
                     <img 
-                      src="https://images.yourstory.com/cs/5/98c65090592f11ea9f62339ce853ca75/file75ptcerlpvkjxg7p5sf-1487576594-1560334864-1591891563291.jpg?mode=crop&crop=faces&ar=16%3A9&format=auto&w=1920&q=75" 
-                      alt="Child labor in urban areas"
+                      src="/images/jwp/WhatsApp Image 2025-07-04 at 15.38.58_a93f5478.jpg" 
+                      alt="Women learning about menstrual health and hygiene education"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
                     <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                      Without intervention, children face a lifetime of limited opportunities
+                      Women learning about menstrual health and hygiene education
                     </p>
                   </div>
                 </div>
@@ -378,29 +388,29 @@ const CauseDetailPage = () => {
                   </div>
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Our innovative approach addresses every barrier to education.</strong> 
-                      We establish mobile learning centers directly in slum areas, eliminating travel barriers and creating 
-                      safe, accessible learning environments where children can thrive.
+                      <strong className="text-gray-900">Our comprehensive approach transforms schools into thriving learning environments.</strong> 
+                      We provide proper school uniforms, educational materials, and infrastructure improvements that create 
+                      professional, welcoming spaces where students feel proud to learn and grow.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Beyond basic education, we provide complete support systems including nutritious meals that ensure 
-                      regular attendance, comprehensive educational kits, and skill development programs for parents. 
-                      This holistic approach addresses both immediate needs and long-term sustainability.
+                      Through our JWP (Joint Women Program) initiatives, we ensure students have access to quality education 
+                      with proper resources, trained teachers, and supportive learning environments. We focus on both 
+                      academic excellence and holistic development, including health education and life skills.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Our program creates pathways to formal education, ensuring children can transition seamlessly 
-                      into mainstream schooling with the foundation and confidence they need to succeed.
+                      Our programs create a sense of pride and belonging among students, as evidenced by their 
+                      enthusiastic participation and the visible improvements in school infrastructure and student engagement.
                     </p>
                   </div>
                 </div>
                 <div>
                   <img 
-                    src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=500&h=400&fit=crop" 
-                    alt="Children learning in community center"
+                    src="/images/jwp/_DSC9857.JPG" 
+                    alt="Students actively engaged in learning activities"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
                   <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                    Community-based learning centers bring education directly to children
+                    Students actively engaged in learning activities
                   </p>
                 </div>
               </div>
@@ -416,29 +426,29 @@ const CauseDetailPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
                 <div>
                   <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                    <strong className="text-gray-900">Our impact creates ripple effects that transform entire communities.</strong> 
-                    While we directly serve 250 children aged 6-14 with comprehensive educational support, the benefits 
-                    extend far beyond these primary beneficiaries.
+                    <strong className="text-gray-900">Our "Wings of Hope" initiative celebrates the achievements of students and families.</strong> 
+                    Through our comprehensive educational programs, we directly impact hundreds of students who now have access 
+                    to quality education, proper resources, and the support they need to succeed.
                   </p>
                   <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                    Over 1,000 family members experience improved quality of life as children gain education and parents 
-                    access skill development programs. When children attend school regularly and parents learn new skills, 
-                    household incomes increase by an average of 40%, breaking the cycle of poverty.
+                    Students proudly display their certificates and achievements, symbolizing their educational progress and 
+                    newfound confidence. Families celebrate these milestones together, creating a culture of academic 
+                    achievement and community pride that extends far beyond individual students.
                   </p>
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    Our work across 5 slum communities creates a demonstration effect, inspiring other areas to prioritize 
-                    education and showing that change is possible. The long-term impact transforms the entire neighborhood 
-                    ecosystem, creating communities where education is valued and accessible to all.
+                    Our programs create lasting change by empowering students to become leaders in their communities. 
+                    The visible celebrations and achievements inspire other families to prioritize education, creating 
+                    a ripple effect that transforms entire neighborhoods and builds a foundation for future success.
                 </p>
                 </div>
                 <div>
                   <img 
-                    src="https://images.unsplash.com/photo-1544717297-fa95b6ee9643?w=500&h=400&fit=crop" 
-                    alt="Children and families benefiting from education program"
+                    src="/images/jwp/_DSC8339.jpg" 
+                    alt="Students and families celebrating educational achievements"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
                   <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                    Our impact extends far beyond individual children to entire communities
+                    Students and families celebrating educational achievements
                   </p>
                 </div>
               </div>
@@ -480,114 +490,6 @@ const CauseDetailPage = () => {
               </div>
             </div>
 
-            {/* Testimonials Section */}
-            <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-4 sm:mb-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
-                <Quote className="text-black sm:w-6 sm:h-6" size={20} />
-                Community Voices
-              </h2>
-              
-              <div className="space-y-4 sm:space-y-6">
-                {cause.testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg p-4 sm:p-6 relative">
-                    <Quote className="absolute top-3 sm:top-4 right-3 sm:right-4 text-gray-300 sm:w-8 sm:h-8" size={24} />
-                    <div className="flex items-start gap-3 sm:gap-4">
-                      <img 
-                        src={testimonial.image} 
-                        alt={testimonial.name}
-                        className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover"
-                      />
-                      <div className="flex-1">
-                        <p className="text-gray-600 italic mb-2 sm:mb-3 relative z-10 text-sm sm:text-base">
-                          "{testimonial.quote}"
-                        </p>
-                        <div>
-                          <p className="font-semibold text-gray-900 text-sm sm:text-base">{testimonial.name}</p>
-                          <p className="text-xs sm:text-sm text-gray-600">{testimonial.role}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Campaign Progress & Updates */}
-            <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-6 sm:mb-8">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
-                <TrendingUp className="text-gray-900 sm:w-6 sm:h-6" size={20} />
-                Campaign Progress
-              </h2>
-              
-              <div className="relative pl-8 sm:pl-10 mb-6 sm:mb-8">
-                {/* Vertical connecting line */}
-                <div className="absolute left-3 top-4 bottom-4 w-0.5 bg-gray-200"></div>
-                
-                {cause.milestones.map((milestone, index) => (
-                  <div key={index} className="relative mb-6 sm:mb-8 last:mb-0">
-                    {/* Node circle with appropriate color */}
-                    <div 
-                      className={`absolute left-0 -translate-x-[11px] top-4 w-5 h-5 sm:w-6 sm:h-6 rounded-full border-2 flex items-center justify-center shadow ${
-                        milestone.status === 'completed' ? 'bg-green-500 border-green-600' : 
-                        milestone.status === 'in-progress' ? 'bg-blue-500 border-blue-600' : 
-                        'bg-gray-300 border-gray-400'
-                      }`}
-                    >
-                      {milestone.status === 'completed' && (
-                        <CheckCircle className="text-white sm:w-3.5 sm:h-3.5" size={12} />
-                      )}
-                      {milestone.status === 'in-progress' && (
-                        <Clock className="text-white sm:w-3.5 sm:h-3.5" size={12} />
-                      )}
-                      {milestone.status === 'pending' && (
-                        <AlertCircle className="text-white sm:w-3.5 sm:h-3.5" size={12} />
-                      )}
-                    </div>
-                    
-                    {/* Content */}
-                    <div className="bg-white rounded-lg border border-gray-100 p-3 sm:p-4 shadow-sm">
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 sm:gap-3">
-                        <div>
-                          <h4 className="font-medium text-gray-900 mb-1 text-sm sm:text-base">{milestone.achievement}</h4>
-                          <p className="text-xs sm:text-sm flex items-center gap-1 text-gray-600">
-                            <Target className="sm:w-3.5 sm:h-3.5" size={12} />
-                            Target: <span className="font-medium">{milestone.target}</span>
-                          </p>
-                        </div>
-                        <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-medium text-white ${
-                          milestone.status === 'completed' ? 'bg-green-500' : 
-                          milestone.status === 'in-progress' ? 'bg-blue-500' : 
-                          'bg-gray-300'
-                        }`}>
-                          {milestone.status.replace('-', ' ')}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Recent Updates</h3>
-              <div className="space-y-3 sm:space-y-4">
-                {cause.updates.map((update, index) => (
-                  <div key={index} className="flex gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-50 rounded-lg">
-                    <img 
-                      src={update.image} 
-                      alt={update.title}
-                      className="w-16 h-12 sm:w-20 sm:h-16 object-cover rounded-lg flex-shrink-0"
-                    />
-                    <div className="flex-1">
-                      <div className="flex items-center gap-2 mb-1">
-                        <Calendar className="text-gray-500 sm:w-3.5 sm:h-3.5" size={12} />
-                        <span className="text-xs sm:text-sm text-gray-500">{update.date}</span>
-                      </div>
-                      <h4 className="font-semibold text-gray-900 mb-1 text-sm sm:text-base">{update.title}</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">{update.description}</p>
-                </div>
-                </div>
-                ))}
-              </div>
-            </div>
           </div>
 
           {/* Enhanced Sidebar */}

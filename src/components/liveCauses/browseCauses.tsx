@@ -32,7 +32,7 @@ const LiveCausesPage = () => {
       progressPercentage: 74,
       supporters: 234,
       daysLeft: 28,
-      image: '/images/animals-2.jpeg',
+      image: '/images/jwp/_MG_6955.JPG',
       urgency: 'High',
       description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand.',
       beneficiaries: '1000 women',
@@ -126,7 +126,7 @@ const LiveCausesPage = () => {
       progressPercentage: 80,
       supporters: 189,
       daysLeft: 15,
-      image: '/images/animals-2.jpeg',
+      image: '/images/khushi/48.jpg',
       urgency: 'High',
       description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
       beneficiaries: '2000 girls and women',
@@ -191,8 +191,12 @@ const LiveCausesPage = () => {
   };
 
   // Handle card click (entire card becomes clickable)
-  const handleCardClick = () => {
-    handleViewDetails();
+  const handleCardClick = (cause: any) => {
+    if (cause.ngo === 'KHUSHII') {
+      window.location.href = `/khushi-cause-details`;
+    } else {
+      handleViewDetails();
+    }
   };
 
   // Handle donate button click (prevent card click when clicking donate)
@@ -363,7 +367,7 @@ const LiveCausesPage = () => {
               {visibleCausesList.map((cause) => (
                 <div
                   key={cause.id}
-                  onClick={handleCardClick}
+                  onClick={() => handleCardClick(cause)}
                   className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer group"
                 >
                   {/* Image */}
