@@ -75,7 +75,6 @@ const NavbarComponent = () => {
       dropdownItems: [
         { name: 'Become a NGO Partner', href: '/ngo-partner' },
         { name: 'NGOs Listed With Us', href: '/ngo-list' },
-        { name: 'NGO Details', href: '/ngo-detail/1' }
       ]
     },
   ];

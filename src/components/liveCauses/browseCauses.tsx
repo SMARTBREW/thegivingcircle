@@ -56,7 +56,7 @@ const LiveCausesPage = () => {
       progressPercentage: 75,
       supporters: 312,
       daysLeft: 20,
-      image: '/images/animal3.webp',
+      image: '/images/animal-protect/animal17.jpeg',
       urgency: 'High',
       description: 'Comprehensive animal protection program focusing on rescue operations, medical care, and community awareness for street animals.',
       beneficiaries: '1500+ animals',
@@ -79,7 +79,7 @@ const LiveCausesPage = () => {
       progressPercentage: 79,
       supporters: 445,
       daysLeft: 18,
-      image: '/images/animal3.webp',
+      image: '/images/animals-bowl/animal5.jpeg',
       urgency: 'Critical',
       description: 'Daily feeding program for street dogs and cats across Chennai, providing nutritious meals and basic veterinary care.',
       beneficiaries: '2000+ street animals',
@@ -102,7 +102,7 @@ const LiveCausesPage = () => {
       progressPercentage: 71,
       supporters: 198,
       daysLeft: 25,
-      image: '/images/flood animal.jpg',
+      image: '/images/animal-flood/animal10.jpeg',
       urgency: 'Critical',
       description: 'Emergency rescue operations for animals affected by floods in Uttarakhand, providing immediate medical care and rehabilitation.',
       beneficiaries: '500+ flood-affected animals',
@@ -194,6 +194,12 @@ const LiveCausesPage = () => {
   const handleCardClick = (cause: any) => {
     if (cause.ngo === 'KHUSHII') {
       window.location.href = `/khushi-cause-details`;
+    } else if (cause.title === 'Pawsitive Protectors') {
+      window.location.href = `/pawsitive-protectors-cause-details`;
+    } else if (cause.title === 'Bowls of Hope') {
+      window.location.href = `/bowls-of-hope-cause-details`;
+    } else if (cause.title === 'Flood Animal Rescue') {
+      window.location.href = `/flood-animal-rescue-cause-details`;
     } else {
       handleViewDetails();
     }

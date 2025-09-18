@@ -34,7 +34,7 @@ const NGODetailContainer: React.FC = () => {
         // In development mode, prioritize sample data to avoid API errors
         if (import.meta.env.DEV) {
           console.log('Development mode: Loading sample data for NGO ID:', id);
-          const { sampleNGODetails, khushiNGODetails } = await import('../utils/sampleNGOData');
+          const { sampleNGODetails, khushiNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
           
           if (sampleNGODetails.id === id) {
             setNgoDetails(sampleNGODetails);
@@ -44,8 +44,12 @@ const NGODetailContainer: React.FC = () => {
             setNgoDetails(khushiNGODetails);
             setLoading(false);
             return;
+          } else if (animalCareNGODetails.id === id) {
+            setNgoDetails(animalCareNGODetails);
+            setLoading(false);
+            return;
           } else {
-            console.warn('No sample data found for ID:', id, 'Available IDs:', sampleNGODetails.id, khushiNGODetails.id);
+            console.warn('No sample data found for ID:', id, 'Available IDs:', sampleNGODetails.id, khushiNGODetails.id, animalCareNGODetails.id);
             // Fall through to try API if sample data not found
           }
         }
@@ -64,7 +68,7 @@ const NGODetailContainer: React.FC = () => {
         // If API fails, try sample data as fallback (for production or if dev sample data failed)
         try {
           console.log('API failed, trying sample data fallback...');
-          const { sampleNGODetails, khushiNGODetails } = await import('../utils/sampleNGOData');
+          const { sampleNGODetails, khushiNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
           
           if (sampleNGODetails.id === id) {
             console.log('Using sample data as fallback');
@@ -72,8 +76,11 @@ const NGODetailContainer: React.FC = () => {
           } else if (khushiNGODetails.id === id) {
             console.log('Using KHUSHII data as fallback');
             setNgoDetails(khushiNGODetails);
+          } else if (animalCareNGODetails.id === id) {
+            console.log('Using AnimalCare India data as fallback');
+            setNgoDetails(animalCareNGODetails);
           } else {
-            setError(`NGO not found. Available sample IDs: ${sampleNGODetails.id}, ${khushiNGODetails.id}`);
+            setError(`NGO not found. Available sample IDs: ${sampleNGODetails.id}, ${khushiNGODetails.id}, ${animalCareNGODetails.id}`);
           }
         } catch (sampleError) {
           console.error('Failed to load sample data:', sampleError);

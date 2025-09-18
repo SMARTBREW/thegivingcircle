@@ -60,13 +60,13 @@ const ImpactStories: React.FC = () => {
     {
       id: '2',
       title: 'Pawsitive Protectors: Saving Lives One Animal at a Time',
-      description: 'A comprehensive animal welfare program that has rescued, treated, and rehabilitated over 2,500 street animals across Mumbai and surrounding areas.',
-      fullStory: 'Mumbai\'s streets were once home to thousands of suffering animals - injured, diseased, and abandoned. The Pawsitive Protectors initiative by Animal Care has transformed this reality through systematic rescue operations, mobile veterinary clinics, and community awareness programs. Starting in 2021, the program has evolved into a city-wide network of 45 feeding stations, 3 permanent shelters, and a 24/7 emergency rescue helpline. The impact is staggering: over 2,500 animals rescued, 15,000+ vaccinations administered, and 8,000 sterilizations completed. The program has also trained 200+ community volunteers and partnered with 50+ housing societies for animal welfare. Most importantly, 1,200 animals have found loving forever homes through their adoption drives.',
+      description: 'Volunteer-led rescues, on-ground treatment, and rehabilitation of Mumbai\'s street animals—turning distress calls into recovery stories every single day.',
+      fullStory: 'On any given day, our Pawsitive Protectors team receives dozens of distress calls—an injured pup trapped under a vehicle, a dehydrated dog during peak summer, a mother with wounded paws. What began in 2021 as a small community effort is now a coordinated city-wide response with a 24/7 helpline, mobile vet vans, and a trained volunteer network. The program operates 45 feeding stations and 3 shelters, where injured animals receive first-aid, IV fluids, and post-operative care. Since launch, 2,500+ animals have been rescued, 15,000+ anti-rabies vaccinations administered, and 8,000+ sterilizations completed to humanely control population. Over 200 residents have been trained as community responders, and 1,200 animals have found forever homes through adoption drives. The photograph you see captures a typical field rescue—volunteers calming an anxious dog while a vet examines and prepares it for treatment. Each rescue is a promise: no animal gets left behind.',
       ngoName: 'Animal Care',
       location: 'Mumbai, Maharashtra',
       impactNumber: 2500,
       impactUnit: 'Animals Rescued',
-      image: '/Animal care.jpg',
+      image: '/images/animal-protect/animal19.jpeg',
       stats: [
         { label: 'Animals Rescued', value: '2,500+', icon: <Heart className="w-5 h-5" /> },
         { label: 'Vaccinations Given', value: '15,000+', icon: <CheckCircle className="w-5 h-5" /> },

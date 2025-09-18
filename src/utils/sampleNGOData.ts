@@ -1,5 +1,408 @@
 import { NGODetails } from '../types';
 
+export const animalCareNGODetails: NGODetails = {
+  id: '2',
+  name: 'AnimalCare India',
+  shortDescription: 'Dedicated to animal welfare, rescue operations, and emergency response for animals in need across India since 2015.',
+  fullDescription: 'AnimalCare India is a comprehensive animal welfare organization committed to protecting and caring for animals during both normal times and emergencies. We work tirelessly to rescue, rehabilitate, and provide medical care to street animals, while also responding to natural disasters and emergency situations. Our programs include daily feeding initiatives, vaccination campaigns, sterilization programs, and emergency rescue operations during floods and other disasters. We believe that every animal deserves compassion, care, and protection, and we work to create a world where animals and humans can coexist harmoniously.',
+  verified: true,
+  logo: '/images/animal-protect/animal12.jpeg',
+  heroImage: '/images/animal-protect/animal12.jpeg',
+  location: 'Delhi NCR, India',
+  yearEstablished: 2015,
+  registrationNumber: 'AC-2015-001',
+  
+  mission: 'To provide comprehensive care for animals through rescue operations, medical treatment, feeding programs, and emergency response during natural disasters.',
+  
+  vision: 'A world where every animal is safe, healthy, and treated with love and respect, with robust systems in place for their protection and welfare.',
+  
+  values: [
+    'Compassion for All Animals',
+    'Emergency Response Excellence', 
+    'Community Engagement',
+    'Medical Care Excellence',
+    'Disaster Preparedness',
+    'Transparency & Accountability'
+  ],
+
+  causes: [
+    {
+      id: 'animal-protection',
+      name: 'Animal Protection & Welfare',
+      description: 'Comprehensive animal welfare programs focusing on rescue, medical care, vaccination, and community education to ensure the safety and well-being of street animals and pets.',
+      image: '/images/animal-protect/animal13.jpeg',
+      impactMetrics: [
+        {
+          label: 'Animals Rescued',
+          value: '10,000',
+          unit: '+',
+          description: 'Animals rescued and provided with medical care'
+        },
+        {
+          label: 'Vaccinations',
+          value: '25,000',
+          unit: '+',
+          description: 'Animals vaccinated against rabies and other diseases'
+        },
+        {
+          label: 'Sterilizations',
+          value: '8,500',
+          unit: '+',
+          description: 'Animals sterilized to control population'
+        },
+        {
+          label: 'Community Programs',
+          value: '500',
+          unit: '+',
+          description: 'Awareness and education programs conducted'
+        }
+      ],
+      beneficiaries: ['Street Dogs', 'Street Cats', 'Livestock', 'Wildlife', 'Community Members'],
+      approach: 'Our comprehensive approach includes emergency rescue operations, medical treatment, vaccination campaigns, sterilization programs, and community education to create a sustainable ecosystem of animal welfare.',
+      outcomes: [
+        '90% reduction in rabies cases in target areas',
+        '85% improvement in animal health indicators',
+        '70% increase in community awareness about animal welfare',
+        '95% success rate in animal rescue operations'
+      ]
+    },
+    {
+      id: 'emergency-rescue',
+      name: 'Emergency Animal Rescue',
+      description: 'Rapid response emergency rescue operations for animals trapped in natural disasters, floods, and other emergency situations, providing immediate medical care and safe shelter.',
+      image: '/images/animal-flood/animal6.png',
+      impactMetrics: [
+        {
+          label: 'Emergency Rescues',
+          value: '5,000',
+          unit: '+',
+          description: 'Animals rescued during natural disasters'
+        },
+        {
+          label: 'Disaster Response',
+          value: '50',
+          unit: '+',
+          description: 'Emergency response operations conducted'
+        },
+        {
+          label: 'Emergency Shelters',
+          value: '25',
+          unit: '',
+          description: 'Temporary shelters established during disasters'
+        },
+        {
+          label: 'Medical Emergencies',
+          value: '3,000',
+          unit: '+',
+          description: 'Animals provided with emergency medical care'
+        }
+      ],
+      beneficiaries: ['Flood-Affected Animals', 'Disaster Victims', 'Injured Animals', 'Stranded Animals', 'Emergency Communities'],
+      approach: 'Our emergency response system includes specialized rescue teams, boats and water rescue equipment, emergency medical facilities, and coordination with disaster management authorities to ensure rapid response during crises.',
+      outcomes: [
+        '95% survival rate for rescued animals',
+        '24-hour emergency response capability',
+        '100% coordination with disaster management',
+        'Zero animal casualties in covered areas'
+      ]
+    },
+    {
+      id: 'feeding-programs',
+      name: 'Daily Feeding Programs',
+      description: 'Systematic daily feeding programs ensuring no animal goes hungry through organized feeding stations, community engagement, and nutrition monitoring across urban and rural areas.',
+      image: '/images/animals-bowl/animal1.jpeg',
+      impactMetrics: [
+        {
+          label: 'Daily Meals',
+          value: '15,000',
+          unit: '+',
+          description: 'Animals fed daily with nutritious meals'
+        },
+        {
+          label: 'Feeding Stations',
+          value: '25',
+          unit: '',
+          description: 'Feeding stations established across cities'
+        },
+        {
+          label: 'Community Volunteers',
+          value: '500',
+          unit: '+',
+          description: 'Volunteers trained in feeding programs'
+        },
+        {
+          label: 'Nutrition Support',
+          value: '50,000',
+          unit: '+',
+          description: 'Animals provided with nutrition support'
+        }
+      ],
+      beneficiaries: ['Street Animals', 'Community Members', 'Volunteers', 'Local Communities', 'Animal Lovers'],
+      approach: 'Our feeding programs include establishing systematic feeding stations, training community volunteers, providing nutritious meals, and creating awareness about responsible animal feeding practices.',
+      outcomes: [
+        '90% reduction in hunger-related animal deaths',
+        '85% improvement in animal health through nutrition',
+        '80% increase in community participation',
+        '95% success rate in feeding program sustainability'
+      ]
+    }
+  ],
+
+  impactMetrics: [
+    {
+      label: 'Total Animals Helped',
+      value: '50,000',
+      unit: '+',
+      description: 'Animals rescued, treated, and cared for'
+    },
+    {
+      label: 'Emergency Operations',
+      value: '100',
+      unit: '+',
+      description: 'Emergency rescue operations conducted'
+    },
+    {
+      label: 'Community Programs',
+      value: '1,000',
+      unit: '+',
+      description: 'Community awareness and education programs'
+    },
+    {
+      label: 'Volunteers Trained',
+      value: '2,000',
+      unit: '+',
+      description: 'Community volunteers trained in animal welfare'
+    }
+  ],
+
+  timeline: [
+    {
+      year: 2015,
+      title: 'AnimalCare India Founded',
+      description: 'Established with the mission to provide comprehensive care for animals through rescue operations, medical treatment, and emergency response.',
+      milestone: 'Organization Launch'
+    },
+    {
+      year: 2017,
+      title: 'Emergency Response Program',
+      description: 'Launched specialized emergency rescue operations for animals during natural disasters and floods.',
+      milestone: 'Emergency Response Capability'
+    },
+    {
+      year: 2019,
+      title: 'Daily Feeding Program',
+      description: 'Established systematic daily feeding programs across multiple cities to ensure no animal goes hungry.',
+      milestone: 'Feeding Program Launch'
+    },
+    {
+      year: 2021,
+      title: 'Community Impact Award',
+      description: 'Recognized for significant community engagement and education programs in animal welfare.',
+      milestone: 'Award Recognition'
+    },
+    {
+      year: 2022,
+      title: 'Excellence in Disaster Response',
+      description: 'Awarded for exceptional emergency animal rescue operations during natural disasters.',
+      milestone: 'Disaster Response Excellence'
+    },
+    {
+      year: 2023,
+      title: 'Best Animal Welfare Organization',
+      description: 'Recognized for outstanding contribution to animal welfare and emergency response across India.',
+      milestone: 'Industry Recognition'
+    }
+  ],
+
+  achievements: [
+    {
+      title: 'Best Animal Welfare Organization 2023',
+      description: 'Recognized for outstanding contribution to animal welfare and emergency response',
+      year: 2023,
+      issuer: 'National Animal Welfare Board'
+    },
+    {
+      title: 'Excellence in Disaster Response 2022',
+      description: 'Awarded for exceptional emergency animal rescue operations during natural disasters',
+      year: 2022,
+      issuer: 'Disaster Management Authority'
+    },
+    {
+      title: 'Community Impact Award 2021',
+      description: 'Recognized for significant community engagement and education programs',
+      year: 2021,
+      issuer: 'Social Impact Foundation'
+    }
+  ],
+
+  awards: [
+    {
+      title: 'Best Animal Welfare Organization',
+      year: 2023,
+      description: 'Recognized for outstanding contribution to animal welfare and emergency response',
+      organization: 'National Animal Welfare Board'
+    },
+    {
+      title: 'Excellence in Disaster Response',
+      year: 2022,
+      description: 'Awarded for exceptional emergency animal rescue operations during natural disasters',
+      organization: 'Disaster Management Authority'
+    },
+    {
+      title: 'Community Impact Award',
+      year: 2021,
+      description: 'Recognized for significant community engagement and education programs',
+      organization: 'Social Impact Foundation'
+    }
+  ],
+
+  partnerships: [
+    {
+      name: 'National Disaster Management Authority',
+      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop',
+      description: 'Partnership for emergency animal rescue operations during natural disasters'
+    },
+    {
+      name: 'Animal Welfare Board of India',
+      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop',
+      description: 'Collaboration on animal welfare programs and policy advocacy'
+    },
+    {
+      name: 'Local Veterinary Clinics',
+      logo: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=100&h=100&fit=crop',
+      description: 'Network of veterinary partners for medical care and treatment'
+    }
+  ],
+
+  leadership: [
+    {
+      name: 'Dr. Priya Sharma',
+      role: 'Chief Executive Officer',
+      bio: 'Dr. Priya Sharma is a veterinarian with 15+ years of experience in animal welfare and emergency response. She has led numerous rescue operations and has been instrumental in developing innovative approaches to animal care during disasters.',
+      image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face',
+      experience: '15+ years in animal welfare and emergency response',
+      education: 'DVM from Delhi Veterinary College, PhD in Animal Welfare'
+    },
+    {
+      name: 'Rajesh Kumar',
+      role: 'Head of Rescue Operations',
+      bio: 'Expert in emergency animal rescue with 10+ years of experience in disaster response and water rescue operations.',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face',
+      experience: '10+ years in disaster response and water rescue operations',
+      education: 'Masters in Disaster Management, Certified Rescue Specialist'
+    },
+    {
+      name: 'Sunita Reddy',
+      role: 'Medical Director',
+      bio: 'Veterinarian specializing in emergency animal medicine and disaster response with extensive experience in field operations.',
+      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?w=300&h=300&fit=crop&crop=face',
+      experience: '12+ years in emergency animal medicine and disaster response',
+      education: 'DVM from Mumbai Veterinary College, Specialization in Emergency Medicine'
+    }
+  ],
+
+  financials: {
+    transparency: 98,
+    adminCosts: 5,
+    programSpend: 95,
+    lastAudit: '2023',
+    certification: 'ISO 9001:2015',
+    efficiencyRating: 'A+'
+  },
+
+  contactInfo: {
+    email: 'info@animalcareindia.org.in',
+    phone: '+91-9315982650',
+    website: 'www.animalcareindia.org.in',
+    address: 'AnimalCare India, Sector 15, Gurugram, Haryana - 122001'
+  },
+
+  socialMedia: {
+    facebook: '@animalcareindia.org.in',
+    twitter: '@AnimalCareIndia',
+    instagram: '@animalcareindia.org.in',
+    linkedin: 'animalcare-india'
+  },
+
+  certifications: [
+    'ISO 9001:2015 Quality Management System',
+    'ISO 14001:2015 Environmental Management System',
+    'ISO 45001:2018 Occupational Health and Safety Management',
+    'Animal Welfare Board of India Registration',
+    '12A Tax Exemption Certificate',
+    '80G Tax Deduction Certificate'
+  ],
+
+  operatingStates: [
+    'Delhi',
+    'Haryana',
+    'Uttar Pradesh',
+    'Maharashtra',
+    'Karnataka',
+    'Tamil Nadu',
+    'West Bengal',
+    'Gujarat',
+    'Rajasthan',
+    'Punjab'
+  ],
+
+  totalBeneficiaries: '50,000+',
+
+  annualReport: 'https://animalcareindia.org.in/annual-report-2023.pdf',
+
+  financialTransparency: {
+    programExpenses: '95%',
+    adminExpenses: '3%',
+    fundraisingExpenses: '2%',
+    efficiencyRating: 'A+'
+  },
+
+  gallery: [
+    {
+      id: 'ac-1',
+      type: 'image',
+      url: '/images/animal-protect/animal14.jpeg',
+      title: 'Rescue & Medical Care',
+      description: 'Volunteers providing medical care to rescued animals during field operations.'
+    },
+    {
+      id: 'ac-2',
+      type: 'image',
+      url: '/images/animal-protect/animal15.jpeg',
+      title: 'Vaccination Drive',
+      description: 'Community vaccination campaign in progress for rabies prevention.'
+    },
+    {
+      id: 'ac-3',
+      type: 'image',
+      url: '/images/animal-flood/animal7.png',
+      title: 'Flood Rescue Operations',
+      description: 'Emergency rescue operations during flood relief with trained responders.'
+    },
+    {
+      id: 'ac-4',
+      type: 'image',
+      url: '/images/animals-bowl/animal2.jpeg',
+      title: 'Daily Feeding Program',
+      description: 'Daily feeding ensuring no animal goes hungry across the city.'
+    },
+    {
+      id: 'ac-5',
+      type: 'image',
+      url: '/images/animal-protect/animal16.jpeg',
+      title: 'Community Education',
+      description: 'Awareness programs on humane animal care and community responsibility.'
+    },
+    {
+      id: 'ac-6',
+      type: 'image',
+      url: '/images/animal-flood/animal8.png',
+      title: 'Emergency Medical Care',
+      description: 'On-site emergency medical care for disaster-affected animals.'
+    }
+  ]
+};
+
 export const sampleNGODetails: NGODetails = {
   id: '1',
   name: 'JWP (Janakalyan Welfare Program)',
@@ -427,7 +830,7 @@ export const sampleNGODetails: NGODetails = {
 
 // KHUSHII NGO Data
 export const khushiNGODetails: NGODetails = {
-  id: '2',
+  id: '3',
   name: 'KHUSHII (Kids Help Foundation)',
   shortDescription: 'Empowering underprivileged children through education, nutrition, and holistic development across Delhi NCR since 2012.',
   fullDescription: 'KHUSHII is a dedicated organization working with underprivileged children and their families in Delhi NCR. We focus on providing quality education, nutrition, healthcare, and skill development programs to break the cycle of poverty. Our comprehensive approach includes community engagement, parent training, and sustainable development initiatives that directly benefit over 2,500 children and 1,000+ families across 25+ communities in Delhi NCR.',
