@@ -12,7 +12,7 @@ const FUNDRAISING_DATA = [
     id: 1,
     title: "Wings of Hope",
     description: "Inspired change-makers are taking it upon themselves to ensure underprivileged girls don’t  drop out of school when they start menstruating. Their mission is simple yet powerful: keeping girls in school. Period.",
-    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
     category: "Education • Health • Empowerment",
     fullDescription: "Education is the foundation of a better future, but many children lack access to quality learning opportunities. Wings of Hope provides scholarships, school supplies, digital learning tools, and mentorship programs to underprivileged students. We support both formal education and skill development, ensuring children can pursue their dreams regardless of their economic background. Every child deserves the chance to soar.",
     raised: 34800,
