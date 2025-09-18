@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import CloudinaryImage from '../ui/CloudinaryImage';
 import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
 
 // Cause type definition removed as it's not used in this component
@@ -378,10 +379,13 @@ const LiveCausesPage = () => {
                 >
                   {/* Image */}
                   <div className="relative h-40 sm:h-48 overflow-hidden">
-                    <img 
+                    <CloudinaryImage 
                       src={cause.image} 
                       alt={cause.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      width={480}
+                      height={192}
                     />
                     <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
                       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2">

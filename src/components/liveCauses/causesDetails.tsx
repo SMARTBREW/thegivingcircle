@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 const CauseDetailPage = () => {
   const { id } = useParams();
@@ -243,10 +244,13 @@ const CauseDetailPage = () => {
             {/* Hero Section */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-6">
               <div className="relative h-64 sm:h-80 md:h-96">
-                <img 
+                <CloudinaryImage 
                   src={cause.image} 
                   alt={cause.title}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 66vw"
+                  width={1280}
+                  height={384}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
@@ -320,10 +324,13 @@ const CauseDetailPage = () => {
                     </p>
                   </div>
                   <div className="order-first lg:order-last">
-                    <img 
+                    <CloudinaryImage 
                       src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183051/images/jwp/WhatsApp_Image_2025-06-29_at_22.44.35_68c59220.jpg" 
                       alt="Students engaged in classroom learning activities with proper educational resources"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      width={800}
+                      height={320}
                     />
                     <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                       Students engaged in classroom learning activities with proper educational resources
@@ -354,10 +361,13 @@ const CauseDetailPage = () => {
                     </p>
                   </div>
                   <div>
-                    <img 
+                    <CloudinaryImage 
                       src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183052/images/jwp/WhatsApp_Image_2025-07-04_at_15.38.58_a93f5478.jpg" 
                       alt="Women learning about menstrual health and hygiene education"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      width={800}
+                      height={320}
                     />
                     <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                       Women learning about menstrual health and hygiene education
@@ -399,10 +409,13 @@ const CauseDetailPage = () => {
                   </div>
                 </div>
                 <div>
-                  <img 
+                  <CloudinaryImage 
                     src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg" 
                     alt="Students actively engaged in learning activities"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    width={800}
+                    height={320}
                   />
                   <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                     Students actively engaged in learning activities
@@ -437,10 +450,13 @@ const CauseDetailPage = () => {
                 </p>
                 </div>
                 <div>
-                  <img 
+                  <CloudinaryImage 
                     src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg"
                     alt="Students and families celebrating educational achievements"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
+                    sizes="(max-width: 640px) 100vw, 50vw"
+                    width={800}
+                    height={320}
                   />
                   <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                     Students and families celebrating educational achievements
@@ -468,10 +484,13 @@ const CauseDetailPage = () => {
                 {cause.impactGallery.map((item, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg overflow-hidden">
                     <div className="relative h-48 sm:h-64">
-                      <img 
+                      <CloudinaryImage 
                         src={item.image} 
                         alt={item.caption}
                         className="w-full h-full object-cover"
+                        sizes="(max-width: 640px) 100vw, 50vw"
+                        width={800}
+                        height={256}
                       />
                       <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-black text-white px-2 sm:px-3 py-1 rounded-full text-xs font-medium">
                         {item.type}

@@ -5,6 +5,7 @@ import {
   Users2,
 } from "lucide-react";
 import PrimaryButton from '../ui/PrimaryButton';
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 const FUNDRAISING_DATA = [
   {
@@ -247,10 +248,13 @@ const FundraisingHero = () => {
                           : "hover:shadow-xl"
                       }`}
                     >
-                      <img
+                      <CloudinaryImage
                         src={campaign.image}
                         alt={campaign.category}
                         className="w-full h-full object-cover"
+                        sizes="(max-width: 768px) 192px, 256px"
+                        width={256}
+                        height={149}
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
 
