@@ -48,14 +48,16 @@ const GivingPhilosophy = () => {
                 </span>
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
-                Every act of giving creates ripples that extend far beyond what we can see.
-                When we come together as a circle, our individual contributions become a
-                powerful force for change.
+              Every act of giving creates ripples of hope that reach farther than we can imagine. When we unite as a circle, our individual sparks of compassion join to become a powerful force for change.
+
               </p>
               <p className="text-sm sm:text-lg text-gray-600 leading-relaxed">
-                The Giving Circle isn't just about donations—it's about building a community
-                where every person's generosity multiplies through connection, collaboration,
-                and shared purpose. Together, we transform lives, communities, and the world.
+              The Giving Circle isn’t just about donations - it’s about people standing beside one another, turning kindness into action. Here, your generosity grows through connection, shared purpose, and the belief that together we can transform lives, uplift communities, and change the world. 
+
+              </p>
+              <p className="text-sm sm:text-lg text-gray-600 leading-relaxed">
+              The Giving Circle shows how ordinary people can bring about extraordinary change. 
+
               </p>
               <div className="pt-4">
               <motion.button
