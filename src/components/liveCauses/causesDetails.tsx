@@ -27,7 +27,7 @@ const CauseDetailPage = () => {
     supporters: 143,
 
     daysLeft: 18,
-    image: '/images/jwp/_DSC8339.jpg',
+    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg',
     urgency: 'High',
     
     // Problem Statement
@@ -74,32 +74,27 @@ const CauseDetailPage = () => {
     // Impact Gallery
     impactGallery: [
       {
-        image: '/images/jwp/_DSC9767.JPG',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
         caption: 'A young student proudly displays her educational materials and achievements in the classroom',
         type: 'Student Success'
       },
       {
-        image: '/images/jwp/_MG_6955.JPG',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183060/images/jwp/_MG_6955.jpg',
         caption: 'Students actively participating in learning activities with microphones and presentation equipment',
         type: 'Active Learning'
       },
       {
-        image: '/images/jwp/_MG_7015.JPG',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183063/images/jwp/_MG_7015.jpg',
         caption: 'Community members celebrating educational achievements and program milestones together',
         type: 'Community Celebration'
       },
       {
-        image: '/images/jwp/_MG_8025.JPG',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183065/images/jwp/_MG_8025.jpg',
         caption: 'Students engaged in collaborative learning and peer interaction activities',
         type: 'Collaborative Learning'
       },
       {
-        image: '/images/jwp/20250909_100901.jpg',
-        caption: 'Regular classroom activities demonstrating consistent student engagement and learning',
-        type: 'Daily Activities'
-      },
-      {
-        image: '/images/jwp/20250910_110430.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183050/images/jwp/20250910_110430.jpg',
         caption: 'Special educational events and cultural programs promoting holistic student development',
         type: 'Special Events'
       }
@@ -136,19 +131,19 @@ const CauseDetailPage = () => {
         date: '15 March 2024',
         title: 'First Learning Center Operational',
         description: 'Successfully established our first learning center in Dharavi, serving 75 children with basic education and meals.',
-        image: '/images/jwp/_MG_6955.JPG'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183060/images/jwp/_MG_6955.jpg'
       },
       {
         date: '20 March 2024',
         title: 'Educational Kits Distribution Complete',
         description: '150 complete educational kits distributed including books, uniforms, and learning materials to enrolled children.',
-        image: '/images/jwp/_DSC9767.JPG'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg'
       },
       {
         date: '25 March 2024',
         title: 'Community Engagement Program Launched',
         description: 'Parent awareness sessions conducted reaching 200+ families about importance of education.',
-        image: '/images/jwp/_MG_7015.JPG'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183063/images/jwp/_MG_7015.jpg'
       }
     ],
     
@@ -326,7 +321,7 @@ const CauseDetailPage = () => {
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="/images/jwp/WhatsApp Image 2025-06-29 at 22.44.35_68c59220.jpg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183051/images/jwp/WhatsApp_Image_2025-06-29_at_22.44.35_68c59220.jpg" 
                       alt="Students engaged in classroom learning activities with proper educational resources"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -360,7 +355,7 @@ const CauseDetailPage = () => {
                   </div>
                   <div>
                     <img 
-                      src="/images/jwp/WhatsApp Image 2025-07-04 at 15.38.58_a93f5478.jpg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183052/images/jwp/WhatsApp_Image_2025-07-04_at_15.38.58_a93f5478.jpg" 
                       alt="Women learning about menstrual health and hygiene education"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -405,7 +400,7 @@ const CauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/jwp/_DSC9857.JPG" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg" 
                     alt="Students actively engaged in learning activities"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -443,7 +438,7 @@ const CauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/jwp/_DSC8339.jpg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg"
                     alt="Students and families celebrating educational achievements"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />

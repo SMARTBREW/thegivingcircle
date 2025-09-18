@@ -20,7 +20,7 @@ const BowlsOfHopeCauseDetailPage = () => {
     progressPercentage: 79,
     supporters: 445,
     daysLeft: 18,
-    image: '/images/animals-bowl/animal1.jpeg',
+    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
     urgency: 'Critical',
     
     // Problem Statement
@@ -67,27 +67,27 @@ const BowlsOfHopeCauseDetailPage = () => {
     // Impact Gallery
     impactGallery: [
       {
-        image: '/images/animals-bowl/animal1.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
         caption: 'Volunteers providing fresh water and nutritious meals to street dogs at feeding stations',
         type: 'Daily Feeding'
       },
       {
-        image: '/images/animals-bowl/animal2.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183037/images/animals-bowl/animal2.jpg',
         caption: 'Community members actively participating in organized feeding programs for stray animals',
         type: 'Community Feeding'
       },
       {
-        image: '/images/animals-bowl/animal3.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183039/images/animals-bowl/animal3.jpg',
         caption: 'Dedicated volunteers ensuring no animal goes hungry through systematic feeding initiatives',
         type: 'Volunteer Care'
       },
       {
-        image: '/images/animals-bowl/animal4.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183040/images/animals-bowl/animal4.jpg',
         caption: 'Feeding stations providing consistent nutrition and clean water to street animals',
         type: 'Feeding Stations'
       },
       {
-        image: '/images/animals-bowl/animal5.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg',
         caption: 'Animals receiving proper nutrition and care through our comprehensive feeding program',
         type: 'Animal Nutrition'
       }
@@ -124,19 +124,19 @@ const BowlsOfHopeCauseDetailPage = () => {
         date: '10 March 2024',
         title: 'First Feeding Station Launch',
         description: 'Successfully launched our first feeding station in Chennai, serving 200+ animals daily with nutritious meals.',
-        image: '/images/animals-bowl/animal1.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg'
       },
       {
         date: '15 March 2024',
         title: 'Community Volunteer Program',
         description: 'Recruited and trained 50+ community volunteers for daily feeding operations across 5 neighborhoods.',
-        image: '/images/animals-bowl/animal2.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183037/images/animals-bowl/animal2.jpg'
       },
       {
         date: '20 March 2024',
         title: 'Water Source Installation',
         description: 'Installed clean water sources at 10 feeding stations, ensuring animals have access to fresh water.',
-        image: '/images/animals-bowl/animal3.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183039/images/animals-bowl/animal3.jpg'
       }
     ],
     
@@ -167,7 +167,7 @@ const BowlsOfHopeCauseDetailPage = () => {
   // NGO details
   const ngoDetails = {
     name: 'AnimalCare India',
-    logo: '/images/animals-bowl/animal1.jpeg',
+    logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
     tagline: 'Every Life, Every Heartbeat',
     description: 'AnimalCare India is a dedicated animal welfare organization committed to protecting and caring for stray animals across India. Through comprehensive feeding programs, medical care, and community education, we work tirelessly to ensure no animal goes hungry and every animal receives the care they deserve.',
     vision: 'A world where every animal has access to food, water, and compassionate care.',
@@ -310,7 +310,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="/images/animals-bowl/animal2.jpeg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183037/images/animals-bowl/animal2.jpg" 
                       alt="Stray animals in need of food and water"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -339,7 +339,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                   </div>
                   <div>
                     <img 
-                      src="/images/animals-bowl/animal3.jpeg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183039/images/animals-bowl/animal3.jpg" 
                       alt="The importance of nutrition in animal welfare"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -380,7 +380,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/animals-bowl/animal4.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183040/images/animals-bowl/animal4.jpg" 
                     alt="Volunteers providing daily nutrition to street animals"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -416,7 +416,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/animals-bowl/animal5.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg" 
                     alt="Community members celebrating successful feeding programs"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -534,7 +534,7 @@ const BowlsOfHopeCauseDetailPage = () => {
               <div className="bg-gradient-to-r from-gray-800 to-black p-4 sm:p-6 text-white">
                 <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
                   <img 
-                    src="/images/animals-bowl/animal1.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg"
                     alt={ngoDetails.name}
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white p-1 object-contain"
                   />

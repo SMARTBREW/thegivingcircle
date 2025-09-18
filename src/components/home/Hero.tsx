@@ -10,9 +10,9 @@ const FUNDRAISING_DATA = [
   {
     id: 1,
     title: "Wings of Hope",
-    description: "Giving wings to dreams through education and opportunity. Your contribution provides scholarships, school supplies, and educational resources to children who aspire for a better future.",
-    image: "/images/jwp/_DSC9857.JPG",
-    category: "Education • Empowerment",
+    description: "Inspired change-makers are taking it upon themselves to keep underprivileged girls in school who drop out when they start menstruating. Their mission - keeping girls in school. Period.",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg",
+    category: "Education • Health • Empowerment",
     fullDescription: "Education is the foundation of a better future, but many children lack access to quality learning opportunities. Wings of Hope provides scholarships, school supplies, digital learning tools, and mentorship programs to underprivileged students. We support both formal education and skill development, ensuring children can pursue their dreams regardless of their economic background. Every child deserves the chance to soar.",
     raised: 34800,
     goal: 90000,
@@ -30,8 +30,8 @@ const FUNDRAISING_DATA = [
     id: 2,
     title: "Pawsitive Protectors",
     description: "Protecting and caring for stray animals in our communities. Your donation funds rescue operations, medical care, food, and shelter for abandoned and injured animals.",
-    image: "/images/animal-protect/animal12.jpeg",
-    category: "Animal Welfare • Rescue",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg",
+    category: "Animal Welfare • Rescue • Verified",
     fullDescription: "Stray animals face daily struggles for survival, from hunger and disease to accidents and abuse. Our comprehensive animal welfare program provides medical care, food, shelter, and adoption services for abandoned and injured animals. We operate mobile veterinary clinics, establish feeding stations, and run sterilization programs to control the stray population humanely. Every animal deserves love, care, and a chance at a better life.",
     raised: 28500,
     goal: 75000,
@@ -49,12 +49,13 @@ const FUNDRAISING_DATA = [
     id: 3,
     title: "Pads for Freedom",
     description: "Empowering women and girls with access to menstrual hygiene products. Your support provides sanitary pads, education, and breaks the stigma around menstruation in underserved communities.",
-    image: "/images/khushi/77.jpg",
-    category: "Women Empowerment • Health",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp",
+    category: "Women Empowerment • Health • Verified",
     fullDescription: "Menstrual hygiene is a fundamental right, yet millions of women and girls in India lack access to sanitary products, forcing them to miss school and work. This campaign provides free sanitary pads, conducts awareness workshops, and breaks the taboo surrounding menstruation. We distribute pads in schools, rural communities, and urban slums, ensuring no woman has to compromise her dignity or opportunities due to lack of menstrual hygiene products.",
     raised: 45750,
     goal: 100000,
     donors: 234,
+
     daysLeft: 15,
     location: "Schools and Communities Nationwide",
     organizer: "KHUSHII",
@@ -68,8 +69,8 @@ const FUNDRAISING_DATA = [
     id: 4,
     title: "Bowls of Hope",
     description: "Filling empty bowls with hope and nutrition for stray animals. Your donation provides daily meals, medical care, and creates feeding stations for hungry animals in need.",
-    image: "/images/animals-bowl/animal1.jpeg",
-    category: "Animal Welfare • Nutrition",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg",
+    category: "Animal Welfare • Nutrition • Verified",
     fullDescription: "Stray animals often go days without food, leading to malnutrition and suffering. Bowls of Hope creates a network of feeding stations and provides daily nutritious meals for stray dogs, cats, and other animals. We also offer medical care, vaccination programs, and work with local communities to ensure sustainable animal welfare. Every bowl filled represents hope, compassion, and a commitment to animal welfare.",
     raised: 52300,
     goal: 120000,
@@ -87,8 +88,8 @@ const FUNDRAISING_DATA = [
     id: 5,
     title: "Flood Relief in Uttarakhand",
     description: "Providing immediate relief to flood-affected families in Uttarakhand. Your support delivers emergency supplies, medical aid, and helps rebuild homes destroyed by devastating floods.",
-    image: "/images/Uttarakhand-rescue.jpg",
-    category: "Disaster Relief • Emergency",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg",
+    category: "Disaster Relief • Emergency • Verified",
     fullDescription: "Uttarakhand has faced devastating floods that have destroyed homes, displaced families, and left communities without basic necessities. Our emergency response team provides immediate relief including food, clean water, medical supplies, and temporary shelter. We focus on rebuilding infrastructure, restoring livelihoods, and providing psychological support to affected families. Every donation helps bring hope and stability back to these resilient communities.",
     raised: 67200,
     goal: 150000,
@@ -106,8 +107,8 @@ const FUNDRAISING_DATA = [
     id: 6,
     title: "Flood Animal Rescue",
     description: "Rescuing animals trapped in floodwaters and providing emergency veterinary care. Your support funds rescue boats, medical supplies, and temporary shelters for flood-affected animals.",
-    image: "/images/animal-flood/animal7.png",
-    category: "Animal Rescue • Emergency",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png",
+    category: "Animal Rescue • Emergency • Verified",
     fullDescription: "When floods strike, animals are often the forgotten victims, trapped in rising waters without food or medical care. Our specialized rescue team uses boats and specialized equipment to save animals from floodwaters, providing immediate medical attention, food, and temporary shelter. We work with local veterinarians and animal welfare organizations to ensure rescued animals receive proper care and find loving homes.",
     raised: 41600,
     goal: 95000,
@@ -188,7 +189,7 @@ const FundraisingHero = () => {
           {/* Badge */}
           <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
             <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse" />
-            {currentCampaign.category} • Verified
+            {currentCampaign.category}
           </div>
 
           {/* Title */}

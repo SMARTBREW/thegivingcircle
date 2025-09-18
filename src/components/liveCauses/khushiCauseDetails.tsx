@@ -21,7 +21,7 @@ const KhushiCauseDetailPage = () => {
     supporters: 189,
 
     daysLeft: 22,
-    image: '/images/khushi/HomePageTop.jpg',
+    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
     urgency: 'High',
     
     // Problem Statement
@@ -68,32 +68,32 @@ const KhushiCauseDetailPage = () => {
     // Impact Gallery
     impactGallery: [
       {
-        image: '/images/khushi/48.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
         caption: 'Children actively engaged in classroom learning with proper educational resources and materials',
         type: 'Active Learning'
       },
       {
-        image: '/images/khushi/77.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp',
         caption: 'Students participating in interactive learning activities and group discussions',
         type: 'Interactive Education'
       },
       {
-        image: '/images/khushi/38.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188362/images/khushi/cld-1758188325188-38.jpg-2200.webp',
         caption: 'Community celebration of educational achievements and student progress',
         type: 'Community Impact'
       },
       {
-        image: '/images/khushi/24.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188360/images/khushi/cld-1758188322776-24.jpg-2200.webp',
         caption: 'Children receiving nutritious meals as part of our comprehensive development program',
         type: 'Nutrition Support'
       },
       {
-        image: '/images/khushi/20.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183070/images/khushi/20.jpg',
         caption: 'Students showcasing their learning achievements and creative projects',
         type: 'Student Success'
       },
       {
-        image: '/images/khushi/7.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188367/images/khushi/cld-1758188329829-7.jpg-2200.webp',
         caption: 'Teachers and students working together in well-equipped learning environments',
         type: 'Quality Education'
       }
@@ -130,19 +130,19 @@ const KhushiCauseDetailPage = () => {
         date: '20 March 2024',
         title: 'First Learning Center Inaugurated',
         description: 'Successfully established our first learning center in Delhi, serving 100 children with quality education and meals.',
-        image: '/images/khushi/48.jpg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg'
       },
       {
         date: '25 March 2024',
         title: 'Educational Materials Distribution',
         description: 'Distributed complete educational kits including books, stationery, and learning materials to 200 enrolled children.',
-        image: '/images/khushi/77.jpg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183094/images/khushi/77.jpg'
       },
       {
         date: '30 March 2024',
         title: 'Community Engagement Program',
         description: 'Conducted parent awareness sessions reaching 300+ families about the importance of education.',
-        image: '/images/khushi/38.jpg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183100/images/khushi/38.jpg'
       }
     ],
     
@@ -318,7 +318,7 @@ const KhushiCauseDetailPage = () => {
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="/images/khushi/4.jpg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758188365/images/khushi/cld-1758188327709-4.jpg-2200.webp" 
                       alt="Children in underserved communities seeking educational opportunities"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -351,7 +351,7 @@ const KhushiCauseDetailPage = () => {
                   </div>
                   <div>
                     <img 
-                      src="/images/khushi/20.jpg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183070/images/khushi/20.jpg" 
                       alt="The importance of education in breaking cycles of poverty"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -395,7 +395,7 @@ const KhushiCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/khushi/KHu-Web.jpg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg" 
                     alt="Students actively engaged in learning activities"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -433,7 +433,7 @@ const KhushiCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/khushi/HomePageTop.jpg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
                     alt="Students and families celebrating educational achievements"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />

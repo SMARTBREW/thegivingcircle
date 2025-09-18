@@ -90,7 +90,7 @@ const ImpactStoriesDetails: React.FC = () => {
       '/JWP.jpg',
       '/khushii.jpg',
       '/Animal care.jpg',
-      '/images/Uttarakhand-rescue.jpg',
+      'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
     ],
     videoUrl: 'https://example.com/impact-video.mp4',
     documents: [
@@ -130,7 +130,7 @@ const ImpactStoriesDetails: React.FC = () => {
         role: 'Block Coordinator',
         content: 'Self-help groups are now active and saving regularly. The confidence among participants is the biggest impact.',
         rating: 5,
-        image: '/images/Uttarakhand-rescue.jpg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
       },
     ],
   };

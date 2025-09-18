@@ -42,7 +42,7 @@ const ImpactStories: React.FC = () => {
       location: 'Multiple States, India',
       impactNumber: 1200,
       impactUnit: 'Women & Girls Served',
-      image: '/images/jwp/_DSC8339.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg',
       stats: [
         { label: 'Women & Girls Reached', value: '1,200+', icon: <Users className="w-5 h-5" /> },
         { label: 'Communities Served', value: '30', icon: <MapPin className="w-5 h-5" /> },
@@ -66,7 +66,7 @@ const ImpactStories: React.FC = () => {
       location: 'Mumbai, Maharashtra',
       impactNumber: 2500,
       impactUnit: 'Animals Rescued',
-      image: '/images/animal-protect/animal19.jpeg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183026/images/animal-protect/animal19.jpg',
       stats: [
         { label: 'Animals Rescued', value: '2,500+', icon: <Heart className="w-5 h-5" /> },
         { label: 'Vaccinations Given', value: '15,000+', icon: <CheckCircle className="w-5 h-5" /> },
@@ -90,7 +90,7 @@ const ImpactStories: React.FC = () => {
       location: 'Delhi & NCR',
       impactNumber: 2500,
       impactUnit: 'Children Empowered',
-      image: '/images/khushi/HomePageTop.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
       stats: [
         { label: 'Children Reached', value: '2,500+', icon: <Users className="w-5 h-5" /> },
         { label: 'Learning Centers', value: '50+', icon: <Award className="w-5 h-5" /> },
@@ -114,7 +114,7 @@ const ImpactStories: React.FC = () => {
       location: 'Uttarakhand, India',
       impactNumber: 3000,
       impactUnit: 'Families Supported',
-      image: '/images/Uttarakhand-rescue.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
       stats: [
         { label: 'Families Rescued', value: '3,000+', icon: <Users className="w-5 h-5" /> },
         { label: 'Food Packets Distributed', value: '50,000+', icon: <Heart className="w-5 h-5" /> },

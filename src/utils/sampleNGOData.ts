@@ -6,8 +6,8 @@ export const animalCareNGODetails: NGODetails = {
   shortDescription: 'Dedicated to animal welfare, rescue operations, and emergency response for animals in need across India since 2015.',
   fullDescription: 'AnimalCare India is a comprehensive animal welfare organization committed to protecting and caring for animals during both normal times and emergencies. We work tirelessly to rescue, rehabilitate, and provide medical care to street animals, while also responding to natural disasters and emergency situations. Our programs include daily feeding initiatives, vaccination campaigns, sterilization programs, and emergency rescue operations during floods and other disasters. We believe that every animal deserves compassion, care, and protection, and we work to create a world where animals and humans can coexist harmoniously.',
   verified: true,
-  logo: '/images/animal-protect/animal12.jpeg',
-  heroImage: '/images/animal-protect/animal12.jpeg',
+  logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg',
+  heroImage: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg',
   location: 'Delhi NCR, India',
   yearEstablished: 2015,
   registrationNumber: 'AC-2015-001',
@@ -30,7 +30,7 @@ export const animalCareNGODetails: NGODetails = {
       id: 'animal-protection',
       name: 'Animal Protection & Welfare',
       description: 'Comprehensive animal welfare programs focusing on rescue, medical care, vaccination, and community education to ensure the safety and well-being of street animals and pets.',
-      image: '/images/animal-protect/animal13.jpeg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183018/images/animal-protect/animal13.jpg',
       impactMetrics: [
         {
           label: 'Animals Rescued',
@@ -70,7 +70,7 @@ export const animalCareNGODetails: NGODetails = {
       id: 'emergency-rescue',
       name: 'Emergency Animal Rescue',
       description: 'Rapid response emergency rescue operations for animals trapped in natural disasters, floods, and other emergency situations, providing immediate medical care and safe shelter.',
-      image: '/images/animal-flood/animal6.png',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
       impactMetrics: [
         {
           label: 'Emergency Rescues',
@@ -110,7 +110,7 @@ export const animalCareNGODetails: NGODetails = {
       id: 'feeding-programs',
       name: 'Daily Feeding Programs',
       description: 'Systematic daily feeding programs ensuring no animal goes hungry through organized feeding stations, community engagement, and nutrition monitoring across urban and rural areas.',
-      image: '/images/animals-bowl/animal1.jpeg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
       impactMetrics: [
         {
           label: 'Daily Meals',
@@ -153,25 +153,29 @@ export const animalCareNGODetails: NGODetails = {
       label: 'Total Animals Helped',
       value: '50,000',
       unit: '+',
-      description: 'Animals rescued, treated, and cared for'
+      description: 'Animals rescued, treated, and cared for',
+      icon: 'Users'
     },
     {
       label: 'Emergency Operations',
       value: '100',
       unit: '+',
-      description: 'Emergency rescue operations conducted'
+      description: 'Emergency rescue operations conducted',
+      icon: 'Shield'
     },
     {
       label: 'Community Programs',
       value: '1,000',
       unit: '+',
-      description: 'Community awareness and education programs'
+      description: 'Community awareness and education programs',
+      icon: 'Handshake'
     },
     {
       label: 'Volunteers Trained',
       value: '2,000',
       unit: '+',
-      description: 'Community volunteers trained in animal welfare'
+      description: 'Community volunteers trained in animal welfare',
+      icon: 'Users'
     }
   ],
 
@@ -214,26 +218,7 @@ export const animalCareNGODetails: NGODetails = {
     }
   ],
 
-  achievements: [
-    {
-      title: 'Best Animal Welfare Organization 2023',
-      description: 'Recognized for outstanding contribution to animal welfare and emergency response',
-      year: 2023,
-      issuer: 'National Animal Welfare Board'
-    },
-    {
-      title: 'Excellence in Disaster Response 2022',
-      description: 'Awarded for exceptional emergency animal rescue operations during natural disasters',
-      year: 2022,
-      issuer: 'Disaster Management Authority'
-    },
-    {
-      title: 'Community Impact Award 2021',
-      description: 'Recognized for significant community engagement and education programs',
-      year: 2021,
-      issuer: 'Social Impact Foundation'
-    }
-  ],
+  // Achievements merged into awards below to match NGODetails type
 
   awards: [
     {
@@ -300,15 +285,7 @@ export const animalCareNGODetails: NGODetails = {
       education: 'DVM from Mumbai Veterinary College, Specialization in Emergency Medicine'
     }
   ],
-
-  financials: {
-    transparency: 98,
-    adminCosts: 5,
-    programSpend: 95,
-    lastAudit: '2023',
-    certification: 'ISO 9001:2015',
-    efficiencyRating: 'A+'
-  },
+  
 
   contactInfo: {
     email: 'info@animalcareindia.org.in',
@@ -361,44 +338,62 @@ export const animalCareNGODetails: NGODetails = {
     {
       id: 'ac-1',
       type: 'image',
-      url: '/images/animal-protect/animal14.jpeg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183019/images/animal-protect/animal14.jpg',
       title: 'Rescue & Medical Care',
-      description: 'Volunteers providing medical care to rescued animals during field operations.'
+      description: 'Volunteers providing medical care to rescued animals during field operations.',
+      location: 'Delhi NCR',
+      date: '2024',
+      cause: 'Animal Protection & Welfare'
     },
     {
       id: 'ac-2',
       type: 'image',
-      url: '/images/animal-protect/animal15.jpeg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183020/images/animal-protect/animal15.jpg',
       title: 'Vaccination Drive',
-      description: 'Community vaccination campaign in progress for rabies prevention.'
+      description: 'Community vaccination campaign in progress for rabies prevention.',
+      location: 'Delhi NCR',
+      date: '2024',
+      cause: 'Animal Protection & Welfare'
     },
     {
       id: 'ac-3',
       type: 'image',
-      url: '/images/animal-flood/animal7.png',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png',
       title: 'Flood Rescue Operations',
-      description: 'Emergency rescue operations during flood relief with trained responders.'
+      description: 'Emergency rescue operations during flood relief with trained responders.',
+      location: 'Assam',
+      date: '2024',
+      cause: 'Emergency Animal Rescue'
     },
     {
       id: 'ac-4',
       type: 'image',
-      url: '/images/animals-bowl/animal2.jpeg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183037/images/animals-bowl/animal2.jpg',
       title: 'Daily Feeding Program',
-      description: 'Daily feeding ensuring no animal goes hungry across the city.'
+      description: 'Daily feeding ensuring no animal goes hungry across the city.',
+      location: 'Mumbai',
+      date: '2024',
+      cause: 'Daily Feeding Programs'
     },
     {
       id: 'ac-5',
       type: 'image',
-      url: '/images/animal-protect/animal16.jpeg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183022/images/animal-protect/animal16.jpg',
       title: 'Community Education',
-      description: 'Awareness programs on humane animal care and community responsibility.'
+      description: 'Awareness programs on humane animal care and community responsibility.',
+      location: 'Gurugram',
+      date: '2024',
+      cause: 'Animal Protection & Welfare'
     },
     {
       id: 'ac-6',
       type: 'image',
-      url: '/images/animal-flood/animal8.png',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png',
       title: 'Emergency Medical Care',
-      description: 'On-site emergency medical care for disaster-affected animals.'
+      description: 'On-site emergency medical care for disaster-affected animals.',
+      location: 'Bihar',
+      date: '2024',
+      cause: 'Emergency Animal Rescue'
     }
   ]
 };
@@ -409,8 +404,8 @@ export const sampleNGODetails: NGODetails = {
   shortDescription: 'Empowering tribal communities through education, sustainable development, and cultural preservation across central India since 2008.',
   fullDescription: 'JWP is a dedicated organization working with indigenous communities in remote areas of central India where access to basic services is limited. We focus on tribal welfare, education, and sustainable livelihood development while preserving cultural heritage. Our programs emphasize community participation and traditional knowledge integration with contemporary development approaches, directly benefiting over 5,800 children and 240 tribal communities across Chhattisgarh and surrounding regions.',
   verified: true,
-  logo: '/images/jwp/_DSC8339.jpg',
-  heroImage: '/images/jwp/_DSC8339.jpg',
+  logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg',
+  heroImage: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg',
   location: 'Chhattisgarh, India',
   yearEstablished: 2008,
   registrationNumber: 'JWP-2008-001',
@@ -433,7 +428,7 @@ export const sampleNGODetails: NGODetails = {
       id: 'education',
       name: 'Education for All',
       description: 'We believe education is the most powerful tool to break the cycle of poverty. Our comprehensive education programs ensure quality learning opportunities for underprivileged children through innovative teaching methods, infrastructure development, and community engagement.',
-      image: '/images/jwp/_DSC9767.JPG',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
       impactMetrics: [
         {
           label: 'Children Educated',
@@ -473,7 +468,7 @@ export const sampleNGODetails: NGODetails = {
       id: 'healthcare',
       name: 'Healthcare & Nutrition',
       description: 'Ensuring access to quality healthcare and nutrition for mothers and children through preventive care, treatment, health education, and community health programs that address malnutrition and preventable diseases.',
-      image: '/images/jwp/_DSC9767.JPG',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
       impactMetrics: [
         {
           label: 'Health Checkups',
@@ -605,7 +600,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '1',
       type: 'image',
-      url: '/images/jwp/_DSC8339.jpg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg',
       title: 'Wings of Hope Celebration',
       description: 'Students and families celebrating educational achievements and community milestones at our Wings of Hope initiative.',
       location: 'Multiple States',
@@ -615,7 +610,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '2',
       type: 'image',
-      url: '/images/jwp/_DSC9767.JPG',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
       title: 'Student Success Showcase',
       description: 'A young student proudly displaying her educational achievements and learning materials in the classroom.',
       location: 'Community Centers',
@@ -625,7 +620,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '3',
       type: 'image',
-      url: '/images/jwp/_MG_6955.JPG',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183060/images/jwp/_MG_6955.jpg',
       title: 'Interactive Learning Session',
       description: 'Students actively participating in learning activities with microphones and presentation equipment.',
       location: 'Educational Centers',
@@ -635,7 +630,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '4',
       type: 'image',
-      url: '/images/jwp/_MG_7015.JPG',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183063/images/jwp/_MG_7015.jpg',
       title: 'Community Celebration',
       description: 'Community members celebrating educational achievements and program milestones together.',
       location: 'Rural Communities',
@@ -645,7 +640,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '5',
       type: 'image',
-      url: '/images/jwp/_MG_8025.JPG',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183065/images/jwp/_MG_8025.jpg',
       title: 'Collaborative Learning',
       description: 'Students engaged in collaborative learning and peer interaction activities.',
       location: 'Learning Centers',
@@ -665,7 +660,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '7',
       type: 'image',
-      url: '/images/jwp/20250910_110430.jpg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183050/images/jwp/20250910_110430.jpg',
       title: 'Special Educational Events',
       description: 'Special educational events and cultural programs promoting holistic student development.',
       location: 'Community Centers',
@@ -675,7 +670,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '8',
       type: 'image',
-      url: '/images/jwp/WhatsApp Image 2025-06-29 at 22.44.35_68c59220.jpg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183051/images/jwp/WhatsApp_Image_2025-06-29_at_22.44.35_68c59220.jpg',
       title: 'Community Learning Environment',
       description: 'Students engaged in classroom learning activities with proper educational resources and support.',
       location: 'Educational Centers',
@@ -685,7 +680,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '9',
       type: 'image',
-      url: '/images/jwp/WhatsApp Image 2025-07-04 at 15.38.58_a93f5478.jpg',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183052/images/jwp/WhatsApp_Image_2025-07-04_at_15.38.58_a93f5478.jpg',
       title: 'Health Education Workshop',
       description: 'Women learning about menstrual health and hygiene education through community workshops.',
       location: 'Community Centers',
@@ -695,7 +690,7 @@ export const sampleNGODetails: NGODetails = {
     {
       id: '10',
       type: 'image',
-      url: '/images/jwp/_DSC9857.JPG',
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg',
       title: 'Active Learning Environment',
       description: 'Students actively engaged in learning activities with dedicated teachers and educational resources.',
       location: 'Learning Centers',
@@ -835,8 +830,8 @@ export const khushiNGODetails: NGODetails = {
   shortDescription: 'Empowering underprivileged children through education, nutrition, and holistic development across Delhi NCR since 2012.',
   fullDescription: 'KHUSHII is a dedicated organization working with underprivileged children and their families in Delhi NCR. We focus on providing quality education, nutrition, healthcare, and skill development programs to break the cycle of poverty. Our comprehensive approach includes community engagement, parent training, and sustainable development initiatives that directly benefit over 2,500 children and 1,000+ families across 25+ communities in Delhi NCR.',
   verified: true,
-  logo: '/images/khushi/KHu-Web.jpg',
-  heroImage: '/images/khushi/HomePageTop.jpg',
+  logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg',
+  heroImage: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
   location: 'Delhi NCR, India',
   yearEstablished: 2012,
   registrationNumber: 'KHUSHII-2012-001',
@@ -859,7 +854,7 @@ export const khushiNGODetails: NGODetails = {
       id: 'education',
       name: 'Education for Every Child',
       description: 'We provide quality education to underprivileged children through learning centers, teacher training, and community engagement programs that ensure every child has access to learning opportunities.',
-      image: '/images/khushi/HomePageTop.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
       impactMetrics: [
         {
           label: 'Children Educated',
@@ -894,7 +889,7 @@ export const khushiNGODetails: NGODetails = {
       id: 'nutrition',
       name: 'Nutrition & Health',
       description: 'Our nutrition programs ensure children receive proper meals, healthcare support, and health education to support their physical and mental development.',
-      image: '/images/khushi/48.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
       impactMetrics: [
         {
           label: 'Children Fed',
@@ -923,7 +918,7 @@ export const khushiNGODetails: NGODetails = {
       id: 'community',
       name: 'Community Development',
       description: 'We engage parents and communities through skill development programs, awareness campaigns, and capacity building initiatives for sustainable impact.',
-      image: '/images/khushi/77.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp',
       impactMetrics: [
         {
           label: 'Families Reached',
@@ -954,7 +949,7 @@ export const khushiNGODetails: NGODetails = {
     { 
       id: '1', 
       type: 'image', 
-      url: '/images/khushi/HomePageTop.jpg', 
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg', 
       title: 'Education for Every Child', 
       description: 'Children actively engaged in learning activities at our community learning centers, showcasing the impact of quality education programs.', 
       location: 'Delhi NCR', 
@@ -964,7 +959,7 @@ export const khushiNGODetails: NGODetails = {
     { 
       id: '2', 
       type: 'image', 
-      url: '/images/khushi/48.jpg', 
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg', 
       title: 'Nutritional Support Program', 
       description: 'Children receiving nutritious meals and health education as part of our comprehensive nutrition and health program.', 
       location: 'Community Centers', 
@@ -974,7 +969,7 @@ export const khushiNGODetails: NGODetails = {
     { 
       id: '3', 
       type: 'image', 
-      url: '/images/khushi/77.jpg', 
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp', 
       title: 'Community Engagement', 
       description: 'Parents and community members participating in skill development workshops and awareness programs.', 
       location: 'Delhi Communities', 
@@ -984,7 +979,7 @@ export const khushiNGODetails: NGODetails = {
     { 
       id: '4', 
       type: 'image', 
-      url: '/images/khushi/KHu-Web.jpg', 
+      url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg', 
       title: 'KHUSHII Learning Center', 
       description: 'Our flagship learning center providing quality education and holistic development opportunities for underprivileged children.', 
       location: 'Delhi NCR', 
@@ -998,7 +993,7 @@ export const khushiNGODetails: NGODetails = {
       name: 'Dr. Neeraj Sharma',
       role: 'Founder & Director',
       bio: 'Educationist with 15+ years experience in child development and community engagement.',
-      image: '/images/khushi/KHu-Web.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg',
       experience: '15+ years in child development and community engagement',
       education: 'PhD in Education, Masters in Social Work'
     },
@@ -1006,7 +1001,7 @@ export const khushiNGODetails: NGODetails = {
       name: 'Priya Singh',
       role: 'Program Manager',
       bio: 'Specialist in nutrition programs and community development with 10+ years experience.',
-      image: '/images/khushi/HomePageTop.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
       experience: '10+ years in nutrition and community development',
       education: 'Masters in Nutrition, Bachelors in Social Work'
     },
@@ -1014,7 +1009,7 @@ export const khushiNGODetails: NGODetails = {
       name: 'Rajesh Kumar',
       role: 'Education Coordinator',
       bio: 'Expert in teacher training and curriculum development for underprivileged communities.',
-      image: '/images/khushi/48.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
       experience: '12+ years in education and teacher training',
       education: 'Masters in Education, B.Ed in Special Education'
     }

@@ -20,7 +20,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
     progressPercentage: 56,
     supporters: 342,
     daysLeft: 18,
-    image: '/images/animal-protect/animal12.jpeg',
+    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg',
     urgency: 'High',
     
     // Problem Statement
@@ -67,82 +67,82 @@ const PawsitiveProtectorsCauseDetailPage = () => {
     // Impact Gallery
     impactGallery: [
       {
-        image: '/images/animal-protect/animal12.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg',
         caption: 'Volunteers providing compassionate care and medical attention to rescued animals',
         type: 'Medical Care'
       },
       {
-        image: '/images/animal-protect/animal13.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183018/images/animal-protect/animal13.jpg',
         caption: 'Anti-rabies vaccination campaign ensuring community health and animal welfare',
         type: 'Vaccination Drive'
       },
       {
-        image: '/images/animal-protect/animal14.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183019/images/animal-protect/animal14.jpg',
         caption: 'Community members actively participating in animal welfare initiatives',
         type: 'Community Engagement'
       },
       {
-        image: '/images/animal-protect/animal15.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183020/images/animal-protect/animal15.jpg',
         caption: 'Professional veterinary care being administered to animals in need',
         type: 'Veterinary Care'
       },
       {
-        image: '/images/animal-protect/animal16.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183022/images/animal-protect/animal16.jpg',
         caption: 'Rescue operations bringing hope and healing to injured animals',
         type: 'Rescue Operations'
       },
       {
-        image: '/images/animal-protect/animal17.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg',
         caption: 'Community awareness campaigns promoting animal rights and welfare',
         type: 'Awareness Campaign'
       },
       {
-        image: '/images/animal-protect/animal18.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183024/images/animal-protect/animal18.jpg',
         caption: 'Safe shelter environment providing comfort and care for rescued animals',
         type: 'Shelter Care'
       },
       {
-        image: '/images/animal-protect/animal19.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183026/images/animal-protect/animal19.jpg',
         caption: 'Volunteers working together to create a better world for animals',
         type: 'Volunteer Work'
       },
       {
-        image: '/images/animal-protect/animal20.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183027/images/animal-protect/animal20.jpg',
         caption: 'Educational programs teaching children about animal welfare and compassion',
         type: 'Education'
       },
       {
-        image: '/images/animal-protect/animal21.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183028/images/animal-protect/animal21.jpg',
         caption: 'Adoption programs finding loving homes for rescued animals',
         type: 'Adoption'
       },
       {
-        image: '/images/animal-protect/animal22.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183029/images/animal-protect/animal22.jpg',
         caption: 'Community feeding programs ensuring no animal goes hungry',
         type: 'Feeding Program'
       },
       {
-        image: '/images/animal-protect/animal23.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183031/images/animal-protect/animal23.jpg',
         caption: 'Mobile veterinary services reaching animals in remote areas',
         type: 'Mobile Care'
       },
       {
-        image: '/images/animal-protect/animal24.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183032/images/animal-protect/animal24.jpg',
         caption: 'Sterilization programs helping control animal population humanely',
         type: 'Sterilization'
       },
       {
-        image: '/images/animal-protect/animal25.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183033/images/animal-protect/animal25.jpg',
         caption: 'Emergency response teams providing immediate care to animals in crisis',
         type: 'Emergency Care'
       },
       {
-        image: '/images/animal-protect/animal26.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183034/images/animal-protect/animal26.jpg',
         caption: 'Community celebration of successful animal welfare achievements',
         type: 'Community Impact'
       },
       {
-        image: '/images/animal-protect/animal27.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183035/images/animal-protect/animal27.jpg',
         caption: 'Long-term rehabilitation and care for animals with special needs',
         type: 'Rehabilitation'
       }
@@ -179,19 +179,19 @@ const PawsitiveProtectorsCauseDetailPage = () => {
         date: '15 March 2024',
         title: 'Anti-Rabies Campaign Launch',
         description: 'Successfully launched comprehensive anti-rabies vaccination campaign across Delhi NCR, vaccinating 500+ stray dogs.',
-        image: '/images/animal-protect/animal13.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183018/images/animal-protect/animal13.jpg'
       },
       {
         date: '22 March 2024',
         title: 'Emergency Rescue Operations',
         description: 'Conducted 25+ emergency rescue operations, providing immediate medical care to injured animals.',
-        image: '/images/animal-protect/animal16.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183022/images/animal-protect/animal16.jpg'
       },
       {
         date: '28 March 2024',
         title: 'Community Education Program',
         description: 'Launched community education initiatives reaching 2,000+ residents about animal welfare and responsible pet ownership.',
-        image: '/images/animal-protect/animal20.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183027/images/animal-protect/animal20.jpg'
       }
     ],
     
@@ -222,7 +222,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   // NGO details
   const ngoDetails = {
     name: 'AnimalCare India',
-    logo: '/images/animal-protect/animal12.jpeg',
+    logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg',
     tagline: 'Every Life, Every Heartbeat',
     description: 'AnimalCare India is a dedicated animal welfare organization committed to protecting and caring for stray animals across India. Through comprehensive rescue operations, medical care, vaccination campaigns, and community education, we work tirelessly to create a world where every animal is treated with compassion and dignity.',
     vision: 'A world where every animal is safe, healthy, and treated with love and respect.',
@@ -365,7 +365,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="/images/animal-protect/animal14.jpeg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183019/images/animal-protect/animal14.jpg" 
                       alt="Stray animals in need of care and protection"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -394,7 +394,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   </div>
                   <div>
                     <img 
-                      src="/images/animal-protect/animal15.jpeg" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183020/images/animal-protect/animal15.jpg" 
                       alt="The importance of animal welfare in community health"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -435,7 +435,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/animal-protect/animal16.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183022/images/animal-protect/animal16.jpg" 
                     alt="Volunteers providing comprehensive animal care"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -472,7 +472,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/animal-protect/animal17.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg" 
                     alt="Community members celebrating animal welfare achievements"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -590,7 +590,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
               <div className="bg-gradient-to-r from-gray-800 to-black p-4 sm:p-6 text-white">
                 <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
                   <img 
-                    src="/images/animal-protect/animal12.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg"
                     alt={ngoDetails.name}
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white p-1 object-contain"
                   />

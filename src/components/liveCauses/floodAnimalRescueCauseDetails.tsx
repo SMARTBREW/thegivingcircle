@@ -20,7 +20,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
     progressPercentage: 62,
     supporters: 189,
     daysLeft: 15,
-    image: '/images/animal-flood/animal6.png',
+    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
     urgency: 'Critical',
     
     // Problem Statement
@@ -67,27 +67,27 @@ const FloodAnimalRescueCauseDetailPage = () => {
     // Impact Gallery
     impactGallery: [
       {
-        image: '/images/animal-flood/animal6.png',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
         caption: 'Rescue teams wading through floodwaters to reach stranded animals in affected areas',
         type: 'Emergency Response'
       },
       {
-        image: '/images/animal-flood/animal7.png',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png',
         caption: 'Volunteers carrying rescued animals to safety through challenging flood conditions',
         type: 'Animal Rescue'
       },
       {
-        image: '/images/animal-flood/animal8.png',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png',
         caption: 'Emergency medical care being provided to animals rescued from floodwaters',
         type: 'Medical Care'
       },
       {
-        image: '/images/animal-flood/animal10.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg',
         caption: 'Temporary shelters providing safe haven for rescued animals during flood recovery',
         type: 'Emergency Shelter'
       },
       {
-        image: '/images/animal-flood/animal11.jpeg',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg',
         caption: 'Community members and rescue teams working together to save animals in distress',
         type: 'Community Rescue'
       }
@@ -124,19 +124,19 @@ const FloodAnimalRescueCauseDetailPage = () => {
         date: '5 March 2024',
         title: 'Emergency Rescue Operations Begin',
         description: 'Launched immediate rescue operations in Uttarakhand, saving 200+ animals from rising floodwaters.',
-        image: '/images/animal-flood/animal6.png'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png'
       },
       {
         date: '8 March 2024',
         title: 'Medical Care Facility Setup',
         description: 'Established emergency medical care facilities for rescued animals with 24/7 veterinary support.',
-        image: '/images/animal-flood/animal8.png'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png'
       },
       {
         date: '12 March 2024',
         title: 'Community Rescue Network',
         description: 'Trained 100+ community volunteers in emergency animal rescue techniques and safety protocols.',
-        image: '/images/animal-flood/animal11.jpeg'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg'
       }
     ],
     
@@ -167,7 +167,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
   // NGO details
   const ngoDetails = {
     name: 'AnimalCare India',
-    logo: '/images/animal-flood/animal6.png',
+    logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
     tagline: 'Every Life, Every Heartbeat',
     description: 'AnimalCare India is a dedicated animal welfare organization committed to protecting and caring for animals during natural disasters and emergencies. Through specialized rescue operations, emergency medical care, and disaster response coordination, we work tirelessly to save lives when every second counts.',
     vision: 'A world where no animal is left behind during natural disasters and emergencies.',
@@ -310,7 +310,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="/images/animal-flood/animal7.png" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png" 
                       alt="Animals trapped in floodwaters needing immediate rescue"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -339,7 +339,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                   <div>
                     <img 
-                      src="/images/animal-flood/animal8.png" 
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png" 
                       alt="The importance of emergency animal rescue during disasters"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -380,7 +380,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/animal-flood/animal10.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg" 
                     alt="Emergency rescue teams providing immediate aid to trapped animals"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -416,7 +416,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 </div>
                 <div>
                   <img 
-                    src="/images/animal-flood/animal11.jpeg" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg" 
                     alt="Community members celebrating successful rescue operations"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -534,7 +534,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <div className="bg-gradient-to-r from-gray-800 to-black p-4 sm:p-6 text-white">
                 <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
                   <img 
-                    src="/images/animal-flood/animal6.png" 
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png" 
                     alt={ngoDetails.name}
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white p-1 object-contain"
                   />

@@ -58,7 +58,7 @@ export const NGOList: React.FC = () => {
   const ngos: NGO[] = [
     {
       id: '1',
-      name: 'JWP (Janakalyan Welfare Program)',
+      name: 'JWP',
       description: 'Focused on tribal welfare, education, and sustainable livelihood development in remote areas of central India where access to basic services is limited. We work with indigenous communities to preserve their cultural heritage while providing modern educational opportunities and healthcare access. Our programs emphasize community participation and traditional knowledge integration with contemporary development approaches.',
       verified: true,
       logo: '/JWP.jpg',
@@ -134,7 +134,7 @@ export const NGOList: React.FC = () => {
     },
     {
       id: '4',
-      name: 'GUS (Global Uttarakhand Society)',
+      name: 'GUS',
       description: 'Focused on disaster relief, emergency response, and community development in Uttarakhand and surrounding regions. We work closely with local communities to provide immediate relief during natural disasters while building long-term resilience through infrastructure development and capacity building programs. Our comprehensive approach includes emergency response, rehabilitation, and sustainable development initiatives.',
       verified: true,
       logo: '/kokan.jpg',
