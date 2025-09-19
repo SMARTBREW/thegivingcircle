@@ -89,7 +89,7 @@ const FUNDRAISING_DATA = [
     title: "Disaster Relief in Uttarakhand",
     description: "Providing critical relief to flood & landslide affected families. Your support delivers life sustaining supplies - food, medical aid, rescue and rehabilitation and also helps in rebuilding schools and homes.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg",
-    category: "Disaster Relief • Disaster Relief • Community",
+    category: "Emergency • Disaster Relief • Community",
     fullDescription: "Uttarakhand has faced devastating floods that have destroyed homes, displaced families, and left communities without basic necessities. Our emergency response team provides immediate relief including food, clean water, medical supplies, and temporary shelter. We focus on rebuilding infrastructure, restoring livelihoods, and providing psychological support to affected families. Every donation helps bring hope and stability back to these resilient communities.",
     raised: 67200,
     goal: 150000,
