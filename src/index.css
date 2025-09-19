@@ -106,22 +106,14 @@ html.lenis {
   }
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+/* Hide global scrollbar */
+html, body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;    /* Firefox */
 }
-
-::-webkit-scrollbar-track {
-  background: var(--neutral);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #172F76;
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari and Opera */
 }
 
 /* Animation classes */
