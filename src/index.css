@@ -4,6 +4,38 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Lenis smooth scroll integration */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Enhanced scroll animations */
+@media (min-width: 769px) {
+  .scroll-animate {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  }
+  
+  .scroll-animate.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 :root {
   --primary-50: #eff6ff;
   --primary-100: #dbeafe;

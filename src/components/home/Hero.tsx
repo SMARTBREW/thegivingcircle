@@ -3,7 +3,7 @@ import {
   Users2,
 } from "lucide-react";
 import PrimaryButton from '../ui/PrimaryButton';
-import CloudinaryImage from '../ui/CloudinaryImage';
+import { AnimatedSection } from '../AnimatedSection';
 
 const FUNDRAISING_DATA = [
   {
@@ -125,21 +125,10 @@ const FUNDRAISING_DATA = [
 
 const FundraisingHero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const currentCampaign = useMemo(() => FUNDRAISING_DATA[currentIndex], [currentIndex]);
 
 
-  const handleCardClick = useCallback((campaign: { id: number }) => {
-    const newIndex = FUNDRAISING_DATA.findIndex(c => c.id === campaign.id);
-    if (newIndex === currentIndex) return;
-
-    setIsTransitioning(true);
-    setTimeout(() => {
-      setCurrentIndex(newIndex);
-      setIsTransitioning(false);
-    }, 500);
-  }, [currentIndex]);
 
 
   const handleBecomChampion = useCallback(() => {
@@ -155,21 +144,18 @@ const FundraisingHero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Duplicate campaigns for infinite scroll
-  const duplicatedCampaigns = useMemo(() => [...FUNDRAISING_DATA, ...FUNDRAISING_DATA], []);
 
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 transition-all duration-500">
         <div
-          className="absolute inset-0 transition-opacity duration-1000"
+          className="absolute inset-0"
           style={{
             backgroundImage: `url(${currentCampaign.image})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            opacity: isTransitioning ? 0 : 1,
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
@@ -186,89 +172,46 @@ const FundraisingHero = () => {
         {/* Bottom Section - Badge, Title, Description, Buttons, and Helper Text */}
         <div className="max-w-2xl ml-0 space-y-6 sm:space-y-8 mb-12 sm:mb-0">
           {/* Badge */}
-          <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
-            <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse" />
-            {currentCampaign.category}
-          </div>
+          <AnimatedSection direction="left" delay={0.1}>
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
+              <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse" />
+              {currentCampaign.category}
+            </div>
+          </AnimatedSection>
 
           {/* Title */}
-          <div>
-            <h1 className={`text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
+          <AnimatedSection direction="up" delay={0.3}>
+            <div>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
               {currentCampaign.title}
             </h1>
-          </div>
+            </div>
+          </AnimatedSection>
 
           {/* Description */}
-          <div>
-            <p className={`text-base sm:text-lg md:text-xl text-white/90 leading-relaxed transition-all duration-500 delay-100 ${isTransitioning ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}`}>
-              {currentCampaign.description}
-            </p>
-          </div>
+          <AnimatedSection direction="up" delay={0.5}>
+            <div>
+              <p className="text-base sm:text-lg md:text-xl text-white/90 leading-relaxed">
+                {currentCampaign.description}
+              </p>
+            </div>
+          </AnimatedSection>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-in-up">
-            <PrimaryButton
-              onClick={handleBecomChampion}
-              icon={<Users2 className="h-4 w-4 sm:h-5 sm:w-5" />}
-            >
-              Become a Cause Champion
-            </PrimaryButton>
-          </div>
-
-        </div>
-      </div>
-
-      {/* Desktop Scrolling Cards */}
-      <div className="hidden md:block absolute right-8 bottom-32 z-30 w-3/4 max-w-3xl">
-        <div className="relative flex items-center">
-          {/* Navigation buttons removed - not functional */}
-
-          <div className="mx-12 w-full">
-            <div className="relative">
-              <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
-              <div className="absolute top-0 bottom-0 right-0 w-8 bg-gradient-to-l from-black/90 to-transparent z-10 pointer-events-none" />
-
-              <div className="overflow-hidden">
-                <div className="flex space-x-3 animate-scroll-horizontal">
-                  {duplicatedCampaigns.map((campaign, index) => (
-                    <div
-                      key={`${campaign.id}-${index}`}
-                      onClick={() => handleCardClick(campaign)}
-                      className={`relative flex-shrink-0 w-48 h-28 rounded-lg overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-2 ${
-                        currentCampaign.id === campaign.id
-                          ? "ring-2 ring-purple-500 shadow-2xl shadow-purple-500/25"
-                          : "hover:shadow-xl"
-                      }`}
-                    >
-                      <CloudinaryImage
-                        src={campaign.image}
-                        alt={campaign.category}
-                        className="w-full h-full object-cover"
-                        sizes="(max-width: 768px) 192px, 256px"
-                        width={256}
-                        height={149}
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                      <div className="absolute bottom-2 left-2 right-2">
-                        <div className="text-white text-sm font-semibold line-clamp-2">
-                          {campaign.title.split(" ").slice(0, 4).join(" ")}...
-                        </div>
-                      </div>
-
-                      {currentCampaign.id === campaign.id && (
-                        <div className="absolute top-2 right-2">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse shadow-lg" />
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              </div>
+          <AnimatedSection direction="up" delay={0.7}>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-slide-in-up">
+              <PrimaryButton
+                onClick={handleBecomChampion}
+                icon={<Users2 className="h-4 w-4 sm:h-5 sm:w-5" />}
+              >
+                Become a Cause Champion
+              </PrimaryButton>
             </div>
-          </div>
+          </AnimatedSection>
+
         </div>
       </div>
+
 
       {/* Mobile Carousel Indicators */}
       <div className="md:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">

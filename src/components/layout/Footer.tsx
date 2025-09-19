@@ -142,20 +142,6 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
                 <Link 
-                  to="/onboarding" 
-                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                >
-                  <span className="text-sm sm:text-base">Become a Champion</span>
-                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-                <Link 
-                  to="/live-causes" 
-                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                >
-                  <span className="text-sm sm:text-base">Browse Causes</span>
-                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </Link>
-                <Link 
                   to="/the-giving-circle" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >

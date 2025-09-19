@@ -1,6 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import  {Navbar}  from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
+import ScrollToTop from './components/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTopButton';
+import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { Home } from './pages/Home';
 import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
 import ImpactStories from './pages/ImpactStories';
@@ -25,9 +28,12 @@ import { OurStory } from './pages/aboutGivingCircle';
 import NotFoundPage from './pages/notFoundPage';
 
 function App() {
+  // Initialize smooth scrolling (desktop only)
+  useSmoothScroll();
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <main className="flex-grow">
@@ -60,15 +66,7 @@ function App() {
           </Routes>
         </main>
         <Footer />
-        
-        {/* Meta AI-like Circle Icon */}
-        {/* <CircleIcon onClick={toggleFeaturePanel} /> */}
-        
-        {/* Feature Panel */}
-        {/* <FeaturePanel 
-          isOpen={isFeaturePanelOpen} 
-          onClose={() => setIsFeaturePanelOpen(false)} 
-        /> */}
+        <ScrollToTopButton />
       </div>
     </Router>
   );
