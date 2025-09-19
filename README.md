@@ -1,29 +1,33 @@
 # The Giving Circle
 # Start Date - 17-06-2025
 
-A platform connecting cause champions with supporters to create lasting social impact in Indian communities.
+A frontend-only platform showcasing cause champions and their social impact in Indian communities. Currently designed as a demonstration website using sample data.
 
-## Champion Stories - Dynamic Implementation
+## Project Status: Frontend-Only
 
-The Champion Stories feature has been redesigned to be fully dynamic and backend-driven, focusing on cause champions and their measurable impact.
+This project is currently a frontend-only implementation using React + TypeScript. All data is sourced from sample data files, and all form submissions are simulated for demonstration purposes.
+
+## Champion Stories - Sample Data Implementation
+
+The Champion Stories feature uses sample data to demonstrate the platform's functionality, focusing on cause champions and their measurable impact.
 
 ### Key Features
 
-#### ✅ **Dynamic Content Loading**
-- All story content is fetched from the backend via API
+#### ✅ **Sample Data Loading**
+- All story content is loaded from sample data files
 - Supports loading states and error handling
-- Real-time data updates for campaign progress
+- Simulated campaign progress for demonstration
 
 #### ✅ **Comprehensive Champion Profiles**
 - Detailed champion information with bio and avatar
 - Campaign timeline with milestones and achievements
 - Impact statistics with visual representations
-- Follow/unfollow functionality for champions
+- Simulated follow/unfollow functionality
 
 #### ✅ **Flexible Data Structure**
 - TypeScript interfaces for type safety
 - Support for multiple content types (text, images, HTML)
-- Extensible structure for future enhancements
+- Ready for future backend integration
 
 ### Component Structure
 
@@ -47,20 +51,25 @@ src/utils/
 ├── sampleChampionData.ts      # Sample data structure
 ```
 
-### Backend API Endpoints
+### Frontend-Only Data Sources
 
-The component expects the following API endpoints:
+All data is currently loaded from sample data files:
 
 ```typescript
-GET /api/champion-stories              // Get all stories
-GET /api/champion-stories/:id          // Get single story
-GET /api/champion-stories?category=:cat // Get by category
-GET /api/champion-stories/featured     // Get featured stories
-POST /api/champions/:id/follow         // Follow champion
-DELETE /api/champions/:id/follow       // Unfollow champion
+// Sample data files used:
+src/utils/sampleChampionData.ts        // Champion stories data
+src/utils/sampleNGOData.ts            // NGO information data
+
+// Simulated API endpoints (frontend-only):
+championStoriesAPI.getAllStories()      // Get all stories
+championStoriesAPI.getStoryById(id)     // Get single story
+championStoriesAPI.getStoriesByCategory() // Get by category
+championStoriesAPI.getFeaturedStories()   // Get featured stories
+championStoriesAPI.followChampion()       // Simulate follow
+championStoriesAPI.unfollowChampion()     // Simulate unfollow
 ```
 
-### Usage Example
+### Usage Example (Frontend-Only)
 
 ```typescript
 import { useEffect, useState } from 'react';
@@ -74,6 +83,7 @@ const StoryPage = ({ storyId }: { storyId: string }) => {
   useEffect(() => {
     const fetchStory = async () => {
       try {
+        // Loads from sample data - frontend only
         const data = await championStoriesAPI.getStoryById(storyId);
         setStory(data);
       } catch (error) {

@@ -47,21 +47,27 @@ export const Footer: React.FC = () => {
                 </h4>
                 <div className="flex space-x-3">
                   <a 
-                    href="#" 
+                    href="https://linkedin.com/company/thegivingcircle" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-4 h-4" />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://twitter.com/thegivingcircle" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="Twitter"
                   >
                     <Twitter className="w-4 h-4" />
                   </a>
                   <a 
-                    href="#" 
+                    href="https://instagram.com/thegivingcircle" 
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="Instagram"
                   >
@@ -149,13 +155,13 @@ export const Footer: React.FC = () => {
                   <span className="text-sm sm:text-base">Browse Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </Link>
-                <a 
-                  href="#" 
+                <Link 
+                  to="/the-giving-circle" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-sm sm:text-base">Trust & Safety</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -196,20 +202,20 @@ export const Footer: React.FC = () => {
                 </div>
 
                 <div className="pt-4 space-y-3">
-                  <a 
-                    href="#" 
+                  <Link 
+                    to="/the-giving-circle" 
                     className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                   >
                     <span className="text-sm sm:text-base">Help Center</span>
                     <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                  <a 
-                    href="#" 
+                  </Link>
+                  <Link 
+                    to="/live-causes" 
                     className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                   >
                     <span className="text-sm sm:text-base">Community Support</span>
                     <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -243,34 +249,34 @@ export const Footer: React.FC = () => {
             
             {/* Right: Legal Links */}
             <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-sm sm:text-base">
-              <a 
-                href="#" 
+              <Link 
+                to="/the-giving-circle" 
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
                 <Scale className="w-3 h-3" />
                 <span>Privacy Policy</span>
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="/the-giving-circle" 
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
                 <FileText className="w-3 h-3" />
                 <span>Terms of Use</span>
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="/the-giving-circle" 
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
                 <Shield className="w-3 h-3" />
                 <span>Trust & Safety</span>
-              </a>
-              <a 
-                href="#" 
+              </Link>
+              <Link 
+                to="/live-causes" 
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1"
               >
                 <Heart className="w-3 h-3" />
                 <span>Community Values</span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

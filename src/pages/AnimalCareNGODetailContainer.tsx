@@ -23,11 +23,9 @@ const AnimalCareNGODetailContainer: React.FC = () => {
       setError(null);
 
       try {
-        console.log('Loading AnimalCare India NGO data...');
         const { animalCareNGODetails } = await import('../utils/sampleNGOData');
         
         setNgoDetails(animalCareNGODetails);
-        console.log('AnimalCare India data loaded successfully');
         
       } catch (error) {
         console.error('Failed to load AnimalCare India data:', error);

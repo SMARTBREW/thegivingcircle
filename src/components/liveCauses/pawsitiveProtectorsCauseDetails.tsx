@@ -648,13 +648,13 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   </div>
                   
                   <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-                    <a href="#" className="text-gray-400 hover:text-purple-600 transition-colors">
+                    <a href="https://facebook.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-600 transition-colors">
                       <Facebook className="sm:w-5 sm:h-5" size={16} />
                     </a>
-                    <a href="#" className="text-gray-400 hover:text-purple-600 transition-colors">
+                    <a href="https://twitter.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-600 transition-colors">
                       <Twitter className="sm:w-5 sm:h-5" size={16} />
                     </a>
-                    <a href="#" className="text-gray-400 hover:text-purple-600 transition-colors">
+                    <a href="https://instagram.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-600 transition-colors">
                       <Instagram className="sm:w-5 sm:h-5" size={16} />
                     </a>
                   </div>

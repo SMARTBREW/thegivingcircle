@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import  {Navbar}  from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
@@ -23,16 +22,9 @@ import BowlsOfHopeCauseDetailPage from './components/liveCauses/bowlsOfHopeCause
 import FloodAnimalRescueCauseDetailPage from './components/liveCauses/floodAnimalRescueCauseDetails';
 import  {AboutChampions } from './pages/aboutChampion';
 import { OurStory } from './pages/aboutGivingCircle';
-import CircleIcon from './components/ui/CircleIcon';
-// import FeaturePanel from './components/ui/FeaturePanel';
 import NotFoundPage from './pages/notFoundPage';
 
 function App() {
-  const [isFeaturePanelOpen, setIsFeaturePanelOpen] = useState(false);
-
-  const toggleFeaturePanel = () => {
-    setIsFeaturePanelOpen(prev => !prev);
-  };
 
   return (
     <Router>

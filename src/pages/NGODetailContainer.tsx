@@ -33,7 +33,6 @@ const NGODetailContainer: React.FC = () => {
       try {
         // In development mode, prioritize sample data to avoid API errors
         if (import.meta.env.DEV) {
-          console.log('Development mode: Loading sample data for NGO ID:', id);
           const { sampleNGODetails, khushiNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
           
           if (sampleNGODetails.id === id) {
@@ -49,13 +48,11 @@ const NGODetailContainer: React.FC = () => {
             setLoading(false);
             return;
           } else {
-            console.warn('No sample data found for ID:', id, 'Available IDs:', sampleNGODetails.id, khushiNGODetails.id, animalCareNGODetails.id);
             // Fall through to try API if sample data not found
           }
         }
         
         // Try to fetch from backend API
-        console.log('Attempting to fetch from API for ID:', id);
         // const data = await ngoAPI.getNGOById(id);
         // setNgoDetails(data);
         
@@ -67,17 +64,13 @@ const NGODetailContainer: React.FC = () => {
         
         // If API fails, try sample data as fallback (for production or if dev sample data failed)
         try {
-          console.log('API failed, trying sample data fallback...');
           const { sampleNGODetails, khushiNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
           
           if (sampleNGODetails.id === id) {
-            console.log('Using sample data as fallback');
             setNgoDetails(sampleNGODetails);
           } else if (khushiNGODetails.id === id) {
-            console.log('Using KHUSHII data as fallback');
             setNgoDetails(khushiNGODetails);
           } else if (animalCareNGODetails.id === id) {
-            console.log('Using AnimalCare India data as fallback');
             setNgoDetails(animalCareNGODetails);
           } else {
             setError(`NGO not found. Available sample IDs: ${sampleNGODetails.id}, ${khushiNGODetails.id}, ${animalCareNGODetails.id}`);

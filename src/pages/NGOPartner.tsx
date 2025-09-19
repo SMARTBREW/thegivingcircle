@@ -28,7 +28,7 @@ export const NGOPartner: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('NGO Form submitted:', formData);
+    // Form submitted successfully
     setIsSubmitted(true);
   };
 

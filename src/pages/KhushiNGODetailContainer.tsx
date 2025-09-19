@@ -23,11 +23,9 @@ const KhushiNGODetailContainer: React.FC = () => {
       setError(null);
 
       try {
-        console.log('Loading KHUSHII NGO data...');
         const { khushiNGODetails } = await import('../utils/sampleNGOData');
         
         setNgoDetails(khushiNGODetails);
-        console.log('KHUSHII data loaded successfully');
         
       } catch (error) {
         console.error('Failed to load KHUSHII data:', error);

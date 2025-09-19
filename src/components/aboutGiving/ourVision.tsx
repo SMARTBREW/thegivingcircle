@@ -1,9 +1,6 @@
-import React from 'react';
 import { Target, Globe, Heart, Users, ArrowRight, CheckCircle, Award, Shield } from 'lucide-react';
 
 export default function MissionVisionPage() {
-  
-
   const coreValues = [
     {
       icon: Shield,
@@ -36,7 +33,6 @@ export default function MissionVisionPage() {
 
   return (
     <div className="min-h-screen bg-white">
-      
       <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-10">

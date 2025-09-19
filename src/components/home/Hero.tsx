@@ -1,7 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from "react";
 import {
-  ChevronLeft,
-  ChevronRight,
   Users2,
 } from "lucide-react";
 import PrimaryButton from '../ui/PrimaryButton';
@@ -108,7 +106,7 @@ const FUNDRAISING_DATA = [
     id: 6,
     title: "Flood Animal Rescue",
     description: "Thousands of animals are struggling to survive in floodwaters. With your support, we can rescue them from danger, provide food, emergency medical care, and shelter, and even provide dignified final rites to those we cannot save.",
-    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png",
+    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png",
     category: "Emergency • Animal Rescue",
     fullDescription: "When floods strike, animals are often the forgotten victims, trapped in rising waters without food or medical care. Our specialized rescue team uses boats and specialized equipment to save animals from floodwaters, providing immediate medical attention, food, and temporary shelter. We work with local veterinarians and animal welfare organizations to ensure rescued animals receive proper care and find loving homes.",
     raised: 41600,
@@ -223,13 +221,7 @@ const FundraisingHero = () => {
       {/* Desktop Scrolling Cards */}
       <div className="hidden md:block absolute right-8 bottom-32 z-30 w-3/4 max-w-3xl">
         <div className="relative flex items-center">
-          <button className="absolute left-0 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110">
-            <ChevronLeft className="h-6 w-6" />
-          </button>
-
-          <button className="absolute right-0 z-20 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110">
-            <ChevronRight className="h-6 w-6" />
-          </button>
+          {/* Navigation buttons removed - not functional */}
 
           <div className="mx-12 w-full">
             <div className="relative">

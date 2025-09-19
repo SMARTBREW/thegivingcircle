@@ -7,7 +7,6 @@ interface ImpactCardProps {
   title: string;
   description: string;
   ngoName: string;
-  championName: string;
   impactNumber: number;
   impactUnit: string;
   image: string;
@@ -72,28 +71,6 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
           {description}
         </p>
         
-        {/* <div className="flex items-center justify-between pt-3 sm:pt-4 border-t border-gray-100 mt-auto">
-          <div className="flex items-center space-x-2 min-w-0 flex-1">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center text-white text-xs font-bold flex-shrink-0">
-              {championName.charAt(0)}
-            </div>
-            <div className="min-w-0">
-              <div className="text-xs text-gray-500">Champion</div>
-              <div className="text-sm font-medium text-gray-900 truncate">{championName}</div>
-            </div>
-          </div>
-          
-          <Button
-            variant="ghost"
-            size="sm"
-            className="text-purple-600 hover:text-purple-700 flex-shrink-0 ml-2"
-            onClick={() => {}}
-          >
-            <span className="hidden sm:inline">View Story</span>
-            <span className="sm:hidden">View</span>
-            <ArrowRight className="w-4 h-4 ml-1" />
-          </Button>
-        </div> */}
       </div>
     </motion.div>
   );
@@ -111,7 +88,6 @@ export const ImpactWall: React.FC = () => {
       title: 'Wings of Hope',
       description: 'Empowering girls with menstrual awareness, and providing eco-friendly cloth reusable pads, to keep them in school.',
       ngoName: 'JWP',
-      championName: 'Meera Singh',
       impactNumber: 1500,
       impactUnit: 'Girls Empowered',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
@@ -123,7 +99,6 @@ export const ImpactWall: React.FC = () => {
       title: 'Pawsitive Protectors',
       description: 'Protecting the voiceless street animals and communities with free rabies vaccinations, collaring & deworming.',
       ngoName: 'Animal Care',
-      championName: 'Dr. Sunita Reddy',
       impactNumber: 5000,
       impactUnit: 'Animals Helped',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183019/images/animal-protect/animal14.jpg',
@@ -135,7 +110,6 @@ export const ImpactWall: React.FC = () => {
       title: 'Pads for Freedom',
       description: 'Providing free sanitary pads and menstrual hygiene education to girls to ensure their dignity, freedom and continued education.',
       ngoName: 'KHUSHII',
-      championName: 'Dr. Meera Singh',
       impactNumber: 89000,
       impactUnit: 'Girls & Women Served',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183100/images/khushi/20.jpg',
@@ -147,7 +121,6 @@ export const ImpactWall: React.FC = () => {
       title: 'Bowls of Hope',
       description: 'Daily feeding & care program at Animal Care shelters for strays, with nutritious meals and veterinary care.',
       ngoName: 'Animal Care',
-      championName: 'Dr. Sunita Reddy',
       impactNumber: 800,
       impactUnit: 'Bowls Installed',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
@@ -159,7 +132,6 @@ export const ImpactWall: React.FC = () => {
       title: 'Flood Relief in Uttarakhand',
       description: 'Emergency relief support to affected communities by providing shelter, food, medical aid, and rehabilitation support.',
       ngoName: 'GUS',
-      championName: 'Prashant Koli',
       impactNumber: 2400,
       impactUnit: 'Families Supported',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
@@ -171,7 +143,6 @@ export const ImpactWall: React.FC = () => {
       title: 'Flood Animal Rescue',
       description: 'Emergency rescue & rehabilitation operations for animals affected by floods in Uttarakhand and Punjab.',
       ngoName: 'Animal Care',
-      championName: 'Field Rescue Team',
       impactNumber: 430,
       impactUnit: 'Animals Rescued',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png',
@@ -317,25 +288,6 @@ export const ImpactWall: React.FC = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => window.location.href = '/impact-stories'}
-            className="group shadow-lg hover:shadow-xl"
-          >
-            <span className="hidden sm:inline">View All Causes</span>
-            <span className="sm:hidden">View All Stories</span>
-            <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-          </Button>
-        </motion.div> */}
       </div>
     </section>
   );

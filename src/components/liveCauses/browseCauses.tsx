@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
 
-// Cause type definition removed as it's not used in this component
 
 const LiveCausesPage = () => {
   const [selectedNGO, setSelectedNGO] = useState('All NGOs');
@@ -16,8 +15,6 @@ const LiveCausesPage = () => {
     'KHUSHII',
     'GUS'
   ];
-
-  
 
   const causes = [
     // JWP causes
