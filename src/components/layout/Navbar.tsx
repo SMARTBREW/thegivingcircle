@@ -62,6 +62,10 @@ const NavbarComponent = () => {
       href: '/impact-stories'
     },
     {
+      name: 'Young Champions',
+      href: '/young-champions',
+    },
+    {
       name: 'About Us',
       href: '/the-giving-circle',
     },

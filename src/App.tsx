@@ -25,6 +25,7 @@ import BowlsOfHopeCauseDetailPage from './components/liveCauses/bowlsOfHopeCause
 import FloodAnimalRescueCauseDetailPage from './components/liveCauses/floodAnimalRescueCauseDetails';
 import  {AboutChampions } from './pages/aboutChampion';
 import { OurStory } from './pages/aboutGivingCircle';
+import YoungChampions from './pages/YoungChampions';
 import NotFoundPage from './pages/notFoundPage';
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
             <Route path="/flood-animal-rescue-cause-details" element={<FloodAnimalRescueCauseDetailPage />} />
             <Route path="/about-champion" element={<AboutChampions />} />
             <Route path="/the-giving-circle" element={<OurStory />} />
+            <Route path="/young-champions" element={<YoungChampions />} />
             <Route path="*" element={<NotFoundPage />} />
 
           </Routes>

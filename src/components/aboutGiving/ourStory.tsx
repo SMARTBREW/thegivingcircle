@@ -50,7 +50,7 @@ export default function SimplifiedAboutPage() {
               </span>
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              From a simple question to a revolutionary platform transforming philanthropy
+            From a simple question grew a revolutionary platform that is reshaping the way we give and experience philanthropy.
             </p>
           </motion.div>
 
@@ -63,17 +63,25 @@ export default function SimplifiedAboutPage() {
             >
               <div className="space-y-4 sm:space-y-6 text-gray-700">
                 <p className="text-lg leading-relaxed">
-                  Founded in 2023, we started with a simple question: "How can we make social impact 
-                  more transparent and verifiable?" After witnessing countless well-intentioned donations 
-                  disappear into organizational overhead, we knew there had to be a better way.
+                We began with a simple vision: to build a community of generous, warm-hearted people who want to support genuine causes.
+
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Our breakthrough came when we realized that blockchain technology could create permanent, 
-                  immutable records of impact stories. By partnering with verified NGOs and documenting 
-                  every project from start to finish, we've created accountability in philanthropy.
+                Founded in 2022, The Giving Circle brings this vision to life by connecting individuals with NGOs driving meaningful change on the ground. Through trusted channels, we make it simple for supporters to engage with and strengthen these causes.
+
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Today, thousands of champions trust us to turn their compassion into verified change through our partnerships with JWP, Animal Care, KHUSHII, and GUS.
+                Our role is simple yet vital: we act as a bridge, linking supporters with causes close to their hearts. We partner only with government-certified NGOs, ensuring every organization meets official standards. For complete transparency, contributions go directly to these NGOs and never pass through us.
+
+                </p>
+                <p className="text-lg leading-relaxed">
+                What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join activities whenever possible. These experiences foster genuine relationships between donors and communities.
+
+
+
+                </p>
+                <p className="text-lg leading-relaxed">
+                Today, thousands trust us to connect their generosity with certified organizations, knowing their contributions will go directly where needed—and that they’ll have the chance to witness the impact of their support in person.
                 </p>
               </div>
             </motion.div>
