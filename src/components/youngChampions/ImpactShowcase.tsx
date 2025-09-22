@@ -130,63 +130,6 @@ export default function ImpactShowcase() {
           ))}
         </div>
 
-        {/* Featured Projects */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="mb-16"
-        >
-          <h3 className="text-3xl font-bold text-gray-900 text-center mb-8">
-            Featured Projects
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {featuredProjects.map((project, index) => (
-              <motion.div
-                key={project.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 group"
-              >
-                <div className="h-48 bg-gradient-to-br from-purple-400 to-pink-400 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <div className="absolute bottom-4 left-4">
-                    <span className="bg-white/90 text-gray-800 px-3 py-1 rounded-full text-sm font-semibold">
-                      {project.category}
-                    </span>
-                  </div>
-                </div>
-                <div className="p-6">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors">
-                    {project.title}
-                  </h4>
-                  <p className="text-gray-600 mb-4">{project.impact}</p>
-                  <div className="space-y-2 text-sm text-gray-500">
-                    <div className="flex items-center">
-                      <span className="font-semibold mr-2">Location:</span>
-                      {project.location}
-                    </div>
-                    <div className="flex items-center">
-                      <span className="font-semibold mr-2">Students:</span>
-                      {project.students}
-                    </div>
-                    <div className="flex items-center">
-                      <span className="font-semibold mr-2">Duration:</span>
-                      {project.duration}
-                    </div>
-                  </div>
-                  <button className="w-full mt-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white py-2 px-4 rounded-lg font-semibold hover:shadow-lg transition-all duration-300">
-                    Learn More
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-
         {/* Testimonials */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

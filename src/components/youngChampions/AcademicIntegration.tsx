@@ -164,9 +164,9 @@ export default function AcademicIntegration() {
           </h3>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { step: "1", title: "Choose Project", desc: "Select from verified impact projects or create custom ones" },
-              { step: "2", title: "Get Started", desc: "Connect with NGOs and begin your impact journey" },
-              { step: "3", title: "Track Progress", desc: "Document your journey with our tracking tools" },
+              { step: "1", title: "Choose Project", desc: "Select from verified impact projects" },
+              { step: "2", title: "Get Started", desc: "Register to become a Young Champion" },
+              { step: "3", title: "Track Progress", desc: "Document your journey with Us " },
               { step: "4", title: "Document Impact", desc: "Generate reports for academic portfolios" }
             ].map((item, index) => (
               <div key={index} className="text-center">

@@ -523,7 +523,7 @@ const BowlsOfHopeCauseDetailPage = () => {
               <div className="bg-gradient-to-r from-gray-800 to-black p-4 sm:p-6 text-white">
                 <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
                   <img 
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg"
+                    src="/Animal care.jpg"
                     alt={ngoDetails.name}
                     className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white p-1 object-contain"
                   />

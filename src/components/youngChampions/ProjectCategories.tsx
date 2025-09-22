@@ -128,26 +128,6 @@ export default function ProjectCategories() {
           ))}
         </div>
 
-        {/* Bottom CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="text-center mt-12"
-        >
-          <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-200">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
-              Can't find what you're looking for?
-            </h3>
-            <p className="text-gray-600 mb-6">
-              We can help you create a custom project that fits your specific academic requirements and interests.
-            </p>
-            <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-3 rounded-xl font-semibold hover:shadow-lg transition-all duration-300">
-              Create Custom Project
-            </button>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
