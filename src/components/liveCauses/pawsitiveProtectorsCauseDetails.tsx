@@ -260,11 +260,11 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       {/* Professional Header Section */}
-      <div className="bg-white shadow-sm border-b mt-[100px]">
-        <div className="container mx-auto px-6 py-8 sm:py-10 md:py-12 lg:py-14">
-          <div className="flex items-center justify-between">
+      <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
+        <div className="container mx-auto px-6 py-2 sm:py-3">
+          <div className="flex items-center justify-between mb-2">
             <button 
               onClick={() => navigate(-1)} 
               className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
@@ -280,10 +280,17 @@ const PawsitiveProtectorsCauseDetailPage = () => {
               </div>
             )}
           </div>
+          
+          {/* Page Title */}
+          <div className="text-center mb-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 leading-tight py-2">
+            Pawsitive Protectors
+          </h1>
+          </div>
         </div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12 lg:py-14">
+      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-10 md:py-12 lg:py-14 pb-20 sm:pb-24 md:pb-28 lg:pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
           {/* Main Content */}
           <div className="lg:col-span-2">
@@ -296,22 +303,6 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
-                  <div className="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-                    <span className={`px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold border bg-white text-black border-gray-300`}>
-                      {cause.urgency} Priority
-                    </span>
-                    <span className="bg-white/20 backdrop-blur-sm px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm">
-                      {cause.category}
-                    </span>
-                  </div>
-                  <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-2 text-white">
-                    {cause.title}
-                  </h1>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-gray-200">
-                    {cause.subtitle}
-                  </p>
-                </div>
               </div>
             </div>
 
@@ -333,11 +324,44 @@ const PawsitiveProtectorsCauseDetailPage = () => {
               </div>
             </div>
 
-            {/* Problem Statement */}
+            {/* Geographic Coverage */}
+            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-4 sm:p-6 mb-6 sm:mb-8">
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="text-blue-600 sm:w-5 sm:h-5" size={20} />
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900">Geographic Coverage</h3>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Delhi NCR, India</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Gurugram, Haryana</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Noida, Uttar Pradesh</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Faridabad, Haryana</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Ghaziabad, Uttar Pradesh</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">New Delhi, Delhi</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">South Delhi, Delhi</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">East Delhi, Delhi</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">West Delhi, Delhi</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">North Delhi, Delhi</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Mumbai, Maharashtra</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pune, Maharashtra</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Bangalore, Karnataka</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Chennai, Tamil Nadu</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Kolkata, West Bengal</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Hyderabad, Telangana</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Ahmedabad, Gujarat</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Jaipur, Rajasthan</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Lucknow, Uttar Pradesh</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Bhopal, Madhya Pradesh</span>
+              </div>
+              <p className="text-sm text-gray-600 mt-3">
+                <strong>Active in 20+ cities across 8 states</strong> - Comprehensive animal welfare and protection programs
+              </p>
+            </div>
+
+            {/* Section 1: The Challenge */}
             <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-4 sm:mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
                 <AlertTriangle className="text-black sm:w-6 sm:h-6" size={20} />
-                The Problem We're Solving
+                The Challenge
               </h2>
               
               <div className="prose prose-lg text-gray-600 mb-6 sm:mb-8">
@@ -406,11 +430,11 @@ const PawsitiveProtectorsCauseDetailPage = () => {
               </div>
             </div>
 
-            {/* Our Solution */}
+            {/* Section 2: The Solution / How your support helps */}
             <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-4 sm:mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
                 <Target className="text-black sm:w-6 sm:h-6" size={20} />
-                Our Comprehensive Solution
+                The Solution / How Your Support Helps
               </h2>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
@@ -446,48 +470,12 @@ const PawsitiveProtectorsCauseDetailPage = () => {
               </div>
             </div>
 
-            {/* Beneficiaries */}
-            <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-4 sm:mb-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
-                <Users className="text-black sm:w-6 sm:h-6" size={20} />
-                Transforming Lives at Every Level
-              </h2>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center mb-6 sm:mb-8">
-                <div>
-                  <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                    <strong className="text-gray-900">Our impact creates ripple effects that transform entire communities.</strong> 
-                    While we directly serve 2,000+ stray animals with comprehensive care, vaccination, and medical treatment, 
-                    the benefits extend far beyond these primary beneficiaries.
-                  </p>
-                  <p className="text-gray-600 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
-                    Over 5,000 community members benefit from reduced disease risk, increased awareness about animal welfare, 
-                    and the healing power of human-animal bonds. When communities learn to care for animals, 
-                    they develop greater compassion and empathy.
-                  </p>
-                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                    Our work across 15+ neighborhoods creates a demonstration effect, inspiring other areas to prioritize 
-                    animal welfare and showing that compassionate communities are stronger, healthier, and more connected.
-                  </p>
-                </div>
-                <div>
-                  <img 
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg" 
-                    alt="Community members celebrating animal welfare achievements"
-                    className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
-                  />
-                  <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                    Community members celebrating animal welfare achievements
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            {/* Impact Gallery */}
+            {/* Section 3: See the Action in Change */}
             <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-4 sm:mb-6">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 flex items-center gap-2">
                 <Camera className="text-black sm:w-6 sm:h-6" size={20} />
-                See the Change in Action
+                See the Action in Change
               </h2>
               
               <div className="mb-4 sm:mb-6">
@@ -663,6 +651,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   );
