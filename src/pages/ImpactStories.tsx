@@ -135,10 +135,10 @@ const ImpactStories: React.FC = () => {
   const platformStats = [
     { label: 'Lives Impacted', value: '50,000+', description: 'Direct beneficiaries across all programs' },
     { label: 'Active NGOs', value: '25+', description: 'Verified partner organizations' },
-    { label: 'Cause Champions', value: '500+', description: 'Dedicated supporters making a difference' },
+    // { label: 'Cause Champions', value: '500+', description: 'Dedicated supporters making a difference' },
     { label: 'Funds Raised', value: '₹2.5 Cr+', description: 'Total impact funding generated' },
-    { label: 'Success Rate', value: '96%', description: 'Projects completed successfully' },
-    { label: 'Communities', value: '200+', description: 'Villages and localities served' }
+    // { label: 'Success Rate', value: '96%', description: 'Projects completed successfully' },
+    // { label: 'Communities', value: '200+', description: 'Villages and localities served' }
   ];
 
   // Auto-rotate statistics
@@ -178,15 +178,16 @@ const ImpactStories: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 md:gap-6"
+            className="flex justify-center items-center"
           >
+            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 max-w-4xl">
             {platformStats.map((stat, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.6 + index * 0.1 }}
-                className={`text-center p-3 sm:p-4 md:p-6 rounded-xl backdrop-blur-sm border border-white/20 ${
+                className={`text-center p-3 sm:p-4 md:p-6 rounded-xl backdrop-blur-sm border border-white/20 w-48 sm:w-52 md:w-56 ${
                   index === currentStatIndex ? 'bg-white/20 scale-105' : 'bg-white/10'
                 } transition-all duration-500`}
               >
@@ -195,6 +196,7 @@ const ImpactStories: React.FC = () => {
                 <div className="text-xs text-gray-300">{stat.description}</div>
               </motion.div>
             ))}
+            </div>
           </motion.div>
         </div>
       </section>

@@ -222,8 +222,8 @@ export const ImpactWall: React.FC = () => {
             </span>
           </h2>
           <div className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 space-y-4 sm:space-y-5 leading-relaxed md:leading-8 text-center">
-            <p>
-              We’ve reimagined how to give and the powerful impact it can have when done together.
+            <p className="whitespace-nowrap">
+              We've reimagined how to give and the powerful impact it can have when done together.
             </p>
             <p>
               By connecting passionate champions with trusted partners, we’ve built a community where every contribution makes a meaningful difference. Through our united efforts, thousands have discovered that their individual generosity becomes extraordinary when combined with others who share their purpose.
