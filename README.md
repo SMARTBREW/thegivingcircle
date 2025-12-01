@@ -1,5 +1,4 @@
 # The Giving Circle
-# Start Date - 17-06-2025
 
 A frontend-only platform showcasing cause champions and their social impact in Indian communities. Currently designed as a demonstration website using sample data.
 
