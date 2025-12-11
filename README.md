@@ -1,5 +1,4 @@
 # The Giving Circle
-# Start Date - 17-06-2025
 
 A frontend-only platform showcasing cause champions and their social impact in Indian communities. Currently designed as a demonstration website using sample data.
 
@@ -13,7 +12,6 @@ The Champion Stories feature uses sample data to demonstrate the platform's func
 
 ### Key Features
 
-#### ✅ **Sample Data Loading**
 - All story content is loaded from sample data files
 - Supports loading states and error handling
 - Simulated campaign progress for demonstration
