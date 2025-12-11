@@ -106,17 +106,6 @@ export const ImpactWall: React.FC = () => {
       location: 'Delhi',
     },
     {
-      id: '3',
-      title: 'Pads for Freedom',
-      description: 'Providing free sanitary pads and menstrual hygiene education to girls to ensure their dignity, freedom and continued education.',
-      ngoName: 'KHUSHII',
-      impactNumber: 89000,
-      impactUnit: 'Girls & Women Served',
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183100/images/khushi/20.jpg',
-      verified: true,
-      location: 'Delhi',
-    },
-    {
       id: '4',
       title: 'Bowls of Hope',
       description: 'Daily feeding & care program at Animal Care shelters for strays, with nutritious meals and veterinary care.',

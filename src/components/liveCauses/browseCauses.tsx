@@ -112,29 +112,29 @@ const LiveCausesPage = () => {
       ]
     },
     // KHUSHII causes
-    {
-      id: 5,
-      title: 'Pads for Freedom',
-      organizer: 'Dr. Meera Singh',
-      ngo: 'KHUSHII',
-      location: 'Delhi, India',
-      category: 'Women Health',
-      goalAmount: '₹3,50,000',
-      raisedAmount: '₹2,80,000',
-      progressPercentage: 80,
-      supporters: 189,
-      daysLeft: 15,
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
-      urgency: 'High',
-      description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
-      beneficiaries: '2000 girls and women',
-      timeline: '6 months',
-      updates: [
-        '1500 pad kits distributed',
-        '50 awareness sessions conducted',
-        'School dropout prevention program active'
-      ]
-    },
+    // {
+    //   id: 5,
+    //   title: 'Pads for Freedom',
+    //   organizer: 'Dr. Meera Singh',
+    //   ngo: 'KHUSHII',
+    //   location: 'Delhi, India',
+    //   category: 'Women Health',
+    //   goalAmount: '₹3,50,000',
+    //   raisedAmount: '₹2,80,000',
+    //   progressPercentage: 80,
+    //   supporters: 189,
+    //   daysLeft: 15,
+    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
+    //   urgency: 'High',
+    //   description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
+    //   beneficiaries: '2000 girls and women',
+    //   timeline: '6 months',
+    //   updates: [
+    //     '1500 pad kits distributed',
+    //     '50 awareness sessions conducted',
+    //     'School dropout prevention program active'
+    //   ]
+    // },
     // GUS causes
     {
       id: 6,

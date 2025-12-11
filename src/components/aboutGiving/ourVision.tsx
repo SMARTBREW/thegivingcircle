@@ -161,10 +161,10 @@ export default function MissionVisionPage() {
                 giving—one where donors, organizations, and communities work together in perfect 
                 harmony to solve the world's most pressing challenges.
               </p>
-              <div className="inline-flex items-center text-purple-600 font-medium text-sm sm:text-base">
+              {/* <div className="inline-flex items-center text-purple-600 font-medium text-sm sm:text-base">
                 <span>Join us in this vision</span>
                 <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

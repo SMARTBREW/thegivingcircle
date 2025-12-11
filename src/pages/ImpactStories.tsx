@@ -151,58 +151,9 @@ const ImpactStories: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section with Animated Statistics */}
-      <section className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white py-16 sm:py-20 md:py-24 lg:py-28">
-        <div className="absolute inset-0 bg-black/20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
-          >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-              Real Impact,{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Real Stories
-              </span>
-            </h1>
-            <p className="text-lg text-gray-100 max-w-2xl mx-auto leading-relaxed">
-              Every number represents a life changed, every story showcases the power of collective giving.
-              Discover the transformational impact we're creating together.
-            </p>
-          </motion.div>
-
-          {/* Animated Statistics Grid */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="flex justify-center items-center"
-          >
-            <div className="flex flex-wrap justify-center gap-3 sm:gap-4 md:gap-6 max-w-4xl">
-            {platformStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6 + index * 0.1 }}
-                className={`text-center p-3 sm:p-4 md:p-6 rounded-xl backdrop-blur-sm border border-white/20 w-48 sm:w-52 md:w-56 ${
-                  index === currentStatIndex ? 'bg-white/20 scale-105' : 'bg-white/10'
-                } transition-all duration-500`}
-              >
-                <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-1 sm:mb-2">{stat.value}</div>
-                <div className="text-xs sm:text-sm font-medium mb-1">{stat.label}</div>
-                <div className="text-xs text-gray-300">{stat.description}</div>
-              </motion.div>
-            ))}
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* Impact Stories Section */}
-      <section className="py-8 sm:py-10 md:py-12 lg:py-14">
+      <section className="py-8 sm:py-10 mt-[70px] md:py-12 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}

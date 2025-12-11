@@ -61,10 +61,10 @@ const NavbarComponent = () => {
       name: 'Impact Stories', 
       href: '/impact-stories'
     },
-    {
-      name: 'Young Champions',
-      href: '/young-champions',
-    },
+    // {
+    //   name: 'Young Champions',
+    //   href: '/young-champions',
+    // },
     {
       name: 'About Us',
       href: '/the-giving-circle',
@@ -74,7 +74,7 @@ const NavbarComponent = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Become a NGO Partner', href: '/ngo-partner' },
-        { name: 'NGOs Listed With Us', href: '/ngo-list' },
+        // { name: 'NGOs Listed With Us', href: '/ngo-list' },
       ]
     },
   ];
