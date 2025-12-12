@@ -267,7 +267,7 @@ const LiveCausesPage = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
           {/* Professional Sidebar */}
-          <div className="lg:w-1/4">
+          <div className="lg:w-1/5">
             <div className="bg-white rounded-xl shadow-sm border p-4 sm:p-6 sticky top-6">
               <div className="flex items-center gap-2 mb-4">
                 <Shield className="text-blue-600" size={20} />
@@ -303,7 +303,7 @@ const LiveCausesPage = () => {
           </div>
 
           {/* Main Content Area */}
-          <div className="lg:w-3/4">
+          <div className="lg:w-4/5">
             {/* Professional Search and Filters */}
             <div className="mb-4 sm:mb-6 bg-white rounded-xl shadow-sm border p-4 sm:p-6">
               <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Find Verified Causes</h2>
@@ -367,7 +367,7 @@ const LiveCausesPage = () => {
             </div>
 
             {/* Professional Cause Cards - Responsive Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 mb-4 sm:mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
               {visibleCausesList.map((cause) => (
                 <div
                   key={cause.id}
@@ -375,7 +375,7 @@ const LiveCausesPage = () => {
                   className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer group"
                 >
                   {/* Image */}
-                  <div className="relative h-40 sm:h-48 overflow-hidden">
+                  <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
                     <CloudinaryImage 
                       src={cause.image} 
                       alt={cause.title}

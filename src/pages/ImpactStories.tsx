@@ -82,30 +82,6 @@ const ImpactStories: React.FC = () => {
       category: 'Animal Welfare'
     },
     {
-      id: '3',
-      title: 'Education for Every Child: Transforming Lives Through Learning',
-      description: 'A comprehensive education initiative that has empowered 2,500+ children across Delhi NCR through quality education, nutrition, and holistic development programs.',
-      fullStory: 'In underserved communities across Delhi NCR, thousands of children from underprivileged backgrounds lacked access to quality education and proper development opportunities. The Education for Every Child initiative by KHUSHII has transformed this reality through comprehensive child development programs. The initiative establishes quality learning centers with proper infrastructure, provides nutritious meals, healthcare support, and engages parents and communities in the education process. Since 2020, the program has reached 2,500+ children across 25+ communities, providing both academic excellence and character development. The results are remarkable: 90% of beneficiary children now attend school regularly, literacy rates have improved by 85%, and 200+ parents have been trained in skill development programs. The initiative has also created 50+ community learning centers and trained 100+ local teachers, ensuring sustainable impact.',
-      ngoName: 'KHUSHII',
-      location: 'Delhi & NCR',
-      impactNumber: 2500,
-      impactUnit: 'Children Empowered',
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
-      stats: [
-        { label: 'Children Reached', value: '2,500+', icon: <Users className="w-5 h-5" /> },
-        { label: 'Learning Centers', value: '50+', icon: <Award className="w-5 h-5" /> },
-        { label: 'Teachers Trained', value: '100+', icon: <Star className="w-5 h-5" /> },
-        { label: 'Literacy Improvement', value: '85%', icon: <TrendingUp className="w-5 h-5" /> }
-      ],
-      testimonial: {
-        quote: "My daughter now attends the KHUSHII learning center daily. She has gained confidence, improved her reading skills, and dreams of becoming a teacher. This program has transformed our family's future.",
-        author: "Priya Sharma",
-        role: "Parent, Delhi Community"
-      },
-      dateCompleted: 'March 2024',
-      category: 'Education'
-    },
-    {
       id: '4',
       title: 'Flood Relief Uttarakhand: Hope in the Face of Disaster',
       description: 'Emergency response and rehabilitation program that supported 3,000+ families during the devastating Uttarakhand floods.',
