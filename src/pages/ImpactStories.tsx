@@ -68,9 +68,9 @@ const ImpactStories: React.FC = () => {
       impactUnit: 'Animals Rescued',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183026/images/animal-protect/animal19.jpg',
       stats: [
-        { label: 'Vaccinations', value: '7,126', icon: <CheckCircle className="w-5 h-5" /> },
-        { label: 'Dogs Fed Daily', value: '350+', icon: <Heart className="w-5 h-5" /> },
-        { label: 'Emergency Rescues (2025)', value: '812', icon: <Users className="w-5 h-5" /> },
+        { label: 'Strays Vaccinated', value: '7,126', icon: <CheckCircle className="w-5 h-5" /> },
+        { label: 'Caregivers vaccinated', value: '200+', icon: <Heart className="w-5 h-5" /> },
+        { label: 'People Protected', value: '142,520', icon: <Users className="w-5 h-5" /> },
         { label: 'Shelter Residents', value: '400+', icon: <MapPin className="w-5 h-5" /> }
       ],
       testimonial: {

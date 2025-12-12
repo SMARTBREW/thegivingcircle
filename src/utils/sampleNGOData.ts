@@ -150,7 +150,7 @@ export const animalCareNGODetails: NGODetails = {
 
   impactMetrics: [
     {
-      label: 'Vaccinations',
+      label: 'Strays Vaccinated',
       value: '7,126',
       unit: '',
       description: 'Vaccinations administered to protect animals',
