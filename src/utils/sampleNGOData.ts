@@ -150,31 +150,31 @@ export const animalCareNGODetails: NGODetails = {
 
   impactMetrics: [
     {
-      label: 'Total Animals Helped',
-      value: '50,000',
-      unit: '+',
-      description: 'Animals rescued, treated, and cared for',
-      icon: 'Users'
-    },
-    {
-      label: 'Emergency Operations',
-      value: '100',
-      unit: '+',
-      description: 'Emergency rescue operations conducted',
+      label: 'Vaccinations',
+      value: '7,126',
+      unit: '',
+      description: 'Vaccinations administered to protect animals',
       icon: 'Shield'
     },
     {
-      label: 'Community Programs',
-      value: '1,000',
-      unit: '+',
-      description: 'Community awareness and education programs',
-      icon: 'Handshake'
+      label: 'Dogs Fed Daily',
+      value: '350+',
+      unit: '',
+      description: 'Stray dogs fed daily in various locations, plus 400+ daily in shelters',
+      icon: 'Heart'
     },
     {
-      label: 'Volunteers Trained',
-      value: '2,000',
-      unit: '+',
-      description: 'Community volunteers trained in animal welfare',
+      label: 'Emergency Rescues (2025)',
+      value: '812',
+      unit: '',
+      description: 'Emergency rescue operations conducted in 2025',
+      icon: 'Shield'
+    },
+    {
+      label: 'Shelter Residents',
+      value: '400+',
+      unit: '',
+      description: 'Dogs receiving care at any point of time in our shelters',
       icon: 'Users'
     }
   ],

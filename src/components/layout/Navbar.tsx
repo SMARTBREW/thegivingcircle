@@ -369,7 +369,7 @@ const NavbarComponent = () => {
                 onClick={() => window.location.href = '/live-causes'}
                 className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 rounded-lg font-semibold text-sm lg:text-base shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
-                Donate For Good Causes
+                 Start Your Giving Circle
               </motion.button>
             </div>
 
@@ -505,7 +505,7 @@ const NavbarComponent = () => {
                   }}
                   className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-full"
                 >
-                  Become a Cause Champion
+                  Start Your Giving Circle
                 </motion.button>
               </div>
             </div>

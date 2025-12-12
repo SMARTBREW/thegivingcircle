@@ -43,6 +43,14 @@ export const Testimonials: React.FC = () => {
       quote: 'Working with The Giving Circle has brought our community together. The champions genuinely care about our progress and celebrate every milestone with us.',
       organization: 'Rural Development Initiative',
     },
+    {
+      id: '5',
+      name: 'Shivashish Maurya',
+      role: 'Founder',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1765531157/images/animal-protect/WhatsApp_Image_2025-12-12_at_14.16.18.jpg',
+      quote: 'The Giving Circle played a key role in bringing our campaigns like Pawsitive Protectors and Bowls of Hope to life. Their platform connected us with supporters who turned awareness into real impact for animals in need.',
+      organization: 'Animal Care',
+    },
   ];
 
   useEffect(() => {

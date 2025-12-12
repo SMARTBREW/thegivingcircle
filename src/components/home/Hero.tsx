@@ -46,26 +46,6 @@ const FUNDRAISING_DATA = [
     ],
   },
   {
-    id: 3,
-    title: "Pads for Freedom",
-    description: "Empowering girls, one pad at a time. Your support helps girls continue their education, breaks the stigma around menstruation, and turns struggles into strength. We can end period poverty and change lives, together.",
-    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp",
-    category: "Menstrual Health • Education • Empowerment",
-    fullDescription: "Menstrual hygiene is a fundamental right, yet millions of women and girls in India lack access to sanitary products, forcing them to miss school and work. This campaign provides free sanitary pads, conducts awareness workshops, and breaks the taboo surrounding menstruation. We distribute pads in schools, rural communities, and urban slums, ensuring no woman has to compromise her dignity or opportunities due to lack of menstrual hygiene products.",
-    raised: 45750,
-    goal: 100000,
-    donors: 234,
-
-    daysLeft: 15,
-    location: "Schools and Communities Nationwide",
-    organizer: "KHUSHII",
-    updates: [
-      "Distributed 50,000 sanitary pads this month",
-      "Conducted awareness workshops in 25 schools",
-      "Reached 1,200 women in rural communities",
-    ],
-  },
-  {
     id: 4,
     title: "Bowls of Hope",
     description: "Give life with each bowl! Be a kind-hearted Cause Champion and help to fill empty bowls for voiceless shelter animals. Your compassion brings hope to vulnerable lives, transforming hunger into healing.",
