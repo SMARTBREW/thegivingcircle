@@ -64,14 +64,14 @@ const ImpactStories: React.FC = () => {
       fullStory: 'On any given day, our Pawsitive Protectors team receives dozens of distress calls—an injured pup trapped under a vehicle, a dehydrated dog during peak summer, a mother with wounded paws. What began in 2021 as a small community effort is now a coordinated city-wide response with a 24/7 helpline, mobile vet vans, and a trained volunteer network. The program operates multiple feeding stations and shelters, where injured animals receive first-aid, IV fluids, and post-operative care. Our impact speaks volumes: 7,126 vaccinations administered, over 350 stray dogs fed daily in various locations and over 400 dogs every day in our shelters, 812 emergency rescues in 2025 alone, and over 400 dogs at any point of time in our shelters receiving care and rehabilitation. Over 200 residents have been trained as community responders, and countless animals have found forever homes through adoption drives. The photograph you see captures a typical field rescue—volunteers calming an anxious dog while a vet examines and prepares it for treatment. Each rescue is a promise: no animal gets left behind.',
       ngoName: 'Animal Care',
       location: 'Mumbai, Maharashtra',
-      impactNumber: 2500,
+      impactNumber: 100000,
       impactUnit: 'Animals Rescued',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183026/images/animal-protect/animal19.jpg',
       stats: [
         { label: 'Strays Vaccinated', value: '7,126', icon: <CheckCircle className="w-5 h-5" /> },
         { label: 'Caregivers vaccinated', value: '200+', icon: <Heart className="w-5 h-5" /> },
         { label: 'People Protected', value: '142,520', icon: <Users className="w-5 h-5" /> },
-        { label: 'Shelter Residents', value: '400+', icon: <MapPin className="w-5 h-5" /> }
+        { label: 'Shelter Residents', value: 'Delhi & NCR', icon: <MapPin className="w-5 h-5" /> }
       ],
       testimonial: {
         quote: "When we found Max with a broken leg, we thought we'd lost him. Thanks to Animal Care, he's now healthy and the most loved member of our family.",
