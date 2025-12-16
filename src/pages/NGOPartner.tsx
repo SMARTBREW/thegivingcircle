@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { Building2, Mail, User, Phone, Send } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
 
 interface NGOFormData {
@@ -16,7 +17,7 @@ export const NGOPartner: React.FC = () => {
     contactPersonName: '',
     phoneNumber: ''
   });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -28,8 +29,43 @@ export const NGOPartner: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submitted successfully
-    setIsSubmitted(true);
+    setIsSubmitting(true);
+
+    // Format email body with organized structure and icons
+    const emailBody = `🏢 New NGO Partnership Inquiry
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📋 ORGANIZATION DETAILS
+
+🏛️ Organization Name: ${formData.organizationName}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👤 CONTACT INFORMATION
+
+📧 Email: ${formData.email}
+👨‍💼 Contact Person: ${formData.contactPersonName}
+📞 Phone Number: ${formData.phoneNumber}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Submitted on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+
+    // Create mailto link
+    const subject = encodeURIComponent('New NGO Partnership Inquiry - The Giving Circle');
+    const body = encodeURIComponent(emailBody);
+    const mailtoLink = `mailto:hello@thegivingcircle.in?subject=${subject}&body=${body}`;
+    
+    // Open email client
+    window.location.href = mailtoLink;
+    
+    // Reset submitting state after a short delay
+    setTimeout(() => {
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   const containerVariants = {
@@ -71,78 +107,8 @@ export const NGOPartner: React.FC = () => {
           <motion.div 
             className="bg-white rounded-xl p-6 sm:p-8 md:p-10 shadow-2xl border border-gray-200"
           >
-            {/* Success Message */}
-            {isSubmitted ? (
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6 }}
-                className="text-center py-8"
-              >
-                <motion.div
-                  initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-                  className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
-                >
-                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
-                </motion.div>
-                
-                <motion.h2
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6"
-                >
-                  Application Submitted{' '}
-                  <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                    Successfully!
-                  </span>
-                </motion.h2>
-                
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed"
-                >
-                  Thank you for your interest in partnering with The Giving Circle. Our team will review your application and contact you within 48 hours.
-                </motion.p>
-                
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
-                >
-                  <button
-                    onClick={() => window.location.href = '/'}
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg transition-all font-semibold text-sm sm:text-base"
-                  >
-                    Return to Home
-                  </button>
-                  <button
-                    onClick={() => setIsSubmitted(false)}
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-white text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold text-sm sm:text-base"
-                  >
-                    Submit Another Application
-                  </button>
-                </motion.div>
-                
-                <motion.p
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.6 }}
-                  className="text-xs sm:text-sm text-gray-500 mt-4 sm:mt-6"
-                >
-                  You'll receive confirmation details at <span className="font-medium">{formData.email}</span>
-                </motion.p>
-              </motion.div>
-            ) : (
-              // Original Form Content
-              <>
+            {/* Form Content */}
+            <>
                 <div className="text-center mb-6 sm:mb-8 md:mb-10">
                   <div className="flex justify-center mb-4 sm:mb-6">
                     <img 
@@ -167,7 +133,10 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Organization Name *</label>
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <Building2 className="w-4 h-4 text-purple-600" />
+                      Organization Name *
+                    </label>
                     <input
                       type="text"
                       name="organizationName"
@@ -185,7 +154,10 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Email Address *</label>
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <Mail className="w-4 h-4 text-purple-600" />
+                      Email Address *
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -205,7 +177,10 @@ export const NGOPartner: React.FC = () => {
                     className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
                   >
                     <div>
-                      <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Contact Person Name *</label>
+                      <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                        <User className="w-4 h-4 text-purple-600" />
+                        Contact Person Name *
+                      </label>
                       <input
                         type="text"
                         name="contactPersonName"
@@ -217,7 +192,10 @@ export const NGOPartner: React.FC = () => {
                       />
                     </div>
                     <div>
-                      <label className="block text-sm sm:text-base font-medium text-gray-700 mb-2">Phone Number *</label>
+                      <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                        <Phone className="w-4 h-4 text-purple-600" />
+                        Phone Number *
+                      </label>
                       <input
                         type="tel"
                         name="phoneNumber"
@@ -249,11 +227,12 @@ export const NGOPartner: React.FC = () => {
                   >
                     <PrimaryButton
                       type="submit"
-                      disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber}
+                      disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber || isSubmitting}
                       className="w-full"
                       size="lg"
+                      icon={isSubmitting ? <Send className="w-4 h-4 animate-pulse" /> : <Send className="w-4 h-4" />}
                     >
-                      Contact Us
+                      {isSubmitting ? 'Opening Email...' : 'Contact Us'}
                     </PrimaryButton>
                   </motion.div>
 
@@ -263,11 +242,10 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}
                   >
-                    By submitting this form, you agree to be contacted by our team regarding partnership opportunities.
+                    By clicking "Contact Us", your email client will open with a pre-filled message. Please review and send the email to complete your partnership inquiry.
                   </motion.p>
                 </form>
-              </>
-            )}
+            </>
           </motion.div>
         </motion.div>
       </motion.div>
