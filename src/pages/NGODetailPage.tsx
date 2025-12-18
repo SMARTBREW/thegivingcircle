@@ -48,7 +48,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
             <div className="w-20 h-20 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <Building className="w-10 h-10 text-red-600" />
             </div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-4">Organization Profile Not Available</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Organization Profile Not Available</h2>
             <p className="text-slate-600 mb-6">The institutional profile you're looking for is currently unavailable or access has been restricted.</p>
             {onBack && (
               <button 
@@ -186,17 +186,17 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
 
 
        {/* Our Foundation Section */}
-       <div className="bg-gray-50 py-12 sm:py-16 md:py-20">
+       <div className="bg-gray-50 py-8 sm:py-10 md:py-12 lg:py-14">
          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
            {/* Section Header */}
-           <div className="text-center mb-12 sm:mb-16">
-             <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
                Our{' '}
-               <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+               <span className="bg-gradient-to-r green-700 bg-clip-text text-transparent">
                  Foundation
                </span>
              </h2>
-             <p className="text-xl sm:text-2xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
                The story behind our commitment to creating lasting social change
              </p>
            </div>
@@ -214,7 +214,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                  <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg text-sm font-bold">
                    EST. {ngoDetails.yearEstablished}
                  </div>
-                 <div className="absolute bottom-6 right-6 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                 <div className="absolute bottom-6 right-6 bg-gradient-to-r green-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
                    {new Date().getFullYear() - ngoDetails.yearEstablished}+ Years of Impact
                  </div>
                </div>
@@ -251,12 +251,12 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
 
 
       {/* Impact Documentation Gallery */}
-      <div className="bg-white py-6 sm:py-8 md:py-10 lg:py-12">
-        <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-          <div className="text-center mb-8 sm:mb-10 md:mb-12">
+      <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-14">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
               Impact Documentation &{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r green-700 bg-clip-text text-transparent">
                 Evidence
               </span>
             </h2>
@@ -296,10 +296,10 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
 
       {/* Awards & Recognition Section */}
       {ngoDetails.awards && ngoDetails.awards.length > 0 && (
-        <div className="bg-white py-8 sm:py-10">
-          <div className="container mx-auto px-2 sm:px-4 lg:px-6">
-            <div className="text-center mb-8 sm:mb-10">
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Awards & Industry Recognition</h2>
+        <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-14">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Awards & Industry Recognition</h2>
               <p className="text-lg text-gray-600 max-w-3xl mx-auto">
                 Third-party validation of organizational excellence and social impact
               </p>
@@ -323,11 +323,11 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
       )}
 
       {/* Partnership & Collaboration Section */}
-      <div className="bg-slate-800 text-white py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="bg-slate-800 text-white py-8 sm:py-10 md:py-12 lg:py-14">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Join Our{' '}
-            <span className="bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r green-600 bg-clip-text text-transparent">
               NGO Partnership
             </span>{' '}
             Platform
@@ -339,7 +339,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
           <div className="flex justify-center items-center">
             <button 
               onClick={() => navigate('/ngo-partner')}
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-semibold transition-all flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r green-700 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-semibold transition-all flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
             >
               <Handshake size={16} className="sm:w-5 sm:h-5" />
               Become a NGO Partner with US

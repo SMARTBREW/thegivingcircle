@@ -129,7 +129,7 @@ const ImpactStories: React.FC = () => {
     <div className="min-h-screen">
 
       {/* Impact Stories Section */}
-      <section className="py-8 sm:py-10 mt-[70px] md:py-12 lg:py-14">
+      <section className="py-8 sm:py-10 md:py-12 lg:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -137,10 +137,7 @@ const ImpactStories: React.FC = () => {
             className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Stories That{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Inspire Change
-              </span>
+              Stories That Inspire Change
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               Behind every statistic is a human story of transformation, hope, and resilience.
@@ -175,14 +172,14 @@ const ImpactStories: React.FC = () => {
                         </span>
                       </div>
                       <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6">
-                        <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg">
+                        <span className="bg-green-700 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
                           {story.category}
                         </span>
                       </div>
                       {/* Main Impact Number */}
                       <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6">
                         <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2 sm:p-3 md:p-4 shadow-lg">
-                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-purple-600">{story.impactNumber.toLocaleString()}+</div>
+                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-700">{story.impactNumber.toLocaleString()}+</div>
                           <div className="text-xs sm:text-sm text-gray-600 font-medium">{story.impactUnit}</div>
                         </div>
                       </div>
@@ -194,8 +191,8 @@ const ImpactStories: React.FC = () => {
                     {/* NGO Badge */}
                     <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 mb-4 sm:mb-6">
                       <div className="flex items-center space-x-2">
-                        <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-purple-600" />
-                        <span className="text-lg sm:text-xl font-bold text-purple-600">{story.ngoName}</span>
+                        <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-700" />
+                        <span className="text-lg sm:text-xl font-bold text-green-700">{story.ngoName}</span>
                       </div>
                       <span className="text-gray-400 hidden sm:inline">•</span>
                       <span className="text-gray-500 flex items-center text-sm sm:text-base">
@@ -218,7 +215,7 @@ const ImpactStories: React.FC = () => {
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
                       {story.stats.slice(0, 4).map((stat, statIndex) => (
                         <div key={statIndex} className="text-center">
-                          <div className="flex justify-center mb-1 sm:mb-2 text-purple-600">
+                          <div className="flex justify-center mb-1 sm:mb-2 text-green-700">
                             {stat.icon}
                           </div>
                           <div className="text-lg sm:text-xl font-bold text-gray-900">{stat.value}</div>
@@ -228,7 +225,7 @@ const ImpactStories: React.FC = () => {
                     </div>
 
                     {/* Testimonial */}
-                    <div className="border-l-4 border-purple-500 pl-4 sm:pl-6 mb-6 sm:mb-8">
+                    <div className="border-l-4 border-green-700 pl-4 sm:pl-6 mb-6 sm:mb-8">
                       <div className="text-lg text-gray-700 italic mb-2 sm:mb-3 leading-relaxed">
                         "{story.testimonial.quote}"
                       </div>

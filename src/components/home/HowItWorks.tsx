@@ -17,10 +17,7 @@ const AboutImpactGallery = () => {
           className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-            Our{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Story
-            </span>
+            Our Story
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
           From a simple question grew a revolutionary platform that is reshaping the way we give and experience philanthropy.
@@ -39,7 +36,7 @@ const AboutImpactGallery = () => {
             <div>
               {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
                 Our{' '}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                <span className="text-green-700">
                   Story
                 </span>
               </h2> */}
@@ -59,18 +56,15 @@ const AboutImpactGallery = () => {
                 </p>
                 <p className="text-lg leading-relaxed">
                 What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join activities whenever possible. These experiences foster genuine relationships between donors and communities.
-
-
-                </p>
-                <p className="text-lg leading-relaxed">
-                Today, thousands trust us to connect their generosity with certified organizations, knowing their contributions will go directly where needed and that they’ll have the chance to witness the impact of their support in person.
-                  {' '}
+                {' '}
                   <a
                     href="/the-giving-circle"
-                    className="text-purple-600 hover:text-pink-600 underline font-semibold transition-colors duration-200"
+                    className="text-green-700 hover:text-green-800 underline font-semibold transition-colors duration-200"
                   >
                     Know more
                   </a>
+
+
                 </p>
               </div>
             </div>

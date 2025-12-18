@@ -1,37 +1,46 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { User, Mail, MapPin, Target, Phone } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
 
 interface FormData {
   fullName: string;
   email: string;
+  phoneNumber: string;
   country: string;
   city: string;
   selectedCause: string;
-  selectedNGOs: string[];
   agreeToTerms: boolean;
   isSubmitted: boolean;
-}
-
-interface NGO {
-  id: string;
-  name: string;
-  causes: string[];
-  mainCauses: string[];
-  description: string;
 }
 
 const CauseChampionOnboarding: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
     fullName: '',
     email: '',
+    phoneNumber: '',
     country: '',
     city: '',
     selectedCause: '',
-    selectedNGOs: [],
     agreeToTerms: false,
     isSubmitted: false
   });
+
+  // Generate a daily number between 10-80 that changes each day
+  const getDailyNumber = () => {
+    const today = new Date();
+    const dateString = today.toISOString().split('T')[0]; // YYYY-MM-DD format
+    // Use date string as seed for consistent daily number
+    let hash = 0;
+    for (let i = 0; i < dateString.length; i++) {
+      hash = ((hash << 5) - hash) + dateString.charCodeAt(i);
+      hash = hash & hash; // Convert to 32-bit integer
+    }
+    // Generate number between 10-80
+    return Math.abs(hash % 71) + 10;
+  };
+
+  const dailyChampionCount = getDailyNumber();
 
 
   // Countries data
@@ -47,66 +56,50 @@ const CauseChampionOnboarding: React.FC = () => {
     { value: 'singapore', label: 'Singapore' },
     { value: 'uae', label: 'United Arab Emirates' }
   ];
-  // Main cause categories based on actual causes from browseCauses.tsx
+  // Main cause categories
   const mainCauses = [
     {
-      id: 'women-empowerment',
-      name: 'Women Empowerment',
-      description: 'Supporting women through skill development, entrepreneurship, and empowerment programs'
+      id: 'break-barriers-girls-education',
+      name: "Break Barriers to Girls' Education"
     },
     {
-      id: 'animal-welfare',
-      name: 'Animal Welfare',
-      description: 'Protecting and caring for animals, rescue operations, and animal feeding programs'
+      id: 'end-educational-inequality',
+      name: 'End Educational Inequality for Children'
     },
     {
-      id: 'women-health',
-      name: 'Women Health',
-      description: 'Providing menstrual hygiene education, health products, and healthcare for women'
+      id: 'end-unemployment-disabled',
+      name: 'End Unemployment for Disabled Persons'
     },
     {
-      id: 'disaster-relief',
-      name: 'Disaster Relief',
-      description: 'Emergency response, flood relief, and rehabilitation support for affected communities'
+      id: 'ensure-safe-childbirth',
+      name: 'Ensure Safe Childbirth & Infant Care'
     },
     {
-      id: 'emergency-response',
-      name: 'Emergency Response',
-      description: 'Critical emergency services and rescue operations for animals and communities'
+      id: 'eradicate-hunger-children',
+      name: 'Eradicate Hunger for Children'
+    },
+    {
+      id: 'plant-trees-climate',
+      name: 'Plant Trees to Combat Climate Change'
+    },
+    {
+      id: 'prevent-disease-animal-vaccination',
+      name: 'Prevent Disease Through Animal Vaccination'
+    },
+    {
+      id: 'provide-education-food-orphans',
+      name: 'Provide Education & Food for Orphans'
+    },
+    {
+      id: 'rescue-heal-injured-animals',
+      name: 'Rescue & Heal Injured Street Animals'
+    },
+    {
+      id: 'shelter-abandoned-animals',
+      name: 'Shelter Abandoned & Abused Animals'
     }
   ];
 
-  // NGO data with their associated main causes based on actual data
-  const ngos: NGO[] = [
-    {
-      id: 'jwp',
-      name: 'JWP',
-      causes: ['Women Empowerment'],
-      mainCauses: ['women-empowerment'],
-      description: 'Supporting women empowerment through skill development and entrepreneurship programs'
-    },
-    {
-      id: 'animalcare',
-      name: 'Animal Care',
-      causes: ['Animal Welfare', 'Emergency Response'],
-      mainCauses: ['animal-welfare', 'emergency-response'],
-      description: 'Rescuing, treating and rehabilitating street animals across India'
-    },
-    {
-      id: 'khushii',
-      name: 'KHUSHII',
-      causes: ['Women Health'],
-      mainCauses: ['women-health'],
-      description: 'Empowering underprivileged women and girls through health and hygiene initiatives'
-    },
-    {
-      id: 'gus',
-      name: 'GUS',
-      causes: ['Disaster Relief'],
-      mainCauses: ['disaster-relief'],
-      description: 'Providing disaster relief and emergency response in affected areas'
-    }
-  ];
 
 
 
@@ -116,28 +109,12 @@ const CauseChampionOnboarding: React.FC = () => {
       ...prev,
       [name]: value
     }));
-
-    // Reset NGOs when main cause changes
-    if (name === 'selectedCause') {
-      setFormData(prev => ({
-        ...prev,
-        selectedNGOs: []
-      }));
-    }
-
   };
 
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, checked } = e.target;
+    const { name, checked } = e.target;
     
-    if (name === 'selectedNGOs') {
-      setFormData(prev => ({
-        ...prev,
-        selectedNGOs: checked 
-          ? [...prev.selectedNGOs, value]
-          : prev.selectedNGOs.filter(ngo => ngo !== value)
-      }));
-    } else if (name === 'agreeToTerms') {
+    if (name === 'agreeToTerms') {
       setFormData(prev => ({
         ...prev,
         agreeToTerms: checked
@@ -240,13 +217,13 @@ const CauseChampionOnboarding: React.FC = () => {
                 >
                   <button
                     onClick={() => window.location.href = '/'}
-                    className="px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition-colors font-semibold"
+                    className="px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold"
                   >
                     Return to Home
                   </button>
                   <button
                     onClick={() => window.location.href = '/about-champion'}
-                    className="px-6 py-3 bg-white text-purple-600 border border-purple-600 rounded-lg hover:bg-purple-50 transition-colors font-semibold"
+                    className="px-6 py-3 bg-white text-green-700 border border-green-700 rounded-lg hover:bg-green-50 transition-colors font-semibold"
                   >
                     Learn More About Champions
                   </button>
@@ -283,13 +260,16 @@ const CauseChampionOnboarding: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
               >
-                <label className="block text-base font-medium text-gray-700 mb-2">Full Name *</label>
+                <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                  <User className="w-5 h-5 text-green-600" />
+                  Full Name *
+                </label>
                 <motion.input
                   type="text"
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                   placeholder="Enter your full name"
                 />
               </motion.div>
@@ -300,14 +280,37 @@ const CauseChampionOnboarding: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
               >
-                <label className="block text-base font-medium text-gray-700 mb-2">Email Address *</label>
+                <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                  <Mail className="w-5 h-5 text-green-600" />
+                  Email Address *
+                </label>
                 <motion.input
                   type="email"
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                   placeholder="Enter your email"
+                />
+              </motion.div>
+
+              {/* Phone Number */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.35 }}
+              >
+                <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                  <Phone className="w-5 h-5 text-green-600" />
+                  Mobile Number *
+                </label>
+                <motion.input
+                  type="tel"
+                  name="phoneNumber"
+                  value={formData.phoneNumber}
+                  onChange={handleInputChange}
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                  placeholder="Enter your mobile number"
                 />
               </motion.div>
 
@@ -319,12 +322,15 @@ const CauseChampionOnboarding: React.FC = () => {
                 className="grid grid-cols-1 md:grid-cols-2 gap-4"
               >
                 <div>
-                  <label className="block text-base font-medium text-gray-700 mb-2">Country *</label>
+                  <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                    <MapPin className="w-5 h-5 text-green-600" />
+                    Country *
+                  </label>
                   <motion.select
                     name="country"
                     value={formData.country}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                   >
                     <option value="">Select country</option>
                     {countries.map((country) => (
@@ -335,13 +341,16 @@ const CauseChampionOnboarding: React.FC = () => {
                   </motion.select>
                 </div>
                 <div>
-                  <label className="block text-base font-medium text-gray-700 mb-2">City *</label>
+                  <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                    <MapPin className="w-5 h-5 text-green-600" />
+                    City *
+                  </label>
                   <motion.input
                     type="text"
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                     placeholder="Enter your city"
                   />
                 </div>
@@ -353,12 +362,15 @@ const CauseChampionOnboarding: React.FC = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
               >
-                <label className="block text-base font-medium text-gray-700 mb-2">Cause You Want to Support *</label>
+                <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                  <Target className="w-5 h-5 text-green-600" />
+                  Cause You Want to Support *
+                </label>
                 <motion.select
                   name="selectedCause"
                   value={formData.selectedCause}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-base"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                 >
                   <option value="">Select a cause category</option>
                   {mainCauses.map((cause) => (
@@ -367,74 +379,14 @@ const CauseChampionOnboarding: React.FC = () => {
                     </option>
                   ))}
                 </motion.select>
-                {formData.selectedCause && (
-                  <p className="text-sm text-gray-500 mt-1">
-                    {mainCauses.find(c => c.id === formData.selectedCause)?.description}
-                  </p>
-                )}
               </motion.div>
-
-              {/* NGO Selection - Only show when cause is selected */}
-              {formData.selectedCause && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                >
-                  <label className="block text-base font-medium text-gray-700 mb-3">NGOs You Want to Support *</label>
-                  {getFilteredNGOs().length > 0 ? (
-                    <div className="grid grid-cols-1 gap-3">
-                      {getFilteredNGOs().map((ngo) => (
-                        <motion.div
-                          key={ngo.id}
-                          className="border border-gray-200 rounded-lg p-4 hover:border-purple-300 transition-colors"
-                          initial={{ opacity: 0, x: -10 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          <div className="flex items-start space-x-3">
-                            <input
-                              type="checkbox"
-                              name="selectedNGOs"
-                              value={ngo.id}
-                              checked={formData.selectedNGOs.includes(ngo.id)}
-                              onChange={handleCheckboxChange}
-                              className="w-5 h-5 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 focus:ring-2 mt-1"
-                            />
-                            <div className="flex-1">
-                              <label className="text-base font-semibold text-gray-800 cursor-pointer">
-                                {ngo.name}
-                              </label>
-                              <p className="text-sm text-gray-600 mt-1">{ngo.description}</p>
-                              <div className="flex flex-wrap gap-1 mt-2">
-                                {ngo.causes.map((cause) => (
-                                  <span
-                                    key={cause}
-                                    className="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full"
-                                  >
-                                    {cause}
-                                  </span>
-                                ))}
-                              </div>
-                            </div>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-base text-orange-600 bg-orange-50 p-3 rounded-lg border border-orange-200">
-                      No NGOs available for this cause category at the moment.
-                    </p>
-                  )}
-                </motion.div>
-              )}
 
 
               {/* Terms and Conditions */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
+                transition={{ delay: 0.6 }}
                 className="flex items-start space-x-2"
               >
                 <input
@@ -442,7 +394,7 @@ const CauseChampionOnboarding: React.FC = () => {
                   name="agreeToTerms"
                   checked={formData.agreeToTerms}
                   onChange={handleCheckboxChange}
-                  className="w-4 h-4 text-purple-600 bg-gray-100 border-gray-300 rounded focus:ring-purple-500 focus:ring-2 mt-1"
+                  className="w-4 h-4 text-green-700 bg-gray-100 border-gray-300 rounded focus:ring-green-500 focus:ring-2 mt-1"
                 />
                 <label className="text-base text-gray-700 leading-relaxed">
                   I agree to support causes responsibly and follow the platform guidelines.
@@ -453,20 +405,20 @@ const CauseChampionOnboarding: React.FC = () => {
                 className="text-center text-gray-600 text-base font-medium"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.8 }}
+                transition={{ delay: 0.7 }}
               >
-                <span className="text-green-600 font-semibold">156</span> people became Cause Champions in the last 2 days
+                <span className="text-green-600 font-semibold">{dailyChampionCount}</span> people became Cause Champions in the last 2 days
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.9 }}
+                transition={{ delay: 0.8 }}
                 className="w-full"
               >
                 <PrimaryButton
                   onClick={handleSubmit}
-                  disabled={!formData.agreeToTerms || !formData.fullName || !formData.email || !formData.country || !formData.city || !formData.selectedCause || formData.selectedNGOs.length === 0}
+                  disabled={!formData.agreeToTerms || !formData.fullName || !formData.email || !formData.phoneNumber || !formData.country || !formData.city || !formData.selectedCause}
                   className="w-full"
                   size="lg"
                 >

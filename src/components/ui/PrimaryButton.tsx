@@ -24,11 +24,11 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   icon,
   href
 }) => {
-  const baseClasses = "group font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 shadow-lg rounded-full";
+  const baseClasses = "group font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 rounded-full";
   
   const variantClasses = {
-    primary: "bg-gradient-to-r from-purple-600 to-pink-600 text-white hover:from-purple-700 hover:to-pink-700",
-    secondary: "bg-white text-purple-600 hover:bg-gray-100 border border-purple-200",
+    primary: "bg-green-700 text-white hover:bg-green-800 active:bg-green-900",
+    secondary: "bg-white text-green-700 hover:bg-green-50 border border-green-200",
     outline: "border border-white text-white hover:bg-white/10"
   };
   

@@ -30,7 +30,7 @@ const Button: React.FC<ButtonProps> = ({
   const baseClasses = 'inline-flex items-center justify-center font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2';
   const variants = {
     primary: 'bg-blue-600 hover:bg-blue-700 text-white focus:ring-blue-500',
-    accent: 'bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white focus:ring-purple-500',
+    accent: 'bg-gradient-to-r green-700 hover:from-purple-700 hover:to-pink-700 text-white focus:ring-green-700',
     ghost: 'bg-transparent hover:bg-gray-100 text-gray-700 hover:text-gray-900',
     outline: 'border border-gray-300 bg-white hover:bg-gray-50 text-gray-700 hover:border-gray-400',
     danger: 'bg-red-600 hover:bg-red-700 text-white focus:ring-red-500',
@@ -207,7 +207,7 @@ const ImpactStoriesDetails: React.FC = () => {
                   key={index}
                   onClick={() => setSelectedImageIndex(index)}
                   className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedImageIndex === index ? 'border-purple-500' : 'border-transparent'
+                    selectedImageIndex === index ? 'border-green-700' : 'border-transparent'
                   }`}
                 >
                   <img src={image} alt="" className="w-full h-full object-cover" />
@@ -219,8 +219,8 @@ const ImpactStoriesDetails: React.FC = () => {
           {/* Story Info */}
           <div className="space-y-6">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-4">{storyData.title}</h1>
-              <p className="text-gray-600 leading-relaxed">{storyData.description}</p>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">{storyData.title}</h1>
+              <p className="text-lg text-gray-600 leading-relaxed">{storyData.description}</p>
             </div>
 
             {/* Key Metrics */}
@@ -472,7 +472,7 @@ const ImpactStoriesDetails: React.FC = () => {
       <div className="bg-white p-6 rounded-xl shadow-lg">
         <h3 className="text-xl font-semibold mb-6">Project Champion</h3>
         <div className="flex items-start space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white text-xl font-bold">
+          <div className="w-16 h-16 bg-gradient-to-r green-700 rounded-lg flex items-center justify-center text-white text-xl font-bold">
             {storyData.championName.charAt(0)}
           </div>
           <div className="flex-1">
@@ -670,7 +670,7 @@ const ImpactStoriesDetails: React.FC = () => {
       </div>
 
       {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
         <motion.div
           key={activeTab}
           initial={{ opacity: 0, y: 20 }}

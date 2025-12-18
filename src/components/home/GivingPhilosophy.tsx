@@ -24,7 +24,7 @@ const GivingPhilosophy = () => {
     <>
       <style>{`
         .text-glow {
-          text-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+          text-shadow: 0 0 20px rgba(21, 128, 61, 0.3);
         }
         
         .glassmorphism {
@@ -42,10 +42,7 @@ const GivingPhilosophy = () => {
             {/* Left: Philosophy Text */}
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Why Giving{' '}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Matters
-                </span>
+                Why Giving Matters
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
               Every act of giving creates ripples of hope that reach farther than we can imagine. When we unite as a circle, our individual sparks of compassion join to become a powerful force for change.
@@ -62,7 +59,7 @@ const GivingPhilosophy = () => {
               <div className="pt-4">
               <motion.button
             onClick={() => navigate("/onboarding")}
-            className="bg-gradient-to-r from-purple-600 to-pink-600 text-white text-bold px-4 py-2 sm:py-3 font-medium text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-1/2 rounded-full"
+            className="bg-green-700 text-white text-bold px-4 py-2 sm:py-3 font-medium text-sm sm:text-base transition-all duration-300 backdrop-blur-sm w-1/2 rounded-full hover:bg-green-800"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 8px 20px rgba(0, 0, 0, 0.1)",

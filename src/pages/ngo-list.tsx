@@ -235,7 +235,7 @@ export const NGOList: React.FC = () => {
               </div>
               <div className="min-w-0 flex-1">
                 <div className="text-xs font-medium text-gray-800 truncate">Est. {ngo.yearEstablished}</div>
-                <div className="text-xs text-purple-600 font-medium">{new Date().getFullYear() - ngo.yearEstablished}+ years</div>
+                <div className="text-xs text-green-700 font-medium">{new Date().getFullYear() - ngo.yearEstablished}+ years</div>
               </div>
             </div>
           </div>
@@ -247,7 +247,7 @@ export const NGOList: React.FC = () => {
           
           {/* Tagline with highlighted background */}
           <div className="mb-2">
-            <span className="inline-block bg-gradient-to-r from-purple-100 to-pink-100 backdrop-blur-sm text-purple-700 px-2 py-1 rounded-lg text-xs font-medium">
+            <span className="inline-block bg-gradient-to-r from-green-100 to-green-100 backdrop-blur-sm text-green-700 px-2 py-1 rounded-lg text-xs font-medium">
               {ngo.causes.slice(0, 2).join(' & ')}
             </span>
           </div>
@@ -286,7 +286,7 @@ export const NGOList: React.FC = () => {
                   e.stopPropagation();
                   handleLearnMore(ngo);
                 }}
-                className="text-xs bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-2 py-1 rounded-lg font-medium transition-all duration-200 flex items-center gap-1 flex-shrink-0"
+                className="text-xs bg-gradient-to-r green-700 hover:from-purple-700 hover:to-pink-700 text-white px-2 py-1 rounded-lg font-medium transition-all duration-200 flex items-center gap-1 flex-shrink-0"
               >
                 Learn More
               </button>
@@ -299,7 +299,7 @@ export const NGOList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -308,7 +308,7 @@ export const NGOList: React.FC = () => {
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4 sm:px-0">
             Our{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r green-700 bg-clip-text text-transparent">
               NGO Partners
             </span>
           </h1>
@@ -365,7 +365,7 @@ export const NGOList: React.FC = () => {
                   }}
                   className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
                     selectedFilter === filter.id
-                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-lg'
+                      ? 'bg-gradient-to-r green-700 text-white shadow-lg'
                       : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
                   }`}
                 >
@@ -385,19 +385,19 @@ export const NGOList: React.FC = () => {
           className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6 mb-6 sm:mb-8 md:mb-10 lg:mb-12"
         >
           <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 text-center shadow-lg">
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">{ngos.length}</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-700 mb-1 sm:mb-2">{ngos.length}</div>
             <div className="text-xs sm:text-sm lg:text-base text-gray-600">Verified NGOs</div>
           </div>
           <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 text-center shadow-lg">
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">24</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-700 mb-1 sm:mb-2">24</div>
             <div className="text-xs sm:text-sm lg:text-base text-gray-600">States Covered</div>
           </div>
           <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 text-center shadow-lg">
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">18+</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-700 mb-1 sm:mb-2">18+</div>
             <div className="text-xs sm:text-sm lg:text-base text-gray-600">Years Experience</div>
           </div>
           <div className="bg-white rounded-xl sm:rounded-2xl p-3 sm:p-4 lg:p-6 text-center shadow-lg">
-            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-purple-600 mb-1 sm:mb-2">2M+</div>
+            <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-green-700 mb-1 sm:mb-2">2M+</div>
             <div className="text-xs sm:text-sm lg:text-base text-gray-600">Lives Impacted</div>
           </div>
         </motion.div>
@@ -420,11 +420,11 @@ export const NGOList: React.FC = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="mt-12 sm:mt-16 bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 text-center"
+          className="mt-12 sm:mt-16 bg-gradient-to-r from-green-50 to-green-50 rounded-xl sm:rounded-2xl p-6 sm:p-8 md:p-10 text-center"
         >
           <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">
             Are you an NGO looking to expand your{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r green-700 bg-clip-text text-transparent">
               impact?
             </span>
           </h2>
@@ -435,7 +435,7 @@ export const NGOList: React.FC = () => {
           <a href="/ngo-partner">
             <Button 
               size="lg" 
-              className="px-6 sm:px-8 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white"
+              className="px-6 sm:px-8 bg-gradient-to-r green-700 hover:from-purple-700 hover:to-pink-700 text-white"
             >
               Become a Partner
             </Button>

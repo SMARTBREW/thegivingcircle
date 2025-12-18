@@ -168,8 +168,8 @@ const FundraisingHero = () => {
         <div className="max-w-2xl ml-0 space-y-6 sm:space-y-8 mb-12 sm:mb-0">
           {/* Badge */}
           <AnimatedSection direction="left" delay={0.1}>
-            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-purple-600/20 to-pink-600/20 text-purple-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-purple-500/30 animate-slide-in-left">
-              <span className="w-2 h-2 bg-purple-400 rounded-full mr-2 animate-pulse" />
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-green-700/20 text-green-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-green-500/30 animate-slide-in-left">
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
               {currentCampaign.category}
             </div>
           </AnimatedSection>
@@ -225,7 +225,7 @@ const FundraisingHero = () => {
                       onClick={() => handleCardClick(campaign)}
                       className={`relative flex-shrink-0 w-48 h-28 rounded-lg overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-2 ${
                         currentCampaign.id === campaign.id
-                          ? "ring-2 ring-purple-500 shadow-2xl shadow-purple-500/25"
+                          ? "ring-2 ring-green-700 shadow-2xl shadow-green-700/25"
                           : "hover:shadow-xl"
                       }`}
                     >
@@ -247,7 +247,7 @@ const FundraisingHero = () => {
 
                       {currentCampaign.id === campaign.id && (
                         <div className="absolute top-2 right-2">
-                          <div className="w-2 h-2 bg-purple-500 rounded-full animate-pulse shadow-lg" />
+                          <div className="w-2 h-2 bg-green-700 rounded-full animate-pulse shadow-lg" />
                         </div>
                       )}
                     </div>

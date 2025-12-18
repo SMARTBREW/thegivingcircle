@@ -54,11 +54,11 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
       <div className="p-4 sm:p-5 md:p-6 flex flex-col h-[calc(100%-10rem)] sm:h-[calc(100%-11rem)] md:h-[calc(100%-12rem)] lg:h-[calc(100%-13rem)]">
         <div className="flex items-center justify-between mb-3">
           <div className="flex items-center space-x-2">
-            <Badge className="w-4 h-4 text-purple-600" />
-            <span className="text-xs sm:text-sm font-medium text-purple-600 truncate">{ngoName}</span>
+            <Badge className="w-4 h-4 text-green-700" />
+            <span className="text-xs sm:text-sm font-medium text-green-700 truncate">{ngoName}</span>
           </div>
           <div className="text-right flex-shrink-0">
-            <div className="text-lg sm:text-xl md:text-2xl font-bold text-pink-600">{impactNumber.toLocaleString()}</div>
+            <div className="text-lg sm:text-xl md:text-2xl font-bold text-green-700">{impactNumber.toLocaleString()}</div>
             <div className="text-xs text-gray-500">{impactUnit}</div>
           </div>
         </div>
@@ -205,10 +205,7 @@ export const ImpactWall: React.FC = () => {
           className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-            Our{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Impact
-            </span>
+            Our Impact
           </h2>
           <div className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 space-y-4 sm:space-y-5 leading-relaxed md:leading-8 text-center">
             <p className="whitespace-nowrap">

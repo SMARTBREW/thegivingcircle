@@ -22,10 +22,7 @@ export default function SimplifiedAboutPage() {
           className="relative z-10 text-center text-white px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto"
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
-            About{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Us
-            </span>
+            About Us
           </h1>
           <p className="text-lg mb-6 sm:mb-8 leading-relaxed opacity-90 max-w-2xl mx-auto">
             Bridging the gap between good intentions and verified impact
@@ -44,10 +41,7 @@ export default function SimplifiedAboutPage() {
             className="text-center mb-6 sm:mb-8 md:mb-10"
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Our{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Story
-              </span>
+              Our Story
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
             From a simple question grew a revolutionary platform that is reshaping the way we give and experience philanthropy.

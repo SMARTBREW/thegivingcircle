@@ -94,7 +94,7 @@ export const NGOPartner: React.FC = () => {
       <div className="absolute inset-0 bg-gradient-to-br-gray-100" />
 
       <motion.div 
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -105,36 +105,31 @@ export const NGOPartner: React.FC = () => {
           variants={formVariants}
         >
           <motion.div 
-            className="bg-white rounded-xl p-6 sm:p-8 md:p-10 shadow-2xl border border-gray-200"
+            className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
           >
             {/* Form Content */}
             <>
-                <div className="text-center mb-6 sm:mb-8 md:mb-10">
-                  <div className="flex justify-center mb-4 sm:mb-6">
+                <div className="text-center mb-6 sm:mb-8">
+                  <div className="flex justify-center mb-4">
                     <img 
                       src="/Giving Circle logo.png" 
                       alt="Giving Circle Logo" 
-                      className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain"
+                      className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                     />
                   </div>
-                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-3 sm:mb-4">
-                    Join as{' '}
-                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                      NGO Partner
-                    </span>
-                  </h2>
+                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Join as NGO Partner</h2>
                   <p className="text-lg text-gray-600 leading-relaxed">Connect with passionate champions who want to support your cause</p>
                 </div>
 
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5 md:space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Organization Name */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <Building2 className="w-4 h-4 text-purple-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <Building2 className="w-5 h-5 text-green-600" />
                       Organization Name *
                     </label>
                     <input
@@ -142,7 +137,7 @@ export const NGOPartner: React.FC = () => {
                       name="organizationName"
                       value={formData.organizationName}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                       placeholder="Enter your organization name"
                       required
                     />
@@ -154,8 +149,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <Mail className="w-4 h-4 text-purple-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <Mail className="w-5 h-5 text-green-600" />
                       Email Address *
                     </label>
                     <input
@@ -163,7 +158,7 @@ export const NGOPartner: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                       placeholder="Enter your email address"
                       required
                     />
@@ -174,11 +169,11 @@ export const NGOPartner: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4"
+                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
                   >
                     <div>
-                      <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                        <User className="w-4 h-4 text-purple-600" />
+                      <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                        <User className="w-5 h-5 text-green-600" />
                         Contact Person Name *
                       </label>
                       <input
@@ -186,14 +181,14 @@ export const NGOPartner: React.FC = () => {
                         name="contactPersonName"
                         value={formData.contactPersonName}
                         onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                         placeholder="Enter contact person name"
                         required
                       />
                     </div>
                     <div>
-                      <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                        <Phone className="w-4 h-4 text-purple-600" />
+                      <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                        <Phone className="w-5 h-5 text-green-600" />
                         Phone Number *
                       </label>
                       <input
@@ -201,7 +196,7 @@ export const NGOPartner: React.FC = () => {
                         name="phoneNumber"
                         value={formData.phoneNumber}
                         onChange={handleInputChange}
-                        className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 transition-colors text-sm sm:text-base"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                         placeholder="Enter phone number"
                         required
                       />
@@ -210,12 +205,12 @@ export const NGOPartner: React.FC = () => {
 
                   {/* Statistics */}
                   <motion.div 
-                    className="text-center text-gray-600 text-sm sm:text-base font-medium"
+                    className="text-center text-gray-600 text-base font-medium"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <span className="text-purple-600 font-semibold">25</span> NGOs joined our platform in the last month
+                    <span className="text-green-600 font-semibold">25</span> NGOs joined our platform in the last month
                   </motion.div>
 
                   {/* Submit Button */}
@@ -237,7 +232,7 @@ export const NGOPartner: React.FC = () => {
                   </motion.div>
 
                   <motion.p
-                    className="text-xs sm:text-sm text-gray-500 text-center mt-3 sm:mt-4"
+                    className="text-sm text-gray-500 text-center mt-4"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.7 }}

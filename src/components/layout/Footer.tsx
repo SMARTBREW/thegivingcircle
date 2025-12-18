@@ -31,11 +31,11 @@ export const Footer: React.FC = () => {
                 A trusted community platform connecting verified NGO partners with passionate change makers and donors across India & abroad. Building transparency and trust in philanthropy through verified partnerships and measurable impact.
                 </p>
                 <div className="flex items-center space-x-2 text-sm sm:text-base text-gray-600">
-                  <Network className="w-4 h-4 text-purple-600" />
+                  <Network className="w-4 h-4 text-green-700" />
                   <span>Community-Driven Platform</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm sm:text-base text-gray-600">
-                  <Shield className="w-4 h-4 text-purple-600" />
+                  <Shield className="w-4 h-4 text-green-700" />
                   <span>Trust & Transparency Focused</span>
                 </div>
               </div>
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                     href="https://linkedin.com/company/thegivingcircle" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-4 h-4" />
@@ -59,7 +59,7 @@ export const Footer: React.FC = () => {
                     href="https://twitter.com/thegivingcircle" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="Twitter"
                   >
                     <Twitter className="w-4 h-4" />
@@ -68,7 +68,7 @@ export const Footer: React.FC = () => {
                     href="https://instagram.com/thegivingcircle" 
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-purple-600 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
+                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-2 rounded-lg hover:bg-gray-50"
                     aria-label="Instagram"
                   >
                     <Instagram className="w-4 h-4" />
@@ -162,7 +162,7 @@ export const Footer: React.FC = () => {
                     <Mail className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-xs sm:text-sm text-gray-600">General Inquiries</div>
-                      <a href="mailto:hello@thegivingcircle.org" className="text-sm sm:text-base font-medium text-gray-900 hover:text-purple-600 transition-colors">
+                      <a href="mailto:hello@thegivingcircle.org" className="text-sm sm:text-base font-medium text-gray-900 hover:text-green-700 transition-colors">
                         hello@thegivingcircle.org
                       </a>
                     </div>

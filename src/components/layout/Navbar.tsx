@@ -61,10 +61,6 @@ const NavbarComponent = () => {
       name: 'Impact Stories', 
       href: '/impact-stories'
     },
-    // {
-    //   name: 'Young Champions',
-    //   href: '/young-champions',
-    // },
     {
       name: 'About Us',
       href: '/the-giving-circle',
@@ -74,13 +70,10 @@ const NavbarComponent = () => {
       hasDropdown: true,
       dropdownItems: [
         { name: 'Become a NGO Partner', href: '/ngo-partner' },
-        // { name: 'NGOs Listed With Us', href: '/ngo-list' },
       ]
     },
   ];
 
-
-  // Close dropdown when clicking elsewhere
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -362,12 +355,11 @@ const NavbarComponent = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
                 whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: '0 10px 30px rgba(168, 85, 247, 0.4)'
+                  scale: 1.05
                 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={() => window.location.href = '/live-causes'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 xl:px-4 py-2 rounded-lg font-semibold text-sm lg:text-base shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
+                onClick={() => window.location.href = '/onboarding'}
+                className="bg-green-700 text-white px-3 xl:px-4 py-2 rounded-lg font-semibold text-sm lg:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
                  Start Your Giving Circle
               </motion.button>
@@ -391,12 +383,11 @@ const NavbarComponent = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
                 whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: '0 8px 25px rgba(168, 85, 247, 0.3)'
+                  scale: 1.05
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-3 py-2 rounded-lg font-semibold text-sm shadow-lg hover:shadow-xl transition-all duration-300 backdrop-blur-sm"
+                className="bg-green-700 text-white px-3 py-2 rounded-lg font-semibold text-sm hover:bg-green-800 transition-all duration-300 backdrop-blur-sm"
               >
                 Champion
               </motion.button>
@@ -503,7 +494,7 @@ const NavbarComponent = () => {
                     setIsOpen(false);
                     window.location.href = '/onboarding';
                   }}
-                  className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base shadow-lg transition-all duration-300 backdrop-blur-sm w-full"
+                  className="bg-green-700 text-white px-4 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm w-full"
                 >
                   Start Your Giving Circle
                 </motion.button>

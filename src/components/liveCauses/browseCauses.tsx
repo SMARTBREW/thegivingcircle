@@ -216,15 +216,12 @@ const LiveCausesPage = () => {
       <div className="relative text-white overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">
         
         
-        <div className="relative container mx-auto px-4 ml-[90px] sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
           <div className="max-w-4xl">
 
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 mt-12 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
-              Transforming Lives Through{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Verified Causes
-              </span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
+              Transforming Lives Through Verified Causes
             </h1>
             
             <p className="text-lg mb-6 sm:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
@@ -250,7 +247,7 @@ const LiveCausesPage = () => {
               
               <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                 <div className="flex items-center gap-2 mb-1">
-                  <Users className="text-purple-400" size={18} />
+                  <Users className="text-green-500" size={18} />
                   <span className="font-semibold text-sm">5M+ Lives</span>
                 </div>
                 <p className="text-xs text-gray-300">Positively impacted</p>
@@ -283,7 +280,7 @@ const LiveCausesPage = () => {
                     }}
                     className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
                       selectedNGO === ngo
-                        ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md'
+                        ? 'bg-green-700 text-white'
                         : 'text-gray-600 hover:bg-gray-100 border border-gray-200'
                     }`}
                   >
@@ -314,7 +311,7 @@ const LiveCausesPage = () => {
                 <input
                   type="text"
                   placeholder="Search by cause title, NGO partner, or location..."
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent text-sm sm:text-base"
+                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent text-sm sm:text-base"
                 />
               </div>
 
@@ -328,7 +325,7 @@ const LiveCausesPage = () => {
                     setSelectedNGO(e.target.value);
                     setVisibleCauses(9);
                   }}
-                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-purple-500 font-medium text-xs sm:text-sm"
+                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-green-700 font-medium text-xs sm:text-sm"
                 >
                   {ngos.map(ngo => (
                     <option key={ngo} value={ngo}>{ngo}</option>
@@ -340,7 +337,7 @@ const LiveCausesPage = () => {
                 <select 
                   value={selectedFilter}
                   onChange={(e) => setSelectedFilter(e.target.value)}
-                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-purple-500 font-medium text-xs sm:text-sm"
+                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-green-700 font-medium text-xs sm:text-sm"
                 >
                   <option>Most Urgent</option>
                   <option>Highest Goal</option>
@@ -349,7 +346,7 @@ const LiveCausesPage = () => {
                   <option>Recently Added</option>
                 </select>
 
-                <button className="text-purple-600 ml-auto hover:text-purple-800 transition-colors font-medium text-xs sm:text-sm">
+                <button className="text-green-700 ml-auto hover:text-green-800 transition-colors font-medium text-xs sm:text-sm">
                   Reset All Filters
                 </button>
               </div>
@@ -398,13 +395,13 @@ const LiveCausesPage = () => {
                   </div>
 
                   <div className="p-4 sm:p-6">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-purple-600 transition-colors">
+                    <h3 className="font-semibold text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-green-700 transition-colors">
                       {cause.title}
                     </h3>
                     
                     <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
                       <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                        <Building2 size={12} className="text-purple-600" />
+                        <Building2 size={12} className="text-green-700" />
                         <span className="font-medium">{cause.ngo}</span>
                         <span className="text-green-600">•</span>
                         <span className="text-green-600 text-xs">Verified</span>
@@ -434,7 +431,7 @@ const LiveCausesPage = () => {
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 mb-2 sm:mb-3">
                         <div 
-                          className="bg-gradient-to-r from-purple-600 to-pink-600 h-2 sm:h-2.5 rounded-full transition-all duration-500"
+                          className="bg-green-700 h-2 sm:h-2.5 rounded-full transition-all duration-500"
                           style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                         ></div>
                       </div>
@@ -463,7 +460,7 @@ const LiveCausesPage = () => {
                           e.stopPropagation();
                           handleDonateClick(e, cause.id);
                         }}
-                        className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all"
+                        className="w-full bg-green-700 hover:bg-green-800 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all"
                       >
                         Contribute Now
                       </button>

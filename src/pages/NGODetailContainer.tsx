@@ -97,7 +97,7 @@ const NGODetailContainer: React.FC = () => {
         <div className="text-center max-w-md mx-auto p-6">
           <div className="bg-white rounded-2xl shadow-xl p-8">
             <div className="text-6xl mb-4">🏢</div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">Organization Not Available</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Organization Not Available</h2>
             <p className="text-slate-600 mb-6">{error}</p>
             <div className="space-y-3">
               <button 

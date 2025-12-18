@@ -37,10 +37,7 @@ export default function MissionVisionPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Our Core{' '}
-              <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                Values
-              </span>
+              Our Core Values
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
               These fundamental principles guide every decision we make and every action we take 
@@ -54,7 +51,7 @@ export default function MissionVisionPage() {
                 key={index}
                 className="text-center group hover:bg-gray-50 rounded-xl p-4 sm:p-6 transition-colors duration-300"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl mb-4 sm:mb-6 group-hover:from-purple-700 group-hover:to-pink-700 transition-colors duration-300">
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-green-700 rounded-xl mb-4 sm:mb-6 group-hover:bg-green-800 transition-colors duration-300">
                   <value.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white transition-colors duration-300" />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">{value.title}</h3>
@@ -70,14 +67,11 @@ export default function MissionVisionPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div>
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl mb-4 sm:mb-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-green-700 rounded-xl mb-4 sm:mb-6">
                 <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Our{' '}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Mission
-                </span>
+                Our Mission
               </h2>
               <p className="text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 To revolutionize philanthropy by creating the world's most transparent and accountable 
@@ -104,7 +98,7 @@ export default function MissionVisionPage() {
               <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                 {impactStats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-xl sm:text-2xl font-bold text-purple-600 mb-1 sm:mb-2">{stat.value}</div>
+                    <div className="text-xl sm:text-2xl font-bold text-green-700 mb-1 sm:mb-2">{stat.value}</div>
                     <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
                   </div>
                 ))}
@@ -142,14 +136,11 @@ export default function MissionVisionPage() {
               </div>
             </div>
             <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl mb-4 sm:mb-6">
+              <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-green-700 rounded-xl mb-4 sm:mb-6">
                 <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Our{' '}
-                <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                  Vision
-                </span>
+                Our Vision
               </h2>
               <p className="text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
                 We envision a world where philanthropy is completely transparent, deeply impactful, 

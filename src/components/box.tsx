@@ -32,7 +32,7 @@ const ChampionFundraiserBox = ({
       variants={fadeIn}
     >
       {/* Left accent decoration */}
-      <div className="absolute left-0 top-0 bottom-0 w-2 sm:w-3 md:w-4 bg-gradient-to-b from-purple-600 to-pink-600"></div>
+      <div className="absolute left-0 top-0 bottom-0 w-2 sm:w-3 md:w-4 bg-green-700"></div>
 
       {/* Background decorations */}
       <div className="absolute -right-20 -bottom-20 w-64 h-64 rounded-full bg-gradient-to-r from-purple-100 to-pink-100 dark:from-purple-900/20 dark:to-pink-900/20 opacity-30 blur-xl"></div>
@@ -58,12 +58,8 @@ const ChampionFundraiserBox = ({
               },
             }}
           >
-            Become a Cause{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Champion
-            </span>{' '}
-            Today!
-          </motion.h3>
+            Become a Cause Champion  Today!
+                 </motion.h3>
 
           <motion.p
             className="text-sm sm:text-base md:text-lg text-gray-600 px-2 md:px-0"
@@ -121,7 +117,7 @@ const ChampionFundraiserBox = ({
           {/* Primary Button */}
           <motion.button
             onClick={handleBecomeChampion}
-            className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg shadow-lg transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
+            className="flex items-center justify-center gap-2 px-6 py-3 bg-green-700 hover:bg-green-800 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 whitespace-nowrap min-w-fit"
             whileHover={{
               scale: 1.05,
               boxShadow: "0px 10px 25px rgba(147, 51, 234, 0.3)",

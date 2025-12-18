@@ -96,10 +96,7 @@ export const Testimonials: React.FC = () => {
           className="text-center mb-6 sm:mb-8 md:mb-10"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
-            Voices of{' '}
-            <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-              Change
-            </span>
+            Voices of Change
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
             Hear from champions, NGO partners, and community members whose lives have been transformed
@@ -161,7 +158,7 @@ export const Testimonials: React.FC = () => {
                         <div className="font-semibold text-gray-900 text-lg">
                           {testimonials[currentIndex].name}
                         </div>
-                        <div className="text-purple-600 font-medium text-sm sm:text-base">
+                        <div className="font-medium text-sm sm:text-base" style={{ color: '#456FA5' }}>
                           {testimonials[currentIndex].role}
                         </div>
                         <div className="text-gray-600 text-xs sm:text-sm">
@@ -197,8 +194,8 @@ export const Testimonials: React.FC = () => {
                   onClick={() => setCurrentIndex(index)}
                   className={`h-2 sm:h-3 md:h-4 rounded-full transition-all duration-200 ${
                     index === currentIndex 
-                      ? 'bg-primary-500 w-6 sm:w-8 md:w-10' 
-                      : 'bg-gray-300 w-2 sm:w-3 md:w-4 hover:bg-primary-300'
+                      ? 'bg-green-700 w-6 sm:w-8 md:w-10' 
+                      : 'bg-gray-300 w-2 sm:w-3 md:w-4 hover:bg-green-400'
                   }`}
                   aria-label={`Go to testimonial ${index + 1}`}
                 />
