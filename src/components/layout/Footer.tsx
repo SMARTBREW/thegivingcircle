@@ -162,8 +162,8 @@ export const Footer: React.FC = () => {
                     <Mail className="w-4 h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-xs sm:text-sm text-gray-600">General Inquiries</div>
-                      <a href="mailto:hello@thegivingcircle.org" className="text-sm sm:text-base font-medium text-gray-900 hover:text-green-700 transition-colors">
-                        hello@thegivingcircle.org
+                      <a href="mailto:hello@thegivingcircle.in" className="text-sm sm:text-base font-medium text-gray-900 hover:text-green-700 transition-colors">
+                        hello@thegivingcircle.in
                       </a>
                     </div>
                   </div>

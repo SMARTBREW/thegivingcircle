@@ -1,13 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { Building2, Mail, User, Phone, Send } from 'lucide-react';
+import { Building2, Mail, User, Phone, Send, MapPin } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
+import { ApiClient } from '../utils/api';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import Select from 'react-select';
+import countries from 'world-countries';
 
 interface NGOFormData {
   organizationName: string;
   email: string;
   contactPersonName: string;
   phoneNumber: string;
+  country: string;
 }
 
 export const NGOPartner: React.FC = () => {
@@ -15,9 +21,56 @@ export const NGOPartner: React.FC = () => {
     organizationName: '',
     email: '',
     contactPersonName: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    country: 'in' // India ISO code
   });
+
+  // Countries data for react-select using world-countries library
+  const countryOptions = useMemo(() => {
+    return countries
+      .map(country => ({
+        value: country.cca2.toLowerCase(),
+        label: country.name.common,
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+  }, []);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState<string>('');
+
+  // Generate a daily number between 1-5 that changes each day
+  const getDailyPartnerCount = () => {
+    const today = new Date();
+    const dateString = today.toISOString().split('T')[0]; // YYYY-MM-DD format
+    // Use date string as seed for consistent daily number
+    let hash = 0;
+    for (let i = 0; i < dateString.length; i++) {
+      hash = ((hash << 5) - hash) + dateString.charCodeAt(i);
+      hash = hash & hash; // Convert to 32-bit integer
+    }
+    // Generate number between 1-5
+    return Math.abs(hash % 5) + 1;
+  };
+
+  const dailyPartnerCount = getDailyPartnerCount();
+
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    document.title = 'Become Partner - Join Verified Partner Network India | NGO Partnership';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Become a partner with The Giving Circle - Join our verified partner platform India. Partner registration for NGOs to collaborate with verified partners and connect with Cause Champions. Learn how to become partner India, explore partnership benefits, and join our trusted partner network. Partner onboarding process for verified partners India.');
+    }
+    
+    // Update keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'Become Partner, Partnership, Partner with Giving Circle, Partner Registration, Verified Partner Platform, Collaboration, Join as Partner, Partner Onboarding, Verified Partners India, Trusted partners, Partner transparency India, Partner verification platform, How to become partner India, Partner with social impact platform, Partner registration process, Verified partner platform India, Join verified partner network, Partnership benefits, Collaborate with verified partners, Partner onboarding process, Join partner network India');
+    }
+  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -27,45 +80,46 @@ export const NGOPartner: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleCountryChange = (selectedOption: any) => {
+    setFormData(prev => ({
+      ...prev,
+      country: selectedOption ? selectedOption.value : ''
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
-    // Format email body with organized structure and icons
-    const emailBody = `🏢 New NGO Partnership Inquiry
+    try {
+      const result = await ApiClient.submitNGOApplication({
+        organizationName: formData.organizationName,
+        email: formData.email,
+        contactPersonName: formData.contactPersonName,
+        phoneNumber: formData.phoneNumber,
+        country: formData.country,
+      });
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📋 ORGANIZATION DETAILS
-
-🏛️ Organization Name: ${formData.organizationName}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-👤 CONTACT INFORMATION
-
-📧 Email: ${formData.email}
-👨‍💼 Contact Person: ${formData.contactPersonName}
-📞 Phone Number: ${formData.phoneNumber}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-📅 Submitted on: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
-
-    // Create mailto link
-    const subject = encodeURIComponent('New NGO Partnership Inquiry - The Giving Circle');
-    const body = encodeURIComponent(emailBody);
-    const mailtoLink = `mailto:hello@thegivingcircle.in?subject=${subject}&body=${body}`;
-    
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Reset submitting state after a short delay
-    setTimeout(() => {
+      if (result.success) {
+        setSubmittedEmail(formData.email);
+        setIsSubmitted(true);
+        // Reset form
+        setFormData({
+          organizationName: '',
+          email: '',
+          contactPersonName: '',
+          phoneNumber: '',
+          country: 'in',
+        });
+      } else {
+        setError(result.message || 'Failed to submit form. Please try again.');
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to submit form. Please try again.');
+    } finally {
       setIsSubmitting(false);
-    }, 1000);
+    }
   };
 
   const containerVariants = {
@@ -109,18 +163,34 @@ export const NGOPartner: React.FC = () => {
           >
             {/* Form Content */}
             <>
-                <div className="text-center mb-6 sm:mb-8">
-                  <div className="flex justify-center mb-4">
-                    <img 
-                      src="/Giving Circle logo.png" 
-                      alt="Giving Circle Logo" 
-                      className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
-                    />
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Join as NGO Partner</h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">Connect with passionate champions who want to support your cause</p>
+                <div className="flex justify-center mb-6 sm:mb-8">
+                  <img 
+                    src="/Giving Circle logo.png" 
+                    alt="Giving Circle Logo - Verified Partner Platform India" 
+                    className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                  />
                 </div>
 
+                {!isSubmitted && (
+                  <div className="text-center mb-6 sm:mb-8">
+                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Become Partner - Join Verified Partner Network India</h1>
+                    <p className="text-lg text-gray-600 leading-relaxed">Partner with Giving Circle to connect with passionate Cause Champions. Join as partner in our verified partner platform India and collaborate with verified partners. Start your partner registration today.</p>
+                  </div>
+                )}
+
+                {isSubmitted ? (
+                  <motion.div
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="text-center p-8 bg-green-50 border border-green-200 rounded-lg"
+                  >
+                    <div className="text-green-600 text-5xl mb-4">✓</div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Success!</h2>
+                    <p className="text-gray-600">
+                      Thank you for your interest in partnering with The Giving Circle. Our team will reach out to you asap.
+                    </p>
+                  </motion.div>
+                ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Organization Name */}
                   <motion.div
@@ -138,8 +208,9 @@ export const NGOPartner: React.FC = () => {
                       value={formData.organizationName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
-                      placeholder="Enter your organization name"
+                      placeholder="Enter your NGO organization name"
                       required
+                      aria-label="Enter your NGO organization name for partner registration"
                     />
                   </motion.div>
 
@@ -164,43 +235,103 @@ export const NGOPartner: React.FC = () => {
                     />
                   </motion.div>
 
-                  {/* Contact Person Name and Phone Number in same row */}
+                  {/* Contact Person Name */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-4"
                   >
-                    <div>
-                      <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                        <User className="w-5 h-5 text-green-600" />
-                        Contact Person Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="contactPersonName"
-                        value={formData.contactPersonName}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
-                        placeholder="Enter contact person name"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                        <Phone className="w-5 h-5 text-green-600" />
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        name="phoneNumber"
-                        value={formData.phoneNumber}
-                        onChange={handleInputChange}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
-                        placeholder="Enter phone number"
-                        required
-                      />
-                    </div>
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <User className="w-5 h-5 text-green-600" />
+                      Contact Person Name *
+                    </label>
+                    <input
+                      type="text"
+                      name="contactPersonName"
+                      value={formData.contactPersonName}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                      placeholder="Enter contact person name"
+                      required
+                    />
+                  </motion.div>
+
+                  {/* Phone Number */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45 }}
+                  >
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <Phone className="w-5 h-5 text-green-600" />
+                      Phone Number *
+                    </label>
+                    <PhoneInput
+                      international
+                      defaultCountry="IN"
+                      value={formData.phoneNumber}
+                      onChange={(value) => setFormData(prev => ({ ...prev, phoneNumber: value || '' }))}
+                      className="w-full"
+                      placeholder="Enter phone number"
+                      withCountryCallingCode
+                    />
+                  </motion.div>
+
+                  {/* Country */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5 }}
+                  >
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <MapPin className="w-5 h-5 text-green-600" />
+                      Country *
+                    </label>
+                    <Select
+                      options={countryOptions}
+                      value={countryOptions.find(option => option.value === formData.country)}
+                      onChange={handleCountryChange}
+                      isSearchable
+                      placeholder="Select country"
+                      className="react-select-container"
+                      classNamePrefix="react-select"
+                      styles={{
+                        control: (base) => ({
+                          ...base,
+                          borderColor: '#d1d5db',
+                          borderRadius: '0.5rem',
+                          padding: '0.25rem',
+                          minHeight: '48px',
+                          fontSize: '1rem',
+                          '&:hover': {
+                            borderColor: '#d1d5db',
+                          },
+                        }),
+                        option: (base, state) => ({
+                          ...base,
+                          backgroundColor: state.isSelected ? '#15803d' : state.isFocused ? '#dcfce7' : 'white',
+                          color: state.isSelected ? 'white' : '#374151',
+                          fontSize: '1rem',
+                          '&:hover': {
+                            backgroundColor: state.isSelected ? '#15803d' : '#dcfce7',
+                          },
+                        }),
+                        placeholder: (base) => ({
+                          ...base,
+                          color: '#9ca3af',
+                          fontSize: '1rem',
+                        }),
+                        input: (base) => ({
+                          ...base,
+                          fontSize: '1rem',
+                        }),
+                        singleValue: (base) => ({
+                          ...base,
+                          fontSize: '1rem',
+                          color: '#374151',
+                        }),
+                      }}
+                    />
                   </motion.div>
 
                   {/* Statistics */}
@@ -210,7 +341,7 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <span className="text-green-600 font-semibold">25</span> NGOs joined our platform in the last month
+                    <span className="text-green-600 font-semibold">{dailyPartnerCount}+</span> Verified Partners India joined our trusted partner network in the last month. <span className="block mt-2 text-sm">Join verified partner platform India and become partner today!</span>
                   </motion.div>
 
                   {/* Submit Button */}
@@ -222,24 +353,29 @@ export const NGOPartner: React.FC = () => {
                   >
                     <PrimaryButton
                       type="submit"
-                      disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber || isSubmitting}
+                      disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber || !formData.country || isSubmitting}
                       className="w-full"
                       size="lg"
                       icon={isSubmitting ? <Send className="w-4 h-4 animate-pulse" /> : <Send className="w-4 h-4" />}
+                      aria-label="Submit partner registration to become partner with verified partner platform India"
                     >
-                      {isSubmitting ? 'Opening Email...' : 'Contact Us'}
+                      {isSubmitting ? 'Submitting...' : 'Start Partner Registration'}
                     </PrimaryButton>
                   </motion.div>
 
-                  <motion.p
-                    className="text-sm text-gray-500 text-center mt-4"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    By clicking "Contact Us", your email client will open with a pre-filled message. Please review and send the email to complete your partnership inquiry.
-                  </motion.p>
+                  {error && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="w-full p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"
+                    >
+                      {error}
+                    </motion.div>
+                  )}
+
+                 
                 </form>
+                )}
             </>
           </motion.div>
         </motion.div>

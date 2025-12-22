@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, PawPrint } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 
@@ -6,15 +7,32 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Pawsitive Protectors cause data focused on animal welfare and protection
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    document.title = 'Pawsitive Protectors - Animal Vaccination & Rabies Prevention | Donate Animal Welfare India';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Pawsitive Protectors provides animal welfare India through rabies prevention programs, stray dog vaccination, and street animal rescue. Where to donate for animal welfare India? Support our Zero Rabies Deaths by 2030 Mission. Donate to protect animals and communities across India.');
+    }
+    
+    // Update keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'Pawsitive Protectors, animal vaccination, rabies prevention, stray dog vaccination, street animal rescue, animal welfare India, animal care NGO, rabies prevention India, protect animals, animal shelter support, street animal rescue Mumbai, where to donate for animal welfare India, rabies prevention programs India, stray dog vaccination programs, animal rescue and care India, zero rabies deaths mission India, animal welfare programs India, protect street animals India, stray animal care India');
+    }
+  }, []);
+
+  // Pawsitive Protectors cause data focused on animal welfare and rabies prevention
   const cause = {
     id: 3,
     title: 'Pawsitive Protectors',
-    subtitle: 'Raising voice for the voiceless - comprehensive animal welfare and protection',
+    subtitle: 'Fighting rabies together through free vaccinations - Zero Rabies Deaths by 2030 Mission',
     organizer: 'AnimalCare India',
     ngo: 'AnimalCare India',
-    location: 'Delhi NCR, Gurugram, Haryana',
-    category: 'Animal Welfare',
+    location: 'Delhi NCR, Mumbai, Gurugram, Haryana',
+    category: 'Animal Welfare India • Rabies Prevention',
     goalAmount: '₹8,00,000',
     raisedAmount: '₹4,50,000',
     progressPercentage: 56,
@@ -24,126 +42,126 @@ const PawsitiveProtectorsCauseDetailPage = () => {
     urgency: 'High',
     
     // Problem Statement
-    problemStatement: 'Across India, millions of stray animals face daily struggles for survival, including lack of food, medical care, and protection from abuse. Street dogs, cats, and other animals endure harsh conditions, disease outbreaks, and human cruelty, while rescue organizations struggle with limited resources to provide comprehensive care.',
+    problemStatement: 'Rabies prevention India is critical as thousands die annually from rabies transmitted by unvaccinated street animals. Where to donate for animal welfare India? Stray dog vaccination programs are urgently needed. Street animal rescue Mumbai and across India faces challenges - millions of stray animals lack rabies prevention, medical care, and protection. Animal welfare India organizations struggle to reach all animals needing vaccination.',
     
     // Root Causes
     rootCauses: [
-      'Lack of systematic animal welfare infrastructure in urban areas',
-      'Limited awareness about responsible pet ownership and animal rights',
-      'Insufficient funding for animal rescue and medical care programs',
-      'Absence of comprehensive vaccination and sterilization programs',
-      'Social stigma and misconceptions about stray animals'
+      'Lack of systematic stray dog vaccination programs',
+      'Limited rabies prevention awareness in communities',
+      'Insufficient funding for animal rescue and rabies vaccination',
+      'Absence of comprehensive animal welfare infrastructure',
+      'Fear and misconceptions about street animals preventing intervention'
     ],
     
     // Consequences if not addressed
     consequences: [
-      'Continued suffering of millions of stray animals',
-      'Increased risk of rabies and other zoonotic diseases',
-      'Overpopulation of stray animals leading to resource strain',
-      'Loss of biodiversity and ecological balance',
-      'Missed opportunities for human-animal bond and community healing'
+      'Continued rabies deaths - thousands die annually without rabies prevention India',
+      'Unvaccinated stray animals spread disease to communities',
+      'Street animals suffer without animal rescue and care India',
+      'Overpopulation of stray animals without intervention',
+      'Communities live in fear without stray dog vaccination programs'
     ],
     
     // Our Solution
     solution: {
-      approach: 'Comprehensive animal welfare through rescue, medical care, vaccination, sterilization, and community education programs.',
+      approach: 'Pawsitive Protectors delivers comprehensive animal welfare India through free rabies prevention, stray dog vaccination, street animal rescue, and community protection programs supporting Zero Rabies Deaths by 2030 Mission.',
       components: [
-        'Emergency rescue and medical treatment for injured animals',
-        'Mass vaccination campaigns to prevent disease outbreaks',
-        'Sterilization programs to control population growth',
-        'Community education on animal welfare and responsible ownership',
-        'Establishment of safe shelters and adoption programs'
+        'Free rabies vaccination programs for all street animals',
+        'Emergency street animal rescue Mumbai and Delhi NCR operations',
+        'Stray dog vaccination campaigns with collaring and deworming',
+        'Animal welfare programs India including medical care and shelter',
+        'Community education on rabies prevention and protecting street animals India'
       ]
     },
     
     // Beneficiaries
     beneficiaries: {
-      primary: '2,000+ stray animals',
-      secondary: '5,000+ community members',
-      community: '15+ neighborhoods across Delhi NCR',
-      longTerm: 'Entire ecosystem of animal welfare'
+      primary: '5,000+ street animals receiving free rabies vaccination',
+      secondary: '50,000+ community members protected from rabies',
+      community: '25+ neighborhoods across Delhi NCR and Mumbai',
+      longTerm: 'Zero Rabies Deaths by 2030 - protecting animals and humans'
     },
     
     // Impact Gallery
     impactGallery: [
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg',
-        caption: 'Volunteers providing compassionate care and medical attention to rescued animals',
-        type: 'Medical Care'
+        caption: 'Street animal rescue Mumbai - providing emergency medical care to injured stray animals',
+        type: 'Animal Rescue'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183018/images/animal-protect/animal13.jpg',
-        caption: 'Anti-rabies vaccination campaign ensuring community health and animal welfare',
-        type: 'Vaccination Drive'
+        caption: 'Free rabies vaccination programs protecting communities - Zero Rabies Deaths by 2030 Mission',
+        type: 'Rabies Prevention'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183019/images/animal-protect/animal14.jpg',
-        caption: 'Community members actively participating in animal welfare initiatives',
+        caption: 'Community participating in animal welfare India and rabies prevention awareness programs',
         type: 'Community Engagement'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183020/images/animal-protect/animal15.jpg',
-        caption: 'Professional veterinary care being administered to animals in need',
-        type: 'Veterinary Care'
+        caption: 'Stray dog vaccination programs providing free rabies shots and deworming',
+        type: 'Stray Dog Vaccination'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183022/images/animal-protect/animal16.jpg',
-        caption: 'Rescue operations bringing hope and healing to injured animals',
-        type: 'Rescue Operations'
+        caption: 'Where to donate for animal welfare India - emergency street animal rescue operations',
+        type: 'Emergency Rescue'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg',
-        caption: 'Community awareness campaigns promoting animal rights and welfare',
-        type: 'Awareness Campaign'
+        caption: 'Protect street animals India through community education and awareness campaigns',
+        type: 'Animal Protection'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183024/images/animal-protect/animal18.jpg',
-        caption: 'Safe shelter environment providing comfort and care for rescued animals',
+        caption: 'Animal shelter support providing safe haven for rescued street animals',
         type: 'Shelter Care'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183026/images/animal-protect/animal19.jpg',
-        caption: 'Volunteers working together to create a better world for animals',
+        caption: 'Animal welfare programs India powered by dedicated volunteers and donors',
         type: 'Volunteer Work'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183027/images/animal-protect/animal20.jpg',
-        caption: 'Educational programs teaching children about animal welfare and compassion',
+        caption: 'Rabies prevention education teaching communities about animal welfare and safety',
         type: 'Education'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183028/images/animal-protect/animal21.jpg',
-        caption: 'Adoption programs finding loving homes for rescued animals',
+        caption: 'Animal rescue and care India - adoption programs finding loving homes',
         type: 'Adoption'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183029/images/animal-protect/animal22.jpg',
-        caption: 'Community feeding programs ensuring no animal goes hungry',
+        caption: 'Stray animal care India including feeding programs for hungry street animals',
         type: 'Feeding Program'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183031/images/animal-protect/animal23.jpg',
-        caption: 'Mobile veterinary services reaching animals in remote areas',
-        type: 'Mobile Care'
+        caption: 'Mobile stray dog vaccination units reaching remote areas for rabies prevention',
+        type: 'Mobile Vaccination'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183032/images/animal-protect/animal24.jpg',
-        caption: 'Sterilization programs helping control animal population humanely',
+        caption: 'Animal welfare programs India include humane sterilization for population control',
         type: 'Sterilization'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183033/images/animal-protect/animal25.jpg',
-        caption: 'Emergency response teams providing immediate care to animals in crisis',
-        type: 'Emergency Care'
+        caption: 'Emergency street animal rescue providing immediate medical intervention',
+        type: 'Emergency Response'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183034/images/animal-protect/animal26.jpg',
-        caption: 'Community celebration of successful animal welfare achievements',
+        caption: 'Communities celebrating success in protect animals mission and rabies prevention',
         type: 'Community Impact'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183035/images/animal-protect/animal27.jpg',
-        caption: 'Long-term rehabilitation and care for animals with special needs',
+        caption: 'Long-term animal care NGO support for special needs street animals',
         type: 'Rehabilitation'
       }
     ],
@@ -151,23 +169,23 @@ const PawsitiveProtectorsCauseDetailPage = () => {
     // Expected Outcomes
     expectedOutcomes: [
       {
-        metric: '2,000+ animals',
-        description: 'Provided with medical care, vaccination, and sterilization within 12 months',
+        metric: '5,000+ animals',
+        description: 'Receive free rabies vaccination, collaring, and deworming',
         timeline: 'Short-term'
       },
       {
-        metric: '90% reduction',
-        description: 'In rabies cases in target communities through vaccination programs',
+        metric: 'Zero rabies deaths',
+        description: 'In target communities through comprehensive rabies prevention India programs',
         timeline: 'Medium-term'
       },
       {
-        metric: '500+ adoptions',
-        description: 'Successful adoptions of rescued animals into loving homes',
+        metric: '1,000+ rescues',
+        description: 'Street animal rescue operations providing emergency medical care',
         timeline: 'Long-term'
       },
       {
-        metric: '15,000+ people',
-        description: 'Educated about animal welfare and responsible pet ownership',
+        metric: '50,000+ people',
+        description: 'Educated about animal welfare India and rabies prevention',
         timeline: 'Medium-term'
       }
     ],
@@ -284,7 +302,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
           {/* Page Title */}
           <div className="text-center mb-1">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight py-2">
-            Pawsitive Protectors
+            Pawsitive Protectors - Rabies Prevention & Animal Welfare India
           </h1>
           </div>
         </div>

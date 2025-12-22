@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { cn } from "../../lib/utils";
 
 const AboutImpactGallery = () => {
 
@@ -20,7 +19,7 @@ const AboutImpactGallery = () => {
             Our Story
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
-          From a simple question grew a revolutionary platform that is reshaping the way we give and experience philanthropy.
+          Discover how our community giving platform connects Cause Champions with verified social causes across India, creating transparent and meaningful impact.
           
           </p>
         </motion.div>
@@ -42,26 +41,27 @@ const AboutImpactGallery = () => {
               </h2> */}
               <div className="space-y-4 sm:space-y-6 text-gray-600">
               <p className="text-lg leading-relaxed">
-              We began with a simple vision: to build a community of generous, warm-hearted people who want to support genuine causes.
+              The Giving Circle is India's trusted social impact platform, built to connect generous people who want to support genuine social causes and make a difference in India.
 
 
                 </p>
                 <p className="text-lg leading-relaxed">
-                Founded in 2022, The Giving Circle brings this vision to life by connecting individuals with NGOs driving meaningful change on the ground. Through trusted channels, we make it simple for supporters to engage with and strengthen these causes.
+                Founded in 2022, our community giving platform brings Cause Champions together with verified causes and government-certified NGO partners driving real change across India. We make it simple to donate to social causes through our transparent giving platform, ensuring every contribution creates measurable impact.
 
                 </p>
                 <p className="text-lg leading-relaxed">
-                Our role is simple yet vital: we act as a bridge, linking supporters with causes close to their hearts. We partner only with government-certified NGOs, ensuring every organization meets official standards. For complete transparency, contributions go directly to these NGOs and never pass through us.
+                As a legitimate charity platform, we partner only with verified NGO partners who meet government standards. Our transparent approach means all contributions go directly to these trusted partners—we never handle funds, ensuring complete accountability and social responsibility.
 
                 </p>
                 <p className="text-lg leading-relaxed">
-                What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join activities whenever possible. These experiences foster genuine relationships between donors and communities.
+                What makes us the best platform to support social causes in India is our community-driven social impact model. We encourage Cause Champions to visit project sites, meet beneficiaries, and join activities, fostering genuine community partnerships that go beyond donations.
                 {' '}
                   <a
                     href="/the-giving-circle"
                     className="text-green-700 hover:text-green-800 underline font-semibold transition-colors duration-200"
+                    aria-label="Learn more about The Giving Circle social impact platform and how to become a Cause Champion"
                   >
-                    Know more
+                    Learn how to give back to society India
                   </a>
 
 

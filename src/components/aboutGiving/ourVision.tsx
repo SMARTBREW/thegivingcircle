@@ -1,4 +1,4 @@
-import { Target, Globe, Heart, Users, ArrowRight, CheckCircle, Award, Shield } from 'lucide-react';
+import { Target, Globe, Heart, Users, CheckCircle, Award, Shield } from 'lucide-react';
 
 export default function MissionVisionPage() {
   const coreValues = [
@@ -37,11 +37,10 @@ export default function MissionVisionPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6 sm:mb-8 md:mb-10">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-              Our Core Values
+              Why Giving Matters - Our Core Values
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-              These fundamental principles guide every decision we make and every action we take 
-              in our mission to transform philanthropy.
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+              These fundamental principles guide every decision we make on our social impact platform India. They define our giving philosophy and drive our mission to transform community giving through transparency and community-driven social impact.
             </p>
           </div>
 
@@ -71,25 +70,25 @@ export default function MissionVisionPage() {
                 <Target className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Our Mission
+                Our Mission - Social Impact Platform India
               </h2>
               <p className="text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                To revolutionize philanthropy by creating the world's most transparent and accountable 
-                giving platform, where every donation creates measurable impact and builds lasting 
-                connections between donors and communities.
+                Our mission is to revolutionize community giving by creating India's most transparent and accountable 
+                Cause Champions platform, where every donation creates measurable community-driven social impact and builds lasting 
+                connections between Cause Champions and communities. We enable social change through giving on our trusted community empowerment platform.
               </p>
               <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-start space-x-2 sm:space-x-3">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-sm sm:text-base text-gray-700">Eliminate uncertainty in charitable giving through complete transparency</p>
+                  <p className="text-sm sm:text-base text-gray-700">Eliminate uncertainty in community giving through complete transparency on The Giving Circle India</p>
                 </div>
                 <div className="flex items-start space-x-2 sm:space-x-3">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-sm sm:text-base text-gray-700">Provide real-time tracking of donation impact and outcomes</p>
+                  <p className="text-sm sm:text-base text-gray-700">Provide real-time tracking of community impact and social change through our community impact platform</p>
                 </div>
                 <div className="flex items-start space-x-2 sm:space-x-3">
                   <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-sm sm:text-base text-gray-700">Foster meaningful relationships between donors and beneficiaries</p>
+                  <p className="text-sm sm:text-base text-gray-700">Foster meaningful relationships between Cause Champions and beneficiaries through community-driven social impact</p>
                 </div>
               </div>
             </div>
@@ -114,23 +113,23 @@ export default function MissionVisionPage() {
           <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
             <div className="order-2 lg:order-1">
               <div className="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-2xl p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">A World Transformed</h3>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-4 sm:mb-6">A World Transformed Through Community Giving</h3>
                 <div className="space-y-4 sm:space-y-6">
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-2 h-2 bg-purple-500 rounded-full mt-2 sm:mt-3"></div>
-                    <p className="text-sm sm:text-base text-gray-700">Every charitable organization operates with complete transparency</p>
+                    <p className="text-sm sm:text-base text-gray-700">Every charitable organization on The Giving Circle operates with complete transparency and verified impact</p>
                   </div>
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-2 h-2 bg-indigo-500 rounded-full mt-2 sm:mt-3"></div>
-                    <p className="text-sm sm:text-base text-gray-700">Donors see exactly how their contributions create change</p>
+                    <p className="text-sm sm:text-base text-gray-700">Cause Champions see exactly how their contributions create social change through our community impact platform</p>
                   </div>
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 sm:mt-3"></div>
-                    <p className="text-sm sm:text-base text-gray-700">Communities are empowered through direct connection with supporters</p>
+                    <p className="text-sm sm:text-base text-gray-700">Communities are empowered through direct connection with Cause Champions on our community empowerment platform</p>
                   </div>
                   <div className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-2 h-2 bg-teal-500 rounded-full mt-2 sm:mt-3"></div>
-                    <p className="text-sm sm:text-base text-gray-700">Philanthropy becomes a catalyst for sustainable development</p>
+                    <p className="text-sm sm:text-base text-gray-700">Community giving becomes a catalyst for sustainable development and community-driven social impact</p>
                   </div>
                 </div>
               </div>
@@ -140,17 +139,17 @@ export default function MissionVisionPage() {
                 <Globe className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-                Our Vision
+                Our Vision - Community Empowerment Platform
               </h2>
               <p className="text-lg text-gray-600 mb-4 sm:mb-6 leading-relaxed">
-                We envision a world where philanthropy is completely transparent, deeply impactful, 
-                and universally trusted. A future where every act of giving creates a ripple effect 
-                of positive change that extends far beyond the initial donation.
+                Our vision is a world where community giving is completely transparent, deeply impactful, 
+                and universally trusted. A future where every Cause Champion creates social change through giving, generating a ripple effect 
+                of community-driven social impact that extends far beyond the initial donation.
               </p>
               <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 leading-relaxed">
-                Through technology and innovation, we're building the foundation for a new era of 
-                giving—one where donors, organizations, and communities work together in perfect 
-                harmony to solve the world's most pressing challenges.
+                Through our social impact platform India, we're building the foundation for a new era of 
+                community giving—one where Cause Champions, organizations, and communities work together in perfect 
+                harmony to solve India's most pressing challenges. This is why giving matters and why community giving matters.
               </p>
               {/* <div className="inline-flex items-center text-purple-600 font-medium text-sm sm:text-base">
                 <span>Join us in this vision</span>

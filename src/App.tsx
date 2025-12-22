@@ -23,6 +23,7 @@ import KhushiCauseDetailPage from './components/liveCauses/khushiCauseDetails';
 import PawsitiveProtectorsCauseDetailPage from './components/liveCauses/pawsitiveProtectorsCauseDetails';
 import BowlsOfHopeCauseDetailPage from './components/liveCauses/bowlsOfHopeCauseDetails';
 import FloodAnimalRescueCauseDetailPage from './components/liveCauses/floodAnimalRescueCauseDetails';
+import FloodReliefCauseDetailPage from './components/liveCauses/floodReliefCauseDetails';
 import  {AboutChampions } from './pages/aboutChampion';
 import { OurStory } from './pages/aboutGivingCircle';
 import YoungChampions from './pages/YoungChampions';
@@ -60,6 +61,7 @@ function App() {
             <Route path="/pawsitive-protectors-cause-details" element={<PawsitiveProtectorsCauseDetailPage />} />
             <Route path="/bowls-of-hope-cause-details" element={<BowlsOfHopeCauseDetailPage />} />
             <Route path="/flood-animal-rescue-cause-details" element={<FloodAnimalRescueCauseDetailPage />} />
+            <Route path="/flood-relief-cause-details" element={<FloodReliefCauseDetailPage />} />
             <Route path="/about-champion" element={<AboutChampions />} />
             <Route path="/the-giving-circle" element={<OurStory />} />
             <Route path="/young-champions" element={<YoungChampions />} />

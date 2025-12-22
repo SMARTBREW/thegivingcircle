@@ -145,3 +145,90 @@ body::-webkit-scrollbar {
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+/* PhoneInput styling */
+.PhoneInput {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  background: white;
+  transition: all 0.2s;
+}
+
+.PhoneInput:focus-within {
+  border-color: #15803d;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1);
+}
+
+.PhoneInputCountry {
+  padding: 0 0.5rem;
+  display: flex;
+  align-items: center;
+  border-right: 1px solid #e5e7eb;
+}
+
+.PhoneInputCountryIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+}
+
+.PhoneInputCountrySelect {
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.PhoneInputCountrySelectArrow {
+  opacity: 0.7;
+  margin-left: 0.25rem;
+}
+
+.PhoneInputInput {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: transparent;
+}
+
+.PhoneInputInput::placeholder {
+  color: #9ca3af;
+}
+
+/* React Select styling */
+.react-select-container {
+  font-size: 1rem;
+}
+
+.react-select__control {
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+  padding: 0.25rem !important;
+  min-height: 48px !important;
+}
+
+.react-select__control:hover {
+  border-color: #d1d5db !important;
+}
+
+.react-select__control--is-focused {
+  border-color: #15803d !important;
+  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1) !important;
+}
+
+.react-select__option--is-selected {
+  background-color: #15803d !important;
+  color: white !important;
+}
+
+.react-select__option--is-focused:not(.react-select__option--is-selected) {
+  background-color: #dcfce7 !important;
+  color: #374151 !important;
+}

@@ -16,24 +16,24 @@ export const Testimonials: React.FC = () => {
       name: 'Priya Sharma',
       role: 'Cause Champion',
       image: 'https://images.pexels.com/photos/8924530/pexels-photo-8924530.jpeg?auto=compress&cs=tinysrgb&w=400',
-      quote: 'Seeing the girls I supported graduate from school and start their own businesses has been the most rewarding experience of my life. The Giving Circle made it possible to witness real change.',
-      organization: 'Supporting Girls Education',
+      quote: 'Becoming a Cause Champion through The Giving Circle has been life-changing. Seeing the girls I supported graduate and start businesses is proof of real impact. This trusted charity platform made it possible to witness verified change and create meaningful impact stories.',
+      organization: 'Supporting Girls Education Through Community Giving',
     },
     {
       id: '2',
       name: 'Dr. Rajesh Kumar',
-      role: 'NGO Director',
+      role: 'NGO Partner Director',
       image: 'https://images.pexels.com/photos/8924531/pexels-photo-8924531.jpeg?auto=compress&cs=tinysrgb&w=400',
-      quote: 'The transparency and documentation process has elevated our work. Champions can see exactly how their support transforms lives, creating a beautiful cycle of trust and impact.',
-      organization: 'Water Warriors Foundation',
+      quote: 'The Giving Circle\'s transparent giving platform and verification process have elevated our social impact work. Cause Champions can see exactly how their support creates real change across India, building trust through community-driven social impact and accountability.',
+      organization: 'Verified NGO Partner - Water Warriors Foundation',
     },
     {
       id: '3',
       name: 'Anita Verma',
       role: 'Cause Champion',
       image: 'https://images.pexels.com/photos/8924532/pexels-photo-8924532.jpeg?auto=compress&cs=tinysrgb&w=400',
-      quote: 'The verification gives me proof that my contributions are making a real difference. I can share my impact stories with friends and inspire them to join too.',
-      organization: 'Youth Skill Development',
+      quote: 'This legitimate charity platform gives me verified proof that my donations are making a real difference. I can share impact stories India with friends and inspire them to join our giving circle and support social causes too.',
+      organization: 'Youth Skill Development - Community Impact',
     },
     {
       id: '4',
@@ -46,10 +46,10 @@ export const Testimonials: React.FC = () => {
     {
       id: '5',
       name: 'Shivashish Maurya',
-      role: 'Founder',
+      role: 'Founder & NGO Partner',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1765531157/images/animal-protect/WhatsApp_Image_2025-12-12_at_14.16.18.jpg',
-      quote: 'The Giving Circle played a key role in bringing our campaigns like Pawsitive Protectors and Bowls of Hope to life. Their platform connected us with supporters who turned awareness into real impact for animals in need.',
-      organization: 'Animal Care',
+      quote: 'The Giving Circle social impact platform was crucial in bringing Pawsitive Protectors and Bowls of Hope to life. Their transparent community giving platform connected us with passionate Cause Champions who created real verified impact for animals across India.',
+      organization: 'Animal Care - Verified NGO Partner',
     },
   ];
 
@@ -99,8 +99,7 @@ export const Testimonials: React.FC = () => {
             Voices of Change
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
-            Hear from champions, NGO partners, and community members whose lives have been transformed
-            through our circle of giving.
+            Hear from Cause Champions, trusted NGO partners, and community members whose lives have been transformed through India's community giving platform. Discover verified impact stories and how our social impact platform creates lasting change across India.
           </p>
         </motion.div>
 

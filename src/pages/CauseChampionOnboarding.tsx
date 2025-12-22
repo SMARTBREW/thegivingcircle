@@ -1,7 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { User, Mail, MapPin, Target, Phone } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
+import { ApiClient } from '../utils/api';
+import PhoneInput from 'react-phone-number-input';
+import 'react-phone-number-input/style.css';
+import Select from 'react-select';
+import countries from 'world-countries';
 
 interface FormData {
   fullName: string;
@@ -19,12 +24,31 @@ const CauseChampionOnboarding: React.FC = () => {
     fullName: '',
     email: '',
     phoneNumber: '',
-    country: '',
+    country: 'in', // India ISO code
     city: '',
     selectedCause: '',
     agreeToTerms: false,
     isSubmitted: false
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    document.title = 'Become a Cause Champion - Start Your Giving Circle | Join Cause Champions India';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Become a Cause Champion and start your giving circle today. Join Cause Champions India to support social causes, create impact campaigns, and make a difference. Learn how to become a cause champion, start a social cause, fundraise for social impact, and create your impact campaign. Guide to becoming a cause champion in India.');
+    }
+    
+    // Update keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'Become a Cause Champion, Cause Champion Onboarding, Start Your Cause, Create Impact Campaign, Join Cause Champions, Champion Registration, Start Giving Circle, Start a cause campaign, Fundraise for social impact, Create impact stories, Cause champion onboarding, Community giving platform, How to become a cause champion in India, How to start a social cause, Guide to becoming a cause champion, Create your impact campaign, Start your giving journey, Volunteer for social causes, Make a difference in India, Start your impact journey, Become a change maker India');
+    }
+  }, []);
 
   // Generate a daily number between 10-80 that changes each day
   const getDailyNumber = () => {
@@ -43,19 +67,15 @@ const CauseChampionOnboarding: React.FC = () => {
   const dailyChampionCount = getDailyNumber();
 
 
-  // Countries data
-  const countries = [
-    { value: 'india', label: 'India' },
-    { value: 'usa', label: 'United States' },
-    { value: 'uk', label: 'United Kingdom' },
-    { value: 'canada', label: 'Canada' },
-    { value: 'australia', label: 'Australia' },
-    { value: 'germany', label: 'Germany' },
-    { value: 'france', label: 'France' },
-    { value: 'japan', label: 'Japan' },
-    { value: 'singapore', label: 'Singapore' },
-    { value: 'uae', label: 'United Arab Emirates' }
-  ];
+  // Countries data for react-select using world-countries library
+  const countryOptions = useMemo(() => {
+    return countries
+      .map(country => ({
+        value: country.cca2.toLowerCase(),
+        label: country.name.common,
+      }))
+      .sort((a, b) => a.label.localeCompare(b.label));
+  }, []);
   // Main cause categories
   const mainCauses = [
     {
@@ -111,6 +131,13 @@ const CauseChampionOnboarding: React.FC = () => {
     }));
   };
 
+  const handleCountryChange = (selectedOption: any) => {
+    setFormData(prev => ({
+      ...prev,
+      country: selectedOption ? selectedOption.value : ''
+    }));
+  };
+
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     
@@ -123,13 +150,30 @@ const CauseChampionOnboarding: React.FC = () => {
   };
 
 
-  const handleSubmit = () => {
-    setFormData(prev => ({ ...prev, isSubmitted: true }));
-  };
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    setError(null);
 
-  const getFilteredNGOs = () => {
-    if (!formData.selectedCause) return [];
-    return ngos.filter(ngo => ngo.mainCauses.includes(formData.selectedCause));
+    try {
+      const result = await ApiClient.submitCauseChampionData({
+        fullName: formData.fullName,
+        email: formData.email,
+        phoneNumber: formData.phoneNumber || '',
+        country: formData.country,
+        city: formData.city,
+        selectedCause: formData.selectedCause,
+      });
+
+      if (result.success) {
+        setFormData(prev => ({ ...prev, isSubmitted: true }));
+      } else {
+        setError(result.message || 'Failed to submit form. Please try again.');
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const containerVariants = {
@@ -197,7 +241,7 @@ const CauseChampionOnboarding: React.FC = () => {
                   transition={{ delay: 0.3 }}
                   className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
                 >
-                  Details Submitted Successfully!
+                  Cause Champion Registration Successful!
                 </motion.h2>
                 
                 <motion.p
@@ -206,28 +250,8 @@ const CauseChampionOnboarding: React.FC = () => {
                   transition={{ delay: 0.4 }}
                   className="text-lg text-gray-600 mb-8 leading-relaxed"
                 >
-                  Thank you for becoming a Cause Champion with us. Our executive will connect with you shortly to discuss your journey and next steps.
+                  Welcome to Cause Champions India! Thank you for starting your giving circle with us. Our team will connect with you shortly to guide you through your impact journey and help you start your social cause campaign.
                 </motion.p>
-                
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="flex flex-col sm:flex-row gap-3 justify-center"
-                >
-                  <button
-                    onClick={() => window.location.href = '/'}
-                    className="px-6 py-3 bg-green-700 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold"
-                  >
-                    Return to Home
-                  </button>
-                  <button
-                    onClick={() => window.location.href = '/about-champion'}
-                    className="px-6 py-3 bg-white text-green-700 border border-green-700 rounded-lg hover:bg-green-50 transition-colors font-semibold"
-                  >
-                    Learn More About Champions
-                  </button>
-                </motion.div>
                 
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -245,12 +269,12 @@ const CauseChampionOnboarding: React.FC = () => {
               <div className="flex justify-center mb-4">
                 <img 
                   src="/Giving Circle logo.png" 
-                  alt="Giving Circle Logo" 
+                  alt="Become a Cause Champion - Start Your Giving Circle India" 
                   className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
                 />
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Join as a Cause Champion</h2>
-              <p className="text-base text-gray-600">Help us make a difference in communities that need it most</p>
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Become a Cause Champion - Start Your Giving Circle</h1>
+              <p className="text-base text-gray-600">Join Cause Champions India to support social causes, fundraise for social impact, and create your impact campaign. Start your giving journey and make a difference in India.</p>
             </div>
 
             <div className="space-y-4 sm:space-y-5">
@@ -271,6 +295,7 @@ const CauseChampionOnboarding: React.FC = () => {
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                   placeholder="Enter your full name"
+                  aria-label="Enter your full name for cause champion registration"
                 />
               </motion.div>
 
@@ -304,13 +329,14 @@ const CauseChampionOnboarding: React.FC = () => {
                   <Phone className="w-5 h-5 text-green-600" />
                   Mobile Number *
                 </label>
-                <motion.input
-                  type="tel"
-                  name="phoneNumber"
+                <PhoneInput
+                  international
+                  defaultCountry="IN"
                   value={formData.phoneNumber}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                  onChange={(value) => setFormData(prev => ({ ...prev, phoneNumber: value || '' }))}
+                  className="w-full"
                   placeholder="Enter your mobile number"
+                  withCountryCallingCode
                 />
               </motion.div>
 
@@ -326,19 +352,51 @@ const CauseChampionOnboarding: React.FC = () => {
                     <MapPin className="w-5 h-5 text-green-600" />
                     Country *
                   </label>
-                  <motion.select
-                    name="country"
-                    value={formData.country}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
-                  >
-                    <option value="">Select country</option>
-                    {countries.map((country) => (
-                      <option key={country.value} value={country.value}>
-                        {country.label}
-                      </option>
-                    ))}
-                  </motion.select>
+                  <Select
+                    options={countryOptions}
+                    value={countryOptions.find(option => option.value === formData.country)}
+                    onChange={handleCountryChange}
+                    isSearchable
+                    placeholder="Select country"
+                    className="react-select-container"
+                    classNamePrefix="react-select"
+                    styles={{
+                      control: (base) => ({
+                        ...base,
+                        borderColor: '#d1d5db',
+                        borderRadius: '0.5rem',
+                        padding: '0.25rem',
+                        minHeight: '48px',
+                        fontSize: '1rem',
+                        '&:hover': {
+                          borderColor: '#d1d5db',
+                        },
+                      }),
+                      option: (base, state) => ({
+                        ...base,
+                        backgroundColor: state.isSelected ? '#15803d' : state.isFocused ? '#dcfce7' : 'white',
+                        color: state.isSelected ? 'white' : '#374151',
+                        fontSize: '1rem',
+                        '&:hover': {
+                          backgroundColor: state.isSelected ? '#15803d' : '#dcfce7',
+                        },
+                      }),
+                      placeholder: (base) => ({
+                        ...base,
+                        color: '#9ca3af',
+                        fontSize: '1rem',
+                      }),
+                      input: (base) => ({
+                        ...base,
+                        fontSize: '1rem',
+                      }),
+                      singleValue: (base) => ({
+                        ...base,
+                        fontSize: '1rem',
+                        color: '#374151',
+                      }),
+                    }}
+                  />
                 </div>
                 <div>
                   <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
@@ -364,15 +422,16 @@ const CauseChampionOnboarding: React.FC = () => {
               >
                 <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
                   <Target className="w-5 h-5 text-green-600" />
-                  Cause You Want to Support *
+                  Start Your Social Cause - Select Cause Category *
                 </label>
                 <motion.select
                   name="selectedCause"
                   value={formData.selectedCause}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                  aria-label="Select the social cause you want to support as a cause champion"
                 >
-                  <option value="">Select a cause category</option>
+                  <option value="">Select a cause category to start your impact campaign</option>
                   {mainCauses.map((cause) => (
                     <option key={cause.id} value={cause.id}>
                       {cause.name}
@@ -407,8 +466,18 @@ const CauseChampionOnboarding: React.FC = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.7 }}
               >
-                <span className="text-green-600 font-semibold">{dailyChampionCount}</span> people became Cause Champions in the last 2 days
+                <span className="text-green-600 font-semibold">{dailyChampionCount}+</span> people joined Cause Champions India in the last 2 days to start their giving journey and make a difference.
               </motion.div>
+
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="w-full p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"
+                >
+                  {error}
+                </motion.div>
+              )}
 
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -418,11 +487,12 @@ const CauseChampionOnboarding: React.FC = () => {
               >
                 <PrimaryButton
                   onClick={handleSubmit}
-                  disabled={!formData.agreeToTerms || !formData.fullName || !formData.email || !formData.phoneNumber || !formData.country || !formData.city || !formData.selectedCause}
+                  disabled={!formData.agreeToTerms || !formData.fullName || !formData.email || !formData.phoneNumber || !formData.country || !formData.city || !formData.selectedCause || isSubmitting}
                   className="w-full"
                   size="lg"
+                  aria-label="Complete cause champion registration and start your giving circle"
                 >
-                  Become a Cause Champion
+                  {isSubmitting ? 'Submitting...' : 'Start Your Giving Circle - Become a Cause Champion'}
                 </PrimaryButton>
               </motion.div>
             </div>

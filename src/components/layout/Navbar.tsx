@@ -2,6 +2,16 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
+// NavItem type definition
+interface NavItem {
+  name: string;
+  href: string;
+  highlight?: boolean;
+  urgent?: boolean;
+  hasDropdown?: boolean;
+  dropdownItems?: Array<{ name: string; href: string }>;
+}
+
 // Custom Siren Icon Component
 const SirenIcon = ({ size = 18, className = "" }) => (
   <svg 
@@ -49,7 +59,7 @@ const NavbarComponent = () => {
     return () => clearInterval(blinkInterval);
   }, []);
 
-  const navItems = [
+  const navItems: NavItem[] = [
     { name: 'Home', href: '/' },
     { 
       name: 'Live Causes', 
@@ -65,12 +75,9 @@ const NavbarComponent = () => {
       name: 'About Us',
       href: '/the-giving-circle',
     },
-    { 
-      name: 'NGO Partners', 
-      hasDropdown: true,
-      dropdownItems: [
-        { name: 'Become a NGO Partner', href: '/ngo-partner' },
-      ]
+    {
+      name: 'Become a NGO Partner',
+      href: '/ngo-partner',
     },
   ];
 
@@ -193,7 +200,7 @@ const NavbarComponent = () => {
                           transition={{ duration: 0.2 }}
                           className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-48 z-50"
                         >
-                          {item.dropdownItems.map((dropdownItem, dropIdx) => (
+                          {item.dropdownItems?.map((dropdownItem, dropIdx) => (
                             <motion.a
                               key={dropdownItem.name}
                               href={dropdownItem.href}
@@ -296,7 +303,7 @@ const NavbarComponent = () => {
                         transition={{ duration: 0.2 }}
                         className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-xl border border-gray-200 py-2 min-w-40 z-50"
                       >
-                        {item.dropdownItems.map((dropdownItem, dropIdx) => (
+                        {item.dropdownItems?.map((dropdownItem, dropIdx) => (
                           <motion.a
                             key={dropdownItem.name}
                             href={dropdownItem.href}
@@ -438,7 +445,7 @@ const NavbarComponent = () => {
                     {/* Mobile dropdown menu items */}
                     {dropdownStates[item.name] && (
                       <div className="pl-4 space-y-1">
-                        {item.dropdownItems.map((dropdownItem, dropIdx) => (
+                        {item.dropdownItems?.map((dropdownItem, dropIdx) => (
                           <motion.a
                             key={dropdownItem.name}
                             href={dropdownItem.href}

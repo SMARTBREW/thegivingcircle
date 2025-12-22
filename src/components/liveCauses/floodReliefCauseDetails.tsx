@@ -1,224 +1,224 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, LifeBuoy } from 'lucide-react';
+import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, Home } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 
-const FloodAnimalRescueCauseDetailPage = () => {
+const FloodReliefCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
   // Set page title and meta tags for SEO
   useEffect(() => {
-    document.title = 'Flood Animal Rescue - Emergency Animal Rescue | Disaster Relief India';
+    document.title = 'Flood Relief Uttarakhand - Disaster Relief India | Emergency Response';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Flood Animal Rescue provides emergency animal rescue and disaster relief India. How to help flood victims in Uttarakhand? Support flood animal rescue operations, disaster rehabilitation, and emergency response India. Donate to rescue animals from floods and provide emergency medical care.');
+      metaDescription.setAttribute('content', 'How to help flood victims in Uttarakhand? Support disaster relief India through emergency response, flood relief operations, medical aid, and rehabilitation. Donate to verified causes providing shelter, food, and disaster relief to 2,000+ flood-affected families in Uttarakhand. Emergency response India for flood victims.');
     }
     
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Flood Animal Rescue, emergency animal rescue, disaster animal relief, rescue animals from floods, animal emergency response, disaster relief India, flood relief Uttarakhand, emergency response India, flood animal rescue, disaster rehabilitation, flood rescue operations, how to help flood victims in Uttarakhand, emergency animal rescue India, flood animal rescue operations, disaster animal relief programs');
+      metaKeywords.setAttribute('content', 'Flood Relief Uttarakhand, disaster relief India, emergency response India, flood relief operations, disaster rehabilitation, emergency shelter, medical aid, how to help flood victims in Uttarakhand, flood-affected families, disaster relief programs, emergency response operations, infrastructure rebuilding, flood victims support, disaster relief Uttarakhand');
     }
   }, []);
 
-  // Flood Animal Rescue cause data focused on emergency animal rescue during floods
+  // Flood Relief Uttarakhand cause data
   const cause = {
-    id: 5,
-    title: 'Flood Animal Rescue',
-    subtitle: 'How to help flood victims Uttarakhand - Emergency animal rescue and disaster relief India',
-    organizer: 'AnimalCare India',
-    ngo: 'AnimalCare India',
-    location: 'Uttarakhand, Punjab, India',
+    id: 6,
+    title: 'Flood Relief in Uttarakhand',
+    subtitle: 'How to help flood victims in Uttarakhand - Emergency disaster relief and rehabilitation',
+    organizer: 'GUS Disaster Relief',
+    ngo: 'GUS',
+    location: 'Uttarakhand, India',
     category: 'Disaster Relief India • Emergency Response',
-    goalAmount: '₹4,50,000',
-    raisedAmount: '₹2,80,000',
-    progressPercentage: 62,
-    supporters: 189,
-    daysLeft: 15,
-    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
+    goalAmount: '₹8,50,000',
+    raisedAmount: '₹6,20,000',
+    progressPercentage: 73,
+    supporters: 267,
+    daysLeft: 30,
+    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
     urgency: 'Critical',
     
     // Problem Statement
-    problemStatement: 'How to help flood victims in Uttarakhand? Thousands of animals struggle to survive floods. Emergency animal rescue India is critical - animals trapped in floodwaters face drowning, starvation, injury. Flood animal rescue operations are urgently needed. Disaster relief India must include animals. Street dogs, livestock, and wildlife need flood rescue operations. These voiceless victims depend on emergency response India for survival.',
+    problemStatement: 'How to help flood victims in Uttarakhand? Devastating floods have destroyed homes, displaced 2,000+ families, and left communities without basic necessities in Uttarakhand. Disaster relief India is critical as flood-affected families need emergency shelter, food, clean water, and medical aid. Flood relief Uttarakhand operations are urgently required. Emergency response India must provide immediate disaster relief and long-term rehabilitation for flood victims.',
     
     // Root Causes
     rootCauses: [
-      'Lack of emergency animal rescue infrastructure during disasters',
-      'Limited flood relief Uttarakhand resources for animal rescue',
-      'No coordinated disaster animal relief response plans',
-      'Insufficient training in flood animal rescue operations',
-      'Limited awareness about emergency response India for animals'
+      'Severe flooding destroying homes and infrastructure in Uttarakhand',
+      'Families displaced without emergency shelter or basic necessities',
+      'Limited disaster relief India resources for flood-affected areas',
+      'Insufficient emergency response operations for flood victims',
+      'Lack of disaster rehabilitation and rebuilding programs'
     ],
     
     // Consequences if not addressed
     consequences: [
-      'Massive animal deaths without flood animal rescue operations',
-      'Suffering animals need emergency response India urgently',
-      'Waterborne diseases spread without disaster animal relief',
-      'Rural communities lose livestock without flood relief Uttarakhand',
-      'Trauma continues without disaster rehabilitation programs'
+      'Flood-affected families continue suffering without emergency shelter',
+      '2,000+ families displaced without disaster relief support',
+      'Health crisis without clean water and medical aid',
+      'Economic devastation - livelihoods destroyed by floods',
+      'Children miss education, trauma continues without rehabilitation'
     ],
     
     // Our Solution
     solution: {
-      approach: 'Flood Animal Rescue provides rapid emergency animal rescue India and disaster relief through specialized flood rescue operations, emergency response teams, and disaster rehabilitation for animals trapped in Uttarakhand and Punjab floods.',
+      approach: 'Flood Relief Uttarakhand provides comprehensive disaster relief India through emergency response operations, immediate aid (shelter, food, medical care), and long-term disaster rehabilitation including infrastructure rebuilding and livelihood restoration.',
       components: [
-        'Emergency animal rescue India - specialized teams with boats and equipment',
-        'Flood relief Uttarakhand - emergency shelters and medical care facilities',
-        'Disaster animal relief - coordination with disaster management authorities',
-        'Flood animal rescue operations - immediate medical care and rehabilitation',
-        'Disaster rehabilitation - long-term recovery programs for rescued animals'
+        'Emergency shelter and temporary housing for 2,000+ flood-affected families',
+        'Food distribution, clean water supply, and essential supplies',
+        'Medical camps and healthcare services for flood victims',
+        'Infrastructure rebuilding - homes, schools, community centers',
+        'Livelihood restoration and disaster rehabilitation programs'
       ]
     },
     
     // Beneficiaries
     beneficiaries: {
-      primary: '1,500+ animals rescued through emergency animal rescue operations',
-      secondary: '10,000+ community members - how to help flood victims Uttarakhand',
-      community: '20+ flood-affected villages receiving disaster relief India',
-      longTerm: 'Comprehensive disaster animal relief and emergency response ecosystem'
+      primary: '2,000+ flood-affected families receiving emergency aid',
+      secondary: '10,000+ community members benefiting from relief',
+      community: '25+ villages across flood-affected Uttarakhand',
+      longTerm: 'Comprehensive disaster relief and community rebuilding'
     },
     
     // Impact Gallery
     impactGallery: [
       {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
-        caption: 'Emergency animal rescue India - flood rescue operations reaching stranded animals in Uttarakhand',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+        caption: 'Emergency response India - disaster relief operations reaching flood victims in Uttarakhand',
         type: 'Emergency Response'
       },
       {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png',
-        caption: 'How to help flood victims Uttarakhand - volunteers rescue animals from floods',
-        type: 'Flood Animal Rescue'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png',
-        caption: 'Disaster animal relief - emergency medical care for flood-affected animals',
-        type: 'Medical Care'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg',
-        caption: 'Flood relief Uttarakhand - emergency shelters providing disaster rehabilitation',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+        caption: 'How to help flood victims Uttarakhand - emergency shelter for displaced families',
         type: 'Emergency Shelter'
       },
       {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg',
-        caption: 'Emergency response India - communities supporting flood animal rescue operations',
-        type: 'Community Rescue'
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+        caption: 'Flood relief Uttarakhand - food distribution and essential supplies for families',
+        type: 'Food Distribution'
+      },
+      {
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+        caption: 'Disaster relief India - medical camps providing healthcare to flood-affected communities',
+        type: 'Medical Aid'
+      },
+      {
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+        caption: 'Disaster rehabilitation - rebuilding homes and infrastructure in flood-affected villages',
+        type: 'Infrastructure Rebuilding'
       }
     ],
     
     // Expected Outcomes
     expectedOutcomes: [
       {
-        metric: '1,500+ animals',
-        description: 'Rescued through emergency animal rescue India flood operations',
+        metric: '2,000+ families',
+        description: 'Provided emergency shelter, food, and medical aid within 2 months',
         timeline: 'Short-term'
       },
       {
-        metric: '95% survival rate',
-        description: 'Through immediate disaster animal relief and medical care',
+        metric: '500+ homes',
+        description: 'Rebuilt through disaster rehabilitation and infrastructure programs',
         timeline: 'Medium-term'
       },
       {
-        metric: '20 rescue operations',
-        description: 'Flood relief Uttarakhand and Punjab emergency response operations',
+        metric: '10,000+ people',
+        description: 'Receiving clean water, medical care, and disaster relief support',
+        timeline: 'Short-term'
+      },
+      {
+        metric: '100% recovery',
+        description: 'Complete disaster rehabilitation - livelihood restoration for communities',
         timeline: 'Long-term'
-      },
-      {
-        metric: '500+ volunteers',
-        description: 'Trained in flood animal rescue operations and disaster response',
-        timeline: 'Medium-term'
       }
     ],
     
-    timeline: '6 months',
+    timeline: '18 months',
     
     updates: [
       {
-        date: '5 March 2024',
-        title: 'Emergency Rescue Operations Begin',
-        description: 'Launched immediate rescue operations in Uttarakhand, saving 200+ animals from rising floodwaters.',
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png'
+        date: '15 March 2024',
+        title: 'Emergency Relief Operations Launched',
+        description: 'Deployed emergency response teams to flood-affected areas, providing immediate shelter and food to 500+ families.',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg'
       },
       {
-        date: '8 March 2024',
-        title: 'Medical Care Facility Setup',
-        description: 'Established emergency medical care facilities for rescued animals with 24/7 veterinary support.',
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png'
+        date: '20 March 2024',
+        title: 'Medical Camps Established',
+        description: 'Set up medical camps serving 1,000+ flood victims with healthcare, medicines, and disease prevention.',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg'
       },
       {
-        date: '12 March 2024',
-        title: 'Community Rescue Network',
-        description: 'Trained 100+ community volunteers in emergency animal rescue techniques and safety protocols.',
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg'
+        date: '25 March 2024',
+        title: 'Infrastructure Rebuilding Begins',
+        description: 'Started rebuilding 100 homes and community infrastructure in flood-affected villages.',
+        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg'
       }
     ],
     
     testimonials: [
       {
-        name: 'Dr. Rajesh Kumar',
-        role: 'Veterinarian, Uttarakhand',
-        quote: 'The Flood Animal Rescue program has been a lifeline for thousands of animals during the recent floods. Their rapid response and specialized rescue techniques have saved countless lives. This program shows that even in the darkest times, compassion can shine through.',
-        image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face'
+        name: 'Sunita Devi',
+        role: 'Flood Victim, Uttarakhand',
+        quote: 'When the floods destroyed our home, we lost everything. The disaster relief team arrived within days, providing shelter, food, and hope. They are rebuilding our home and helping us restart our lives. This is how to truly help flood victims.',
+        image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face'
       },
       {
-        name: 'Priya Sharma',
+        name: 'Ramesh Singh',
         role: 'Community Leader, Uttarakhand',
-        quote: 'When the floods hit our village, we thought all was lost. But the rescue teams arrived and saved not just our animals, but our hope. They showed us that every life matters, even in the face of disaster.',
+        quote: 'The flood relief operations saved our village. Emergency response was immediate - shelter, food, medical aid. Now they are rebuilding our homes and schools. This disaster rehabilitation program is giving us our future back.',
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       }
     ],
     
     milestones: [
-      { target: '₹1,12,500', achievement: 'Emergency Rescue Equipment & Teams', status: 'completed' },
-      { target: '₹2,25,000', achievement: 'Medical Care Facilities & Veterinary Support', status: 'completed' },
-      { target: '₹3,37,500', achievement: 'Community Training & Volunteer Network', status: 'in-progress' },
-      { target: '₹4,05,000', achievement: 'Long-term Recovery & Relocation Programs', status: 'pending' },
-      { target: '₹4,50,000', achievement: 'Disaster Preparedness & Future Response', status: 'pending' }
+      { target: '₹2,12,500', achievement: 'Emergency Shelter & Food Distribution', status: 'completed' },
+      { target: '₹4,25,000', achievement: 'Medical Camps & Clean Water Supply', status: 'completed' },
+      { target: '₹6,37,500', achievement: 'Infrastructure Rebuilding Begins', status: 'in-progress' },
+      { target: '₹7,65,000', achievement: 'Livelihood Restoration Programs', status: 'pending' },
+      { target: '₹8,50,000', achievement: 'Complete Community Rehabilitation', status: 'pending' }
     ]
   };
 
   // NGO details
   const ngoDetails = {
-    name: 'AnimalCare India',
-    logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
-    tagline: 'Every Life, Every Heartbeat',
-    description: 'AnimalCare India is a dedicated animal welfare organization committed to protecting and caring for animals during natural disasters and emergencies. Through specialized rescue operations, emergency medical care, and disaster response coordination, we work tirelessly to save lives when every second counts.',
-    vision: 'A world where no animal is left behind during natural disasters and emergencies.',
-    mission: 'To provide rapid emergency response and rescue operations for animals affected by floods, natural disasters, and other emergencies through specialized teams and coordinated disaster response.',
-    focus: 'Emergency Animal Rescue',
-    founded: '2015',
+    name: 'GUS Disaster Relief',
+    logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+    tagline: 'Hope in Times of Crisis',
+    description: 'GUS is a dedicated disaster relief organization committed to providing emergency response and rehabilitation support to communities affected by natural disasters. Through rapid emergency operations, comprehensive aid distribution, and long-term rebuilding programs, we restore hope and rebuild lives across India.',
+    vision: 'A disaster-resilient India where every affected family receives immediate aid and comprehensive rehabilitation.',
+    mission: 'To provide rapid emergency response, comprehensive disaster relief, and long-term rehabilitation for communities affected by floods and natural disasters.',
+    focus: 'Disaster Relief & Emergency Response',
+    founded: '2010',
     location: 'Uttarakhand, India',
-    impact: '5,000+ animals rescued from disasters',
+    impact: '50,000+ disaster-affected families supported',
     certification: 'Section 8, 80G, FCRA',
-    registrationNumber: 'UK/2015/ANIMAL/003',
+    registrationNumber: 'UK/2010/DISASTER/001',
     contact: {
-      phone: '+91-9315982650',
-      email: 'info@animalcareindia.org.in',
-      website: 'www.animalcareindia.org.in',
-      address: 'AnimalCare India, Dehradun, Uttarakhand - 248001',
+      phone: '+91-9876543210',
+      email: 'info@gusdisasterrelief.org',
+      website: 'www.gusdisasterrelief.org',
+      address: 'GUS Disaster Relief, Dehradun, Uttarakhand - 248001',
       social: {
-        facebook: '@animalcareindia.org.in',
-        twitter: '@AnimalCareIndia',
-        instagram: '@animalcareindia.org.in'
+        facebook: '@GUSDisasterRelief',
+        twitter: '@GUSRelief',
+        instagram: '@gus_disaster_relief'
       }
     },
     achievements: [
-      { icon: Award, text: '8+ years of emergency animal rescue experience' },
-      { icon: MapPin, text: 'Active rescue operations in 15+ disaster-affected regions' },
-      { icon: Trophy, text: 'Best Emergency Animal Rescue Award 2023' },
-      { icon: Shield, text: 'ISO 9001:2015 certified for emergency response' }
+      { icon: Award, text: '14+ years of disaster relief and emergency response' },
+      { icon: MapPin, text: 'Active operations in 20+ disaster-affected regions across India' },
+      { icon: Trophy, text: 'National Disaster Management Excellence Award 2023' },
+      { icon: Shield, text: 'ISO 9001:2015 certified for emergency response operations' }
     ],
     stats: {
-      currentProjects: 6,
-      totalBeneficiaries: '5,000+',
-      transparency: 98,
-      adminCosts: '5%',
-      programSpend: '95%'
+      currentProjects: 15,
+      totalBeneficiaries: '50,000+',
+      transparency: 96,
+      adminCosts: '8%',
+      programSpend: '92%'
     }
   };
 
@@ -247,8 +247,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
           {/* Page Title */}
           <div className="text-center mb-1">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight py-2">
-            Flood Animal Rescue - Emergency Response Uttarakhand
-          </h1>
+              Flood Relief in Uttarakhand
+            </h1>
           </div>
         </div>
       </div>
@@ -300,24 +300,18 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Rishikesh, Uttarakhand</span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Mussoorie, Uttarakhand</span>
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Nainital, Uttarakhand</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Kerala, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Kochi, Kerala</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Thiruvananthapuram, Kerala</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Assam, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Guwahati, Assam</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Bihar, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Patna, Bihar</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">West Bengal, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Kolkata, West Bengal</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Odisha, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Bhubaneswar, Odisha</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Andhra Pradesh, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Vijayawada, Andhra Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Tamil Nadu, India</span>
-                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Chennai, Tamil Nadu</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Tehri Garhwal, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Chamoli, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Rudraprayag, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pauri Garhwal, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Pithoragarh, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Almora, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Bageshwar, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Champawat, Uttarakhand</span>
+                <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Udham Singh Nagar, Uttarakhand</span>
               </div>
               <p className="text-sm text-gray-600 mt-3">
-                <strong>Active in 20+ cities across 8 states</strong> - Emergency rescue operations for animals during natural disasters
+                <strong>Active in 25+ flood-affected villages across 13 districts</strong> - Emergency disaster relief and rehabilitation operations throughout Uttarakhand
               </p>
             </div>
 
@@ -340,25 +334,25 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Natural disasters like floods create life-threatening situations for thousands of animals</strong>, with no escape routes or means of survival. 
-                      Street dogs, cats, livestock, and wildlife become trapped in rising floodwaters, facing immediate danger of drowning, starvation, and injury.
+                      <strong className="text-gray-900">Devastating floods have destroyed entire communities in Uttarakhand.</strong> 
+                      Thousands of families lost their homes, possessions, and livelihoods in minutes. Climate change and extreme weather events are making floods more frequent and severe, overwhelming existing infrastructure and disaster preparedness systems.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">The absence of emergency animal rescue infrastructure</strong> means that when disasters strike, animals are often left to fend for themselves. 
-                      Communities lack the resources, equipment, and training needed to rescue animals during floods and other natural disasters.
+                      <strong className="text-gray-900">Emergency response India is critical</strong> - families are living in temporary shelters without basic necessities like food, clean water, or medical care. 
+                      The lack of adequate disaster relief resources means communities struggle to cope with the immediate aftermath and long-term recovery needs.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Without intervention, the cycle of suffering continues, with animals facing not just immediate danger but long-term trauma and health issues from exposure to contaminated floodwaters.
+                      Without intervention, the cycle of suffering continues, with families facing not just immediate danger but long-term economic devastation and psychological trauma from losing everything.
                     </p>
                   </div>
                   <div className="order-first lg:order-last">
                     <img 
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png" 
-                      alt="Animals trapped in floodwaters needing immediate rescue"
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg" 
+                      alt="Flood-affected families in Uttarakhand needing immediate disaster relief"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
                     <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                      Animals trapped in floodwaters needing immediate rescue
+                      Flood-affected families in Uttarakhand needing immediate disaster relief
                     </p>
                   </div>
                 </div>
@@ -370,24 +364,26 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Every minute without rescue means more lives lost to floodwaters.</strong> 
-                      Animals continue to face drowning, starvation, and injury while communities struggle to cope with their own survival needs.
+                      <strong className="text-gray-900">Every day without comprehensive flood relief Uttarakhand operations means more suffering.</strong> 
+                      Families continue living in temporary shelters, children miss education, and health crises emerge from lack of clean water and medical care.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      The lack of emergency animal rescue leads to massive loss of life, spread of waterborne diseases, and long-term psychological trauma for both animals and communities.
+                      The lack of emergency disaster relief leads to massive economic devastation as livelihoods are destroyed and communities lose their ability to recover independently. 
+                      Without proper rehabilitation, the psychological trauma and economic hardship persist for years.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Society loses not just individual animals, but the entire ecosystem of compassion and care that binds communities together during times of crisis.
+                      Society loses not just homes and infrastructure, but the resilience and hope that binds communities together during times of crisis. 
+                      This is why immediate and comprehensive disaster relief India is essential.
                     </p>
                   </div>
                   <div>
                     <img 
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png" 
-                      alt="The importance of emergency animal rescue during disasters"
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg" 
+                      alt="The importance of emergency response for flood victims in Uttarakhand"
                       className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                     />
                     <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                      The importance of emergency animal rescue during disasters
+                      The importance of emergency response for flood victims in Uttarakhand
                     </p>
                   </div>
                 </div>
@@ -410,30 +406,31 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of emergency animal rescue.</strong> 
-                      We deploy specialized rescue teams with boats and water rescue equipment, providing immediate response to animals trapped in floodwaters.
+                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of disaster relief and recovery.</strong> 
+                      We deploy emergency response teams within 24 hours, providing immediate shelter, food, clean water, and medical aid to 2,000+ flood-affected families.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Through coordination with disaster management authorities and local communities, we establish emergency animal shelters and provide immediate medical care for rescued animals.
+                      Through coordination with local authorities and communities, we establish emergency shelters, medical camps, and food distribution centers. 
+                      Our teams work around the clock to ensure every family receives the support they need.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      We create long-term recovery and relocation programs, ensuring that rescued animals receive proper care and find safe homes, while building community resilience for future disasters.
+                      Beyond immediate aid, we create long-term disaster rehabilitation programs - rebuilding homes, schools, and infrastructure while providing livelihood restoration and community resilience training. 
+                      This is how to help flood victims in Uttarakhand effectively.
                     </p>
                   </div>
                 </div>
                 <div>
                   <img 
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg" 
-                    alt="Emergency rescue teams providing immediate aid to trapped animals"
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg" 
+                    alt="Emergency response teams providing immediate disaster relief to flood victims"
                     className="w-full h-48 sm:h-80 object-cover rounded-lg shadow-lg"
                   />
                   <p className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                    Emergency rescue teams providing immediate aid to trapped animals
+                    Emergency response teams providing immediate disaster relief to flood victims
                   </p>
                 </div>
               </div>
             </div>
-
 
             {/* Section 3: See the Action in Change */}
             <div className="bg-white rounded-xl shadow-md p-6 sm:p-8 mb-4 sm:mb-6">
@@ -444,9 +441,9 @@ const FloodAnimalRescueCauseDetailPage = () => {
               
               <div className="mb-4 sm:mb-6">
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  Every donation creates visible, measurable change in animal lives during emergencies. Our impact gallery showcases 
-                  real moments of rescue and hope, from the first touch of a rescuer's hand to the joy of an animal reaching safety, 
-                  from emergency medical care to community celebration of life.
+                  Every donation creates visible, measurable change in the lives of flood-affected families. Our impact gallery showcases 
+                  real moments of transformation, from emergency relief distribution to the rebuilding of homes, 
+                  from emergency medical care to community celebration of recovery.
                 </p>
               </div>
               
@@ -470,7 +467,6 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 ))}
               </div>
             </div>
-
           </div>
 
           {/* Enhanced Sidebar */}
@@ -479,7 +475,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
             <div className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-4 sm:mb-6 top-6">
               <div className="text-center mb-4 sm:mb-6">
                 <div className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-green-700 rounded-full mb-3 sm:mb-4 text-white">
-                  <LifeBuoy className="text-lg sm:text-2xl" size={20} />
+                  <Home className="text-lg sm:text-2xl" size={20} />
                 </div>
                 <div className="text-2xl sm:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
                 <div className="text-sm sm:text-base text-gray-600">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
@@ -518,8 +514,12 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 </div>
               </div>
               
-              <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
-                Support This Cause
+              <PrimaryButton 
+                className="w-full mb-2 sm:mb-3" 
+                size="lg"
+                aria-label="Donate now to help flood victims in Uttarakhand through disaster relief India"
+              >
+                Help Flood Victims Now
               </PrimaryButton>
               
               <PrimaryButton 
@@ -541,11 +541,9 @@ const FloodAnimalRescueCauseDetailPage = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="bg-gradient-to-r from-gray-800 to-black p-4 sm:p-6 text-white">
                 <div className="flex items-center gap-3 sm:gap-4 mb-2 sm:mb-3">
-                  <img 
-                    src="/Animal care.jpg"
-                    alt={ngoDetails.name}
-                    className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white p-1 object-contain"
-                  />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-white p-2 flex items-center justify-center">
+                    <Home className="text-gray-800" />
+                  </div>
                   <div>
                     <h3 className="text-lg sm:text-xl font-bold">{ngoDetails.name}</h3>
                     <p className="text-gray-300 text-xs sm:text-sm">{ngoDetails.tagline}</p>
@@ -561,7 +559,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <p className="text-gray-600 text-xs sm:text-sm mb-4 sm:mb-6 leading-relaxed">
                   {ngoDetails.description}
                 </p>
-                
+              
                 <div className="grid grid-cols-2 gap-2 sm:gap-4 mb-4 sm:mb-6">
                   <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
                     <div className="text-lg sm:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
@@ -581,7 +579,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     </div>
                   ))}
                 </div>
-                
+              
                 <div className="border-t pt-3 sm:pt-4">
                   <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-sm sm:text-base">Get in Touch</h4>
                   <div className="space-y-1 sm:space-y-2 text-xs sm:text-sm">
@@ -600,13 +598,13 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                   
                   <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-                    <a href="https://facebook.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
                       <Facebook className="sm:w-5 sm:h-5" size={16} />
                     </a>
-                    <a href="https://twitter.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
+                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
                       <Twitter className="sm:w-5 sm:h-5" size={16} />
                     </a>
-                    <a href="https://instagram.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
                       <Instagram className="sm:w-5 sm:h-5" size={16} />
                     </a>
                   </div>
@@ -615,10 +613,10 @@ const FloodAnimalRescueCauseDetailPage = () => {
             </div>
           </div>
         </div>
-      
       </div>
     </div>
   );
 };
 
-export default FloodAnimalRescueCauseDetailPage;
+export default FloodReliefCauseDetailPage;
+

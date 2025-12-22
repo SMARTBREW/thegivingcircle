@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.thegivingcircle.in/</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- About The Giving Circle -->
+  <url>
+    <loc>https://www.thegivingcircle.in/the-giving-circle</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Live Causes - Browse Causes -->
+  <url>
+    <loc>https://www.thegivingcircle.in/live-causes</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Impact Stories -->
+  <url>
+    <loc>https://www.thegivingcircle.in/impact-stories</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cause Champion Onboarding -->
+  <url>
+    <loc>https://www.thegivingcircle.in/onboarding</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- NGO Partner -->
+  <url>
+    <loc>https://www.thegivingcircle.in/ngo-partner</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Cause Champions -->
+  <url>
+    <loc>https://www.thegivingcircle.in/about-champion</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Young Champions -->
+  <url>
+    <loc>https://www.thegivingcircle.in/young-champions</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- NGO List -->
+  <url>
+    <loc>https://www.thegivingcircle.in/ngo-list</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Individual Cause Detail Pages -->
+  
+  <!-- Wings of Hope - Menstrual Health Education -->
+  <url>
+    <loc>https://www.thegivingcircle.in/khushi-cause-details</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pawsitive Protectors - Animal Vaccination -->
+  <url>
+    <loc>https://www.thegivingcircle.in/pawsitive-protectors-cause-details</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Bowls of Hope - Animal Feeding -->
+  <url>
+    <loc>https://www.thegivingcircle.in/bowls-of-hope-cause-details</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Flood Animal Rescue -->
+  <url>
+    <loc>https://www.thegivingcircle.in/flood-animal-rescue-cause-details</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Flood Relief Uttarakhand -->
+  <url>
+    <loc>https://www.thegivingcircle.in/flood-relief-cause-details</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- NGO Detail Pages -->
+  <url>
+    <loc>https://www.thegivingcircle.in/ngo-detail</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Khushii NGO Detail -->
+  <url>
+    <loc>https://www.thegivingcircle.in/khushii-ngo-detail</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Animal Care NGO Detail -->
+  <url>
+    <loc>https://www.thegivingcircle.in/animal-care-ngo-detail</loc>
+    <lastmod>2024-12-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
+

@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 
@@ -6,15 +7,32 @@ const KhushiCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // KHUSHII cause data focused on education and child development
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    document.title = 'Wings of Hope - Menstrual Health Education | Support Girls Education India';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Wings of Hope tackles period poverty India through menstrual health education and women empowerment programs. Support girls education by breaking menstrual taboos and providing reusable sanitary products. Help girls stay in school through menstrual hygiene awareness India.');
+    }
+    
+    // Update keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'Wings of Hope, menstrual health education, period poverty, period poverty solutions India, girls education support, women health programs, women empowerment India, menstrual hygiene education, breaking menstrual taboos, reusable sanitary products, school attendance for girls, education for underprivileged, menstrual health programs for girls India, how to support girls education India, women health education programs, breaking period stigma India, menstrual hygiene awareness India, women empowerment through education');
+    }
+  }, []);
+
+  // KHUSHII cause data focused on Wings of Hope - menstrual health education
   const cause = {
     id: 2,
-    title: 'Education for Every Child',
-    subtitle: 'Ensuring quality education and holistic development for underprivileged children',
+    title: 'Wings of Hope',
+    subtitle: 'Breaking period poverty through menstrual health education and women empowerment India',
     organizer: 'KHUSHII',
     ngo: 'KHUSHII',
     location: 'Delhi & NCR, India',
-    category: 'Education',
+    category: 'Women Empowerment • Girls Education',
     goalAmount: '₹5,00,000',
     raisedAmount: '₹3,20,000',
     progressPercentage: 64,
@@ -25,100 +43,100 @@ const KhushiCauseDetailPage = () => {
     urgency: 'High',
     
     // Problem Statement
-    problemStatement: 'In urban and rural areas across Delhi NCR, thousands of children from underprivileged backgrounds lack access to quality education, proper nutrition, and holistic development opportunities. Many children are forced to work instead of attending school, while others attend schools with inadequate infrastructure and resources.',
+    problemStatement: 'Period poverty India forces thousands of girls to miss school every month when they start menstruating. Lack of menstrual health education, social stigma around menstruation, and no access to affordable sanitary products create a massive barrier to girls education support. Many girls drop out of school permanently due to period-related shame and inadequate hygiene facilities.',
     
     // Root Causes
     rootCauses: [
-      'Poverty forcing children into child labor instead of education',
-      'Lack of quality schools in underserved communities',
-      'Insufficient educational materials and infrastructure',
-      'Limited access to nutrition and healthcare affecting learning',
-      'Social barriers and discrimination preventing educational access'
+      'Period poverty preventing access to sanitary products',
+      'Breaking menstrual taboos - deep-rooted social stigma',
+      'Lack of menstrual hygiene education in schools',
+      'Inadequate sanitation facilities for girls in schools',
+      'Cultural barriers preventing open discussion about menstruation'
     ],
     
     // Consequences if not addressed
     consequences: [
-      'Perpetuation of intergenerational poverty cycles',
-      'Increased child labor and exploitation',
-      'Limited career opportunities and economic mobility',
-      'Reduced community development and social progress',
-      'Loss of human potential and talent in society'
+      'Girls missing 5+ days of school monthly - leading to dropouts',
+      'Perpetuation of period stigma and women\'s health issues',
+      'Lost educational opportunities affecting future careers',
+      'Continued cycle of period poverty across generations',
+      'Mental health impact from shame and isolation during menstruation'
     ],
     
     // Our Solution
     solution: {
-      approach: 'Comprehensive child development through education, nutrition, healthcare, and community engagement programs.',
+      approach: 'Wings of Hope provides comprehensive menstrual health education, period poverty solutions India, and women empowerment through education programs.',
       components: [
-        'Establish quality learning centers with proper infrastructure',
-        'Provide nutritious meals and healthcare support',
-        'Train teachers and implement innovative teaching methods',
-        'Engage parents and communities in education advocacy',
-        'Create safe and child-friendly learning environments'
+        'Menstrual hygiene education and awareness programs in schools',
+        'Distribution of reusable sanitary products to underprivileged girls',
+        'Breaking menstrual taboos through community engagement',
+        'Training women health ambassadors for peer support',
+        'Creating safe, dignified sanitation facilities for girls'
       ]
     },
     
     // Beneficiaries
     beneficiaries: {
-      primary: '500 children aged 3-18',
-      secondary: '1,500+ family members',
-      community: '8 urban and rural communities',
-      longTerm: 'Entire neighborhood transformation'
+      primary: '2,000+ adolescent girls and women',
+      secondary: '8,000+ family members benefiting',
+      community: '50+ schools across Delhi NCR',
+      longTerm: 'Breaking period stigma for entire communities'
     },
     
     // Impact Gallery
     impactGallery: [
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
-        caption: 'Children actively engaged in classroom learning with proper educational resources and materials',
-        type: 'Active Learning'
+        caption: 'Girls receiving menstrual health education and learning about period hygiene in school workshops',
+        type: 'Health Education'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp',
-        caption: 'Students participating in interactive learning activities and group discussions',
-        type: 'Interactive Education'
+        caption: 'Distribution of reusable sanitary products helping girls stay in school during menstruation',
+        type: 'Period Poverty Solution'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188362/images/khushi/cld-1758188325188-38.jpg-2200.webp',
-        caption: 'Community celebration of educational achievements and student progress',
-        type: 'Community Impact'
+        caption: 'Community sessions breaking menstrual taboos and promoting women health awareness',
+        type: 'Breaking Stigma'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188360/images/khushi/cld-1758188322776-24.jpg-2200.webp',
-        caption: 'Children receiving nutritious meals as part of our comprehensive development program',
-        type: 'Nutrition Support'
+        caption: 'Women health ambassadors trained to support girls with menstrual hygiene guidance',
+        type: 'Peer Support'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183070/images/khushi/20.jpg',
-        caption: 'Students showcasing their learning achievements and creative projects',
-        type: 'Student Success'
+        caption: 'Girls confidently attending school without fear of period-related shame or stigma',
+        type: 'Educational Impact'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188367/images/khushi/cld-1758188329829-7.jpg-2200.webp',
-        caption: 'Teachers and students working together in well-equipped learning environments',
-        type: 'Quality Education'
+        caption: 'Support girls education through menstrual hygiene awareness and empowerment programs',
+        type: 'Girls Empowerment'
       }
     ],
     
     // Expected Outcomes
     expectedOutcomes: [
       {
-        metric: '500 children',
-        description: 'Enrolled in quality education programs within 8 months',
+        metric: '2,000+ girls',
+        description: 'Receive menstrual health education and reusable sanitary products',
         timeline: 'Short-term'
       },
       {
-        metric: '85% improvement',
-        description: 'In literacy and numeracy skills among beneficiaries',
+        metric: '95% attendance',
+        description: 'School attendance for girls during menstruation periods',
         timeline: 'Medium-term'
       },
       {
-        metric: '90% retention',
-        description: 'Rate in formal schooling after program completion',
+        metric: '80% reduction',
+        description: 'In school dropout rates due to period-related issues',
         timeline: 'Long-term'
       },
       {
-        metric: '50% increase',
-        description: 'In family income through parent skill development',
+        metric: '50+ schools',
+        description: 'Implementing comprehensive menstrual hygiene awareness programs',
         timeline: 'Medium-term'
       }
     ],
@@ -236,7 +254,7 @@ const KhushiCauseDetailPage = () => {
           {/* Page Title */}
           <div className="text-center mb-1">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight py-2">
-            Pads For Freedom
+            Wings of Hope - Menstrual Health Education
           </h1>
           </div>
         </div>
@@ -305,7 +323,7 @@ const KhushiCauseDetailPage = () => {
                 <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Indore, Madhya Pradesh</span>
               </div>
               <p className="text-sm text-gray-600 mt-3">
-                <strong>Active in 20+ cities across 12 states</strong> - Quality education and holistic development for underprivileged children
+                <strong>Active in 20+ cities across 12 states</strong> - Menstrual health education programs and period poverty solutions for girls across India
               </p>
             </div>
 
@@ -328,16 +346,16 @@ const KhushiCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Poverty remains the primary barrier to education for millions of children in India. 
-                      <strong className="text-gray-900"> Families struggling to meet basic needs are forced to send children to work instead of school</strong>, 
-                      perpetuating cycles of illiteracy and economic disadvantage.
+                      Period poverty India affects millions of girls who lack access to affordable sanitary products. 
+                      <strong className="text-gray-900"> When menstruation begins, girls miss 5+ days of school each month</strong>, 
+                      falling behind in their studies and eventually dropping out due to shame and inadequate hygiene facilities.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Even when schools exist, they often lack proper infrastructure, trained teachers, and learning materials. 
-                      <strong className="text-gray-900"> Children from underprivileged backgrounds face discrimination and social barriers</strong> that prevent them from accessing quality education and realizing their potential.
+                      Breaking menstrual taboos is essential but challenging. 
+                      <strong className="text-gray-900"> Deep cultural stigma prevents open discussion about menstruation</strong>, leaving girls unprepared and ashamed when their periods start. Schools lack proper sanitation facilities and menstrual hygiene education programs.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Without intervention, these children grow into adults with limited opportunities, continuing the cycle of poverty and limiting their ability to contribute meaningfully to society.
+                      Without menstrual health education and support, girls' education suffers permanently. How to support girls education India starts with addressing period poverty and breaking the silence around menstruation.
                     </p>
                   </div>
                   <div className="order-first lg:order-last">
@@ -359,18 +377,18 @@ const KhushiCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Without quality education, children face a lifetime of limited opportunities.</strong> 
-                      The lack of education perpetuates intergenerational poverty, where children grow up to face the same struggles as their parents, 
-                      unable to break free from economic disadvantage.
+                      <strong className="text-gray-900">Without period poverty solutions, girls lose critical educational opportunities.</strong> 
+                      Missing school during menstruation creates learning gaps that compound over time. Many girls never catch up and drop out permanently, 
+                      perpetuating cycles of limited opportunities and women empowerment India challenges.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Uneducated children are more vulnerable to exploitation, child labor, and early marriage. 
-                      They lack the skills and knowledge needed to participate meaningfully in the modern economy, 
-                      limiting their earning potential and quality of life.
+                      Period stigma India creates mental health burdens. Girls experience shame, isolation, and anxiety about menstruation. 
+                      Without women health education programs, they lack information about their bodies and hygiene, 
+                      leading to health complications and reduced confidence.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      Society loses immense human potential when children are denied education. 
-                      Every uneducated child represents a missed opportunity for innovation, leadership, and positive community contribution.
+                      Society loses when girls' potential is limited by period poverty. 
+                      Every girl who drops out due to menstruation-related issues represents lost talent, leadership, and community contribution. Breaking period stigma India benefits everyone.
                     </p>
                   </div>
                   <div>
@@ -403,17 +421,16 @@ const KhushiCauseDetailPage = () => {
                   </div>
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      <strong className="text-gray-900">Our holistic approach addresses every aspect of child development.</strong> 
-                      We establish quality learning centers with proper infrastructure, trained teachers, and comprehensive educational resources 
-                      that create nurturing environments where children can thrive.
+                      <strong className="text-gray-900">Wings of Hope tackles period poverty through comprehensive menstrual health education.</strong> 
+                      We provide menstrual hygiene awareness India programs in schools, distribute reusable sanitary products to underprivileged girls, 
+                      and create safe, dignified sanitation facilities that support girls staying in school.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
-                      Beyond education, we provide nutritious meals, healthcare support, and engage parents and communities in the learning process. 
-                      Our programs focus on both academic excellence and character development, ensuring children grow into confident, capable individuals.
+                      Breaking menstrual taboos requires community engagement. We train women health ambassadors who provide peer support and education. 
+                      Our women health education programs address both the practical needs (period products) and social barriers (stigma, shame) that prevent girls from attending school during menstruation.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
-                      We create pathways to formal education and career opportunities, breaking the cycle of poverty and empowering children 
-                      to become leaders and change-makers in their communities.
+                      Through women empowerment through education, we create lasting change. Girls learn about their bodies with dignity, families understand the importance of menstrual health, and schools become supportive environments for all students.
                     </p>
                   </div>
                 </div>
@@ -440,9 +457,9 @@ const KhushiCauseDetailPage = () => {
               
               <div className="mb-4 sm:mb-6">
                 <p className="text-gray-600 leading-relaxed text-lg">
-                  Every donation creates visible, measurable change in children's lives. Our impact gallery showcases 
-                  real moments of transformation, from the joy of a child receiving their first school uniform to 
-                  the pride of parents attending their first literacy class.
+                  Every donation creates visible change through our period poverty solutions India. Our impact gallery showcases 
+                  real moments of transformation - girls confidently staying in school during menstruation, women health ambassadors 
+                  leading community education, and families breaking menstrual taboos through open, supportive conversations.
                 </p>
               </div>
               
@@ -514,8 +531,8 @@ const KhushiCauseDetailPage = () => {
                 </div>
               </div>
               
-              <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
-                Support This Cause
+              <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg" aria-label="Donate to Wings of Hope menstrual health education and support girls education India">
+                Support Girls Education
               </PrimaryButton>
               
               <PrimaryButton 

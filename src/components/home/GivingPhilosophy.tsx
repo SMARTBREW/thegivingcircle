@@ -1,16 +1,8 @@
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const GivingPhilosophy = () => {
-  const [scrollY, setScrollY] = useState(0);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const impactLines = [
     ["1,000+ Trees Planted", "500 Children Educated", "200 Families Fed", "50 Wells Built", "300 Animals Rescued", "100 Schools Built", "2000+ Lives Changed", "₹10L+ Donated", "75 NGOs Supported"],
@@ -45,15 +37,15 @@ const GivingPhilosophy = () => {
                 Why Giving Matters
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed mb-4">
-              Every act of giving creates ripples of hope that reach farther than we can imagine. When we unite as a circle, our individual sparks of compassion join to become a powerful force for change.
+              Every act of giving creates ripples of hope that reach farther than we can imagine. When we unite as a circle, our individual sparks of compassion join to become a powerful force for social impact and change.
 
               </p>
               <p className="text-sm sm:text-lg text-gray-600 leading-relaxed">
-              The Giving Circle isn’t just about donations - it’s about people standing beside one another, turning kindness into action. Here, your generosity grows through connection, shared purpose, and the belief that together we can transform lives, uplift communities, and change the world. 
+              The Giving Circle is India's trusted social impact platform where community partnerships create lasting change. We're not just about donations - we connect passionate Cause Champions with verified causes, turning kindness into measurable impact. Through our transparent giving platform, your generosity grows through connection, shared purpose, and community-driven social impact across India.
 
               </p>
               <p className="text-sm sm:text-lg text-gray-600 leading-relaxed">
-              The Giving Circle shows how ordinary people can bring about extraordinary change. 
+              Join our giving circle and discover how to support social causes India while creating real impact stories that inspire others to give back to society.
 
               </p>
               <div className="pt-4">
@@ -66,8 +58,9 @@ const GivingPhilosophy = () => {
               transition: { type: "spring", stiffness: 400, damping: 20 },
             }}
             whileTap={{ scale: 0.98 }}
+            aria-label="Start your giving circle and join our social impact platform to support causes across India"
           >
-            <span className="whitespace-nowrap">Join Our Mission</span>
+            <span className="whitespace-nowrap">Start Your Giving Circle</span>
           </motion.button>
               </div>
             </div>

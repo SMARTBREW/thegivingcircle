@@ -1,11 +1,36 @@
+// API Base URL - change this to your backend URL
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+
 export class ApiClient {
-  // Simulate form submissions for frontend-only mode
-  static async submitCauseChampionData(data: any) {
-    console.log('Frontend-only mode: Cause Champion data would be submitted:', data);
-    // Simulate API response
-    return new Promise(resolve => {
-      setTimeout(() => resolve({ success: true, message: 'Data submitted successfully' }), 1000);
-    });
+  // Submit Cause Champion form
+  static async submitCauseChampionData(data: {
+    fullName: string;
+    email: string;
+    phoneNumber: string;
+    country: string;
+    city: string;
+    selectedCause: string;
+  }) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/submit/cause-champion`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit form');
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Error submitting Cause Champion form:', error);
+      throw error;
+    }
   }
 
   static async sendOTP(phoneNumber: string) {
@@ -28,12 +53,33 @@ export class ApiClient {
     });
   }
 
-  static async submitNGOApplication(_formData: FormData) {
-    console.log('Frontend-only mode: NGO application would be submitted');
-    // Simulate NGO application submission
-    return new Promise(resolve => {
-      setTimeout(() => resolve({ success: true, message: 'NGO application submitted successfully' }), 1500);
-    });
+  static async submitNGOApplication(formData: {
+    organizationName: string;
+    email: string;
+    contactPersonName: string;
+    phoneNumber: string;
+    country?: string;
+  }) {
+    try {
+      const response = await fetch(`${API_BASE_URL}/submit/ngo-partner`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit form');
+      }
+
+      return result;
+    } catch (error) {
+      console.error('Error submitting NGO Partner form:', error);
+      throw error;
+    }
   }
 
   static async getImpactStories(filters?: any) {

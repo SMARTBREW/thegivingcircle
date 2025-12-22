@@ -1,9 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
 
 
 const LiveCausesPage = () => {
+  // Set page title and meta tags
+  useEffect(() => {
+    document.title = 'Live Causes - Support Active Campaigns | Donate to Social Causes India';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Discover live causes and urgent campaigns across India. Donate to verified social causes including animal welfare India, disaster relief, women empowerment programs. Transparent fundraising for emergency causes and active campaigns. Support live causes now.');
+    }
+    
+    // Update keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'live causes, active campaigns, fundraising causes, donate now, urgent causes, emergency causes, social causes India, campaign fundraising India, support live causes, transparent fundraising, animal welfare India, disaster relief India, women empowerment programs India, donate to verified causes, where to donate for animal welfare India, how to help flood victims Uttarakhand');
+    }
+  }, []);
   const [selectedNGO, setSelectedNGO] = useState('All NGOs');
   const [selectedFilter, setSelectedFilter] = useState('Most Urgent');
   const [visibleCauses, setVisibleCauses] = useState(9);
@@ -24,7 +40,7 @@ const LiveCausesPage = () => {
       organizer: 'Meera Singh',
       ngo: 'JWP',
       location: 'Uttarakhand, India',
-      category: 'Women Empowerment',
+      category: 'Women Empowerment Programs India',
       goalAmount: '₹6,50,000',
       raisedAmount: '₹4,80,000',
       progressPercentage: 74,
@@ -32,7 +48,7 @@ const LiveCausesPage = () => {
       daysLeft: 28,
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183060/images/jwp/_MG_6955.jpg',
       urgency: 'High',
-      description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand.',
+      description: 'Support women empowerment India through menstrual health education and period poverty solutions. Help girls stay in school through this urgent cause.',
       beneficiaries: '1000 women',
       timeline: '15 months',
       updates: [
@@ -48,7 +64,7 @@ const LiveCausesPage = () => {
       organizer: 'Dr. Sunita Reddy',
       ngo: 'Animal Care',
       location: 'Mumbai, Maharashtra',
-      category: 'Animal Welfare',
+      category: 'Animal Welfare India',
       goalAmount: '₹5,20,000',
       raisedAmount: '₹3,90,000',
       progressPercentage: 75,
@@ -56,7 +72,7 @@ const LiveCausesPage = () => {
       daysLeft: 20,
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg',
       urgency: 'High',
-      description: 'Comprehensive animal protection program focusing on rescue operations, medical care, and community awareness for street animals.',
+      description: 'Where to donate for animal welfare India? Support this active campaign providing rabies prevention and street animal rescue. Urgent cause for animal protection.',
       beneficiaries: '1500+ animals',
       timeline: '12 months',
       updates: [
@@ -71,7 +87,7 @@ const LiveCausesPage = () => {
       organizer: 'Dr. Sunita Reddy',
       ngo: 'Animal Care',
       location: 'Chennai, Tamil Nadu',
-      category: 'Animal Welfare',
+      category: 'Animal Welfare India',
       goalAmount: '₹7,80,000',
       raisedAmount: '₹6,20,000',
       progressPercentage: 79,
@@ -79,7 +95,7 @@ const LiveCausesPage = () => {
       daysLeft: 18,
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg',
       urgency: 'Critical',
-      description: 'Daily feeding program for street dogs and cats across Chennai, providing nutritious meals and basic veterinary care.',
+      description: 'Donate now to animal welfare India. This emergency cause provides daily feeding for 2000+ street animals. Support this critical fundraising campaign.',
       beneficiaries: '2000+ street animals',
       timeline: '12 months',
       updates: [
@@ -94,7 +110,7 @@ const LiveCausesPage = () => {
       organizer: 'Dr. Sunita Reddy',
       ngo: 'Animal Care',
       location: 'Uttarakhand, India',
-      category: 'Emergency Response',
+      category: 'Emergency Response India',
       goalAmount: '₹4,50,000',
       raisedAmount: '₹3,20,000',
       progressPercentage: 71,
@@ -102,7 +118,7 @@ const LiveCausesPage = () => {
       daysLeft: 25,
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg',
       urgency: 'Critical',
-      description: 'Emergency rescue operations for animals affected by floods in Uttarakhand, providing immediate medical care and rehabilitation.',
+      description: 'How to help flood victims in Uttarakhand? Support this emergency animal rescue and disaster relief India campaign. Critical cause needs urgent support.',
       beneficiaries: '500+ flood-affected animals',
       timeline: '8 months',
       updates: [
@@ -139,10 +155,10 @@ const LiveCausesPage = () => {
     {
       id: 6,
       title: 'Flood Relief in Uttarakhand',
-      organizer: 'Prashant Koli',
+      organizer: 'GUS Disaster Relief',
       ngo: 'GUS',
       location: 'Uttarakhand, India',
-      category: 'Disaster Relief',
+      category: 'Disaster Relief India',
       goalAmount: '₹8,50,000',
       raisedAmount: '₹6,20,000',
       progressPercentage: 73,
@@ -150,12 +166,12 @@ const LiveCausesPage = () => {
       daysLeft: 30,
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
       urgency: 'Critical',
-      description: 'Comprehensive flood relief operations providing emergency shelter, food, medical aid, and rehabilitation support to affected communities in Uttarakhand.',
-      beneficiaries: '2000+ flood-affected families',
+      description: 'How to help flood victims in Uttarakhand? Emergency disaster relief providing shelter, food, medical aid, and rehabilitation to 2,000+ flood-affected families.',
+      beneficiaries: '2,000+ flood-affected families',
       timeline: '18 months',
       updates: [
         '500 families provided emergency shelter',
-        'Medical camps serving 1000+ people',
+        'Medical camps serving 1,000+ people',
         'Infrastructure rebuilding initiated'
       ]
     }
@@ -198,6 +214,8 @@ const LiveCausesPage = () => {
       window.location.href = `/bowls-of-hope-cause-details`;
     } else if (cause.title === 'Flood Animal Rescue') {
       window.location.href = `/flood-animal-rescue-cause-details`;
+    } else if (cause.title === 'Flood Relief in Uttarakhand') {
+      window.location.href = `/flood-relief-cause-details`;
     } else {
       handleViewDetails();
     }
@@ -220,37 +238,37 @@ const LiveCausesPage = () => {
           <div className="max-w-4xl">
 
             
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
-              Transforming Lives Through Verified Causes
+            <h1 className="text-3xl mt-12 sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
+              Live Causes - Support Active Campaigns India
             </h1>
             
             <p className="text-lg mb-6 sm:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
-              Join <span className="font-semibold text-white">1,23,456+ verified donors</span> creating measurable social impact through rigorously monitored initiatives across India.
+              Discover urgent causes and support live fundraising campaigns across India. Join <span className="font-semibold text-white">1,23,456+ donors</span> creating real impact through transparent fundraising on verified social causes India.
             </p>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mb-6 sm:mb-8 animate-fade-in-delay">
               <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                 <div className="flex items-center gap-2 mb-1">
                   <CheckCircle className="text-green-400" size={18} />
-                  <span className="font-semibold text-sm">100% Verified</span>
+                  <span className="font-semibold text-sm">Verified Causes</span>
                 </div>
-                <p className="text-xs text-gray-300">Rigorous NGO verification</p>
+                <p className="text-xs text-gray-300">Donate to verified causes only</p>
               </div>
               
               <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                 <div className="flex items-center gap-2 mb-1">
                   <Target className="text-blue-400" size={18} />
-                  <span className="font-semibold text-sm">₹89+ Crores</span>
+                  <span className="font-semibold text-sm">Transparent Fundraising</span>
                 </div>
-                <p className="text-xs text-gray-300">Successfully allocated</p>
+                <p className="text-xs text-gray-300">Impact-driven donations</p>
               </div>
               
               <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
                 <div className="flex items-center gap-2 mb-1">
                   <Users className="text-green-500" size={18} />
-                  <span className="font-semibold text-sm">5M+ Lives</span>
+                  <span className="font-semibold text-sm">Emergency Causes</span>
                 </div>
-                <p className="text-xs text-gray-300">Positively impacted</p>
+                <p className="text-xs text-gray-300">Support urgent causes</p>
               </div>
             </div>
             
@@ -268,7 +286,7 @@ const LiveCausesPage = () => {
             <div className="bg-white rounded-xl shadow-sm border p-4 sm:p-6 sticky top-6">
               <div className="flex items-center gap-2 mb-4">
                 <Shield className="text-blue-600" size={20} />
-                <h3 className="text-lg font-semibold text-gray-900">Verified NGO Partners</h3>
+                <h3 className="text-lg font-semibold text-gray-900">Active Campaigns</h3>
               </div>
               <div className="space-y-2 max-h-96 overflow-y-auto">
                 {ngos.map((ngo) => (
@@ -303,15 +321,16 @@ const LiveCausesPage = () => {
           <div className="lg:w-4/5">
             {/* Professional Search and Filters */}
             <div className="mb-4 sm:mb-6 bg-white rounded-xl shadow-sm border p-4 sm:p-6">
-              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Find Verified Causes</h2>
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Find Live Causes to Support</h2>
               
               {/* Search Bar */}
               <div className="relative mb-4 sm:mb-6">
                 <Search className="absolute left-3 sm:left-4 top-3 sm:top-4 text-gray-400" size={18} />
                 <input
                   type="text"
-                  placeholder="Search by cause title, NGO partner, or location..."
+                  placeholder="Search fundraising causes by category, location, or urgency..."
                   className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent text-sm sm:text-base"
+                  aria-label="Search for live causes and active campaigns to donate to social causes India"
                 />
               </div>
 
@@ -355,11 +374,11 @@ const LiveCausesPage = () => {
             {/* Results Count */}
             <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
               <div className="text-gray-600 text-sm sm:text-base">
-                Displaying <span className="font-semibold">{Math.min(visibleCauses, filteredCauses.length)}</span> of <span className="font-semibold">{filteredCauses.length}</span> verified active causes
+                Displaying <span className="font-semibold">{Math.min(visibleCauses, filteredCauses.length)}</span> of <span className="font-semibold">{filteredCauses.length}</span> urgent live causes
               </div>
               <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span>All causes verified & monitored</span>
+                <span>Transparent donation platform India</span>
               </div>
             </div>
 
@@ -461,8 +480,9 @@ const LiveCausesPage = () => {
                           handleDonateClick(e, cause.id);
                         }}
                         className="w-full bg-green-700 hover:bg-green-800 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all"
+                        aria-label={`Donate now to support ${cause.title} fundraising campaign`}
                       >
-                        Contribute Now
+                        Donate Now
                       </button>
                     </div>
                   </div>

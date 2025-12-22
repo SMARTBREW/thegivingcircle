@@ -198,6 +198,7 @@ const FundraisingHero = () => {
               <PrimaryButton
                 onClick={handleBecomChampion}
                 icon={<Users2 className="h-4 w-4 sm:h-5 sm:w-5" />}
+                aria-label="Become a Cause Champion and start your giving circle to support social causes India"
               >
                 Become a Cause Champion
               </PrimaryButton>

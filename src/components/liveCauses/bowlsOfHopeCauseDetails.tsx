@@ -1,4 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, Utensils } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 
@@ -6,15 +7,32 @@ const BowlsOfHopeCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
+  // Set page title and meta tags for SEO
+  useEffect(() => {
+    document.title = 'Bowls of Hope - Animal Feeding Programs | Feed Stray Animals India';
+    
+    // Update meta description
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', 'Bowls of Hope provides animal feeding programs and animal nutrition support India. How to feed stray animals India? Donate to support animal welfare and help feed street animals. Animal feeding programs Mumbai and Chennai providing nutritious meals to 2,000+ hungry animals daily. Support animal feeding initiatives.');
+    }
+    
+    // Update keywords
+    const metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (metaKeywords) {
+      metaKeywords.setAttribute('content', 'Bowls of Hope, animal feeding programs, feed stray animals, animal nutrition, support animal welfare, animal welfare India, feed animals India, street animal rescue, animal shelter support, support stray animals, how to feed stray animals India, animal feeding programs Mumbai, support animal nutrition programs, help feed street animals, feed hungry animals India, animal nutrition support India, support animal feeding initiatives');
+    }
+  }, []);
+
   // Bowls of Hope cause data focused on animal feeding and nutrition
   const cause = {
     id: 4,
     title: 'Bowls of Hope',
-    subtitle: 'Ensuring no animal goes hungry - daily feeding program for street animals',
+    subtitle: 'Give life with each bowl - feed stray animals and support animal welfare India',
     organizer: 'AnimalCare India',
     ngo: 'AnimalCare India',
-    location: 'Chennai, Tamil Nadu',
-    category: 'Animal Welfare',
+    location: 'Chennai, Mumbai, Tamil Nadu, Maharashtra',
+    category: 'Animal Welfare India • Animal Nutrition',
     goalAmount: '₹7,80,000',
     raisedAmount: '₹6,20,000',
     progressPercentage: 79,
@@ -24,71 +42,71 @@ const BowlsOfHopeCauseDetailPage = () => {
     urgency: 'Critical',
     
     // Problem Statement
-    problemStatement: 'Every day, thousands of stray animals in Chennai struggle to find food and clean water. Street dogs, cats, and other animals face starvation, malnutrition, and dehydration, especially during harsh weather conditions. Many animals die from hunger-related illnesses, while others become weak and vulnerable to diseases and accidents.',
+    problemStatement: 'How to feed stray animals India? Thousands of hungry street animals struggle daily without animal feeding programs. Feed hungry animals India - they face starvation, malnutrition, and death without systematic animal nutrition support. Animal feeding programs Mumbai, Chennai, and across India are critically needed. Help feed street animals before it\'s too late.',
     
     // Root Causes
     rootCauses: [
-      'Lack of systematic feeding programs for stray animals',
-      'Limited access to clean water sources in urban areas',
-      'Insufficient community awareness about animal nutrition needs',
-      'Absence of organized feeding stations and water points',
-      'Weather conditions affecting food availability and animal health'
+      'Lack of organized animal feeding programs for stray animals',
+      'Limited animal nutrition support and feeding initiatives',
+      'Insufficient awareness about how to feed stray animals properly',
+      'Absence of feeding stations and animal welfare infrastructure',
+      'No systematic support animal feeding initiatives in communities'
     ],
     
     // Consequences if not addressed
     consequences: [
-      'Continued starvation and malnutrition of thousands of street animals',
-      'Increased mortality rates due to hunger-related illnesses',
-      'Weakened immune systems making animals vulnerable to diseases',
-      'Human-animal conflicts due to animals searching for food in residential areas',
-      'Loss of community compassion and awareness about animal welfare'
+      'Feed hungry animals India or they continue starving and dying',
+      'Increased mortality - thousands die without animal nutrition support',
+      'Weak, disease-prone animals without animal feeding programs',
+      'Human-animal conflicts when hungry street animals search for food',
+      'Lost opportunity to support animal welfare and feed stray animals'
     ],
     
     // Our Solution
     solution: {
-      approach: 'Comprehensive daily feeding program providing nutritious meals and clean water to street animals through organized feeding stations and community engagement.',
+      approach: 'Bowls of Hope delivers comprehensive animal feeding programs India providing daily nutrition to feed stray animals through organized feeding stations, volunteer networks, and animal nutrition support initiatives.',
       components: [
-        'Establish 25+ feeding stations across Chennai with daily meal distribution',
-        'Provide clean water sources and hydration points for animals',
-        'Organize community feeding programs and volunteer networks',
-        'Implement nutrition monitoring and health tracking for fed animals',
-        'Create awareness campaigns about responsible animal feeding'
+        'Animal feeding programs Mumbai & Chennai - 25+ feeding stations daily',
+        'Support animal nutrition programs with balanced, healthy meals',
+        'How to feed stray animals India - community training and volunteer networks',
+        'Help feed street animals through organized animal welfare infrastructure',
+        'Support animal feeding initiatives with nutrition monitoring and care'
       ]
     },
     
     // Beneficiaries
     beneficiaries: {
-      primary: '2,000+ street animals daily',
-      secondary: '8,000+ community members',
-      community: '25+ neighborhoods across Chennai',
-      longTerm: 'Entire ecosystem of street animal welfare'
+      primary: '2,000+ street animals fed daily through animal nutrition programs',
+      secondary: '10,000+ community members supporting animal welfare',
+      community: '25+ feeding stations across Chennai and Mumbai',
+      longTerm: 'Sustainable animal feeding programs feeding hungry animals across India'
     },
     
     // Impact Gallery
     impactGallery: [
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
-        caption: 'Volunteers providing fresh water and nutritious meals to street dogs at feeding stations',
+        caption: 'Animal feeding programs India - volunteers feed stray animals with nutritious meals daily',
         type: 'Daily Feeding'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183037/images/animals-bowl/animal2.jpg',
-        caption: 'Community members actively participating in organized feeding programs for stray animals',
+        caption: 'How to feed stray animals India - community members support animal nutrition programs',
         type: 'Community Feeding'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183039/images/animals-bowl/animal3.jpg',
-        caption: 'Dedicated volunteers ensuring no animal goes hungry through systematic feeding initiatives',
+        caption: 'Help feed street animals - dedicated volunteers support animal feeding initiatives',
         type: 'Volunteer Care'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183040/images/animals-bowl/animal4.jpg',
-        caption: 'Feeding stations providing consistent nutrition and clean water to street animals',
+        caption: 'Animal feeding programs Mumbai & Chennai - feeding stations provide consistent nutrition',
         type: 'Feeding Stations'
       },
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg',
-        caption: 'Animals receiving proper nutrition and care through our comprehensive feeding program',
+        caption: 'Feed hungry animals India through animal nutrition support and welfare programs',
         type: 'Animal Nutrition'
       }
     ],
@@ -97,22 +115,22 @@ const BowlsOfHopeCauseDetailPage = () => {
     expectedOutcomes: [
       {
         metric: '2,000+ animals',
-        description: 'Fed daily with nutritious meals and clean water within 6 months',
+        description: 'Fed daily through animal feeding programs with nutritious meals',
         timeline: 'Short-term'
       },
       {
         metric: '90% reduction',
-        description: 'In hunger-related animal deaths in target areas',
+        description: 'In starvation deaths through systematic animal nutrition support',
         timeline: 'Medium-term'
       },
       {
         metric: '25 feeding stations',
-        description: 'Established across Chennai for consistent animal care',
+        description: 'Animal feeding programs Mumbai & Chennai providing consistent care',
         timeline: 'Long-term'
       },
       {
         metric: '500+ volunteers',
-        description: 'Trained and engaged in community feeding programs',
+        description: 'Trained in how to feed stray animals and support animal welfare',
         timeline: 'Medium-term'
       }
     ],
@@ -229,7 +247,7 @@ const BowlsOfHopeCauseDetailPage = () => {
           {/* Page Title */}
           <div className="text-center mb-1">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight py-2">
-            Bowls of Hope
+            Bowls of Hope - Animal Feeding Programs India
             </h1>
           </div>
         </div>
