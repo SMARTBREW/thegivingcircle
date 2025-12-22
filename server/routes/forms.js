@@ -1,38 +1,9 @@
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-const createTransporter = () => {
-  // Use SendGrid if API key is provided (recommended for Render - works on free tier)
-  if (process.env.SENDGRID_API_KEY) {
-    console.log('✅ Using SendGrid for email delivery');
-    return nodemailer.createTransport({
-      host: 'smtp.sendgrid.net',
-      port: 587,
-      secure: false,
-      auth: {
-        user: 'apikey',
-        pass: process.env.SENDGRID_API_KEY,
-      },
-    });
-  }
-
-  console.log('⚠️  SENDGRID_API_KEY not found, checking SMTP credentials...');
-  
-  // Fallback to SMTP (Gmail, etc.) - may not work on Render free tier due to port blocking
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    throw new Error('Email credentials not configured. Please set SENDGRID_API_KEY (recommended) or SMTP_USER and SMTP_PASS');
-  }
-
-  console.log('⚠️  Using SMTP (may not work on Render free tier):', process.env.SMTP_HOST || 'smtp.gmail.com');
-  return nodemailer.createTransport({
-    host: process.env.SMTP_HOST || 'smtp.gmail.com',
-    port: parseInt(process.env.SMTP_PORT || '587'),
-    secure: process.env.SMTP_SECURE === 'true',
-    auth: {
-      user: process.env.SMTP_USER,
-      pass: process.env.SMTP_PASS,
-    },
-  });
-};
+// Initialize Resend client
+const resend = process.env.RESEND_API_KEY 
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
 const formatEmailHTML = (title, fields, submittedAt) => {
   const fieldsHTML = Object.entries(fields)
@@ -108,9 +79,13 @@ export const submitCauseChampionForm = async (req, res) => {
       });
     }
 
-    const transporter = createTransporter();
+    if (!resend) {
+      throw new Error('Resend API key not configured. Please set RESEND_API_KEY environment variable');
+    }
+
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
     console.log(`📧 Sending Cause Champion form submission to: ${receiverEmail}`);
+    
     const submittedAt = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
       dateStyle: 'full',
@@ -122,8 +97,8 @@ export const submitCauseChampionForm = async (req, res) => {
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
-    const mailOptions = {
-      from: `"The Giving Circle" <${process.env.SMTP_USER}>`,
+    const { data, error } = await resend.emails.send({
+      from: 'The Giving Circle <onboarding@resend.dev>',
       to: receiverEmail,
       replyTo: email,
       subject: `New Cause Champion Registration - ${fullName}`,
@@ -166,9 +141,11 @@ CAUSE INFORMATION
 
 This person wants to become a Cause Champion and start their giving journey with The Giving Circle.
       `.trim(),
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    if (error) {
+      throw new Error(`Resend error: ${error.message}`);
+    }
 
     res.json({
       success: true,
@@ -203,7 +180,10 @@ export const submitNGOPartnerForm = async (req, res) => {
       });
     }
 
-    const transporter = createTransporter();
+    if (!resend) {
+      throw new Error('Resend API key not configured. Please set RESEND_API_KEY environment variable');
+    }
+
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
     console.log(`📧 Sending NGO Partner form submission to: ${receiverEmail}`);
 
@@ -213,8 +193,8 @@ export const submitNGOPartnerForm = async (req, res) => {
       timeStyle: 'long',
     });
 
-    const mailOptions = {
-      from: `"The Giving Circle" <${process.env.SMTP_USER}>`,
+    const { data, error } = await resend.emails.send({
+      from: 'The Giving Circle <onboarding@resend.dev>',
       to: receiverEmail,
       replyTo: email,
       subject: `Partner Registration - ${organizationName}`,
@@ -253,9 +233,11 @@ CONTACT INFORMATION
 
 I would like to become partner with The Giving Circle's verified partner platform India. Please provide details about the partner onboarding process, partnership benefits, and how to join your trusted partner network.
       `.trim(),
-    };
+    });
 
-    await transporter.sendMail(mailOptions);
+    if (error) {
+      throw new Error(`Resend error: ${error.message}`);
+    }
 
     res.json({
       success: true,

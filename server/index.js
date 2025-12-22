@@ -54,15 +54,12 @@ app.listen(PORT, () => {
   console.log(`📧 Form submissions will be sent to: ${receiverEmail}`);
   
   // Validate email configuration
-  if (process.env.SENDGRID_API_KEY) {
-    console.log('✅ SendGrid API Key configured (recommended for Render)');
-  } else if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-    console.log(`✅ SMTP configured: ${process.env.SMTP_USER}`);
-    console.warn('⚠️  Note: SMTP may not work on Render free tier. Use SENDGRID_API_KEY instead.');
+  if (process.env.RESEND_API_KEY) {
+    console.log('✅ Resend API Key configured (recommended for Render)');
   } else {
-    console.warn('⚠️  WARNING: Email credentials not configured!');
-    console.warn('   Please set SENDGRID_API_KEY (recommended) or SMTP_USER and SMTP_PASS');
-    console.warn('   Email sending will fail until credentials are configured.');
+    console.warn('⚠️  WARNING: Resend API key not configured!');
+    console.warn('   Please set RESEND_API_KEY environment variable');
+    console.warn('   Email sending will fail until API key is configured.');
   }
 });
 
