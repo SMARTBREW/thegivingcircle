@@ -53,13 +53,16 @@ app.listen(PORT, () => {
   const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
   console.log(`📧 Form submissions will be sent to: ${receiverEmail}`);
   
-  // Validate SMTP configuration
-  if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    console.warn('⚠️  WARNING: SMTP credentials not configured!');
-    console.warn('   Please set SMTP_USER and SMTP_PASS in server/.env file');
-    console.warn('   Email sending will fail until credentials are configured.');
-  } else {
+  // Validate email configuration
+  if (process.env.SENDGRID_API_KEY) {
+    console.log('✅ SendGrid API Key configured (recommended for Render)');
+  } else if (process.env.SMTP_USER && process.env.SMTP_PASS) {
     console.log(`✅ SMTP configured: ${process.env.SMTP_USER}`);
+    console.warn('⚠️  Note: SMTP may not work on Render free tier. Use SENDGRID_API_KEY instead.');
+  } else {
+    console.warn('⚠️  WARNING: Email credentials not configured!');
+    console.warn('   Please set SENDGRID_API_KEY (recommended) or SMTP_USER and SMTP_PASS');
+    console.warn('   Email sending will fail until credentials are configured.');
   }
 });
 
