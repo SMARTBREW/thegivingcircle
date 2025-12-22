@@ -1,9 +1,22 @@
 import nodemailer from 'nodemailer';
 
 const createTransporter = () => {
-  // Validate SMTP credentials
+  // Use SendGrid if API key is provided (recommended for Render - works on free tier)
+  if (process.env.SENDGRID_API_KEY) {
+    return nodemailer.createTransport({
+      host: 'smtp.sendgrid.net',
+      port: 587,
+      secure: false,
+      auth: {
+        user: 'apikey',
+        pass: process.env.SENDGRID_API_KEY,
+      },
+    });
+  }
+
+  // Fallback to SMTP (Gmail, etc.) - may not work on Render free tier due to port blocking
   if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
-    throw new Error('SMTP credentials not configured. Please set SMTP_USER and SMTP_PASS in server/.env file');
+    throw new Error('Email credentials not configured. Please set SENDGRID_API_KEY (recommended) or SMTP_USER and SMTP_PASS');
   }
 
   return nodemailer.createTransport({
