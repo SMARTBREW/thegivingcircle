@@ -8,8 +8,6 @@ import { Home } from './pages/Home';
 import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
 import ImpactStories from './pages/ImpactStories';
 import ImpactStoriesDetails from './pages/ImpactStoriesDetails';
-
-
 import { NGOPartner } from './pages/NGOPartner';
 import { NGOList } from './pages/ngo-list';
 import { Causes } from './pages/Causes';

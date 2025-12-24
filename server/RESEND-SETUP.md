@@ -35,15 +35,23 @@ Resend is much easier than SMTP - it uses HTTPS requests (no port blocking issue
 4. Click **"Save Changes"**
 5. Render will auto-redeploy
 
-## Step 4: Verify Domain (Optional)
+## Step 4: Verify Domain (Required for Production)
 
-For production, you can verify your domain:
-1. Go to **Domains** in Resend
-2. Add `thegivingcircle.in`
-3. Add DNS records as shown
-4. Update `from` field in code to use your domain
+**Current Status**: Resend only allows sending to verified addresses. Your verified email is `tech@smartbrew.in`.
 
-**For now, you can use the default `onboarding@resend.dev` domain for testing.**
+**To send from `hello@thegivingcircle.in`:**
+
+1. Go to **Domains** in Resend dashboard
+2. Click **"Add Domain"**
+3. Enter: `thegivingcircle.in`
+4. Add the DNS records shown to your domain registrar (Hostinger)
+5. Wait for verification (usually 5-10 minutes)
+6. Once verified, add to Render environment:
+   ```
+   RESEND_FROM_EMAIL=hello@thegivingcircle.in
+   ```
+
+**For now**: The code uses `tech@smartbrew.in` (your verified email) which works immediately.
 
 ## Step 5: Test
 

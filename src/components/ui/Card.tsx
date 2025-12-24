@@ -19,7 +19,7 @@ export const Card: React.FC<CardProps> = ({
   variant = 'default',
   onClick,
 }) => {
-  const baseClasses = 'rounded-2xl shadow-lg border transition-all duration-300';
+  const baseClasses = 'rounded-lg sm:rounded-xl md:rounded-2xl shadow-lg border transition-all duration-300';
   
   const variantClasses = {
     default: 'bg-white border-gray-100',
@@ -28,9 +28,9 @@ export const Card: React.FC<CardProps> = ({
   };
   
   const paddingClasses = {
-    sm: 'p-4',
-    md: 'p-6',
-    lg: 'p-8',
+    sm: 'p-3 sm:p-4',
+    md: 'p-4 sm:p-6 md:p-8',
+    lg: 'p-6 sm:p-8 md:p-10',
   };
 
   const Component = onClick ? motion.div : 'div';
@@ -67,7 +67,7 @@ interface CardHeaderProps {
 }
 
 export const CardHeader: React.FC<CardHeaderProps> = ({ children, className }) => (
-  <div className={clsx('mb-4', className)}>
+  <div className={clsx('mb-3 sm:mb-4', className)}>
     {children}
   </div>
 );

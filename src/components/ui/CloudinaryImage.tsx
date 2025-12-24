@@ -20,7 +20,6 @@ function isCloudinaryUrl(url: string): boolean {
 function buildTransformedUrl(baseUrl: string, transformation: string): string {
   if (!isCloudinaryUrl(baseUrl)) return baseUrl;
   const [prefix, rest] = baseUrl.split(CLOUDINARY_UPLOAD_SEGMENT);
-  // If there is already a transformation, prepend our defaults unless already present
   const restParts = rest.split('/');
   const firstPart = restParts[0];
   const hasExistingTransform = !firstPart.startsWith('v') && firstPart.length > 0;
@@ -29,7 +28,6 @@ function buildTransformedUrl(baseUrl: string, transformation: string): string {
   let finalTransform = defaultTransform;
 
   if (hasExistingTransform) {
-    // Merge while ensuring f_auto,q_auto are present
     const existing = firstPart;
     const pieces = new Set(existing.split(','));
     defaultTransform.split(',').forEach((p) => pieces.add(p));
@@ -51,7 +49,7 @@ function buildSrcSet(url: string, targetWidths: number[], height?: number): stri
       'c_fill',
       'dpr_auto',
       'f_auto',
-      'q_auto',
+      'q_70',
     ]
       .filter(Boolean)
       .join(',');
@@ -77,7 +75,7 @@ export function CloudinaryImage({
     (width || height) ? 'c_fill' : undefined,
     'dpr_auto',
     'f_auto',
-    'q_auto',
+    'q_70',
   ]
     .filter(Boolean)
     .join(',');
@@ -86,13 +84,14 @@ export function CloudinaryImage({
     ? buildTransformedUrl(src, commonTransforms)
     : src;
 
-  const srcSet = buildSrcSet(src, [320, 480, 640, 768, 1024, 1280], height);
+  const srcSet = buildSrcSet(src, [320, 480, 640, 768, 1024, 1280, 1920], height);
+  const defaultSizes = sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
 
   return (
     <img
       src={optimizedSrc}
       srcSet={srcSet}
-      sizes={sizes}
+      sizes={defaultSizes}
       alt={alt}
       className={className}
       width={width}

@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Badge, CheckCircle } from 'lucide-react';
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 interface ImpactCardProps {
   id: string;
@@ -34,10 +35,14 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
       className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-white"
     >
       <div className="relative">
-        <img
+        <CloudinaryImage
           src={image}
           alt={title}
-          className="w-full h-36 sm:h-40 md:h-44 lg:h-48 xl:h-52 2xl:h-56 object-cover hover:scale-105 transition-transform duration-300"
+          className="w-full h-36 sm:h-40 md:h-44 lg:h-48 object-cover hover:scale-105 transition-transform duration-300"
+          width={637}
+          height={288}
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          priority={false}
         />
         {verified && (
           <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-green-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium flex items-center shadow-lg">
@@ -51,23 +56,23 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
         </div>
       </div>
       
-      <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col min-h-[200px] sm:min-h-[220px] md:min-h-[240px]">
-        <div className="flex items-center justify-between mb-2 sm:mb-3 gap-2">
+      <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col min-h-[180px] sm:min-h-[200px] md:min-h-[220px]">
+        <div className="flex items-center justify-between mb-2 sm:mb-3 gap-1.5 sm:gap-2">
           <div className="flex items-center space-x-1.5 sm:space-x-2 min-w-0 flex-1">
             <Badge className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />
-            <span className="text-xs sm:text-sm font-medium text-green-700 truncate">{ngoName}</span>
+            <span className="text-xs sm:text-sm font-medium text-green-700 truncate break-words">{ngoName}</span>
           </div>
-          <div className="text-right flex-shrink-0 ml-2">
+          <div className="text-right flex-shrink-0 ml-1 sm:ml-2">
             <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-green-700 whitespace-nowrap">{impactNumber.toLocaleString()}</div>
             <div className="text-[10px] sm:text-xs text-gray-500 whitespace-nowrap">{impactUnit}</div>
           </div>
         </div>
         
-        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 line-clamp-2 leading-tight">
+        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 line-clamp-2 leading-tight break-words">
           {title}
         </h3>
         
-        <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-0 line-clamp-3 flex-grow leading-relaxed">
+        <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-0 line-clamp-3 flex-grow leading-relaxed break-words">
           {description}
         </p>
         
@@ -195,19 +200,19 @@ export const ImpactWall: React.FC = () => {
 
 
   return (
-    <section className="py-6 sm:py-8 md:py-10 lg:py-12 xl:py-14">
-      <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+    <section className="py-8 sm:py-10 md:py-12 lg:py-14">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
+          className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-5 lg:mb-6 px-2">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 px-2">
             Our Impact Stories
           </h2>
-          <div className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-3 sm:px-4 md:px-6 space-y-3 sm:space-y-4 md:space-y-5 leading-relaxed md:leading-7 lg:leading-8 text-center">
+          <div className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 space-y-3 sm:space-y-4 md:space-y-5 leading-relaxed text-center break-words">
             <p>
               Discover real impact stories from across India through our verified charity platform.
             </p>
@@ -221,7 +226,7 @@ export const ImpactWall: React.FC = () => {
         </motion.div>
 
         {/* Mobile and Tablet Carousel */}
-        <div className="lg:hidden relative overflow-hidden mb-6 sm:mb-8">
+        <div className="lg:hidden relative overflow-hidden mb-4 sm:mb-6 md:mb-8">
           <div 
             ref={carouselRef}
             className="flex transition-transform duration-300 ease-in-out"
@@ -233,7 +238,7 @@ export const ImpactWall: React.FC = () => {
             {impactStories.map((story) => (
               <div 
                 key={story.id} 
-                className={`flex-shrink-0 px-1.5 sm:px-2 md:px-3 ${
+                className={`flex-shrink-0 px-2 sm:px-3 ${
                   itemsPerPage === 1 ? 'w-full' : 'w-1/2'
                 }`}
               >
@@ -243,24 +248,27 @@ export const ImpactWall: React.FC = () => {
           </div>
           
           {/* Pagination Indicators */}
-          <div className="flex justify-center mt-4 sm:mt-6 md:mt-8 space-x-1.5 sm:space-x-2">
+          <div className="flex justify-center mt-3 sm:mt-4 md:mt-6 space-x-2">
             {Array.from({ length: totalPages }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentPage(index)}
-                className={`h-1.5 sm:h-2 md:h-3 rounded-full transition-all duration-300 ${
-                  index === currentPage 
-                    ? 'bg-green-600 w-5 sm:w-6 md:w-8' 
-                    : 'bg-gray-300 hover:bg-green-300 w-1.5 sm:w-2 md:w-3'
-                }`}
+                className="relative transition-all duration-300"
                 aria-label={`Go to page ${index + 1}`}
-              />
+                style={{ minWidth: '44px', minHeight: '44px', padding: '20px 0' }}
+              >
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 sm:h-3 rounded-full transition-all duration-300 ${
+                  index === currentPage 
+                    ? 'bg-green-600 w-6 sm:w-8' 
+                    : 'bg-gray-300 hover:bg-green-300 w-2 sm:w-3'
+                }`} />
+              </button>
             ))}
           </div>
         </div>
 
         {/* Large Screen Grid */}
-        <div className="hidden lg:grid lg:grid-cols-3 gap-4 xl:gap-6 2xl:gap-8 mb-8 lg:mb-12">
+        <div className="hidden lg:grid lg:grid-cols-3 gap-4 xl:gap-6">
           {impactStories.map((story, index) => (
             <motion.div
               key={story.id}

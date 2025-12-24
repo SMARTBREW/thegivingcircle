@@ -136,17 +136,17 @@ const ImpactStories: React.FC = () => {
   return (
     <div className="min-h-screen">
       {/* Impact Stories Section */}
-      <section className="py-8 sm:py-10 md:py-12 lg:py-14">
+      <section className="py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
+            className="text-center mb-6 sm:mb-8 md:mb-10 lg:mb-12"
           >
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 mt-12 sm:mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 mt-8 sm:mt-10 sm:mb-4 md:mb-6 break-words">
               Impact Stories - Real Transformation Stories India
             </h1>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed break-words">
               Discover verified success stories and inspiring social change stories from across India. Behind every statistic is a human story of community transformation, hope, and measurable social impact. These are real impact stories showcasing lives impacted India through verified causes and community-driven change.
             </p>
           </motion.div>
@@ -160,90 +160,90 @@ const ImpactStories: React.FC = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
-              className={`w-full py-8 sm:py-10 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+              className={`w-full py-6 sm:py-8 md:py-10 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 sm:gap-10 md:gap-12 items-center`}>
+                <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center`}>
                   {/* Image Section */}
-                  <div className="lg:w-1/2">
+                  <div className="lg:w-1/2 w-full">
                     <div className="relative">
                       <img
                         src={story.image}
                         alt={story.title}
-                        className="w-full h-64 sm:h-80 md:h-96 object-cover rounded-2xl shadow-lg"
+                        className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-xl sm:rounded-2xl shadow-lg"
                       />
-                      <div className="absolute top-3 sm:top-4 md:top-6 left-3 sm:left-4 md:left-6">
-                        <span className="bg-green-500 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium flex items-center shadow-lg">
+                      <div className="absolute top-2 sm:top-3 md:top-4 lg:top-6 left-2 sm:left-3 md:left-4 lg:left-6">
+                        <span className="bg-green-500 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-medium flex items-center shadow-lg">
                           <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                           Verified Impact
                         </span>
                       </div>
-                      <div className="absolute top-3 sm:top-4 md:top-6 right-3 sm:right-4 md:right-6">
-                        <span className="bg-green-700 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-xs sm:text-sm font-medium">
+                      <div className="absolute top-2 sm:top-3 md:top-4 lg:top-6 right-2 sm:right-3 md:right-4 lg:right-6">
+                        <span className="bg-green-700 text-white px-2 sm:px-3 md:px-4 py-1 sm:py-2 rounded-full text-[10px] sm:text-xs md:text-sm font-medium break-words">
                           {story.category}
                         </span>
                       </div>
                       {/* Main Impact Number */}
-                      <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 left-3 sm:left-4 md:left-6">
-                        <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2 sm:p-3 md:p-4 shadow-lg">
-                          <div className="text-xl sm:text-2xl md:text-3xl font-bold text-green-700">{story.impactNumber.toLocaleString()}+</div>
-                          <div className="text-xs sm:text-sm text-gray-600 font-medium">{story.impactUnit}</div>
+                      <div className="absolute bottom-2 sm:bottom-3 md:bottom-4 lg:bottom-6 left-2 sm:left-3 md:left-4 lg:left-6">
+                        <div className="bg-white/95 backdrop-blur-sm rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 shadow-lg">
+                          <div className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-green-700 break-words">{story.impactNumber.toLocaleString()}+</div>
+                          <div className="text-[10px] sm:text-xs md:text-sm text-gray-600 font-medium break-words">{story.impactUnit}</div>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   {/* Content Section */}
-                  <div className="lg:w-1/2">
+                  <div className="lg:w-1/2 w-full">
                     {/* NGO Badge */}
-                    <div className="flex flex-col sm:flex-row sm:items-center space-y-1 sm:space-y-0 sm:space-x-2 mb-4 sm:mb-6">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-0 sm:space-x-2 mb-3 sm:mb-4 md:mb-6">
                       <div className="flex items-center space-x-2">
-                        <Building2 className="w-5 h-5 sm:w-6 sm:h-6 text-green-700" />
-                        <span className="text-lg sm:text-xl font-bold text-green-700">{story.ngoName}</span>
+                        <Building2 className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-green-700" />
+                        <span className="text-base sm:text-lg md:text-xl font-bold text-green-700 break-words">{story.ngoName}</span>
                       </div>
                       <span className="text-gray-400 hidden sm:inline">•</span>
-                      <span className="text-gray-500 flex items-center text-sm sm:text-base">
-                        <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-1" />
+                      <span className="text-gray-500 flex items-center text-xs sm:text-sm md:text-base break-words">
+                        <MapPin className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1" />
                         {story.location}
                       </span>
                     </div>
 
                     {/* Title */}
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 leading-tight break-words">
                       {story.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-lg text-gray-600 mb-6 sm:mb-8 leading-relaxed">
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-4 sm:mb-6 md:mb-8 leading-relaxed break-words">
                       {story.description}
                     </p>
 
                     {/* Key Statistics - Inline Flow */}
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-6 sm:mb-8">
+                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-3 md:gap-4 lg:gap-6 mb-4 sm:mb-6 md:mb-8">
                       {story.stats.slice(0, 4).map((stat, statIndex) => (
                         <div key={statIndex} className="text-center">
-                          <div className="flex justify-center mb-1 sm:mb-2 text-green-700">
+                          <div className="flex justify-center mb-1 sm:mb-2 text-green-700 [&>svg]:w-4 [&>svg]:h-4 sm:[&>svg]:w-5 sm:[&>svg]:h-5">
                             {stat.icon}
                           </div>
-                          <div className="text-lg sm:text-xl font-bold text-gray-900">{stat.value}</div>
-                          <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
+                          <div className="text-base sm:text-lg md:text-xl font-bold text-gray-900 break-words">{stat.value}</div>
+                          <div className="text-[10px] sm:text-xs md:text-sm text-gray-500 break-words">{stat.label}</div>
                         </div>
                       ))}
                     </div>
 
                     {/* Testimonial */}
-                    <div className="border-l-4 border-green-700 pl-4 sm:pl-6 mb-6 sm:mb-8">
-                      <div className="text-lg text-gray-700 italic mb-2 sm:mb-3 leading-relaxed">
+                    <div className="border-l-4 border-green-700 pl-3 sm:pl-4 md:pl-6 mb-4 sm:mb-6 md:mb-8">
+                      <div className="text-sm sm:text-base md:text-lg text-gray-700 italic mb-2 sm:mb-3 leading-relaxed break-words">
                         "{story.testimonial.quote}"
                       </div>
-                      <div className="text-xs sm:text-sm text-gray-600">
+                      <div className="text-[10px] sm:text-xs md:text-sm text-gray-600 break-words">
                         <strong>{story.testimonial.author}</strong> - {story.testimonial.role}
                       </div>
                     </div>
 
                     {/* Footer */}
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-0 text-xs sm:text-sm text-gray-500 pt-3 sm:pt-4 border-t border-gray-200">
-                      <div className="flex items-center">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-3 md:gap-0 text-[10px] sm:text-xs md:text-sm text-gray-500 pt-3 sm:pt-4 border-t border-gray-200">
+                      <div className="flex items-center break-words">
                         <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                         {story.dateCompleted}
                       </div>
@@ -251,7 +251,7 @@ const ImpactStories: React.FC = () => {
                         onClick={() => setSelectedStory(selectedStory === story.id ? null : story.id)}
                         variant="secondary"
                         size="sm"
-                        className="text-xs sm:text-sm"
+                        className="text-[10px] sm:text-xs md:text-sm w-full sm:w-auto"
                         aria-label={`Read full ${story.category.toLowerCase()} impact story - ${story.title}`}
                       >
                         {selectedStory === story.id ? 'Show Less' : 'Read Full Story'}
@@ -263,9 +263,9 @@ const ImpactStories: React.FC = () => {
                       <motion.div
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: 'auto' }}
-                        className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-gray-200"
+                        className="mt-3 sm:mt-4 md:mt-6 pt-3 sm:pt-4 md:pt-6 border-t border-gray-200"
                       >
-                        <p className="text-lg text-gray-600 leading-relaxed">
+                        <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">
                           {story.fullStory}
                         </p>
                       </motion.div>

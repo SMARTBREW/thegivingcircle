@@ -75,7 +75,7 @@ const NavbarComponent = () => {
       name: 'About Us',
       href: '/the-giving-circle',
     },
-    {
+    { 
       name: 'Become a NGO Partner',
       href: '/ngo-partner',
     },
@@ -129,7 +129,7 @@ const NavbarComponent = () => {
       <div className="max-w-7xl mx-auto">
         <div className={`
           bg-white/80 backdrop-blur-2xl border border-white/20 
-          rounded-xl sm:rounded-2xl px-3 py-2 sm:px-4 sm:py-3 md:px-6 md:py-3 
+          rounded-lg sm:rounded-xl md:rounded-2xl px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-3 lg:px-6 lg:py-3 
           shadow-2xl shadow-black/10 transition-all duration-500 backdrop-saturate-150
           ${scrolled ? 'bg-white/90 backdrop-blur-3xl shadow-3xl border-white/30' : ''}
         `}>
@@ -144,7 +144,14 @@ const NavbarComponent = () => {
                 <img 
                   src="/Giving_Circle..-removebg-preview.png" 
                   alt="The Giving Circle Logo" 
-                  className="h-8 sm:h-9 md:h-10 lg:h-10 xl:h-11 drop-shadow-lg"
+                  className="h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 drop-shadow-lg"
+                  width="227"
+                  height="56"
+                  loading="eager"
+                  fetchPriority="high"
+                  style={{ aspectRatio: '227/56' }}
+                  srcSet="/Giving_Circle..-removebg-preview.png 1x, /Giving_Circle..-removebg-preview.png 2x"
+                  sizes="(max-width: 640px) 227px, (max-width: 1024px) 256px, 284px"
                 />
               </a>
             </motion.div>
@@ -167,7 +174,7 @@ const NavbarComponent = () => {
                           e.stopPropagation();
                           toggleDropdown(item.name);
                         }}
-                        className={`px-2 xl:px-3 py-2 text-sm lg:text-base font-semibold transition-all duration-300 relative ${
+                        className={`px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base font-semibold transition-all duration-300 relative whitespace-nowrap ${
                           item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
                         } flex items-center`}
                       >
@@ -182,7 +189,7 @@ const NavbarComponent = () => {
                               }}
                               className="relative flex items-center"
                             >
-                              <SirenIcon size={18} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                              <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
                             </motion.div>
                           )}
                           <span className={item.highlight ? 'text-red-600' : ''}>{item.name}</span>
@@ -227,7 +234,7 @@ const NavbarComponent = () => {
                         y: -2,
                         color: item.highlight ? '#dc2626' : '#1f2937'
                       }}
-                      className={`px-2 xl:px-3 py-2 text-sm lg:text-base font-semibold transition-all duration-300 relative ${
+                      className={`px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base font-semibold transition-all duration-300 relative whitespace-nowrap ${
                         item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                       }`}
                     >
@@ -242,7 +249,7 @@ const NavbarComponent = () => {
                             }}
                             className="relative flex items-center"
                           >
-                            <SirenIcon size={18} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                            <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
                           </motion.div>
                         )}
                         {item.name}
@@ -270,7 +277,7 @@ const NavbarComponent = () => {
                         e.stopPropagation();
                         toggleDropdown(item.name);
                       }}
-                      className={`px-2 py-2 text-sm font-semibold transition-all duration-300 relative ${
+                      className={`px-2 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 relative whitespace-nowrap ${
                         item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
                       } flex items-center`}
                     >
@@ -330,7 +337,7 @@ const NavbarComponent = () => {
                       y: -2,
                       color: item.highlight ? '#dc2626' : '#1f2937'
                     }}
-                    className={`px-2 py-2 text-sm font-semibold transition-all duration-300 relative ${
+                    className={`px-2 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 relative whitespace-nowrap ${
                       item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                     }`}
                   >
@@ -366,7 +373,7 @@ const NavbarComponent = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-green-700 text-white px-3 xl:px-4 py-2 rounded-lg font-semibold text-sm lg:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
+                className="bg-green-700 text-white px-2 sm:px-3 xl:px-4 py-1.5 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm lg:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
                  Start Your Giving Circle
               </motion.button>
@@ -377,9 +384,12 @@ const NavbarComponent = () => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-gray-600 hover:text-gray-900 focus:outline-none p-2 rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen}
+                className="text-gray-600 hover:text-gray-900 focus:outline-none p-1.5 sm:p-2 rounded-lg hover:bg-white/20 backdrop-blur-sm transition-all duration-300"
+                style={{ minWidth: '44px', minHeight: '44px' }}
               >
-                {isOpen ? <X size={22} /> : <Menu size={22} />}
+                {isOpen ? <X size={20} className="sm:w-[22px] sm:h-[22px]" /> : <Menu size={20} className="sm:w-[22px] sm:h-[22px]" />}
               </motion.button>
             </div>
 
@@ -394,7 +404,7 @@ const NavbarComponent = () => {
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
-                className="bg-green-700 text-white px-3 py-2 rounded-lg font-semibold text-sm hover:bg-green-800 transition-all duration-300 backdrop-blur-sm"
+                className="bg-green-700 text-white px-2 sm:px-3 py-1.5 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm hover:bg-green-800 transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
                 Champion
               </motion.button>
@@ -408,7 +418,7 @@ const NavbarComponent = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden overflow-hidden"
           >
-            <div className="pt-3 sm:pt-4 pb-2 space-y-1 sm:space-y-2">
+            <div className="pt-2 sm:pt-3 md:pt-4 pb-2 space-y-1 sm:space-y-2">
               {navItems.map((item, index) => (
                 item.hasDropdown ? (
                   <div key={item.name} className="space-y-1">
@@ -417,7 +427,7 @@ const NavbarComponent = () => {
                       animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       onClick={() => toggleDropdown(item.name)}
-                      className={`flex items-center justify-between w-full px-3 sm:px-4 py-2 text-sm sm:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
+                      className={`flex items-center justify-between w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg break-words ${
                         item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                       }`}
                     >
@@ -438,13 +448,13 @@ const NavbarComponent = () => {
                         <span>{item.name}</span>
                       </div>
                       <ChevronDown 
-                        className={`w-4 h-4 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`} 
+                        className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`} 
                       />
                     </motion.button>
                     
                     {/* Mobile dropdown menu items */}
                     {dropdownStates[item.name] && (
-                      <div className="pl-4 space-y-1">
+                      <div className="pl-3 sm:pl-4 space-y-1">
                         {item.dropdownItems?.map((dropdownItem, dropIdx) => (
                           <motion.a
                             key={dropdownItem.name}
@@ -452,7 +462,7 @@ const NavbarComponent = () => {
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.2, delay: dropIdx * 0.05 }}
-                            className="block px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors rounded-lg"
+                            className="block px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm text-gray-600 hover:text-gray-900 transition-colors rounded-lg break-words"
                             onClick={() => setIsOpen(false)}
                           >
                             {dropdownItem.name}
@@ -468,12 +478,12 @@ const NavbarComponent = () => {
                     initial={{ x: -50, opacity: 0 }}
                     animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={`block px-3 sm:px-4 py-2 text-sm sm:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg ${
+                    className={`block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg break-words ${
                       item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
                     }`}
                     onClick={() => setIsOpen(false)}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1.5 sm:gap-2">
                       {item.urgent && (
                         <motion.div 
                           animate={{
@@ -484,7 +494,7 @@ const NavbarComponent = () => {
                           }}
                           className="relative flex items-center"
                         >
-                          <SirenIcon size={16} className={`${blinkState ? 'text-red-600' : 'text-red-500'}`} />
+                          <SirenIcon size={14} className={`sm:w-4 sm:h-4 ${blinkState ? 'text-red-600' : 'text-red-500'}`} />
                         </motion.div>
                       )}
                       {item.name}
@@ -501,7 +511,7 @@ const NavbarComponent = () => {
                     setIsOpen(false);
                     window.location.href = '/onboarding';
                   }}
-                  className="bg-green-700 text-white px-4 py-2 sm:py-3 rounded-lg font-semibold text-sm sm:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm w-full"
+                  className="bg-green-700 text-white px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-semibold text-xs sm:text-sm md:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm w-full whitespace-nowrap"
                 >
                   Start Your Giving Circle
                 </motion.button>

@@ -24,7 +24,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   icon,
   href
 }) => {
-  const baseClasses = "group font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 rounded-full";
+  const baseClasses = "group font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2 rounded-full whitespace-nowrap";
   
   const variantClasses = {
     primary: "bg-green-700 text-white hover:bg-green-800 active:bg-green-900",
@@ -33,9 +33,9 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   };
   
   const sizeClasses = {
-    sm: "px-4 py-2 text-sm",
-    md: "px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base lg:text-lg",
-    lg: "px-8 py-4 text-lg"
+    sm: "px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm",
+    md: "px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg",
+    lg: "px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 text-sm sm:text-base md:text-lg"
   };
   
   const disabledClasses = disabled 
@@ -46,7 +46,7 @@ const PrimaryButton: React.FC<PrimaryButtonProps> = ({
   
   const buttonContent = (
     <>
-      {icon && icon}
+      {icon && <span className="[&>svg]:w-3 [&>svg]:h-3 sm:[&>svg]:w-4 sm:[&>svg]:h-4">{icon}</span>}
       <span>{children}</span>
     </>
   );

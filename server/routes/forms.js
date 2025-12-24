@@ -97,8 +97,12 @@ export const submitCauseChampionForm = async (req, res) => {
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
+    // Use verified email address (tech@smartbrew.in is verified in Resend)
+    // To send from hello@thegivingcircle.in, verify domain in Resend first
+    const fromEmail = process.env.RESEND_FROM_EMAIL ;
+    
     const { data, error } = await resend.emails.send({
-      from: 'The Giving Circle <onboarding@resend.dev>',
+      from: `The Giving Circle <${fromEmail}>`,
       to: receiverEmail,
       replyTo: email,
       subject: `New Cause Champion Registration - ${fullName}`,
@@ -193,8 +197,12 @@ export const submitNGOPartnerForm = async (req, res) => {
       timeStyle: 'long',
     });
 
+    // Use verified email address (tech@smartbrew.in is verified in Resend)
+    // To send from hello@thegivingcircle.in, verify domain in Resend first
+    const fromEmail = process.env.RESEND_FROM_EMAIL ;
+    
     const { data, error } = await resend.emails.send({
-      from: 'The Giving Circle <onboarding@resend.dev>',
+      from: `The Giving Circle <${fromEmail}>`,
       to: receiverEmail,
       replyTo: email,
       subject: `Partner Registration - ${organizationName}`,

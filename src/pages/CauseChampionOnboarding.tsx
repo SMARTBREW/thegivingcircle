@@ -198,7 +198,7 @@ const CauseChampionOnboarding: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 mt-10">
       {/* Simple Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
 
@@ -492,7 +492,7 @@ const CauseChampionOnboarding: React.FC = () => {
                   size="lg"
                   aria-label="Complete cause champion registration and start your giving circle"
                 >
-                  {isSubmitting ? 'Submitting...' : 'Start Your Giving Circle - Become a Cause Champion'}
+                  {isSubmitting ? 'Submitting...' : 'Start Your Giving Circle'}
                 </PrimaryButton>
               </motion.div>
             </div>

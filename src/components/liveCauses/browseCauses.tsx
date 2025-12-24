@@ -234,41 +234,41 @@ const LiveCausesPage = () => {
       <div className="relative text-white overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">
         
         
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
+        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
           <div className="max-w-4xl">
 
             
-            <h1 className="text-3xl mt-12 sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 mt-10 leading-tight animate-fade-in text-white drop-shadow-lg break-words">
               Live Causes - Support Active Campaigns India
             </h1>
             
-            <p className="text-lg mb-6 sm:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl">
+            <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl break-words">
               Discover urgent causes and support live fundraising campaigns across India. Join <span className="font-semibold text-white">1,23,456+ donors</span> creating real impact through transparent fundraising on verified social causes India.
             </p>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 max-w-2xl mb-6 sm:mb-8 animate-fade-in-delay">
-              <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
-                <div className="flex items-center gap-2 mb-1">
-                  <CheckCircle className="text-green-400" size={18} />
-                  <span className="font-semibold text-sm">Verified Causes</span>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-2xl mb-4 sm:mb-6 md:mb-8 animate-fade-in-delay">
+              <div className="bg-black/40 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-white/20">
+                <div className="flex items-center gap-1 sm:gap-2 mb-1">
+                  <CheckCircle className="text-green-400" size={16} />
+                  <span className="font-semibold text-xs sm:text-sm">Verified Causes</span>
                 </div>
-                <p className="text-xs text-gray-300">Donate to verified causes only</p>
+                <p className="text-[10px] sm:text-xs text-gray-300">Donate to verified causes only</p>
               </div>
               
-              <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
-                <div className="flex items-center gap-2 mb-1">
-                  <Target className="text-blue-400" size={18} />
-                  <span className="font-semibold text-sm">Transparent Fundraising</span>
+              <div className="bg-black/40 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-white/20">
+                <div className="flex items-center gap-1 sm:gap-2 mb-1">
+                  <Target className="text-blue-400" size={16} />
+                  <span className="font-semibold text-xs sm:text-sm">Transparent Fundraising</span>
                 </div>
-                <p className="text-xs text-gray-300">Impact-driven donations</p>
+                <p className="text-[10px] sm:text-xs text-gray-300">Impact-driven donations</p>
               </div>
               
-              <div className="bg-black/40 backdrop-blur-sm rounded-lg p-3 border border-white/20">
-                <div className="flex items-center gap-2 mb-1">
-                  <Users className="text-green-500" size={18} />
-                  <span className="font-semibold text-sm">Emergency Causes</span>
+              <div className="bg-black/40 backdrop-blur-sm rounded-lg p-2 sm:p-3 border border-white/20">
+                <div className="flex items-center gap-1 sm:gap-2 mb-1">
+                  <Users className="text-green-500" size={16} />
+                  <span className="font-semibold text-xs sm:text-sm">Emergency Causes</span>
                 </div>
-                <p className="text-xs text-gray-300">Support urgent causes</p>
+                <p className="text-[10px] sm:text-xs text-gray-300">Support urgent causes</p>
               </div>
             </div>
             
@@ -279,14 +279,14 @@ const LiveCausesPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
-        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+        <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
           {/* Professional Sidebar */}
           <div className="lg:w-1/5">
-            <div className="bg-white rounded-xl shadow-sm border p-4 sm:p-6 sticky top-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Shield className="text-blue-600" size={20} />
-                <h3 className="text-lg font-semibold text-gray-900">Active Campaigns</h3>
+            <div className="bg-white rounded-xl shadow-sm border p-3 sm:p-4 md:p-6 lg:sticky lg:top-6">
+              <div className="flex items-center gap-2 mb-3 sm:mb-4">
+                <Shield className="text-blue-600" size={18} />
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900">Active Campaigns</h3>
               </div>
               <div className="space-y-2 max-h-96 overflow-y-auto">
                 {ngos.map((ngo) => (
@@ -296,7 +296,7 @@ const LiveCausesPage = () => {
                       setSelectedNGO(ngo);
                       setVisibleCauses(9);
                     }}
-                    className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-200 font-medium text-sm sm:text-base ${
+                    className={`w-full text-left px-3 sm:px-4 py-2 sm:py-3 rounded-lg transition-all duration-200 font-medium text-xs sm:text-sm md:text-base ${
                       selectedNGO === ngo
                         ? 'bg-green-700 text-white'
                         : 'text-gray-600 hover:bg-gray-100 border border-gray-200'
@@ -307,12 +307,12 @@ const LiveCausesPage = () => {
                 ))}
               </div>
               
-              <div className="mt-8 p-4 bg-blue-50 rounded-lg border border-blue-200">
+              <div className="mt-6 sm:mt-8 p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
                 <div className="flex items-center gap-2 mb-2">
-                  <Award className="text-blue-600" size={16} />
-                  <span className="font-semibold text-blue-800 text-sm">Impact Guarantee</span>
+                  <Award className="text-blue-600" size={14} />
+                  <span className="font-semibold text-blue-800 text-xs sm:text-sm">Impact Guarantee</span>
                 </div>
-                <p className="text-blue-700 text-xs leading-relaxed">All partner NGOs undergo quarterly audits and maintain transparent fund allocation reporting.</p>
+                <p className="text-blue-700 text-[10px] sm:text-xs leading-relaxed break-words">All partner NGOs undergo quarterly audits and maintain transparent fund allocation reporting.</p>
               </div>
             </div>
           </div>
@@ -320,22 +320,22 @@ const LiveCausesPage = () => {
           {/* Main Content Area */}
           <div className="lg:w-4/5">
             {/* Professional Search and Filters */}
-            <div className="mb-4 sm:mb-6 bg-white rounded-xl shadow-sm border p-4 sm:p-6">
-              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4">Find Live Causes to Support</h2>
+            <div className="mb-4 sm:mb-6 bg-white rounded-xl shadow-sm border p-3 sm:p-4 md:p-6">
+              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 break-words">Find Live Causes to Support</h2>
               
               {/* Search Bar */}
-              <div className="relative mb-4 sm:mb-6">
-                <Search className="absolute left-3 sm:left-4 top-3 sm:top-4 text-gray-400" size={18} />
+              <div className="relative mb-3 sm:mb-4 md:mb-6">
+                <Search className="absolute left-3 sm:left-4 top-3 sm:top-4 text-gray-400" size={16} />
                 <input
                   type="text"
-                  placeholder="Search fundraising causes by category, location, or urgency..."
-                  className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent text-sm sm:text-base"
+                  placeholder="Search fundraising causes..."
+                  className="w-full pl-9 sm:pl-10 md:pl-12 pr-3 sm:pr-4 py-2 sm:py-3 md:py-4 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-700 focus:border-transparent text-xs sm:text-sm md:text-base"
                   aria-label="Search for live causes and active campaigns to donate to social causes India"
                 />
               </div>
 
               {/* Professional Filters */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-4 text-xs sm:text-sm">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 text-[10px] sm:text-xs md:text-sm">
                 <span className="text-gray-600 font-medium">Viewing causes from</span>
                 
                 <select 
@@ -344,7 +344,7 @@ const LiveCausesPage = () => {
                     setSelectedNGO(e.target.value);
                     setVisibleCauses(9);
                   }}
-                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-green-700 font-medium text-xs sm:text-sm"
+                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-green-700 font-medium text-[10px] sm:text-xs md:text-sm"
                 >
                   {ngos.map(ngo => (
                     <option key={ngo} value={ngo}>{ngo}</option>
@@ -356,7 +356,7 @@ const LiveCausesPage = () => {
                 <select 
                   value={selectedFilter}
                   onChange={(e) => setSelectedFilter(e.target.value)}
-                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-green-700 font-medium text-xs sm:text-sm"
+                  className="border border-gray-300 text-gray-600 rounded-lg px-2 sm:px-3 md:px-4 py-1 sm:py-2 bg-white focus:ring-2 focus:ring-green-700 font-medium text-[10px] sm:text-xs md:text-sm"
                 >
                   <option>Most Urgent</option>
                   <option>Highest Goal</option>
@@ -365,7 +365,7 @@ const LiveCausesPage = () => {
                   <option>Recently Added</option>
                 </select>
 
-                <button className="text-green-700 ml-auto hover:text-green-800 transition-colors font-medium text-xs sm:text-sm">
+                <button className="text-green-700 ml-auto hover:text-green-800 transition-colors font-medium text-[10px] sm:text-xs md:text-sm">
                   Reset All Filters
                 </button>
               </div>
@@ -373,17 +373,17 @@ const LiveCausesPage = () => {
 
             {/* Results Count */}
             <div className="mb-3 sm:mb-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0">
-              <div className="text-gray-600 text-sm sm:text-base">
+              <div className="text-gray-600 text-xs sm:text-sm md:text-base break-words">
                 Displaying <span className="font-semibold">{Math.min(visibleCauses, filteredCauses.length)}</span> of <span className="font-semibold">{filteredCauses.length}</span> urgent live causes
               </div>
-              <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
+              <div className="flex items-center gap-2 text-[10px] sm:text-xs md:text-sm text-gray-500">
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
                 <span>Transparent donation platform India</span>
               </div>
             </div>
 
             {/* Professional Cause Cards - Responsive Grid */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 mb-4 sm:mb-6">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 mb-4 sm:mb-6">
               {visibleCausesList.map((cause) => (
                 <div
                   key={cause.id}
@@ -391,7 +391,7 @@ const LiveCausesPage = () => {
                   className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-200 overflow-hidden cursor-pointer group"
                 >
                   {/* Image */}
-                  <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                  <div className="relative h-40 sm:h-48 md:h-56 lg:h-64 overflow-hidden">
                     <CloudinaryImage 
                       src={cause.image} 
                       alt={cause.title}
@@ -402,38 +402,38 @@ const LiveCausesPage = () => {
                     />
                     <div className="absolute top-2 sm:top-3 left-2 sm:left-3">
                       <div className="flex flex-col sm:flex-row items-start sm:items-center gap-1 sm:gap-2">
-                        <span className={`px-2 sm:px-3 py-1 rounded-full text-xs font-semibold ${getUrgencyColor(cause.urgency)}`}>
+                        <span className={`px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-semibold ${getUrgencyColor(cause.urgency)}`}>
                           {cause.urgency} Priority
                         </span>
                         <div className="flex items-center gap-1 bg-white/90 backdrop-blur-sm rounded-full px-1 sm:px-2 py-1">
-                          <CheckCircle size={12} className="text-green-600" />
-                          <span className="text-xs font-medium text-green-700">Verified</span>
+                          <CheckCircle size={10} className="text-green-600" />
+                          <span className="text-[10px] sm:text-xs font-medium text-green-700">Verified</span>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <div className="p-4 sm:p-6">
-                    <h3 className="font-semibold text-lg text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-green-700 transition-colors">
+                  <div className="p-3 sm:p-4 md:p-6">
+                    <h3 className="font-semibold text-base sm:text-lg md:text-xl text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-green-700 transition-colors break-words">
                       {cause.title}
                     </h3>
                     
                     <div className="space-y-1 sm:space-y-2 mb-3 sm:mb-4">
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                        <Building2 size={12} className="text-green-700" />
-                        <span className="font-medium">{cause.ngo}</span>
+                      <div className="flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
+                        <Building2 size={10} className="text-green-700" />
+                        <span className="font-medium break-words">{cause.ngo}</span>
                         <span className="text-green-600">•</span>
-                        <span className="text-green-600 text-xs">Verified</span>
+                        <span className="text-green-600 text-[10px] sm:text-xs">Verified</span>
                       </div>
                       
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                        <MapPin size={12} />
-                        <span>{cause.location}</span>
+                      <div className="flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
+                        <MapPin size={10} />
+                        <span className="break-words">{cause.location}</span>
                       </div>
                       
-                      <div className="flex items-center gap-2 text-xs sm:text-sm text-gray-600">
-                        <Target size={12} />
-                        <span>{cause.beneficiaries} • {cause.timeline}</span>
+                      <div className="flex items-center gap-1 sm:gap-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
+                        <Target size={10} />
+                        <span className="break-words">{cause.beneficiaries} • {cause.timeline}</span>
                       </div>
                     </div>
 
@@ -441,11 +441,11 @@ const LiveCausesPage = () => {
                     <div className="mb-3 sm:mb-4">
                       <div className="flex justify-between items-center mb-1 sm:mb-2">
                         <div>
-                          <span className="text-lg sm:text-2xl font-bold text-gray-900">{cause.raisedAmount}</span>
-                          <span className="text-xs sm:text-sm text-gray-600 ml-1 sm:ml-2">raised</span>
+                          <span className="text-base sm:text-lg md:text-2xl font-bold text-gray-900">{cause.raisedAmount}</span>
+                          <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 ml-1 sm:ml-2">raised</span>
                         </div>
                         <div className="text-right">
-                          <span className="text-xs sm:text-sm font-medium text-gray-600">{cause.progressPercentage}% of {cause.goalAmount}</span>
+                          <span className="text-[10px] sm:text-xs md:text-sm font-medium text-gray-600 break-words">{cause.progressPercentage}% of {cause.goalAmount}</span>
                         </div>
                       </div>
                       <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 mb-2 sm:mb-3">
@@ -454,22 +454,22 @@ const LiveCausesPage = () => {
                           style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                         ></div>
                       </div>
-                      <div className="flex justify-between items-center text-xs sm:text-sm">
+                      <div className="flex justify-between items-center text-[10px] sm:text-xs md:text-sm">
                         <div className="flex items-center gap-1">
-                          <Heart size={12} className="text-red-500" />
-                          <span className="font-medium">{cause.supporters} donors</span>
+                          <Heart size={10} className="text-red-500" />
+                          <span className="font-medium break-words">{cause.supporters} donors</span>
                         </div>
                         <div className="flex items-center gap-1">
-                          <Star size={12} className="text-yellow-500" />
-                          <span className="font-medium">Impact Score: {Math.floor(85 + Math.random() * 15)}</span>
+                          <Star size={10} className="text-yellow-500" />
+                          <span className="font-medium break-words">Impact Score: {Math.floor(85 + Math.random() * 15)}</span>
                         </div>
                       </div>
                     </div>
                     
                     <div className="mb-3 sm:mb-4">
-                      <div className="flex justify-between text-xs mb-1">
+                      <div className="flex justify-between text-[10px] sm:text-xs mb-1">
                         <span className="text-gray-600">Status</span>
-                        <span className="font-medium text-green-600">Active • Verified</span>
+                        <span className="font-medium text-green-600 break-words">Active • Verified</span>
                       </div>
                     </div>
                     
@@ -495,7 +495,7 @@ const LiveCausesPage = () => {
               <div className="text-center mb-4 sm:mb-6">
                 <button 
                   onClick={loadMore}
-                  className="bg-white hover:bg-gray-50 text-gray-600 border border-gray-300 hover:border-purple-300 px-6 sm:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:shadow-md transition-all duration-300 text-sm sm:text-base"
+                  className="bg-white hover:bg-gray-50 text-gray-600 border border-gray-300 hover:border-purple-300 px-4 sm:px-6 md:px-8 py-2 sm:py-3 rounded-lg font-semibold hover:shadow-md transition-all duration-300 text-xs sm:text-sm md:text-base"
                 >
                   Load More Causes
                 </button>

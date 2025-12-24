@@ -15,7 +15,7 @@ export const Testimonials: React.FC = () => {
       id: '1',
       name: 'Priya Sharma',
       role: 'Cause Champion',
-      image: 'https://images.pexels.com/photos/8924530/pexels-photo-8924530.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/w_400,h_400,c_fill,g_face,q_auto,f_auto/v1758200608/images/_DSC9857.jpg',
       quote: 'Becoming a Cause Champion through The Giving Circle has been life-changing. Seeing the girls I supported graduate and start businesses is proof of real impact. This trusted charity platform made it possible to witness verified change and create meaningful impact stories.',
       organization: 'Supporting Girls Education Through Community Giving',
     },
@@ -23,7 +23,7 @@ export const Testimonials: React.FC = () => {
       id: '2',
       name: 'Dr. Rajesh Kumar',
       role: 'NGO Partner Director',
-      image: 'https://images.pexels.com/photos/8924531/pexels-photo-8924531.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/w_400,h_400,c_fill,g_face,q_auto,f_auto/v1758200608/images/_DSC9857.jpg',
       quote: 'The Giving Circle\'s transparent giving platform and verification process have elevated our social impact work. Cause Champions can see exactly how their support creates real change across India, building trust through community-driven social impact and accountability.',
       organization: 'Verified NGO Partner - Water Warriors Foundation',
     },
@@ -31,7 +31,7 @@ export const Testimonials: React.FC = () => {
       id: '3',
       name: 'Anita Verma',
       role: 'Cause Champion',
-      image: 'https://images.pexels.com/photos/8924532/pexels-photo-8924532.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/w_400,h_400,c_fill,g_face,q_auto,f_auto/v1758200608/images/_DSC9857.jpg',
       quote: 'This legitimate charity platform gives me verified proof that my donations are making a real difference. I can share impact stories India with friends and inspire them to join our giving circle and support social causes too.',
       organization: 'Youth Skill Development - Community Impact',
     },
@@ -39,7 +39,7 @@ export const Testimonials: React.FC = () => {
       id: '4',
       name: 'Suresh Patel',
       role: 'Community Leader',
-      image: 'https://images.pexels.com/photos/8924533/pexels-photo-8924533.jpeg?auto=compress&cs=tinysrgb&w=400',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/w_400,h_400,c_fill,g_face,q_auto,f_auto/v1758200608/images/_DSC9857.jpg',
       quote: 'Working with The Giving Circle has brought our community together. The champions genuinely care about our progress and celebrate every milestone with us.',
       organization: 'Rural Development Initiative',
     },
@@ -86,19 +86,19 @@ export const Testimonials: React.FC = () => {
   };
 
   return (
-    <section className="py-8 sm:py-10 md:py-12 lg:py-14 xl:py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section className="py-6 sm:py-8 md:py-10 lg:py-12 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-6 sm:mb-8 md:mb-10"
+          className="text-center mb-5 sm:mb-6 md:mb-8 lg:mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6">
             Voices of Change
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto leading-relaxed break-words px-2">
             Hear from Cause Champions, trusted NGO partners, and community members whose lives have been transformed through India's community giving platform. Discover verified impact stories and how our social impact platform creates lasting change across India.
           </p>
         </motion.div>
@@ -106,7 +106,7 @@ export const Testimonials: React.FC = () => {
         <div className="relative">
           {/* Main Testimonial */}
           <div 
-            className="relative min-h-[250px] sm:min-h-[280px] md:min-h-[300px] flex items-center justify-center px-2 sm:px-4"
+            className="relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex items-center justify-center px-2 sm:px-4"
             ref={testimonialRef}
             onTouchStart={handleTouchStart}
             onTouchMove={handleTouchMove}
@@ -119,10 +119,10 @@ export const Testimonials: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -100 }}
                 transition={{ duration: 0.5 }}
-                className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl mx-auto"
+                className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto"
               >
                 <motion.div 
-                  className="bg-white rounded-2xl sm:rounded-3xl shadow-xl sm:shadow-2xl p-4 sm:p-5 md:p-6 relative"
+                  className="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl p-3 sm:p-4 md:p-5 lg:p-6 relative"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
                 >
@@ -130,37 +130,44 @@ export const Testimonials: React.FC = () => {
                     initial={{ rotate: 0 }}
                     animate={{ rotate: [0, 15, 0, -15, 0] }}
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
-                    className="absolute top-3 left-3 sm:top-4 sm:left-4 md:top-6 md:left-6"
+                    className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-4 md:left-4"
                   >
-                    <Quote className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-primary-100" />
+                    <Quote className="w-5 h-5 sm:w-6 md:w-8 lg:w-10 text-green-100" />
                   </motion.div>
                   
-                  <div className="flex flex-col sm:flex-row md:flex-row items-center space-y-3 sm:space-y-0 sm:space-x-3 md:space-x-4 pt-6 sm:pt-0">
+                  <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-4 pt-5 sm:pt-0">
                     <motion.div 
-                      className="flex-shrink-0 order-first sm:order-first"
+                      className="flex-shrink-0"
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <img
-                        src={testimonials[currentIndex].image}
+                        src={testimonials[currentIndex].image.includes('w_400') 
+                          ? testimonials[currentIndex].image.replace(/w_400(,h_400)?/g, 'w_128,h_128')
+                          : testimonials[currentIndex].image.replace(/\/upload\/([^/]+)\//, '/upload/w_128,h_128,c_fill,q_75,f_auto/$1/')
+                        }
                         alt={testimonials[currentIndex].name}
-                        className="w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 rounded-full object-cover shadow-lg border-2 border-white"
+                        className="w-12 h-12 sm:w-14 md:w-16 lg:w-18 rounded-full object-cover shadow-lg border-2 border-white"
+                        width="128"
+                        height="128"
+                        loading="lazy"
+                        decoding="async"
                       />
                     </motion.div>
                     
-                    <div className="flex-1 text-center sm:text-left">
-                      <blockquote className="text-lg text-gray-600 italic leading-relaxed mb-3 sm:mb-4 px-2 sm:px-0">
+                    <div className="flex-1 text-center sm:text-left w-full">
+                      <blockquote className="text-sm sm:text-base md:text-lg text-gray-600 italic leading-relaxed mb-2 sm:mb-3 md:mb-4 px-1 sm:px-0 break-words">
                         "{testimonials[currentIndex].quote}"
                       </blockquote>
                       
-                      <div className="space-y-1 sm:space-y-2">
-                        <div className="font-semibold text-gray-900 text-lg">
+                      <div className="space-y-1 sm:space-y-1.5 md:space-y-2">
+                        <div className="font-semibold text-gray-900 text-sm sm:text-base md:text-lg">
                           {testimonials[currentIndex].name}
                         </div>
-                        <div className="font-medium text-sm sm:text-base" style={{ color: '#456FA5' }}>
+                        <div className="font-medium text-xs sm:text-sm md:text-base" style={{ color: '#456FA5' }}>
                           {testimonials[currentIndex].role}
                         </div>
-                        <div className="text-gray-600 text-xs sm:text-sm">
+                        <div className="text-gray-600 text-xs sm:text-sm break-words">
                           {testimonials[currentIndex].organization}
                         </div>
                       </div>
@@ -172,8 +179,8 @@ export const Testimonials: React.FC = () => {
           </div>
 
           {/* Mobile swipe indicator */}
-          <div className="sm:hidden flex justify-center mt-4 items-center">
-            <div className="text-xs text-text/50 flex items-center bg-white/80 px-3 py-1 rounded-full">
+          <div className="sm:hidden flex justify-center mt-3 items-center">
+            <div className="text-xs text-gray-500 flex items-center bg-white/80 px-2 sm:px-3 py-1 rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1">
                 <path d="M17 8l4 4-4 4"></path>
                 <path d="M3 12h18"></path>
@@ -183,38 +190,28 @@ export const Testimonials: React.FC = () => {
           </div>
 
           {/* Navigation Indicators */}
-          <div className="flex items-center justify-center space-x-4 mt-4 sm:mt-5">
-            <div className="flex space-x-2 sm:space-x-3">
+          <div className="flex items-center justify-center space-x-4 mt-3 sm:mt-4 md:mt-5">
+            <div className="flex space-x-2">
               {testimonials.map((_, index) => (
                 <motion.button
                   key={index}
                   whileHover={{ scale: 1.2 }}
                   whileTap={{ scale: 0.9 }}
                   onClick={() => setCurrentIndex(index)}
-                  className={`h-2 sm:h-3 md:h-4 rounded-full transition-all duration-200 ${
+                  className="relative transition-all duration-200"
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  style={{ minWidth: '44px', minHeight: '44px', padding: '20px 0' }}
+                >
+                  <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 sm:h-3 md:h-4 rounded-full transition-all duration-200 ${
                     index === currentIndex 
                       ? 'bg-green-700 w-6 sm:w-8 md:w-10' 
                       : 'bg-gray-300 w-2 sm:w-3 md:w-4 hover:bg-green-400'
-                  }`}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                />
+                  }`} />
+                </motion.button>
               ))}
             </div>
           </div>
         </div>
-
-       
-
-      {/* Custom scrollbar hide styles */}
-      <style>{`
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
       </div>
     </section>
   );

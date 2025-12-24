@@ -32,10 +32,10 @@ export const Button: React.FC<ButtonProps> = ({
   };
 
   const sizes = {
-    sm: 'px-3 py-1.5 text-sm',
-    md: 'px-6 py-3 text-base',
-    lg: 'px-8 py-4 text-lg',
-    xl: 'px-10 py-5 text-xl',
+    sm: 'px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm',
+    md: 'px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base',
+    lg: 'px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg',
+    xl: 'px-8 sm:px-10 py-4 sm:py-5 text-lg sm:text-xl',
   };
 
   const buttonClasses = clsx(
@@ -55,9 +55,9 @@ export const Button: React.FC<ButtonProps> = ({
       {...props as any}
     >
       {loading && (
-        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2" />
+        <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-1 sm:mr-2" />
       )}
-      {icon && !loading && <span className="mr-2">{icon}</span>}
+      {icon && !loading && <span className="mr-1 sm:mr-2 [&>svg]:w-3 [&>svg]:h-3 sm:[&>svg]:w-4 sm:[&>svg]:h-4">{icon}</span>}
       {children}
     </motion.button>
   );

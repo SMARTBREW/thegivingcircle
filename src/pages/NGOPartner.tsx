@@ -143,12 +143,12 @@ export const NGOPartner: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 mt-10">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br-gray-100" />
 
       <motion.div 
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-12"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -159,22 +159,22 @@ export const NGOPartner: React.FC = () => {
           variants={formVariants}
         >
           <motion.div 
-            className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
+            className="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200"
           >
             {/* Form Content */}
             <>
-                <div className="flex justify-center mb-6 sm:mb-8">
+                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                   <img 
                     src="/Giving Circle logo.png" 
                     alt="Giving Circle Logo - Verified Partner Platform India" 
-                    className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
                   />
                 </div>
 
                 {!isSubmitted && (
-                  <div className="text-center mb-6 sm:mb-8">
-                    <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 sm:mb-4">Become Partner - Join Verified Partner Network India</h1>
-                    <p className="text-lg text-gray-600 leading-relaxed">Partner with Giving Circle to connect with passionate Cause Champions. Join as partner in our verified partner platform India and collaborate with verified partners. Start your partner registration today.</p>
+                  <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                    <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 break-words">Become Partner - Join Verified Partner Network India</h1>
+                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">Partner with Giving Circle to connect with passionate Cause Champions. Join as partner in our verified partner platform India and collaborate with verified partners. Start your partner registration today.</p>
                   </div>
                 )}
 
@@ -182,24 +182,24 @@ export const NGOPartner: React.FC = () => {
                   <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    className="text-center p-8 bg-green-50 border border-green-200 rounded-lg"
+                    className="text-center p-4 sm:p-6 md:p-8 bg-green-50 border border-green-200 rounded-lg"
                   >
-                    <div className="text-green-600 text-5xl mb-4">✓</div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Success!</h2>
-                    <p className="text-gray-600">
+                    <div className="text-green-600 text-4xl sm:text-5xl mb-3 sm:mb-4">✓</div>
+                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">Success!</h2>
+                    <p className="text-sm sm:text-base text-gray-600 break-words">
                       Thank you for your interest in partnering with The Giving Circle. Our team will reach out to you asap.
                     </p>
                   </motion.div>
                 ) : (
-                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5">
                   {/* Organization Name */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                      <Building2 className="w-5 h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                       Organization Name *
                     </label>
                     <input
@@ -207,7 +207,7 @@ export const NGOPartner: React.FC = () => {
                       name="organizationName"
                       value={formData.organizationName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-sm sm:text-base"
                       placeholder="Enter your NGO organization name"
                       required
                       aria-label="Enter your NGO organization name for partner registration"
@@ -220,8 +220,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                      <Mail className="w-5 h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                       Email Address *
                     </label>
                     <input
@@ -229,7 +229,7 @@ export const NGOPartner: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-sm sm:text-base"
                       placeholder="Enter your email address"
                       required
                     />
@@ -241,8 +241,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                      <User className="w-5 h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <User className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                       Contact Person Name *
                     </label>
                     <input
@@ -250,7 +250,7 @@ export const NGOPartner: React.FC = () => {
                       name="contactPersonName"
                       value={formData.contactPersonName}
                       onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-sm sm:text-base"
                       placeholder="Enter contact person name"
                       required
                     />
@@ -262,8 +262,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45 }}
                   >
-                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                      <Phone className="w-5 h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                       Phone Number *
                     </label>
                     <PhoneInput
@@ -283,8 +283,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
-                      <MapPin className="w-5 h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
+                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
                       Country *
                     </label>
                     <Select
@@ -301,8 +301,12 @@ export const NGOPartner: React.FC = () => {
                           borderColor: '#d1d5db',
                           borderRadius: '0.5rem',
                           padding: '0.25rem',
-                          minHeight: '48px',
-                          fontSize: '1rem',
+                          minHeight: '44px',
+                          fontSize: '0.875rem',
+                          '@media (min-width: 640px)': {
+                            minHeight: '48px',
+                            fontSize: '1rem',
+                          },
                           '&:hover': {
                             borderColor: '#d1d5db',
                           },
@@ -311,7 +315,10 @@ export const NGOPartner: React.FC = () => {
                           ...base,
                           backgroundColor: state.isSelected ? '#15803d' : state.isFocused ? '#dcfce7' : 'white',
                           color: state.isSelected ? 'white' : '#374151',
-                          fontSize: '1rem',
+                          fontSize: '0.875rem',
+                          '@media (min-width: 640px)': {
+                            fontSize: '1rem',
+                          },
                           '&:hover': {
                             backgroundColor: state.isSelected ? '#15803d' : '#dcfce7',
                           },
@@ -319,15 +326,24 @@ export const NGOPartner: React.FC = () => {
                         placeholder: (base) => ({
                           ...base,
                           color: '#9ca3af',
-                          fontSize: '1rem',
+                          fontSize: '0.875rem',
+                          '@media (min-width: 640px)': {
+                            fontSize: '1rem',
+                          },
                         }),
                         input: (base) => ({
                           ...base,
-                          fontSize: '1rem',
+                          fontSize: '0.875rem',
+                          '@media (min-width: 640px)': {
+                            fontSize: '1rem',
+                          },
                         }),
                         singleValue: (base) => ({
                           ...base,
-                          fontSize: '1rem',
+                          fontSize: '0.875rem',
+                          '@media (min-width: 640px)': {
+                            fontSize: '1rem',
+                          },
                           color: '#374151',
                         }),
                       }}
@@ -336,12 +352,12 @@ export const NGOPartner: React.FC = () => {
 
                   {/* Statistics */}
                   <motion.div 
-                    className="text-center text-gray-600 text-base font-medium"
+                    className="text-center text-gray-600 text-sm sm:text-base font-medium"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <span className="text-green-600 font-semibold">{dailyPartnerCount}+</span> Verified Partners India joined our trusted partner network in the last month. <span className="block mt-2 text-sm">Join verified partner platform India and become partner today!</span>
+                    <span className="text-green-600 font-semibold">{dailyPartnerCount}+</span> Verified Partners India joined our trusted partner network in the last month. <span className="block mt-2 text-xs sm:text-sm break-words">Join verified partner platform India and become partner today!</span>
                   </motion.div>
 
                   {/* Submit Button */}
@@ -354,9 +370,9 @@ export const NGOPartner: React.FC = () => {
                     <PrimaryButton
                       type="submit"
                       disabled={!formData.organizationName || !formData.email || !formData.contactPersonName || !formData.phoneNumber || !formData.country || isSubmitting}
-                      className="w-full"
+                      className="w-full text-sm sm:text-base"
                       size="lg"
-                      icon={isSubmitting ? <Send className="w-4 h-4 animate-pulse" /> : <Send className="w-4 h-4" />}
+                      icon={isSubmitting ? <Send className="w-3 h-3 sm:w-4 sm:h-4 animate-pulse" /> : <Send className="w-3 h-3 sm:w-4 sm:h-4" />}
                       aria-label="Submit partner registration to become partner with verified partner platform India"
                     >
                       {isSubmitting ? 'Submitting...' : 'Start Partner Registration'}
@@ -367,7 +383,7 @@ export const NGOPartner: React.FC = () => {
                     <motion.div
                       initial={{ opacity: 0, y: -10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="w-full p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-sm"
+                      className="w-full p-2 sm:p-3 bg-red-50 border border-red-200 rounded-lg text-red-700 text-xs sm:text-sm break-words"
                     >
                       {error}
                     </motion.div>

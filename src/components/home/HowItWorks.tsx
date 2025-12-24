@@ -1,26 +1,23 @@
-"use client"
-
 import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const AboutImpactGallery = () => {
 
   return (
-    <section className="w-full py-8 sm:py-10 md:py-12 lg:py-14">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16">
+    <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14"
+          className="text-center mb-5 sm:mb-6 md:mb-8 lg:mb-10"
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
             Our Story
           </h1>
-          <p className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 leading-relaxed">
-          Discover how our community giving platform connects Cause Champions with verified social causes across India, creating transparent and meaningful impact.
-          
+          <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto leading-relaxed break-words px-2">
+            Discover how our community giving platform connects Cause Champions with verified social causes across India, creating transparent and meaningful impact.
           </p>
         </motion.div>
         
@@ -29,33 +26,28 @@ const AboutImpactGallery = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-8 sm:mb-10 md:mb-12 lg:mb-14"
         >
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
-            <div>
-              {/* <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 sm:mb-8">
-                Our{' '}
-                <span className="text-green-700">
-                  Story
-                </span>
-              </h2> */}
-              <div className="space-y-4 sm:space-y-6 text-gray-600">
-              <p className="text-lg leading-relaxed">
-              The Giving Circle is India's trusted social impact platform, built to connect generous people who want to support genuine social causes and make a difference in India.
-
-
+          <div className="flex flex-col md:grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 lg:gap-12">
+            {/* Image Grid - Show first on mobile, right and centered on desktop */}
+            <div className="w-full order-1 md:order-2 flex justify-center items-center md:justify-center">
+              <ShuffleGrid category="All" />
+            </div>
+            
+            {/* Text Content - Show second on mobile, left on desktop */}
+            <div className="w-full order-2 md:order-1 text-center md:text-left">
+              <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 text-gray-600">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
+                  The Giving Circle is India's trusted social impact platform, built to connect generous people who want to support genuine social causes and make a difference in India.
                 </p>
-                <p className="text-lg leading-relaxed">
-                Founded in 2022, our community giving platform brings Cause Champions together with verified causes and government-certified NGO partners driving real change across India. We make it simple to donate to social causes through our transparent giving platform, ensuring every contribution creates measurable impact.
-
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
+                  Founded in 2022, our community giving platform brings Cause Champions together with verified causes and government-certified NGO partners driving real change across India. We make it simple to donate to social causes through our transparent giving platform, ensuring every contribution creates measurable impact.
                 </p>
-                <p className="text-lg leading-relaxed">
-                As a legitimate charity platform, we partner only with verified NGO partners who meet government standards. Our transparent approach means all contributions go directly to these trusted partners—we never handle funds, ensuring complete accountability and social responsibility.
-
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
+                  As a legitimate charity platform, we partner only with verified NGO partners who meet government standards. Our transparent approach means all contributions go directly to these trusted partners—we never handle funds, ensuring complete accountability and social responsibility.
                 </p>
-                <p className="text-lg leading-relaxed">
-                What makes us the best platform to support social causes in India is our community-driven social impact model. We encourage Cause Champions to visit project sites, meet beneficiaries, and join activities, fostering genuine community partnerships that go beyond donations.
-                {' '}
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
+                  What makes us the best platform to support social causes in India is our community-driven social impact model. We encourage Cause Champions to visit project sites, meet beneficiaries, and join activities, fostering genuine community partnerships that go beyond donations.
+                  {' '}
                   <a
                     href="/the-giving-circle"
                     className="text-green-700 hover:text-green-800 underline font-semibold transition-colors duration-200"
@@ -63,18 +55,11 @@ const AboutImpactGallery = () => {
                   >
                     Learn how to give back to society India
                   </a>
-
-
                 </p>
               </div>
             </div>
-            
-            <div className="md:order-2">
-              <ShuffleGrid category="All" />
-            </div>
           </div>
         </motion.div>
-
 
       </div>
     </section>
@@ -115,7 +100,7 @@ const impactData: ImpactItem[] = [
     id: 1,
     title: "Tree Plantation Drive",
     category: "Environment",
-    src: "https://kokanngo.org/articles/wp-content/uploads/2024/01/Pioneering-Change-Education.png",
+    src: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
   },
   {
     id: 2,
@@ -163,7 +148,7 @@ const impactData: ImpactItem[] = [
     id: 9,
     title: "Scholarship Program",
     category: "Education",
-    src: "https://media.licdn.com/dms/image/v2/D5622AQGJyDl8RVn79A/feedshare-shrink_800/B56ZYaPfI8GoAg-/0/1744196991489?e=2147483647&v=beta&t=dRCGgTukqeyAdz4b-PjY_UWmakEK0VXXJkv1Bl9mHJM ",
+    src: "https://media.licdn.com/dms/image/v2/D5622AQGJyDl8RVn79A/feedshare-shrink_800/B56ZYaPfI8GoAg-/0/1744196991489?e=2147483647&v=beta&t=dRCGgTukqeyAdz4b-PjY_UWmakEK0VXXJkv1Bl9mHJM",
   },
   {
     id: 10,
@@ -209,7 +194,41 @@ const impactData: ImpactItem[] = [
   },
 ];
 
-// Generate squares based on active filter
+// Image Square Component with error handling
+const ImageSquare = ({ item }: { item: ImpactItem }) => {
+  const [imageError, setImageError] = useState(false);
+  
+  return (
+    <motion.div
+      layout
+      transition={{ duration: 1.5, type: "spring" }}
+      className="w-full h-full rounded-md overflow-hidden bg-gray-200 relative group"
+    >
+      {!imageError ? (
+        <img
+          src={item.src}
+          alt={item.title}
+          className="w-full h-full object-cover"
+          onError={() => setImageError(true)}
+          loading="lazy"
+        />
+      ) : (
+        <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
+          <div className="text-center p-2">
+            <div className="text-gray-600 text-[8px] sm:text-[10px] font-medium break-words">{item.title}</div>
+          </div>
+        </div>
+      )}
+      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end pointer-events-none">
+        <div className="p-1.5 sm:p-2 md:p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full">
+          <div className="font-medium text-[10px] sm:text-xs md:text-sm lg:text-base break-words">{item.title}</div>
+          <span className="text-[10px] sm:text-xs text-white/80">{item.category}</span>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
 const generateSquares = (category: string) => {
   const filteredData = category === "All" 
     ? impactData 
@@ -224,25 +243,8 @@ const generateSquares = (category: string) => {
   // Take only the first 16 items
   dataToUse = dataToUse.slice(0, 16);
   
-  return shuffle(dataToUse).map((item) => (
-    <motion.div
-      key={item.id}
-      layout
-      transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full rounded-md overflow-hidden bg-gray-100 relative group"
-      style={{
-        backgroundImage: `url(${item.src})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
-    >
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end">
-        <div className="p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <h4 className="font-medium text-sm sm:text-base">{item.title}</h4>
-          <span className="text-xs sm:text-sm text-white/80">{item.category}</span>
-        </div>
-      </div>
-    </motion.div>
+  return shuffle(dataToUse).map((item, index) => (
+    <ImageSquare key={`${item.id}-${index}`} item={item} />
   ));
 };
 
@@ -280,7 +282,7 @@ const ShuffleGrid = ({ category = "All" }: ShuffleGridProps) => {
   };
 
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] gap-1">
+    <div className="grid grid-cols-4 grid-rows-4 h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] gap-1 sm:gap-2">
       {squares.map((sq) => sq)}
     </div>
   );
