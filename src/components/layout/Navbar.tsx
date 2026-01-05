@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
-// NavItem type definition
 interface NavItem {
   name: string;
   href: string;
@@ -12,7 +11,6 @@ interface NavItem {
   dropdownItems?: Array<{ name: string; href: string }>;
 }
 
-// Custom Siren Icon Component
 const SirenIcon = ({ size = 18, className = "" }) => (
   <svg 
     xmlns="http://www.w3.org/2000/svg" 
@@ -51,7 +49,6 @@ const NavbarComponent = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Siren blinking effect
   useEffect(() => {
     const blinkInterval = setInterval(() => {
       setBlinkState(prev => !prev);
@@ -96,15 +93,12 @@ const NavbarComponent = () => {
   const toggleDropdown = (itemName: string) => {
     setDropdownStates(prev => {
       const isCurrentlyOpen = prev[itemName];
-      // If the clicked dropdown is open, close it
-      // If it's closed, close all others and open only this one
       if (isCurrentlyOpen) {
         return {
           ...prev,
           [itemName]: false
         };
       } else {
-        // Close all dropdowns and open only the clicked one
         const newStates: { [key: string]: boolean } = {};
         Object.keys(prev).forEach(key => {
           newStates[key] = false;
@@ -134,7 +128,6 @@ const NavbarComponent = () => {
           ${scrolled ? 'bg-white/90 backdrop-blur-3xl shadow-3xl border-white/30' : ''}
         `}>
           <div className="flex items-center justify-between">
-            {/* Logo */}
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
@@ -144,19 +137,16 @@ const NavbarComponent = () => {
                 <img 
                   src="/Giving_Circle..-removebg-preview.png" 
                   alt="The Giving Circle Logo" 
-                  className="h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 drop-shadow-lg"
+                  className="h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 w-auto drop-shadow-lg"
                   width="227"
                   height="56"
                   loading="eager"
                   fetchPriority="high"
-                  style={{ aspectRatio: '227/56' }}
-                  srcSet="/Giving_Circle..-removebg-preview.png 1x, /Giving_Circle..-removebg-preview.png 2x"
-                  sizes="(max-width: 640px) 227px, (max-width: 1024px) 256px, 284px"
+                  style={{ aspectRatio: '227/56', objectFit: 'contain' }}
                 />
               </a>
             </motion.div>
 
-            {/* Desktop Navigation - Hidden on mobile and small tablets */}
             <div className="hidden xl:block">
               <div className="flex items-center space-x-0">
                 {navItems.map((item, index) => (
@@ -199,7 +189,6 @@ const NavbarComponent = () => {
                         </div>
                       </motion.button>
                       
-                      {/* Dropdown Menu */}
                       {dropdownStates[item.name] && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
@@ -260,7 +249,6 @@ const NavbarComponent = () => {
               </div>
             </div>
 
-            {/* Medium screen navigation - Shows condensed nav for tablets */}
             <div className="hidden lg:flex xl:hidden items-center space-x-1">
               {navItems.map((item, index) => (
                 item.hasDropdown ? (
@@ -302,7 +290,6 @@ const NavbarComponent = () => {
                       </div>
                     </motion.button>
                     
-                    {/* Dropdown Menu - Tablet */}
                     {dropdownStates[item.name] && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -362,7 +349,6 @@ const NavbarComponent = () => {
               ))}
             </div>
 
-            {/* CTA Button - Responsive sizing and visibility */}
             <div className="hidden xl:flex items-center ml-2">
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -379,7 +365,6 @@ const NavbarComponent = () => {
               </motion.button>
             </div>
 
-            {/* Mobile menu button - Only shows on small screens */}
             <div className="lg:hidden">
               <motion.button
                 whileTap={{ scale: 0.9 }}
@@ -393,7 +378,7 @@ const NavbarComponent = () => {
               </motion.button>
             </div>
 
-            {/* Tablet CTA - Shows on medium screens only */}
+
             <div className="hidden lg:flex xl:hidden items-center ml-2">
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -411,7 +396,6 @@ const NavbarComponent = () => {
             </div>
           </div>
 
-          {/* Mobile Navigation - Only shows on small screens */}
           <motion.div
             initial={false}
             animate={isOpen ? { height: 'auto', opacity: 1 } : { height: 0, opacity: 0 }}
@@ -452,7 +436,6 @@ const NavbarComponent = () => {
                       />
                     </motion.button>
                     
-                    {/* Mobile dropdown menu items */}
                     {dropdownStates[item.name] && (
                       <div className="pl-3 sm:pl-4 space-y-1">
                         {item.dropdownItems?.map((dropdownItem, dropIdx) => (

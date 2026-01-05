@@ -28,11 +28,16 @@ User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
-# Block bad bots
+# Allow SEO tools for monitoring (needed for backlink tracking and audits)
+# Only block truly malicious bots if needed
 User-agent: AhrefsBot
-Disallow: /
+Allow: /
 
 User-agent: SemrushBot
+Allow: /
+
+# Block only harmful bots
+User-agent: MJ12bot
 Disallow: /
 
 User-agent: DotBot

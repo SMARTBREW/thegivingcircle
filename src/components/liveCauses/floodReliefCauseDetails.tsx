@@ -1,28 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, Home } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import SEOHead from '../SEO/SEOHead';
+import ArticleSchema from '../SEO/ArticleSchema';
 
 const FloodReliefCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
-  // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Flood Relief Uttarakhand - Disaster Relief India | Emergency Response';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'How to help flood victims in Uttarakhand? Support disaster relief India through emergency response, flood relief operations, medical aid, and rehabilitation. Donate to verified causes providing shelter, food, and disaster relief to 2,000+ flood-affected families in Uttarakhand. Emergency response India for flood victims.');
-    }
-    
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Flood Relief Uttarakhand, disaster relief India, emergency response India, flood relief operations, disaster rehabilitation, emergency shelter, medical aid, how to help flood victims in Uttarakhand, flood-affected families, disaster relief programs, emergency response operations, infrastructure rebuilding, flood victims support, disaster relief Uttarakhand');
-    }
-  }, []);
 
   // Flood Relief Uttarakhand cause data
   const cause = {
@@ -224,6 +208,22 @@ const FloodReliefCauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Flood Relief Uttarakhand - Disaster Relief India | Emergency Response"
+        description="How to help flood victims in Uttarakhand? Support disaster relief India through emergency response, flood relief operations, medical aid, and rehabilitation. Donate to verified causes providing shelter, food, and disaster relief to 2,000+ flood-affected families in Uttarakhand. Emergency response India for flood victims."
+        keywords="Flood Relief Uttarakhand, disaster relief India, emergency response India, flood relief operations, disaster rehabilitation, emergency shelter, medical aid, how to help flood victims in Uttarakhand, flood-affected families, disaster relief programs, emergency response operations, infrastructure rebuilding, flood victims support, disaster relief Uttarakhand"
+        canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
+        ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
+      />
+      <ArticleSchema 
+        title="Flood Relief Uttarakhand - Disaster Relief & Emergency Response India"
+        description="Support disaster relief India through emergency response, flood relief operations, medical aid, and rehabilitation. Helping 2,000+ flood-affected families in Uttarakhand with shelter, food, and essential supplies."
+        image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
+        category="Disaster Relief"
+        location="Uttarakhand, India"
+        datePublished="2024-06-15"
+        author="GUS Foundation"
+      />
       {/* Professional Header Section */}
       <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">

@@ -8,24 +8,31 @@
     <!-- Primary Meta Tags -->
     <title>The Giving Circle - Community Giving Platform | Support Social Causes India</title>
     <meta name="title" content="The Giving Circle - Community Giving Platform | Support Social Causes India" />
-    <meta name="description" content="The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India." />
-    <meta name="keywords" content="The Giving Circle, Cause Champions, social impact platform India, community giving platform, support social causes India, donate to social causes, join giving circle, impact stories India, verified charity platform India, transparent giving platform, trusted charity platform, community partnerships, start your giving circle" />
+    <meta name="description" content="The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India. Start your giving circle today!" />
+    <meta name="keywords" content="The Giving Circle, Cause Champions, social impact platform India, community giving platform, support social causes India, donate to social causes, join giving circle, impact stories India, verified charity platform India, transparent giving platform, trusted charity platform, community partnerships, start your giving circle, donate to NGO India, verified charities India" />
     <meta name="author" content="The Giving Circle" />
     <meta name="theme-color" content="#15803D" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.thegivingcircle.in/" />
     <meta property="og:title" content="The Giving Circle - Community Giving Platform | Support Social Causes India" />
-    <meta property="og:description" content="Join India's trusted social impact platform. Connect with verified causes, become a Cause Champion, and create lasting change through community-driven social impact." />
-    <meta property="og:image" content="Giving_Circle..-removebg-preview.png" />
+    <meta property="og:description" content="Join India's trusted social impact platform. Connect with verified causes, become a Cause Champion, and create lasting change through community-driven social impact. Start your giving circle today!" />
+    <meta property="og:image" content="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Giving Circle - Community Giving Platform Logo" />
+    <meta property="og:site_name" content="The Giving Circle" />
+    <meta property="og:locale" content="en_IN" />
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.thegivingcircle.in/" />
-    <meta property="twitter:title" content="The Giving Circle - Community Giving Platform | Support Social Causes India" />
-    <meta property="twitter:description" content="Join India's trusted social impact platform. Connect with verified causes, become a Cause Champion, and create lasting change through community-driven social impact." />
-    <meta property="twitter:image" content="Giving_Circle..-removebg-preview.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.thegivingcircle.in/" />
+    <meta name="twitter:title" content="The Giving Circle - Community Giving Platform | Support Social Causes India" />
+    <meta name="twitter:description" content="Join India's trusted social impact platform. Connect with verified causes, become a Cause Champion, and create lasting change through community-driven social impact." />
+    <meta name="twitter:image" content="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png" />
+    <meta name="twitter:image:alt" content="The Giving Circle - Community Giving Platform Logo" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.thegivingcircle.in/" />
@@ -50,6 +57,15 @@
     
     <!-- LCP image preload is handled dynamically by Hero component -->
     
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNMJNDF71S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZNMJNDF71S');
+    </script>
+    
     <!-- Structured Data - Organization Schema -->
     <script type="application/ld+json">
     {
@@ -58,9 +74,27 @@
       "name": "The Giving Circle",
       "alternateName": "Giving Circle India",
       "url": "https://www.thegivingcircle.in",
-      "logo": "https://www.thegivingcircle.in/Giving Circle logo.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png",
+        "width": 227,
+        "height": 56
+      },
       "description": "India's leading social impact platform connecting Cause Champions with verified causes. Support social causes, donate to trusted charities, and create lasting community impact.",
       "foundingDate": "2022",
+      "slogan": "Community Giving Platform | Support Social Causes India",
+      "knowsAbout": [
+        "Social Impact",
+        "Community Giving",
+        "Charity",
+        "Philanthropy",
+        "NGO Support",
+        "Social Causes",
+        "Disaster Relief",
+        "Education",
+        "Animal Welfare",
+        "Women Empowerment"
+      ],
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "hello@thegivingcircle.in",
@@ -70,8 +104,9 @@
       },
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "IN",
-        "addressRegion": "India"
+        "addressLocality": "Mumbai",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
       },
       "sameAs": [
         "https://www.facebook.com/thegivingcircle",
@@ -82,6 +117,20 @@
       "areaServed": {
         "@type": "Country",
         "name": "India"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Social Causes",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Community Giving Platform",
+              "description": "Connect with verified causes and support social impact"
+            }
+          }
+        ]
       }
     }
     </script>
@@ -102,6 +151,80 @@
         },
         "query-input": "required name=search_term_string"
       }
+    }
+    </script>
+    
+    <!-- Structured Data - BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.thegivingcircle.in/"
+        }
+      ]
+    }
+    </script>
+    
+    <!-- Structured Data - FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is The Giving Circle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Giving Circle is India's trusted social impact platform that connects Cause Champions with verified causes. It's a community giving platform where individuals can support social causes, donate to verified charities, and create real impact stories across India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I become a Cause Champion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can become a Cause Champion by visiting our onboarding page and filling out the registration form. Cause Champions are individuals who create and lead giving circles to support verified social causes in India."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the NGOs verified?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, all NGOs on The Giving Circle platform are verified. We work only with trusted, verified charity partners to ensure transparency and trust in philanthropy. Each NGO partner goes through a verification process before being listed on our platform."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I donate to social causes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can browse our Live Causes page to find verified causes that need support. Each cause page provides detailed information about the campaign, the NGO partner, and how your donation will create impact. You can donate directly through the cause pages."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What types of causes does The Giving Circle support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Giving Circle supports a wide range of social causes including education, women empowerment, animal welfare, disaster relief, healthcare, hunger eradication, environmental conservation, and more. All causes are verified and work with trusted NGO partners."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How does The Giving Circle ensure transparency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Giving Circle ensures transparency through verified NGO partnerships, detailed impact reporting, regular updates on campaigns, and measurable impact metrics. All causes provide regular updates on how donations are being used and the impact created."
+          }
+        }
+      ]
     }
     </script>
   </head>

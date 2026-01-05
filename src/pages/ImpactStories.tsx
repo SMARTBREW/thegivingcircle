@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, MapPin, Users, Calendar, Heart, TrendingUp, Award, Building2 } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
+import SEOHead from '../components/SEO/SEOHead';
 
 interface ImpactStory {
   id: string;
@@ -135,6 +136,12 @@ const ImpactStories: React.FC = () => {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Impact Stories - Real Change by Cause Champions | The Giving Circle"
+        description="Read inspiring impact stories from verified causes and Cause Champions across India. See how community giving creates real change in animal welfare, women empowerment, education, and disaster relief. Verified transformation stories with measurable impact."
+        keywords="impact stories India, social impact stories, verified charity impact, cause champion stories, community transformation, real charity stories, verified impact India, social change stories, NGO success stories, charity transparency India"
+        canonicalUrl="https://www.thegivingcircle.in/impact-stories"
+      />
       {/* Impact Stories Section */}
       <section className="py-6 sm:py-8 md:py-10 lg:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

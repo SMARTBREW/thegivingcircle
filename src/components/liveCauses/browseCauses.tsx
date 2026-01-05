@@ -201,12 +201,22 @@ const LiveCausesPage = () => {
   // Function to handle navigation to cause details page
   const handleViewDetails = () => {
     // Simulate navigation - in a real app, you would use React Router
-    window.location.href = `/live-causes-details`;
+    // Redirect to specific cause detail pages based on cause
+    const routeMap: { [key: number]: string } = {
+      1: '/khushi-cause-details',
+      2: '/pawsitive-protectors-cause-details',
+      4: '/bowls-of-hope-cause-details',
+      5: '/flood-relief-cause-details',
+      6: '/flood-animal-rescue-cause-details',
+    };
+    window.location.href = routeMap[cause.id] || '/live-causes';
   };
 
   // Handle card click (entire card becomes clickable)
   const handleCardClick = (cause: any) => {
-    if (cause.ngo === 'KHUSHII') {
+    if (cause.title === 'Wings of Hope') {
+      window.location.href = `/khushi-cause-details`;
+    } else if (cause.ngo === 'KHUSHII') {
       window.location.href = `/khushi-cause-details`;
     } else if (cause.title === 'Pawsitive Protectors') {
       window.location.href = `/pawsitive-protectors-cause-details`;

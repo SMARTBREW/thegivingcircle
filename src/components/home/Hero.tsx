@@ -158,13 +158,11 @@ const FundraisingHero = () => {
     return imageUrl;
   };
 
-  // Mobile: 800px width with lower quality for faster loading, Desktop: 1920px width
   const mobileImageUrl = useMemo(() => getOptimizedImageUrl(currentCampaign.image, '800', '70'), [currentCampaign.image]);
   const desktopImageUrl = useMemo(() => getOptimizedImageUrl(currentCampaign.image, '1920', '80'), [currentCampaign.image]);
 
 
   useEffect(() => {
-    // Only preload on initial mount for LCP (first image)
     if (currentIndex === 0) {
       const preloadLink = document.createElement('link');
       preloadLink.rel = 'preload';
@@ -172,7 +170,6 @@ const FundraisingHero = () => {
       preloadLink.href = window.innerWidth < 640 ? mobileImageUrl : desktopImageUrl;
       preloadLink.setAttribute('fetchpriority', 'high');
       document.head.appendChild(preloadLink);
-
       return () => {
         if (document.head.contains(preloadLink)) {
           document.head.removeChild(preloadLink);
@@ -180,7 +177,6 @@ const FundraisingHero = () => {
       };
     }
 
-    // Prefetch next image in carousel for smoother transitions
     const nextIndex = (currentIndex + 1) % FUNDRAISING_DATA.length;
     const nextCampaign = FUNDRAISING_DATA[nextIndex];
     let prefetchLink: HTMLLinkElement | null = null;
@@ -189,7 +185,6 @@ const FundraisingHero = () => {
       const nextMobileUrl = getOptimizedImageUrl(nextCampaign.image, '800', '70');
       const nextDesktopUrl = getOptimizedImageUrl(nextCampaign.image, '1920', '80');
       const nextUrl = window.innerWidth < 640 ? nextMobileUrl : nextDesktopUrl;
-      
       prefetchLink = document.createElement('link');
       prefetchLink.rel = 'prefetch';
       prefetchLink.as = 'image';
@@ -206,9 +201,7 @@ const FundraisingHero = () => {
 
   return (
     <div className="relative h-[75vh] sm:min-h-screen overflow-hidden">
-      {/* Background Image - Optimized for mobile and desktop */}
       <div className="absolute inset-0 transition-all duration-500">
-        {/* Mobile optimized image - Fill entire section */}
         <div
           className="sm:hidden absolute inset-0 transition-opacity duration-1000 bg-white"
           style={{
@@ -220,7 +213,6 @@ const FundraisingHero = () => {
             willChange: "opacity",
           }}
         />
-        {/* Desktop optimized image */}
         <div
           className="hidden sm:block absolute inset-0 transition-opacity duration-1000"
           style={{
@@ -232,20 +224,15 @@ const FundraisingHero = () => {
             willChange: "opacity",
           }}
         />
-        {/* Gradients - Hidden on mobile, visible on desktop */}
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>
 
-      {/* Main Content */}
       <div className="relative z-20 h-full flex flex-col justify-end px-4 sm:px-6 md:px-8 pt-8 sm:pt-20 md:pt-24 pb-6 sm:pb-32 md:pb-40 h-[75vh] sm:min-h-screen">
-        {/* Top Section - Spacer - Hidden on mobile */}
         <div className="hidden sm:block max-w-2xl space-y-4 sm:space-y-6 md:space-y-8 mt-8 sm:mt-12 md:mt-16 lg:mt-20">
         </div>
 
-        {/* Bottom Section - Badge, Title, Description, Buttons */}
         <div className="max-w-2xl space-y-4 sm:space-y-6 md:space-y-8 mb-12 sm:mb-16 md:mb-0">
-          {/* Badge - Hidden on mobile */}
           <AnimatedSection direction="left" delay={0.1}>
             <div className="hidden sm:inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-green-700/20 text-green-300 text-xs sm:text-sm font-medium backdrop-blur-sm border border-green-500/30">
               <span className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse" />
@@ -253,27 +240,26 @@ const FundraisingHero = () => {
             </div>
           </AnimatedSection>
 
-          {/* Title - Hidden on mobile */}
           <AnimatedSection direction="up" delay={0.3}>
             <h1 className={`hidden sm:block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
                 {currentCampaign.title}
               </h1>
           </AnimatedSection>
 
-          {/* Description - Hidden on mobile */}
           <AnimatedSection direction="up" delay={0.5}>
             <p className={`hidden sm:block text-base sm:text-lg md:text-xl text-white/90 leading-relaxed transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}`}>
                 {currentCampaign.description}
               </p>
           </AnimatedSection>
 
-          {/* CTA Buttons - Visible on all screens */}
           <AnimatedSection direction="up" delay={0.7}>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <PrimaryButton
                 onClick={handleBecomChampion}
                 icon={<Users2 className="h-4 w-4 sm:h-5 md:h-5" />}
                 aria-label="Become a Cause Champion and start your giving circle to support social causes India"
+                className="sm:bg-green-700 bg-green-700 text-white hover:bg-green-800 shadow-2xl backdrop-blur-md border-2 border-white/30 text-sm sm:text-base font-bold px-6 py-3.5 sm:px-6 sm:py-3"
+                size="lg"
               >
                 Become a Cause Champion
               </PrimaryButton>
@@ -283,11 +269,8 @@ const FundraisingHero = () => {
         </div>
       </div>
 
-      {/* Desktop Scrolling Cards */}
       <div className="hidden lg:block absolute right-4 md:right-8 bottom-24 md:bottom-32 z-30 w-3/4 max-w-3xl">
         <div className="relative flex items-center">
-          {/* Navigation buttons removed - not functional */}
-
           <div className="mx-12 w-full">
             <div className="relative">
               <div className="absolute top-0 bottom-0 left-0 w-8 bg-gradient-to-r from-black/90 to-transparent z-10 pointer-events-none" />
@@ -335,7 +318,6 @@ const FundraisingHero = () => {
         </div>
       </div>
 
-      {/* Mobile Carousel Indicators - Only show on mobile */}
       <div className="sm:hidden absolute bottom-6 left-1/2 transform -translate-x-1/2 z-30 flex space-x-2">
         {FUNDRAISING_DATA.map((_, index) => (
           <button

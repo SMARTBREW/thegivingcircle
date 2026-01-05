@@ -3,6 +3,7 @@ import  {Navbar}  from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import Breadcrumbs from './components/ui/Breadcrumbs';
 import { useSmoothScroll } from './hooks/useSmoothScroll';
 import { Home } from './pages/Home';
 import CauseChampionOnboarding  from './pages/CauseChampionOnboarding';
@@ -36,6 +37,7 @@ function App() {
       <ScrollToTop />
       <div className="flex flex-col min-h-screen">
         <Navbar />
+        <Breadcrumbs />
         <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
@@ -51,10 +53,8 @@ function App() {
             <Route path="/khushi-ngo-detail" element={<KhushiNGODetailContainer />} />
             <Route path="/animalcare-ngo-detail" element={<AnimalCareNGODetailContainer />} />
             <Route path="/causes" element={<Causes />} />
-            <Route path="/causes-details" element={<CauseDetailPage />} />
             <Route path="/live-causes" element={<LiveCausesPage />} />
             <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
-            <Route path="/live-causes-details" element={<CauseDetailPage />} />
             <Route path="/khushi-cause-details" element={<KhushiCauseDetailPage />} />
             <Route path="/pawsitive-protectors-cause-details" element={<PawsitiveProtectorsCauseDetailPage />} />
             <Route path="/bowls-of-hope-cause-details" element={<BowlsOfHopeCauseDetailPage />} />

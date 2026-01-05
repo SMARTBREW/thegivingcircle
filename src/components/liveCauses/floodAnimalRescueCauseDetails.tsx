@@ -1,28 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, LifeBuoy } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import SEOHead from '../SEO/SEOHead';
+import ArticleSchema from '../SEO/ArticleSchema';
 
 const FloodAnimalRescueCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
-  // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Flood Animal Rescue - Emergency Animal Rescue | Disaster Relief India';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Flood Animal Rescue provides emergency animal rescue and disaster relief India. How to help flood victims in Uttarakhand? Support flood animal rescue operations, disaster rehabilitation, and emergency response India. Donate to rescue animals from floods and provide emergency medical care.');
-    }
-    
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Flood Animal Rescue, emergency animal rescue, disaster animal relief, rescue animals from floods, animal emergency response, disaster relief India, flood relief Uttarakhand, emergency response India, flood animal rescue, disaster rehabilitation, flood rescue operations, how to help flood victims in Uttarakhand, emergency animal rescue India, flood animal rescue operations, disaster animal relief programs');
-    }
-  }, []);
 
   // Flood Animal Rescue cause data focused on emergency animal rescue during floods
   const cause = {
@@ -224,6 +208,22 @@ const FloodAnimalRescueCauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Flood Animal Rescue - Emergency Animal Rescue | Disaster Relief India"
+        description="Flood Animal Rescue provides emergency animal rescue and disaster relief India. How to help flood victims in Uttarakhand? Support flood animal rescue operations, disaster rehabilitation, and emergency response India. Donate to rescue animals from floods and provide emergency medical care."
+        keywords="Flood Animal Rescue, emergency animal rescue, disaster animal relief, rescue animals from floods, animal emergency response, disaster relief India, flood relief Uttarakhand, emergency response India, flood animal rescue, disaster rehabilitation, flood rescue operations, how to help flood victims in Uttarakhand, emergency animal rescue India, flood animal rescue operations, disaster animal relief programs"
+        canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
+        ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
+      />
+      <ArticleSchema 
+        title="Flood Animal Rescue - Emergency Animal Rescue & Disaster Relief Uttarakhand"
+        description="Emergency animal rescue and disaster relief India. Supporting flood animal rescue operations in Uttarakhand, providing disaster rehabilitation and emergency medical care for rescued animals."
+        image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
+        category="Disaster Relief"
+        location="Uttarakhand, India"
+        datePublished="2024-06-15"
+        author="Animal Care India"
+      />
       {/* Professional Header Section */}
       <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">

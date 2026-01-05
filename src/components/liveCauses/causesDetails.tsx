@@ -2,6 +2,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 import CloudinaryImage from '../ui/CloudinaryImage';
+import SEOHead from '../SEO/SEOHead';
+import ArticleSchema from '../SEO/ArticleSchema';
 
 const CauseDetailPage = () => {
   const { id } = useParams();
@@ -214,6 +216,22 @@ const CauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Wings Of Hope - Support Social Causes | Donate to Verified Charity India"
+        description="Support Wings Of Hope and other verified social causes through The Giving Circle. Donate to trusted charity programs providing education, healthcare, and empowerment to underprivileged communities across India."
+        keywords="Wings Of Hope, social causes India, verified charity, donate to NGO India, support social causes, community giving platform, transparent charity, impact stories"
+        canonicalUrl="https://www.thegivingcircle.in/causes-details"
+        ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg"
+      />
+      <ArticleSchema 
+        title="Wings Of Hope - Education & Empowerment Programs India"
+        description="Support Wings Of Hope and verified social causes through The Giving Circle. Donate to trusted charity programs providing education, healthcare, and empowerment to underprivileged communities across India."
+        image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg"
+        category="Social Impact"
+        location="India"
+        datePublished="2024-01-15"
+        author="The Giving Circle"
+      />
       {/* Professional Header Section */}
       <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">

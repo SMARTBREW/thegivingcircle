@@ -7,6 +7,7 @@ import PhoneInput from 'react-phone-number-input';
 import 'react-phone-number-input/style.css';
 import Select from 'react-select';
 import countries from 'world-countries';
+import SEOHead from '../components/SEO/SEOHead';
 
 interface NGOFormData {
   organizationName: string;
@@ -144,6 +145,12 @@ export const NGOPartner: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 mt-10">
+      <SEOHead 
+        title="NGO Partnership - Partner with The Giving Circle | Verified NGO Platform India"
+        description="Partner with The Giving Circle as a verified NGO. Join our trusted network of government-certified NGO partners and access Cause Champions, transparent fundraising, and community support for your social causes across India."
+        keywords="NGO partnership India, partner with giving circle, verified NGO platform, NGO fundraising platform India, register NGO online, NGO partner program, charity partnership India, social impact partnerships, verified charity platform, NGO registration India"
+        canonicalUrl="https://www.thegivingcircle.in/ngo-partner"
+      />
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br-gray-100" />
 

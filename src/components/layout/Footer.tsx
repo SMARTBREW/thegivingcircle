@@ -10,12 +10,9 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
      
-        
-        {/* Main Footer Content */}
         <div className="py-8 sm:py-10 md:py-12 lg:py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
             
-            {/* Brand Section */}
             <div className="md:col-span-1 space-y-4 sm:space-y-5 md:space-y-6">
               <div className="flex items-center space-x-2 sm:space-x-3">
                 <Link to="/">
@@ -43,44 +40,9 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
               
-              {/* Professional Social Links */}
-              <div className="space-y-2 sm:space-y-3">
-                <h4 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 uppercase tracking-wide">
-                  Connect With Us
-                </h4>
-                <div className="flex space-x-2 sm:space-x-3">
-                  <a 
-                    href="https://linkedin.com/company/thegivingcircle" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50"
-                    aria-label="LinkedIn"
-                  >
-                    <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
-                  </a>
-                  <a 
-                    href="https://twitter.com/thegivingcircle" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50"
-                    aria-label="Twitter"
-                  >
-                    <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
-                  </a>
-                  <a 
-                    href="https://instagram.com/thegivingcircle" 
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50"
-                    aria-label="Instagram"
-                  >
-                    <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
-                  </a>
-                </div>
-              </div>
+             
             </div>
 
-            {/* Community Platform */}
             <div className="md:col-span-1">
               <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4 md:mb-6">
                 Community Platform
@@ -124,7 +86,6 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Trust & Partnership */}
             <div className="md:col-span-1">
               <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4 md:mb-6">
                 Trust & Partnership
@@ -154,7 +115,6 @@ export const Footer: React.FC = () => {
               </div>
             </div>
 
-            {/* Contact & Support */}
             <div className="md:col-span-1">
               <h3 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 uppercase tracking-wide mb-3 sm:mb-4 md:mb-6">
                 Contact & Support
@@ -175,7 +135,7 @@ export const Footer: React.FC = () => {
                     <Phone className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-[10px] sm:text-xs md:text-sm text-gray-600">Support</div>
-                      <div className="text-xs sm:text-sm md:text-base font-medium text-gray-900 break-words">+91 98765 43210</div>
+                      <div className="text-xs sm:text-sm md:text-base font-medium text-gray-900 break-words">+91 98103 53603 </div>
                       <div className="text-[10px] sm:text-xs md:text-sm text-gray-500">Mon-Fri 9AM-6PM IST</div>
                     </div>
                   </div>
@@ -184,13 +144,13 @@ export const Footer: React.FC = () => {
                     <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-[10px] sm:text-xs md:text-sm text-gray-600">Platform Base</div>
-                      <div className="text-xs sm:text-sm md:text-base font-medium text-gray-900 break-words">Mumbai, Maharashtra</div>
+                      <div className="text-xs sm:text-sm md:text-base font-medium text-gray-900 break-words">Grugram, Haryana</div>
                       <div className="text-[10px] sm:text-xs md:text-sm text-gray-500">India</div>
                     </div>
                   </div>
                 </div>
 
-                <div className="pt-3 sm:pt-4 space-y-2 sm:space-y-3">
+                {/* <div className="pt-3 sm:pt-4 space-y-2 sm:space-y-3">
                   <Link 
                     to="/the-giving-circle" 
                     className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
@@ -205,17 +165,49 @@ export const Footer: React.FC = () => {
                     <span className="text-xs sm:text-sm md:text-base break-words">Community Support</span>
                     <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                   </Link>
+                </div> */}
+                 <div className="space-y-2 sm:space-y-3">
+                <h4 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 uppercase tracking-wide">
+                  Connect With Us
+                </h4>
+                <div className="flex space-x-2 sm:space-x-3">
+                  <a 
+                    href="https://linkedin.com/company/thegivingcircle" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </a>
+                  <a 
+                    href="https://twitter.com/thegivingcircle" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50"
+                    aria-label="Twitter"
+                  >
+                    <Twitter className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </a>
+                  <a 
+                    href="https://instagram.com/thegivingcircle" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-500 hover:text-green-700 transition-colors duration-200 p-1.5 sm:p-2 rounded-lg hover:bg-gray-50"
+                    aria-label="Instagram"
+                  >
+                    <Instagram className="w-3 h-3 sm:w-4 sm:h-4" />
+                  </a>
                 </div>
+              </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Section - Enhanced Legal and Trust Indicators */}
         <div className="border-t border-gray-200 py-4 sm:py-5 md:py-6">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-3 sm:space-y-4 lg:space-y-0">
             
-            {/* Left: Copyright and Platform Status */}
             <div className="space-y-2">
               <p className="text-xs sm:text-sm md:text-base text-gray-600 break-words">
                 © {currentYear} The Giving Circle Community Platform. All rights reserved.
@@ -236,7 +228,6 @@ export const Footer: React.FC = () => {
               </div>
             </div>
             
-            {/* Right: Legal Links */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base">
               <Link 
                 to="/the-giving-circle" 
@@ -258,13 +249,6 @@ export const Footer: React.FC = () => {
               >
                 <Shield className="w-3 h-3 flex-shrink-0" />
                 <span>Trust & Safety</span>
-              </Link>
-              <Link 
-                to="/live-causes" 
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1 break-words"
-              >
-                <Heart className="w-3 h-3 flex-shrink-0" />
-                <span>Community Values</span>
               </Link>
             </div>
           </div>

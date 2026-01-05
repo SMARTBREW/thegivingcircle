@@ -75,10 +75,8 @@ export const Testimonials: React.FC = () => {
   const handleTouchEnd = () => {
     setIsTouching(false);
     if (touchStart - touchEnd > 100) {
-      // Swipe left
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     } else if (touchStart - touchEnd < -100) {
-      // Swipe right
       setCurrentIndex((prevIndex) => 
         prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
       );
@@ -104,7 +102,6 @@ export const Testimonials: React.FC = () => {
         </motion.div>
 
         <div className="relative">
-          {/* Main Testimonial */}
           <div 
             className="relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex items-center justify-center px-2 sm:px-4"
             ref={testimonialRef}
@@ -178,7 +175,6 @@ export const Testimonials: React.FC = () => {
             </AnimatePresence>
           </div>
 
-          {/* Mobile swipe indicator */}
           <div className="sm:hidden flex justify-center mt-3 items-center">
             <div className="text-xs text-gray-500 flex items-center bg-white/80 px-2 sm:px-3 py-1 rounded-full">
               <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1">
@@ -189,7 +185,6 @@ export const Testimonials: React.FC = () => {
             </div>
           </div>
 
-          {/* Navigation Indicators */}
           <div className="flex items-center justify-center space-x-4 mt-3 sm:mt-4 md:mt-5">
             <div className="flex space-x-2">
               {testimonials.map((_, index) => (

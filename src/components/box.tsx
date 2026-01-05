@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Heart, Users, Target } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const ChampionFundraiserBox = ({
   description = "Cause Champions are passionate advocates creating community-driven social impact across India. Join our social impact platform to support social causes, share verified impact stories, and amplify your change through The Giving Circle's trusted charity platform and champion network.",
@@ -90,6 +91,33 @@ const ChampionFundraiserBox = ({
               <span className="text-[10px] sm:text-xs text-gray-600">Verified Impact Stories</span>
             </div>
           </motion.div>
+
+        <motion.div
+            className="mt-4 sm:mt-5 flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center md:justify-start"
+          variants={{
+              hidden: { opacity: 0, y: 20 },
+            visible: {
+              opacity: 1,
+                y: 0,
+              transition: { duration: 0.6, delay: 0.4 },
+            },
+          }}
+        >
+            <Link
+              to="/onboarding"
+              className="bg-green-700 text-white px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 font-semibold text-sm sm:text-base rounded-full hover:bg-green-800 transition-all duration-300 text-center shadow-md hover:shadow-lg"
+              aria-label="Become a Cause Champion and start your giving circle"
+            >
+              Become a Cause Champion
+            </Link>
+            <Link
+              to="/live-causes"
+              className="bg-white text-green-700 border-2 border-green-700 px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 font-semibold text-sm sm:text-base rounded-full hover:bg-green-50 transition-all duration-300 text-center shadow-md hover:shadow-lg"
+              aria-label="Browse all live causes and support social causes"
+            >
+              Browse Live Causes
+            </Link>
+        </motion.div>
         </div>
       </div>
     </motion.div>

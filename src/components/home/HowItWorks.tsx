@@ -28,12 +28,10 @@ const AboutImpactGallery = () => {
           viewport={{ once: true }}
         >
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 lg:gap-12">
-            {/* Image Grid - Show first on mobile, right and centered on desktop */}
             <div className="w-full order-1 md:order-2 flex justify-center items-center md:justify-center">
               <ShuffleGrid category="All" />
             </div>
             
-            {/* Text Content - Show second on mobile, left on desktop */}
             <div className="w-full order-2 md:order-1 text-center md:text-left">
               <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 text-gray-600">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
@@ -66,7 +64,6 @@ const AboutImpactGallery = () => {
   );
 };
 
-// Define the type for our impact items
 interface ImpactItem {
   id: number;
   title: string;
@@ -74,13 +71,10 @@ interface ImpactItem {
   src: string;
 }
 
-// Helper function to shuffle array
 const shuffle = (array: ImpactItem[]) => {
-  // Create a copy of the array to avoid mutating the original
   const newArray = [...array];
   let currentIndex = newArray.length;
   let randomIndex;
-
   while (currentIndex !== 0) {
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
@@ -90,11 +84,9 @@ const shuffle = (array: ImpactItem[]) => {
       newArray[currentIndex],
     ];
   }
-
   return newArray;
 };
 
-// Impact project data with categories
 const impactData: ImpactItem[] = [
   {
     id: 1,
@@ -193,8 +185,6 @@ const impactData: ImpactItem[] = [
     src: "https://www.kokanngo.org/public/OurGallery/3.png",
   },
 ];
-
-// Image Square Component with error handling
 const ImageSquare = ({ item }: { item: ImpactItem }) => {
   const [imageError, setImageError] = useState(false);
   
@@ -233,14 +223,10 @@ const generateSquares = (category: string) => {
   const filteredData = category === "All" 
     ? impactData 
     : impactData.filter(item => item.category === category);
-  
-  // If we have less than 16 items after filtering, duplicate some to fill the grid
   let dataToUse = [...filteredData];
   while (dataToUse.length < 16) {
     dataToUse = [...dataToUse, ...filteredData];
   }
-  
-  // Take only the first 16 items
   dataToUse = dataToUse.slice(0, 16);
   
   return shuffle(dataToUse).map((item, index) => (
@@ -252,23 +238,16 @@ interface ShuffleGridProps {
   category: string;
 }
 
-// ShuffleGrid component with category filter support
 const ShuffleGrid = ({ category = "All" }: ShuffleGridProps) => {
   const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [squares, setSquares] = useState(generateSquares(category));
 
   useEffect(() => {
-    // Reset squares when category changes
     setSquares(generateSquares(category));
-    
-    // Clear existing timeout
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
     }
-    
-    // Start new shuffle cycle
     shuffleSquares();
-
     return () => {
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);

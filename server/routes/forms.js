@@ -99,7 +99,7 @@ export const submitCauseChampionForm = async (req, res) => {
 
     // Use verified email address (tech@smartbrew.in is verified in Resend)
     // To send from hello@thegivingcircle.in, verify domain in Resend first
-    const fromEmail = process.env.RESEND_FROM_EMAIL ;
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
     
     const { data, error } = await resend.emails.send({
       from: `The Giving Circle <${fromEmail}>`,
@@ -199,7 +199,7 @@ export const submitNGOPartnerForm = async (req, res) => {
 
     // Use verified email address (tech@smartbrew.in is verified in Resend)
     // To send from hello@thegivingcircle.in, verify domain in Resend first
-    const fromEmail = process.env.RESEND_FROM_EMAIL ;
+    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
     
     const { data, error } = await resend.emails.send({
       from: `The Giving Circle <${fromEmail}>`,

@@ -1,30 +1,13 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, Utensils } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import SEOHead from '../SEO/SEOHead';
+import ArticleSchema from '../SEO/ArticleSchema';
 
 const BowlsOfHopeCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Bowls of Hope - Animal Feeding Programs | Feed Stray Animals India';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Bowls of Hope provides animal feeding programs and animal nutrition support India. How to feed stray animals India? Donate to support animal welfare and help feed street animals. Animal feeding programs Mumbai and Chennai providing nutritious meals to 2,000+ hungry animals daily. Support animal feeding initiatives.');
-    }
-    
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Bowls of Hope, animal feeding programs, feed stray animals, animal nutrition, support animal welfare, animal welfare India, feed animals India, street animal rescue, animal shelter support, support stray animals, how to feed stray animals India, animal feeding programs Mumbai, support animal nutrition programs, help feed street animals, feed hungry animals India, animal nutrition support India, support animal feeding initiatives');
-    }
-  }, []);
-
-  // Bowls of Hope cause data focused on animal feeding and nutrition
   const cause = {
     id: 4,
     title: 'Bowls of Hope',
@@ -40,11 +23,8 @@ const BowlsOfHopeCauseDetailPage = () => {
     daysLeft: 18,
     image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
     urgency: 'Critical',
-    
-    // Problem Statement
     problemStatement: 'How to feed stray animals India? Thousands of hungry street animals struggle daily without animal feeding programs. Feed hungry animals India - they face starvation, malnutrition, and death without systematic animal nutrition support. Animal feeding programs Mumbai, Chennai, and across India are critically needed. Help feed street animals before it\'s too late.',
     
-    // Root Causes
     rootCauses: [
       'Lack of organized animal feeding programs for stray animals',
       'Limited animal nutrition support and feeding initiatives',
@@ -52,8 +32,7 @@ const BowlsOfHopeCauseDetailPage = () => {
       'Absence of feeding stations and animal welfare infrastructure',
       'No systematic support animal feeding initiatives in communities'
     ],
-    
-    // Consequences if not addressed
+  
     consequences: [
       'Feed hungry animals India or they continue starving and dying',
       'Increased mortality - thousands die without animal nutrition support',
@@ -62,7 +41,6 @@ const BowlsOfHopeCauseDetailPage = () => {
       'Lost opportunity to support animal welfare and feed stray animals'
     ],
     
-    // Our Solution
     solution: {
       approach: 'Bowls of Hope delivers comprehensive animal feeding programs India providing daily nutrition to feed stray animals through organized feeding stations, volunteer networks, and animal nutrition support initiatives.',
       components: [
@@ -74,7 +52,6 @@ const BowlsOfHopeCauseDetailPage = () => {
       ]
     },
     
-    // Beneficiaries
     beneficiaries: {
       primary: '2,000+ street animals fed daily through animal nutrition programs',
       secondary: '10,000+ community members supporting animal welfare',
@@ -82,7 +59,6 @@ const BowlsOfHopeCauseDetailPage = () => {
       longTerm: 'Sustainable animal feeding programs feeding hungry animals across India'
     },
     
-    // Impact Gallery
     impactGallery: [
       {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
@@ -224,6 +200,22 @@ const BowlsOfHopeCauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Bowls of Hope - Animal Feeding Programs | Feed Stray Animals India"
+        description="Bowls of Hope provides animal feeding programs and animal nutrition support India. How to feed stray animals India? Donate to support animal welfare and help feed street animals. Animal feeding programs Mumbai and Chennai providing nutritious meals to 2,000+ hungry animals daily. Support animal feeding initiatives."
+        keywords="Bowls of Hope, animal feeding programs, feed stray animals, animal nutrition, support animal welfare, animal welfare India, feed animals India, street animal rescue, animal shelter support, support stray animals, how to feed stray animals India, animal feeding programs Mumbai, support animal nutrition programs, help feed street animals, feed hungry animals India, animal nutrition support India, support animal feeding initiatives"
+        canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
+        ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
+      />
+      <ArticleSchema 
+        title="Bowls of Hope - Animal Feeding Programs India"
+        description="Bowls of Hope provides animal feeding programs and animal nutrition support India. Feeding 2,000+ street animals daily with nutritious meals in Mumbai and Chennai."
+        image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
+        category="Animal Welfare"
+        location="Chennai, Tamil Nadu & Mumbai, Maharashtra"
+        datePublished="2024-01-15"
+        author="Animal Care India"
+      />
       {/* Professional Header Section */}
       <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">

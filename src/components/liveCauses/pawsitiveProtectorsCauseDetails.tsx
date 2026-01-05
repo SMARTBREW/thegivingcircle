@@ -1,28 +1,12 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, PawPrint } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import SEOHead from '../SEO/SEOHead';
+import ArticleSchema from '../SEO/ArticleSchema';
 
 const PawsitiveProtectorsCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-
-  // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Pawsitive Protectors - Animal Vaccination & Rabies Prevention | Donate Animal Welfare India';
-    
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Pawsitive Protectors provides animal welfare India through rabies prevention programs, stray dog vaccination, and street animal rescue. Where to donate for animal welfare India? Support our Zero Rabies Deaths by 2030 Mission. Donate to protect animals and communities across India.');
-    }
-    
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Pawsitive Protectors, animal vaccination, rabies prevention, stray dog vaccination, street animal rescue, animal welfare India, animal care NGO, rabies prevention India, protect animals, animal shelter support, street animal rescue Mumbai, where to donate for animal welfare India, rabies prevention programs India, stray dog vaccination programs, animal rescue and care India, zero rabies deaths mission India, animal welfare programs India, protect street animals India, stray animal care India');
-    }
-  }, []);
 
   // Pawsitive Protectors cause data focused on animal welfare and rabies prevention
   const cause = {
@@ -279,6 +263,22 @@ const PawsitiveProtectorsCauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <SEOHead 
+        title="Pawsitive Protectors - Animal Vaccination & Rabies Prevention | Donate Animal Welfare India"
+        description="Pawsitive Protectors provides animal welfare India through rabies prevention programs, stray dog vaccination, and street animal rescue. Where to donate for animal welfare India? Support our Zero Rabies Deaths by 2030 Mission. Donate to protect animals and communities across India."
+        keywords="Pawsitive Protectors, animal vaccination, rabies prevention, stray dog vaccination, street animal rescue, animal welfare India, animal care NGO, rabies prevention India, protect animals, animal shelter support, street animal rescue Mumbai, where to donate for animal welfare India, rabies prevention programs India, stray dog vaccination programs, animal rescue and care India, zero rabies deaths mission India, animal welfare programs India, protect street animals India, stray animal care India"
+        canonicalUrl="https://www.thegivingcircle.in/pawsitive-protectors-cause-details"
+        ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"
+      />
+      <ArticleSchema 
+        title="Pawsitive Protectors - Animal Vaccination & Rabies Prevention India"
+        description="Pawsitive Protectors provides animal welfare India through rabies prevention programs, stray dog vaccination, and street animal rescue. Zero Rabies Deaths by 2030 Mission."
+        image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"
+        category="Animal Welfare"
+        location="Mumbai, Maharashtra"
+        datePublished="2024-01-15"
+        author="Animal Care India"
+      />
       {/* Professional Header Section */}
       <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">

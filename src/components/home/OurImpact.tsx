@@ -6,7 +6,6 @@ export const OurImpact: React.FC = () => {
   return (
     <section className="py-8 sm:py-10 md:py-12 lg:py-14 bg-gradient-to-br from-blue-50 via-white to-green-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
         <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -46,9 +45,6 @@ export const OurImpact: React.FC = () => {
             - The Giving Circle Community
           </motion.p>
         </div>
-
-      
-
         
       </div>
     </section>

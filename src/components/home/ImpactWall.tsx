@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Badge, CheckCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import CloudinaryImage from '../ui/CloudinaryImage';
 
 interface ImpactCardProps {
@@ -17,6 +18,7 @@ interface ImpactCardProps {
 
 
 const ImpactCard: React.FC<ImpactCardProps> = ({
+  id,
   title,
   description,
   ngoName,
@@ -26,13 +28,29 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
   verified,
   location,
 }) => {
+  // Map story IDs to their detail page routes
+  const routeMap: { [key: string]: string } = {
+    '1': '/khushi-cause-details',
+    '2': '/pawsitive-protectors-cause-details',
+    '4': '/bowls-of-hope-cause-details',
+    '5': '/flood-relief-cause-details',
+    '6': '/flood-animal-rescue-cause-details',
+  };
+
+  const detailRoute = routeMap[id] || '/live-causes';
+
   return (
+    <Link 
+      to={detailRoute}
+      className="block h-full"
+      aria-label={`View details about ${title} - ${impactNumber.toLocaleString()} ${impactUnit}`}
+    >
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 h-full bg-white"
+        className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full bg-white cursor-pointer group"
     >
       <div className="relative">
         <CloudinaryImage
@@ -76,8 +94,14 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
           {description}
         </p>
         
+        <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100">
+          <span className="text-xs sm:text-sm text-green-700 font-medium group-hover:underline">
+            Learn More →
+          </span>
+        </div>
       </div>
     </motion.div>
+    </Link>
   );
 };
 
@@ -145,34 +169,28 @@ export const ImpactWall: React.FC = () => {
     },
   ];
 
-  // Responsive items per page
   const getItemsPerPage = () => {
     if (typeof window !== 'undefined') {
       const width = window.innerWidth;
-      if (width >= 1024) return 3; // lg - show grid instead
-      if (width >= 768) return 2;  // md/tablet
-      if (width >= 640) return 2;  // sm
-      return 1; // mobile
+      if (width >= 1024) return 3;
+      if (width >= 768) return 2; 
+      if (width >= 640) return 2;
+      return 1;
     }
     return 1;
   };
 
   const [itemsPerPage, setItemsPerPage] = useState(getItemsPerPage);
-  
-  // Update items per page on window resize
   React.useEffect(() => {
     const handleResize = () => {
       setItemsPerPage(getItemsPerPage());
-      setCurrentPage(0); // Reset to first page on resize
+      setCurrentPage(0);
     };
-
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const totalPages = Math.ceil(impactStories.length / itemsPerPage);
   
-  // Auto-slide carousel every 3 seconds
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
@@ -190,10 +208,8 @@ export const ImpactWall: React.FC = () => {
   
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 100) {
-      // Swipe left
       setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
     } else if (touchStart - touchEnd < -100) {
-      // Swipe right
       setCurrentPage((prev) => Math.max(prev - 1, 0));
     }
   };
@@ -225,7 +241,6 @@ export const ImpactWall: React.FC = () => {
           </div>
         </motion.div>
 
-        {/* Mobile and Tablet Carousel */}
         <div className="lg:hidden relative overflow-hidden mb-4 sm:mb-6 md:mb-8">
           <div 
             ref={carouselRef}
@@ -247,7 +262,6 @@ export const ImpactWall: React.FC = () => {
             ))}
           </div>
           
-          {/* Pagination Indicators */}
           <div className="flex justify-center mt-3 sm:mt-4 md:mt-6 space-x-2">
             {Array.from({ length: totalPages }).map((_, index) => (
               <button
@@ -267,7 +281,6 @@ export const ImpactWall: React.FC = () => {
           </div>
         </div>
 
-        {/* Large Screen Grid */}
         <div className="hidden lg:grid lg:grid-cols-3 gap-4 xl:gap-6">
           {impactStories.map((story, index) => (
             <motion.div
@@ -281,6 +294,33 @@ export const ImpactWall: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="text-center mt-8 sm:mt-10 md:mt-12"
+        >
+          <Link
+            to="/live-causes"
+            className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-green-700 text-white font-semibold rounded-full hover:bg-green-800 transition-all duration-300 shadow-lg hover:shadow-xl"
+            aria-label="Browse all live causes and support social causes in India"
+          >
+            <span className="text-sm sm:text-base md:text-lg">View All Live Causes</span>
+            <span className="ml-2 text-lg sm:text-xl">→</span>
+          </Link>
+          <p className="mt-4 text-xs sm:text-sm text-gray-600">
+            Explore more verified causes and create impact through our{' '}
+            <Link to="/impact-stories" className="text-green-700 hover:underline font-medium">
+              impact stories
+            </Link>
+            {' '}or{' '}
+            <Link to="/the-giving-circle" className="text-green-700 hover:underline font-medium">
+              learn about our platform
+            </Link>
+          </p>
+        </motion.div>
 
       </div>
     </section>
