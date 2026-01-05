@@ -143,6 +143,5 @@ The redesigned component emphasizes:
 - **React Hooks**: State management and side effects
 - **Error Handling**: Graceful fallbacks for missing data
 - **Performance**: Optimized rendering with conditional components
-- **Accessibility**: Screen reader friendly with proper ARIA labels
 
 This implementation provides a robust foundation for showcasing cause champions and their transformative impact on communities across India.
