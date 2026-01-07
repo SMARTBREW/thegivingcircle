@@ -1,69 +1,15 @@
-import { Resend } from 'resend';
+import { formatEmailHTML, sendEmail } from '../config/email.js';
 
-// Initialize Resend client
-const resend = process.env.RESEND_API_KEY 
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null;
-
-const formatEmailHTML = (title, fields, submittedAt) => {
-  const fieldsHTML = Object.entries(fields)
-    .map(([key, value]) => {
-      const label = key
-        .replace(/([A-Z])/g, ' $1')
-        .replace(/^./, str => str.toUpperCase())
-        .trim();
-      return `
-        <tr>
-          <td style="padding: 8px 0; font-weight: 600; color: #374151; width: 200px;">${label}:</td>
-          <td style="padding: 8px 0; color: #6B7280;">${value || 'N/A'}</td>
-        </tr>
-      `;
-    })
-    .join('');
-
-  return `
-    <!DOCTYPE html>
-    <html>
-      <head>
-        <meta charset="utf-8">
-        <style>
-          body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-          .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #15803d 0%, #16a34a 100%); color: white; padding: 30px; text-align: center; border-radius: 8px 8px 0 0; }
-          .content { background: #ffffff; padding: 30px; border: 1px solid #e5e7eb; border-top: none; }
-          .footer { background: #f9fafb; padding: 20px; text-align: center; color: #6b7280; font-size: 12px; border-radius: 0 0 8px 8px; }
-          table { width: 100%; border-collapse: collapse; }
-          .divider { height: 1px; background: #e5e7eb; margin: 20px 0; }
-        </style>
-      </head>
-      <body>
-        <div class="container">
-          <div class="header">
-            <h1 style="margin: 0; font-size: 24px;">${title}</h1>
-          </div>
-          <div class="content">
-            <table>
-              ${fieldsHTML}
-            </table>
-            <div class="divider"></div>
-            <p style="color: #6b7280; font-size: 14px; margin-top: 20px;">
-              <strong>Submitted:</strong> ${submittedAt}
-            </p>
-          </div>
-          <div class="footer">
-            <p>This email was sent from The Giving Circle contact form.</p>
-            <p>© ${new Date().getFullYear()} The Giving Circle. All rights reserved.</p>
-          </div>
-        </div>
-      </body>
-    </html>
-  `;
-};
+/**
+ * Form submission handlers for The Giving Circle
+ * Handles Cause Champion and NGO Partner registration forms
+ */
 
 export const submitCauseChampionForm = async (req, res) => {
   try {
     const { fullName, email, phoneNumber, country, city, selectedCause } = req.body;
 
+    // Validation
     if (!fullName || !email || !phoneNumber || !country || !city || !selectedCause) {
       return res.status(400).json({
         success: false,
@@ -79,12 +25,10 @@ export const submitCauseChampionForm = async (req, res) => {
       });
     }
 
-    if (!resend) {
-      throw new Error('Resend API key not configured. Please set RESEND_API_KEY environment variable');
-    }
-
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
-    console.log(`📧 Sending Cause Champion form submission to: ${receiverEmail}`);
+    const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER || 'noreply@thegivingcircle.in';
+    
+    console.log(`📧 Processing Cause Champion form submission from: ${email}`);
     
     const submittedAt = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
@@ -97,12 +41,9 @@ export const submitCauseChampionForm = async (req, res) => {
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
       .join(' ');
 
-    // Use verified email address (tech@smartbrew.in is verified in Resend)
-    // To send from hello@thegivingcircle.in, verify domain in Resend first
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
-    
-    const { data, error } = await resend.emails.send({
-      from: `The Giving Circle <${fromEmail}>`,
+    // Email options
+    const mailOptions = {
+      from: `"The Giving Circle" <${fromEmail}>`,
       to: receiverEmail,
       replyTo: email,
       subject: `New Cause Champion Registration - ${fullName}`,
@@ -145,16 +86,17 @@ CAUSE INFORMATION
 
 This person wants to become a Cause Champion and start their giving journey with The Giving Circle.
       `.trim(),
-    });
+    };
 
-    if (error) {
-      throw new Error(`Resend error: ${error.message}`);
-    }
+    // Send email
+    await sendEmail(mailOptions);
 
+    // Success response
     res.json({
       success: true,
       message: 'Form submitted successfully! We will contact you soon.',
     });
+
   } catch (error) {
     console.error('Error submitting Cause Champion form:', error);
     res.status(500).json({
@@ -169,6 +111,7 @@ export const submitNGOPartnerForm = async (req, res) => {
   try {
     const { organizationName, email, contactPersonName, phoneNumber } = req.body;
 
+    // Validation
     if (!organizationName || !email || !contactPersonName || !phoneNumber) {
       return res.status(400).json({
         success: false,
@@ -184,12 +127,10 @@ export const submitNGOPartnerForm = async (req, res) => {
       });
     }
 
-    if (!resend) {
-      throw new Error('Resend API key not configured. Please set RESEND_API_KEY environment variable');
-    }
-
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
-    console.log(`📧 Sending NGO Partner form submission to: ${receiverEmail}`);
+    const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER || 'noreply@thegivingcircle.in';
+
+    console.log(`📧 Processing NGO Partner form submission from: ${organizationName}`);
 
     const submittedAt = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
@@ -197,27 +138,24 @@ export const submitNGOPartnerForm = async (req, res) => {
       timeStyle: 'long',
     });
 
-    // Use verified email address (tech@smartbrew.in is verified in Resend)
-    // To send from hello@thegivingcircle.in, verify domain in Resend first
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
-    
-    const { data, error } = await resend.emails.send({
-      from: `The Giving Circle <${fromEmail}>`,
+    // Email options
+    const mailOptions = {
+      from: `"The Giving Circle" <${fromEmail}>`,
       to: receiverEmail,
       replyTo: email,
-      subject: `Partner Registration - ${organizationName}`,
+      subject: `New NGO Partner Registration - ${organizationName}`,
       html: formatEmailHTML(
-        'Partner Registration - Join Verified Partner Network',
+        'NGO Partner Registration',
         {
           'Organization Name': organizationName,
-          'Email': email,
           'Contact Person': contactPersonName,
+          'Email': email,
           'Phone Number': phoneNumber,
         },
         submittedAt
       ),
       text: `
-Partner Registration - Join Verified Partner Network India
+NGO Partner Registration
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -229,8 +167,8 @@ ORGANIZATION DETAILS
 
 CONTACT INFORMATION
 
-📧 Email: ${email}
 👨‍💼 Contact Person: ${contactPersonName}
+📧 Email: ${email}
 📞 Phone Number: ${phoneNumber}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -239,18 +177,19 @@ CONTACT INFORMATION
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-I would like to become partner with The Giving Circle's verified partner platform India. Please provide details about the partner onboarding process, partnership benefits, and how to join your trusted partner network.
+This organization wants to become a verified partner with The Giving Circle platform.
       `.trim(),
-    });
+    };
 
-    if (error) {
-      throw new Error(`Resend error: ${error.message}`);
-    }
+    // Send email
+    await sendEmail(mailOptions);
 
+    // Success response
     res.json({
       success: true,
       message: 'Partner registration submitted successfully! We will contact you soon.',
     });
+
   } catch (error) {
     console.error('Error submitting NGO Partner form:', error);
     res.status(500).json({
@@ -260,4 +199,3 @@ I would like to become partner with The Giving Circle's verified partner platfor
     });
   }
 };
-

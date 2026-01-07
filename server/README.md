@@ -1,231 +1,352 @@
-# Backend Server - Form Submission API
+# The Giving Circle - Backend API
 
-This backend server handles form submissions from The Giving Circle website and sends email notifications using Nodemailer.
+Node.js/Express backend API for The Giving Circle platform with **Nodemailer** email service.
 
-## Features
+---
 
-- ✅ Cause Champion Registration Form
-- ✅ NGO Partner Registration Form
-- ✅ Email notifications with HTML templates
-- ✅ Form validation
-- ✅ Error handling
-
-## Setup Instructions
+## 🚀 Quick Start
 
 ### 1. Install Dependencies
 
 ```bash
+cd server
 npm install
 ```
 
-This will install:
-- `express` - Web server framework
-- `nodemailer` - Email sending library
-- `cors` - Cross-origin resource sharing
-- `dotenv` - Environment variable management
+### 2. Configure Environment Variables
 
-### 2. Configure Email Settings
+Create `server/.env` file:
 
-1. Copy the example environment file:
 ```bash
-cp server/env.example server/.env
-```
-
-2. Edit `server/.env` and add your email configuration:
-
-```env
-# Server Configuration
+# Server
 PORT=3001
 NODE_ENV=development
 
-# Email Configuration (Nodemailer)
-SMTP_HOST=smtp.gmail.com
-SMTP_PORT=587
-SMTP_SECURE=false
-SMTP_USER=your-email@gmail.com
-SMTP_PASS=your-app-password
-
-# Receiver Email (where form submissions will be sent)
+# Email (Gmail)
+EMAIL_SERVICE=gmail
+EMAIL_USER=your-email@gmail.com
+EMAIL_PASSWORD=your-app-password  # Generate at myaccount.google.com/apppasswords
+FROM_EMAIL=your-email@gmail.com
 RECEIVER_EMAIL=hello@thegivingcircle.in
+
+# Frontend
+FRONTEND_URL=http://localhost:5173
 ```
 
-### 3. Gmail Setup (If using Gmail)
-
-If you're using Gmail, you need to:
-
-1. **Enable 2-Factor Authentication** on your Google account
-2. **Generate an App Password**:
-   - Go to [Google Account Settings](https://myaccount.google.com/)
-   - Security → 2-Step Verification → App passwords
-   - Generate a new app password for "Mail"
-   - Use this password in `SMTP_PASS`
-
-### 4. Other Email Providers
-
-For other email providers, update the SMTP settings:
-
-**Outlook/Hotmail:**
-```env
-SMTP_HOST=smtp-mail.outlook.com
-SMTP_PORT=587
-SMTP_SECURE=false
-```
-
-**Yahoo:**
-```env
-SMTP_HOST=smtp.mail.yahoo.com
-SMTP_PORT=587
-SMTP_SECURE=false
-```
-
-**Custom SMTP:**
-```env
-SMTP_HOST=your-smtp-server.com
-SMTP_PORT=587
-SMTP_SECURE=false
-```
-
-### 5. Configure Frontend API URL
-
-In your frontend `.env` file (or `vite.config.ts`), set:
-
-```env
-VITE_API_URL=http://localhost:3001/api
-```
-
-For production, update this to your backend server URL:
-```env
-VITE_API_URL=https://your-backend-domain.com/api
-```
-
-## Running the Server
-
-### Development Mode
+### 3. Start Server
 
 ```bash
-npm run server:dev
+# Development
+npm run dev
+
+# Production
+npm start
 ```
 
-This uses `nodemon` to auto-restart on file changes.
+Server will run on `http://localhost:3001`
 
-### Production Mode
+---
+
+## 📧 Email Configuration
+
+### Option 1: Gmail (Quick Start)
+
+1. Enable 2FA: https://myaccount.google.com/security
+2. Generate App Password: https://myaccount.google.com/apppasswords
+3. Update `.env`:
+   ```bash
+   EMAIL_SERVICE=gmail
+   EMAIL_USER=your-email@gmail.com
+   EMAIL_PASSWORD=abcdefghijklmnop  # 16-char app password
+   ```
+
+📖 **Detailed guide:** See `GMAIL_SETUP.md`
+
+### Option 2: AWS SES (Production)
 
 ```bash
-npm run server
+EMAIL_SERVICE=aws-ses
+SMTP_HOST=email-smtp.us-east-1.amazonaws.com
+SMTP_PORT=587
+SMTP_USER=your-ses-username
+SMTP_PASSWORD=your-ses-password
 ```
 
-The server will start on `http://localhost:3001` (or the port specified in `.env`).
+### Option 3: SendGrid
 
-## API Endpoints
+```bash
+EMAIL_SERVICE=sendgrid
+SENDGRID_API_KEY=your-api-key
+```
+
+---
+
+## 🛠️ API Endpoints
 
 ### Health Check
 ```
+GET /health
 GET /api/health
 ```
 
-### Submit Cause Champion Form
+Response:
+```json
+{
+  "status": "ok",
+  "message": "The Giving Circle API is running",
+  "timestamp": "2025-01-27T10:30:00.000Z",
+  "environment": "development"
+}
+```
+
+### Cause Champion Form
 ```
 POST /api/submit/cause-champion
-Content-Type: application/json
+```
 
+Body:
+```json
 {
   "fullName": "John Doe",
   "email": "john@example.com",
-  "phoneNumber": "9876543210",
+  "phoneNumber": "+919876543210",
   "country": "India",
   "city": "Mumbai",
-  "selectedCause": "break-barriers-girls-education"
+  "selectedCause": "wings-of-hope"
 }
 ```
 
-### Submit NGO Partner Form
+### NGO Partner Form
 ```
 POST /api/submit/ngo-partner
-Content-Type: application/json
+```
 
+Body:
+```json
 {
-  "organizationName": "Example NGO",
-  "email": "contact@example.org",
+  "organizationName": "Sample NGO",
+  "email": "contact@samplengo.org",
   "contactPersonName": "Jane Smith",
-  "phoneNumber": "9876543210"
+  "phoneNumber": "+919876543210"
 }
 ```
 
-## Response Format
+---
 
-### Success Response
-```json
-{
-  "success": true,
-  "message": "Form submitted successfully! We will contact you soon."
-}
+## 📁 Project Structure
+
+```
+server/
+├── config/
+│   └── email.js           # Email configuration & Nodemailer setup
+├── routes/
+│   └── forms.js           # Form submission handlers
+├── index.js               # Main server file
+├── package.json           # Dependencies
+├── .env                   # Environment variables (create this)
+├── .env.example           # Environment template
+├── README.md              # This file
+├── GMAIL_SETUP.md         # Gmail configuration guide
+└── AWS_DEPLOYMENT.md      # AWS deployment guide
 ```
 
-### Error Response
-```json
-{
-  "success": false,
-  "message": "All fields are required"
-}
+---
+
+## 🔧 Environment Variables
+
+| Variable | Required | Default | Description |
+|----------|----------|---------|-------------|
+| `PORT` | No | 3001 | Server port |
+| `NODE_ENV` | No | development | Environment (development/production) |
+| `EMAIL_SERVICE` | Yes | gmail | Email provider (gmail/aws-ses/sendgrid/custom) |
+| `EMAIL_USER` | Yes | - | Email username |
+| `EMAIL_PASSWORD` | Yes | - | Email password / App Password |
+| `FROM_EMAIL` | No | EMAIL_USER | Sender email address |
+| `RECEIVER_EMAIL` | No | hello@thegivingcircle.in | Recipient email |
+| `FRONTEND_URL` | No | - | Frontend URL for CORS |
+
+---
+
+## 🚀 Deployment
+
+### AWS Elastic Beanstalk (Easiest)
+
+```bash
+# Install EB CLI
+pip install awsebcli
+
+# Initialize
+cd server
+eb init -p node.js-18 thegivingcircle-backend
+
+# Deploy
+eb create thegivingcircle-backend-prod
+
+# Update
+eb deploy
 ```
 
-## Deployment
+### AWS EC2
 
-### Option 1: Deploy Backend Separately
+```bash
+# SSH to EC2
+ssh -i your-key.pem ubuntu@your-ec2-ip
 
-Deploy the backend to a service like:
-- **Heroku**
-- **Railway**
-- **Render**
-- **DigitalOcean**
-- **AWS EC2**
+# Clone repo
+git clone https://github.com/SMARTBREW/thegivingcircle.git
+cd thegivingcircle/server
 
-Make sure to:
-1. Set environment variables in your hosting platform
-2. Update `VITE_API_URL` in frontend to point to your backend
-3. Configure CORS if needed
+# Install dependencies
+npm install
 
-### Option 2: Deploy with Frontend (Same Domain)
+# Setup environment
+nano .env  # Add your config
 
-If deploying backend and frontend on the same domain:
-1. Build frontend: `npm run build`
-2. Serve backend API from `/api` path
-3. Serve frontend static files from root
-4. Configure your server to handle both
+# Install PM2
+sudo npm install -g pm2
 
-## Troubleshooting
+# Start app
+pm2 start index.js --name thegivingcircle-backend
+pm2 save
+pm2 startup
+```
 
-### Email Not Sending
+📖 **Detailed guides:** See `AWS_DEPLOYMENT.md`
 
-1. **Check SMTP credentials** - Verify username and password are correct
-2. **Check SMTP port** - Some providers use different ports (465 for SSL, 587 for TLS)
-3. **Check firewall** - Ensure port 587/465 is not blocked
-4. **Check spam folder** - Emails might be going to spam
+---
 
-### CORS Errors
+## 🔒 Security Features
 
-If you see CORS errors, ensure:
-1. Backend CORS is enabled (already configured)
-2. Frontend `VITE_API_URL` matches backend URL
-3. Both are on same domain or CORS is properly configured
+- ✅ **Helmet.js** - Security headers
+- ✅ **CORS** - Cross-origin protection
+- ✅ **Rate Limiting** - Prevent abuse (100 req/15min, 5 forms/hour)
+- ✅ **Input Validation** - Email & required field checks
+- ✅ **Error Handling** - Graceful error responses
 
-### Port Already in Use
+---
 
-If port 3001 is already in use:
-1. Change `PORT` in `.env` file
-2. Update `VITE_API_URL` in frontend to match
+## 📊 Logging
 
-## Security Notes
+### Development
+```bash
+npm run dev
+# Uses morgan 'dev' format - colorized, concise
+```
 
-- ✅ Never commit `.env` file to git
-- ✅ Use environment variables for sensitive data
-- ✅ Enable HTTPS in production
-- ✅ Validate all form inputs (already implemented)
-- ✅ Rate limiting recommended for production
+### Production
+```bash
+npm start
+# Uses morgan 'combined' format - Apache-style logs
+```
 
-## Support
+### View Logs (PM2)
+```bash
+pm2 logs thegivingcircle-backend
+pm2 monit
+```
 
-For issues or questions, check:
-- [Nodemailer Documentation](https://nodemailer.com/)
-- [Express Documentation](https://expressjs.com/)
+---
 
+## 🧪 Testing
+
+### Test Health Endpoint
+
+```bash
+curl http://localhost:3001/health
+```
+
+### Test Form Submission
+
+```bash
+curl -X POST http://localhost:3001/api/submit/cause-champion \
+  -H "Content-Type: application/json" \
+  -d '{
+    "fullName": "Test User",
+    "email": "test@example.com",
+    "phoneNumber": "+919876543210",
+    "country": "India",
+    "city": "Mumbai",
+    "selectedCause": "wings-of-hope"
+  }'
+```
+
+---
+
+## 🐛 Troubleshooting
+
+### Server won't start
+
+**Check:**
+1. Port 3001 not in use: `lsof -ti:3001`
+2. Dependencies installed: `npm install`
+3. `.env` file exists with correct values
+
+### Email not sending
+
+**Check:**
+1. Email credentials in `.env`
+2. Server logs: `npm run dev` (look for ✅ or ❌)
+3. Gmail: Using App Password (not regular password)
+4. Firewall: Ports 587/465 not blocked
+
+### CORS errors
+
+**Check:**
+1. `FRONTEND_URL` in `.env` matches your frontend
+2. Frontend URL in CORS whitelist (index.js)
+
+---
+
+## 📦 Dependencies
+
+### Core
+- `express` - Web framework
+- `nodemailer` - Email sending
+- `cors` - CORS middleware
+- `dotenv` - Environment variables
+
+### Security
+- `helmet` - Security headers
+- `express-rate-limit` - Rate limiting
+
+### Utilities
+- `morgan` - HTTP logging
+
+### Dev
+- `nodemon` - Auto-restart on changes
+
+---
+
+## 🎯 Next Steps
+
+1. ✅ Install dependencies
+2. ✅ Configure email (Gmail/AWS SES)
+3. ✅ Start server locally
+4. ✅ Test form submissions
+5. ⏳ Deploy to AWS
+6. ⏳ Configure production email
+7. ⏳ Setup custom domain
+8. ⏳ Monitor with CloudWatch
+
+---
+
+## 📚 Documentation
+
+- [Gmail Setup Guide](./GMAIL_SETUP.md)
+- [AWS Deployment Guide](./AWS_DEPLOYMENT.md)
+
+---
+
+## 💬 Support
+
+Having issues? Check:
+1. Server logs
+2. `.env` configuration
+3. Email provider status
+4. AWS deployment guide
+
+---
+
+**Made with ❤️ for The Giving Circle**
+
+*Empowering communities through transparent giving*
