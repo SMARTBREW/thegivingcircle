@@ -150,22 +150,6 @@ export const Footer: React.FC = () => {
                   </div>
                 </div>
 
-                {/* <div className="pt-3 sm:pt-4 space-y-2 sm:space-y-3">
-                  <Link 
-                    to="/the-giving-circle" 
-                    className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                  >
-                    <span className="text-xs sm:text-sm md:text-base break-words">Help Center</span>
-                    <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                  </Link>
-                  <Link 
-                    to="/live-causes" 
-                    className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                  >
-                    <span className="text-xs sm:text-sm md:text-base break-words">Community Support</span>
-                    <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                  </Link>
-                </div> */}
                  <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-xs sm:text-sm md:text-base font-semibold text-gray-900 uppercase tracking-wide">
                   Connect With Us

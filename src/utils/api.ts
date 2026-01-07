@@ -1,5 +1,5 @@
 // API Base URL - Render backend URL
-const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://the-giving-circle-backend.onrender.com/api';
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.thegivingcircle.in/api';
 
 export class ApiClient {
   // Submit Cause Champion form
