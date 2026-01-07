@@ -1,11 +1,6 @@
 import nodemailer from 'nodemailer';
 
-/**
- * Email Configuration for AWS Deployment
- * Supports multiple SMTP providers: Gmail, AWS SES, SendGrid, custom SMTP
- */
 
-// Create email transporter based on environment variables
 export const createEmailTransporter = () => {
   const emailService = process.env.EMAIL_SERVICE || 'gmail';
   

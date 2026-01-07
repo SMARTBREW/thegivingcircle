@@ -3,7 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 
-// Load .env if present (optional convenience)
 try { require('dotenv').config(); } catch (_) {}
 
 // Read creds from env vars. Set in PowerShell before running:

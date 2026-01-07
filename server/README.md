@@ -53,24 +53,10 @@ Server will run on `http://localhost:3001`
 
 1. Enable 2FA: https://myaccount.google.com/security
 2. Generate App Password: https://myaccount.google.com/apppasswords
-3. Update `.env`:
-   ```bash
-   EMAIL_SERVICE=gmail
-   EMAIL_USER=your-email@gmail.com
-   EMAIL_PASSWORD=abcdefghijklmnop  # 16-char app password
-   ```
+3. 
 
 📖 **Detailed guide:** See `GMAIL_SETUP.md`
 
-### Option 2: AWS SES (Production)
-
-```bash
-EMAIL_SERVICE=aws-ses
-SMTP_HOST=email-smtp.us-east-1.amazonaws.com
-SMTP_PORT=587
-SMTP_USER=your-ses-username
-SMTP_PASSWORD=your-ses-password
-```
 
 ### Option 3: SendGrid
 

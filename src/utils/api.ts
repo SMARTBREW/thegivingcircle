@@ -1,8 +1,6 @@
-// API Base URL - Render backend URL
 const API_BASE_URL = import.meta.env.VITE_API_URL || 'https://api.thegivingcircle.in/api';
 
 export class ApiClient {
-  // Submit Cause Champion form
   static async submitCauseChampionData(data: {
     fullName: string;
     email: string;
@@ -35,7 +33,6 @@ export class ApiClient {
 
   static async sendOTP(phoneNumber: string) {
     console.log('Frontend-only mode: OTP would be sent to:', phoneNumber);
-    // Simulate OTP sending
     return new Promise(resolve => {
       setTimeout(() => resolve({ success: true, message: 'OTP sent successfully' }), 1000);
     });
@@ -43,7 +40,6 @@ export class ApiClient {
 
   static async verifyOTP(phoneNumber: string, otp: string) {
     console.log('Frontend-only mode: OTP verification for:', phoneNumber, 'OTP:', otp);
-    // Simulate OTP verification (accept any 6-digit OTP for demo)
     const isValid = otp.length === 6 && /^\d+$/.test(otp);
     return new Promise(resolve => {
       setTimeout(() => resolve({ 
@@ -84,7 +80,6 @@ export class ApiClient {
 
   static async getImpactStories(filters?: any) {
     console.log('Frontend-only mode: Impact stories requested with filters:', filters);
-    // Return empty array or sample data
     return new Promise(resolve => {
       setTimeout(() => resolve([]), 500);
     });
@@ -92,7 +87,6 @@ export class ApiClient {
 
   static async getTestimonials() {
     console.log('Frontend-only mode: Testimonials requested');
-    // Return empty array for now
     return new Promise(resolve => {
       setTimeout(() => resolve([]), 500);
     });
@@ -107,6 +101,3 @@ export const validatePhoneNumber = (phone: string) => {
   const phoneRegex = /^[6-9]\d{9}$/;
   return phoneRegex.test(phone);
 };
-
-// Note: Champion Stories API removed since ChampionStoryDetail page shows "under construction"
-// and no components are actually using this functionality
