@@ -3,8 +3,8 @@ module.exports = {
     {
       name: "thegivingcircle-backend",
       script: "index.js",
-      instances: 1, // Start with 1, can increase later
-      exec_mode: "fork", // Use fork mode (simpler than cluster for this app)
+      instances: 1, 
+      exec_mode: "fork", 
       env: {
         NODE_ENV: "production",
         PORT: 3001
