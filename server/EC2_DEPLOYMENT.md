@@ -42,13 +42,12 @@
 ```bash
 # On your local machine
 # Set permissions for key file
-chmod 400 ~/.ssh/thegivingcircle.pem
+chmod 400 thegivingcircle-backend.pem
 
 # Connect to EC2
-ssh -i ~/.ssh/thegivingcircle.pem ubuntu@[YOUR-EC2-PUBLIC-IP]
-```
+ssh -i ~/Downloads/thegivingcircle-backend.pem ubuntu@ec2-13-126-1-172.ap-south-1.compute.amazonaws.com
 
----
+```
 
 ## Step 3: Update System
 
@@ -117,9 +116,12 @@ cd /var/www/thegivingcircle-backend
 ### Clone Repository
 
 ```bash
-git clone https://github.com/SMARTBREW/thegivingcircle.git .
-cd server
+git clone https://github.com/SMARTBREW/thegivingcircle.git
+cd thegivingcircle/server
 ```
+
+**Note:** The repository creates a `thegivingcircle` folder, so the path will be:
+`/var/www/thegivingcircle-backend/thegivingcircle/server`
 
 ---
 
@@ -166,7 +168,7 @@ mkdir -p logs
 
 ```bash
 # Start the app
-pm2 start ecosystem.config.js --env production
+pm2 start ecosystem.config.cjs --env production
 
 # Save PM2 configuration
 pm2 save
@@ -404,7 +406,7 @@ sudo systemctl restart nginx
 sudo nginx -t
 
 # Application
-cd /var/www/thegivingcircle-backend/server
+cd /var/www/thegivingcircle-backend/thegivingcircle/server
 git pull
 npm install --production
 pm2 restart thegivingcircle-backend
