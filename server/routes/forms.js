@@ -88,14 +88,21 @@ This person wants to become a Cause Champion and start their giving journey with
       `.trim(),
     };
 
-    // Send email
-    await sendEmail(mailOptions);
-
-    // Success response
+    // Send response immediately to user (don't wait for email)
     res.json({
       success: true,
       message: 'Form submitted successfully! We will contact you soon.',
     });
+
+    // Send email asynchronously in background (fire and forget)
+    sendEmail(mailOptions)
+      .then(() => {
+        console.log(`✅ Cause Champion email sent successfully for: ${email}`);
+      })
+      .catch((error) => {
+        console.error('❌ Failed to send Cause Champion email:', error.message);
+        // Email failed but user already got success response - log for monitoring
+      });
 
   } catch (error) {
     console.error('Error submitting Cause Champion form:', error);
@@ -181,14 +188,21 @@ This organization wants to become a verified partner with The Giving Circle plat
       `.trim(),
     };
 
-    // Send email
-    await sendEmail(mailOptions);
-
-    // Success response
+    // Send response immediately to user (don't wait for email)
     res.json({
       success: true,
       message: 'Partner registration submitted successfully! We will contact you soon.',
     });
+
+    // Send email asynchronously in background (fire and forget)
+    sendEmail(mailOptions)
+      .then(() => {
+        console.log(`✅ NGO Partner email sent successfully for: ${organizationName}`);
+      })
+      .catch((error) => {
+        console.error('❌ Failed to send NGO Partner email:', error.message);
+        // Email failed but user already got success response - log for monitoring
+      });
 
   } catch (error) {
     console.error('Error submitting NGO Partner form:', error);

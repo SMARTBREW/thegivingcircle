@@ -51,25 +51,24 @@ const limiter = rateLimit({
 
 const formLimiter = rateLimit({
   windowMs: 60 * 60 * 1000, // 1 hour
-  max: 50, // Limit each IP to 50 form submissions per hour
-  message: {
-    success: false,
-    error: 'Too many form submissions',
-    message: 'You have reached the limit of 50 form submissions per hour. Please try again later.',
-    limit: 50,
-    window: '1 hour'
-  },
+  max: 100, // Limit each IP to 100 form submissions per hour
   standardHeaders: true, // Return rate limit info in `RateLimit-*` headers
   legacyHeaders: false,
   skipSuccessfulRequests: false, // Count all requests, even successful ones
   skipFailedRequests: false, // Count failed requests too
   handler: (req, res) => {
+    const remaining = req.rateLimit?.remaining || 0;
+    const total = req.rateLimit?.limit || 100;
+    const resetTime = req.rateLimit?.resetTime ? new Date(req.rateLimit.resetTime).toLocaleTimeString() : 'unknown';
+    
     res.status(429).json({
       success: false,
       error: 'Too many form submissions',
-      message: 'You have reached the limit of 50 form submissions per hour. Please try again later.',
-      limit: 50,
-      window: '1 hour'
+      message: `You have reached the limit of ${total} form submissions per hour. Please try again after ${resetTime}.`,
+      limit: total,
+      remaining: remaining,
+      window: '1 hour',
+      resetTime: resetTime
     });
   }
 });
