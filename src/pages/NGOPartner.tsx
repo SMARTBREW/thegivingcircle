@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Mail, User, Phone, Send, MapPin } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
@@ -25,6 +25,8 @@ export const NGOPartner: React.FC = () => {
     phoneNumber: '',
     country: 'in' // India ISO code
   });
+  const [phoneCountry, setPhoneCountry] = useState<any>('IN');
+  const formContainerRef = useRef<HTMLDivElement>(null);
 
   // Countries data for react-select using world-countries library
   const countryOptions = useMemo(() => {
@@ -113,6 +115,16 @@ export const NGOPartner: React.FC = () => {
           phoneNumber: '',
           country: 'in',
         });
+        // Scroll form container into view smoothly without going to bottom
+        setTimeout(() => {
+          if (formContainerRef.current) {
+            formContainerRef.current.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center',
+              inline: 'nearest'
+            });
+          }
+        }, 100);
       } else {
         setError(result.message || 'Failed to submit form. Please try again.');
       }
@@ -166,6 +178,7 @@ export const NGOPartner: React.FC = () => {
           variants={formVariants}
         >
           <motion.div 
+            ref={formContainerRef}
             className="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200"
           >
             {/* Form Content */}
@@ -276,11 +289,22 @@ export const NGOPartner: React.FC = () => {
                     <PhoneInput
                       international
                       defaultCountry="IN"
+                      country={phoneCountry}
                       value={formData.phoneNumber}
                       onChange={(value) => setFormData(prev => ({ ...prev, phoneNumber: value || '' }))}
+                      onCountryChange={(country) => {
+                        if (country) {
+                          setPhoneCountry(country);
+                        }
+                      }}
                       className="w-full"
                       placeholder="Enter phone number"
                       withCountryCallingCode
+                      countryCallingCodeEditable={false}
+                      smartCaret={false}
+                      numberInputProps={{
+                        style: { paddingLeft: '1rem' }
+                      }}
                     />
                   </motion.div>
 

@@ -28,7 +28,6 @@ const LiveCausesPage = () => {
     'All NGOs',
     'JWP',
     'Animal Care',
-    'KHUSHII',
     'GUS'
   ];
 
@@ -199,7 +198,7 @@ const LiveCausesPage = () => {
   };
 
   // Function to handle navigation to cause details page
-  const handleViewDetails = () => {
+  const handleViewDetails = (cause: any) => {
     // Simulate navigation - in a real app, you would use React Router
     // Redirect to specific cause detail pages based on cause
     const routeMap: { [key: number]: string } = {
@@ -227,7 +226,7 @@ const LiveCausesPage = () => {
     } else if (cause.title === 'Flood Relief in Uttarakhand') {
       window.location.href = `/flood-relief-cause-details`;
     } else {
-      handleViewDetails();
+      handleViewDetails(cause);
     }
   };
 

@@ -162,40 +162,65 @@ body::-webkit-scrollbar {
   box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1);
 }
 
+/* PhoneInput Country Section - Flag and Country Code */
 .PhoneInputCountry {
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.75rem;
   display: flex;
   align-items: center;
   border-right: 1px solid #e5e7eb;
+  flex-shrink: 0;
+  gap: 0.5rem;
 }
 
 .PhoneInputCountryIcon {
   width: 1.5rem;
   height: 1.5rem;
-  margin-right: 0.5rem;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
 .PhoneInputCountrySelect {
   background: transparent;
   border: none;
-  padding: 0.5rem;
+  padding: 0;
   font-size: 0.875rem;
   cursor: pointer;
+  min-width: fit-content;
+  outline: none;
+  flex-shrink: 0;
+}
+
+.PhoneInputCountrySelect:focus {
+  outline: none;
 }
 
 .PhoneInputCountrySelectArrow {
   opacity: 0.7;
   margin-left: 0.25rem;
+  display: inline-block;
 }
 
+.PhoneInputCountryIcon--border {
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+}
+
+/* Phone Number Input - Prevent country code editing */
 .PhoneInputInput {
   flex: 1;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1rem !important;
   border: none;
   outline: none;
   font-size: 1rem;
   background: transparent;
+}
+
+.PhoneInputInput:focus {
+  outline: none;
+}
+
+/* Ensure country calling code stays in place */
+.PhoneInput--focus .PhoneInputCountry {
+  background-color: transparent;
 }
 
 .PhoneInputInput::placeholder {

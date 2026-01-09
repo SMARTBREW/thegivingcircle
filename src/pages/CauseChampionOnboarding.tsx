@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { User, Mail, MapPin, Target, Phone } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
@@ -33,6 +33,9 @@ const CauseChampionOnboarding: React.FC = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [phoneCountry, setPhoneCountry] = useState<any>('IN');
+  const [showValidation, setShowValidation] = useState(false);
+  const formContainerRef = useRef<HTMLDivElement>(null);
 
   // Set page title and meta tags for SEO
   useEffect(() => {
@@ -139,6 +142,10 @@ const CauseChampionOnboarding: React.FC = () => {
     }));
   };
 
+  const hasError = (fieldName: string, value: any) => {
+    return showValidation && !value;
+  };
+
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     
@@ -147,13 +154,26 @@ const CauseChampionOnboarding: React.FC = () => {
         ...prev,
         agreeToTerms: checked
       }));
+      
+      // Jab checkbox click ho, toh validation show karo
+      if (checked) {
+        setShowValidation(true);
+      }
     }
   };
 
 
   const handleSubmit = async () => {
-    setIsSubmitting(true);
+    setShowValidation(true);
     setError(null);
+
+    // Validate all fields
+    if (!formData.fullName || !formData.email || !formData.phoneNumber || !formData.country || !formData.city || !formData.selectedCause || !formData.agreeToTerms) {
+      setError('Please fill in all required fields marked with *');
+      return;
+    }
+
+    setIsSubmitting(true);
 
     try {
       const result = await ApiClient.submitCauseChampionData({
@@ -167,6 +187,17 @@ const CauseChampionOnboarding: React.FC = () => {
 
       if (result.success) {
         setFormData(prev => ({ ...prev, isSubmitted: true }));
+        setShowValidation(false);
+        // Scroll form container into view smoothly without going to bottom
+        setTimeout(() => {
+          if (formContainerRef.current) {
+            formContainerRef.current.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center',
+              inline: 'nearest'
+            });
+          }
+        }, 100);
       } else {
         setError(result.message || 'Failed to submit form. Please try again.');
       }
@@ -221,6 +252,7 @@ const CauseChampionOnboarding: React.FC = () => {
           variants={formVariants}
         >
           <motion.div 
+            ref={formContainerRef}
             className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
           >
             {/* Success Message */}
@@ -300,7 +332,11 @@ const CauseChampionOnboarding: React.FC = () => {
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition-colors text-base ${
+                    hasError('fullName', formData.fullName)
+                      ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                      : 'border-gray-300 focus:ring-green-500 focus:border-green-500'
+                  }`}
                   placeholder="Enter your full name"
                   aria-label="Enter your full name for cause champion registration"
                 />
@@ -321,7 +357,11 @@ const CauseChampionOnboarding: React.FC = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition-colors text-base ${
+                    hasError('email', formData.email)
+                      ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                      : 'border-gray-300 focus:ring-green-500 focus:border-green-500'
+                  }`}
                   placeholder="Enter your email"
                 />
               </motion.div>
@@ -336,15 +376,28 @@ const CauseChampionOnboarding: React.FC = () => {
                   <Phone className="w-5 h-5 text-green-600" />
                   Mobile Number *
                 </label>
-                <PhoneInput
-                  international
-                  defaultCountry="IN"
-                  value={formData.phoneNumber}
-                  onChange={(value) => setFormData(prev => ({ ...prev, phoneNumber: value || '' }))}
-                  className="w-full"
-                  placeholder="Enter your mobile number"
-                  withCountryCallingCode
-                />
+                <div className={hasError('phoneNumber', formData.phoneNumber) ? 'ring-2 ring-red-500 rounded-lg' : ''}>
+                  <PhoneInput
+                    international
+                    defaultCountry="IN"
+                    country={phoneCountry}
+                    value={formData.phoneNumber}
+                    onChange={(value) => setFormData(prev => ({ ...prev, phoneNumber: value || '' }))}
+                    onCountryChange={(country) => {
+                      if (country) {
+                        setPhoneCountry(country);
+                      }
+                    }}
+                    className="w-full"
+                    placeholder="Enter your mobile number"
+                    withCountryCallingCode
+                    countryCallingCodeEditable={false}
+                    smartCaret={false}
+                    numberInputProps={{
+                      style: { paddingLeft: '1rem' }
+                    }}
+                  />
+                </div>
               </motion.div>
 
               {/* Country and City in same row */}
@@ -370,13 +423,15 @@ const CauseChampionOnboarding: React.FC = () => {
                     styles={{
                       control: (base) => ({
                         ...base,
-                        borderColor: '#d1d5db',
+                        borderColor: hasError('country', formData.country) ? '#ef4444' : '#d1d5db',
+                        borderWidth: hasError('country', formData.country) ? '2px' : '1px',
                         borderRadius: '0.5rem',
                         padding: '0.25rem',
                         minHeight: '48px',
                         fontSize: '1rem',
+                        boxShadow: hasError('country', formData.country) ? '0 0 0 2px rgba(239, 68, 68, 0.1)' : 'none',
                         '&:hover': {
-                          borderColor: '#d1d5db',
+                          borderColor: hasError('country', formData.country) ? '#ef4444' : '#d1d5db',
                         },
                       }),
                       option: (base, state) => ({
@@ -415,7 +470,11 @@ const CauseChampionOnboarding: React.FC = () => {
                     name="city"
                     value={formData.city}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition-colors text-base ${
+                      hasError('city', formData.city)
+                        ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:ring-green-500 focus:border-green-500'
+                    }`}
                     placeholder="Enter your city"
                   />
                 </div>
@@ -435,7 +494,11 @@ const CauseChampionOnboarding: React.FC = () => {
                   name="selectedCause"
                   value={formData.selectedCause}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition-colors text-base ${
+                    hasError('selectedCause', formData.selectedCause)
+                      ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
+                      : 'border-gray-300 focus:ring-green-500 focus:border-green-500'
+                  }`}
                   aria-label="Select the social cause you want to support as a cause champion"
                 >
                   <option value="">Select a cause category to start your impact campaign</option>
