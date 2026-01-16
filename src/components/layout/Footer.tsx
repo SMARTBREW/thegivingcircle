@@ -77,6 +77,13 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </Link>
                 <Link 
+                  to="/local-seo" 
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-xs sm:text-sm md:text-base break-words">NGO Directory</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                </Link>
+                <Link 
                   to="/the-giving-circle" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >

@@ -20,13 +20,12 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-// Security middleware
 app.use(helmet({
-  contentSecurityPolicy: false, // Disable for API
+  contentSecurityPolicy: false, 
   crossOriginEmbedderPolicy: false,
 }));
 
-// CORS configuration
+
 app.use(cors({
   origin: [
     'https://www.thegivingcircle.in',
