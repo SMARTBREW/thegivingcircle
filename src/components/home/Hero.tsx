@@ -10,8 +10,9 @@ const FUNDRAISING_DATA = [
   {
     id: 1,
     title: "Wings of Hope",
-    description: "Inspired change-makers are taking it upon themselves to ensure underprivileged girls don’t  drop out of school when they start menstruating. Their mission is simple yet powerful: keeping girls in school. Period.",
+    description: "Inspired change-makers are taking it upon themselves to ensure underprivileged girls don't  drop out of school when they start menstruating. Their mission is simple yet powerful: keeping girls in school. Period.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
+    cardImage: "/images/herosection/hero3.jpeg",
     category: "Education • Health • Empowerment",
     fullDescription: "Education is the foundation of a better future, but many children lack access to quality learning opportunities. Wings of Hope provides scholarships, school supplies, digital learning tools, and mentorship programs to underprivileged students. We support both formal education and skill development, ensuring children can pursue their dreams regardless of their economic background. Every child deserves the chance to soar.",
     raised: 34800,
@@ -29,8 +30,9 @@ const FUNDRAISING_DATA = [
   {
     id: 2,
     title: "Pawsitive Protectors",
-    description: "Fighting rabies together! Your support helps protect street animals and our communities by providing Free Vaccinations. Join India's ‘Zero Deaths by 2030 Mission’. Every shot saves lives!",
+    description: "Fighting rabies together! Your support helps protect street animals and our communities by providing Free Vaccinations. Join India's ‘Zero Deaths by 2030 Mission’. Every shot saves lives!",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg",
+    cardImage: "/images/herosection/hero6.jpeg",
     category: "Animal Welfare • Community • Vaccination",
     fullDescription: "Stray animals face daily struggles for survival, from hunger and disease to accidents and abuse. Our comprehensive animal welfare program provides medical care, food, shelter, and adoption services for abandoned and injured animals. We operate mobile veterinary clinics, establish feeding stations, and run sterilization programs to control the stray population humanely. Every animal deserves love, care, and a chance at a better life.",
     raised: 28500,
@@ -48,8 +50,9 @@ const FUNDRAISING_DATA = [
   {
     id: 4,
     title: "Bowls of Hope",
-    description: "Give life with each bowl! Be a kind-hearted Cause Champion and help to fill empty bowls for voiceless shelter animals. Your compassion brings hope to vulnerable lives, transforming hunger into healing.",
+    description: "Give life with each bowl! Be a kind-hearted Cause Champion and help to fill empty bowls for voiceless shelter animals. Your compassion brings hope to vulnerable lives, transforming hunger into healing.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg",
+    cardImage: "/images/herosection/hero1.jpeg",
     category: "Animal Welfare • Nutrition • Shelter",
     fullDescription: "Stray animals often go days without food, leading to malnutrition and suffering. Bowls of Hope creates a network of feeding stations and provides daily nutritious meals for stray dogs, cats, and other animals. We also offer medical care, vaccination programs, and work with local communities to ensure sustainable animal welfare. Every bowl filled represents hope, compassion, and a commitment to animal welfare.",
     raised: 52300,
@@ -67,8 +70,9 @@ const FUNDRAISING_DATA = [
   {
     id: 5,
     title: "Disaster Relief in Uttarakhand",
-    description: "Providing critical relief to flood & landslide affected families. Your support delivers life sustaining supplies - food, medical aid, rescue and rehabilitation and also helps in rebuilding schools and homes.",
+    description: "Providing critical relief to flood & landslide affected families. Your support delivers life sustaining supplies - food, medical aid, rescue and rehabilitation and also helps in rebuilding schools and homes.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg",
+    cardImage: "/images/herosection/hero4.jpeg",
     category: "Emergency • Disaster Relief • Community",
     fullDescription: "Uttarakhand has faced devastating floods that have destroyed homes, displaced families, and left communities without basic necessities. Our emergency response team provides immediate relief including food, clean water, medical supplies, and temporary shelter. We focus on rebuilding infrastructure, restoring livelihoods, and providing psychological support to affected families. Every donation helps bring hope and stability back to these resilient communities.",
     raised: 67200,
@@ -86,8 +90,9 @@ const FUNDRAISING_DATA = [
   {
     id: 6,
     title: "Flood Animal Rescue",
-    description: "Thousands of animals are struggling to survive in floodwaters. With your support, we can rescue them from danger, provide food, emergency medical care, and shelter, and even provide dignified final rites to those we cannot save.",
+    description: "Thousands of animals are struggling to survive in floodwaters. With your support, we can rescue them from danger, provide food, emergency medical care, and shelter, and even provide dignified final rites to those we cannot save.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png",
+    cardImage: "/images/herosection/hero2.jpeg",
     category: "Emergency • Animal Rescue",
     fullDescription: "When floods strike, animals are often the forgotten victims, trapped in rising waters without food or medical care. Our specialized rescue team uses boats and specialized equipment to save animals from floodwaters, providing immediate medical attention, food, and temporary shelter. We work with local veterinarians and animal welfare organizations to ensure rescued animals receive proper care and find loving homes.",
     raised: 41600,
@@ -289,7 +294,7 @@ const FundraisingHero = () => {
                       }`}
                     >
                       <CloudinaryImage
-                        src={campaign.image}
+                        src={(campaign as any).cardImage || campaign.image}
                         alt={campaign.category}
                         className="w-full h-full object-cover"
                         sizes="(max-width: 768px) 192px, 256px"

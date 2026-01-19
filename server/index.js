@@ -9,11 +9,9 @@ import { dirname, join } from 'path';
 import { submitCauseChampionForm, submitNGOPartnerForm } from './routes/forms.js';
 import { verifyEmailConfig } from './config/email.js';
 
-// Get current directory for ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-// Load environment variables from server/.env
 dotenv.config({ path: join(__dirname, '.env') });
 
 const app = express();
@@ -39,22 +37,20 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
 }));
 
-// Rate limiting - prevent abuse
 const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // Limit each IP to 100 requests per windowMs
+  windowMs: 15 * 60 * 1000,
+  max: 100,
   message: 'Too many requests from this IP, please try again later.',
   standardHeaders: true,
   legacyHeaders: false,
 });
 
 const formLimiter = rateLimit({
-  windowMs: 60 * 60 * 1000, // 1 hour
-  max: 100, // Limit each IP to 100 form submissions per hour
-  standardHeaders: true, // Return rate limit info in `RateLimit-*` headers
-  legacyHeaders: false,
-  skipSuccessfulRequests: false, // Count all requests, even successful ones
-  skipFailedRequests: false, // Count failed requests too
+  windowMs: 60 * 60 * 1000, 
+  max: 100, 
+  standardHeaders: true,
+  skipSuccessfulRequests: false,
+  skipFailedRequests: false,
   handler: (req, res) => {
     const remaining = req.rateLimit?.remaining || 0;
     const total = req.rateLimit?.limit || 100;
@@ -74,18 +70,16 @@ const formLimiter = rateLimit({
 
 app.use('/api/', limiter);
 
-// Body parsing middleware
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
-// Logging middleware
+
 if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 } else {
   app.use(morgan('combined'));
 }
 
-// Health check endpoint
 app.get('/health', (req, res) => {
   res.json({ 
     status: 'ok', 
@@ -104,11 +98,9 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Form submission routes with rate limiting
 app.post('/api/submit/cause-champion', formLimiter, submitCauseChampionForm);
 app.post('/api/submit/ngo-partner', formLimiter, submitNGOPartnerForm);
 
-// 404 handler
 app.use((req, res) => {
   res.status(404).json({ 
     success: false,
@@ -117,7 +109,6 @@ app.use((req, res) => {
   });
 });
 
-// Error handling middleware
 app.use((err, req, res, next) => {
   console.error('Error:', err);
   
@@ -131,7 +122,6 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
 app.listen(PORT, async () => {
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
   console.log('🚀 The Giving Circle Backend API');
@@ -140,13 +130,11 @@ app.listen(PORT, async () => {
   console.log(`🌍 Environment: ${NODE_ENV}`);
   console.log(`⏰ Started at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
   
-  // Email configuration
   const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
   const emailService = process.env.EMAIL_SERVICE || 'gmail';
   console.log(`📧 Email service: ${emailService.toUpperCase()}`);
   console.log(`📬 Forms will be sent to: ${receiverEmail}`);
   
-  // Verify email configuration
   const isEmailConfigured = await verifyEmailConfig();
   if (!isEmailConfigured) {
     console.warn('⚠️  WARNING: Email configuration not verified!');
@@ -159,7 +147,6 @@ app.listen(PORT, async () => {
   console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
 });
 
-// Graceful shutdown
 process.on('SIGTERM', () => {
   console.log('SIGTERM signal received: closing HTTP server');
   process.exit(0);
