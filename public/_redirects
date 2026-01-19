@@ -1,1 +1,2 @@
-/*    /index.html   200
+# Exclude static assets from redirect
+</^[^.]+$|\.(?!(css|gif|ico|jpg|jpeg|js|png|txt|svg|woff|woff2|ttf|eot|json|xml|webp|webmanifest)$)([^.]+$)/>    /index.html   200
