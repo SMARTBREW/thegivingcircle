@@ -24,7 +24,7 @@ const SEOHubIndex: React.FC = () => {
         title="NGO Directory - Find Best NGOs in Delhi, Gurugram, Noida, Faridabad | The Giving Circle"
         description="Comprehensive directory of verified NGOs in Delhi NCR region. Find best, top-rated, trusted, and leading NGOs in Delhi, Gurugram, Noida, and Faridabad. Support verified charity organizations through The Giving Circle platform."
         keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations"
-        canonicalUrl="https://www.thegivingcircle.in/local-seo"
+        canonicalUrl="https://www.thegivingcircle.in/ngos"
       />
 
       {/* Breadcrumbs */}
@@ -62,7 +62,7 @@ const SEOHubIndex: React.FC = () => {
                   {keywordVariations.map((kw) => (
                     <li key={kw.slugPrefix}>
                       <Link
-                        to={`/local-seo/${kw.slugPrefix}-${location.name.toLowerCase()}`}
+                        to={`/ngos/${kw.slugPrefix}-${location.name.toLowerCase()}`}
                         className="text-blue-600 hover:text-blue-800 text-sm block"
                       >
                         {kw.keyword} in {location.name}
@@ -88,7 +88,7 @@ const SEOHubIndex: React.FC = () => {
                   {locations.map((location) => (
                     <li key={location.slug}>
                       <Link
-                        to={`/local-seo/${kw.slugPrefix}-${location.name.toLowerCase()}`}
+                        to={`/ngos/${kw.slugPrefix}-${location.name.toLowerCase()}`}
                         className="text-blue-600 hover:text-blue-800 text-sm block"
                       >
                         {location.name}
@@ -111,7 +111,7 @@ const SEOHubIndex: React.FC = () => {
               keywordVariations.map((kw) => (
                 <Link
                   key={`${kw.slugPrefix}-${location.name.toLowerCase()}`}
-                  to={`/local-seo/${kw.slugPrefix}-${location.name.toLowerCase()}`}
+                  to={`/ngos/${kw.slugPrefix}-${location.name.toLowerCase()}`}
                   className="block border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-blue-500 transition-all"
                 >
                   <span className="text-gray-900 font-medium">

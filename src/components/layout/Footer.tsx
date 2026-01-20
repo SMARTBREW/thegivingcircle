@@ -77,7 +77,7 @@ export const Footer: React.FC = () => {
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </Link>
                 <Link 
-                  to="/local-seo" 
+                  to="/ngos" 
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-xs sm:text-sm md:text-base break-words">NGO Directory</span>
@@ -151,7 +151,7 @@ export const Footer: React.FC = () => {
                     <MapPin className="w-3 h-3 sm:w-4 sm:h-4 text-gray-500 mt-0.5 flex-shrink-0" />
                     <div>
                       <div className="text-[10px] sm:text-xs md:text-sm text-gray-600">Platform Base</div>
-                      <div className="text-xs sm:text-sm md:text-base font-medium text-gray-900 break-words">Grugram, Haryana</div>
+                      <div className="text-xs sm:text-sm md:text-base font-medium text-gray-900 break-words">Gurugram, Haryana</div>
                       <div className="text-[10px] sm:text-xs md:text-sm text-gray-500">India</div>
                     </div>
                   </div>

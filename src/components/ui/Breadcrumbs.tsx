@@ -45,6 +45,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
       'about-champion': 'About Champions',
       'the-giving-circle': 'About Us',
       'young-champions': 'Young Champions',
+      'local-seo': 'NGO Directory',
+      'ngos': 'NGO Directory',
     };
 
     pathnames.forEach((pathname, index) => {

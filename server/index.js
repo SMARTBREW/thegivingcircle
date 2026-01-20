@@ -18,6 +18,9 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
+// Trust proxy (needed when behind Nginx reverse proxy)
+app.set('trust proxy', true);
+
 app.use(helmet({
   contentSecurityPolicy: false, 
   crossOriginEmbedderPolicy: false,

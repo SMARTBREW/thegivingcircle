@@ -24,7 +24,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
   relatedLocations = [],
   relatedKeywords = [],
 }) => {
-  const canonicalUrl = `https://www.thegivingcircle.in/local-seo/${locationSlug}`;
+  const canonicalUrl = `https://www.thegivingcircle.in/ngos/${locationSlug}`;
   const currentDate = new Date().toISOString().split('T')[0];
 
   // Default related locations if not provided
@@ -64,7 +64,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
           <ol className="flex items-center space-x-2 text-sm">
             <li><Link to="/" className="text-blue-600 hover:text-blue-800">Home</Link></li>
             <li className="text-gray-500">/</li>
-            <li><Link to="/local-seo" className="text-blue-600 hover:text-blue-800">NGO Directory</Link></li>
+            <li><Link to="/ngos" className="text-blue-600 hover:text-blue-800">NGO Directory</Link></li>
             <li className="text-gray-500">/</li>
             <li className="text-gray-700">{location}</li>
           </ol>
@@ -271,7 +271,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
               {locationsToShow.map((loc) => (
                 <Link
                   key={loc.slug}
-                  to={`/local-seo/${loc.slug}`}
+                  to={`/ngos/${loc.slug}`}
                   className="block border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-500 transition-all"
                 >
                   <h3 className="text-lg font-semibold text-gray-900 mb-2">
@@ -296,7 +296,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
               {relatedKeywords.map((kw) => (
                 <Link
                   key={kw.slug}
-                  to={`/local-seo/${kw.slug}`}
+                  to={`/ngos/${kw.slug}`}
                   className="inline-block bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors"
                 >
                   {kw.keyword}

@@ -87,36 +87,36 @@ function App() {
             <Route path="/the-giving-circle" element={<OurStory />} />
             <Route path="/young-champions" element={<YoungChampions />} />
             
-            {/* SEO Hub - Local SEO Pages */}
-            <Route path="/local-seo" element={<SEOHubIndex />} />
+            {/* SEO Hub - NGO Directory Pages */}
+            <Route path="/ngos" element={<SEOHubIndex />} />
             
             {/* Delhi Pages */}
-            <Route path="/local-seo/best-ngo-in-delhi" element={<BestNGOInDelhi />} />
-            <Route path="/local-seo/top-ngo-in-delhi" element={<TopNGOInDelhi />} />
-            <Route path="/local-seo/verified-ngo-in-delhi" element={<VerifiedNGOInDelhi />} />
-            <Route path="/local-seo/trusted-ngo-in-delhi" element={<TrustedNGOInDelhi />} />
-            <Route path="/local-seo/leading-ngo-in-delhi" element={<LeadingNGOInDelhi />} />
+            <Route path="/ngos/best-ngo-in-delhi" element={<BestNGOInDelhi />} />
+            <Route path="/ngos/top-ngo-in-delhi" element={<TopNGOInDelhi />} />
+            <Route path="/ngos/verified-ngo-in-delhi" element={<VerifiedNGOInDelhi />} />
+            <Route path="/ngos/trusted-ngo-in-delhi" element={<TrustedNGOInDelhi />} />
+            <Route path="/ngos/leading-ngo-in-delhi" element={<LeadingNGOInDelhi />} />
             
             {/* Gurugram Pages */}
-            <Route path="/local-seo/best-ngo-in-gurugram" element={<BestNGOInGurugram />} />
-            <Route path="/local-seo/top-ngo-in-gurugram" element={<TopNGOInGurugram />} />
-            <Route path="/local-seo/verified-ngo-in-gurugram" element={<VerifiedNGOInGurugram />} />
-            <Route path="/local-seo/trusted-ngo-in-gurugram" element={<TrustedNGOInGurugram />} />
-            <Route path="/local-seo/leading-ngo-in-gurugram" element={<LeadingNGOInGurugram />} />
+            <Route path="/ngos/best-ngo-in-gurugram" element={<BestNGOInGurugram />} />
+            <Route path="/ngos/top-ngo-in-gurugram" element={<TopNGOInGurugram />} />
+            <Route path="/ngos/verified-ngo-in-gurugram" element={<VerifiedNGOInGurugram />} />
+            <Route path="/ngos/trusted-ngo-in-gurugram" element={<TrustedNGOInGurugram />} />
+            <Route path="/ngos/leading-ngo-in-gurugram" element={<LeadingNGOInGurugram />} />
             
             {/* Noida Pages */}
-            <Route path="/local-seo/best-ngo-in-noida" element={<BestNGOInNoida />} />
-            <Route path="/local-seo/top-ngo-in-noida" element={<TopNGOInNoida />} />
-            <Route path="/local-seo/verified-ngo-in-noida" element={<VerifiedNGOInNoida />} />
-            <Route path="/local-seo/trusted-ngo-in-noida" element={<TrustedNGOInNoida />} />
-            <Route path="/local-seo/leading-ngo-in-noida" element={<LeadingNGOInNoida />} />
+            <Route path="/ngos/best-ngo-in-noida" element={<BestNGOInNoida />} />
+            <Route path="/ngos/top-ngo-in-noida" element={<TopNGOInNoida />} />
+            <Route path="/ngos/verified-ngo-in-noida" element={<VerifiedNGOInNoida />} />
+            <Route path="/ngos/trusted-ngo-in-noida" element={<TrustedNGOInNoida />} />
+            <Route path="/ngos/leading-ngo-in-noida" element={<LeadingNGOInNoida />} />
             
             {/* Faridabad Pages */}
-            <Route path="/local-seo/best-ngo-in-faridabad" element={<BestNGOInFaridabad />} />
-            <Route path="/local-seo/top-ngo-in-faridabad" element={<TopNGOInFaridabad />} />
-            <Route path="/local-seo/verified-ngo-in-faridabad" element={<VerifiedNGOInFaridabad />} />
-            <Route path="/local-seo/trusted-ngo-in-faridabad" element={<TrustedNGOInFaridabad />} />
-            <Route path="/local-seo/leading-ngo-in-faridabad" element={<LeadingNGOInFaridabad />} />
+            <Route path="/ngos/best-ngo-in-faridabad" element={<BestNGOInFaridabad />} />
+            <Route path="/ngos/top-ngo-in-faridabad" element={<TopNGOInFaridabad />} />
+            <Route path="/ngos/verified-ngo-in-faridabad" element={<VerifiedNGOInFaridabad />} />
+            <Route path="/ngos/trusted-ngo-in-faridabad" element={<TrustedNGOInFaridabad />} />
+            <Route path="/ngos/leading-ngo-in-faridabad" element={<LeadingNGOInFaridabad />} />
             
             <Route path="*" element={<NotFoundPage />} />
 
