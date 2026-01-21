@@ -310,7 +310,7 @@ export const ImpactWall: React.FC = () => {
             <span className="text-sm sm:text-base md:text-lg">View All Live Causes</span>
             <span className="ml-2 text-lg sm:text-xl">→</span>
           </Link>
-          <p className="mt-4 text-xs sm:text-sm text-gray-600">
+          <p className="mt-4 text-sm sm:text-base md:text-lg text-gray-600">
             Explore more verified causes and create impact through our{' '}
             <Link to="/impact-stories" className="text-green-700 hover:underline font-medium">
               impact stories

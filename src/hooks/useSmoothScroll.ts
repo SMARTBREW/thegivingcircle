@@ -1,6 +1,13 @@
 import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 
+// Store Lenis instance globally so ScrollToTop can access it
+declare global {
+  interface Window {
+    lenisInstance?: Lenis | null;
+  }
+}
+
 export const useSmoothScroll = () => {
   const lenisRef = useRef<Lenis | null>(null);
 
@@ -21,6 +28,9 @@ export const useSmoothScroll = () => {
         infinite: false,
       });
 
+      // Store globally for ScrollToTop component
+      window.lenisInstance = lenisRef.current;
+
       // Animation frame loop
       function raf(time: number) {
         lenisRef.current?.raf(time);
@@ -33,6 +43,7 @@ export const useSmoothScroll = () => {
         if (window.innerWidth <= 768 && lenisRef.current) {
           lenisRef.current.destroy();
           lenisRef.current = null;
+          window.lenisInstance = null;
         } else if (window.innerWidth > 768 && !lenisRef.current) {
           lenisRef.current = new Lenis({
             duration: 1.2,
@@ -44,6 +55,7 @@ export const useSmoothScroll = () => {
             touchMultiplier: 2,
             infinite: false,
           });
+          window.lenisInstance = lenisRef.current;
         }
       };
 
@@ -51,6 +63,8 @@ export const useSmoothScroll = () => {
 
       return () => {
         lenisRef.current?.destroy();
+        lenisRef.current = null;
+        window.lenisInstance = null;
         window.removeEventListener('resize', handleResize);
       };
     }

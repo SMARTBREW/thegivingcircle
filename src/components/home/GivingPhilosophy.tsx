@@ -5,9 +5,9 @@ const GivingPhilosophy = () => {
   const navigate = useNavigate();
 
   const impactLines = [
-    ["1,000+ Trees Planted", "500 Children Educated", "200 Families Fed", "50 Wells Built", "300 Animals Rescued", "100 Schools Built", "2000+ Lives Changed", "₹10L+ Donated", "75 NGOs Supported"],
-    ["₹5L+ Donated", "25 NGOs Supported", "100 Volunteers Active", "15 Cities Reached", "1000+ Lives Touched", "50 Communities Helped", "30 Projects Completed", "5000+ Meals Served", "200+ Scholarships"],
-    ["Clean Water Access", "Educational Support", "Healthcare Aid", "Environmental Care", "Community Building", "Women Empowerment", "Child Welfare", "Elder Care", "Disability Support"]
+    ["Clean Water Access", "Educational Support", "Healthcare Aid", "Environmental Care", "Community Building", "Women Empowerment", "Child Welfare", "Elder Care", "Disability Support"],
+    ["Rural Development", "Skill Training", "Mental Health Support", "Disaster Relief", "Youth Programs", "Housing Support", "Medical Care", "Nutrition Programs", "Scholarship Aid"],
+    ["Food Security", "Animal Welfare", "Tree Planting", "Water Infrastructure", "School Development", "Life Transformation", "Financial Aid", "NGO Partnerships", "Volunteer Engagement"]
   ];
 
   return (

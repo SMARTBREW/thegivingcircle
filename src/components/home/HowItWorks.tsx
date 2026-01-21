@@ -1,7 +1,58 @@
 import { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const AboutImpactGallery = () => {
+  // 4 images for the carousel
+  const carouselImages = [
+    {
+      id: 1,
+      title: "",
+      src: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
+    },
+    {
+      id: 2,
+      title: "",
+      src: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg",
+    },
+    {
+      id: 3,
+      title: "",
+      src: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg",
+    },
+    {
+      id: 4,
+      title: "",
+      src: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png",
+    },
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    // Auto-rotate images every 3 seconds (only when not paused)
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % carouselImages.length);
+      }, 3000);
+    }
+
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
+  }, [carouselImages.length, isPaused]);
+
+  const handleIndexChange = (index: number) => {
+    setIsPaused(true);
+    setCurrentIndex(index);
+    // Resume auto-rotation after 5 seconds of manual interaction
+    setTimeout(() => {
+      setIsPaused(false);
+    }, 5000);
+  };
 
   return (
     <section className="w-full py-6 sm:py-8 md:py-10 lg:py-12">
@@ -29,7 +80,11 @@ const AboutImpactGallery = () => {
         >
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 lg:gap-12">
             <div className="w-full order-1 md:order-2 flex justify-center items-center md:justify-center">
-              <ShuffleGrid category="All" />
+              <ImageCarousel 
+                images={carouselImages} 
+                currentIndex={currentIndex}
+                onIndexChange={handleIndexChange}
+              />
             </div>
             
             <div className="w-full order-2 md:order-1 text-center md:text-left">
@@ -64,205 +119,110 @@ const AboutImpactGallery = () => {
   );
 };
 
-interface ImpactItem {
+interface CarouselImage {
   id: number;
   title: string;
-  category: string;
   src: string;
 }
 
-const shuffle = (array: ImpactItem[]) => {
-  const newArray = [...array];
-  let currentIndex = newArray.length;
-  let randomIndex;
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
-
-    [newArray[currentIndex], newArray[randomIndex]] = [
-      newArray[randomIndex],
-      newArray[currentIndex],
-    ];
-  }
-  return newArray;
-};
-
-const impactData: ImpactItem[] = [
-  {
-    id: 1,
-    title: "Tree Plantation Drive",
-    category: "Environment",
-    src: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
-  },
-  {
-    id: 2,
-    title: "Medical Camp",
-    category: "Health",
-    src: "https://www.kokanngo.org/public/website/images/food-donation.png",
-  },
-  {
-    id: 3,
-    title: "School Library Setup",
-    category: "Education",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQFAdoTdcoEjHxmw67XXMWJ-WnSGBdipUaFiyzA2-r-TI1De95ZwXqfp8SJVomhBXiJVs&usqp=CAU",
-  },
-  {
-    id: 4,
-    title: "Clean Water Project",
-    category: "Environment",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4sFgOjHemVWRJiBDp4GTnefpSHRJLN-NBTtZq9y2zOUMQ3YEXb2MxHJ6gu9E6deN_xyE&usqp=CAU",
-  },
-  {
-    id: 5,
-    title: "Children's Health Checkup",
-    category: "Health",
-    src: "https://www.animalcareindia.org.in/wp-content/uploads/2025/03/Untitled-design-4.png",
-  },
-  {
-    id: 6,
-    title: "Digital Learning Center",
-    category: "Education",
-    src: "https://mamtahimc.in/image/rmnch-m.jpg",
-  },
-  {
-    id: 7,
-    title: "Community Garden",
-    category: "Environment",
-    src: "https://www.animalcareindia.org.in/wp-content/uploads/2025/03/Untitled-design-5.png",
-  },
-  {
-    id: 8,
-    title: "Nutrition Program",
-    category: "Health",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2KYdM7ttZiKqM_iV54OC5Gp03vcgMjDjq3bRpZQskQQp9MK61Yp9cOq6PVfrokmAP-aI&usqp=CAU",
-  },
-  {
-    id: 9,
-    title: "Scholarship Program",
-    category: "Education",
-    src: "https://media.licdn.com/dms/image/v2/D5622AQGJyDl8RVn79A/feedshare-shrink_800/B56ZYaPfI8GoAg-/0/1744196991489?e=2147483647&v=beta&t=dRCGgTukqeyAdz4b-PjY_UWmakEK0VXXJkv1Bl9mHJM",
-  },
-  {
-    id: 10,
-    title: "Reforestation Project",
-    category: "Environment",
-    src: "https://mamtahimc.in/wp-content/uploads/2023/12/abmb-m.jpg",
-  },
-  {
-    id: 11,
-    title: "Mobile Health Clinic",
-    category: "Health",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXeVOz7GMpfSRpYY1RVvrMbqRFwEdqkMj1vDrl2iDE-3nsbxyq81H33gvEx1bPQrxonaA&usqp=CAU",
-  },
-  {
-    id: 12,
-    title: "STEM Education Workshop",
-    category: "Education",
-    src: "https://khushii.org/wp-content/uploads/2023/03/ppf-donatemm.jpg",
-  },
-  {
-    id: 13,
-    title: "Solar Energy Initiative",
-    category: "Environment",
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDIt0-4UbfJjTK5jtZScdINO3UhAj7oxPRuw&s",
-  },
-  {
-    id: 14,
-    title: "Mental Health Support",
-    category: "Health",
-    src: "https://khushii.org/wp-content/uploads/2022/05/MobBanner_C.jpg",
-  },
-  {
-    id: 15,
-    title: "Teacher Training Program",
-    category: "Education",
-    src: "https://www.kokanngo.org/public/URL/popupboximagenew_1.png",
-  },
-  {
-    id: 16,
-    title: "Waste Management Project",
-    category: "Environment",
-    src: "https://www.kokanngo.org/public/OurGallery/3.png",
-  },
-];
-const ImageSquare = ({ item }: { item: ImpactItem }) => {
-  const [imageError, setImageError] = useState(false);
-  
-  return (
-    <motion.div
-      layout
-      transition={{ duration: 1.5, type: "spring" }}
-      className="w-full h-full rounded-md overflow-hidden bg-gray-200 relative group"
-    >
-      {!imageError ? (
-        <img
-          src={item.src}
-          alt={item.title}
-          className="w-full h-full object-cover"
-          onError={() => setImageError(true)}
-          loading="lazy"
-        />
-      ) : (
-        <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400 flex items-center justify-center">
-          <div className="text-center p-2">
-            <div className="text-gray-600 text-[8px] sm:text-[10px] font-medium break-words">{item.title}</div>
-          </div>
-        </div>
-      )}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-all duration-300 flex items-end pointer-events-none">
-        <div className="p-1.5 sm:p-2 md:p-3 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 w-full">
-          <div className="font-medium text-[10px] sm:text-xs md:text-sm lg:text-base break-words">{item.title}</div>
-          <span className="text-[10px] sm:text-xs text-white/80">{item.category}</span>
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
-const generateSquares = (category: string) => {
-  const filteredData = category === "All" 
-    ? impactData 
-    : impactData.filter(item => item.category === category);
-  let dataToUse = [...filteredData];
-  while (dataToUse.length < 16) {
-    dataToUse = [...dataToUse, ...filteredData];
-  }
-  dataToUse = dataToUse.slice(0, 16);
-  
-  return shuffle(dataToUse).map((item, index) => (
-    <ImageSquare key={`${item.id}-${index}`} item={item} />
-  ));
-};
-
-interface ShuffleGridProps {
-  category: string;
+interface ImageCarouselProps {
+  images: CarouselImage[];
+  currentIndex: number;
+  onIndexChange?: (index: number) => void;
 }
 
-const ShuffleGrid = ({ category = "All" }: ShuffleGridProps) => {
-  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [squares, setSquares] = useState(generateSquares(category));
+const ImageCarousel = ({ images, currentIndex, onIndexChange }: ImageCarouselProps) => {
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
 
-  useEffect(() => {
-    setSquares(generateSquares(category));
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-    shuffleSquares();
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, [category]);
-
-  const shuffleSquares = () => {
-    setSquares(generateSquares(category));
-    timeoutRef.current = setTimeout(shuffleSquares, 3000);
+  const handleImageError = (imageId: number) => {
+    setImageErrors((prev) => ({ ...prev, [imageId]: true }));
   };
 
+  const handleDotClick = (index: number) => {
+    if (onIndexChange) {
+      onIndexChange(index);
+    }
+  };
+
+  // Preload next image
+  useEffect(() => {
+    const nextIndex = (currentIndex + 1) % images.length;
+    const img = new Image();
+    img.src = images[nextIndex].src;
+  }, [currentIndex, images]);
+
   return (
-    <div className="grid grid-cols-4 grid-rows-4 h-[200px] sm:h-[250px] md:h-[300px] lg:h-[350px] xl:h-[400px] gap-1 sm:gap-2">
-      {squares.map((sq) => sq)}
+    <div className="relative w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] xl:h-[450px] rounded-2xl overflow-hidden shadow-2xl bg-gray-900">
+      <AnimatePresence initial={false}>
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="absolute inset-0 w-full h-full"
+        >
+          {!imageErrors[images[currentIndex].id] ? (
+            <img
+              src={images[currentIndex].src}
+              alt={images[currentIndex].title}
+              className="w-full h-full object-cover"
+              onError={() => handleImageError(images[currentIndex].id)}
+              loading="eager"
+            />
+          ) : (
+            <div className="w-full h-full bg-gradient-to-br from-green-100 via-green-50 to-blue-100 flex items-center justify-center">
+              <div className="text-center p-6">
+                <div className="text-gray-700 text-base sm:text-lg font-semibold break-words">
+                  {images[currentIndex].title}
+                </div>
+              </div>
+            </div>
+          )}
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent" />
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Image title overlay */}
+      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
+        <motion.div
+          key={currentIndex}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          className="text-white"
+        >
+          <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-2 drop-shadow-lg">
+            {images[currentIndex].title}
+          </h3>
+        </motion.div>
+      </div>
+
+      {/* Modern indicator dots */}
+      <div className="absolute bottom-4 sm:bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+        {images.map((_, index) => (
+          <button
+            key={`dot-${index}`}
+            onClick={() => handleDotClick(index)}
+            className="relative cursor-pointer"
+            aria-label={`Go to image ${index + 1} of ${images.length}`}
+          >
+            <motion.div
+              animate={{
+                width: index === currentIndex ? 32 : 8,
+                height: 8,
+                backgroundColor: index === currentIndex ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.6)',
+              }}
+              whileHover={{
+                backgroundColor: index === currentIndex ? 'rgba(255, 255, 255, 1)' : 'rgba(255, 255, 255, 0.8)',
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="rounded-full"
+            />
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

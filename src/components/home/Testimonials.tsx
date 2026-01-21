@@ -132,32 +132,32 @@ export const Testimonials: React.FC = () => {
                     <Quote className="w-5 h-5 sm:w-6 md:w-8 lg:w-10 text-green-100" />
                   </motion.div>
                   
-                  <div className="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-4 pt-5 sm:pt-0">
-                    <motion.div 
-                      className="flex-shrink-0"
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <img
-                        src={testimonials[currentIndex].image.includes('w_400') 
-                          ? testimonials[currentIndex].image.replace(/w_400(,h_400)?/g, 'w_128,h_128')
-                          : testimonials[currentIndex].image.replace(/\/upload\/([^/]+)\//, '/upload/w_128,h_128,c_fill,q_75,f_auto/$1/')
-                        }
-                        alt={testimonials[currentIndex].name}
-                        className="w-12 h-12 sm:w-14 md:w-16 lg:w-18 rounded-full object-cover shadow-lg border-2 border-white"
-                        width="128"
-                        height="128"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </motion.div>
+                  <div className="flex flex-col space-y-3 sm:space-y-4 pt-5 sm:pt-6">
+                    <blockquote className="text-sm sm:text-base md:text-lg text-gray-600 italic leading-relaxed mb-2 sm:mb-3 md:mb-4 px-1 sm:px-0 break-words">
+                      "{testimonials[currentIndex].quote}"
+                    </blockquote>
                     
-                    <div className="flex-1 text-center sm:text-left w-full">
-                      <blockquote className="text-sm sm:text-base md:text-lg text-gray-600 italic leading-relaxed mb-2 sm:mb-3 md:mb-4 px-1 sm:px-0 break-words">
-                        "{testimonials[currentIndex].quote}"
-                      </blockquote>
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-4 mt-auto">
+                      <motion.div 
+                        className="flex-shrink-0"
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <img
+                          src={testimonials[currentIndex].image.includes('w_400') 
+                            ? testimonials[currentIndex].image.replace(/w_400(,h_400)?/g, 'w_300,h_300')
+                            : testimonials[currentIndex].image.replace(/\/upload\/([^/]+)\//, '/upload/w_300,h_300,c_fill,q_75,f_auto/$1/')
+                          }
+                          alt={testimonials[currentIndex].name}
+                          className="w-24 h-24 sm:w-32 md:w-36 lg:w-40 rounded-full object-cover shadow-lg border-2 border-white"
+                          width="300"
+                          height="300"
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </motion.div>
                       
-                      <div className="space-y-1 sm:space-y-1.5 md:space-y-2">
+                      <div className="flex flex-col items-start sm:items-start text-left space-y-1 sm:space-y-1.5 md:space-y-2">
                         <div className="font-semibold text-gray-900 text-sm sm:text-base md:text-lg">
                           {testimonials[currentIndex].name}
                         </div>
