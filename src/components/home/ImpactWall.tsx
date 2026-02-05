@@ -40,67 +40,67 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
   const detailRoute = routeMap[id] || '/live-causes';
 
   return (
-    <Link 
+    <Link
       to={detailRoute}
       className="block h-full"
       aria-label={`View details about ${title} - ${impactNumber.toLocaleString()} ${impactUnit}`}
     >
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      viewport={{ once: true }}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
         className="overflow-hidden rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 h-full bg-white cursor-pointer group"
-    >
-      <div className="relative">
-        <CloudinaryImage
-          src={image}
-          alt={title}
-          className="w-full h-36 sm:h-40 md:h-44 lg:h-48 object-cover hover:scale-105 transition-transform duration-300"
-          width={637}
-          height={288}
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          priority={false}
-        />
-        {verified && (
-          <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-green-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium flex items-center shadow-lg">
-            <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" />
-            <span className="hidden sm:inline"> Verified</span>
-            <span className="sm:hidden">V</span>
-          </div>
-        )}
-        <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-white/90 backdrop-blur-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium text-gray-700 shadow-sm">
-          {location}
-        </div>
-      </div>
-      
-      <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col min-h-[180px] sm:min-h-[200px] md:min-h-[220px]">
-        <div className="flex items-center justify-between mb-2 sm:mb-3 gap-1.5 sm:gap-2">
-          <div className="flex items-center space-x-1.5 sm:space-x-2 min-w-0 flex-1">
-            <Badge className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />
-            <span className="text-xs sm:text-sm font-medium text-green-700 truncate break-words">{ngoName}</span>
-          </div>
-          <div className="text-right flex-shrink-0 ml-1 sm:ml-2">
-            <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-green-700 whitespace-nowrap">{impactNumber.toLocaleString()}</div>
-            <div className="text-[10px] sm:text-xs text-gray-500 whitespace-nowrap">{impactUnit}</div>
+      >
+        <div className="relative">
+          <CloudinaryImage
+            src={image}
+            alt={title}
+            className="w-full h-36 sm:h-40 md:h-44 lg:h-48 object-cover hover:scale-105 transition-transform duration-300"
+            width={637}
+            height={288}
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            priority={false}
+          />
+          {verified && (
+            <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-green-500 text-white px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium flex items-center shadow-lg">
+              <CheckCircle className="w-2.5 h-2.5 sm:w-3 sm:h-3 mr-0.5 sm:mr-1" />
+              <span className="hidden sm:inline"> Verified</span>
+              <span className="sm:hidden">V</span>
+            </div>
+          )}
+          <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-white/90 backdrop-blur-sm px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium text-gray-700 shadow-sm">
+            {location}
           </div>
         </div>
-        
-        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 line-clamp-2 leading-tight break-words">
-          {title}
-        </h3>
-        
-        <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-0 line-clamp-3 flex-grow leading-relaxed break-words">
-          {description}
-        </p>
-        
-        <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100">
-          <span className="text-xs sm:text-sm text-green-700 font-medium group-hover:underline">
-            Learn More →
-          </span>
+
+        <div className="p-3 sm:p-4 md:p-5 lg:p-6 flex flex-col min-h-[180px] sm:min-h-[200px] md:min-h-[220px]">
+          <div className="flex items-center justify-between mb-2 sm:mb-3 gap-1.5 sm:gap-2">
+            <div className="flex items-center space-x-1.5 sm:space-x-2 min-w-0 flex-1">
+              <Badge className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />
+              <span className="text-xs sm:text-sm font-medium text-green-700 truncate break-words">{ngoName}</span>
+            </div>
+            <div className="text-right flex-shrink-0 ml-1 sm:ml-2">
+              <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-green-700 whitespace-nowrap">{impactNumber.toLocaleString()}</div>
+              <div className="text-[10px] sm:text-xs text-gray-500 whitespace-nowrap">{impactUnit}</div>
+            </div>
+          </div>
+
+          <h3 className="text-sm sm:text-base md:text-lg lg:text-xl font-semibold text-gray-900 mb-2 sm:mb-3 line-clamp-2 leading-tight break-words">
+            {title}
+          </h3>
+
+          <p className="text-gray-600 text-xs sm:text-sm md:text-base mb-0 line-clamp-3 flex-grow leading-relaxed break-words">
+            {description}
+          </p>
+
+          <div className="mt-3 sm:mt-4 pt-2 sm:pt-3 border-t border-gray-100">
+            <span className="text-xs sm:text-sm text-green-700 font-medium group-hover:underline">
+              Learn More →
+            </span>
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
     </Link>
   );
 };
@@ -110,12 +110,12 @@ export const ImpactWall: React.FC = () => {
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
   const carouselRef = useRef<HTMLDivElement>(null);
-  
+
   const impactStories: ImpactCardProps[] = [
     {
       id: '1',
       title: 'Wings of Hope',
-      description: 'Empowering girls with menstrual awareness, and providing eco-friendly cloth reusable pads, to keep them in school.',
+      description: 'Empowering girls with menstrual awareness and eco-friendly reusable pads through our community supporting india initiatives, keeping them in school.',
       ngoName: 'JWP',
       impactNumber: 22418,
       impactUnit: 'Girls Empowered',
@@ -126,7 +126,7 @@ export const ImpactWall: React.FC = () => {
     {
       id: '2',
       title: 'Pawsitive Protectors',
-      description: 'Protecting the voiceless street animals and communities with free rabies vaccinations, collaring & deworming.',
+      description: 'Protecting voiceless street animals and communities with free rabies vaccinations and deworming via our community helpline network.',
       ngoName: 'Animal Care',
       impactNumber: 7126,
       impactUnit: 'Animals Helped',
@@ -137,7 +137,7 @@ export const ImpactWall: React.FC = () => {
     {
       id: '4',
       title: 'Bowls of Hope',
-      description: 'Daily feeding & care program at Animal Care shelters for strays, with nutritious meals and veterinary care.',
+      description: 'Daily feeding & care program at Animal Care shelters for strays, providing nutritious meals and veterinary care through our giving support channels.',
       ngoName: 'Animal Care',
       impactNumber: 1859,
       impactUnit: 'Bowls Installed',
@@ -148,7 +148,7 @@ export const ImpactWall: React.FC = () => {
     {
       id: '5',
       title: 'Flood Relief in Uttarakhand',
-      description: 'Emergency relief support to affected communities by providing shelter, food, medical aid, and rehabilitation support.',
+      description: 'Emergency relief support to affected communities by providing shelter, food, medical aid, and rehabilitation support through our disaster relief circle aid.',
       ngoName: 'GUS',
       impactNumber: 2400,
       impactUnit: 'Families Supported',
@@ -159,7 +159,7 @@ export const ImpactWall: React.FC = () => {
     {
       id: '6',
       title: 'Emergency Animal Rescue',
-      description: 'Emergency rescue & rehabilitation operations for animals affected by floods in Uttarakhand and Punjab.',
+      description: 'Emergency rescue & rehabilitation operations for animals affected by floods in Uttarakhand and Punjab, driven by our communities for communities spirit.',
       ngoName: 'Animal Care',
       impactNumber: 812,
       impactUnit: 'Animals Rescued',
@@ -173,7 +173,7 @@ export const ImpactWall: React.FC = () => {
     if (typeof window !== 'undefined') {
       const width = window.innerWidth;
       if (width >= 1024) return 3;
-      if (width >= 768) return 2; 
+      if (width >= 768) return 2;
       if (width >= 640) return 2;
       return 1;
     }
@@ -190,7 +190,7 @@ export const ImpactWall: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
   const totalPages = Math.ceil(impactStories.length / itemsPerPage);
-  
+
   React.useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPage((prev) => (prev + 1) % totalPages);
@@ -201,11 +201,11 @@ export const ImpactWall: React.FC = () => {
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
-  
+
   const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-  
+
   const handleTouchEnd = () => {
     if (touchStart - touchEnd > 100) {
       setCurrentPage((prev) => Math.min(prev + 1, totalPages - 1));
@@ -230,19 +230,19 @@ export const ImpactWall: React.FC = () => {
           </h2>
           <div className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto px-4 sm:px-6 space-y-3 sm:space-y-4 md:space-y-5 leading-relaxed text-center break-words">
             <p>
-              Discover real impact stories from across India through our verified charity platform.
+              Discover real impact stories from across India through our verified charity platform and see how your giving support transforms lives.
             </p>
             <p>
-              The Giving Circle connects passionate Cause Champions with trusted NGO partners and verified causes India. Our transparent giving platform has created thousands of impact stories, transforming lives through community-driven social impact. Every contribution on our social impact platform creates meaningful change that's verified and documented.
+              The Giving Circle connects passionate Cause Champions with trusted NGO partners and verified causes India. Our transparent giving platform has created thousands of impact stories, transforming lives through community-driven social impact. We also partner with leading corporate giving platforms to amplify the reach of our india care initiatives. Every contribution on our varied supported causes creates meaningful change that's verified and documented.
             </p>
             <p>
-              Join India's trusted charity platform where community partnerships make a difference. Together, we're creating lasting social change across India through legitimate, accountable giving.
+              Join India's trusted charity platform where community partnerships make a difference. Together, we're creating lasting social change as a premier community support platform, ensuring every act of giving contributes to legitimate, accountable change.
             </p>
           </div>
         </motion.div>
 
         <div className="lg:hidden relative overflow-hidden mb-4 sm:mb-6 md:mb-8">
-          <div 
+          <div
             ref={carouselRef}
             className="flex transition-transform duration-300 ease-in-out"
             style={{ transform: `translateX(-${currentPage * (100 / itemsPerPage)}%)` }}
@@ -251,17 +251,16 @@ export const ImpactWall: React.FC = () => {
             onTouchEnd={handleTouchEnd}
           >
             {impactStories.map((story) => (
-              <div 
-                key={story.id} 
-                className={`flex-shrink-0 px-2 sm:px-3 ${
-                  itemsPerPage === 1 ? 'w-full' : 'w-1/2'
-                }`}
+              <div
+                key={story.id}
+                className={`flex-shrink-0 px-2 sm:px-3 ${itemsPerPage === 1 ? 'w-full' : 'w-1/2'
+                  }`}
               >
                 <ImpactCard {...story} />
               </div>
             ))}
           </div>
-          
+
           <div className="flex justify-center mt-3 sm:mt-4 md:mt-6 space-x-2">
             {Array.from({ length: totalPages }).map((_, index) => (
               <button
@@ -271,11 +270,10 @@ export const ImpactWall: React.FC = () => {
                 aria-label={`Go to page ${index + 1}`}
                 style={{ minWidth: '44px', minHeight: '44px', padding: '20px 0' }}
               >
-                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 sm:h-3 rounded-full transition-all duration-300 ${
-                  index === currentPage 
-                    ? 'bg-green-600 w-6 sm:w-8' 
-                    : 'bg-gray-300 hover:bg-green-300 w-2 sm:w-3'
-                }`} />
+                <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 sm:h-3 rounded-full transition-all duration-300 ${index === currentPage
+                  ? 'bg-green-600 w-6 sm:w-8'
+                  : 'bg-gray-300 hover:bg-green-300 w-2 sm:w-3'
+                  }`} />
               </button>
             ))}
           </div>

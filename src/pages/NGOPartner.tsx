@@ -62,17 +62,17 @@ export const NGOPartner: React.FC = () => {
   // Set page title and meta tags for SEO
   useEffect(() => {
     document.title = 'Become Partner - Join Verified Partner Network | Community Support Platform';
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Become a partner with our giving platform and community support platform. Join our giving community to support social causes through partnership. Partner registration for NGOs to collaborate through social giving and community support. Give and help through our support circle and create a circle of support for communities in India.');
     }
-    
+
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Become Partner, Partnership, Partner Registration, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, communities support, supporting india, giving india');
+      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Become Partner, Partnership');
     }
   }, []);
 
@@ -112,7 +112,7 @@ export const NGOPartner: React.FC = () => {
           organization_name: formData.organizationName,
         });
         trackConversion('ngo_partner_registration', 0);
-        
+
         setSubmittedEmail(formData.email);
         setIsSubmitted(true);
         // Reset form
@@ -126,8 +126,8 @@ export const NGOPartner: React.FC = () => {
         // Scroll form container into view smoothly without going to bottom
         setTimeout(() => {
           if (formContainerRef.current) {
-            formContainerRef.current.scrollIntoView({ 
-              behavior: 'smooth', 
+            formContainerRef.current.scrollIntoView({
+              behavior: 'smooth',
               block: 'center',
               inline: 'nearest'
             });
@@ -165,7 +165,7 @@ export const NGOPartner: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 mt-10">
-      <SEOHead 
+      <SEOHead
         title="NGO Partnership - Partner with The Giving Circle | Verified NGO Platform India"
         description="Partner with The Giving Circle as a verified NGO. Join our trusted network of government-certified NGO partners and access Cause Champions, transparent fundraising, and community support for your social causes across India."
         keywords="NGO partnership India, partner with giving circle, verified NGO platform, NGO fundraising platform India, register NGO online, NGO partner program, charity partnership India, social impact partnerships, verified charity platform, NGO registration India"
@@ -174,51 +174,52 @@ export const NGOPartner: React.FC = () => {
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-br-gray-100" />
 
-      <motion.div 
+      <motion.section
         className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
+        aria-label="NGO Partner Registration"
       >
         {/* Form Card */}
-        <motion.div 
+        <motion.div
           className="w-full max-w-2xl"
           variants={formVariants}
         >
-          <motion.div 
+          <motion.div
             ref={formContainerRef}
             className="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200"
           >
             {/* Form Content */}
             <>
-                <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
-                  <img 
-                    src="/Giving Circle logo.png" 
-                    alt="Giving Circle Logo - Verified Partner Platform India" 
-                    className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
-                  />
+              <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
+                <img
+                  src="/Giving Circle logo.png"
+                  alt="Giving Circle Logo - Verified Partner Platform India"
+                  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
+                />
+              </div>
+
+              {!isSubmitted && (
+                <div className="text-center mb-4 sm:mb-6 md:mb-8">
+                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 break-words">Become a Partner in our Community Giving Platform</h1>
+                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">Partner with The Giving Circle to connect with passionate Cause Champions. Join as a partner in our verified partner platform India. We collaborate with corporate giving platforms and offer a robust community helpline to amplify your reach. Start your partner registration today and join our circle of support.</p>
                 </div>
+              )}
 
-                {!isSubmitted && (
-                  <div className="text-center mb-4 sm:mb-6 md:mb-8">
-                    <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 break-words">Become Partner - Join Verified Partner Network India</h1>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">Partner with Giving Circle to connect with passionate Cause Champions. Join as partner in our verified partner platform India and collaborate with verified partners. Start your partner registration today.</p>
-                  </div>
-                )}
-
-                {isSubmitted ? (
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="text-center p-4 sm:p-6 md:p-8 bg-green-50 border border-green-200 rounded-lg"
-                  >
-                    <div className="text-green-600 text-4xl sm:text-5xl mb-3 sm:mb-4">✓</div>
-                    <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">Success!</h2>
-                    <p className="text-sm sm:text-base text-gray-600 break-words">
-                      Thank you for your interest in partnering with The Giving Circle. Our team will reach out to you asap.
-                    </p>
-                  </motion.div>
-                ) : (
+              {isSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  className="text-center p-4 sm:p-6 md:p-8 bg-green-50 border border-green-200 rounded-lg"
+                >
+                  <div className="text-green-600 text-4xl sm:text-5xl mb-3 sm:mb-4">✓</div>
+                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">Success! You've Joined the Circle Aid Network</h2>
+                  <p className="text-sm sm:text-base text-gray-600 break-words">
+                    Thank you for your interest in partnering with The Giving Circle. Our team will reach out to you asap to welcome you to our community support platform.
+                  </p>
+                </motion.div>
+              ) : (
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5">
                   {/* Organization Name */}
                   <motion.div
@@ -390,7 +391,7 @@ export const NGOPartner: React.FC = () => {
                   </motion.div>
 
                   {/* Statistics */}
-                  <motion.div 
+                  <motion.div
                     className="text-center text-gray-600 text-sm sm:text-base font-medium"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
@@ -428,13 +429,13 @@ export const NGOPartner: React.FC = () => {
                     </motion.div>
                   )}
 
-                 
+
                 </form>
-                )}
+              )}
             </>
           </motion.div>
         </motion.div>
-      </motion.div>
+      </motion.section>
     </div>
   );
 };

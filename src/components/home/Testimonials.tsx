@@ -40,7 +40,7 @@ export const Testimonials: React.FC = () => {
       name: 'Suresh Patel',
       role: 'Community Leader',
       image: 'https://res.cloudinary.com/dcdhhylin/image/upload/w_400,h_400,c_fill,g_face,q_auto,f_auto/v1758200608/images/_DSC9857.jpg',
-      quote: 'Working with The Giving Circle has brought our community together. The champions genuinely care about our progress and celebrate every milestone with us.',
+      quote: 'Working with The Giving Circle has brought our community together. The champions genuinely care about our progress and celebrate every milestone with us, showing what true community causes are all about.',
       organization: 'Rural Development Initiative',
     },
     {
@@ -67,17 +67,17 @@ export const Testimonials: React.FC = () => {
     setIsTouching(true);
     setTouchStart(e.targetTouches[0].clientX);
   };
-  
+
   const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-  
+
   const handleTouchEnd = () => {
     setIsTouching(false);
     if (touchStart - touchEnd > 100) {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
     } else if (touchStart - touchEnd < -100) {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
       );
     }
@@ -102,7 +102,7 @@ export const Testimonials: React.FC = () => {
         </motion.div>
 
         <div className="relative">
-          <div 
+          <div
             className="relative min-h-[200px] sm:min-h-[250px] md:min-h-[280px] flex items-center justify-center px-2 sm:px-4"
             ref={testimonialRef}
             onTouchStart={handleTouchStart}
@@ -118,7 +118,7 @@ export const Testimonials: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 className="w-full max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-3xl mx-auto"
               >
-                <motion.div 
+                <motion.div
                   className="bg-white rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl p-3 sm:p-4 md:p-5 lg:p-6 relative"
                   whileHover={{ scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 10 }}
@@ -131,20 +131,20 @@ export const Testimonials: React.FC = () => {
                   >
                     <Quote className="w-5 h-5 sm:w-6 md:w-8 lg:w-10 text-green-100" />
                   </motion.div>
-                  
+
                   <div className="flex flex-col space-y-3 sm:space-y-4 pt-5 sm:pt-6">
                     <blockquote className="text-sm sm:text-base md:text-lg text-gray-600 italic leading-relaxed mb-2 sm:mb-3 md:mb-4 px-1 sm:px-0 break-words">
                       "{testimonials[currentIndex].quote}"
                     </blockquote>
-                    
+
                     <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-2 sm:space-y-0 sm:space-x-3 md:space-x-4 mt-auto">
-                      <motion.div 
+                      <motion.div
                         className="flex-shrink-0"
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
                         <img
-                          src={testimonials[currentIndex].image.includes('w_400') 
+                          src={testimonials[currentIndex].image.includes('w_400')
                             ? testimonials[currentIndex].image.replace(/w_400(,h_400)?/g, 'w_300,h_300')
                             : testimonials[currentIndex].image.replace(/\/upload\/([^/]+)\//, '/upload/w_300,h_300,c_fill,q_75,f_auto/$1/')
                           }
@@ -156,7 +156,7 @@ export const Testimonials: React.FC = () => {
                           decoding="async"
                         />
                       </motion.div>
-                      
+
                       <div className="flex flex-col items-start sm:items-start text-left space-y-1 sm:space-y-1.5 md:space-y-2">
                         <div className="font-semibold text-gray-900 text-sm sm:text-base md:text-lg">
                           {testimonials[currentIndex].name}
@@ -197,11 +197,10 @@ export const Testimonials: React.FC = () => {
                   aria-label={`Go to testimonial ${index + 1}`}
                   style={{ minWidth: '44px', minHeight: '44px', padding: '20px 0' }}
                 >
-                  <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 sm:h-3 md:h-4 rounded-full transition-all duration-200 ${
-                    index === currentIndex 
-                      ? 'bg-green-700 w-6 sm:w-8 md:w-10' 
+                  <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 sm:h-3 md:h-4 rounded-full transition-all duration-200 ${index === currentIndex
+                      ? 'bg-green-700 w-6 sm:w-8 md:w-10'
                       : 'bg-gray-300 w-2 sm:w-3 md:w-4 hover:bg-green-400'
-                  }`} />
+                    }`} />
                 </motion.button>
               ))}
             </div>

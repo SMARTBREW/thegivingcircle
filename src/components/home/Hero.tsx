@@ -10,11 +10,11 @@ const FUNDRAISING_DATA = [
   {
     id: 1,
     title: "Wings of Hope",
-    description: "Inspired change-makers are taking it upon themselves to ensure underprivileged girls don't  drop out of school when they start menstruating. Their mission is simple yet powerful: keeping girls in school. Period.",
+    description: "Inspired change-makers are taking it upon themselves to give and help underprivileged girls so they don't drop out of school. Their mission is simple yet powerful: keeping girls in school. Period.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
     cardImage: "/images/herosection/hero3.jpeg",
     category: "Education • Health • Empowerment",
-    fullDescription: "Education is the foundation of a better future, but many children lack access to quality learning opportunities. Wings of Hope provides scholarships, school supplies, digital learning tools, and mentorship programs to underprivileged students. We support both formal education and skill development, ensuring children can pursue their dreams regardless of their economic background. Every child deserves the chance to soar.",
+    fullDescription: "Education is the foundation of a better future, but many children lack access to quality learning opportunities. Wings of Hope provides scholarships, school supplies, digital learning tools, and mentorship programs to underprivileged students. We support both formal education and skill development, ensuring children can pursue their dreams regardless of their economic background. Through our community giving platform, every child deserves the chance to soar.",
     raised: 34800,
     goal: 90000,
     donors: 198,
@@ -30,11 +30,11 @@ const FUNDRAISING_DATA = [
   {
     id: 2,
     title: "Pawsitive Protectors",
-    description: "Fighting rabies together! Your support helps protect street animals and our communities by providing Free Vaccinations. Join India's ‘Zero Deaths by 2030 Mission’. Every shot saves lives!",
+    description: "Fighting rabies together! Your circle aid support helps protect street animals and our communities by providing Free Vaccinations. Join India's ‘Zero Deaths by 2030 Mission’. Every shot saves lives!",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183017/images/animal-protect/animal12.jpg",
     cardImage: "/images/herosection/hero6.jpeg",
     category: "Animal Welfare • Community • Vaccination",
-    fullDescription: "Stray animals face daily struggles for survival, from hunger and disease to accidents and abuse. Our comprehensive animal welfare program provides medical care, food, shelter, and adoption services for abandoned and injured animals. We operate mobile veterinary clinics, establish feeding stations, and run sterilization programs to control the stray population humanely. Every animal deserves love, care, and a chance at a better life.",
+    fullDescription: "Stray animals face daily struggles for survival, from hunger and disease to accidents and abuse. Our comprehensive animal welfare program provides medical care, food, shelter, and adoption services for abandoned and injured animals. We operate mobile veterinary clinics, establish feeding stations, and run sterilization programs to control the stray population humanely. Every animal deserves love, care, and a chance at a better life through our support community.",
     raised: 28500,
     goal: 75000,
     donors: 156,
@@ -50,11 +50,11 @@ const FUNDRAISING_DATA = [
   {
     id: 4,
     title: "Bowls of Hope",
-    description: "Give life with each bowl! Be a kind-hearted Cause Champion and help to fill empty bowls for voiceless shelter animals. Your compassion brings hope to vulnerable lives, transforming hunger into healing.",
+    description: "Give through our platform to fill empty bowls! Be a kind-hearted Cause Champion and help feed voiceless shelter animals. Your compassion brings hope to vulnerable lives, transforming hunger into healing.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg",
     cardImage: "/images/herosection/hero1.jpeg",
     category: "Animal Welfare • Nutrition • Shelter",
-    fullDescription: "Stray animals often go days without food, leading to malnutrition and suffering. Bowls of Hope creates a network of feeding stations and provides daily nutritious meals for stray dogs, cats, and other animals. We also offer medical care, vaccination programs, and work with local communities to ensure sustainable animal welfare. Every bowl filled represents hope, compassion, and a commitment to animal welfare.",
+    fullDescription: "Stray animals often go days without food, leading to malnutrition and suffering. Bowls of Hope creates a network of feeding stations and provides daily nutritious meals for stray dogs, cats, and other animals. We also offer medical care, vaccination programs, and work with local communities to ensure sustainable animal welfare. Every bowl filled represents hope, compassion, and a commitment to animal welfare via our circle of support.",
     raised: 52300,
     goal: 120000,
     donors: 289,
@@ -70,11 +70,11 @@ const FUNDRAISING_DATA = [
   {
     id: 5,
     title: "Disaster Relief in Uttarakhand",
-    description: "Providing critical relief to flood & landslide affected families. Your support delivers life sustaining supplies - food, medical aid, rescue and rehabilitation and also helps in rebuilding schools and homes.",
+    description: "We are supporting india by providing critical relief to flood & landslide affected families. Your support delivers life sustaining supplies - food, medical aid, rescue and rehabilitation.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg",
     cardImage: "/images/herosection/hero4.jpeg",
     category: "Emergency • Disaster Relief • Community",
-    fullDescription: "Uttarakhand has faced devastating floods that have destroyed homes, displaced families, and left communities without basic necessities. Our emergency response team provides immediate relief including food, clean water, medical supplies, and temporary shelter. We focus on rebuilding infrastructure, restoring livelihoods, and providing psychological support to affected families. Every donation helps bring hope and stability back to these resilient communities.",
+    fullDescription: "Uttarakhand has faced devastating floods that have destroyed homes, displaced families, and left communities without basic necessities. Our emergency response team provides immediate relief including food, clean water, medical supplies, and temporary shelter. We focus on rebuilding infrastructure, restoring livelihoods, and providing psychological support to affected families. Every donation helps bring hope and stability back to these resilient communities through our giving community.",
     raised: 67200,
     goal: 150000,
     donors: 412,
@@ -90,11 +90,11 @@ const FUNDRAISING_DATA = [
   {
     id: 6,
     title: "Flood Animal Rescue",
-    description: "Thousands of animals are struggling to survive in floodwaters. With your support, we can rescue them from danger, provide food, emergency medical care, and shelter, and even provide dignified final rites to those we cannot save.",
+    description: "Thousands of animals are struggling. Join our circle of support to rescue them from danger, provide food, emergency medical care, and shelter, and even provide dignified final rites.",
     image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png",
     cardImage: "/images/herosection/hero2.jpeg",
     category: "Emergency • Animal Rescue",
-    fullDescription: "When floods strike, animals are often the forgotten victims, trapped in rising waters without food or medical care. Our specialized rescue team uses boats and specialized equipment to save animals from floodwaters, providing immediate medical attention, food, and temporary shelter. We work with local veterinarians and animal welfare organizations to ensure rescued animals receive proper care and find loving homes.",
+    fullDescription: "When floods strike, animals are often the forgotten victims, trapped in rising waters without food or medical care. Our specialized rescue team uses boats and specialized equipment to save animals from floodwaters, providing immediate medical attention, food, and temporary shelter. We work with local veterinarians and animal welfare organizations to ensure rescued animals receive proper care and find loving homes through our india care initiatives.",
     raised: 41600,
     goal: 95000,
     donors: 167,
@@ -145,8 +145,9 @@ const FundraisingHero = () => {
       const afterUpload = imageUrl.substring(uploadIndex + 8);
       const versionMatch = afterUpload.match(/^v\d+\//);
       const heightParam = height ? `h_${height},` : '';
-      const transformations = `${heightParam}w_${width},q_${quality},f_auto,dpr_auto,fl_progressive,c_fill,g_auto`;
-      
+      const qualityParam = quality === 'auto' ? 'q_auto' : `q_${quality}`;
+      const transformations = `${heightParam}w_${width},${qualityParam},f_auto,dpr_auto,fl_progressive,c_fill,g_auto`;
+
       if (versionMatch) {
         const version = versionMatch[0];
         const restOfPath = afterUpload.substring(version.length);
@@ -163,32 +164,18 @@ const FundraisingHero = () => {
     return imageUrl;
   };
 
-  const mobileImageUrl = useMemo(() => getOptimizedImageUrl(currentCampaign.image, '800', '70'), [currentCampaign.image]);
-  const desktopImageUrl = useMemo(() => getOptimizedImageUrl(currentCampaign.image, '1920', '80'), [currentCampaign.image]);
+  const mobileImageUrl = useMemo(() => getOptimizedImageUrl(currentCampaign.image, '800', '60'), [currentCampaign.image]);
+  const desktopImageUrl = useMemo(() => getOptimizedImageUrl(currentCampaign.image, '1600', '60'), [currentCampaign.image]);
 
 
   useEffect(() => {
-    if (currentIndex === 0) {
-      const preloadLink = document.createElement('link');
-      preloadLink.rel = 'preload';
-      preloadLink.as = 'image';
-      preloadLink.href = window.innerWidth < 640 ? mobileImageUrl : desktopImageUrl;
-      preloadLink.setAttribute('fetchpriority', 'high');
-      document.head.appendChild(preloadLink);
-      return () => {
-        if (document.head.contains(preloadLink)) {
-          document.head.removeChild(preloadLink);
-        }
-      };
-    }
-
     const nextIndex = (currentIndex + 1) % FUNDRAISING_DATA.length;
     const nextCampaign = FUNDRAISING_DATA[nextIndex];
     let prefetchLink: HTMLLinkElement | null = null;
-    
+
     if (nextCampaign) {
-      const nextMobileUrl = getOptimizedImageUrl(nextCampaign.image, '800', '70');
-      const nextDesktopUrl = getOptimizedImageUrl(nextCampaign.image, '1920', '80');
+      const nextMobileUrl = getOptimizedImageUrl(nextCampaign.image, '800', '60');
+      const nextDesktopUrl = getOptimizedImageUrl(nextCampaign.image, '1600', '60');
       const nextUrl = window.innerWidth < 640 ? nextMobileUrl : nextDesktopUrl;
       prefetchLink = document.createElement('link');
       prefetchLink.rel = 'prefetch';
@@ -205,29 +192,29 @@ const FundraisingHero = () => {
   }, [currentIndex, mobileImageUrl, desktopImageUrl]);
 
   return (
-    <div className="relative h-[75vh] sm:min-h-screen overflow-hidden">
+    <section className="relative h-[75vh] sm:min-h-screen overflow-hidden" aria-label="Hero">
       <div className="absolute inset-0 transition-all duration-500">
-        <div
-          className="sm:hidden absolute inset-0 transition-opacity duration-1000 bg-white"
+        <img
+          src={mobileImageUrl}
+          alt={currentCampaign.title}
+          className="sm:hidden absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           style={{
-            backgroundImage: `url(${mobileImageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
             opacity: isTransitioning ? 0 : 1,
             willChange: "opacity",
           }}
+          fetchPriority="high"
+          loading="eager"
         />
-        <div
-          className="hidden sm:block absolute inset-0 transition-opacity duration-1000"
+        <img
+          src={desktopImageUrl}
+          alt={currentCampaign.title}
+          className="hidden sm:block absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           style={{
-            backgroundImage: `url(${desktopImageUrl})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundRepeat: "no-repeat",
             opacity: isTransitioning ? 0 : 1,
             willChange: "opacity",
           }}
+          fetchPriority="high"
+          loading="eager"
         />
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -247,14 +234,14 @@ const FundraisingHero = () => {
 
           <AnimatedSection direction="up" delay={0.3}>
             <h1 className={`hidden sm:block text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-8" : "opacity-100 translate-y-0"}`}>
-                {currentCampaign.title}
-              </h1>
+              {currentCampaign.title}
+            </h1>
           </AnimatedSection>
 
           <AnimatedSection direction="up" delay={0.5}>
             <p className={`hidden sm:block text-base sm:text-lg md:text-xl text-white/90 leading-relaxed transition-all duration-500 ${isTransitioning ? "opacity-0 translate-y-6" : "opacity-100 translate-y-0"}`}>
-                {currentCampaign.description}
-              </p>
+              {currentCampaign.description}
+            </p>
           </AnimatedSection>
 
           <AnimatedSection direction="up" delay={0.7}>
@@ -287,11 +274,10 @@ const FundraisingHero = () => {
                     <div
                       key={`${campaign.id}-${index}`}
                       onClick={() => handleCardClick(campaign)}
-                      className={`relative flex-shrink-0 w-48 h-28 rounded-lg overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${
-                        currentCampaign.id === campaign.id
-                          ? "ring-2 ring-green-700 shadow-xl"
-                          : "hover:shadow-xl"
-                      }`}
+                      className={`relative flex-shrink-0 w-48 h-28 rounded-lg overflow-hidden cursor-pointer shadow-lg transition-all duration-300 hover:scale-105 hover:-translate-y-1 ${currentCampaign.id === campaign.id
+                        ? "ring-2 ring-green-700 shadow-xl"
+                        : "hover:shadow-xl"
+                        }`}
                     >
                       <CloudinaryImage
                         src={(campaign as any).cardImage || campaign.image}
@@ -332,9 +318,8 @@ const FundraisingHero = () => {
             className="relative transition-all duration-300"
             style={{ minWidth: '44px', minHeight: '44px', padding: '20px 0' }}
           >
-            <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentIndex ? 'bg-white' : 'bg-white/40'
-            }`} />
+            <div className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 h-2 rounded-full transition-all duration-300 ${index === currentIndex ? 'bg-white' : 'bg-white/40'
+              }`} />
           </button>
         ))}
       </div>
@@ -371,7 +356,7 @@ const FundraisingHero = () => {
         .animate-modal-appear { animation: modal-appear 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
         .animate-progress-bar { animation: progress-bar 1s ease-out 0.3s both; }
       `}</style>
-    </div>
+    </section>
   );
 };
 

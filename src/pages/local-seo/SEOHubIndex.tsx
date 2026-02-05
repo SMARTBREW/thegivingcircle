@@ -22,8 +22,8 @@ const SEOHubIndex: React.FC = () => {
     <div className="min-h-screen bg-white">
       <SEOHead
         title="NGO Directory - Find Best NGOs in Delhi, Gurugram, Noida, Faridabad | Community Support Platform"
-        description="Comprehensive directory of verified NGOs in Delhi NCR region. Find best, top-rated, trusted, and leading NGOs in Delhi, Gurugram, Noida, and Faridabad. Support verified charity organizations through India's leading community giving platform. Connect with trusted NGOs and support social causes."
-        keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations, community support platform, support community, giving platform, giving india, community giving, support social causes, india community, india care, supporting india, social giving, community causes, community helpline"
+        description="Comprehensive directory of verified NGOs in Delhi NCR region. Find best, top-rated, trusted, and leading NGOs in Delhi, Gurugram, Noida, and Faridabad. Support verified charity organizations through India's leading community giving platform and corporate giving platforms. Join our circle of support to connect with trusted NGOs and support social causes."
+        keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations, community support platform, support community, giving platform, giving india, community giving, support social causes, india community, india care, supporting india, social giving, community causes, community helpline, causes to support, circle aid, circle of support, communities for communities, communities support, community offering, corporate giving platforms, give and help, give through, giving circle, giving community, giving support, giving to community, social causes to support, support circle, support from community, support of community, supported causes"
         canonicalUrl="https://www.thegivingcircle.in/ngos"
       />
 
@@ -40,14 +40,14 @@ const SEOHubIndex: React.FC = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-12">
+        <header className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             NGO Directory - Find Verified NGOs Near You
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover verified and trusted NGOs in Delhi NCR region. Connect with top-rated charity organizations making real social impact.
+            Discover verified and trusted NGOs in Delhi NCR region. Connect with top-rated charity organizations making real social impact through our community offering. We are more than just a giving platform; we are a community helpline and circle of support for those in need.
           </p>
-        </div>
+        </header>
 
         {/* Locations Grid */}
         <section className="mb-12">
@@ -129,7 +129,7 @@ const SEOHubIndex: React.FC = () => {
             Ready to Make a Difference?
           </h2>
           <p className="text-xl mb-8 text-blue-100">
-            Join The Giving Circle and connect with verified NGOs creating real impact.
+            Join The Giving Circle and connect with verified NGOs creating real impact. Be part of a global movement where corporate giving platforms and individual giving to community come together. Create circle aid and strengthen communities for communities.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

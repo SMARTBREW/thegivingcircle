@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { 
+import {
   ArrowLeft,
   MapPin,
   Globe,
@@ -12,6 +12,7 @@ import {
   Trophy
 } from 'lucide-react';
 import { NGODetails } from '../types';
+import SEOHead from '../components/SEO/SEOHead';
 
 interface NGODetailPageProps {
   ngoDetails: NGODetails;
@@ -20,10 +21,10 @@ interface NGODetailPageProps {
 }
 
 
-const NGODetailPage: React.FC<NGODetailPageProps> = ({ 
-  ngoDetails, 
+const NGODetailPage: React.FC<NGODetailPageProps> = ({
+  ngoDetails,
   onBack,
-  loading = false 
+  loading = false
 }) => {
   const navigate = useNavigate();
   const [selectedGalleryItem, setSelectedGalleryItem] = useState<any>(null);
@@ -51,7 +52,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Organization Profile Not Available</h2>
             <p className="text-slate-600 mb-6">The institutional profile you're looking for is currently unavailable or access has been restricted.</p>
             {onBack && (
-              <button 
+              <button
                 onClick={onBack}
                 className="bg-slate-800 text-white px-8 py-3 rounded-lg hover:bg-slate-900 transition-colors font-semibold"
               >
@@ -67,17 +68,24 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
   const filteredGallery = ngoDetails.gallery;
 
   return (
-    <div className="min-h-screen bg-white">
+    <main className="min-h-screen bg-white">
+      <SEOHead
+        title={`${ngoDetails.name} - Verified NGO Partner | Community Support Platform`}
+        description={`Support ${ngoDetails.name}, a verified NGO partner on our community support platform. Join our giving community to support social causes. Give and help through social giving. Create a circle of support for ${ngoDetails.causes.map(c => c.name.toLowerCase()).join(', ')} and india care initiatives.`}
+        keywords={`${ngoDetails.name}, ${ngoDetails.causes.map(c => c.name).join(', ')}, ${ngoDetails.location}, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, india care, supporting india, giving india, causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india`}
+        canonicalUrl={`https://www.thegivingcircle.in/ngo/${ngoDetails.name.toLowerCase().replace(/\s+/g, '-')}`}
+        ogImage={ngoDetails.logo}
+      />
       {/* Executive Header Section */}
-      <div className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white pt-16 sm:pt-20">
+      <header className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white pt-16 sm:pt-20">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>
         </div>
-        
+
         <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
           {onBack && (
-            <button 
+            <button
               onClick={onBack}
               className="flex items-center gap-3 text-white/70 hover:text-white mb-8 transition-all group"
             >
@@ -134,8 +142,8 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                 {/* Institution Badge */}
                 <div className="text-center mb-6">
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-slate-800 to-gray-900 rounded-xl mb-4 shadow-lg">
-                    <img 
-                      src={ngoDetails.logo} 
+                    <img
+                      src={ngoDetails.logo}
                       alt={ngoDetails.name}
                       className="w-16 h-16 rounded-lg object-cover"
                     />
@@ -149,7 +157,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                     <MapPin size={14} />
                     <span>{ngoDetails.location}</span>
                   </div>
-                  
+
                   {/* Registration Info */}
                   <div className="bg-gray-50 rounded-lg p-3 mb-4">
                     <div className="text-xs text-gray-600 mb-1">Registration No.</div>
@@ -180,78 +188,78 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
             </div>
           </div>
         </div>
-      </div>
+      </header>
 
 
 
 
-       {/* Our Foundation Section */}
-       <div className="bg-gray-50 py-8 sm:py-10 md:py-12 lg:py-14">
-         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-           {/* Section Header */}
-           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
-             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
-               Our{' '}
-               <span className="bg-gradient-to-r green-700 bg-clip-text text-transparent">
-                 Foundation
-               </span>
-             </h2>
-             <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-               The story behind our commitment to creating lasting social change
-             </p>
-           </div>
+      {/* Our Foundation Section */}
+      <section className="bg-gray-50 py-8 sm:py-10 md:py-12 lg:py-14" aria-label="Our Foundation">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
+              Our{' '}
+              <span className="bg-gradient-to-r green-700 bg-clip-text text-transparent">
+                Foundation
+              </span>
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+              The story behind our commitment to creating lasting social change
+            </p>
+          </div>
 
-           {/* Main Content */}
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-             {/* Image Section */}
-             <div className="order-2 lg:order-1">
-               <div className="relative">
-                 <img 
-                   src={ngoDetails.logo} 
-                   alt={`${ngoDetails.name} Foundation Story`}
-                   className="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-2xl"
-                 />
-                 <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg text-sm font-bold">
-                   EST. {ngoDetails.yearEstablished}
-                 </div>
-                 <div className="absolute bottom-6 right-6 bg-gradient-to-r green-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
-                   {new Date().getFullYear() - ngoDetails.yearEstablished}+ Years of Impact
-                 </div>
-               </div>
-             </div>
+          {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Image Section */}
+            <div className="order-2 lg:order-1">
+              <div className="relative">
+                <img
+                  src={ngoDetails.logo}
+                  alt={`${ngoDetails.name} Foundation Story`}
+                  className="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-2xl"
+                />
+                <div className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm text-gray-900 px-4 py-2 rounded-lg text-sm font-bold">
+                  EST. {ngoDetails.yearEstablished}
+                </div>
+                <div className="absolute bottom-6 right-6 bg-gradient-to-r green-700 text-white px-4 py-2 rounded-lg text-sm font-bold">
+                  {new Date().getFullYear() - ngoDetails.yearEstablished}+ Years of Impact
+                </div>
+              </div>
+            </div>
 
-             {/* Story Content */}
-             <div className="order-1 lg:order-2">
-               <div className="space-y-6">
-                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
-                   Our Foundation Story
-                 </h3>
-                 
-                 <div className="space-y-5 text-gray-700 leading-relaxed">
-                   <p className="text-lg">
-                     <strong className="text-gray-900">Founded in {ngoDetails.yearEstablished}</strong>, {ngoDetails.name} emerged from a deep understanding that sustainable social change requires more than good intentions—it demands strategic vision, measurable impact, and unwavering commitment to transparency.
-                   </p>
-                   
-                   <p className="text-lg">
-                     What began as a grassroots initiative has evolved into a nationally recognized institution, serving communities across multiple states while maintaining our core belief that every individual deserves access to opportunities that can transform their life trajectory.
-                   </p>
-                   
-                   <p className="text-lg">
-                     Our journey reflects <strong className="text-gray-900">{new Date().getFullYear() - ngoDetails.yearEstablished} years</strong> of learning, adapting, and growing alongside the communities we serve.
-                   </p>
-                 </div>
+            {/* Story Content */}
+            <div className="order-1 lg:order-2">
+              <div className="space-y-6">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6">
+                  Our Foundation Story
+                </h3>
 
-               </div>
-             </div>
-           </div>
+                <div className="space-y-5 text-gray-700 leading-relaxed">
+                  <p className="text-lg">
+                    <strong className="text-gray-900">Founded in {ngoDetails.yearEstablished}</strong>, {ngoDetails.name} emerged from a deep understanding that sustainable social change requires more than good intentions. It demands a true circle of support, where giving to community becomes a structured habit. We function not just as an NGO but as a community helpline, providing circle aid to those who need it most.
+                  </p>
 
-         </div>
-       </div>
+                  <p className="text-lg">
+                    What began as a grassroots initiative has evolved into a nationally recognized institution, serving communities across multiple states while maintaining our core belief that every individual deserves access to opportunities that can transform their life trajectory.
+                  </p>
+
+                  <p className="text-lg">
+                    Our journey reflects <strong className="text-gray-900">{new Date().getFullYear() - ngoDetails.yearEstablished} years</strong> of learning, adapting, and growing alongside the communities we serve.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
 
 
 
       {/* Impact Documentation Gallery */}
-      <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-14">
+      <section className="bg-white py-8 sm:py-10 md:py-12 lg:py-14" aria-label="Impact Documentation">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">
@@ -274,7 +282,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
                 onClick={() => setSelectedGalleryItem(selectedGalleryItem?.id === item.id ? null : item)}
               >
                 <div className="relative overflow-hidden rounded-lg">
-                  <img 
+                  <img
                     src={item.url}
                     alt={item.title}
                     className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-300"
@@ -292,11 +300,11 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
             </div>
           )}
         </div>
-      </div>
+      </section>
 
       {/* Awards & Recognition Section */}
       {ngoDetails.awards && ngoDetails.awards.length > 0 && (
-        <div className="bg-white py-8 sm:py-10 md:py-12 lg:py-14">
+        <section className="bg-white py-8 sm:py-10 md:py-12 lg:py-14" aria-label="Awards and Recognition">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 md:mb-12 lg:mb-14">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Awards & Industry Recognition</h2>
@@ -319,11 +327,11 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
               ))}
             </div>
           </div>
-        </div>
+        </section>
       )}
 
       {/* Partnership & Collaboration Section */}
-      <div className="bg-slate-800 text-white py-8 sm:py-10 md:py-12 lg:py-14">
+      <aside className="bg-slate-800 text-white py-8 sm:py-10 md:py-12 lg:py-14" aria-label="Partnership Opportunities">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Join Our{' '}
@@ -333,11 +341,11 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
             Platform
           </h2>
           <p className="text-lg mb-6 sm:mb-8 max-w-2xl mx-auto text-slate-300 leading-relaxed">
-            Are you an NGO looking to expand your impact? Join our verified network of transparent organizations committed to measurable social change.
+            Are you an NGO looking to expand your impact? Join our verified network of transparent organizations. Leveraging top corporate giving platforms, we build communities for communities, ensuring your work reaches the right people through our trusted community offering.
           </p>
-          
+
           <div className="flex justify-center items-center">
-            <button 
+            <button
               onClick={() => navigate('/ngo-partner')}
               className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r green-700 hover:from-purple-700 hover:to-pink-700 text-white rounded-lg font-semibold transition-all flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
             >
@@ -348,8 +356,8 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
 
 
         </div>
-      </div>
-    </div>
+      </aside>
+    </main>
   );
 };
 

@@ -17,11 +17,11 @@ export default function MissionVisionPage() {
       title: "Integrity",
       description: "Unwavering commitment to ethical practices"
     },
-      {
-        icon: Users,
-        title: "Community",
-        description: "Building a support circle and support community between donors and beneficiaries"
-      }
+    {
+      icon: Users,
+      title: "Community",
+      description: "Building a support circle and support community between donors and beneficiaries"
+    }
   ];
 
   const impactStats = [
@@ -59,7 +59,7 @@ export default function MissionVisionPage() {
             ))}
           </div>
         </div>
-      </section> 
+      </section>
 
       <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-gray-50">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -69,9 +69,9 @@ export default function MissionVisionPage() {
                 Our Mission
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
-                Our mission is to revolutionize community giving and social giving by creating India's most transparent and accountable 
-                giving platform, where every contribution creates measurable impact through our community support platform. We build lasting 
-                connections between Cause Champions and communities, creating a circle of support that enables social causes to support and grow. Through our giving india initiative, we provide giving support, community support, and give and help resources to enable support from community to community. This is supporting india through communities for communities.
+                Our mission is to revolutionize community giving and social giving by creating India's most transparent and accountable
+                giving platform, where every contribution creates measurable impact through our community support platform. We build lasting
+                connections between Cause Champions and communities, creating a circle of support that enables social causes to support and grow. We collaborate with leading corporate giving platforms to amplify our reach. Through our giving india initiative, we provide giving support, community support, and give and help resources to enable support from community to community. This is supporting india through communities for communities.
               </p>
               <div className="space-y-2 sm:space-y-3 md:space-y-4">
                 <div className="flex items-start space-x-2 sm:space-x-3">
@@ -134,19 +134,19 @@ export default function MissionVisionPage() {
                 Our Vision
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
-                Our vision is a world where community giving and social giving are completely transparent, deeply impactful, 
-                and universally trusted. A future where every member of our giving community creates social change, where community support and support circle initiatives generate a ripple effect 
+                Our vision is a world where community giving and social giving are completely transparent, deeply impactful,
+                and universally trusted. A future where every member of our giving community creates social change, where community support and support circle initiatives generate a ripple effect
                 that extends far beyond the initial contribution. We envision a world where giving to community is seamless, where communities for communities thrive, and where support from community creates lasting india care.
               </p>
               <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 md:mb-8 leading-relaxed break-words">
-                Through our giving platform and community support platform, we're building the foundation for a new era of 
-                community giving—one where our giving community, organizations, and the india community work together in perfect 
+                Through our giving platform and community support platform, we're building the foundation for a new era of
+                community giving—one where our giving community, organizations, and the india community work together in perfect
                 harmony to support social causes and solve India's most pressing challenges. By providing giving support, circle aid, and community offering resources, we enable supporting india through communities support. This is why giving matters—when we give and help together, we create a strong support community that brings real change.
               </p>
             </div>
           </div>
         </div>
-      </section>   
+      </section>
     </div>
   );
 }

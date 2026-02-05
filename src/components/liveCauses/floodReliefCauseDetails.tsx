@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, Home } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
 
@@ -24,10 +25,10 @@ const FloodReliefCauseDetailPage = () => {
     daysLeft: 30,
     image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
     urgency: 'Critical',
-    
+
     // Problem Statement
     problemStatement: 'How to help flood victims in Uttarakhand? Devastating floods have destroyed homes, displaced 2,000+ families, and left communities without basic necessities in Uttarakhand. Disaster relief India is critical as flood-affected families need emergency shelter, food, clean water, and medical aid. Flood relief Uttarakhand operations are urgently required. Emergency response India must provide immediate disaster relief and long-term rehabilitation for flood victims.',
-    
+
     // Root Causes
     rootCauses: [
       'Severe flooding destroying homes and infrastructure in Uttarakhand',
@@ -36,7 +37,7 @@ const FloodReliefCauseDetailPage = () => {
       'Insufficient emergency response operations for flood victims',
       'Lack of disaster rehabilitation and rebuilding programs'
     ],
-    
+
     // Consequences if not addressed
     consequences: [
       'Flood-affected families continue suffering without emergency shelter',
@@ -45,7 +46,7 @@ const FloodReliefCauseDetailPage = () => {
       'Economic devastation - livelihoods destroyed by floods',
       'Children miss education, trauma continues without rehabilitation'
     ],
-    
+
     // Our Solution
     solution: {
       approach: 'Flood Relief Uttarakhand provides comprehensive disaster relief India through emergency response operations, immediate aid (shelter, food, medical care), and long-term disaster rehabilitation including infrastructure rebuilding and livelihood restoration.',
@@ -57,7 +58,7 @@ const FloodReliefCauseDetailPage = () => {
         'Livelihood restoration and disaster rehabilitation programs'
       ]
     },
-    
+
     // Beneficiaries
     beneficiaries: {
       primary: '2,000+ flood-affected families receiving emergency aid',
@@ -65,7 +66,7 @@ const FloodReliefCauseDetailPage = () => {
       community: '25+ villages across flood-affected Uttarakhand',
       longTerm: 'Comprehensive disaster relief and community rebuilding'
     },
-    
+
     // Impact Gallery
     impactGallery: [
       {
@@ -94,7 +95,7 @@ const FloodReliefCauseDetailPage = () => {
         type: 'Infrastructure Rebuilding'
       }
     ],
-    
+
     // Expected Outcomes
     expectedOutcomes: [
       {
@@ -118,9 +119,9 @@ const FloodReliefCauseDetailPage = () => {
         timeline: 'Long-term'
       }
     ],
-    
+
     timeline: '18 months',
-    
+
     updates: [
       {
         date: '15 March 2024',
@@ -141,7 +142,7 @@ const FloodReliefCauseDetailPage = () => {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg'
       }
     ],
-    
+
     testimonials: [
       {
         name: 'Sunita Devi',
@@ -156,7 +157,7 @@ const FloodReliefCauseDetailPage = () => {
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       }
     ],
-    
+
     milestones: [
       { target: '₹2,12,500', achievement: 'Emergency Shelter & Food Distribution', status: 'completed' },
       { target: '₹4,25,000', achievement: 'Medical Camps & Clean Water Supply', status: 'completed' },
@@ -208,14 +209,14 @@ const FloodReliefCauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead 
+      <SEOHead
         title="Flood Relief Uttarakhand - Disaster Relief India | Emergency Response"
         description="Support disaster relief India through our giving platform and community support platform. Join our giving community to support social causes through emergency response and flood relief. Give and help flood victims through social giving and community support. Create a circle of support for disaster rehabilitation and supporting india's communities."
-        keywords="Flood Relief Uttarakhand, disaster relief India, emergency response India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, communities support, supporting india, giving india"
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Relief Uttarakhand, disaster relief India, emergency response India"
         canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
       />
-      <ArticleSchema 
+      <ArticleSchema
         title="Flood Relief Uttarakhand - Disaster Relief & Emergency Response India"
         description="Support disaster relief India through emergency response, flood relief operations, medical aid, and rehabilitation. Helping 2,000+ flood-affected families in Uttarakhand with shelter, food, and essential supplies."
         image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
@@ -225,11 +226,11 @@ const FloodReliefCauseDetailPage = () => {
         author="GUS Foundation"
       />
       {/* Professional Header Section */}
-      <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
+      <header className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-2">
-            <button 
-              onClick={() => navigate(-1)} 
+            <button
+              onClick={() => navigate(-1)}
               className="flex items-center gap-1 sm:gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft size={18} />
@@ -243,7 +244,7 @@ const FloodReliefCauseDetailPage = () => {
               </div>
             )}
           </div>
-          
+
           {/* Page Title */}
           <div className="text-center mb-1">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight py-2 break-words">
@@ -251,19 +252,22 @@ const FloodReliefCauseDetailPage = () => {
             </h1>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+      <main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <article className="lg:col-span-2">
             {/* Hero Section */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-6">
               <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">
-                <img 
-                  src={cause.image} 
+                <CloudinaryImage
+                  src={cause.image}
                   alt={cause.title}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                  width={1280}
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
@@ -288,7 +292,7 @@ const FloodReliefCauseDetailPage = () => {
             </div>
 
             {/* Geographic Coverage */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
+            <section aria-label="Geographic Coverage" className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="text-blue-600" size={18} />
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">Geographic Coverage</h3>
@@ -313,15 +317,15 @@ const FloodReliefCauseDetailPage = () => {
               <p className="text-xs sm:text-sm text-gray-600 mt-3 break-words">
                 <strong>Active in 25+ flood-affected villages across 13 districts</strong> - Emergency disaster relief and rehabilitation operations throughout Uttarakhand
               </p>
-            </div>
+            </section>
 
             {/* Section 1: The Challenge */}
-            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="The Challenge" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <AlertTriangle className="text-black" size={18} />
                 The Challenge
               </h2>
-              
+
               <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
                 <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
                   {cause.problemStatement}
@@ -334,11 +338,11 @@ const FloodReliefCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Devastating floods have destroyed entire communities in Uttarakhand.</strong> 
+                      <strong className="text-gray-900">Devastating floods have destroyed entire communities in Uttarakhand.</strong>
                       Thousands of families lost their homes, possessions, and livelihoods in minutes. Climate change and extreme weather events are making floods more frequent and severe, overwhelming existing infrastructure and disaster preparedness systems.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Emergency response India is critical</strong> - families are living in temporary shelters without basic necessities like food, clean water, or medical care. 
+                      <strong className="text-gray-900">Emergency response India is critical</strong> - families are living in temporary shelters without basic necessities like food, clean water, or medical care.
                       The lack of adequate disaster relief resources means communities struggle to cope with the immediate aftermath and long-term recovery needs.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
@@ -346,8 +350,8 @@ const FloodReliefCauseDetailPage = () => {
                     </p>
                   </div>
                   <div className="order-first lg:order-last">
-                    <img 
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg" 
+                    <img
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
                       alt="Flood-affected families in Uttarakhand needing immediate disaster relief"
                       className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -364,21 +368,21 @@ const FloodReliefCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Every day without comprehensive flood relief Uttarakhand operations means more suffering.</strong> 
+                      <strong className="text-gray-900">Every day without comprehensive flood relief Uttarakhand operations means more suffering.</strong>
                       Families continue living in temporary shelters, children miss education, and health crises emerge from lack of clean water and medical care.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      The lack of emergency disaster relief leads to massive economic devastation as livelihoods are destroyed and communities lose their ability to recover independently. 
+                      The lack of emergency disaster relief leads to massive economic devastation as livelihoods are destroyed and communities lose their ability to recover independently.
                       Without proper rehabilitation, the psychological trauma and economic hardship persist for years.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Society loses not just homes and infrastructure, but the resilience and hope that binds communities together during times of crisis. 
+                      Society loses not just homes and infrastructure, but the resilience and hope that binds communities together during times of crisis.
                       This is why immediate and comprehensive disaster relief India is essential.
                     </p>
                   </div>
                   <div>
-                    <img 
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg" 
+                    <img
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
                       alt="The importance of emergency response for flood victims in Uttarakhand"
                       className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -388,40 +392,40 @@ const FloodReliefCauseDetailPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* Section 2: The Solution / How your support helps */}
-            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="The Solution" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <Target className="text-black" size={18} />
                 The Solution / How Your Support Helps
               </h2>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-4 sm:mb-6 md:mb-8">
                 <div>
                   <div className="prose prose-lg text-gray-600 mb-3 sm:mb-4 md:mb-6">
                     <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                      {cause.solution.approach}
+                      {cause.solution.approach} Our work is strengthened by communities for communities, utilizing giving platforms to ensure rapid resource mobilization.
                     </p>
                   </div>
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of disaster relief and recovery.</strong> 
+                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of disaster relief and recovery.</strong>
                       We deploy emergency response teams within 24 hours, providing immediate shelter, food, clean water, and medical aid to 2,000+ flood-affected families.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Through coordination with local authorities and communities, we establish emergency shelters, medical camps, and food distribution centers. 
-                      Our teams work around the clock to ensure every family receives the support they need.
+                      Through coordination with local authorities and communities, we establish emergency shelters, medical camps, and food distribution centers.
+                      Our teams work around the clock to ensure every family receives the support of community offering they need.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Beyond immediate aid, we create long-term disaster rehabilitation programs - rebuilding homes, schools, and infrastructure while providing livelihood restoration and community resilience training. 
+                      Beyond immediate aid, we create long-term disaster rehabilitation programs - rebuilding homes, schools, and infrastructure while providing livelihood restoration and community resilience training.
                       This is how to help flood victims in Uttarakhand effectively.
                     </p>
                   </div>
                 </div>
                 <div>
-                  <img 
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg" 
+                  <img
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
                     alt="Emergency response teams providing immediate disaster relief to flood victims"
                     className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -430,29 +434,29 @@ const FloodReliefCauseDetailPage = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* Section 3: See the Action in Change */}
-            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="Impact Gallery" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <Camera className="text-black" size={18} />
                 See the Action in Change
               </h2>
-              
+
               <div className="mb-3 sm:mb-4 md:mb-6">
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  Every donation creates visible, measurable change in the lives of flood-affected families. Our impact gallery showcases 
-                  real moments of transformation, from emergency relief distribution to the rebuilding of homes, 
+                  Every donation creates visible, measurable change in the lives of flood-affected families. Our impact gallery showcases
+                  real moments of transformation, from emergency relief distribution to the rebuilding of homes,
                   from emergency medical care to community celebration of recovery.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                 {cause.impactGallery.map((item, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg overflow-hidden">
                     <div className="relative h-40 sm:h-48 md:h-64">
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.caption}
                         className="w-full h-full object-cover"
                       />
@@ -466,11 +470,11 @@ const FloodReliefCauseDetailPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
-          </div>
+            </section>
+          </article>
 
           {/* Enhanced Sidebar */}
-          <div className="lg:col-span-1">
+          <aside className="lg:col-span-1">
             {/* Donation Card with Professional Design */}
             <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 lg:sticky lg:top-6">
               <div className="text-center mb-3 sm:mb-4 md:mb-6">
@@ -480,10 +484,10 @@ const FloodReliefCauseDetailPage = () => {
                 <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
               </div>
-              
+
               <div className="relative mb-3 sm:mb-4 md:mb-6">
                 <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
-                  <div 
+                  <div
                     className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
                     style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                   >
@@ -498,7 +502,7 @@ const FloodReliefCauseDetailPage = () => {
                   <span>100%</span>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
                 <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
@@ -513,18 +517,18 @@ const FloodReliefCauseDetailPage = () => {
                   <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
                 </div>
               </div>
-              
-              <PrimaryButton 
-                className="w-full mb-2 sm:mb-3" 
+
+              <PrimaryButton
+                className="w-full mb-2 sm:mb-3"
                 size="lg"
                 aria-label="Donate now to help flood victims in Uttarakhand through disaster relief India"
               >
                 Help Flood Victims Now
               </PrimaryButton>
-              
-              <PrimaryButton 
-                variant="secondary" 
-                className="w-full" 
+
+              <PrimaryButton
+                variant="secondary"
+                className="w-full"
                 icon={<Share2 size={14} />}
               >
                 Share This Cause
@@ -554,12 +558,12 @@ const FloodReliefCauseDetailPage = () => {
                   <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
                 </div>
               </div>
-              
+
               <div className="p-3 sm:p-4 md:p-6">
                 <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
                   {ngoDetails.description}
                 </p>
-              
+
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
                   <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
                     <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
@@ -570,7 +574,7 @@ const FloodReliefCauseDetailPage = () => {
                     <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
                   {ngoDetails.achievements.map((achievement, index) => (
                     <div key={index} className="flex items-start gap-2 sm:gap-3">
@@ -579,7 +583,7 @@ const FloodReliefCauseDetailPage = () => {
                     </div>
                   ))}
                 </div>
-              
+
                 <div className="border-t pt-3 sm:pt-4">
                   <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
                   <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
@@ -596,7 +600,7 @@ const FloodReliefCauseDetailPage = () => {
                       <span>{ngoDetails.contact.website}</span>
                     </a>
                   </div>
-                  
+
                   <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
                       <Facebook size={14} />
@@ -611,9 +615,9 @@ const FloodReliefCauseDetailPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
-      </div>
+      </main>
     </div>
   );
 };

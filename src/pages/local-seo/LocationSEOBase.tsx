@@ -14,6 +14,8 @@ interface LocationSEOBaseProps {
   relatedKeywords?: Array<{ keyword: string; slug: string }>;
 }
 
+const GLOBAL_KEYWORDS = "causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india";
+
 const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
   location,
   locationSlug,
@@ -42,12 +44,12 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
       <SEOHead
         title={title}
         description={description}
-        keywords={keywords}
+        keywords={`${keywords}, ${GLOBAL_KEYWORDS}`}
         canonicalUrl={canonicalUrl}
         ogTitle={title}
         ogDescription={description}
       />
-      
+
       <ArticleSchema
         title={title}
         description={description}
@@ -74,14 +76,14 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Hero Section */}
-        <div className="text-center mb-12">
+        <header className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {primaryKeyword} in {location}
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover verified and trusted NGOs in {location} making a real impact. Connect with top-rated charity organizations through our giving platform and community support platform. Join our giving community to support social causes, give and help create positive change through social giving and community support initiatives.
           </p>
-        </div>
+        </header>
 
         {/* Introduction */}
         <section className="mb-12">
@@ -93,7 +95,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
               {location} is home to numerous non-profit organizations working tirelessly to create positive social change through community giving and social giving. At The Giving Circle, our giving platform and community support platform connect you with the most trusted and verified NGOs in {location} that are making a real difference through community support and support of community initiatives. Join our support circle and giving community to support social causes in the india community.
             </p>
             <p className="text-gray-700 mb-4">
-              Our giving platform ensures transparency, accountability, and real impact through community support and giving to community initiatives. Every NGO partner undergoes a rigorous verification process, creating supported causes and causes to support where your contributions reach those who need them most. By supporting india's communities, we enable communities for communities and provide giving support, circle aid, and community helpline resources for meaningful social impact.
+              Our giving platform ensures transparency, accountability, and real impact through community support and giving to community initiatives. We collaborate with leading corporate giving platforms to amplify our reach. Every NGO partner undergoes a rigorous verification process, creating supported causes and causes to support where your contributions reach those who need them most. By supporting india's communities, we enable communities for communities and provide giving support, circle aid, and community helpline resources for meaningful social impact.
             </p>
           </div>
         </section>

@@ -46,10 +46,10 @@ function buildSrcSet(url: string, targetWidths: number[], height?: number): stri
     const transforms = [
       `w_${w}`,
       height ? `h_${height}` : undefined,
-      'c_fill',
+      (w && height) ? 'c_fill' : 'c_scale',
       'dpr_auto',
       'f_auto',
-      'q_70',
+      'q_auto',
     ]
       .filter(Boolean)
       .join(',');
@@ -72,10 +72,10 @@ export function CloudinaryImage({
   const commonTransforms = [
     width ? `w_${width}` : undefined,
     height ? `h_${height}` : undefined,
-    (width || height) ? 'c_fill' : undefined,
+    (width && height) ? 'c_fill' : 'c_scale',
     'dpr_auto',
     'f_auto',
-    'q_70',
+    'q_auto',
   ]
     .filter(Boolean)
     .join(',');

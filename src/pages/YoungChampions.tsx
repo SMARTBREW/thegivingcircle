@@ -9,16 +9,16 @@ import SEOHead from '../components/SEO/SEOHead';
 
 export const YoungChampions: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-50 mt-10 flex items-center justify-center">
-      <SEOHead 
+    <main className="min-h-screen bg-gray-50 mt-10 flex items-center justify-center">
+      <SEOHead
         title="Young Champions Program - Youth Leadership | Community Support Platform"
         description="Join our Young Champions program through our giving platform and community support platform. Young people can join our giving community to support social causes and create their own circle of support. Give and help through social giving and learn about community support from an early age."
-        keywords="young champions, youth leadership, student programs, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, youth india, young india, giving india"
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, young champions, youth leadership"
         canonicalUrl="https://www.thegivingcircle.in/young-champions"
       />
       <div className="text-center px-4">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Young Champions</h1>
-        <p className="text-lg text-gray-600">This page is under construction. Components are being developed.</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Young Champions - Future of Giving India</h1>
+        <p className="text-lg text-gray-600">Empowering the next generation to support social causes through social giving and community support. Join our support circle today.</p>
       </div>
       {/* TODO: Uncomment when components are created
       <YoungChampionsHero />
@@ -27,7 +27,7 @@ export const YoungChampions: React.FC = () => {
       <ImpactShowcase />
       <GetStarted />
       */}
-    </div>
+    </main>
   );
 };
 

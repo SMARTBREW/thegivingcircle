@@ -46,12 +46,12 @@ export const NGOList: React.FC = () => {
   useEffect(() => {
     // Set initial value
     setIsMobile(window.innerWidth < 640);
-    
+
     // Add resize listener
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640);
     };
-    
+
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
@@ -174,13 +174,13 @@ export const NGOList: React.FC = () => {
     if (selectedFilter !== 'all' && !ngo.causes.some(cause => cause.toLowerCase().includes(selectedFilter))) {
       return false;
     }
-    
-    if (searchTerm && !ngo.name.toLowerCase().includes(searchTerm.toLowerCase()) && 
-        !ngo.description.toLowerCase().includes(searchTerm.toLowerCase()) &&
-        !ngo.causes.some(cause => cause.toLowerCase().includes(searchTerm.toLowerCase()))) {
+
+    if (searchTerm && !ngo.name.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      !ngo.description.toLowerCase().includes(searchTerm.toLowerCase()) &&
+      !ngo.causes.some(cause => cause.toLowerCase().includes(searchTerm.toLowerCase()))) {
       return false;
     }
-    
+
     return true;
   });
 
@@ -191,13 +191,13 @@ export const NGOList: React.FC = () => {
   };
 
   const NGOCard: React.FC<{ ngo: NGO; index: number }> = ({ ngo, index }) => (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="h-full"
     >
-      <div 
+      <div
         className="overflow-hidden group cursor-pointer h-full flex flex-col bg-white rounded-xl sm:rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300"
         onClick={() => handleLearnMore(ngo)}
       >
@@ -207,7 +207,7 @@ export const NGOList: React.FC = () => {
             alt={ngo.name}
             className="w-full h-28 sm:h-32 lg:h-36 object-cover group-hover:scale-105 transition-transform duration-300"
           />
-          
+
           {/* Verified Badge */}
           {ngo.verified && (
             <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-green-500 text-white px-2 sm:px-3 py-1 rounded-full text-xs font-semibold flex items-center shadow-lg">
@@ -215,7 +215,7 @@ export const NGOList: React.FC = () => {
               <span>Verified</span>
             </div>
           )}
-          
+
           {/* Location */}
           <div className="absolute top-2 sm:top-3 left-2 sm:left-3 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-gray-700 flex items-center">
             <MapPin className="w-3 h-3 mr-1" />
@@ -245,14 +245,14 @@ export const NGOList: React.FC = () => {
           <h3 className="text-sm sm:text-base font-semibold text-gray-900 mb-2 line-clamp-1">
             {ngo.name}
           </h3>
-          
+
           {/* Tagline with highlighted background */}
           <div className="mb-2">
             <span className="inline-block bg-gradient-to-r from-green-100 to-green-100 backdrop-blur-sm text-green-700 px-2 py-1 rounded-lg text-xs font-medium">
               {ngo.causes.slice(0, 2).join(' & ')}
             </span>
           </div>
-          
+
           {/* Description */}
           <p className="text-gray-600 text-xs sm:text-sm mb-2 line-clamp-3 leading-relaxed">
             {ngo.description}
@@ -271,9 +271,9 @@ export const NGOList: React.FC = () => {
               </span>
             </div>
             <div className="flex items-center justify-between gap-2">
-              <a 
-                href={`https://${ngo.contactInfo.website}`} 
-                target="_blank" 
+              <a
+                href={`https://${ngo.contactInfo.website}`}
+                target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => e.stopPropagation()}
                 className="text-xs text-blue-600 hover:text-blue-800 cursor-pointer truncate flex items-center gap-1"
@@ -282,7 +282,7 @@ export const NGOList: React.FC = () => {
                 <ExternalLink className="w-3 h-3" />
                 {ngo.contactInfo.website}
               </a>
-              <button 
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
                   handleLearnMore(ngo);
@@ -295,15 +295,15 @@ export const NGOList: React.FC = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </motion.article>
   );
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
-      <SEOHead 
+      <SEOHead
         title="NGO Directory - Browse Verified NGO Partners | Community Support Platform"
         description="Browse our verified NGO directory through our giving platform and community support platform. Join our giving community to support social causes and connect with verified NGO partners. Give and help through social giving and community support. Explore our support circle of verified partners creating a circle of support for communities across India."
-        keywords="NGO directory, verified NGOs, NGO partners, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, verified partners, supporting india, giving india"
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, NGO directory, verified NGOs"
         canonicalUrl="https://www.thegivingcircle.in/ngo-list"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
@@ -321,7 +321,7 @@ export const NGOList: React.FC = () => {
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed">
             Discover our network of verified NGO partners creating meaningful change across India.
-            Every organization here has been thoroughly vetted for transparency and impact.
+            Every organization here has been thoroughly vetted for transparency and impact, ensuring your social giving creates real value for the india community through our community giving platform.
           </p>
         </motion.div>
 
@@ -342,8 +342,8 @@ export const NGOList: React.FC = () => {
                 className="text-sm sm:text-base"
               />
             </div>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               icon={<Filter className="w-4 h-4" />}
               className="sm:hidden"
               onClick={() => setShowMobileFilters(!showMobileFilters)}
@@ -351,8 +351,8 @@ export const NGOList: React.FC = () => {
               Filter
               <ChevronDown className={`w-4 h-4 ml-1 transition-transform ${showMobileFilters ? 'rotate-180' : ''}`} />
             </Button>
-            <Button 
-              variant="outline" 
+            <Button
+              variant="outline"
               icon={<Filter className="w-4 h-4" />}
               className="hidden sm:flex"
             >
@@ -370,11 +370,10 @@ export const NGOList: React.FC = () => {
                     setSelectedFilter(filter.id);
                     setShowMobileFilters(false);
                   }}
-                  className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${
-                    selectedFilter === filter.id
-                      ? 'bg-gradient-to-r green-700 text-white shadow-lg'
-                      : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
-                  }`}
+                  className={`px-3 sm:px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-200 ${selectedFilter === filter.id
+                    ? 'bg-gradient-to-r green-700 text-white shadow-lg'
+                    : 'bg-white text-gray-600 hover:bg-gray-50 border border-gray-200'
+                    }`}
                 >
                   <span className="hidden sm:inline">{filter.label} ({filter.count})</span>
                   <span className="sm:hidden">{filter.label.length > 10 ? filter.label.substring(0, 10) + '...' : filter.label} ({filter.count})</span>
@@ -437,11 +436,11 @@ export const NGOList: React.FC = () => {
           </h2>
           <p className="text-sm sm:text-base text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto">
             Join our network of verified NGOs and connect with passionate champions who want to support your cause.
-            Apply to become a partner today.
+            Become part of our trusted community offering and apply to become a partner today.
           </p>
           <a href="/ngo-partner">
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="px-6 sm:px-8 bg-gradient-to-r green-700 hover:from-purple-700 hover:to-pink-700 text-white"
             >
               Become a Partner

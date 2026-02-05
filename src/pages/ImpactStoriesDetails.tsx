@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import SEOHead from '../components/SEO/SEOHead';
-import { 
-  ArrowLeft, CheckCircle, MapPin, Users, Calendar, Star, 
-  Share2, Download, ExternalLink, Badge, TrendingUp, 
+import {
+  ArrowLeft, CheckCircle, MapPin, Users, Calendar, Star,
+  Share2, Download, ExternalLink, Badge, TrendingUp,
   Award, Globe, Clock, FileText,
   Twitter, Facebook, Link, Copy, Eye, BookOpen,
   Play, Pause, Building2
@@ -41,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({
     md: 'px-4 py-2 text-sm rounded-lg',
     lg: 'px-6 py-3 text-base rounded-lg',
   };
-  
+
   return (
     <button
       className={`${baseClasses} ${variants[variant]} ${sizes[size]} ${className}`}
@@ -65,7 +65,7 @@ const ImpactStoriesDetails: React.FC = () => {
   const storyData = {
     id: '1',
     title: 'Wings of Hope',
-    description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand. This initiative builds sustainable livelihoods and strengthens community resilience.',
+    description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand. This community giving initiative builds sustainable livelihoods and strengthens the circle of support for resilient communities.',
     ngoName: 'JWP',
     ngoDescription: 'JWP works with indigenous communities enabling access to education, livelihoods and empowerment with a focus on dignity and inclusion.',
     championName: 'Meera Singh',
@@ -180,7 +180,7 @@ const ImpactStoriesDetails: React.FC = () => {
   );
 
   const renderOverview = () => (
-    <div className="space-y-8">
+    <section className="space-y-8" aria-label="Project Overview">
       {/* Hero Section */}
       <div className="relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -207,9 +207,8 @@ const ImpactStoriesDetails: React.FC = () => {
                 <button
                   key={index}
                   onClick={() => setSelectedImageIndex(index)}
-                  className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedImageIndex === index ? 'border-green-700' : 'border-transparent'
-                  }`}
+                  className={`flex-shrink-0 w-20 h-16 rounded-lg overflow-hidden border-2 transition-all ${selectedImageIndex === index ? 'border-green-700' : 'border-transparent'
+                    }`}
                 >
                   <img src={image} alt="" className="w-full h-full object-cover" />
                 </button>
@@ -218,7 +217,7 @@ const ImpactStoriesDetails: React.FC = () => {
           </div>
 
           {/* Story Info */}
-          <div className="space-y-6">
+          <section className="space-y-6" aria-label="Project Timeline">
             <div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">{storyData.title}</h1>
               <p className="text-lg text-gray-600 leading-relaxed">{storyData.description}</p>
@@ -255,7 +254,7 @@ const ImpactStoriesDetails: React.FC = () => {
                 </span>
               ))}
             </div>
-          </div>
+          </section>
         </div>
       </div>
 
@@ -286,11 +285,11 @@ const ImpactStoriesDetails: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section >
   );
 
   const renderImpactMetrics = () => (
-    <div className="space-y-8">
+    <section className="space-y-8" aria-label="Impact Metrics">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
@@ -300,7 +299,7 @@ const ImpactStoriesDetails: React.FC = () => {
           <div className="text-3xl font-bold">{storyData.impactMetrics.direct}</div>
           <div className="text-black text-sm">People Directly Impacted</div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <Globe className="w-8 h-8" />
@@ -309,7 +308,7 @@ const ImpactStoriesDetails: React.FC = () => {
           <div className="text-3xl font-bold">{storyData.impactMetrics.indirect}</div>
           <div className="text-black text-sm">People Indirectly Impacted</div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <MapPin className="w-8 h-8" />
@@ -318,7 +317,7 @@ const ImpactStoriesDetails: React.FC = () => {
           <div className="text-3xl font-bold">{storyData.impactMetrics.communities}</div>
           <div className="text-black text-sm">Communities Served</div>
         </div>
-        
+
         <div className="bg-white p-6 rounded-lg border text-black">
           <div className="flex items-center justify-between mb-4">
             <TrendingUp className="w-8 h-8" />
@@ -350,7 +349,7 @@ const ImpactStoriesDetails: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <div>
             <h4 className="font-semibold mb-4">Economic Impact</h4>
             <div className="space-y-3">
@@ -390,42 +389,41 @@ const ImpactStoriesDetails: React.FC = () => {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   );
 
   const renderTimeline = () => (
-    <div className="space-y-6">
+    <section className="space-y-6" aria-label="Project Timeline">
       <h3 className="text-xl font-semibold">Project Timeline</h3>
       <div className="relative">
         {/* Animated connecting line */}
-        <motion.div 
+        <motion.div
           className="absolute left-4 top-0 w-0.5 bg-gray-200"
           initial={{ height: 0 }}
           animate={{ height: '100%' }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
         ></motion.div>
-        
+
         {storyData.milestones.map((milestone, index) => (
-          <motion.div 
-            key={index} 
+          <motion.div
+            key={index}
             className="relative flex items-start space-x-4 pb-8"
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ 
-              duration: 0.3, 
+            transition={{
+              duration: 0.3,
               delay: index * 0.3,
               ease: "easeOut"
             }}
           >
             {/* Animated node */}
-            <motion.div 
-              className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
-                milestone.status === 'completed' ? 'bg-green-500' : 'bg-gray-300'
-              }`}
+            <motion.div
+              className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${milestone.status === 'completed' ? 'bg-green-500' : 'bg-gray-300'
+                }`}
               initial={{ scale: 0, rotate: 180 }}
               animate={{ scale: 1, rotate: 0 }}
-              transition={{ 
-                duration: 0.3, 
+              transition={{
+                duration: 0.3,
                 delay: index * 0.3 + 0.1,
                 type: "spring",
                 stiffness: 300
@@ -443,14 +441,14 @@ const ImpactStoriesDetails: React.FC = () => {
                 )}
               </motion.div>
             </motion.div>
-            
+
             {/* Animated content */}
-            <motion.div 
+            <motion.div
               className="flex-1 min-w-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ 
-                duration: 0.3, 
+              transition={{
+                duration: 0.3,
                 delay: index * 0.3 + 0.15,
                 ease: "easeOut"
               }}
@@ -464,11 +462,11 @@ const ImpactStoriesDetails: React.FC = () => {
           </motion.div>
         ))}
       </div>
-    </div>
+    </section>
   );
 
   const renderTeam = () => (
-    <div className="space-y-8">
+    <section className="space-y-8" aria-label="Project Team and Partner NGO">
       {/* Champion */}
       <div className="bg-white p-6 rounded-xl shadow-lg">
         <h3 className="text-xl font-semibold mb-6">Project Champion</h3>
@@ -522,11 +520,11 @@ const ImpactStoriesDetails: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 
   const renderDocuments = () => (
-    <div className="space-y-6">
+    <section className="space-y-6" aria-label="Project Documents">
       <h3 className="text-xl font-semibold">Project Documents</h3>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {storyData.documents.map((doc, index) => (
@@ -548,12 +546,12 @@ const ImpactStoriesDetails: React.FC = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 
   return (
     <div className="min-h-screen bg-gray-50 mt-[150px]">
-      <SEOHead 
+      <SEOHead
         title="Wings of Hope Impact Story - Women Empowerment Success | Community Support Platform"
         description="Explore the Wings of Hope impact story through our giving platform and community support platform. See how our giving community supports social causes through social giving and community support. Give and help create real impact through our circle of support for women empowerment in India."
         keywords="Wings of Hope, impact story, success story, women empowerment, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, supporting india, giving india"
@@ -563,20 +561,20 @@ const ImpactStoriesDetails: React.FC = () => {
       <div className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               icon={<ArrowLeft className="w-4 h-4" />}
               onClick={() => window.history.back()}
             >
               Back to Stories
             </Button>
-            
+
             <div className="flex items-center space-x-4">
-             
-              
+
+
               <div className="flex items-center space-x-2">
-                
-                
+
+
                 <Button
                   variant="ghost"
                   size="sm"
@@ -585,7 +583,7 @@ const ImpactStoriesDetails: React.FC = () => {
                 >
                   {isBookmarked ? 'Saved' : 'Save'}
                 </Button>
-                
+
                 <Button
                   variant="outline"
                   size="sm"
@@ -626,7 +624,7 @@ const ImpactStoriesDetails: React.FC = () => {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <div className="flex items-center space-x-1 text-gray-600">
                 <MapPin className="w-4 h-4" />
@@ -638,7 +636,7 @@ const ImpactStoriesDetails: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           {/* Status Banner */}
           {storyData.status === 'Completed' && (
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
@@ -662,11 +660,10 @@ const ImpactStoriesDetails: React.FC = () => {
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${
-                  activeTab === tab.id
-                    ? 'border-blue-500 text-blue-600'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                }`}
+                className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${activeTab === tab.id
+                  ? 'border-blue-500 text-blue-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  }`}
               >
                 {tab.icon}
                 <span>{tab.label}</span>

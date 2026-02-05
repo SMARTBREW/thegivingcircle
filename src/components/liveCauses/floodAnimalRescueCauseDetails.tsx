@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, LifeBuoy } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
+import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
 
@@ -24,10 +25,10 @@ const FloodAnimalRescueCauseDetailPage = () => {
     daysLeft: 15,
     image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
     urgency: 'Critical',
-    
+
     // Problem Statement
     problemStatement: 'How to help flood victims in Uttarakhand? Thousands of animals struggle to survive floods. Emergency animal rescue India is critical - animals trapped in floodwaters face drowning, starvation, injury. Flood animal rescue operations are urgently needed. Disaster relief India must include animals. Street dogs, livestock, and wildlife need flood rescue operations. These voiceless victims depend on emergency response India for survival.',
-    
+
     // Root Causes
     rootCauses: [
       'Lack of emergency animal rescue infrastructure during disasters',
@@ -36,7 +37,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
       'Insufficient training in flood animal rescue operations',
       'Limited awareness about emergency response India for animals'
     ],
-    
+
     // Consequences if not addressed
     consequences: [
       'Massive animal deaths without flood animal rescue operations',
@@ -45,7 +46,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
       'Rural communities lose livestock without flood relief Uttarakhand',
       'Trauma continues without disaster rehabilitation programs'
     ],
-    
+
     // Our Solution
     solution: {
       approach: 'Flood Animal Rescue provides rapid emergency animal rescue India and disaster relief through specialized flood rescue operations, emergency response teams, and disaster rehabilitation for animals trapped in Uttarakhand and Punjab floods.',
@@ -57,7 +58,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
         'Disaster rehabilitation - long-term recovery programs for rescued animals'
       ]
     },
-    
+
     // Beneficiaries
     beneficiaries: {
       primary: '1,500+ animals rescued through emergency animal rescue operations',
@@ -65,7 +66,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
       community: '20+ flood-affected villages receiving disaster relief India',
       longTerm: 'Comprehensive disaster animal relief and emergency response ecosystem'
     },
-    
+
     // Impact Gallery
     impactGallery: [
       {
@@ -94,7 +95,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
         type: 'Community Rescue'
       }
     ],
-    
+
     // Expected Outcomes
     expectedOutcomes: [
       {
@@ -118,9 +119,9 @@ const FloodAnimalRescueCauseDetailPage = () => {
         timeline: 'Medium-term'
       }
     ],
-    
+
     timeline: '6 months',
-    
+
     updates: [
       {
         date: '5 March 2024',
@@ -141,7 +142,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg'
       }
     ],
-    
+
     testimonials: [
       {
         name: 'Dr. Rajesh Kumar',
@@ -156,7 +157,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       }
     ],
-    
+
     milestones: [
       { target: '₹1,12,500', achievement: 'Emergency Rescue Equipment & Teams', status: 'completed' },
       { target: '₹2,25,000', achievement: 'Medical Care Facilities & Veterinary Support', status: 'completed' },
@@ -208,14 +209,14 @@ const FloodAnimalRescueCauseDetailPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead 
+      <SEOHead
         title="Flood Animal Rescue - Emergency Animal Rescue | Disaster Relief India"
         description="Flood Animal Rescue provides emergency animal rescue through our giving platform and community support platform. Join our giving community to support social causes through disaster relief. Give and help rescue animals through social giving and community support. Create a circle of support for disaster animal relief and india care initiatives."
-        keywords="Flood Animal Rescue, emergency animal rescue, disaster relief India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, india care, supporting india, giving india"
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Animal Rescue, emergency animal rescue, disaster relief India"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
       />
-      <ArticleSchema 
+      <ArticleSchema
         title="Flood Animal Rescue - Emergency Animal Rescue & Disaster Relief Uttarakhand"
         description="Emergency animal rescue and disaster relief India. Supporting flood animal rescue operations in Uttarakhand, providing disaster rehabilitation and emergency medical care for rescued animals."
         image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
@@ -225,11 +226,11 @@ const FloodAnimalRescueCauseDetailPage = () => {
         author="Animal Care India"
       />
       {/* Professional Header Section */}
-      <div className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
+      <header className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-2">
-            <button 
-              onClick={() => navigate(-1)} 
+            <button
+              onClick={() => navigate(-1)}
               className="flex items-center gap-1 sm:gap-2 text-gray-600 hover:text-gray-900 transition-colors"
             >
               <ArrowLeft size={18} />
@@ -243,27 +244,30 @@ const FloodAnimalRescueCauseDetailPage = () => {
               </div>
             )}
           </div>
-          
+
           {/* Page Title */}
           <div className="text-center mb-1">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight py-2 break-words">
-            Flood Animal Rescue
-          </h1>
+              Flood Animal Rescue
+            </h1>
           </div>
         </div>
-      </div>
+      </header>
 
-      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
+      <main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {/* Main Content */}
-          <div className="lg:col-span-2">
+          <article className="lg:col-span-2">
             {/* Hero Section */}
             <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-6">
               <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">
-                <img 
-                  src={cause.image} 
+                <CloudinaryImage
+                  src={cause.image}
                   alt={cause.title}
                   className="w-full h-full object-cover"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                  width={1280}
+                  priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
               </div>
@@ -288,7 +292,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
             </div>
 
             {/* Geographic Coverage */}
-            <div className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
+            <section aria-label="Geographic Coverage" className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="text-blue-600" size={18} />
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">Geographic Coverage</h3>
@@ -319,15 +323,15 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <p className="text-xs sm:text-sm text-gray-600 mt-3 break-words">
                 <strong>Active in 20+ cities across 8 states</strong> - Emergency rescue operations for animals during natural disasters
               </p>
-            </div>
+            </section>
 
             {/* Section 1: The Challenge */}
-            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="The Challenge" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <AlertTriangle className="text-black" size={18} />
                 The Challenge
               </h2>
-              
+
               <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
                 <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
                   {cause.problemStatement}
@@ -340,11 +344,11 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Natural disasters like floods create life-threatening situations for thousands of animals</strong>, with no escape routes or means of survival. 
+                      <strong className="text-gray-900">Natural disasters like floods create life-threatening situations for thousands of animals</strong>, with no escape routes or means of survival.
                       Street dogs, cats, livestock, and wildlife become trapped in rising floodwaters, facing immediate danger of drowning, starvation, and injury.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">The absence of emergency animal rescue infrastructure</strong> means that when disasters strike, animals are often left to fend for themselves. 
+                      <strong className="text-gray-900">The absence of emergency animal rescue infrastructure</strong> means that when disasters strike, animals are often left to fend for themselves.
                       Communities lack the resources, equipment, and training needed to rescue animals during floods and other natural disasters.
                     </p>
                     <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
@@ -352,8 +356,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     </p>
                   </div>
                   <div className="order-first lg:order-last">
-                    <img 
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png" 
+                    <img
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
                       alt="Animals trapped in floodwaters needing immediate rescue"
                       className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -370,7 +374,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Every minute without rescue means more lives lost to floodwaters.</strong> 
+                      <strong className="text-gray-900">Every minute without rescue means more lives lost to floodwaters.</strong>
                       Animals continue to face drowning, starvation, and injury while communities struggle to cope with their own survival needs.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
@@ -381,8 +385,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     </p>
                   </div>
                   <div>
-                    <img 
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png" 
+                    <img
+                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png"
                       alt="The importance of emergency animal rescue during disasters"
                       className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
                     />
@@ -392,15 +396,15 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </section>
 
             {/* Section 2: The Solution / How your support helps */}
-            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="The Solution" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <Target className="text-black" size={18} />
                 The Solution / How Your Support Helps
               </h2>
-              
+
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-4 sm:mb-6 md:mb-8">
                 <div>
                   <div className="prose prose-lg text-gray-600 mb-3 sm:mb-4 md:mb-6">
@@ -410,7 +414,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                   <div>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of emergency animal rescue.</strong> 
+                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of emergency animal rescue.</strong>
                       We deploy specialized rescue teams with boats and water rescue equipment, providing immediate response to animals trapped in floodwaters.
                     </p>
                     <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
@@ -422,8 +426,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                 </div>
                 <div>
-                  <img 
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg" 
+                  <img
+                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg"
                     alt="Emergency rescue teams providing immediate aid to trapped animals"
                     className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
                   />
@@ -432,30 +436,30 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </section>
 
 
             {/* Section 3: See the Action in Change */}
-            <div className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="Impact Gallery" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <Camera className="text-black" size={18} />
                 See the Action in Change
               </h2>
-              
+
               <div className="mb-3 sm:mb-4 md:mb-6">
                 <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  Every donation creates visible, measurable change in animal lives during emergencies. Our impact gallery showcases 
-                  real moments of rescue and hope, from the first touch of a rescuer's hand to the joy of an animal reaching safety, 
+                  Every donation creates visible, measurable change in animal lives during emergencies. Our impact gallery showcases
+                  real moments of rescue and hope, from the first touch of a rescuer's hand to the joy of an animal reaching safety,
                   from emergency medical care to community celebration of life.
                 </p>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
                 {cause.impactGallery.map((item, index) => (
                   <div key={index} className="bg-gray-50 rounded-lg overflow-hidden">
                     <div className="relative h-40 sm:h-48 md:h-64">
-                      <img 
-                        src={item.image} 
+                      <img
+                        src={item.image}
                         alt={item.caption}
                         className="w-full h-full object-cover"
                       />
@@ -469,12 +473,12 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </section>
 
-          </div>
+          </article>
 
           {/* Enhanced Sidebar */}
-          <div className="lg:col-span-1">
+          <aside className="lg:col-span-1">
             {/* Donation Card with Professional Design */}
             <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 lg:sticky lg:top-6">
               <div className="text-center mb-3 sm:mb-4 md:mb-6">
@@ -484,10 +488,10 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
                 <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
               </div>
-              
+
               <div className="relative mb-3 sm:mb-4 md:mb-6">
                 <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
-                  <div 
+                  <div
                     className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
                     style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                   >
@@ -502,7 +506,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   <span>100%</span>
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
                 <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
                   <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
@@ -517,14 +521,14 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
                 </div>
               </div>
-              
+
               <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
                 Support This Cause
               </PrimaryButton>
-              
-              <PrimaryButton 
-                variant="secondary" 
-                className="w-full" 
+
+              <PrimaryButton
+                variant="secondary"
+                className="w-full"
                 icon={<Share2 size={14} />}
               >
                 Share This Cause
@@ -541,7 +545,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
               <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
                 <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
-                  <img 
+                  <img
                     src="/Animal care.jpg"
                     alt={ngoDetails.name}
                     className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
@@ -556,12 +560,12 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
                 </div>
               </div>
-              
+
               <div className="p-3 sm:p-4 md:p-6">
                 <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
                   {ngoDetails.description}
                 </p>
-                
+
                 <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
                   <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
                     <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
@@ -572,7 +576,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
                   </div>
                 </div>
-                
+
                 <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
                   {ngoDetails.achievements.map((achievement, index) => (
                     <div key={index} className="flex items-start gap-2 sm:gap-3">
@@ -581,7 +585,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <div className="border-t pt-3 sm:pt-4">
                   <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
                   <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
@@ -598,7 +602,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                       <span>{ngoDetails.contact.website}</span>
                     </a>
                   </div>
-                  
+
                   <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
                     <a href="https://facebook.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
                       <Facebook size={14} />
@@ -613,10 +617,10 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
-      
-      </div>
+
+      </main>
     </div>
   );
 };

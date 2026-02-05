@@ -34,17 +34,17 @@ const ImpactStories: React.FC = () => {
   // Set page title and meta tags for SEO
   useEffect(() => {
     document.title = 'Impact Stories - Real Transformation Stories India | Verified Success Stories';
-    
+
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', 'Discover inspiring impact stories and real transformation stories from across India. Read verified success stories of social change, community impact, and lives transformed through The Giving Circle. Social impact stories India showcasing women empowerment, animal welfare, disaster relief, and education transformation.');
     }
-    
+
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Impact Stories, Social Change Stories, Success Stories, Community Impact, Verified Impact, Transformation Stories, Real Impact Stories, Success Stories India, Social impact stories, Verified impact stories, Community transformation, Measurable social impact, Impact statistics India, Lives impacted India, Social impact stories India, Real transformation stories, Verified success stories, Community impact stories, Stories of change India, Inspiring social impact stories, Real change makers India, Community transformation stories, Impactful success stories India, Women empowerment impact stories, Animal welfare success stories, Disaster relief impact stories, Education transformation stories, Healthcare impact stories');
+      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india');
     }
   }, []);
 
@@ -54,7 +54,7 @@ const ImpactStories: React.FC = () => {
       id: '1',
       title: 'Wings of Hope: Breaking Barriers Through Menstrual Health Education',
       description: 'A women empowerment impact story - A revolutionary initiative addressing period poverty and menstrual health inequality, empowering 1,200+ women and girls with education, dignity, and sustainable solutions. A verified success story of social change created through our community support platform and social giving initiatives.',
-      fullStory: 'This women empowerment impact story began in communities across India, where menstruation was forcing girls to drop out of school and women to miss work, perpetuating cycles of poverty and inequality. The Wings of Hope initiative by JWP, supported through our giving platform and community support platform, has created a verified transformation story through comprehensive menstrual health education and sustainable product distribution. Starting in 2022, this social impact story has reached 1,200+ women and girls across 30 communities, demonstrating how social giving and community support can transform lives. The program includes workshops on reproductive health, distribution of eco-friendly menstrual products, and community awareness campaigns—all examples of causes to support that create real change. Our giving community has enabled this initiative to provide giving support and community offering resources. Today, 95% of beneficiary girls attend school regularly during menstruation (up from 35%), and 200+ women have been trained as health educators. This community transformation has also created livelihood opportunities for 150+ women who manufacture and distribute the reusable products, generating an average monthly income of ₹6,500. A true success story demonstrating measurable social impact through give and help initiatives, circle of support, and supporting india\'s women.',
+      fullStory: 'This women empowerment impact story began in communities across India, where menstruation was forcing girls to drop out of school and women to miss work, perpetuating cycles of poverty and inequality. The Wings of Hope initiative by JWP, supported through our giving platform and community support platform, has created a verified transformation story through comprehensive menstrual health education and sustainable product distribution. Starting in 2022, this social impact story has reached 1,200+ women and girls across 30 communities, demonstrating how social giving and support from community can transform lives. The program includes workshops on reproductive health, distribution of eco-friendly menstrual products, and community awareness campaigns—all examples of causes to support that create real change. Our giving community has enabled this initiative to provide giving support and community offering resources. Today, 95% of beneficiary girls attend school regularly during menstruation (up from 35%), and 200+ women have been trained as health educators. This community transformation has also created livelihood opportunities for 150+ women who manufacture and distribute the reusable products, generating an average monthly income of ₹6,500. A true success story demonstrating measurable social impact through giving to community, circle of support, and supporting india\'s women.',
       ngoName: 'JWP',
       location: 'Multiple States, India',
       impactNumber: 1200,
@@ -78,7 +78,7 @@ const ImpactStories: React.FC = () => {
       id: '2',
       title: 'Pawsitive Protectors: Saving Lives One Animal at a Time',
       description: 'An animal welfare success story - Volunteer-led rescues, on-ground treatment, and rehabilitation of Mumbai\'s street animals, turning distress calls into verified impact stories every single day. A real transformation story of community-driven animal care.',
-      fullStory: 'This animal welfare success story showcases real change makers India at work. On any given day, our Pawsitive Protectors team receives dozens of distress calls—an injured pup trapped under a vehicle, a dehydrated dog during peak summer, a mother with wounded paws. What began in 2021 as a small community effort is now a verified impact story of coordinated city-wide response with a 24/7 helpline, mobile vet vans, and a trained volunteer network. The program operates multiple feeding stations and shelters, where injured animals receive first-aid, IV fluids, and post-operative care. Our measurable social impact speaks volumes: 7,126 vaccinations administered, over 350 stray dogs fed daily in various locations and over 400 dogs every day in our shelters, 812 emergency rescues in 2025 alone, and over 400 dogs at any point of time in our shelters receiving care and rehabilitation. Over 200 residents have been trained as community responders through this community transformation story, and countless animals have found forever homes through adoption drives. The photograph you see captures a typical field rescue—volunteers calming an anxious dog while a vet examines and prepares it for treatment. Each rescue is a promise: no animal gets left behind. A true social impact story India demonstrating lives impacted through verified community-driven change.',
+      fullStory: 'This animal welfare success story showcases real change makers India at work. On any given day, our Pawsitive Protectors team receives dozens of distress calls—an injured pup trapped under a vehicle, a dehydrated dog during peak summer, a mother with wounded paws. What began in 2021 as a small community effort is now a verified impact story of coordinated city-wide response with a 24/7 community helpline, mobile vet vans, and a trained volunteer network. The program operates multiple feeding stations and shelters, where injured animals receive circle aid, IV fluids, and post-operative care. Our measurable social impact speaks volumes: 7,126 vaccinations administered, over 350 stray dogs fed daily in various locations and over 400 dogs every day in our shelters, 812 emergency rescues in 2025 alone, and over 400 dogs at any point of time in our shelters receiving care and rehabilitation. Over 200 residents have been trained as community responders through this community transformation story, and countless animals have found forever homes through adoption drives. The photograph you see captures a typical field rescue—volunteers calming an anxious dog while a vet examines and prepares it for treatment. Each rescue is a promise: no animal gets left behind. A true social impact story India demonstrating lives impacted through verified community-driven change.',
       ngoName: 'Animal Care',
       location: 'Mumbai, Maharashtra',
       impactNumber: 100000,
@@ -102,7 +102,7 @@ const ImpactStories: React.FC = () => {
       id: '4',
       title: 'Flood Relief Uttarakhand: Hope in the Face of Disaster',
       description: 'A disaster relief impact story - Emergency response and rehabilitation program that supported 3,000+ families during the devastating Uttarakhand floods. A verified success story of community impact and transformation.',
-      fullStory: 'This disaster relief impact story demonstrates real transformation stories India when community action meets verified commitment. When unprecedented floods hit Uttarakhand in 2023, entire communities were displaced, homes destroyed, and livelihoods lost. The GUS disaster response team mobilized within 24 hours, launching the largest relief operation in the region and creating a social change story that would inspire thousands. Over 90 days, this verified impact program provided emergency shelter, food, medical aid, and psychological support to 3,000+ affected families. The relief efforts included: distributing 50,000+ food packets, setting up 15 temporary shelters, providing medical treatment to 8,000+ people, and rescuing 500+ trapped individuals. The rehabilitation phase focused on rebuilding homes, restoring livelihoods, and strengthening disaster preparedness, demonstrating measurable social impact. Today, 95% of affected families have returned to stable housing, 80% have resumed their livelihoods, and all 25 affected villages have disaster management committees. A powerful success story India showcasing lives impacted through community transformation and verified emergency response.',
+      fullStory: 'This disaster relief impact story demonstrates real transformation stories India when community action meets verified commitment. When unprecedented floods hit Uttarakhand in 2023, entire communities were displaced, homes destroyed, and livelihoods lost. The GUS disaster response team mobilized within 24 hours, launching the largest relief operation in the region and creating a social change story that would inspire thousands. Over 90 days, this verified impact program provided emergency shelter, food, medical aid, and psychological support to 3,000+ affected families. We also collaborated with corporate giving platforms to scale our relief efforts. The relief efforts included: distributing 50,000+ food packets, setting up 15 temporary shelters, providing medical treatment to 8,000+ people, and rescuing 500+ trapped individuals. The rehabilitation phase focused on rebuilding homes, restoring livelihoods, and strengthening disaster preparedness, demonstrating measurable social impact. Today, 95% of affected families have returned to stable housing, 80% have resumed their livelihoods, and all 25 affected villages have disaster management committees. A powerful success story India showcasing lives impacted through community transformation and verified emergency response.',
       ngoName: 'GUS',
       location: 'Uttarakhand, India',
       impactNumber: 3000,
@@ -136,10 +136,10 @@ const ImpactStories: React.FC = () => {
 
   return (
     <div className="min-h-screen">
-      <SEOHead 
+      <SEOHead
         title="Impact Stories - Real Change by Cause Champions | The Giving Circle"
         description="Read inspiring impact stories from verified causes and Cause Champions across India. See how community giving creates real change in animal welfare, women empowerment, education, and disaster relief. Verified transformation stories with measurable impact."
-        keywords="impact stories India, social impact stories, verified charity impact, cause champion stories, community transformation, real charity stories, verified impact India, social change stories, NGO success stories, charity transparency India"
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india"
         canonicalUrl="https://www.thegivingcircle.in/impact-stories"
       />
       {/* Impact Stories Section */}
@@ -154,7 +154,7 @@ const ImpactStories: React.FC = () => {
               Impact Stories - Real Transformation Stories India
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed break-words">
-              Discover verified success stories and inspiring social change stories from across India. Behind every statistic is a human story of community transformation, hope, and measurable social impact. These are real impact stories showcasing lives impacted through our giving platform, verified causes, and community support platform. See how our giving community creates change through social giving, community support, and giving to community initiatives that create lasting supported causes across the india community.
+              Discover verified success stories and inspiring social change stories from across India. Behind every statistic is a human story of community transformation, hope, and measurable social impact. These are real impact stories showcasing lives impacted through our giving platform, verified causes, and community support platform. See how our giving community creates change through social giving, community support, and giving to community initiatives that create lasting supported causes across the india community. We are Communities for Communities, fostering india care and support of community for all.
             </p>
           </motion.div>
         </div>
@@ -162,12 +162,13 @@ const ImpactStories: React.FC = () => {
         {/* Stories - Natural Flow Layout */}
         <div className="space-y-0">
           {impactStories.map((story, index) => (
-            <motion.div
+            <motion.article
               key={story.id}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2 }}
               className={`w-full py-6 sm:py-8 md:py-10 ${index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}`}
+              aria-label={`Impact Story: ${story.title}`}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-4 sm:gap-6 md:gap-8 lg:gap-12 items-center`}>
@@ -254,7 +255,7 @@ const ImpactStories: React.FC = () => {
                         <Calendar className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
                         {story.dateCompleted}
                       </div>
-                      <PrimaryButton 
+                      <PrimaryButton
                         onClick={() => setSelectedStory(selectedStory === story.id ? null : story.id)}
                         variant="secondary"
                         size="sm"
@@ -278,10 +279,10 @@ const ImpactStories: React.FC = () => {
                       </motion.div>
                     )}
                   </div>
-                  </div>
                 </div>
-              </motion.div>
-            ))}
+              </div>
+            </motion.article>
+          ))}
         </div>
       </section>
 

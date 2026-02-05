@@ -6,14 +6,14 @@ export default function SimplifiedAboutPage() {
     <div className="min-h-screen bg-white">
       <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
-          <img 
-            src="/Smileshero.jpg" 
+          <img
+            src="/Smileshero.jpg"
             alt="Our Mission - Creating Verified Impact"
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
         </div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,7 +58,7 @@ export default function SimplifiedAboutPage() {
                   <strong>Our giving philosophy</strong> began with a simple vision: to build a giving community of generous, warm-hearted Cause Champions who want to support social causes and create meaningful impact. <strong>Why community giving matters</strong> - because when we give through a support circle, we create lasting social change. Our giving support system enables people to give and help communities across India, providing community support and giving to community initiatives that truly matter.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  Founded in 2022, <strong>The Giving Circle India</strong> is a giving platform and community support platform that brings this vision to life by connecting individuals with verified NGOs and social causes to support. Through our Cause Champions platform, we make it simple for supporters to give through our platform, engage with causes to support, and strengthen communities support initiatives across India. We are supporting india by providing circle aid and community helpline resources for verified causes.
+                  Founded in 2022, <strong>The Giving Circle India</strong> is a giving platform and community support platform that brings this vision to life by connecting individuals with verified NGOs and social causes to support. Through our Cause Champions platform, we make it simple for supporters to give through our platform, engage with causes to support, and strengthen communities support initiatives across India. We are supporting india by providing circle aid, collaborating with corporate giving platforms, and community helpline resources for verified causes.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
                   <strong>How does giving circle work?</strong> Our role is simple yet vital: we act as a support community and bridge, linking Cause Champions with community causes close to their hearts. We partner only with government-certified NGOs, ensuring every organization meets official standards. For complete transparency, contributions go directly to these NGOs and never pass through us - this is the foundation of our community empowerment platform and giving support system. Through our giving india initiative, we facilitate support from community to community.
@@ -79,8 +79,8 @@ export default function SimplifiedAboutPage() {
               viewport={{ once: true }}
               className="relative order-first lg:order-last"
             >
-              <img 
-                src="/Smileshero.jpg" 
+              <img
+                src="/Smileshero.jpg"
                 alt="Team collaboration"
                 className="w-full h-48 sm:h-64 md:h-80 object-cover rounded-lg sm:rounded-xl shadow-lg"
               />
@@ -89,7 +89,7 @@ export default function SimplifiedAboutPage() {
         </div>
       </section>
 
-      
+
     </div>
   );
 }

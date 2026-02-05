@@ -49,30 +49,30 @@ const SleepingCat: React.FC = () => (
       {/* Sleeping cat illustration - centered and contained within circle */}
       <svg width="48" height="36" viewBox="0 0 48 36" className="text-gray-600">
         {/* Cat body (sleeping curled up) */}
-        <ellipse cx="24" cy="26" rx="16" ry="8" fill="currentColor" opacity="0.8"/>
+        <ellipse cx="24" cy="26" rx="16" ry="8" fill="currentColor" opacity="0.8" />
         {/* Cat head */}
-        <circle cx="24" cy="16" r="10" fill="currentColor" opacity="0.8"/>
+        <circle cx="24" cy="16" r="10" fill="currentColor" opacity="0.8" />
         {/* Cat ears */}
-        <path d="M16 8 L14 2 L20 6 Z" fill="currentColor" opacity="0.8"/>
-        <path d="M28 6 L32 8 L34 2 Z" fill="currentColor" opacity="0.8"/>
+        <path d="M16 8 L14 2 L20 6 Z" fill="currentColor" opacity="0.8" />
+        <path d="M28 6 L32 8 L34 2 Z" fill="currentColor" opacity="0.8" />
         {/* Closed eyes (curved lines) */}
-        <path d="M20 14 Q20 16 20 14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
-        <path d="M28 14 Q28 16 28 14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round"/>
+        <path d="M20 14 Q20 16 20 14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
+        <path d="M28 14 Q28 16 28 14" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" />
         {/* Nose */}
-        <circle cx="24" cy="18" r="1.5" fill="currentColor" opacity="0.7"/>
+        <circle cx="24" cy="18" r="1.5" fill="currentColor" opacity="0.7" />
         {/* Mouth */}
-        <path d="M24 20 Q21 22 19 20" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
-        <path d="M24 20 Q27 22 29 20" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round"/>
+        <path d="M24 20 Q21 22 19 20" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
+        <path d="M24 20 Q27 22 29 20" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" />
         {/* Whiskers */}
-        <line x1="14" y1="16" x2="19" y2="17" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
-        <line x1="14" y1="18" x2="19" y2="18" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
-        <line x1="34" y1="16" x2="29" y2="17" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
-        <line x1="34" y1="18" x2="29" y2="18" stroke="currentColor" strokeWidth="1" opacity="0.6"/>
+        <line x1="14" y1="16" x2="19" y2="17" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+        <line x1="14" y1="18" x2="19" y2="18" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+        <line x1="34" y1="16" x2="29" y2="17" stroke="currentColor" strokeWidth="1" opacity="0.6" />
+        <line x1="34" y1="18" x2="29" y2="18" stroke="currentColor" strokeWidth="1" opacity="0.6" />
         {/* Curled tail */}
-        <path d="M40 26 Q42 20 38 18 Q36 20 38 22" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.8"/>
+        <path d="M40 26 Q42 20 38 18 Q36 20 38 22" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" opacity="0.8" />
       </svg>
     </motion.div>
-    
+
     {/* Sleep Z's outside the circle */}
     <motion.div
       className="absolute -top-2 -right-2 text-gray-600 font-bold text-sm"
@@ -120,9 +120,9 @@ const NotFoundPage: React.FC = () => {
           >
             4
           </motion.span>
-          
+
           <SleepingCat />
-          
+
           <motion.span
             className="text-9xl md:text-[12rem] font-bold text-teal-200 select-none"
             initial={{ opacity: 0, x: 50 }}
@@ -158,7 +158,7 @@ const NotFoundPage: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            Tap below to find out how your help can transform someone's life.
+            Tap below to find out how your social giving can transform someone's life through our community support platform.
           </motion.p>
         </motion.div>
 
