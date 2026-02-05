@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import SEOHead from '../components/SEO/SEOHead';
 
 /**
  * Champion Story Detail Page
@@ -16,6 +17,12 @@ const ChampionStoryDetail: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+      <SEOHead 
+        title="Champion Stories - Real Impact Stories | Community Support Platform"
+        description="Explore champion stories and real impact stories from our giving community. See how Cause Champions support social causes through our giving platform and create a circle of support. Give and help through our community support platform and discover causes to support."
+        keywords="champion stories, impact stories, success stories, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, communities stories, giving india"
+        canonicalUrl="https://www.thegivingcircle.in/champion-story"
+      />
       <div className="text-center max-w-2xl mx-auto p-8">
         <div className="text-6xl mb-6">🚧</div>
         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6">Feature Under Construction</h1>

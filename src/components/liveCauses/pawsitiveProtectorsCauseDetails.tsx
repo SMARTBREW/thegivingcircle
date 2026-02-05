@@ -265,8 +265,8 @@ const PawsitiveProtectorsCauseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead 
         title="Pawsitive Protectors - Animal Vaccination & Rabies Prevention | Donate Animal Welfare India"
-        description="Pawsitive Protectors provides animal welfare India through rabies prevention programs, stray dog vaccination, and street animal rescue. Where to donate for animal welfare India? Support our Zero Rabies Deaths by 2030 Mission. Donate to protect animals and communities across India."
-        keywords="Pawsitive Protectors, animal vaccination, rabies prevention, stray dog vaccination, street animal rescue, animal welfare India, animal care NGO, rabies prevention India, protect animals, animal shelter support, street animal rescue Mumbai, where to donate for animal welfare India, rabies prevention programs India, stray dog vaccination programs, animal rescue and care India, zero rabies deaths mission India, animal welfare programs India, protect street animals India, stray animal care India"
+        description="Pawsitive Protectors provides animal welfare through our giving platform and community support platform. Join our giving community to support social causes including rabies prevention and street animal rescue. Give and help protect animals through our support circle. Support social causes creating a circle of support for india care."
+        keywords="Pawsitive Protectors, animal vaccination, rabies prevention, animal welfare India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, india care, giving india"
         canonicalUrl="https://www.thegivingcircle.in/pawsitive-protectors-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"
       />

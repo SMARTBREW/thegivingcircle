@@ -33,10 +33,10 @@ const GivingPhilosophy = () => {
                 Every act of giving creates ripples of hope that reach farther than we can imagine. When we unite as a circle, our individual sparks of compassion join to become a powerful force for social impact and change.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">
-                The Giving Circle is India's trusted social impact platform where community partnerships create lasting change. We're not just about donations - we connect passionate Cause Champions with verified causes, turning kindness into measurable impact. Through our transparent giving platform, your generosity grows through connection, shared purpose, and community-driven social impact across India.
+                The Giving Circle is India's trusted social impact platform where community partnerships create lasting change. We're not just about donations - we connect passionate Cause Champions with verified causes, turning kindness into measurable impact. Through our transparent giving platform and community support platform, your generosity grows through connection, shared purpose, and community-driven social impact across India. Join our giving community to support social causes and create a circle of support that makes a real difference.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">
-                Join our giving circle and discover how to support social causes India while creating real impact stories that inspire others to give back to society.
+                Join our giving circle and discover how to support social causes India while creating real impact stories that inspire others to give back to society. Whether you're looking for causes to support, want to give through our platform, or seek community support for your initiatives, The Giving Circle connects you with the right opportunities. Our community giving platform makes it easy to support social causes, find community helpline resources, and engage with communities for communities initiatives across India.
               </p>
               <div className="pt-2 sm:pt-4 flex justify-center md:justify-start">
                 <motion.button

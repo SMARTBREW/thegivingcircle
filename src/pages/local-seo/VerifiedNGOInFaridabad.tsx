@@ -6,9 +6,9 @@ const VerifiedNGOInFaridabad: React.FC = () => {
     <LocationSEOBase
       location="Faridabad"
       locationSlug="verified-ngo-in-faridabad"
-      title="Verified NGOs in Faridabad | Trusted & Legitimate Organizations | The Giving Circle"
-      description="Find verified and legitimate NGOs in Faridabad. All organizations are thoroughly verified for transparency and accountability. Support trusted charity organizations in Faridabad through The Giving Circle platform."
-      keywords="verified NGOs in Faridabad, legitimate NGOs Faridabad, trusted NGOs Faridabad, verified charity Faridabad, legitimate charity Faridabad, verified organizations Faridabad, trusted charity Faridabad, verified NGO list Faridabad"
+      title="Verified NGOs in Faridabad | Trusted Charity Organizations | The Giving Circle"
+      description="Browse verified and authenticated NGOs in Faridabad through our community support platform. Join our giving community to support social causes through social giving and community support."
+      keywords="verified NGOs in Faridabad, authenticated NGOs Faridabad, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, supporting india, giving india"
       primaryKeyword="Verified NGOs in Faridabad"
       relatedLocations={[
         { name: 'Delhi', slug: 'verified-ngo-in-delhi' },

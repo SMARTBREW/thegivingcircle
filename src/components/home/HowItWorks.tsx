@@ -93,7 +93,7 @@ const AboutImpactGallery = () => {
                   The Giving Circle is India's trusted social impact platform, built to connect generous people who want to support genuine social causes and make a difference in India.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  Founded in 2022, our community giving platform brings Cause Champions together with verified causes and government-certified NGO partners driving real change across India. We make it simple to donate to social causes through our transparent giving platform, ensuring every contribution creates measurable impact.
+                  Founded in 2022, our community giving platform brings Cause Champions together with verified causes and government-certified NGO partners driving real change across India. We make it simple to donate to social causes through our transparent giving platform, ensuring every contribution creates measurable impact. As a leading giving platform in India, we facilitate social giving and community support initiatives that connect people with causes to support, creating a strong support community across the nation.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
                   As a legitimate charity platform, we partner only with verified NGO partners who meet government standards. Our transparent approach means all contributions go directly to these trusted partners—we never handle funds, ensuring complete accountability and social responsibility.

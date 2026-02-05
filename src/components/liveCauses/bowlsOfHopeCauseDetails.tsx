@@ -202,8 +202,8 @@ const BowlsOfHopeCauseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead 
         title="Bowls of Hope - Animal Feeding Programs | Feed Stray Animals India"
-        description="Bowls of Hope provides animal feeding programs and animal nutrition support India. How to feed stray animals India? Donate to support animal welfare and help feed street animals. Animal feeding programs Mumbai and Chennai providing nutritious meals to 2,000+ hungry animals daily. Support animal feeding initiatives."
-        keywords="Bowls of Hope, animal feeding programs, feed stray animals, animal nutrition, support animal welfare, animal welfare India, feed animals India, street animal rescue, animal shelter support, support stray animals, how to feed stray animals India, animal feeding programs Mumbai, support animal nutrition programs, help feed street animals, feed hungry animals India, animal nutrition support India, support animal feeding initiatives"
+        description="Bowls of Hope provides animal feeding programs through our giving platform and community support platform. Join our giving community to support social causes. Give and help feed street animals. Support animal welfare through social giving and community support creating a support circle for india community animals."
+        keywords="Bowls of Hope, animal feeding programs, support animal welfare, animal welfare India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, india community, supporting india, giving india"
         canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
       />

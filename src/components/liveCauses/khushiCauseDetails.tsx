@@ -217,8 +217,8 @@ const KhushiCauseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead 
         title="Wings of Hope - Menstrual Health Education | Support Girls Education India"
-        description="Wings of Hope tackles period poverty India through menstrual health education and women empowerment programs. Support girls education by breaking menstrual taboos and providing reusable sanitary products. Help girls stay in school through menstrual hygiene awareness India."
-        keywords="Wings of Hope, menstrual health education, period poverty, period poverty solutions India, girls education support, women health programs, women empowerment India, menstrual hygiene education, breaking menstrual taboos, reusable sanitary products, school attendance for girls, education for underprivileged, menstrual health programs for girls India, how to support girls education India, women health education programs, breaking period stigma India, menstrual hygiene awareness India, women empowerment through education"
+        description="Wings of Hope tackles period poverty India through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support. Support girls education by breaking menstrual taboos. Give and help girls stay in school through our circle of support."
+        keywords="Wings of Hope, menstrual health education, period poverty, girls education support, women empowerment India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, communities for communities, giving india"
         canonicalUrl="https://www.thegivingcircle.in/khushi-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
       />

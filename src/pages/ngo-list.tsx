@@ -5,6 +5,7 @@ import { Search, Filter, CheckCircle, MapPin, Users, Calendar, ChevronDown, Shie
 import { Card, CardContent } from '../components/ui/Card';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
+import SEOHead from '../components/SEO/SEOHead';
 // Removed unused imports
 
 interface NGO {
@@ -299,6 +300,12 @@ export const NGOList: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
+      <SEOHead 
+        title="NGO Directory - Browse Verified NGO Partners | Community Support Platform"
+        description="Browse our verified NGO directory through our giving platform and community support platform. Join our giving community to support social causes and connect with verified NGO partners. Give and help through social giving and community support. Explore our support circle of verified partners creating a circle of support for communities across India."
+        keywords="NGO directory, verified NGOs, NGO partners, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, verified partners, supporting india, giving india"
+        canonicalUrl="https://www.thegivingcircle.in/ngo-list"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
         {/* Header */}
         <motion.div

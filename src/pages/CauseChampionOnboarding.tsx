@@ -8,6 +8,7 @@ import 'react-phone-number-input/style.css';
 import Select from 'react-select';
 import countries from 'world-countries';
 import SEOHead from '../components/SEO/SEOHead';
+import { trackFormSubmission, trackConversion } from '../utils/analytics';
 
 interface FormData {
   fullName: string;
@@ -39,18 +40,18 @@ const CauseChampionOnboarding: React.FC = () => {
 
   // Set page title and meta tags for SEO
   useEffect(() => {
-    document.title = 'Become a Cause Champion - Start Your Giving Circle | Join Cause Champions India';
+    document.title = 'Become a Cause Champion - Start Your Giving Circle | Community Support Platform';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Become a Cause Champion and start your giving circle today. Join Cause Champions India to support social causes, create impact campaigns, and make a difference. Learn how to become a cause champion, start a social cause, fundraise for social impact, and create your impact campaign. Guide to becoming a cause champion in India.');
+      metaDescription.setAttribute('content', 'Become a Cause Champion through our giving platform and community support platform. Join our giving community to support social causes and create your own circle of support. Give and help through social giving and community support. Start your giving journey and support social causes through our communities support platform.');
     }
     
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Become a Cause Champion, Cause Champion Onboarding, Start Your Cause, Create Impact Campaign, Join Cause Champions, Champion Registration, Start Giving Circle, Start a cause campaign, Fundraise for social impact, Create impact stories, Cause champion onboarding, Community giving platform, How to become a cause champion in India, How to start a social cause, Guide to becoming a cause champion, Create your impact campaign, Start your giving journey, Volunteer for social causes, Make a difference in India, Start your impact journey, Become a change maker India');
+      metaKeywords.setAttribute('content', 'Become a Cause Champion, Cause Champion Onboarding, Start Giving Circle, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, communities support, supporting india, giving india');
     }
   }, []);
 
@@ -186,6 +187,14 @@ const CauseChampionOnboarding: React.FC = () => {
       });
 
       if (result.success) {
+        // Track form submission conversion
+        trackFormSubmission('cause_champion', {
+          country: formData.country,
+          city: formData.city,
+          selected_cause: formData.selectedCause,
+        });
+        trackConversion('cause_champion_registration', 0);
+        
         setFormData(prev => ({ ...prev, isSubmitted: true }));
         setShowValidation(false);
         // Scroll form container into view smoothly without going to bottom

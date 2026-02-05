@@ -24,7 +24,7 @@ export default function SimplifiedAboutPage() {
             About The Giving Circle
           </h1>
           <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 leading-relaxed opacity-90 max-w-2xl mx-auto break-words">
-            India's leading social impact platform bridging community giving with verified causes - where Cause Champions create community-driven social impact
+            India's leading giving platform and community support platform bridging community giving with verified causes - where Cause Champions create a circle of support for social impact across India
           </p>
         </motion.div>
       </section>
@@ -42,7 +42,7 @@ export default function SimplifiedAboutPage() {
               Our Story - What is The Giving Circle
             </h2>
             <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed break-words">
-              From a simple question grew a revolutionary social impact platform India that is reshaping community giving and social change through giving. Discover our giving philosophy and why community giving matters.
+              From a simple question grew a revolutionary giving platform that is reshaping community giving and social giving across India. Discover our giving philosophy, why community giving matters, and how our community support platform connects communities for communities to support social causes together.
             </p>
           </motion.div>
 
@@ -55,19 +55,19 @@ export default function SimplifiedAboutPage() {
             >
               <div className="space-y-3 sm:space-y-4 md:space-y-6 text-gray-700">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  <strong>Our giving philosophy</strong> began with a simple vision: to build a community of generous, warm-hearted Cause Champions who want to support genuine causes. <strong>Why community giving matters</strong> - because together, we create lasting social change through giving.
+                  <strong>Our giving philosophy</strong> began with a simple vision: to build a giving community of generous, warm-hearted Cause Champions who want to support social causes and create meaningful impact. <strong>Why community giving matters</strong> - because when we give through a support circle, we create lasting social change. Our giving support system enables people to give and help communities across India, providing community support and giving to community initiatives that truly matter.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  Founded in 2022, <strong>The Giving Circle India</strong> is a social impact platform that brings this vision to life by connecting individuals with verified NGOs driving meaningful change on the ground. Through our Cause Champions platform, we make it simple for supporters to engage with and strengthen these causes, fostering community-driven social impact.
+                  Founded in 2022, <strong>The Giving Circle India</strong> is a giving platform and community support platform that brings this vision to life by connecting individuals with verified NGOs and social causes to support. Through our Cause Champions platform, we make it simple for supporters to give through our platform, engage with causes to support, and strengthen communities support initiatives across India. We are supporting india by providing circle aid and community helpline resources for verified causes.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  <strong>How does giving circle work?</strong> Our role is simple yet vital: we act as a bridge, linking Cause Champions with causes close to their hearts. We partner only with government-certified NGOs, ensuring every organization meets official standards. For complete transparency, contributions go directly to these NGOs and never pass through us - this is the foundation of our community empowerment platform.
+                  <strong>How does giving circle work?</strong> Our role is simple yet vital: we act as a support community and bridge, linking Cause Champions with community causes close to their hearts. We partner only with government-certified NGOs, ensuring every organization meets official standards. For complete transparency, contributions go directly to these NGOs and never pass through us - this is the foundation of our community empowerment platform and giving support system. Through our giving india initiative, we facilitate support from community to community.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  <strong>What is The Giving Circle?</strong> It's more than a donation platform - it's a community giving movement. What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join activities whenever possible. These experiences foster genuine relationships between donors and communities, creating authentic community impact.
+                  <strong>What is The Giving Circle?</strong> It's more than a donation platform - it's a social giving movement and circle of support connecting the india community. What sets us apart is the connection that goes beyond donations. Supporters are encouraged to visit project sites, meet beneficiaries, and join community offering activities whenever possible. These experiences foster genuine relationships between donors and communities, creating authentic support of community and india care initiatives. We believe in communities for communities - where giving community members support social causes together.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  Today, thousands trust our social impact platform India to connect their generosity with certified organizations. They know their contributions will go directly where needed through our transparent community giving approach—and that they'll have the chance to witness the social change through giving in person.
+                  Today, thousands trust our giving platform to connect their generosity with certified organizations and supported causes. They know their contributions will go directly where needed through our transparent social giving approach—and that they'll have the chance to witness the social change in person. Whether you're looking for causes to support or want to join our support circle, The Giving Circle provides giving support and community support to make a real difference in supporting india's communities.
                 </p>
               </div>
             </motion.div>

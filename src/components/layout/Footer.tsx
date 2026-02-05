@@ -28,11 +28,11 @@ export const Footer: React.FC = () => {
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                A trusted community platform connecting verified NGO partners with passionate change makers and donors across India & abroad. Building transparency and trust in philanthropy through verified partnerships and measurable impact.
+                A trusted giving platform and community support platform connecting verified NGO partners with our giving community across India & abroad. Building transparency and trust through social giving, community support, and giving to community initiatives. Join our support circle to support social causes and create a circle of support for the india community. We provide giving support for causes to support through communities for communities.
                 </p>
                 <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-gray-600 break-words">
                   <Network className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />
-                  <span>Community-Driven Platform</span>
+                  <span>Community Support Platform for Giving India</span>
                 </div>
                 <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-gray-600 break-words">
                   <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />

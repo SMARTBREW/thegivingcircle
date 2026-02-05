@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import SEOHead from '../components/SEO/SEOHead';
 import { 
   ArrowLeft, CheckCircle, MapPin, Users, Calendar, Star, 
   Share2, Download, ExternalLink, Badge, TrendingUp, 
@@ -552,6 +553,12 @@ const ImpactStoriesDetails: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 mt-[150px]">
+      <SEOHead 
+        title="Wings of Hope Impact Story - Women Empowerment Success | Community Support Platform"
+        description="Explore the Wings of Hope impact story through our giving platform and community support platform. See how our giving community supports social causes through social giving and community support. Give and help create real impact through our circle of support for women empowerment in India."
+        keywords="Wings of Hope, impact story, success story, women empowerment, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, supporting india, giving india"
+        canonicalUrl="https://www.thegivingcircle.in/impact-stories/wings-of-hope"
+      />
       {/* Navigation */}
       <div className="bg-white shadow-sm sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

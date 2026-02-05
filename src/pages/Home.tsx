@@ -11,9 +11,9 @@ export const Home: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="The Giving Circle - Community Giving Platform | Support Social Causes India"
+        title="The Giving Circle - Community Giving Platform | Support Social Causes India | Giving India"
         description="The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India. Start your giving circle today!"
-        keywords="The Giving Circle, Cause Champions, social impact platform India, community giving platform, support social causes India, donate to social causes, join giving circle, impact stories India, verified charity platform India, transparent giving platform, trusted charity platform"
+        keywords="giving circle, giving community, giving platform, giving india, giving support, giving to community, community giving, community support, community support platform, community causes, community helpline, support circle, support community, support from community, support of community, support social causes, social causes to support, social giving, supported causes, supporting india, india care, india community, corporate giving platforms, give and help, give through, causes to support, circle aid, circle of support, communities for communities, communities support"
         canonicalUrl="https://www.thegivingcircle.in/"
         ogImage="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
       />

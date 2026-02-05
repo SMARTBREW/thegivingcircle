@@ -25,8 +25,8 @@ const SEOHead: React.FC<SEOHeadProps> = ({
   const location = useLocation();
   
   // Default values
-  const defaultTitle = "The Giving Circle - Community Giving Platform | Support Social Causes India";
-  const defaultDescription = "The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India.";
+  const defaultTitle = "The Giving Circle - Community Giving Platform | Support Social Causes India | Giving India";
+  const defaultDescription = "The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India. Community support platform for giving circle, giving community, and social giving initiatives.";
   const defaultCanonical = `https://www.thegivingcircle.in${location.pathname}`;
 
   useEffect(() => {

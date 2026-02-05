@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
+import { trackDonationClick } from '../../utils/analytics';
 
 
 const LiveCausesPage = () => {
@@ -231,8 +232,10 @@ const LiveCausesPage = () => {
   };
 
   // Handle donate button click (prevent card click when clicking donate)
-  const handleDonateClick = (e: React.MouseEvent, causeId: number) => {
+  const handleDonateClick = (e: React.MouseEvent, causeId: number, causeTitle: string) => {
     e.stopPropagation();
+    // Track donation click conversion
+    trackDonationClick(causeTitle, causeId.toString());
     // Handle donation logic here
     console.log('Donate clicked for cause:', causeId);
   };
@@ -486,7 +489,7 @@ const LiveCausesPage = () => {
                       <button 
                         onClick={(e) => {
                           e.stopPropagation();
-                          handleDonateClick(e, cause.id);
+                          handleDonateClick(e, cause.id, cause.title);
                         }}
                         className="w-full bg-green-700 hover:bg-green-800 text-white py-2 sm:py-3 px-3 sm:px-4 rounded-lg text-xs sm:text-sm font-medium transition-all"
                         aria-label={`Donate now to support ${cause.title} fundraising campaign`}

@@ -7,8 +7,8 @@ const TrustedNGOInGurugram: React.FC = () => {
       location="Gurugram"
       locationSlug="trusted-ngo-in-gurugram"
       title="Trusted NGOs in Gurugram | Reliable Charity Organizations | The Giving Circle"
-      description="Connect with trusted and reliable NGOs in Gurugram. All organizations are verified for credibility and transparency. Support dependable charity organizations in Gurugram making real social impact."
-      keywords="trusted NGOs in Gurugram, reliable NGOs Gurugram, dependable NGOs Gurugram, trusted charity Gurugram, reliable charity Gurugram, credible NGOs Gurugram, trustworthy NGOs Gurugram, trusted NGO list Gurugram"
+      description="Connect with trusted and reliable NGOs in Gurugram through our community support platform. Join our giving community to support social causes through social giving and community support. Give and help create impact."
+      keywords="trusted NGOs in Gurugram, reliable NGOs Gurugram, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, circle of support, supporting india, giving india"
       primaryKeyword="Trusted NGOs in Gurugram"
       relatedLocations={[
         { name: 'Delhi', slug: 'trusted-ngo-in-delhi' },

@@ -210,8 +210,8 @@ const FloodReliefCauseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead 
         title="Flood Relief Uttarakhand - Disaster Relief India | Emergency Response"
-        description="How to help flood victims in Uttarakhand? Support disaster relief India through emergency response, flood relief operations, medical aid, and rehabilitation. Donate to verified causes providing shelter, food, and disaster relief to 2,000+ flood-affected families in Uttarakhand. Emergency response India for flood victims."
-        keywords="Flood Relief Uttarakhand, disaster relief India, emergency response India, flood relief operations, disaster rehabilitation, emergency shelter, medical aid, how to help flood victims in Uttarakhand, flood-affected families, disaster relief programs, emergency response operations, infrastructure rebuilding, flood victims support, disaster relief Uttarakhand"
+        description="Support disaster relief India through our giving platform and community support platform. Join our giving community to support social causes through emergency response and flood relief. Give and help flood victims through social giving and community support. Create a circle of support for disaster rehabilitation and supporting india's communities."
+        keywords="Flood Relief Uttarakhand, disaster relief India, emergency response India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, communities support, supporting india, giving india"
         canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
       />

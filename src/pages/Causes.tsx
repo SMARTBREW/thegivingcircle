@@ -6,9 +6,9 @@ export const Causes: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead 
-        title="Browse Live Causes - Active Campaigns & Fundraising | Donate to Social Causes India"
-        description="Browse live causes and active campaigns across India. Support urgent social causes including animal welfare, disaster relief, women empowerment, and education. Transparent fundraising for verified causes. Donate now to create real impact."
-        keywords="live causes India, active campaigns, browse causes, urgent causes, donate to social causes, fundraising campaigns India, support verified causes, transparent charity India, donate now India, emergency causes, social impact campaigns"
+        title="Browse Live Causes - Active Campaigns & Fundraising | Community Support Platform"
+        description="Browse live causes and active campaigns through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support. Find causes to support including animal welfare, disaster relief, women empowerment. Give and help create real impact through our circle of support."
+        keywords="live causes India, active campaigns, browse causes, causes to support, support social causes, giving platform, community support platform, giving community, social giving, community support, give and help, circle of support, support circle, communities support, giving india, supporting india"
         canonicalUrl="https://www.thegivingcircle.in/causes"
       />
       <LiveCausesPage />

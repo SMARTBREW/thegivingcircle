@@ -21,9 +21,9 @@ const SEOHubIndex: React.FC = () => {
   return (
     <div className="min-h-screen bg-white">
       <SEOHead
-        title="NGO Directory - Find Best NGOs in Delhi, Gurugram, Noida, Faridabad | The Giving Circle"
-        description="Comprehensive directory of verified NGOs in Delhi NCR region. Find best, top-rated, trusted, and leading NGOs in Delhi, Gurugram, Noida, and Faridabad. Support verified charity organizations through The Giving Circle platform."
-        keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations"
+        title="NGO Directory - Find Best NGOs in Delhi, Gurugram, Noida, Faridabad | Community Support Platform"
+        description="Comprehensive directory of verified NGOs in Delhi NCR region. Find best, top-rated, trusted, and leading NGOs in Delhi, Gurugram, Noida, and Faridabad. Support verified charity organizations through India's leading community giving platform. Connect with trusted NGOs and support social causes."
+        keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations, community support platform, support community, giving platform, giving india, community giving, support social causes, india community, india care, supporting india, social giving, community causes, community helpline"
         canonicalUrl="https://www.thegivingcircle.in/ngos"
       />
 

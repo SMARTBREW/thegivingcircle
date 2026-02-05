@@ -8,6 +8,7 @@ import 'react-phone-number-input/style.css';
 import Select from 'react-select';
 import countries from 'world-countries';
 import SEOHead from '../components/SEO/SEOHead';
+import { trackFormSubmission, trackConversion } from '../utils/analytics';
 
 interface NGOFormData {
   organizationName: string;
@@ -60,18 +61,18 @@ export const NGOPartner: React.FC = () => {
 
   // Set page title and meta tags for SEO
   useEffect(() => {
-    document.title = 'Become Partner - Join Verified Partner Network India | NGO Partnership';
+    document.title = 'Become Partner - Join Verified Partner Network | Community Support Platform';
     
     // Update meta description
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', 'Become a partner with The Giving Circle - Join our verified partner platform India. Partner registration for NGOs to collaborate with verified partners and connect with Cause Champions. Learn how to become partner India, explore partnership benefits, and join our trusted partner network. Partner onboarding process for verified partners India.');
+      metaDescription.setAttribute('content', 'Become a partner with our giving platform and community support platform. Join our giving community to support social causes through partnership. Partner registration for NGOs to collaborate through social giving and community support. Give and help through our support circle and create a circle of support for communities in India.');
     }
     
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'Become Partner, Partnership, Partner with Giving Circle, Partner Registration, Verified Partner Platform, Collaboration, Join as Partner, Partner Onboarding, Verified Partners India, Trusted partners, Partner transparency India, Partner verification platform, How to become partner India, Partner with social impact platform, Partner registration process, Verified partner platform India, Join verified partner network, Partnership benefits, Collaborate with verified partners, Partner onboarding process, Join partner network India');
+      metaKeywords.setAttribute('content', 'Become Partner, Partnership, Partner Registration, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, communities support, supporting india, giving india');
     }
   }, []);
 
@@ -105,6 +106,13 @@ export const NGOPartner: React.FC = () => {
       });
 
       if (result.success) {
+        // Track form submission conversion
+        trackFormSubmission('ngo_partner', {
+          country: formData.country,
+          organization_name: formData.organizationName,
+        });
+        trackConversion('ngo_partner_registration', 0);
+        
         setSubmittedEmail(formData.email);
         setIsSubmitted(true);
         // Reset form

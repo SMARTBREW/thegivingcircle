@@ -210,8 +210,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead 
         title="Flood Animal Rescue - Emergency Animal Rescue | Disaster Relief India"
-        description="Flood Animal Rescue provides emergency animal rescue and disaster relief India. How to help flood victims in Uttarakhand? Support flood animal rescue operations, disaster rehabilitation, and emergency response India. Donate to rescue animals from floods and provide emergency medical care."
-        keywords="Flood Animal Rescue, emergency animal rescue, disaster animal relief, rescue animals from floods, animal emergency response, disaster relief India, flood relief Uttarakhand, emergency response India, flood animal rescue, disaster rehabilitation, flood rescue operations, how to help flood victims in Uttarakhand, emergency animal rescue India, flood animal rescue operations, disaster animal relief programs"
+        description="Flood Animal Rescue provides emergency animal rescue through our giving platform and community support platform. Join our giving community to support social causes through disaster relief. Give and help rescue animals through social giving and community support. Create a circle of support for disaster animal relief and india care initiatives."
+        keywords="Flood Animal Rescue, emergency animal rescue, disaster relief India, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, india care, supporting india, giving india"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
       />

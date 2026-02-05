@@ -7,8 +7,8 @@ const BestNGOInNoida: React.FC = () => {
       location="Noida"
       locationSlug="best-ngo-in-noida"
       title="Best NGO in Noida | Top Verified NGOs | The Giving Circle"
-      description="Discover the best NGOs in Noida making real social impact. Verified, trusted, and transparent charity organizations in Noida. Support education, healthcare, animal welfare, and more through The Giving Circle platform."
-      keywords="best NGO in Noida, top NGOs Noida, verified NGOs Noida, trusted charity Noida, NGO directory Noida, social impact Noida, charity organizations Noida, donate Noida, NGO list Noida, best charity Noida"
+      description="Discover the best NGOs in Noida making real social impact through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support."
+      keywords="best NGO in Noida, top NGOs Noida, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, india community, giving india"
       primaryKeyword="Best NGO in Noida"
       relatedLocations={[
         { name: 'Delhi', slug: 'best-ngo-in-delhi' },
