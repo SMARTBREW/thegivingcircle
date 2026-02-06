@@ -37,10 +37,30 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.thegivingcircle.in/" />
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Preconnect to Cloudinary for faster image loading -->
+    <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+    
+    <!-- System fonts only - zero CLS, instant load -->
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: Georgia, "Times New Roman", Times, serif;
+        font-weight: 700;
+      }
+      /* Prevent footer CLS - hide until loaded */
+      footer {
+        min-height: 450px;
+        will-change: contents;
+      }
+      /* Disable all animations for performance */
+      *, *::before, *::after {
+        animation-duration: 0s !important;
+        animation-delay: 0s !important;
+        transition-duration: 0s !important;
+      }
+    </style>
     
     <!-- Cloudinary performance hints -->
     <link rel="dns-prefetch" href="https://res.cloudinary.com">
@@ -57,14 +77,24 @@
     
     <!-- LCP image preload is handled dynamically by Hero component -->
     
-    <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNMJNDF71S"></script>
+    <!-- Google Analytics 4 - DISABLED FOR PERFORMANCE TESTING -->
+    <!-- Uncomment to re-enable analytics:
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-ZNMJNDF71S');
+      window.addEventListener('load', function() {
+        setTimeout(function() {
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZNMJNDF71S';
+          document.head.appendChild(script);
+          
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-ZNMJNDF71S');
+        }, 1000);
+      });
     </script>
+    -->
     
     <!-- Structured Data - Organization Schema -->
     <script type="application/ld+json">

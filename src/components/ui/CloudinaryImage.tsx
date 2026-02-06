@@ -49,7 +49,7 @@ function buildSrcSet(url: string, targetWidths: number[], height?: number): stri
       (w && height) ? 'c_fill' : 'c_scale',
       'dpr_auto',
       'f_auto',
-      'q_auto',
+      'q_60', // Better compression
     ]
       .filter(Boolean)
       .join(',');
@@ -69,13 +69,16 @@ export function CloudinaryImage({
   priority = false,
   style,
 }: CloudinaryImageProps) {
+  // Limit max width to 1920px to prevent loading huge original images
+  const maxWidth = width && width > 1920 ? 1920 : width;
+  
   const commonTransforms = [
-    width ? `w_${width}` : undefined,
+    maxWidth ? `w_${maxWidth}` : 'w_1920', // Always limit width
     height ? `h_${height}` : undefined,
-    (width && height) ? 'c_fill' : 'c_scale',
+    (maxWidth && height) ? 'c_fill' : 'c_scale',
     'dpr_auto',
     'f_auto',
-    'q_auto',
+    'q_60', // Better compression than q_auto
   ]
     .filter(Boolean)
     .join(',');
@@ -84,7 +87,7 @@ export function CloudinaryImage({
     ? buildTransformedUrl(src, commonTransforms)
     : src;
 
-  const srcSet = buildSrcSet(src, [320, 480, 640, 768, 1024, 1280, 1920], height);
+  const srcSet = buildSrcSet(src, [320, 480, 640, 768, 1024, 1280, 1600], height); // Removed 1920, max 1600
   const defaultSizes = sizes || '(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw';
 
   return (

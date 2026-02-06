@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 const AboutImpactGallery = () => {
   // 4 images for the carousel
@@ -163,12 +164,13 @@ const ImageCarousel = ({ images, currentIndex, onIndexChange }: ImageCarouselPro
           className="absolute inset-0 w-full h-full"
         >
           {!imageErrors[images[currentIndex].id] ? (
-            <img
+            <CloudinaryImage
               src={images[currentIndex].src}
               alt={images[currentIndex].title}
               className="w-full h-full object-cover"
-              onError={() => handleImageError(images[currentIndex].id)}
-              loading="eager"
+              width={1600}
+              height={450}
+              priority={currentIndex === 0}
             />
           ) : (
             <div className="w-full h-full bg-gradient-to-br from-green-100 via-green-50 to-blue-100 flex items-center justify-center">

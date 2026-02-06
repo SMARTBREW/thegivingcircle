@@ -4,9 +4,23 @@ import { Link } from 'react-router-dom';
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
+  const [isVisible, setIsVisible] = React.useState(false);
+
+  React.useEffect(() => {
+    // Show footer after component mounts to prevent CLS
+    const timer = setTimeout(() => setIsVisible(true), 50);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <footer className="bg-white border-t border-gray-200">
+    <footer 
+      className="bg-white border-t border-gray-200" 
+      style={{ 
+        minHeight: '450px',
+        visibility: isVisible ? 'visible' : 'hidden',
+        contain: 'layout style paint'
+      }}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
      
@@ -14,21 +28,24 @@ export const Footer: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
             
             <div className="md:col-span-1 space-y-4 sm:space-y-5 md:space-y-6">
-              <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="flex items-center space-x-2 sm:space-x-3" style={{ height: '56px' }}>
                 <Link to="/">
-                  <img 
-                    src="/Giving_Circle..-removebg-preview.png" 
-                    alt="The Giving Circle" 
-                    className="h-8 sm:h-9 md:h-10 w-auto"
-                    width="227"
-                    height="56"
-                    loading="lazy"
-                  />
+                  <picture>
+                    <source srcSet="/Giving_Circle..-removebg-preview.webp" type="image/webp" width="227" height="56" />
+                    <img 
+                      src="/Giving_Circle..-removebg-preview.png" 
+                      alt="The Giving Circle" 
+                      width="227"
+                      height="56"
+                      loading="lazy"
+                      style={{ width: '227px', height: '56px', aspectRatio: '227/56', objectFit: 'contain' }}
+                    />
+                  </picture>
                 </Link>
               </div>
               <div className="space-y-3 sm:space-y-4">
-                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                A trusted giving platform and community support platform connecting verified NGO partners with our giving community across India & abroad. Building transparency and trust through social giving, community support, and giving to community initiatives. Join our support circle to support social causes and create a circle of support for the india community. We provide giving support for causes to support through communities for communities.
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words" style={{ minHeight: '48px', lineHeight: '1.5' }}>
+                Trusted giving platform connecting verified NGOs.
                 </p>
                 <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-gray-600 break-words">
                   <Network className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />

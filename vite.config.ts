@@ -38,14 +38,26 @@ export default defineConfig({
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info'],
+      },
+    },
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom'],
-          router: ['react-router-dom']
+          // Keep React and React-DOM together (critical!)
+          'vendor': ['react', 'react-dom', 'react-router-dom'],
+          // Separate heavy libraries
+          'framer-motion': ['framer-motion'],
+          'lenis': ['lenis'],
         }
       }
-    }
+    },
+    chunkSizeWarningLimit: 500,
   },
   optimizeDeps: {
     exclude: ['lucide-react'],

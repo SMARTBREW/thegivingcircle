@@ -1,259 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Smooth scrolling behavior */
+/* SYSTEM FONTS ONLY - Maximum performance, zero CLS */
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Lenis smooth scroll integration */
-html.lenis {
-  height: auto;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-/* Enhanced scroll animations */
-@media (min-width: 769px) {
-  .scroll-animate {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-  
-  .scroll-animate.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-:root {
-  --primary-50: #eff6ff;
-  --primary-100: #dbeafe;
-  --primary-200: #bfdbfe;
-  --primary-300: #93c5fd;
-  --primary-400: #60a5fa;
-  --primary-500: #1E40AF;
-  --primary-600: #1a369c;
-  --primary-700: #162d89;
-  --primary-800: #132476;
-  --primary-900: #101b63;
-  --primary-950: #0a1239;
-  
-  --accent-50: #fff7ed;
-  --accent-100: #ffedd5;
-  --accent-200: #fed7aa;
-  --accent-300: #fdba74;
-  --accent-400: #fb923c;
-  --accent-500: #EA580C;
-  --accent-600: #d24e0b;
-  --accent-700: #ba4409;
-  --accent-800: #a13908;
-  --accent-900: #882e06;
-  --accent-950: #471805;
-  
-  --neutral: #F8FAFC;
-  --text: #1F2937;
-  --white: #FFFFFF;
-}
-
-@layer base {
-  html {
-    font-family: 'Inter', system-ui, sans-serif;
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply text-text bg-white;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display;
-  }
-}
-
-@layer components {
-  .section-padding {
-    @apply py-16 md:py-24;
-  }
-  
-  .container-padding {
-    @apply px-4 sm:px-6 lg:px-8;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 to-accent-500 bg-clip-text text-transparent;
-  }
-}
-
-@layer utilities {
-  .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-  }
-  
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none; /* Chrome, Safari and Opera */
-  }
-}
-
-/* Hide global scrollbar */
-html, body {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none;    /* Firefox */
-}
-html::-webkit-scrollbar,
-body::-webkit-scrollbar {
-  display: none;            /* Chrome, Safari and Opera */
-}
-
-/* Animation classes */
-.animate-on-scroll {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-}
-
-.animate-on-scroll.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Marquee animation */
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-33.333%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 25s linear infinite;
-}
-
-.animate-marquee:hover {
-  animation-play-state: paused;
-}
-
-/* PhoneInput styling */
-.PhoneInput {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  border: 1px solid #d1d5db;
-  border-radius: 0.5rem;
-  background: white;
-  transition: all 0.2s;
-}
-
-.PhoneInput:focus-within {
-  border-color: #15803d;
-  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1);
-}
-
-/* PhoneInput Country Section - Flag and Country Code */
-.PhoneInputCountry {
-  padding: 0.5rem 0.75rem;
-  display: flex;
-  align-items: center;
-  border-right: 1px solid #e5e7eb;
-  flex-shrink: 0;
-  gap: 0.5rem;
-}
-
-.PhoneInputCountryIcon {
-  width: 1.5rem;
-  height: 1.5rem;
-  border-radius: 2px;
-  flex-shrink: 0;
-}
-
-.PhoneInputCountrySelect {
-  background: transparent;
-  border: none;
-  padding: 0;
-  font-size: 0.875rem;
-  cursor: pointer;
-  min-width: fit-content;
-  outline: none;
-  flex-shrink: 0;
-}
-
-.PhoneInputCountrySelect:focus {
-  outline: none;
-}
-
-.PhoneInputCountrySelectArrow {
-  opacity: 0.7;
-  margin-left: 0.25rem;
-  display: inline-block;
-}
-
-.PhoneInputCountryIcon--border {
-  box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
-}
-
-/* Phone Number Input - Prevent country code editing */
-.PhoneInputInput {
-  flex: 1;
-  padding: 0.75rem 1rem !important;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-  background: transparent;
-}
-
-.PhoneInputInput:focus {
-  outline: none;
-}
-
-/* Ensure country calling code stays in place */
-.PhoneInput--focus .PhoneInputCountry {
-  background-color: transparent;
-}
-
-.PhoneInputInput::placeholder {
-  color: #9ca3af;
-}
-
-/* React Select styling */
-.react-select-container {
-  font-size: 1rem;
-}
-
-.react-select__control {
-  border: 1px solid #d1d5db !important;
-  border-radius: 0.5rem !important;
-  padding: 0.25rem !important;
-  min-height: 48px !important;
-}
-
-.react-select__control:hover {
-  border-color: #d1d5db !important;
-}
-
-.react-select__control--is-focused {
-  border-color: #15803d !important;
-  box-shadow: 0 0 0 2px rgba(21, 128, 61, 0.1) !important;
-}
-
-.react-select__option--is-selected {
-  background-color: #15803d !important;
-  color: white !important;
-}
-
-.react-select__option--is-focused:not(.react-select__option--is-selected) {
-  background-color: #dcfce7 !important;
-  color: #374151 !important;
-}
+/* System fonts ensure zero layout shift */

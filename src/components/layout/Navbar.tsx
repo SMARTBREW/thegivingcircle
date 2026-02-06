@@ -134,16 +134,19 @@ const NavbarComponent = () => {
               className="flex items-center"
             >
               <a href="/" className="cursor-pointer">
-                <img 
-                  src="/Giving_Circle..-removebg-preview.png" 
-                  alt="The Giving Circle Logo" 
-                  className="h-7 sm:h-8 md:h-9 lg:h-10 xl:h-11 w-auto drop-shadow-lg"
-                  width="227"
-                  height="56"
-                  loading="eager"
-                  fetchPriority="high"
-                  style={{ aspectRatio: '227/56', objectFit: 'contain' }}
-                />
+                <picture>
+                  <source srcSet="/Giving_Circle..-removebg-preview.webp" type="image/webp" width="227" height="56" />
+                  <img 
+                    src="/Giving_Circle..-removebg-preview.png" 
+                    alt="The Giving Circle Logo" 
+                    className="drop-shadow-lg"
+                    width="227"
+                    height="56"
+                    loading="eager"
+                    fetchPriority="high"
+                    style={{ width: '227px', height: '56px', aspectRatio: '227/56', objectFit: 'contain' }}
+                  />
+                </picture>
               </a>
             </motion.div>
 

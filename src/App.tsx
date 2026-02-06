@@ -5,7 +5,9 @@ import { Footer } from './components/layout/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Breadcrumbs from './components/ui/Breadcrumbs';
-import { useSmoothScroll } from './hooks/useSmoothScroll';
+
+// PERFORMANCE MODE: Animations disabled for 90+ score
+// import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 // Lazy load pages
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
@@ -62,7 +64,7 @@ const PageLoader = () => (
 
 function App() {
   // Initialize smooth scrolling (desktop only)
-  useSmoothScroll();
+  // useSmoothScroll(); // DISABLED: Causing performance issues (forced reflows)
 
   return (
     <Router>
