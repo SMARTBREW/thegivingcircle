@@ -10,7 +10,9 @@ import Breadcrumbs from './components/ui/Breadcrumbs';
 // import { useSmoothScroll } from './hooks/useSmoothScroll';
 
 // Lazy load pages
-const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
+import { Home } from './pages/Home';
+// Lazy load pages
+// const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const CauseChampionOnboarding = lazy(() => import('./pages/CauseChampionOnboarding'));
 const ImpactStories = lazy(() => import('./pages/ImpactStories'));
 const ImpactStoriesDetails = lazy(() => import('./pages/ImpactStoriesDetails'));

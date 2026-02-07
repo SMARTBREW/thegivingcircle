@@ -169,53 +169,26 @@ const FundraisingHero = () => {
 
 
   useEffect(() => {
-    const nextIndex = (currentIndex + 1) % FUNDRAISING_DATA.length;
-    const nextCampaign = FUNDRAISING_DATA[nextIndex];
-    let prefetchLink: HTMLLinkElement | null = null;
-
-    if (nextCampaign) {
-      const nextMobileUrl = getOptimizedImageUrl(nextCampaign.image, '800', '60');
-      const nextDesktopUrl = getOptimizedImageUrl(nextCampaign.image, '1600', '60');
-      const nextUrl = window.innerWidth < 640 ? nextMobileUrl : nextDesktopUrl;
-      prefetchLink = document.createElement('link');
-      prefetchLink.rel = 'prefetch';
-      prefetchLink.as = 'image';
-      prefetchLink.href = nextUrl;
-      document.head.appendChild(prefetchLink);
-    }
-
-    return () => {
-      if (prefetchLink && document.head.contains(prefetchLink)) {
-        document.head.removeChild(prefetchLink);
-      }
-    };
+    // Prefetch logic removed to prioritize LCP bandwidth
   }, [currentIndex, mobileImageUrl, desktopImageUrl]);
 
   return (
     <section className="relative h-[75vh] sm:min-h-screen overflow-hidden" aria-label="Hero">
       <div className="absolute inset-0 transition-all duration-500">
-        <img
-          src={mobileImageUrl}
-          alt={currentCampaign.title}
-          className="sm:hidden absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{
-            opacity: isTransitioning ? 0 : 1,
-            willChange: "opacity",
-          }}
-          fetchPriority="high"
-          loading="eager"
-        />
-        <img
-          src={desktopImageUrl}
-          alt={currentCampaign.title}
-          className="hidden sm:block absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
-          style={{
-            opacity: isTransitioning ? 0 : 1,
-            willChange: "opacity",
-          }}
-          fetchPriority="high"
-          loading="eager"
-        />
+        <picture>
+          <source media="(min-width: 640px)" srcSet={desktopImageUrl} />
+          <img
+            src={mobileImageUrl}
+            alt={currentCampaign.title}
+            className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+            style={{
+              opacity: isTransitioning ? 0 : 1,
+              willChange: "opacity",
+            }}
+            fetchPriority="high"
+            loading="eager"
+          />
+        </picture>
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-black/90 via-black/30 to-transparent" />
         <div className="hidden sm:block absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
       </div>

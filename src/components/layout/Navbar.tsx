@@ -12,15 +12,15 @@ interface NavItem {
 }
 
 const SirenIcon = ({ size = 18, className = "" }) => (
-  <svg 
-    xmlns="http://www.w3.org/2000/svg" 
-    width={size} 
-    height={size} 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
     strokeLinejoin="round"
     className={className}
   >
@@ -58,21 +58,21 @@ const NavbarComponent = () => {
 
   const navItems: NavItem[] = [
     { name: 'Home', href: '/' },
-    { 
-      name: 'Live Causes', 
+    {
+      name: 'Live Causes',
       href: '/live-causes',
       highlight: true,
       urgent: true,
     },
-    { 
-      name: 'Impact Stories', 
+    {
+      name: 'Impact Stories',
       href: '/impact-stories'
     },
     {
       name: 'About Us',
       href: '/the-giving-circle',
     },
-    { 
+    {
       name: 'Become a NGO Partner',
       href: '/ngo-partner',
     },
@@ -114,11 +114,10 @@ const NavbarComponent = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className={`fixed z-50 transition-all duration-500 ${
-        scrolled 
-          ? 'top-1 left-2 right-2 sm:top-2 sm:left-3 sm:right-3 md:top-2 md:left-4 md:right-4' 
-          : 'top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 md:top-4 md:left-4 md:right-4'
-      }`}
+      className={`fixed z-50 transition-all duration-500 ${scrolled
+        ? 'top-1 left-2 right-2 sm:top-2 sm:left-3 sm:right-3 md:top-2 md:left-4 md:right-4'
+        : 'top-2 left-2 right-2 sm:top-3 sm:left-3 sm:right-3 md:top-4 md:left-4 md:right-4'
+        }`}
     >
       <div className="max-w-7xl mx-auto">
         <div className={`
@@ -133,20 +132,21 @@ const NavbarComponent = () => {
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
               className="flex items-center"
             >
-              <a href="/" className="cursor-pointer">
-                <picture>
-                  <source srcSet="/Giving_Circle..-removebg-preview.webp" type="image/webp" width="227" height="56" />
-                  <img 
-                    src="/Giving_Circle..-removebg-preview.png" 
-                    alt="The Giving Circle Logo" 
-                    className="drop-shadow-lg"
-                    width="227"
-                    height="56"
-                    loading="eager"
-                    fetchPriority="high"
-                    style={{ width: '227px', height: '56px', aspectRatio: '227/56', objectFit: 'contain' }}
-                  />
-                </picture>
+              <a href="/" className="cursor-pointer block">
+                <div className="relative w-32 sm:w-[227px] aspect-[227/56]">
+                  <picture>
+                    <source srcSet="/Giving_Circle..-removebg-preview.webp" type="image/webp" />
+                    <img
+                      src="/Giving_Circle..-removebg-preview.png"
+                      alt="The Giving Circle Logo"
+                      className="drop-shadow-lg w-full h-full object-contain"
+                      width="227"
+                      height="56"
+                      loading="eager"
+                      fetchPriority="high"
+                    />
+                  </picture>
+                </div>
               </a>
             </motion.div>
 
@@ -159,7 +159,7 @@ const NavbarComponent = () => {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        whileHover={{ 
+                        whileHover={{
                           y: -2,
                           color: item.highlight ? '#dc2626' : '#1f2937'
                         }}
@@ -167,13 +167,12 @@ const NavbarComponent = () => {
                           e.stopPropagation();
                           toggleDropdown(item.name);
                         }}
-                        className={`px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base font-semibold transition-all duration-300 relative whitespace-nowrap ${
-                          item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
-                        } flex items-center`}
+                        className={`px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base font-semibold transition-all duration-300 relative whitespace-nowrap ${item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
+                          } flex items-center`}
                       >
                         <div className="flex items-center gap-1.5">
                           {item.urgent && (
-                            <motion.div 
+                            <motion.div
                               animate={{
                                 scale: blinkState ? 1.1 : 1
                               }}
@@ -186,12 +185,12 @@ const NavbarComponent = () => {
                             </motion.div>
                           )}
                           <span className={item.highlight ? 'text-red-600' : ''}>{item.name}</span>
-                          <ChevronDown 
+                          <ChevronDown
                             className={`ml-0.5 w-3 h-3 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`}
                           />
                         </div>
                       </motion.button>
-                      
+
                       {dropdownStates[item.name] && (
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
@@ -222,17 +221,16 @@ const NavbarComponent = () => {
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      whileHover={{ 
+                      whileHover={{
                         y: -2,
                         color: item.highlight ? '#dc2626' : '#1f2937'
                       }}
-                      className={`px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base font-semibold transition-all duration-300 relative whitespace-nowrap ${
-                        item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
-                      }`}
+                      className={`px-2 xl:px-3 py-2 text-xs lg:text-sm xl:text-base font-semibold transition-all duration-300 relative whitespace-nowrap ${item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                        }`}
                     >
                       <div className="flex items-center gap-1.5">
                         {item.urgent && (
-                          <motion.div 
+                          <motion.div
                             animate={{
                               scale: blinkState ? 1.1 : 1
                             }}
@@ -260,7 +258,7 @@ const NavbarComponent = () => {
                       initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: index * 0.1 }}
-                      whileHover={{ 
+                      whileHover={{
                         y: -2,
                         color: item.highlight ? '#e11d48' : '#1f2937'
                       }}
@@ -268,13 +266,12 @@ const NavbarComponent = () => {
                         e.stopPropagation();
                         toggleDropdown(item.name);
                       }}
-                      className={`px-2 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 relative whitespace-nowrap ${
-                        item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
-                      } flex items-center`}
+                      className={`px-2 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 relative whitespace-nowrap ${item.highlight ? 'text-red-600 hover:text-red-700' : 'text-gray-700 hover:text-gray-900'
+                        } flex items-center`}
                     >
                       <div className="flex items-center gap-1">
                         {item.urgent && (
-                          <motion.div 
+                          <motion.div
                             animate={{
                               scale: blinkState ? 1.1 : 1
                             }}
@@ -287,12 +284,12 @@ const NavbarComponent = () => {
                           </motion.div>
                         )}
                         <span className={item.highlight ? 'text-red-600' : ''}>{item.name}</span>
-                        <ChevronDown 
+                        <ChevronDown
                           className={`ml-1 w-3 h-3 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`}
                         />
                       </div>
                     </motion.button>
-                    
+
                     {dropdownStates[item.name] && (
                       <motion.div
                         initial={{ opacity: 0, y: 10 }}
@@ -323,17 +320,16 @@ const NavbarComponent = () => {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ 
+                    whileHover={{
                       y: -2,
                       color: item.highlight ? '#dc2626' : '#1f2937'
                     }}
-                    className={`px-2 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 relative whitespace-nowrap ${
-                      item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
-                    }`}
+                    className={`px-2 py-2 text-xs lg:text-sm font-semibold transition-all duration-300 relative whitespace-nowrap ${item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                      }`}
                   >
                     <div className="flex items-center gap-1">
                       {item.urgent && (
-                        <motion.div 
+                        <motion.div
                           animate={{
                             scale: blinkState ? 1.1 : 1
                           }}
@@ -357,14 +353,14 @@ const NavbarComponent = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05
                 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.location.href = '/onboarding'}
                 className="bg-green-700 text-white px-2 sm:px-3 xl:px-4 py-1.5 sm:py-2 rounded-lg font-semibold text-xs sm:text-sm lg:text-base hover:bg-green-800 transition-all duration-300 backdrop-blur-sm whitespace-nowrap"
               >
-                 Start Your Giving Circle
+                Start Your Giving Circle
               </motion.button>
             </div>
 
@@ -387,7 +383,7 @@ const NavbarComponent = () => {
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                whileHover={{ 
+                whileHover={{
                   scale: 1.05
                 }}
                 whileTap={{ scale: 0.95 }}
@@ -414,13 +410,12 @@ const NavbarComponent = () => {
                       animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                       transition={{ duration: 0.3, delay: index * 0.1 }}
                       onClick={() => toggleDropdown(item.name)}
-                      className={`flex items-center justify-between w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg break-words ${
-                        item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
-                      }`}
+                      className={`flex items-center justify-between w-full px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg break-words ${item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                        }`}
                     >
                       <div className="flex items-center gap-2">
                         {item.urgent && (
-                          <motion.div 
+                          <motion.div
                             animate={{
                               scale: blinkState ? 1.1 : 1
                             }}
@@ -434,11 +429,11 @@ const NavbarComponent = () => {
                         )}
                         <span>{item.name}</span>
                       </div>
-                      <ChevronDown 
-                        className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`} 
+                      <ChevronDown
+                        className={`w-3 h-3 sm:w-4 sm:h-4 transition-transform ${dropdownStates[item.name] ? 'rotate-180' : ''}`}
                       />
                     </motion.button>
-                    
+
                     {dropdownStates[item.name] && (
                       <div className="pl-3 sm:pl-4 space-y-1">
                         {item.dropdownItems?.map((dropdownItem, dropIdx) => (
@@ -464,14 +459,13 @@ const NavbarComponent = () => {
                     initial={{ x: -50, opacity: 0 }}
                     animate={isOpen ? { x: 0, opacity: 1 } : { x: -50, opacity: 0 }}
                     transition={{ duration: 0.3, delay: index * 0.1 }}
-                    className={`block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg break-words ${
-                      item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
-                    }`}
+                    className={`block px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 text-xs sm:text-sm md:text-base font-semibold hover:bg-white/20 backdrop-blur-sm transition-all duration-300 rounded-lg break-words ${item.highlight ? 'text-red-600' : 'text-gray-700 hover:text-gray-900'
+                      }`}
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="flex items-center gap-1.5 sm:gap-2">
                       {item.urgent && (
-                        <motion.div 
+                        <motion.div
                           animate={{
                             scale: blinkState ? 1.1 : 1
                           }}

@@ -8,8 +8,8 @@ export const Footer: React.FC = () => {
     <footer
       className="bg-white border-t border-gray-200"
       style={{
-        contentVisibility: 'auto',
-        contain: 'content'
+        minHeight: '450px',
+        contain: 'paint'
       }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
