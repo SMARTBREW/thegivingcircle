@@ -23,6 +23,9 @@ const ChampionStoryDetail = lazy(() => import('./pages/ChampionStoryDetail'));
 const NGODetailContainer = lazy(() => import('./pages/NGODetailContainer'));
 const KhushiNGODetailContainer = lazy(() => import('./pages/KhushiNGODetailContainer'));
 const AnimalCareNGODetailContainer = lazy(() => import('./pages/AnimalCareNGODetailContainer'));
+const LocationSEOBase = lazy(() => import('./pages/local-seo/LocationSEOBase'));
+const GivingCircleLanding = lazy(() => import('./pages/seo/GivingCircleLanding'));
+const NonprofitOrganizationsLanding = lazy(() => import('./pages/seo/NonprofitOrganizationsLanding'));
 const LiveCausesPage = lazy(() => import('./components/liveCauses/browseCauses'));
 const CauseDetailPage = lazy(() => import('./components/liveCauses/causesDetails'));
 const KhushiCauseDetailPage = lazy(() => import('./components/liveCauses/khushiCauseDetails'));
@@ -101,8 +104,38 @@ function App() {
               <Route path="/the-giving-circle" element={<OurStory />} />
               <Route path="/young-champions" element={<YoungChampions />} />
 
-              {/* SEO Hub - NGO Directory Pages */}
-              <Route path="/ngos" element={<SEOHubIndex />} />
+              {/* SEO Landing Pages (Orphan Routes) */}
+              <Route path="/giving-circle" element={<GivingCircleLanding />} />
+              <Route path="/nonprofit-organizations" element={<NonprofitOrganizationsLanding />} />
+              <Route
+                path="/ngo-in-noida"
+                element={
+                  <LocationSEOBase
+                    location="Noida"
+                    locationSlug="ngo-in-noida"
+                    title="NGOs in Noida | Verified Nonprofit Organizations"
+                    description="Find trusted NGOs in Noida. Volunteer, donate, and support local causes via The Giving Circle."
+                    keywords="ngo in noida, charity in noida, social service noida"
+                    primaryKeyword="NGOs"
+                  />
+                }
+              />
+              <Route
+                path="/ngo-in-gurugram"
+                element={
+                  <LocationSEOBase
+                    location="Gurugram"
+                    locationSlug="ngo-in-gurugram"
+                    title="NGOs in Gurugram | Trusted Charity Organizations"
+                    description="Discover verified NGOs in Gurugram (Gurgaon). Support local nonprofits working for education, health, and animal welfare."
+                    keywords="ngo in gurugram, ngo gurgaon, charity gurugram"
+                    primaryKeyword="NGOs"
+                  />
+                }
+              />
+
+              {/* Dynamic Local SEO */}
+              <Route path="/ngos/:location" element={<SEOHubIndex />} />
 
               {/* Delhi Pages */}
               <Route path="/ngos/best-ngo-in-delhi" element={<BestNGOInDelhi />} />
