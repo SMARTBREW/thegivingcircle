@@ -41,7 +41,6 @@ export const NGOPartner: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submittedEmail, setSubmittedEmail] = useState<string>('');
 
   // Generate a daily number between 1-5 that changes each day
   const getDailyPartnerCount = () => {
@@ -113,7 +112,8 @@ export const NGOPartner: React.FC = () => {
         });
         trackConversion('ngo_partner_registration', 0);
 
-        setSubmittedEmail(formData.email);
+        trackConversion('ngo_partner_registration', 0);
+
         setIsSubmitted(true);
         // Reset form
         setFormData({
@@ -166,8 +166,8 @@ export const NGOPartner: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 mt-10">
       <SEOHead
-        title="NGO Partnership - Partner with The Giving Circle | Verified NGO Platform India"
-        description="Partner with The Giving Circle as a verified NGO. Join our trusted network of government-certified NGO partners and access Cause Champions, transparent fundraising, and community support for your social causes across India."
+        title="NGO Partnership Program India | Trusted Platform"
+        description="Become a verified NGO partner and connect with donors supporting education, health and relief initiatives"
         keywords="NGO partnership India, partner with giving circle, verified NGO platform, NGO fundraising platform India, register NGO online, NGO partner program, charity partnership India, social impact partnerships, verified charity platform, NGO registration India"
         canonicalUrl="https://www.thegivingcircle.in/ngo-partner"
       />

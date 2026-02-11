@@ -2,14 +2,14 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Search, CheckCircle, HandHeart, Trophy } from 'lucide-react';
-import Section from '../../components/ui/Section';
+import { Section } from '../../components/ui';
 
 const NonprofitOrganizationsLanding = () => {
     return (
         <div className="min-h-screen bg-white">
             <Helmet>
-                <title>Nonprofit Organizations India | Trusted & Verified NGO Directory</title>
-                <meta name="description" content="Find trusted Nonprofit Organizations in India. The Giving Circle connects you with verified NGOs for education, healthcare, animal welfare, and disaster relief." />
+                <title>Nonprofit Organizations India | List of NGOs</title>
+                <meta name="description" content="Comprehensive directory of verified nonprofit organizations in India. Find and support trusted NGOs working in education, health, environment and social welfare." />
                 <meta name="keywords" content="nonprofit organizations, ngo directory india, trusted charities, donate to nonprofit, social impact india" />
                 <link rel="canonical" href="https://www.thegivingcircle.in/nonprofit-organizations" />
             </Helmet>

@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import CloudinaryImage from '../ui/CloudinaryImage';
+import SEOHead from '../SEO/SEOHead';
 import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
 import { trackDonationClick } from '../../utils/analytics';
 
 
 const LiveCausesPage = () => {
   // Set page title and meta tags
-  useEffect(() => {
-    document.title = 'Live Causes - Support Active Campaigns | Donate to Social Causes India';
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover live causes and urgent campaigns across India. Donate to verified social causes including animal welfare India, disaster relief, women empowerment programs. Transparent fundraising for emergency causes and active campaigns. Support live causes now.');
-    }
-
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india');
-    }
-  }, []);
+  // Meta tags handled by SEOHead component
   const [selectedNGO, setSelectedNGO] = useState('All NGOs');
   const [selectedFilter, setSelectedFilter] = useState('Most Urgent');
   const [visibleCauses, setVisibleCauses] = useState(9);
@@ -242,6 +229,12 @@ const LiveCausesPage = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <SEOHead
+        title="Live NGO Causes | Donate for Urgent Relief India"
+        description="Explore active causes including medical crowdfunding, child education, disaster relief and animal rescue across India"
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india"
+        canonicalUrl="https://www.thegivingcircle.in/live-causes"
+      />
       {/* Professional Hero Section with NGO Showcase */}
       <header className="relative text-white overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">
 

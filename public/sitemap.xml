@@ -279,5 +279,31 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- SEO Landing Pages -->
+  <url>
+    <loc>https://www.thegivingcircle.in/giving-circle</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.thegivingcircle.in/nonprofit-organizations</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.thegivingcircle.in/ngo-in-noida</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thegivingcircle.in/ngo-in-gurugram</loc>
+    <lastmod>2026-02-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
 

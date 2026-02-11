@@ -18,13 +18,17 @@ interface NGODetailPageProps {
   ngoDetails: NGODetails;
   onBack?: () => void;
   loading?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 
 const NGODetailPage: React.FC<NGODetailPageProps> = ({
   ngoDetails,
   onBack,
-  loading = false
+  loading = false,
+  seoTitle,
+  seoDescription
 }) => {
   const navigate = useNavigate();
   const [selectedGalleryItem, setSelectedGalleryItem] = useState<any>(null);
@@ -70,8 +74,8 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
   return (
     <main className="min-h-screen bg-white">
       <SEOHead
-        title={`${ngoDetails.name} - Verified NGO Partner | Community Support Platform`}
-        description={`Support ${ngoDetails.name}, a verified NGO partner on our community support platform. Join our giving community to support social causes. Give and help through social giving. Create a circle of support for ${ngoDetails.causes.map(c => c.name.toLowerCase()).join(', ')} and india care initiatives.`}
+        title={seoTitle || `${ngoDetails.name} - Verified NGO Partner | Community Support Platform`}
+        description={seoDescription || `Support ${ngoDetails.name}, a verified NGO partner on our community support platform. Join our giving community to support social causes. Give and help through social giving. Create a circle of support for ${ngoDetails.causes.map(c => c.name.toLowerCase()).join(', ')} and india care initiatives.`}
         keywords={`${ngoDetails.name}, ${ngoDetails.causes.map(c => c.name).join(', ')}, ${ngoDetails.location}, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, india care, supporting india, giving india, causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india`}
         canonicalUrl={`https://www.thegivingcircle.in/ngo/${ngoDetails.name.toLowerCase().replace(/\s+/g, '-')}`}
         ogImage={ngoDetails.logo}

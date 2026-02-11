@@ -5,8 +5,8 @@ export const AboutChampions: React.FC = () => {
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center">
       <SEOHead
-        title="About Cause Champions - Lead Social Change | Community Support Platform"
-        description="Learn about Cause Champions through our giving platform and community support platform. Join our giving community to support social causes and create a circle of support. Give and help through social giving and community support. Discover how to become a champion and support social causes through our communities support platform."
+        title="Become a Giving Champion | Volunteer & Fundraise"
+        description="Lead fundraising campaigns, volunteer initiatives and create measurable impact as a Giving Champion"
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, about cause champions, cause champion program"
         canonicalUrl="https://www.thegivingcircle.in/about-champion"
       />

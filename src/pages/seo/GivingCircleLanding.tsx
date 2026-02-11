@@ -2,8 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { Users, Heart, Globe, Shield } from 'lucide-react';
-import PrimaryButton from '../../components/ui/PrimaryButton';
-import Section from '../../components/ui/Section';
+import { PrimaryButton, Section } from '../../components/ui';
 
 const GivingCircleLanding = () => {
     return (
@@ -17,7 +16,16 @@ const GivingCircleLanding = () => {
 
             {/* Hero Section */}
             <section className="relative bg-emerald-900 text-white overflow-hidden">
-                <div className="absolute inset-0 z-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+                <img
+                    src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    srcSet="https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80 600w, 
+                           https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80 1200w,
+                           https://images.unsplash.com/photo-1559027615-cd4628902d4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80 2000w"
+                    sizes="100vw"
+                    alt="Community impact background"
+                    className="absolute inset-0 w-full h-full object-cover z-0 opacity-20"
+                    fetchPriority="high"
+                />
                 <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
                         The Power of a <span className="text-emerald-400">Giving Circle</span>
@@ -103,9 +111,15 @@ const GivingCircleLanding = () => {
                         </div>
                         <div className="relative">
                             <img
-                                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                                src="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                                srcSet="https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80 400w,
+                                        https://images.unsplash.com/photo-1593113598332-cd288d649433?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80 800w"
+                                sizes="(max-width: 768px) 100vw, 50vw"
                                 alt="Community volunteers focusing on social impact"
                                 className="rounded-2xl shadow-2xl"
+                                loading="lazy"
+                                width="800"
+                                height="600"
                             />
                             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl max-w-xs">
                                 <p className="font-bold text-emerald-800 text-lg">"The Giving Circle transformed how I donate. It feels personal and powerful."</p>

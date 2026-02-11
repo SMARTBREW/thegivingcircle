@@ -113,8 +113,8 @@ function App() {
                   <LocationSEOBase
                     location="Noida"
                     locationSlug="ngo-in-noida"
-                    title="NGOs in Noida | Verified Nonprofit Organizations"
-                    description="Find trusted NGOs in Noida. Volunteer, donate, and support local causes via The Giving Circle."
+                    title="NGO in Noida | Verified & Trusted NGOs"
+                    description="Find trusted NGOs in Noida supporting education, welfare and community development"
                     keywords="ngo in noida, charity in noida, social service noida"
                     primaryKeyword="NGOs"
                   />
@@ -126,8 +126,8 @@ function App() {
                   <LocationSEOBase
                     location="Gurugram"
                     locationSlug="ngo-in-gurugram"
-                    title="NGOs in Gurugram | Trusted Charity Organizations"
-                    description="Discover verified NGOs in Gurugram (Gurgaon). Support local nonprofits working for education, health, and animal welfare."
+                    title="NGO in Gurugram | Verified & Trusted NGOs"
+                    description="Discover verified NGOs in Gurugram working across education, health and relief initiatives"
                     keywords="ngo in gurugram, ngo gurgaon, charity gurugram"
                     primaryKeyword="NGOs"
                   />

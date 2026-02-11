@@ -11,8 +11,8 @@ export const YoungChampions: React.FC = () => {
   return (
     <main className="min-h-screen bg-gray-50 mt-10 flex items-center justify-center">
       <SEOHead
-        title="Young Champions Program - Youth Leadership | Community Support Platform"
-        description="Join our Young Champions program through our giving platform and community support platform. Young people can join our giving community to support social causes and create their own circle of support. Give and help through social giving and learn about community support from an early age."
+        title="Young Champions Program | Student Volunteers India"
+        description="Empower students to drive social change through volunteering, education support and community impact initiatives"
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, young champions, youth leadership"
         canonicalUrl="https://www.thegivingcircle.in/young-champions"
       />

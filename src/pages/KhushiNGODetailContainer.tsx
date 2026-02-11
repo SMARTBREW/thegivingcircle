@@ -75,6 +75,8 @@ const KhushiNGODetailContainer: React.FC = () => {
       ngoDetails={ngoDetails!}
       loading={loading}
       onBack={handleBack}
+      seoTitle="KHUSHII Foundation | Child Education NGO"
+      seoDescription="Learn about KHUSHII Foundation's work in child education and holistic development. Verified NGO partner transforming lives through school adoption and community support."
     />
   );
 };

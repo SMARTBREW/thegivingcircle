@@ -75,6 +75,8 @@ const AnimalCareNGODetailContainer: React.FC = () => {
       ngoDetails={ngoDetails!}
       loading={loading}
       onBack={handleBack}
+      seoTitle="Animal Care India | Street Animal Welfare NGO"
+      seoDescription="Animal Care India is a verified NGO dedicated to street animal welfare. Support rescue, sterilization and vaccination programs to create animal-friendly communities."
     />
   );
 };

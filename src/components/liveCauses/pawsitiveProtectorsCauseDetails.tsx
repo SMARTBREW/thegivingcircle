@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, PawPrint } from 'lucide-react';
+import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle, PawPrint } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
@@ -265,8 +265,8 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Pawsitive Protectors - Animal Vaccination & Rabies Prevention | Donate Animal Welfare India"
-        description="Pawsitive Protectors provides animal welfare through our giving platform and community support platform. Join our giving community to support social causes including rabies prevention and street animal rescue. Give and help protect animals through our support circle. Support social causes creating a circle of support for india care."
+        title="Support Animal Welfare | Pawsitive Protectors"
+        description="Help Pawsitive Protectors rescue and rehabilitate street animals. Support sterilization, vaccination and emergency care programs for stray dogs and cats."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Pawsitive Protectors, animal vaccination, rabies prevention, animal welfare India"
         canonicalUrl="https://www.thegivingcircle.in/pawsitive-protectors-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"

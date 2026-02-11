@@ -143,7 +143,7 @@ const CauseChampionOnboarding: React.FC = () => {
     }));
   };
 
-  const hasError = (fieldName: string, value: any) => {
+  const hasError = (_fieldName: string, value: any) => {
     return showValidation && !value;
   };
 
@@ -241,8 +241,8 @@ const CauseChampionOnboarding: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 mt-10">
       <SEOHead
-        title="Become a Cause Champion | Start Your Giving Circle - The Giving Circle"
-        description="Become a Cause Champion and amplify your impact. Start your giving circle, rally your community, and support verified social causes India. Join India's most transparent community giving platform and create lasting change."
+        title="NGO Onboarding | Partner With The Giving Circle"
+        description="Join our NGO partner network and gain access to donors, credibility tools and nationwide impact opportunities"
         keywords="become cause champion, start giving circle, cause champion program, community fundraising India, rally for cause, amplify social impact, cause champion registration, volunteer for causes India, lead social change, community giving leader"
         canonicalUrl="https://www.thegivingcircle.in/onboarding"
       />

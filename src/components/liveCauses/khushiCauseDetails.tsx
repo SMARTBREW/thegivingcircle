@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
@@ -217,8 +217,8 @@ const KhushiCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Wings of Hope - Menstrual Health Education | Support Girls Education India"
-        description="Wings of Hope tackles period poverty India through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support. Support girls education by breaking menstrual taboos. Give and help girls stay in school through our circle of support."
+        title="Help Underprivileged Children | KHUSHII Foundation"
+        description="Support KHUSHII Foundation to provide education, health and nutrition to underprivileged children. Donate to verified child welfare causes and create lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings of Hope, menstrual health education, period poverty, girls education support, women empowerment India"
         canonicalUrl="https://www.thegivingcircle.in/khushi-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"

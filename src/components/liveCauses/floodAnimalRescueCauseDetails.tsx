@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle, Heart, LifeBuoy } from 'lucide-react';
+import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle, LifeBuoy } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
@@ -210,8 +210,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Animal Rescue - Emergency Animal Rescue | Disaster Relief India"
-        description="Flood Animal Rescue provides emergency animal rescue through our giving platform and community support platform. Join our giving community to support social causes through disaster relief. Give and help rescue animals through social giving and community support. Create a circle of support for disaster animal relief and india care initiatives."
+        title="Flood Animal Rescue | Emergency Relief Ops"
+        description="Support emergency animal rescue operations during floods. Help provide boats, medical aid and shelter to stranded animals in flood-affected areas."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Animal Rescue, emergency animal rescue, disaster relief India"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"

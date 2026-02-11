@@ -1,4 +1,4 @@
-import { Target, Globe, Heart, Users, CheckCircle, Award, Shield } from 'lucide-react';
+import { Users, Heart, CheckCircle, Award, Shield } from 'lucide-react';
 
 export default function MissionVisionPage() {
   const coreValues = [

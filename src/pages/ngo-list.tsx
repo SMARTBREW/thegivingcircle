@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
-import { Search, Filter, CheckCircle, MapPin, Users, Calendar, ChevronDown, Shield, Award, ExternalLink } from 'lucide-react';
-import { Card, CardContent } from '../components/ui/Card';
+import { Search, Filter, CheckCircle, MapPin, ChevronDown, Shield, Award, ExternalLink } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import SEOHead from '../components/SEO/SEOHead';
@@ -41,20 +40,8 @@ export const NGOList: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [showMobileFilters, setShowMobileFilters] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  useEffect(() => {
-    // Set initial value
-    setIsMobile(window.innerWidth < 640);
 
-    // Add resize listener
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 640);
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   const ngos: NGO[] = [
     {
@@ -301,8 +288,8 @@ export const NGOList: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
       <SEOHead
-        title="NGO Directory - Browse Verified NGO Partners | Community Support Platform"
-        description="Browse our verified NGO directory through our giving platform and community support platform. Join our giving community to support social causes and connect with verified NGO partners. Give and help through social giving and community support. Explore our support circle of verified partners creating a circle of support for communities across India."
+        title="NGO List in India | Verified & Trusted NGOs"
+        description="Browse a curated NGO list featuring trusted nonprofit organizations working across education, health and welfare"
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, NGO directory, verified NGOs"
         canonicalUrl="https://www.thegivingcircle.in/ngo-list"
       />

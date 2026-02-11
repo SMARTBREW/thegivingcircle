@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, MapPin, Users, Calendar, Heart, TrendingUp, Award, Building2 } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
@@ -32,21 +32,7 @@ const ImpactStories: React.FC = () => {
   const [selectedStory, setSelectedStory] = useState<string | null>(null);
 
   // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Impact Stories - Real Transformation Stories India | Verified Success Stories';
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Discover inspiring impact stories and real transformation stories from across India. Read verified success stories of social change, community impact, and lives transformed through The Giving Circle. Social impact stories India showcasing women empowerment, animal welfare, disaster relief, and education transformation.');
-    }
-
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india');
-    }
-  }, []);
+  // useEffect removed in favor of SEOHead component
 
   // Real-life inspired impact stories with impressive numbers
   const impactStories: ImpactStory[] = [
