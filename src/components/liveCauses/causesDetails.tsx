@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, Users, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
+import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
 import PrimaryButton from '../ui/PrimaryButton';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
@@ -217,8 +217,8 @@ const CauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Wings Of Hope - Support Social Causes | Donate to Verified Charity India"
-        description="Support Wings Of Hope and other verified social causes through The Giving Circle. Donate to trusted charity programs providing education, healthcare, and empowerment to underprivileged communities across India."
+        title="Donate to Wings of Hope | KHUSHII - The Giving Circle"
+        description="Support Wings of Hope by KHUSHII. Help provide education and holistic development for underprivileged children. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings Of Hope, verified charity, donate to NGO India, transparent charity, impact stories"
         canonicalUrl="https://www.thegivingcircle.in/causes-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg"

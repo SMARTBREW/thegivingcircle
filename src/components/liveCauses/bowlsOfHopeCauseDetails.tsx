@@ -202,8 +202,8 @@ const BowlsOfHopeCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Bowls of Hope | Food Distribution for Needy"
-        description="Support Bowls of Hope initiative to provide nutritious meals to hunger-stricken communities. Donate food and help eradicate hunger among the underprivileged."
+        title="Donate to Bowls of Hope | Animal Care - The Giving Circle"
+        description="Support Bowls of Hope by Animal Care. Help provide daily meals and nutrition to stray animals. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Bowls of Hope, animal feeding programs, support animal welfare, animal welfare India"
         canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"

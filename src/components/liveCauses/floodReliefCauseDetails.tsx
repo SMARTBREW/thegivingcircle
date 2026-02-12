@@ -210,8 +210,8 @@ const FloodReliefCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Relief India | Emergency Disaster Aid"
-        description="Donate to flood relief operations in India. Support providing food, clean water, medicine and shelter to families affected by devastating floods."
+        title="Donate to Flood Relief in Uttarakhand | GUS Disaster Relief - The Giving Circle"
+        description="Support Flood Relief in Uttarakhand by GUS Disaster Relief. Help provide emergency shelter, food, and medical aid to flood victims. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Relief Uttarakhand, disaster relief India, emergency response India"
         canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"

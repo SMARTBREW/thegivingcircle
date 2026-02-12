@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../components/SEO/SEOHead';
 import { Link } from 'react-router-dom';
 import { Users, Heart, Globe, Shield } from 'lucide-react';
 import { PrimaryButton, Section } from '../../components/ui';
@@ -7,12 +7,12 @@ import { PrimaryButton, Section } from '../../components/ui';
 const GivingCircleLanding = () => {
     return (
         <div className="min-h-screen bg-gray-50">
-            <Helmet>
-                <title>Giving Circle | Join a Community of Changemakers & Social Impact</title>
-                <meta name="description" content="What is a Giving Circle? Join The Giving Circle India to pool resources, support trusted NGOs, and create massive social impact through collective giving." />
-                <meta name="keywords" content="giving circle, collective giving, giving circle india, donation circle, community giving, social impact community" />
-                <link rel="canonical" href="https://www.thegivingcircle.in/giving-circle" />
-            </Helmet>
+            <SEOHead
+                title="Giving Circle | Join a Community of Changemakers & Social Impact"
+                description="What is a Giving Circle? Join The Giving Circle India to pool resources, support trusted NGOs, and create massive social impact through collective giving."
+                keywords="giving circle, collective giving, giving circle india, donation circle, community giving, social impact community"
+                canonicalUrl="https://www.thegivingcircle.in/giving-circle"
+            />
 
             {/* Hero Section */}
             <section className="relative bg-emerald-900 text-white overflow-hidden">

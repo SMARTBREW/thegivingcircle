@@ -210,8 +210,8 @@ const FloodAnimalRescueCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Animal Rescue | Emergency Relief Ops"
-        description="Support emergency animal rescue operations during floods. Help provide boats, medical aid and shelter to stranded animals in flood-affected areas."
+        title="Donate to Flood Animal Rescue | Animal Care - The Giving Circle"
+        description="Support Flood Animal Rescue by Animal Care. Help rescue and rehabilitate animals affected by floods. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Animal Rescue, emergency animal rescue, disaster relief India"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"

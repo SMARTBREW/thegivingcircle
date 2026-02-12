@@ -265,8 +265,8 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Support Animal Welfare | Pawsitive Protectors"
-        description="Help Pawsitive Protectors rescue and rehabilitate street animals. Support sterilization, vaccination and emergency care programs for stray dogs and cats."
+        title="Donate to Pawsitive Protectors | Animal Care - The Giving Circle"
+        description="Support Pawsitive Protectors by Animal Care. Help provide vaccinations, medical care, and shelter for street animals. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Pawsitive Protectors, animal vaccination, rabies prevention, animal welfare India"
         canonicalUrl="https://www.thegivingcircle.in/pawsitive-protectors-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"

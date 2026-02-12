@@ -217,8 +217,8 @@ const KhushiCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Help Underprivileged Children | KHUSHII Foundation"
-        description="Support KHUSHII Foundation to provide education, health and nutrition to underprivileged children. Donate to verified child welfare causes and create lasting impact."
+        title="Donate to Wings of Hope | KHUSHII - The Giving Circle"
+        description="Support Wings of Hope by KHUSHII. Help provide education and holistic development for underprivileged children. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings of Hope, menstrual health education, period poverty, girls education support, women empowerment India"
         canonicalUrl="https://www.thegivingcircle.in/khushi-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import SEOHead from '../../components/SEO/SEOHead';
 import { Link } from 'react-router-dom';
 import { Search, CheckCircle, HandHeart, Trophy } from 'lucide-react';
 import { Section } from '../../components/ui';
@@ -7,12 +7,12 @@ import { Section } from '../../components/ui';
 const NonprofitOrganizationsLanding = () => {
     return (
         <div className="min-h-screen bg-white">
-            <Helmet>
-                <title>Nonprofit Organizations India | List of NGOs</title>
-                <meta name="description" content="Comprehensive directory of verified nonprofit organizations in India. Find and support trusted NGOs working in education, health, environment and social welfare." />
-                <meta name="keywords" content="nonprofit organizations, ngo directory india, trusted charities, donate to nonprofit, social impact india" />
-                <link rel="canonical" href="https://www.thegivingcircle.in/nonprofit-organizations" />
-            </Helmet>
+            <SEOHead
+                title="Nonprofit Organizations India | List of NGOs"
+                description="Comprehensive directory of verified nonprofit organizations in India. Find and support trusted NGOs working in education, health, environment and social welfare."
+                keywords="nonprofit organizations, ngo directory india, trusted charities, donate to nonprofit, social impact india"
+                canonicalUrl="https://www.thegivingcircle.in/nonprofit-organizations"
+            />
 
             {/* Hero */}
             <section className="bg-blue-900 text-white py-20 md:py-28">
