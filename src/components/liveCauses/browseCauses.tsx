@@ -243,7 +243,7 @@ const LiveCausesPage = () => {
           <div className="max-w-4xl">
 
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 mt-10 leading-tight animate-fade-in text-white drop-shadow-lg break-words">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg break-words mt-20">
               Live Causes - Support Active Campaigns India
             </h1>
 

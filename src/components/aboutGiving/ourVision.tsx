@@ -140,8 +140,8 @@ export default function MissionVisionPage() {
               </p>
               <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-4 sm:mb-6 md:mb-8 leading-relaxed break-words">
                 Through our giving platform and community support platform, we're building the foundation for a new era of
-                community giving—one where our giving community, organizations, and the india community work together in perfect
-                harmony to support social causes and solve India's most pressing challenges. By providing giving support, circle aid, and community offering resources, we enable supporting india through communities support. This is why giving matters—when we give and help together, we create a strong support community that brings real change.
+                community giving one where our giving community, organizations, and the india community work together in perfect
+                harmony to support social causes and solve India's most pressing challenges. By providing giving support, circle aid, and community offering resources, we enable supporting india through communities support. This is why giving matters when we give and help together, we create a strong support community that brings real change.
               </p>
             </div>
           </div>

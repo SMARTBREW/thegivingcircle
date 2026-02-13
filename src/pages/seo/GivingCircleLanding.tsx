@@ -55,7 +55,7 @@ const GivingCircleLanding = () => {
                         What is a Giving Circle?
                     </h2>
                     <p className="text-lg text-gray-700 leading-relaxed mb-8">
-                        A <strong>Giving Circle</strong> is a form of participatory philanthropy where individuals pool their resources—time, money, and skills—to donate to a cause they care about. By giving together, we amplify our impact, turning small individual contributions into life-changing support for communities in need.
+                        A <strong>Giving Circle</strong> is a form of participatory philanthropy where individuals pool their resources time, money, and skills to donate to a cause they care about. By giving together, we amplify our impact, turning small individual contributions into life-changing support for communities in need.
                     </p>
                     <div className="grid md:grid-cols-3 gap-8 mt-12">
                         <div className="p-6 bg-emerald-50 rounded-2xl">

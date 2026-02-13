@@ -72,7 +72,7 @@ const AboutImpactGallery = () => {
             Discover how our community giving platform connects Cause Champions with verified social causes across India, creating transparent and meaningful impact.
           </p>
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,13 +81,13 @@ const AboutImpactGallery = () => {
         >
           <div className="flex flex-col md:grid md:grid-cols-2 gap-5 sm:gap-6 md:gap-8 lg:gap-12">
             <div className="w-full order-1 md:order-2 flex justify-center items-center md:justify-center">
-              <ImageCarousel 
-                images={carouselImages} 
+              <ImageCarousel
+                images={carouselImages}
                 currentIndex={currentIndex}
                 onIndexChange={handleIndexChange}
               />
             </div>
-            
+
             <div className="w-full order-2 md:order-1 text-center md:text-left">
               <div className="space-y-3 sm:space-y-4 md:space-y-5 lg:space-y-6 text-gray-600">
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
@@ -97,7 +97,7 @@ const AboutImpactGallery = () => {
                   Founded in 2022, our community giving platform brings Cause Champions together with verified causes and government-certified NGO partners driving real change across India. We make it simple to donate to social causes through our transparent giving platform, ensuring every contribution creates measurable impact. As a leading giving platform in India, we facilitate social giving and community support initiatives that connect people with causes to support, creating a strong support community across the nation.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
-                  As a legitimate charity platform, we partner only with verified NGO partners who meet government standards. Our transparent approach means all contributions go directly to these trusted partners—we never handle funds, ensuring complete accountability and social responsibility.
+                  As a legitimate charity platform, we partner only with verified NGO partners who meet government standards. Our transparent approach means all contributions go directly to these trusted partners we never handle funds, ensuring complete accountability and social responsibility.
                 </p>
                 <p className="text-sm sm:text-base md:text-lg leading-relaxed break-words">
                   What makes us the best platform to support social causes in India is our community-driven social impact model. We encourage Cause Champions to visit project sites, meet beneficiaries, and join activities, fostering genuine community partnerships that go beyond donations.

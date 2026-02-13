@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, Home } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 interface BreadcrumbItem {
   label: string;
@@ -63,7 +62,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
   // Add BreadcrumbList structured data
   useEffect(() => {
     let schemaScript = document.querySelector('script[data-schema="breadcrumb"]');
-    
+
     if (!schemaScript) {
       schemaScript = document.createElement('script');
       schemaScript.setAttribute('type', 'application/ld+json');
@@ -92,55 +91,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
     };
   }, [breadcrumbs]);
 
-  // Don't show breadcrumbs on homepage
-  if (location.pathname === '/') {
-    return null;
-  }
-
-  return (
-    <nav 
-      aria-label="Breadcrumb" 
-      className="bg-gray-50 border-b border-gray-200 py-2 sm:py-3"
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <ol className="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm overflow-x-auto">
-          {breadcrumbs.map((crumb, index) => {
-            const isLast = index === breadcrumbs.length - 1;
-            const isHome = index === 0;
-
-            return (
-              <li key={crumb.path} className="flex items-center whitespace-nowrap">
-                {index > 0 && (
-                  <ChevronRight 
-                    className="text-gray-400 mx-1 sm:mx-2 flex-shrink-0" 
-                    size={14} 
-                    aria-hidden="true"
-                  />
-                )}
-                {isLast ? (
-                  <span 
-                    className="text-gray-900 font-medium flex items-center"
-                    aria-current="page"
-                  >
-                    {isHome && <Home size={14} className="mr-1" aria-hidden="true" />}
-                    {crumb.label}
-                  </span>
-                ) : (
-                  <Link
-                    to={crumb.path}
-                    className="text-gray-600 hover:text-green-700 transition-colors flex items-center"
-                  >
-                    {isHome && <Home size={14} className="mr-1" aria-hidden="true" />}
-                    {crumb.label}
-                  </Link>
-                )}
-              </li>
-            );
-          })}
-        </ol>
-      </div>
-    </nav>
-  );
+  // Don't show breadcrumbs visually, but keep the schema
+  return null;
 };
 
 export default Breadcrumbs;

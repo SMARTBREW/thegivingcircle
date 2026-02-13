@@ -533,140 +533,142 @@ const PawsitiveProtectorsCauseDetailPage = () => {
 
           {/* Enhanced Sidebar */}
           <aside className="lg:col-span-1">
-            {/* Donation Card with Professional Design */}
-            <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 lg:sticky lg:top-6">
-              <div className="text-center mb-3 sm:mb-4 md:mb-6">
-                <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-green-700 rounded-full mb-2 sm:mb-3 md:mb-4 text-white">
-                  <PawPrint size={18} />
+            <div className="lg:sticky lg:top-24 space-y-6">
+              {/* Donation Card with Professional Design */}
+              <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6">
+                <div className="text-center mb-3 sm:mb-4 md:mb-6">
+                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-green-700 rounded-full mb-2 sm:mb-3 md:mb-4 text-white">
+                    <PawPrint size={18} />
+                  </div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
+                  <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
                 </div>
-                <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
-                <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
-              </div>
 
-              <div className="relative mb-3 sm:mb-4 md:mb-6">
-                <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
-                  <div
-                    className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
-                    style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
-                  >
-                    <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow-md">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-700 rounded-full"></div>
+                <div className="relative mb-3 sm:mb-4 md:mb-6">
+                  <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
+                    <div
+                      className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
+                      style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
+                    >
+                      <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow-md">
+                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-700 rounded-full"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="flex justify-between mt-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
-                  <span>0%</span>
-                  <span className="font-semibold text-green-700">{cause.progressPercentage}%</span>
-                  <span>100%</span>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
-                <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                  <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
-                  <div className="text-[10px] sm:text-xs text-gray-600">Supporters</div>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                  <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.daysLeft}</div>
-                  <div className="text-[10px] sm:text-xs text-gray-600">Days Left</div>
-                </div>
-                <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                  <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.progressPercentage}%</div>
-                  <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
-                </div>
-              </div>
-
-              <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
-                Support This Cause
-              </PrimaryButton>
-
-              <PrimaryButton
-                variant="secondary"
-                className="w-full"
-                icon={<Share2 size={14} />}
-              >
-                Share This Cause
-              </PrimaryButton>
-
-              <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t text-center">
-                <p className="text-[10px] sm:text-xs text-gray-500 break-words">
-                  All donations are tax-deductible under Section 80G
-                </p>
-              </div>
-            </div>
-
-            {/* NGO Information Card with Professional Design */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-              <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
-                <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
-                  <img
-                    src="/Animal care.jpg"
-                    alt={ngoDetails.name}
-                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
-                  />
-                  <div>
-                    <h3 className="text-base sm:text-lg md:text-xl font-bold break-words">{ngoDetails.name}</h3>
-                    <p className="text-gray-300 text-[10px] sm:text-xs md:text-sm break-words">{ngoDetails.tagline}</p>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle className="text-green-400" size={12} />
-                  <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
-                </div>
-              </div>
-
-              <div className="p-3 sm:p-4 md:p-6">
-                <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
-                  {ngoDetails.description}
-                </p>
-
-                <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
-                  <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
-                    <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Transparency</div>
-                  </div>
-                  <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border-2 border-purple-100">
-                    <div className="text-sm sm:text-lg md:text-2xl font-bold text-green-700">{ngoDetails.stats.programSpend}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
+                  <div className="flex justify-between mt-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
+                    <span>0%</span>
+                    <span className="font-semibold text-green-700">{cause.progressPercentage}%</span>
+                    <span>100%</span>
                   </div>
                 </div>
 
-                <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
-                  {ngoDetails.achievements.map((achievement, index) => (
-                    <div key={index} className="flex items-start gap-2 sm:gap-3">
-                      <achievement.icon className="text-green-700 mt-0.5" size={12} />
-                      <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 break-words">{achievement.text}</span>
+                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
+                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Supporters</div>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.daysLeft}</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Days Left</div>
+                  </div>
+                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
+                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.progressPercentage}%</div>
+                    <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
+                  </div>
+                </div>
+
+                <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
+                  Support This Cause
+                </PrimaryButton>
+
+                <PrimaryButton
+                  variant="secondary"
+                  className="w-full"
+                  icon={<Share2 size={14} />}
+                >
+                  Share This Cause
+                </PrimaryButton>
+
+                <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t text-center">
+                  <p className="text-[10px] sm:text-xs text-gray-500 break-words">
+                    All donations are tax-deductible under Section 80G
+                  </p>
+                </div>
+              </div>
+
+              {/* NGO Information Card with Professional Design */}
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+                <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
+                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
+                    <img
+                      src="/Animal care.jpg"
+                      alt={ngoDetails.name}
+                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
+                    />
+                    <div>
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold break-words">{ngoDetails.name}</h3>
+                      <p className="text-gray-300 text-[10px] sm:text-xs md:text-sm break-words">{ngoDetails.tagline}</p>
                     </div>
-                  ))}
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle className="text-green-400" size={12} />
+                    <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
+                  </div>
                 </div>
 
-                <div className="border-t pt-3 sm:pt-4">
-                  <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
-                  <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
-                    <a href={`tel:${ngoDetails.contact.phone}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                      <Phone size={10} />
-                      <span>{ngoDetails.contact.phone}</span>
-                    </a>
-                    <a href={`mailto:${ngoDetails.contact.email}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                      <Mail size={10} />
-                      <span className="break-all">{ngoDetails.contact.email}</span>
-                    </a>
-                    <a href={`https://${ngoDetails.contact.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                      <Globe size={10} />
-                      <span>{ngoDetails.contact.website}</span>
-                    </a>
+                <div className="p-3 sm:p-4 md:p-6">
+                  <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
+                    {ngoDetails.description}
+                  </p>
+
+                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
+                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
+                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600">Transparency</div>
+                    </div>
+                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border-2 border-purple-100">
+                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-green-700">{ngoDetails.stats.programSpend}</div>
+                      <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
+                    </div>
                   </div>
 
-                  <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-                    <a href="https://facebook.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                      <Facebook size={14} />
-                    </a>
-                    <a href="https://twitter.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                      <Twitter size={14} />
-                    </a>
-                    <a href="https://instagram.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                      <Instagram size={14} />
-                    </a>
+                  <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
+                    {ngoDetails.achievements.map((achievement, index) => (
+                      <div key={index} className="flex items-start gap-2 sm:gap-3">
+                        <achievement.icon className="text-green-700 mt-0.5" size={12} />
+                        <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 break-words">{achievement.text}</span>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="border-t pt-3 sm:pt-4">
+                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
+                    <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
+                      <a href={`tel:${ngoDetails.contact.phone}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
+                        <Phone size={10} />
+                        <span>{ngoDetails.contact.phone}</span>
+                      </a>
+                      <a href={`mailto:${ngoDetails.contact.email}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
+                        <Mail size={10} />
+                        <span className="break-all">{ngoDetails.contact.email}</span>
+                      </a>
+                      <a href={`https://${ngoDetails.contact.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
+                        <Globe size={10} />
+                        <span>{ngoDetails.contact.website}</span>
+                      </a>
+                    </div>
+
+                    <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
+                      <a href="https://facebook.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
+                        <Facebook size={14} />
+                      </a>
+                      <a href="https://twitter.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
+                        <Twitter size={14} />
+                      </a>
+                      <a href="https://instagram.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
+                        <Instagram size={14} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>

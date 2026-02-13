@@ -21,7 +21,7 @@ const GivingPhilosophy = () => {
             0 1px 3px rgba(0, 0, 0, 0.1);
         }
       `}</style>
-      
+
       <section className="py-8 sm:py-10 md:py-12 lg:py-14 px-4 sm:px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
@@ -36,11 +36,9 @@ const GivingPhilosophy = () => {
                 The Giving Circle is India's trusted social impact platform where community partnerships create lasting change. We're not just about donations - we connect passionate Cause Champions with verified community causes, turning kindness into measurable impact. Through our transparent giving platform and community support platform, your generosity grows through connection, shared purpose, and community-driven social impact across India. Join our giving community to support social causes and create a circle of support that makes a real difference.
               </p>
               <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">
-                Join our giving circle and discover how to support social causes in the india community while creating real impact stories that inspire others to give back. Whether you're looking for supported causes, want to give through our verified channels, or seek a community helpline for your initiatives, The Giving Circle connects you with the right opportunities. Our community offering makes it easy to provide support from community members, ensuring communities support one another for a better future. 
+                Join our giving circle and discover how to support social causes in the india community while creating real impact stories that inspire others to give back. Whether you're looking for supported causes, want to give through our verified channels, or seek a community helpline for your initiatives, The Giving Circle connects you with the right opportunities. Our community offering makes it easy to provide support from community members, ensuring communities support one another for a better future.
               </p>
-              <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">
-                 We believe in communities for communities, fostering a spirit where giving india becomes a movement of care and shared responsibility. Your support of community welfare programs directly impacts lives, offering a vital communities support network that leaves no one behind.
-              </p>
+
               <div className="pt-2 sm:pt-4 flex justify-center md:justify-start">
                 <motion.button
                   onClick={() => navigate("/onboarding")}
