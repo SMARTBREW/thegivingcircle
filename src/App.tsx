@@ -95,7 +95,7 @@ function App() {
               <Route path="/causes" element={<Causes />} />
               <Route path="/live-causes" element={<LiveCausesPage />} />
               <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
-              <Route path="/khushi-cause-details" element={<KhushiCauseDetailPage />} />
+              <Route path="/jwp-cause-details" element={<KhushiCauseDetailPage />} />
               <Route path="/pawsitive-protectors-cause-details" element={<PawsitiveProtectorsCauseDetailPage />} />
               <Route path="/bowls-of-hope-cause-details" element={<BowlsOfHopeCauseDetailPage />} />
               <Route path="/flood-animal-rescue-cause-details" element={<FloodAnimalRescueCauseDetailPage />} />

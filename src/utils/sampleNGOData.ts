@@ -823,12 +823,12 @@ export const sampleNGODetails: NGODetails = {
   }
 };
 
-// KHUSHII NGO Data
+// JWP NGO Data
 export const khushiNGODetails: NGODetails = {
   id: '3',
-  name: 'KHUSHII (Kids Help Foundation)',
+  name: 'JWP - Joint Women\'s Program',
   shortDescription: 'Empowering underprivileged children through education, nutrition, and holistic development across Delhi NCR since 2012.',
-  fullDescription: 'KHUSHII is a dedicated organization working with underprivileged children and their families in Delhi NCR. We focus on providing quality education, nutrition, healthcare, and skill development programs to break the cycle of poverty. Our comprehensive approach includes community engagement, parent training, and sustainable development initiatives that directly benefit over 2,500 children and 1,000+ families across 25+ communities in Delhi NCR.',
+  fullDescription: 'JWP is a dedicated organization working with underprivileged children and their families in Delhi NCR. We focus on providing quality education, nutrition, healthcare, and skill development programs to break the cycle of poverty. Our comprehensive approach includes community engagement, parent training, and sustainable development initiatives that directly benefit over 2,500 children and 1,000+ families across 25+ communities in Delhi NCR.',
   verified: true,
   logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg',
   heroImage: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
@@ -1134,17 +1134,17 @@ export const khushiNGODetails: NGODetails = {
   ],
 
   contactInfo: {
-    email: 'info@khushii.org',
-    phone: '+91-11-12345678',
-    website: 'www.khushii.org',
+    email: 'info@jwp.org',
+    phone: '+91-11-41550912',
+    website: 'www.jwp.org',
     address: 'Delhi NCR, India'
   },
 
   socialMedia: {
-    facebook: 'https://facebook.com/khushii',
-    twitter: 'https://twitter.com/khushii',
-    instagram: 'https://instagram.com/khushii',
-    linkedin: 'https://linkedin.com/company/khushii'
+    facebook: 'https://facebook.com/jwp',
+    twitter: 'https://twitter.com/jwp',
+    instagram: 'https://instagram.com/jwp',
+    linkedin: 'https://linkedin.com/company/jwp'
   },
 
   certifications: ['12A Certificate', '80G Certificate', 'FCRA Registration'],

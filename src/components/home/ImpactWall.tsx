@@ -30,10 +30,10 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
 }) => {
   // Map story IDs to their detail page routes
   const routeMap: { [key: string]: string } = {
-    '1': '/khushi-cause-details',
+    '1': '/jwp-cause-details',
     '2': '/pawsitive-protectors-cause-details',
     '4': '/bowls-of-hope-cause-details',
-    '5': '/flood-relief-cause-details',
+    // '5': '/flood-relief-cause-details',
     '6': '/flood-animal-rescue-cause-details',
   };
 
@@ -145,17 +145,17 @@ export const ImpactWall: React.FC = () => {
       verified: true,
       location: 'Delhi',
     },
-    {
-      id: '5',
-      title: 'Flood Relief in Uttarakhand',
-      description: 'Emergency relief support to affected communities by providing shelter, food, medical aid, and rehabilitation support through our disaster relief circle aid.',
-      ngoName: 'GUS',
-      impactNumber: 2400,
-      impactUnit: 'Families Supported',
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
-      verified: true,
-      location: 'Uttarakhand',
-    },
+    // {
+    //   id: '5',
+    //   title: 'Flood Relief in Uttarakhand',
+    //   description: 'Emergency relief support to affected communities by providing shelter, food, medical aid, and rehabilitation support through our disaster relief circle aid.',
+    //   ngoName: 'GUS',
+    //   impactNumber: 2400,
+    //   impactUnit: 'Families Supported',
+    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+    //   verified: true,
+    //   location: 'Uttarakhand',
+    // },
     {
       id: '6',
       title: 'Emergency Animal Rescue',

@@ -97,10 +97,10 @@ export const NGOList: React.FC = () => {
     },
     {
       id: '3',
-      name: 'KHUSHII',
+      name: 'JWP - Joint Women\'s Program',
       description: 'Dedicated to providing quality education, healthcare, and skill development to underprivileged children and communities across India. We believe in creating opportunities for holistic development through innovative programs and sustainable solutions. Our work encompasses child welfare initiatives, skill development training, and women empowerment projects that address the root causes of poverty and inequality.',
       verified: true,
-      logo: '/khushii.jpg',
+      logo: '/JWP.jpg',
       location: 'Multiple Locations',
       causes: ['Women Empowerment', 'Child Welfare', 'Health Education'],
       yearEstablished: 2003,
@@ -109,15 +109,15 @@ export const NGOList: React.FC = () => {
         { label: 'Schools Established', value: 45, unit: 'schools' },
         { label: 'Communities Impacted', value: 1800, unit: 'communities' },
       ],
-      featuredImage: '/khushii.jpg',
+      featuredImage: '/JWP.jpg',
       contactInfo: {
-        email: 'contact@khushii.org',
+        email: 'contact@jwp.org',
         phone: '+91-11-41550912',
-        website: 'www.khushii.org',
+        website: 'www.jwp.org',
       },
       socialMedia: {
-        facebook: 'khushiindia',
-        instagram: 'khushii_ngo',
+        facebook: 'jwpindia',
+        instagram: 'jwp_ngo',
       },
     },
     {

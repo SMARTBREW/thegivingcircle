@@ -139,29 +139,29 @@ const LiveCausesPage = () => {
     //   ]
     // },
     // GUS causes
-    {
-      id: 6,
-      title: 'Flood Relief in Uttarakhand',
-      organizer: 'GUS Disaster Relief',
-      ngo: 'GUS',
-      location: 'Uttarakhand, India',
-      category: 'Disaster Relief India',
-      goalAmount: '₹8,50,000',
-      raisedAmount: '₹6,20,000',
-      progressPercentage: 73,
-      supporters: 267,
-      daysLeft: 30,
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
-      urgency: 'Critical',
-      description: 'How to help flood victims in Uttarakhand? Emergency disaster relief providing shelter, food, medical aid, and rehabilitation to 2,000+ flood-affected families.',
-      beneficiaries: '2,000+ flood-affected families',
-      timeline: '18 months',
-      updates: [
-        '500 families provided emergency shelter',
-        'Medical camps serving 1,000+ people',
-        'Infrastructure rebuilding initiated'
-      ]
-    }
+    // {
+    //   id: 6,
+    //   title: 'Flood Relief in Uttarakhand',
+    //   organizer: 'GUS Disaster Relief',
+    //   ngo: 'GUS',
+    //   location: 'Uttarakhand, India',
+    //   category: 'Disaster Relief India',
+    //   goalAmount: '₹8,50,000',
+    //   raisedAmount: '₹6,20,000',
+    //   progressPercentage: 73,
+    //   supporters: 267,
+    //   daysLeft: 30,
+    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+    //   urgency: 'Critical',
+    //   description: 'How to help flood victims in Uttarakhand? Emergency disaster relief providing shelter, food, medical aid, and rehabilitation to 2,000+ flood-affected families.',
+    //   beneficiaries: '2,000+ flood-affected families',
+    //   timeline: '18 months',
+    //   updates: [
+    //     '500 families provided emergency shelter',
+    //     'Medical camps serving 1,000+ people',
+    //     'Infrastructure rebuilding initiated'
+    //   ]
+    // }
   ];
 
 
@@ -190,7 +190,7 @@ const LiveCausesPage = () => {
     // Simulate navigation - in a real app, you would use React Router
     // Redirect to specific cause detail pages based on cause
     const routeMap: { [key: number]: string } = {
-      1: '/khushi-cause-details',
+      1: '/jwp-cause-details',
       2: '/pawsitive-protectors-cause-details',
       4: '/bowls-of-hope-cause-details',
       5: '/flood-relief-cause-details',
@@ -202,9 +202,9 @@ const LiveCausesPage = () => {
   // Handle card click (entire card becomes clickable)
   const handleCardClick = (cause: any) => {
     if (cause.title === 'Wings of Hope') {
-      window.location.href = `/khushi-cause-details`;
+      window.location.href = `/jwp-cause-details`;
     } else if (cause.ngo === 'KHUSHII') {
-      window.location.href = `/khushi-cause-details`;
+      window.location.href = `/jwp-cause-details`;
     } else if (cause.title === 'Pawsitive Protectors') {
       window.location.href = `/pawsitive-protectors-cause-details`;
     } else if (cause.title === 'Bowls of Hope') {

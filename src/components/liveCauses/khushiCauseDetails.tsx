@@ -9,13 +9,13 @@ const KhushiCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  // KHUSHII cause data focused on Wings of Hope - menstrual health education
+  // JWP cause data focused on Wings of Hope - menstrual health education
   const cause = {
     id: 2,
     title: 'Wings of Hope',
     subtitle: 'Breaking period poverty through menstrual health education and women empowerment India',
-    organizer: 'KHUSHII',
-    ngo: 'KHUSHII',
+    organizer: 'JWP - Joint Women\'s Program',
+    ngo: 'JWP',
     location: 'Delhi & NCR, India',
     category: 'Women Empowerment • Girls Education',
     goalAmount: '₹5,00,000',
@@ -153,13 +153,13 @@ const KhushiCauseDetailPage = () => {
       {
         name: 'Priya Sharma',
         role: 'Parent, Delhi Community',
-        quote: 'My daughter now attends the KHUSHII learning center daily. She has gained confidence, improved her reading skills, and dreams of becoming a teacher. This program has transformed our family\'s future.',
+        quote: 'My daughter now attends the JWP learning center daily. She has gained confidence, improved her reading skills, and dreams of becoming a teacher. This program has transformed our family\'s future.',
         image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face'
       },
       {
         name: 'Rajesh Kumar',
         role: 'Community Leader, NCR',
-        quote: 'KHUSHII has brought hope to our community. Children who never had access to quality education are now learning, growing, and aspiring for better futures. The impact is visible in every family.',
+        quote: 'JWP has brought hope to our community. Children who never had access to quality education are now learning, growing, and aspiring for better futures. The impact is visible in every family.',
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       }
     ],
@@ -175,10 +175,10 @@ const KhushiCauseDetailPage = () => {
 
   // NGO details
   const ngoDetails = {
-    name: 'KHUSHII',
-    logo: 'https://khushii.org/wp-content/uploads/2021/01/khushii-black-logo.png',
+    name: 'JWP - Joint Women\'s Program',
+    logo: '/JWP.jpg',
     tagline: 'Spreading Happiness Through Education',
-    description: 'KHUSHII is a nationally recognized non-profit organization dedicated to empowering underprivileged children through holistic education, healthcare, and development programs. With a legacy of transforming lives across India, we believe in creating sustainable change through community-driven initiatives.',
+    description: 'JWP (Joint Women\'s Program) is a nationally recognized non-profit organization dedicated to empowering underprivileged children through holistic education, healthcare, and development programs. With a legacy of transforming lives across India, we believe in creating sustainable change through community-driven initiatives.',
     vision: 'A world where every child has access to quality education and the opportunity to realize their full potential.',
     mission: 'To empower underprivileged children through innovative educational programs, healthcare initiatives, and community development.',
     focus: 'Child Development & Education',
@@ -188,14 +188,14 @@ const KhushiCauseDetailPage = () => {
     certification: 'Section 8, 80G, FCRA',
     registrationNumber: 'MH/2008/NPO/1234',
     contact: {
-      phone: '+91-9876543210',
-      email: 'info@khushii.org',
-      website: 'www.khushii.org',
-      address: '123, Hope Street, Andheri West, Mumbai - 400058',
+      phone: '+91-11-41550912',
+      email: 'info@jwp.org',
+      website: 'www.jwp.org',
+      address: '123, Hope Street, Delhi NCR - 110058',
       social: {
-        facebook: '@KhushiiNGO',
-        twitter: '@KhushiiOrg',
-        instagram: '@khushii_official'
+        facebook: '@JWPNGO',
+        twitter: '@JWPOrg',
+        instagram: '@jwp_official'
       }
     },
     achievements: [
@@ -217,10 +217,10 @@ const KhushiCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate to Wings of Hope | KHUSHII - The Giving Circle"
-        description="Support Wings of Hope by KHUSHII. Help provide education and holistic development for underprivileged children. Donate to The Giving Circle to create a lasting impact."
+        title="Donate to Wings of Hope | JWP - Joint Women's Program - The Giving Circle"
+        description="Support Wings of Hope by JWP. Help provide education and holistic development for underprivileged children. Donate to The Giving Circle to create a lasting impact."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings of Hope, menstrual health education, period poverty, girls education support, women empowerment India"
-        canonicalUrl="https://www.thegivingcircle.in/khushi-cause-details"
+        canonicalUrl="https://www.thegivingcircle.in/jwp-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
       />
       <ArticleSchema
@@ -230,7 +230,7 @@ const KhushiCauseDetailPage = () => {
         category="Women Empowerment"
         location="Delhi & NCR, India"
         datePublished="2024-01-15"
-        author="KHUSHII"
+        author="JWP - Joint Women's Program"
       />
       {/* Professional Header Section */}
       <header className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
@@ -560,7 +560,7 @@ const KhushiCauseDetailPage = () => {
                 <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
                   <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
                     <img
-                      src="https://khushii.org/wp-content/uploads/2021/01/khushii-black-logo.png"
+                      src="/JWP.jpg"
                       alt={ngoDetails.name}
                       className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
                     />

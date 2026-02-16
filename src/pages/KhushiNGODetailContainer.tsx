@@ -4,9 +4,9 @@ import NGODetailPage from './NGODetailPage';
 import { NGODetails } from '../types';
 
 /**
- * KHUSHII NGO Detail Container Page
+ * JWP NGO Detail Container Page
  * 
- * This page component automatically loads KHUSHII NGO data
+ * This page component automatically loads JWP NGO data
  * and displays it using the NGODetailPage component.
  */
 
@@ -18,7 +18,7 @@ const KhushiNGODetailContainer: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchKHUSHIDetails = async () => {
+    const fetchJWPDetails = async () => {
       setLoading(true);
       setError(null);
 
@@ -28,14 +28,14 @@ const KhushiNGODetailContainer: React.FC = () => {
         setNgoDetails(khushiNGODetails);
 
       } catch (error) {
-        console.error('Failed to load KHUSHII data:', error);
-        setError('Failed to load KHUSHII details. Please try again later.');
+        console.error('Failed to load JWP data:', error);
+        setError('Failed to load JWP details. Please try again later.');
       } finally {
         setLoading(false);
       }
     };
 
-    fetchKHUSHIDetails();
+    fetchJWPDetails();
   }, []);
 
   const handleBack = () => {
@@ -75,8 +75,8 @@ const KhushiNGODetailContainer: React.FC = () => {
       ngoDetails={ngoDetails!}
       loading={loading}
       onBack={handleBack}
-      seoTitle="KHUSHII Foundation | Child Education NGO"
-      seoDescription="Learn about KHUSHII Foundation's work in child education and holistic development. Verified NGO partner transforming lives through school adoption and community support."
+      seoTitle="JWP - Joint Women's Program | Child Education NGO"
+      seoDescription="Learn about JWP's work in child education and holistic development. Verified NGO partner transforming lives through school adoption and community support."
     />
   );
 };
