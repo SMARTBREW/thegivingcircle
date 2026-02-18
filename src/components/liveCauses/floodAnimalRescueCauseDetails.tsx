@@ -1,13 +1,44 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle, LifeBuoy } from 'lucide-react';
-import PrimaryButton from '../ui/PrimaryButton';
-import CloudinaryImage from '../ui/CloudinaryImage';
+import { Share2, Shield, Facebook, Twitter, AlertTriangle, Lock, FileText, CheckCircle, Award, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
 
 const FloodAnimalRescueCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      question: "How are donations used during flood emergencies?",
+      answer: "95% of every donation goes directly to rescue operations and animal care: deploying rapid response teams, purchasing rescue equipment and inflatable boats, setting up temporary shelters, providing emergency food and clean water, and covering veterinary treatment for flood-affected animals. The remaining 5% covers essential coordination costs including communications, reporting, and logistics management. All expenditures are audited annually and financial reports are published quarterly on the AnimalCare India website."
+    },
+    {
+      question: "Is my donation tax-deductible?",
+      answer: "Yes. AnimalCare India is registered under Section 80G of the Income Tax Act. All donations are eligible for tax deductions. You will receive an 80G receipt via email within 48 hours of your donation, which you can use when filing your income tax returns. If you do not receive your receipt, please write to info@animalcareindia.org.in and the team will issue it immediately."
+    },
+    {
+      question: "How quickly can teams deploy during a flood?",
+      answer: "Rapid response teams can deploy within 24 to 48 hours of a flood alert. Pre-positioned rescue equipment is stored at strategic locations across all eight operational states, allowing teams to begin operations without waiting for supplies to be shipped. In areas with year-round staff presence like Assam and Bihar, deployment can happen within hours of an alert being issued."
+    },
+    {
+      question: "What happens to animals after they are rescued?",
+      answer: "Rescued animals are taken to temporary shelters where they receive veterinary triage, food, clean water, and rest. Animals with injuries or infections are treated on site or transported to partner veterinary facilities. The programme photographs every animal and records the rescue location for reunification efforts. Livestock are tagged with temporary identification. Once floodwaters recede and conditions stabilise, animals are reunited with their owners where possible or released back into their communities with ongoing health monitoring."
+    },
+    {
+      question: "Can I donate supplies instead of money?",
+      answer: "While monetary donations are most efficient because they allow the programme to purchase exactly what is needed at the right time and location, in-kind donations of specific items are also welcome during active flood emergencies. Priority items include dry pet food, tarpaulins, blankets, transport crates, and basic veterinary supplies. Contact the team at +91-9315982650 or info@animalcareindia.org.in to coordinate supply donations. Please note that in-kind donations are not eligible for 80G tax receipts."
+    },
+    {
+      question: "How will I know my donation made a difference?",
+      answer: "We believe in complete transparency. We send regular email updates with photos and videos from the ground during the deployment. You will also receive a detailed impact report after the flood relief operation concludes, showing exactly how many animals were rescued and treated."
+    }
+  ];
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   // Flood Animal Rescue cause data focused on emergency animal rescue during floods
   const cause = {
@@ -69,31 +100,11 @@ const FloodAnimalRescueCauseDetailPage = () => {
 
     // Impact Gallery
     impactGallery: [
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
-        caption: 'Emergency animal rescue India - flood rescue operations reaching stranded animals in Uttarakhand',
-        type: 'Emergency Response'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png',
-        caption: 'How to help flood victims Uttarakhand - volunteers rescue animals from floods',
-        type: 'Flood Animal Rescue'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png',
-        caption: 'Disaster animal relief - emergency medical care for flood-affected animals',
-        type: 'Medical Care'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg',
-        caption: 'Flood relief Uttarakhand - emergency shelters providing disaster rehabilitation',
-        type: 'Emergency Shelter'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg',
-        caption: 'Emergency response India - communities supporting flood animal rescue operations',
-        type: 'Community Rescue'
-      }
+      { type: 'Rescue', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png', caption: 'Flood zone rescue deployment' },
+      { type: 'Waiting', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png', caption: 'Animals awaiting rescue' },
+      { type: 'Rescue', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183004/images/animal-flood/animal11.jpg', caption: 'Every rescue counts' },
+      { type: 'Shelter', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg', caption: 'Temporary shelter operations' },
+      { type: 'Medical', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png', caption: 'Veterinary first aid' }
     ],
 
     // Expected Outcomes
@@ -145,16 +156,22 @@ const FloodAnimalRescueCauseDetailPage = () => {
 
     testimonials: [
       {
-        name: 'Dr. Rajesh Kumar',
-        role: 'Veterinarian, Uttarakhand',
-        quote: 'The Flood Animal Rescue program has been a lifeline for thousands of animals during the recent floods. Their rapid response and specialized rescue techniques have saved countless lives. This program shows that even in the darkest times, compassion can shine through.',
-        image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face'
+        name: 'Anwar Hussain',
+        role: 'Cattle owner, Barpeta district, Assam',
+        quote: 'When the water came into our village in Barpeta, we had to leave within minutes. I could not get to our two cows and three goats. I thought they were dead. Three days later, the rescue team called me and said they had found all five animals alive on a raised embankment. They were being treated at a temporary shelter. I cannot describe what that phone call meant to my family. Those animals are our livelihood.',
+        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       },
       {
-        name: 'Priya Sharma',
-        role: 'Community Leader, Uttarakhand',
-        quote: 'When the floods hit our village, we thought all was lost. But the rescue teams arrived and saved not just our animals, but our hope. They showed us that every life matters, even in the face of disaster.',
-        image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
+        name: 'Sunita Devi',
+        role: 'Local flood relief volunteer, Darbhanga, Bihar',
+        quote: 'I have been volunteering with flood relief for six years, but I never saw anyone come specifically for the animals until this programme started operating in our area. During the 2024 floods, I watched a team pull seventeen dogs out of the water in a single afternoon. They were organised, calm, and efficient. Every animal was accounted for, treated, and sheltered. That level of care during a disaster is something I had never seen before.',
+        image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face'
+      },
+      {
+        name: 'Dr. Priya Menon',
+        role: 'Veterinarian, Kerala State Animal Welfare Board',
+        quote: 'Post-flood veterinary care is critically underfunded across India. I have treated animals in flood zones for years, and the pattern is always the same: the water goes down, the media leaves, and then the real health crisis begins. Leptospirosis, respiratory infections, parasites, malnutrition. This programme is one of the very few that stays through the aftermath and provides the sustained veterinary support that actually saves lives.',
+        image: 'https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=100&h=100&fit=crop&crop=face'
       }
     ],
 
@@ -167,51 +184,24 @@ const FloodAnimalRescueCauseDetailPage = () => {
     ]
   };
 
-  // NGO details
+  // Restored NGO details
   const ngoDetails = {
     name: 'AnimalCare India',
     logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png',
-    tagline: 'Every Life, Every Heartbeat',
-    description: 'AnimalCare India is a dedicated animal welfare organization committed to protecting and caring for animals during natural disasters and emergencies. Through specialized rescue operations, emergency medical care, and disaster response coordination, we work tirelessly to save lives when every second counts.',
-    vision: 'A world where no animal is left behind during natural disasters and emergencies.',
-    mission: 'To provide rapid emergency response and rescue operations for animals affected by floods, natural disasters, and other emergencies through specialized teams and coordinated disaster response.',
-    focus: 'Emergency Animal Rescue',
-    founded: '2015',
-    location: 'Uttarakhand, India',
-    impact: '5,000+ animals rescued from disasters',
-    certification: 'Section 8, 80G, FCRA',
-    registrationNumber: 'UK/2015/ANIMAL/003',
-    contact: {
-      phone: '+91-9315982650',
-      email: 'info@animalcareindia.org.in',
-      website: 'www.animalcareindia.org.in',
-      address: 'AnimalCare India, Dehradun, Uttarakhand - 248001',
-      social: {
-        facebook: '@animalcareindia.org.in',
-        twitter: '@AnimalCareIndia',
-        instagram: '@animalcareindia.org.in'
-      }
-    },
-    achievements: [
-      { icon: Award, text: '8+ years of emergency animal rescue experience' },
-      { icon: MapPin, text: 'Active rescue operations in 15+ disaster-affected regions' },
-      { icon: Trophy, text: 'Best Emergency Animal Rescue Award 2023' },
-      { icon: Shield, text: 'ISO 9001:2015 certified for emergency response' }
-    ],
+    tagline: 'Compassion in action, transparency in practice',
     stats: {
-      currentProjects: 6,
-      totalBeneficiaries: '5,000+',
       transparency: 98,
-      adminCosts: '5%',
-      programSpend: '95%'
+      programSpend: 95,
+      yearsActive: '8+',
+      states: 8
     }
   };
 
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate to Flood Animal Rescue | Animal Care - The Giving Circle"
-        description="Support Flood Animal Rescue by Animal Care. Help rescue and rehabilitate animals affected by floods. Donate to The Giving Circle to create a lasting impact."
+        title="Flood Animal Rescue: Save Animals Trapped in India's Floods | Donate to AnimalCare India — The Giving Circle"
+        description="When floodwaters rise across India, millions of animals are left stranded with no way to escape. Flood Animal Rescue deploys rapid response teams across 8 states. 62% funded. 15 days left. Donate now. Tax-deductible under 80G."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Animal Rescue, emergency animal rescue, disaster relief India"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
@@ -225,405 +215,536 @@ const FloodAnimalRescueCauseDetailPage = () => {
         datePublished="2024-06-15"
         author="Animal Care India"
       />
-      {/* Professional Header Section */}
-      <header className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-2">
-            <button
-              onClick={() => navigate(-1)}
-              className="flex items-center gap-1 sm:gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <ArrowLeft size={18} />
-              <span className="font-medium text-xs sm:text-sm md:text-base">Back to Previous Page</span>
-            </button>
-            {id && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg px-2 sm:px-3 py-1">
-                <span className="text-[10px] sm:text-xs md:text-sm text-blue-700 font-medium">
-                  Cause ID: {id} (Development Mode)
-                </span>
-              </div>
-            )}
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-teal-50 via-white to-teal-100 pt-32 pb-12 sm:pb-16">
+        <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
+            Flood Animal Rescue — When Waters Rise, They Have No One But Us
+          </h1>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
+            Every monsoon season, India's floods devastate millions of animals. They cannot evacuate. They cannot call for help. They can only wait — stranded on rooftops, clinging to trees, submerged in rising water — hoping someone will come. This campaign is that someone.
+          </p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <Shield className="text-teal-600" size={16} />
+              Tax Deductible · 80G
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <CheckCircle className="text-teal-600" size={16} />
+              98% Transparency Score
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <TrendingUp className="text-teal-600" size={16} />
+              8+ Years Active
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <Award className="text-teal-600" size={16} />
+              ISO 9001:2015
+            </div>
           </div>
 
-          {/* Page Title */}
-          <div className="text-center mb-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight py-2 break-words">
-              Flood Animal Rescue
-            </h1>
+          {/* Geographic Line */}
+          <p className="text-sm text-gray-600 mb-8">
+            <strong>Multi-state operations</strong> · Uttarakhand, Kerala, Assam, Bihar, West Bengal, Odisha, Andhra Pradesh, Tamil Nadu
+          </p>
+
+          {/* Hero Image */}
+          <div className="w-full max-w-4xl rounded-xl overflow-hidden shadow-lg">
+            <img
+              src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png"
+              alt="Animals stranded during flooding in India, awaiting rescue by Flood Animal Rescue teams deployed by AnimalCare India"
+              className="w-full aspect-video object-cover"
+            />
           </div>
         </div>
-      </header>
+      </section>
 
-      <main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {/* Main Content */}
-          <article className="lg:col-span-2">
-            {/* Hero Section */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-6">
-              <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">
-                <CloudinaryImage
-                  src={cause.image}
-                  alt={cause.title}
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
-                  width={1280}
-                  priority
+      {/* Two-Column Page Body */}
+      <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10">
+          {/* Main Content Column */}
+          <main className="min-w-0">
+
+            {/* Section 1: When the Floods Come */}
+            <section aria-label="When the Floods Come" className="mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
+                <AlertTriangle className="text-black" size={18} />
+                When the Floods Come
+              </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+
+              <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  India is one of the most flood-prone countries on earth. Every year, the monsoon season transforms rivers into raging torrents, submerges entire villages, and displaces millions. Between June and October, vast stretches of Assam, Bihar, West Bengal, Uttarakhand, Kerala, Odisha, Andhra Pradesh, and Tamil Nadu go underwater. For people, there are evacuation warnings, relief camps, and government aid. For animals, there is almost nothing.
+                </p>
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  The 2023 floods in Uttarakhand came with a ferocity that overwhelmed even experienced disaster responders. Glacial lake outbursts and cloudbursts sent walls of water through mountain valleys. Livestock that had been grazing on hillsides were swept away in minutes. Dogs and cats in low-lying towns scrambled to rooftops as water rose to the first floor of buildings. In Chamoli and Pithoragarh districts, rescue teams found animals that had been stranded for days, standing on narrow ledges or clinging to partially submerged structures, too exhausted and terrified to move.
+                </p>
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  The 2024 Wayanad landslides in Kerala were even more devastating. Without any warning, hillsides collapsed onto settlements, burying homes, farms, and animals together. Survivors described hearing the cries of trapped cattle and dogs underneath rubble for days after the initial disaster. The scale of animal suffering in that single event was staggering, and Wayanad was just one district in one state during one monsoon season.
+                </p>
+              </div>
+
+              {/* Image directly below the paragraphs */}
+              <figure className="mb-6">
+                <img
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
+                  alt="When floodwaters rise, animals have nowhere to go. They wait, and they hope."
+                  className="w-full rounded-lg shadow-lg"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              </div>
-            </div>
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  When floodwaters rise, animals have nowhere to go. They wait, and they hope.
+                </figcaption>
+              </figure>
 
-            {/* Trust Indicators Bar */}
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
-              <div className="flex flex-wrap items-center justify-center sm:justify-between gap-2 sm:gap-3 md:gap-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <CheckCircle className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Verified Campaign</span>
-                </div>
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <Award className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Tax Deductible</span>
-                </div>
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <TrendingUp className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Impact Tracked</span>
-                </div>
+              {/* The Annual Crisis subsection */}
+              <div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">The Annual Crisis No One Prepares For</h3>
+                <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
+                  In Assam and Bihar, flooding is not a rare disaster. It is an annual certainty. The Brahmaputra and its tributaries overflow every single monsoon, submerging thousands of square kilometres. In Assam alone, floods affect an average of 30 to 40 lakh people each year. The animal toll is harder to count, but it runs into the hundreds of thousands. Cattle, goats, poultry, dogs, cats, and wildlife are all caught in the same relentless cycle.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
+                  The tragedy is compounded by what happens after the water recedes. Contaminated water breeds leptospirosis, a bacterial infection that is lethal to both animals and humans. Stagnant pools become breeding grounds for mosquitoes carrying diseases. Animals that survived the initial flooding develop severe skin infections from prolonged exposure to dirty water.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
+                  And then there is the separation. During chaotic evacuations, animals are left behind. Pets are torn from families who are hustled onto boats with barely enough room for people. Livestock owners watch helplessly as rising water carries away animals they cannot reach.
+                </p>
               </div>
-            </div>
+            </section>
 
-            {/* Geographic Coverage */}
-            <section aria-label="Geographic Coverage" className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin className="text-blue-600" size={18} />
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">Geographic Coverage</h3>
-              </div>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Uttarakhand, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Dehradun, Uttarakhand</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Haridwar, Uttarakhand</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Rishikesh, Uttarakhand</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Mussoorie, Uttarakhand</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Nainital, Uttarakhand</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kerala, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kochi, Kerala</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Thiruvananthapuram, Kerala</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Assam, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Guwahati, Assam</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bihar, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Patna, Bihar</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">West Bengal, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kolkata, West Bengal</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Odisha, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bhubaneswar, Odisha</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Andhra Pradesh, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Vijayawada, Andhra Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Tamil Nadu, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Chennai, Tamil Nadu</span>
-              </div>
-              <p className="text-xs sm:text-sm text-gray-600 mt-3 break-words">
-                <strong>Active in 20+ cities across 8 states</strong> - Emergency rescue operations for animals during natural disasters
+            {/* Section 2: The Hidden Victims */}
+            {/* Section 2: The Hidden Victims */}
+            <section aria-label="The Hidden Victims" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                The Hidden Victims
+              </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                In every flood, the focus of relief operations is rightly on human lives. Evacuations prioritise people. Relief camps are designed for people. Media coverage centres on human stories. This is as it should be. But in the shadow of every human disaster, there is a parallel animal disaster that receives almost no attention, no funding, and no coordinated response.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Animals Cannot Evacuate Themselves</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                When flood warnings are issued, people can make decisions. They can gather belongings, move to higher ground, or board evacuation vehicles. Animals cannot process warnings. A dog chained to a post in a courtyard will drown there unless someone comes to unchain it. Cattle locked in sheds will stand in rising water until it reaches their nostrils. Cats will climb to the highest point they can find and then have nowhere else to go. The most heartbreaking aspect of flood-related animal deaths is how preventable many of them are. In most cases, the animals did not need sophisticated rescue equipment. They just needed someone to show up.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Strays are particularly vulnerable. They have no owners coming to get them. A street dog in a flood-affected town has no higher ground it has been trained to seek, no shelter it associates with safety. It simply runs until it cannot run anymore, and then it swims until it cannot swim anymore. Many do not survive. Those that do are left traumatised, malnourished, and sick from ingesting contaminated water.
+              </p>
+
+              <figure className="my-6">
+                <img
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png"
+                  alt="Rescue volunteers carrying a flood-affected animal to safety during monsoon operations in India"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Every rescue is a race against time. Flood-affected animals need immediate intervention.
+                </figcaption>
+              </figure>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">The Post-Flood Health Crisis</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Surviving the floodwater is only the first challenge. In the weeks that follow, disease spreads rapidly through animal populations. Leptospirosis, transmitted through contaminated water, causes kidney and liver failure in dogs and cattle. Skin infections and fungal diseases ravage animals whose coats were soaked for days. Gastrointestinal parasites thrive in flood conditions. Foot-and-mouth disease outbreaks spike among livestock that have been standing in waterlogged conditions.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Without veterinary intervention, many of these post-flood conditions are fatal. Rural veterinary infrastructure in flood-prone areas is already stretched thin under normal circumstances. After a major flood, it is essentially non-existent. Clinics are underwater. Supplies are destroyed. Veterinarians themselves are displaced. The animals that survived the flood often die in the weeks that follow from entirely treatable conditions, simply because no one was there to treat them.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Livestock Losses and Livelihoods</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                For millions of rural Indian families, livestock is not a pet. It is an economic lifeline. A single cow or buffalo may represent years of savings. A small flock of goats can be the difference between a family eating and going hungry. When floods kill livestock, they do not just take animal lives. They destroy human livelihoods. Families that lose cattle in floods often face financial ruin from which they never fully recover. Flood Animal Rescue understands that saving animals is inseparable from protecting the communities that depend on them.
               </p>
             </section>
 
-            {/* Section 1: The Challenge */}
-            <section aria-label="The Challenge" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <AlertTriangle className="text-black" size={18} />
-                The Challenge
+            {/* Section 3: How Flood Animal Rescue Responds */}
+            {/* Section 3: How Flood Animal Rescue Responds */}
+            <section aria-label="How Flood Animal Rescue Responds" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                How Flood Animal Rescue Responds
               </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
 
-              <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
-                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  {cause.problemStatement}
-                </p>
-              </div>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Flood Animal Rescue was built on a simple operational principle: when disaster strikes, animals need someone who is ready to act immediately, with the right equipment, the right training, and the right coordination. Every hour of delay during a flood costs animal lives. The programme maintains year-round readiness so that when the first warnings come, teams can deploy within 24 to 48 hours.
+              </p>
 
-              {/* Root Causes */}
-              <div className="mb-4 sm:mb-6 md:mb-8">
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">Understanding the Root Causes</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Natural disasters like floods create life-threatening situations for thousands of animals</strong>, with no escape routes or means of survival.
-                      Street dogs, cats, livestock, and wildlife become trapped in rising floodwaters, facing immediate danger of drowning, starvation, and injury.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">The absence of emergency animal rescue infrastructure</strong> means that when disasters strike, animals are often left to fend for themselves.
-                      Communities lack the resources, equipment, and training needed to rescue animals during floods and other natural disasters.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Without intervention, the cycle of suffering continues, with animals facing not just immediate danger but long-term trauma and health issues from exposure to contaminated floodwaters.
-                    </p>
-                  </div>
-                  <div className="order-first lg:order-last">
-                    <img
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
-                      alt="Animals trapped in floodwaters needing immediate rescue"
-                      className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                    />
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                      Animals trapped in floodwaters needing immediate rescue
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Rapid Response Deployment</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                The programme maintains pre-positioned rescue kits in strategic locations across all eight operational states. Each kit includes inflatable rescue boats, life jackets, catch poles, transport crates, emergency animal feed, and basic veterinary supplies. When flood alerts are issued by the India Meteorological Department or the Central Water Commission, the nearest response team is activated immediately. Team leaders begin coordinating with local administration, identifying likely animal concentration points, and securing temporary shelter locations before the water even peaks.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Each rapid response team consists of trained animal handlers, boat operators, and a veterinary first-aid specialist. They operate in pairs during rescues, with one person managing the boat and another handling the animals. Communication is maintained through satellite phones in areas where cellular networks have been knocked out by the flooding. GPS coordinates of every rescue are logged, creating a database that helps predict where animals are most likely to need help during future floods.
+              </p>
 
-              {/* Consequences */}
-              <div className="mb-4 sm:mb-6 md:mb-8">
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">The Cost of Inaction</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Every minute without rescue means more lives lost to floodwaters.</strong>
-                      Animals continue to face drowning, starvation, and injury while communities struggle to cope with their own survival needs.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      The lack of emergency animal rescue leads to massive loss of life, spread of waterborne diseases, and long-term psychological trauma for both animals and communities.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Society loses not just individual animals, but the entire ecosystem of compassion and care that binds communities together during times of crisis.
-                    </p>
-                  </div>
-                  <div>
-                    <img
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png"
-                      alt="The importance of emergency animal rescue during disasters"
-                      className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                    />
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                      The importance of emergency animal rescue during disasters
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <figure className="my-6">
+                <img
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg"
+                  alt="Flood Animal Rescue team deploying inflatable boats in a flood zone to rescue stranded animals in India"
+                  className="w-full rounded-lg shadow-lg"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Rapid response teams deploy within 24-48 hours of flood alerts with pre-positioned rescue equipment.
+                </figcaption>
+              </figure>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Temporary Shelters and Veterinary First Aid</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Rescue is only the first step. Once animals are pulled from floodwaters, they need immediate care. The programme sets up temporary shelters on elevated ground near flood zones, typically in community halls, school buildings, or purpose-erected tarpaulin structures. Each shelter provides clean water, food, warmth, and basic veterinary triage. Animals are assessed for injuries, infections, dehydration, and shock. Those requiring advanced treatment are transported to partner veterinary facilities.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                The veterinary first-aid protocol covers wound cleaning and dressing, dehydration management through oral and subcutaneous fluids, anti-parasitic treatment, and prophylactic antibiotics for animals showing early signs of leptospirosis or respiratory infections. During the 2024 response season, the programme's field veterinary teams treated over 2,400 animals across six states. Approximately 85 percent of treated animals survived and were either reunited with owners or released back into their communities once conditions stabilised.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Reunification With Owners</h3>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                One of the most important and most overlooked aspects of flood animal rescue is reunification. When families are evacuated, they are rarely told where to find their animals afterward. The programme photographs every rescued animal, records the location of rescue, and posts details on local community boards and social media groups. Where possible, rescued livestock are tagged with temporary identification. In the 2024 season, the programme successfully reunited over 600 animals with their owners, a number that represents not just animal welfare but family stability and economic recovery for hundreds of rural households.
+              </p>
             </section>
 
-            {/* Section 2: The Solution / How your support helps */}
-            <section aria-label="The Solution" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <Target className="text-black" size={18} />
-                The Solution / How Your Support Helps
+            {/* Section 4: Multi-State Operations */}
+            {/* Section 4: Multi-State Operations */}
+            <section aria-label="Multi-State Operations" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Multi-State Operations
               </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-4 sm:mb-6 md:mb-8">
-                <div>
-                  <div className="prose prose-lg text-gray-600 mb-3 sm:mb-4 md:mb-6">
-                    <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                      {cause.solution.approach}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Our comprehensive approach addresses every aspect of emergency animal rescue.</strong>
-                      We deploy specialized rescue teams with boats and water rescue equipment, providing immediate response to animals trapped in floodwaters.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Through coordination with disaster management authorities and local communities, we establish emergency animal shelters and provide immediate medical care for rescued animals.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      We create long-term recovery and relocation programs, ensuring that rescued animals receive proper care and find safe homes, while building community resilience for future disasters.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg"
-                    alt="Emergency rescue teams providing immediate aid to trapped animals"
-                    className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                  />
-                  <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                    Emergency rescue teams providing immediate aid to trapped animals
-                  </p>
-                </div>
-              </div>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                India's flood landscape is as diverse as the country itself. Mountain flash floods in Uttarakhand behave very differently from the slow, persistent inundation of the Brahmaputra floodplains in Assam. Coastal cyclone flooding in Odisha and Tamil Nadu presents challenges that are distinct from the monsoon-driven river overflow in Bihar and West Bengal. Flood Animal Rescue has developed operational protocols adapted to each of these environments, working through a network of local partners while maintaining central coordination for resource allocation, training standards, and quality oversight.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Uttarakhand: Mountain Floods</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Flash floods and landslides in Uttarakhand strike with devastating speed. Water channels through narrow valleys at terrifying velocity, leaving almost no time for evacuation. The programme's Uttarakhand teams are trained in mountainous terrain rescue, including rope-based animal extraction from ledges and steep embankments. Pre-positioned equipment is stored at Dehradun and Haridwar, allowing rapid deployment to Chamoli, Pithoragarh, Rudraprayag, and Uttarkashi.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Kerala: Monsoon and Landslides</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Kerala's terrain of hills, rivers, and backwaters makes it uniquely flood-prone. The 2018 floods were described as the worst in a century, and events like the 2024 Wayanad landslides have shown that the state remains deeply vulnerable. The programme works with Kerala's robust civil society network, partnering with local animal welfare groups who provide ground intelligence during emergencies. Boat-based rescue operations in Kerala's backwater regions require specialised navigation skills that the programme develops through regular training exercises.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Assam and Bihar: The Annual Brahmaputra Crisis</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                For Assam and Bihar, flooding is not a question of if but when. The Brahmaputra and its tributaries overflow every monsoon, and in some years, multiple rounds of flooding hit the same communities. The programme maintains its largest permanent presence in these two states, with year-round staff, pre-staged boats, and standing agreements with local veterinary colleges for emergency support. During the 2024 Assam floods, teams rescued over 800 animals across Barpeta, Nalbari, Morigaon, and Nagaon districts.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">West Bengal, Odisha, Andhra Pradesh, and Tamil Nadu</h3>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                Cyclone-driven flooding along India's eastern coast presents distinct challenges. Storm surges push saltwater inland, contaminating freshwater sources that animals depend on. Wind damage destroys shelters, leaving animals exposed. The programme's coastal teams are trained to operate in post-cyclone environments, including navigating debris fields and managing animals that have been exposed to saltwater. In Tamil Nadu and Andhra Pradesh, the northeast monsoon brings additional flooding risk between October and December, extending the operational season well beyond the typical June-to-September window.
+              </p>
             </section>
 
 
-            {/* Section 3: See the Action in Change */}
-            <section aria-label="Impact Gallery" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <Camera className="text-black" size={18} />
-                See the Action in Change
+            {/* Section 5: In Their Own Words (Testimonials) */}
+            <section aria-label="In Their Own Words" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                In Their Own Words
               </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
 
-              <div className="mb-3 sm:mb-4 md:mb-6">
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  Every donation creates visible, measurable change in animal lives during emergencies. Our impact gallery showcases
-                  real moments of rescue and hope, from the first touch of a rescuer's hand to the joy of an animal reaching safety,
-                  from emergency medical care to community celebration of life.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                {cause.impactGallery.map((item, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg overflow-hidden">
-                    <div className="relative h-40 sm:h-48 md:h-64">
-                      <img
-                        src={item.image}
-                        alt={item.caption}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-black text-white px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium">
-                        {item.type}
-                      </div>
-                    </div>
-                    <div className="p-3 sm:p-4 md:p-6">
-                      <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">{item.caption}</p>
+              <div className="space-y-6">
+                {cause.testimonials.map((testimonial, index) => (
+                  <div key={index} className="bg-teal-50 border-l-4 border-teal-400 p-4 sm:p-6 rounded-r-lg">
+                    <p className="text-gray-700 italic mb-4 text-sm sm:text-base leading-relaxed">"{testimonial.quote}"</p>
+                    <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
+                      <span className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</span>
+                      <span className="text-gray-400 hidden sm:inline">—</span>
+                      <span className="text-gray-500 text-xs sm:text-sm">{testimonial.role}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-          </article>
+            {/* Section 6: Gallery */}
+            {/* Section 6: Gallery - Masonry Grid Style */}
+            <section aria-label="Flood Animal Rescue in Action" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Flood Animal Rescue in Action
+              </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                {cause.impactGallery.map((item, index) => (
+                  <div key={index} className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
+                    <img
+                      src={item.image}
+                      alt={item.caption}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <p className="text-white text-sm font-medium leading-tight">{item.caption}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 6: About NGO */}
+            <section aria-label="About AnimalCare India" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                About AnimalCare India
+              </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 md:p-8">
+                <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                  <div className="bg-teal-600 rounded-lg p-3 text-white shrink-0">
+                    <span className="text-2xl font-bold">A</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{ngoDetails.name}</h3>
+                    <p className="text-sm text-gray-500">{ngoDetails.tagline}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.transparency}%</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Transparency</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.programSpend}%</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Program Spend</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.yearsActive}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Years Active</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.states}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">States Covered</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4 pt-6 border-t border-gray-200">
+                  <div className="flex items-start gap-3">
+                    <Shield className="text-teal-600 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">ISO 9001:2015 Certified Organisation</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="text-teal-600 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">Multi-State Disaster Response Operations since 2018</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <FileText className="text-teal-600 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-teal-600 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span className="text-sm sm:text-base text-gray-700">Contact: +91 98103 53603</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-teal-600 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <a href="mailto:info@animalcareindia.org.in" className="text-sm sm:text-base text-gray-700 hover:text-teal-600 hover:underline">hello@thegivingcircle.in</a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-teal-600 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <a href="http://www.animalcareindia.org.in" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-teal-600 hover:underline">www.animalcareindia.org.in</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 7: FAQ */}
+            <section aria-label="Frequently Asked Questions" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex items-center justify-between p-4 sm:p-5 bg-white hover:bg-gray-50 transition-colors text-left"
+                    >
+                      <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">{faq.question}</span>
+                      {openFaqIndex === index ? (
+                        <ChevronUp className="text-teal-600 shrink-0" size={20} />
+                      ) : (
+                        <ChevronDown className="text-gray-400 shrink-0" size={20} />
+                      )}
+                    </button>
+                    {openFaqIndex === index && (
+                      <div className="p-4 sm:p-5 pt-0 bg-white text-gray-600 text-sm sm:text-base leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </main>
 
           {/* Enhanced Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="lg:sticky lg:top-24 space-y-6">
-              {/* Donation Card with Professional Design */}
-              <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6">
-                <div className="text-center mb-3 sm:mb-4 md:mb-6">
-                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-green-700 rounded-full mb-2 sm:mb-3 md:mb-4 text-white">
-                    <LifeBuoy size={18} />
-                  </div>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
-                  <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
+          <aside className="lg:col-span-1" id="donate-section">
+            <div className="lg:sticky lg:top-28 space-y-6 h-fit">
+              {/* Donation Card - Matching HTML Design */}
+              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 sm:p-7">
+                {/* Header - Raised Amount */}
+                <div className="flex items-baseline gap-2 mb-1.5">
+                  <span className="text-3xl font-extrabold text-teal-600 tracking-tight">{cause.raisedAmount}</span>
+                  <span className="text-sm text-gray-500 font-medium">raised of {cause.goalAmount}</span>
                 </div>
 
-                <div className="relative mb-3 sm:mb-4 md:mb-6">
-                  <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
+                {/* Progress Bar with Shimmer */}
+                <div className="mb-4">
+                  <div className="w-full bg-teal-50 rounded-full h-2.5 overflow-hidden">
                     <div
-                      className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
+                      className="h-full bg-gradient-to-r from-teal-600 to-teal-500 rounded-full relative overflow-hidden"
                       style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                     >
-                      <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow-md">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-700 rounded-full"></div>
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
                     </div>
                   </div>
-                  <div className="flex justify-between mt-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
-                    <span>0%</span>
-                    <span className="font-semibold text-green-700">{cause.progressPercentage}%</span>
-                    <span>100%</span>
+                  <div className="flex justify-between mt-1.5 text-xs text-gray-500">
+                    <span>{cause.progressPercentage}% funded</span>
+                    <span>₹1,70,000 to go</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Supporters</div>
+                {/* Stats Row - Supporters, Days Left, States */}
+                <div className="grid grid-cols-3 gap-2 mb-5 text-center">
+                  <div className="bg-teal-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">{cause.supporters}</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Supporters</div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.daysLeft}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Days Left</div>
+                  <div className="bg-teal-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">{cause.daysLeft}</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Days Left</div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.progressPercentage}%</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
+                  <div className="bg-teal-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">8</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">States</div>
                   </div>
                 </div>
 
-                <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
-                  Support This Cause
-                </PrimaryButton>
-
-                <PrimaryButton
-                  variant="secondary"
-                  className="w-full"
-                  icon={<Share2 size={14} />}
-                >
-                  Share This Cause
-                </PrimaryButton>
-
-                <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t text-center">
-                  <p className="text-[10px] sm:text-xs text-gray-500 break-words">
-                    All donations are tax-deductible under Section 80G
-                  </p>
+                {/* Donation Tiers */}
+                <div className="mb-5">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Select an amount</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button className="border-2 border-gray-200 hover:border-teal-600 hover:bg-teal-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm group">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹500</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Emergency food kit for 5 animals</div>
+                    </button>
+                    <button className="border-2 border-teal-600 bg-teal-50 rounded-lg p-3.5 text-center transition-all shadow-sm relative">
+                      <div className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-teal-600 rounded-tr-lg" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹1,500</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Rescue & shelter for 3 animals</div>
+                    </button>
+                    <button className="border-2 border-gray-200 hover:border-teal-600 hover:bg-teal-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹5,000</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Vet treatment for 10 flood-affected animals</div>
+                    </button>
+                    <button className="border-2 border-gray-200 hover:border-teal-600 hover:bg-teal-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹10,000</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Full rescue operation for one flood zone</div>
+                    </button>
+                  </div>
                 </div>
+
+                {/* Main Donate Button */}
+                <button className="w-full bg-teal-600 hover:bg-teal-700 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
+                  <span>Donate Now</span>
+                  <span className="text-xs font-normal opacity-90">Secure payment · Tax receipt within 48 hours</span>
+                </button>
+
+                {/* Urgency Note */}
+                <div className="text-center text-xs text-teal-600 font-semibold mb-5 flex items-center justify-center gap-1">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>15 days left — monsoon season is approaching</span>
+                </div>
+
+                {/* Share Section */}
+                <div className="border-t border-gray-100 pt-4.5 mb-4.5">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Spread the word</div>
+                  <div className="grid grid-cols-4 gap-2">
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-green-500 hover:text-green-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                      </svg>
+                      <span className="text-[10px]">WhatsApp</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Facebook size={14} />
+                      <span className="text-[10px]">Facebook</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-black hover:text-black hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Twitter size={14} />
+                      <span className="text-[10px]">Twitter</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-teal-600 hover:text-teal-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Share2 size={14} />
+                      <span className="text-[10px]">Copy Link</span>
+                    </button>
+                  </div>
+                </div>
+
               </div>
 
-              {/* NGO Information Card with Professional Design */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
-                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
-                    <img
-                      src="/Animal care.jpg"
-                      alt={ngoDetails.name}
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
-                    />
-                    <div>
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold break-words">{ngoDetails.name}</h3>
-                      <p className="text-gray-300 text-[10px] sm:text-xs md:text-sm break-words">{ngoDetails.tagline}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="text-green-400" size={12} />
-                    <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
-                  </div>
-                </div>
+              {/* Trust Signals - Outside the card, matching HTML structure */}
 
-                <div className="p-3 sm:p-4 md:p-6">
-                  <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
-                    {ngoDetails.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
-                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
-                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
-                      <div className="text-[10px] sm:text-xs text-gray-600">Transparency</div>
-                    </div>
-                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border-2 border-purple-100">
-                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-green-700">{ngoDetails.stats.programSpend}</div>
-                      <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
-                    {ngoDetails.achievements.map((achievement, index) => (
-                      <div key={index} className="flex items-start gap-2 sm:gap-3">
-                        <achievement.icon className="text-green-700 mt-0.5" size={12} />
-                        <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 break-words">{achievement.text}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t pt-3 sm:pt-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
-                    <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
-                      <a href={`tel:${ngoDetails.contact.phone}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Phone size={10} />
-                        <span>{ngoDetails.contact.phone}</span>
-                      </a>
-                      <a href={`mailto:${ngoDetails.contact.email}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Mail size={10} />
-                        <span className="break-all">{ngoDetails.contact.email}</span>
-                      </a>
-                      <a href={`https://${ngoDetails.contact.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Globe size={10} />
-                        <span>{ngoDetails.contact.website}</span>
-                      </a>
-                    </div>
-
-                    <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-                      <a href="https://facebook.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Facebook size={14} />
-                      </a>
-                      <a href="https://twitter.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Twitter size={14} />
-                      </a>
-                      <a href="https://instagram.com/animalcareindia" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Instagram size={14} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+
           </aside>
         </div>
+      </div>
 
-      </main>
-    </div>
+      {/* Full Width Ambassador CTA */}
+      <section className="bg-teal-700 py-16 sm:py-20 mb-20 md:mb-0">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
+            189 People Stepped Up. Will You?
+          </h2>
+          <p className="text-teal-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            It takes 2 minutes to sign up and one share to start saving animals from India's deadliest floods. No rescue training needed. No minimum commitment. Just the will to be the voice animals can't have when the waters rise.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="w-full sm:w-auto bg-white text-teal-700 hover:bg-teal-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-base sm:text-lg">
+              Become a Flood Rescue Ambassador
+            </button>
+            <div className="text-teal-200 font-medium text-sm sm:hidden my-2">OR</div>
+            <button
+              onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1 text-base sm:text-lg"
+            >
+              Make a Direct Donation Instead
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Fixed CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] z-50 md:hidden block">
+        <div className="flex items-center gap-4 max-w-2xl mx-auto">
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-extrabold text-gray-900 truncate">₹{cause.raisedAmount} raised</div>
+            <div className="text-xs text-gray-500 truncate">{cause.progressPercentage}% of {cause.goalAmount} · {cause.daysLeft} days left</div>
+          </div>
+          <button
+            onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-teal-600 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-md hover:bg-teal-700 transition-colors shrink-0 whitespace-nowrap"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
+    </div >
   );
 };
 
