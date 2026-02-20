@@ -12,8 +12,24 @@ const KhushiCauseDetailPage = () => {
 
   const faqs = [
     {
+      question: "How to donate for menstrual hygiene in India?",
+      answer: "The Giving Circle makes it easy to donate for menstrual hygiene in India by partnering with verified NGOs like JWP. You can contribute to menstrual awareness campaigns and fund menstrual hygiene programs directly through our platform. 95% of your donation goes toward period awareness campaign support, menstrual health workshops, and distributing kits."
+    },
+    {
+      question: "Which is the best NGO for menstrual health donation?",
+      answer: "JWP (Joint Women's Program) is widely recognized as one of the best NGOs for menstrual health donation in India. They focus on women empowerment, girls' education support, and breaking menstrual taboos in rural and slum communities. Your contribution supports menstrual hygiene NGO donation with full transparency."
+    },
+    {
+      question: "Can I donate sanitary pads online in India?",
+      answer: "Yes, you can donate sanitary pads online in India through the Wings of Hope campaign. Your donation helps us provide sanitary pads to underprivileged girls and support period poverty solutions. We ensure that your donation for girl child health reaches those who need it most."
+    },
+    {
+      question: "Where can I donate sanitary pads near me?",
+      answer: "If you are looking to donate sanitary pads near me in the Delhi NCR region, JWP centers are the best place. You can also donate unused sanitary pads, sanitary towels, or sanitary napkins. We also distribute 'donate sanitary pads poster' materials to awareness camps. You can contribute monetarily to sponsor menstrual hygiene kits and distribute menstrual products to girls in slum communities."
+    },
+    {
       question: "How are donations used for menstrual health education programs?",
-      answer: "95% of every donation goes directly to program operations: menstrual health education workshops, distribution of reusable sanitary products, training women health ambassadors, and creating safe sanitation facilities in schools. The remaining 5% covers essential coordination costs including communications, reporting, and logistics management. All expenditures are audited annually and financial reports are published quarterly on the JWP website."
+      answer: "Your donations fund menstrual hygiene programs and help girls stay in school during periods. We use funds for menstrual hygiene awareness donation drives, reusable products, and menstrual health workshops. All expenditures are audited and reported for complete transparency."
     },
     {
       question: "Is my donation tax-deductible?",
@@ -215,9 +231,9 @@ const KhushiCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Wings of Hope: Breaking Period Poverty Through Menstrual Health Education | Donate to JWP — The Giving Circle"
-        description="Period poverty forces thousands of girls to miss school every month. Wings of Hope provides menstrual health education, reusable sanitary products, and breaks taboos. 64% funded. 22 days left. Donate now. Tax-deductible under 80G."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings of Hope, menstrual health education, period poverty, girls education support, women empowerment India"
+        title="Donate Sanitary Pads to Girls | Support Menstrual Hygiene India"
+        description="Join our giving community to support period poverty in India. Donate for menstrual hygiene, sponsor sanitary pads, and help girls stay in school. Verified NGO partner support for women empowerment India."
+        keywords="menstrual hygiene NGO donation, donate menstrual products, donate sanitary napkins, sanitary napkin donation, india care, period poverty India, donate for menstrual hygiene, donate sanitary pads to girls, support period poverty in India, sponsor menstrual hygiene kits, donate for girl child health, contribute to menstrual awareness campaign, fund menstrual hygiene program, help girls stay in school during periods, end period poverty in rural India, support dignity for women, provide sanitary pads to underprivileged girls, empower girls through menstrual health, menstrual hygiene for slum communities, menstrual hygiene awareness donation, period awareness campaign support, donate to menstrual education programs, support menstrual health workshops, CSR for menstrual hygiene, corporate sponsorship for sanitary pad distribution, CSR project for girl child health, menstrual hygiene CSR partnership India"
         canonicalUrl="https://www.thegivingcircle.in/jwp-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
       />
@@ -234,11 +250,12 @@ const KhushiCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Wings of Hope — When Periods Become Barriers, We Break Them Down
+            Donate for Menstrual Hygiene — Help Girls Stay in School During Periods
           </h1>
+          <div className="w-20 h-1.5 bg-green-700 mb-8"></div>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Every month, thousands of girls across India miss school when they start menstruating. They cannot afford sanitary products. They face shame and stigma. They drop out permanently. This campaign breaks those barriers through menstrual health education, reusable products, and community empowerment.
+            Every month, thousands of girls across India miss school when they start menstruating. Support period poverty in India by sponsoring menstrual hygiene kits. We empower girls through menstrual health education to end period poverty in rural India and slum communities.
           </p>
 
           {/* Trust Badges */}
@@ -420,9 +437,22 @@ const KhushiCauseDetailPage = () => {
               </p>
 
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Community Engagement and Breaking Taboos</h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-8">
                 One of the most important and most overlooked aspects of menstrual health support is community engagement. When families and communities understand menstruation, girls receive better support. The programme conducts community sessions, parent workshops, and awareness campaigns that break taboos and create supportive environments. In the 2024 program year, Wings of Hope engaged over 8,000 family members and community members, creating a supportive ecosystem for girls' education and health.
               </p>
+
+              {/* Corporate CSR Section */}
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg my-10">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">CSR & Corporate Partnerships</h3>
+                <p className="text-gray-700 mb-4">
+                  We invite companies to join our **CSR for menstrual hygiene** initiatives. Our **corporate sponsorship for sanitary pad distribution** and **CSR project for girl child health** are designed for high social impact and compliance.
+                </p>
+                <ul className="list-disc ml-5 text-gray-700 space-y-2">
+                  <li>Customized **menstrual hygiene CSR partnership India** programs</li>
+                  <li>Impact reports for your sustainability goals</li>
+                  <li>Employee engagement in menstrual health workshops</li>
+                </ul>
+              </div>
             </section>
 
             {/* Section 4: In Their Own Words (Testimonials) */}

@@ -65,7 +65,7 @@ const ImpactStoriesDetails: React.FC = () => {
   const storyData = {
     id: '1',
     title: 'Wings of Hope',
-    description: 'Empowering women through skill development, entrepreneurship training, and financial literacy programs across Uttarakhand. This community giving initiative builds sustainable livelihoods and strengthens the circle of support for resilient communities.',
+    description: 'Empowering women through skill development and addressing period poverty India. This community giving initiative builds sustainable livelihoods and strengthens the menstrual hygiene projects in Uttarakhand.',
     ngoName: 'JWP',
     ngoDescription: 'JWP works with indigenous communities enabling access to education, livelihoods and empowerment with a focus on dignity and inclusion.',
     championName: 'Meera Singh',
@@ -254,445 +254,445 @@ const ImpactStoriesDetails: React.FC = () => {
                 </span>
               ))}
             </div>
-          </section>
         </div>
       </div>
+    </div>
 
-      {/* Testimonials */}
-      <div>
-        <h3 className="text-xl font-semibold mb-6">Testimonials</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {storyData.testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-lg border">
-              <div className="flex items-center mb-4">
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="w-12 h-12 rounded-full object-cover mr-4"
-                />
-                <div>
-                  <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                  <p className="text-sm text-gray-600">{testimonial.role}</p>
-                </div>
-                <div className="ml-auto flex">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-              </div>
-              <p className="text-gray-700 italic">"{testimonial.content}"</p>
+      {/* Testimonials */ }
+  <div>
+    <h3 className="text-xl font-semibold mb-6">Testimonials</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {storyData.testimonials.map((testimonial, index) => (
+        <div key={index} className="bg-white p-6 rounded-xl shadow-lg border">
+          <div className="flex items-center mb-4">
+            <img
+              src={testimonial.image}
+              alt={testimonial.name}
+              className="w-12 h-12 rounded-full object-cover mr-4"
+            />
+            <div>
+              <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
+              <p className="text-sm text-gray-600">{testimonial.role}</p>
             </div>
-          ))}
+            <div className="ml-auto flex">
+              {[...Array(testimonial.rating)].map((_, i) => (
+                <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+              ))}
+            </div>
+          </div>
+          <p className="text-gray-700 italic">"{testimonial.content}"</p>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
     </section >
   );
 
-  const renderImpactMetrics = () => (
-    <section className="space-y-8" aria-label="Impact Metrics">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div className="bg-white p-6 rounded-lg border text-black">
-          <div className="flex items-center justify-between mb-4">
-            <Users className="w-8 h-8" />
-            <span className="text-black text-sm">Direct Impact</span>
-          </div>
-          <div className="text-3xl font-bold">{storyData.impactMetrics.direct}</div>
-          <div className="text-black text-sm">People Directly Impacted</div>
+const renderImpactMetrics = () => (
+  <section className="space-y-8" aria-label="Impact Metrics">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="bg-white p-6 rounded-lg border text-black">
+        <div className="flex items-center justify-between mb-4">
+          <Users className="w-8 h-8" />
+          <span className="text-black text-sm">Direct Impact</span>
         </div>
-
-        <div className="bg-white p-6 rounded-lg border text-black">
-          <div className="flex items-center justify-between mb-4">
-            <Globe className="w-8 h-8" />
-            <span className="text-black text-sm">Indirect Impact</span>
-          </div>
-          <div className="text-3xl font-bold">{storyData.impactMetrics.indirect}</div>
-          <div className="text-black text-sm">People Indirectly Impacted</div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg border text-black">
-          <div className="flex items-center justify-between mb-4">
-            <MapPin className="w-8 h-8" />
-            <span className="text-black text-sm">Geographic Reach</span>
-          </div>
-          <div className="text-3xl font-bold">{storyData.impactMetrics.communities}</div>
-          <div className="text-black text-sm">Communities Served</div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg border text-black">
-          <div className="flex items-center justify-between mb-4">
-            <TrendingUp className="w-8 h-8" />
-            <span className="text-black text-sm">Income Growth</span>
-          </div>
-          <div className="text-3xl font-bold">{storyData.impactMetrics.averageIncomeIncrease}%</div>
-          <div className="text-black text-sm">Average Income Increase</div>
-        </div>
+        <div className="text-3xl font-bold">{storyData.impactMetrics.direct}</div>
+        <div className="text-black text-sm">People Directly Impacted</div>
       </div>
 
-      {/* Detailed Metrics */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">Detailed Impact Analysis</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h4 className="font-semibold mb-4">Education Outcomes</h4>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span>Literacy Rate Achieved</span>
-                <span className="font-semibold">{storyData.impactMetrics.literacyRate}%</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span>Program Completion Rate</span>
-                <span className="font-semibold">{storyData.impactMetrics.completionRate}%</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span>Employment Rate Post-Training</span>
-                <span className="font-semibold">{storyData.impactMetrics.employmentRate}%</span>
-              </div>
-            </div>
-          </div>
+      <div className="bg-white p-6 rounded-lg border text-black">
+        <div className="flex items-center justify-between mb-4">
+          <Globe className="w-8 h-8" />
+          <span className="text-black text-sm">Indirect Impact</span>
+        </div>
+        <div className="text-3xl font-bold">{storyData.impactMetrics.indirect}</div>
+        <div className="text-black text-sm">People Indirectly Impacted</div>
+      </div>
 
-          <div>
-            <h4 className="font-semibold mb-4">Economic Impact</h4>
-            <div className="space-y-3">
-              <div className="flex justify-between items-center">
-                <span>Average Income Increase</span>
-                <span className="font-semibold">{storyData.impactMetrics.averageIncomeIncrease}%</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span>Total Investment</span>
-                <span className="font-semibold">₹{(storyData.totalFunding / 100000).toFixed(1)}L</span>
-              </div>
-              <div className="flex justify-between items-center">
-                <span>Cost per Beneficiary</span>
-                <span className="font-semibold">₹{(storyData.totalFunding / storyData.impactNumber / 1000).toFixed(1)}K</span>
-              </div>
+      <div className="bg-white p-6 rounded-lg border text-black">
+        <div className="flex items-center justify-between mb-4">
+          <MapPin className="w-8 h-8" />
+          <span className="text-black text-sm">Geographic Reach</span>
+        </div>
+        <div className="text-3xl font-bold">{storyData.impactMetrics.communities}</div>
+        <div className="text-black text-sm">Communities Served</div>
+      </div>
+
+      <div className="bg-white p-6 rounded-lg border text-black">
+        <div className="flex items-center justify-between mb-4">
+          <TrendingUp className="w-8 h-8" />
+          <span className="text-black text-sm">Income Growth</span>
+        </div>
+        <div className="text-3xl font-bold">{storyData.impactMetrics.averageIncomeIncrease}%</div>
+        <div className="text-black text-sm">Average Income Increase</div>
+      </div>
+    </div>
+
+    {/* Detailed Metrics */}
+    <div className="bg-white p-6 rounded-xl shadow-lg">
+      <h3 className="text-xl font-semibold mb-6">Detailed Impact Analysis</h3>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div>
+          <h4 className="font-semibold mb-4">Education Outcomes</h4>
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span>Literacy Rate Achieved</span>
+              <span className="font-semibold">{storyData.impactMetrics.literacyRate}%</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Program Completion Rate</span>
+              <span className="font-semibold">{storyData.impactMetrics.completionRate}%</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Employment Rate Post-Training</span>
+              <span className="font-semibold">{storyData.impactMetrics.employmentRate}%</span>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* SDG Goals */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">UN Sustainable Development Goals</h3>
-        <div className="flex flex-wrap gap-4">
-          {storyData.sdgGoals.map((goal) => (
-            <div key={goal} className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-lg">
-              <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-                {goal}
-              </div>
-              <span className="text-sm font-medium text-blue-800">
-                {goal === 4 && 'Quality Education'}
-                {goal === 5 && 'Gender Equality'}
-                {goal === 8 && 'Decent Work'}
-                {goal === 10 && 'Reduced Inequalities'}
-              </span>
+        <div>
+          <h4 className="font-semibold mb-4">Economic Impact</h4>
+          <div className="space-y-3">
+            <div className="flex justify-between items-center">
+              <span>Average Income Increase</span>
+              <span className="font-semibold">{storyData.impactMetrics.averageIncomeIncrease}%</span>
             </div>
-          ))}
+            <div className="flex justify-between items-center">
+              <span>Total Investment</span>
+              <span className="font-semibold">₹{(storyData.totalFunding / 100000).toFixed(1)}L</span>
+            </div>
+            <div className="flex justify-between items-center">
+              <span>Cost per Beneficiary</span>
+              <span className="font-semibold">₹{(storyData.totalFunding / storyData.impactNumber / 1000).toFixed(1)}K</span>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  );
+    </div>
 
-  const renderTimeline = () => (
-    <section className="space-y-6" aria-label="Project Timeline">
-      <h3 className="text-xl font-semibold">Project Timeline</h3>
-      <div className="relative">
-        {/* Animated connecting line */}
+    {/* SDG Goals */}
+    <div className="bg-white p-6 rounded-xl shadow-lg">
+      <h3 className="text-xl font-semibold mb-6">UN Sustainable Development Goals</h3>
+      <div className="flex flex-wrap gap-4">
+        {storyData.sdgGoals.map((goal) => (
+          <div key={goal} className="flex items-center space-x-2 bg-blue-50 px-4 py-2 rounded-lg">
+            <div className="w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              {goal}
+            </div>
+            <span className="text-sm font-medium text-blue-800">
+              {goal === 4 && 'Quality Education'}
+              {goal === 5 && 'Gender Equality'}
+              {goal === 8 && 'Decent Work'}
+              {goal === 10 && 'Reduced Inequalities'}
+            </span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+);
+
+const renderTimeline = () => (
+  <section className="space-y-6" aria-label="Project Timeline">
+    <h3 className="text-xl font-semibold">Project Timeline</h3>
+    <div className="relative">
+      {/* Animated connecting line */}
+      <motion.div
+        className="absolute left-4 top-0 w-0.5 bg-gray-200"
+        initial={{ height: 0 }}
+        animate={{ height: '100%' }}
+        transition={{ duration: 0.8, ease: "easeInOut" }}
+      ></motion.div>
+
+      {storyData.milestones.map((milestone, index) => (
         <motion.div
-          className="absolute left-4 top-0 w-0.5 bg-gray-200"
-          initial={{ height: 0 }}
-          animate={{ height: '100%' }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
-        ></motion.div>
-
-        {storyData.milestones.map((milestone, index) => (
+          key={index}
+          className="relative flex items-start space-x-4 pb-8"
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{
+            duration: 0.3,
+            delay: index * 0.3,
+            ease: "easeOut"
+          }}
+        >
+          {/* Animated node */}
           <motion.div
-            key={index}
-            className="relative flex items-start space-x-4 pb-8"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
+            className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${milestone.status === 'completed' ? 'bg-green-500' : 'bg-gray-300'
+              }`}
+            initial={{ scale: 0, rotate: 180 }}
+            animate={{ scale: 1, rotate: 0 }}
             transition={{
               duration: 0.3,
-              delay: index * 0.3,
+              delay: index * 0.3 + 0.1,
+              type: "spring",
+              stiffness: 300
+            }}
+          >
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: index * 0.3 + 0.2 }}
+            >
+              {milestone.status === 'completed' ? (
+                <CheckCircle className="w-4 h-4 text-white" />
+              ) : (
+                <Clock className="w-4 h-4 text-gray-600" />
+              )}
+            </motion.div>
+          </motion.div>
+
+          {/* Animated content */}
+          <motion.div
+            className="flex-1 min-w-0"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.3,
+              delay: index * 0.3 + 0.15,
               ease: "easeOut"
             }}
           >
-            {/* Animated node */}
-            <motion.div
-              className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${milestone.status === 'completed' ? 'bg-green-500' : 'bg-gray-300'
-                }`}
-              initial={{ scale: 0, rotate: 180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: index * 0.3 + 0.1,
-                type: "spring",
-                stiffness: 300
-              }}
-            >
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: index * 0.3 + 0.2 }}
-              >
-                {milestone.status === 'completed' ? (
-                  <CheckCircle className="w-4 h-4 text-white" />
-                ) : (
-                  <Clock className="w-4 h-4 text-gray-600" />
-                )}
-              </motion.div>
-            </motion.div>
-
-            {/* Animated content */}
-            <motion.div
-              className="flex-1 min-w-0"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.3,
-                delay: index * 0.3 + 0.15,
-                ease: "easeOut"
-              }}
-            >
-              <div className="flex items-center justify-between mb-2">
-                <h4 className="font-semibold text-gray-900">{milestone.title}</h4>
-                <span className="text-sm text-gray-500">{new Date(milestone.date).toLocaleDateString()}</span>
-              </div>
-              <p className="text-gray-600 text-sm">{milestone.description}</p>
-            </motion.div>
+            <div className="flex items-center justify-between mb-2">
+              <h4 className="font-semibold text-gray-900">{milestone.title}</h4>
+              <span className="text-sm text-gray-500">{new Date(milestone.date).toLocaleDateString()}</span>
+            </div>
+            <p className="text-gray-600 text-sm">{milestone.description}</p>
           </motion.div>
-        ))}
-      </div>
-    </section>
-  );
-
-  const renderTeam = () => (
-    <section className="space-y-8" aria-label="Project Team and Partner NGO">
-      {/* Champion */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">Project Champion</h3>
-        <div className="flex items-start space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-r green-700 rounded-lg flex items-center justify-center text-white text-xl font-bold">
-            {storyData.championName.charAt(0)}
-          </div>
-          <div className="flex-1">
-            <h4 className="text-lg font-semibold text-gray-900">{storyData.championName}</h4>
-            <p className="text-gray-600 mb-4">{storyData.championBio}</p>
-            <div className="flex space-x-4">
-              <Button variant="ghost" size="sm" icon={<ExternalLink className="w-4 h-4" />}>
-                View Profile
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* NGO */}
-      <div className="bg-white p-6 rounded-xl shadow-lg">
-        <h3 className="text-xl font-semibold mb-6">Partner NGO</h3>
-        <div className="flex items-start space-x-4">
-          <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center text-white text-xl font-bold">
-            {storyData.ngoName.charAt(0)}
-          </div>
-          <div className="flex-1">
-            <h4 className="text-lg font-semibold text-gray-900">{storyData.ngoName}</h4>
-            <p className="text-gray-600 mb-4">{storyData.ngoDescription}</p>
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              <div className="text-center p-3 bg-gray-50 rounded-lg">
-                <div className="text-lg font-bold text-gray-900">15</div>
-                <div className="text-sm text-gray-600">Active Projects</div>
-              </div>
-              <div className="text-center p-3 bg-gray-50 rounded-lg">
-                <div className="text-lg font-bold text-gray-900">2018</div>
-                <div className="text-sm text-gray-600">Founded</div>
-              </div>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              <Button variant="outline" size="sm" icon={<ExternalLink className="w-4 h-4" />}>
-                Visit Website
-              </Button>
-              <Button variant="ghost" size="sm" icon={<FileText className="w-4 h-4" />}>
-                View All Projects
-              </Button>
-              <Button variant="outline" size="sm" icon={<Eye className="w-4 h-4" />}>
-                View NGO Details
-              </Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-
-  const renderDocuments = () => (
-    <section className="space-y-6" aria-label="Project Documents">
-      <h3 className="text-xl font-semibold">Project Documents</h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {storyData.documents.map((doc, index) => (
-          <div key={index} className="bg-white p-6 rounded-xl shadow-lg border hover:shadow-xl transition-shadow">
-            <div className="flex items-center justify-between mb-4">
-              <FileText className="w-8 h-8 text-blue-600" />
-              <span className="text-xs bg-gray-100 px-2 py-1 rounded">{doc.type}</span>
-            </div>
-            <h4 className="font-semibold text-gray-900 mb-2">{doc.name}</h4>
-            <p className="text-sm text-gray-600 mb-4">{doc.size}</p>
-            <div className="flex space-x-2">
-              <Button variant="outline" size="sm" icon={<Eye className="w-4 h-4" />}>
-                View
-              </Button>
-              <Button variant="ghost" size="sm" icon={<Download className="w-4 h-4" />}>
-                Download
-              </Button>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-
-  return (
-    <div className="min-h-screen bg-gray-50 mt-[150px]">
-      <SEOHead
-        title="Wings of Hope Impact Story - Women Empowerment Success | Community Support Platform"
-        description="Explore the Wings of Hope impact story through our giving platform and community support platform. See how our giving community supports social causes through social giving and community support. Give and help create real impact through our circle of support for women empowerment in India."
-        keywords="Wings of Hope, impact story, success story, women empowerment, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, supporting india, giving india"
-        canonicalUrl="https://www.thegivingcircle.in/impact-stories/wings-of-hope"
-      />
-      {/* Navigation */}
-      <div className="bg-white shadow-sm sticky top-0 z-40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            <Button
-              variant="ghost"
-              icon={<ArrowLeft className="w-4 h-4" />}
-              onClick={() => window.history.back()}
-            >
-              Back to Stories
-            </Button>
-
-            <div className="flex items-center space-x-4">
-
-
-              <div className="flex items-center space-x-2">
-
-
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  icon={<BookOpen className={`w-4 h-4 ${isBookmarked ? 'text-blue-500 fill-current' : ''}`} />}
-                  onClick={() => setIsBookmarked(!isBookmarked)}
-                >
-                  {isBookmarked ? 'Saved' : 'Save'}
-                </Button>
-
-                <Button
-                  variant="outline"
-                  size="sm"
-                  icon={<Share2 className="w-4 h-4" />}
-                  onClick={() => setShowShareModal(true)}
-                >
-                  Share
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Header with basic info */}
-      <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Badge className="w-5 h-5 text-black" />
-                <span className="font-bold text-black">{storyData.ngoName}</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                {storyData.verified && (
-                  <div className="flex items-center space-x-1 bg-blue-100 px-2 py-1 rounded-full">
-                    <CheckCircle className="w-4 h-4 text-blue-600" />
-                    <span className="text-xs font-medium text-blue-700">Verified</span>
-                  </div>
-                )}
-                <div className="flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
-                  <Building2 className="w-4 h-4 text-green-600" />
-                  <span className="text-xs font-medium text-green-700">Registered NGO</span>
-                </div>
-                <div className="flex items-center space-x-1 bg-amber-100 px-2 py-1 rounded-full">
-                  <Award className="w-4 h-4 text-amber-600" />
-                  <span className="text-xs font-medium text-amber-700">Certified</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <div className="flex items-center space-x-1 text-gray-600">
-                <MapPin className="w-4 h-4" />
-                <span className="text-sm">{storyData.location}</span>
-              </div>
-              <div className="flex items-center space-x-1 text-gray-600">
-                <Calendar className="w-4 h-4" />
-                <span className="text-sm">{new Date(storyData.endDate).toLocaleDateString()}</span>
-              </div>
-            </div>
-          </div>
-
-          {/* Status Banner */}
-          {storyData.status === 'Completed' && (
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
-              <div className="flex items-center">
-                <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
-                <span className="font-medium text-blue-900">Project Successfully Completed</span>
-                <span className="ml-2 text-sm text-blue-700">
-                  All milestones achieved and impact verified
-                </span>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Tabs */}
-      <div className="bg-white border-b sticky top-16 z-30">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex space-x-8 overflow-x-auto">
-            {tabs.map((tab) => (
-              <button
-                key={tab.id}
-                onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${activeTab === tab.id
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                  }`}
-              >
-                {tab.icon}
-                <span>{tab.label}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
-        <motion.div
-          key={activeTab}
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          {activeTab === 'overview' && renderOverview()}
-          {activeTab === 'impact' && renderImpactMetrics()}
-          {activeTab === 'timeline' && renderTimeline()}
-          {activeTab === 'team' && renderTeam()}
-          {activeTab === 'documents' && renderDocuments()}
         </motion.div>
-      </div>
-
-      {/* Share Modal */}
-      {showShareModal && <ShareModal />}
+      ))}
     </div>
-  );
+  </section>
+);
+
+const renderTeam = () => (
+  <section className="space-y-8" aria-label="Project Team and Partner NGO">
+    {/* Champion */}
+    <div className="bg-white p-6 rounded-xl shadow-lg">
+      <h3 className="text-xl font-semibold mb-6">Project Champion</h3>
+      <div className="flex items-start space-x-4">
+        <div className="w-16 h-16 bg-gradient-to-r green-700 rounded-lg flex items-center justify-center text-white text-xl font-bold">
+          {storyData.championName.charAt(0)}
+        </div>
+        <div className="flex-1">
+          <h4 className="text-lg font-semibold text-gray-900">{storyData.championName}</h4>
+          <p className="text-gray-600 mb-4">{storyData.championBio}</p>
+          <div className="flex space-x-4">
+            <Button variant="ghost" size="sm" icon={<ExternalLink className="w-4 h-4" />}>
+              View Profile
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* NGO */}
+    <div className="bg-white p-6 rounded-xl shadow-lg">
+      <h3 className="text-xl font-semibold mb-6">Partner NGO</h3>
+      <div className="flex items-start space-x-4">
+        <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-teal-500 rounded-lg flex items-center justify-center text-white text-xl font-bold">
+          {storyData.ngoName.charAt(0)}
+        </div>
+        <div className="flex-1">
+          <h4 className="text-lg font-semibold text-gray-900">{storyData.ngoName}</h4>
+          <p className="text-gray-600 mb-4">{storyData.ngoDescription}</p>
+          <div className="grid grid-cols-2 gap-4 mb-4">
+            <div className="text-center p-3 bg-gray-50 rounded-lg">
+              <div className="text-lg font-bold text-gray-900">15</div>
+              <div className="text-sm text-gray-600">Active Projects</div>
+            </div>
+            <div className="text-center p-3 bg-gray-50 rounded-lg">
+              <div className="text-lg font-bold text-gray-900">2018</div>
+              <div className="text-sm text-gray-600">Founded</div>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <Button variant="outline" size="sm" icon={<ExternalLink className="w-4 h-4" />}>
+              Visit Website
+            </Button>
+            <Button variant="ghost" size="sm" icon={<FileText className="w-4 h-4" />}>
+              View All Projects
+            </Button>
+            <Button variant="outline" size="sm" icon={<Eye className="w-4 h-4" />}>
+              View NGO Details
+            </Button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+);
+
+const renderDocuments = () => (
+  <section className="space-y-6" aria-label="Project Documents">
+    <h3 className="text-xl font-semibold">Project Documents</h3>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {storyData.documents.map((doc, index) => (
+        <div key={index} className="bg-white p-6 rounded-xl shadow-lg border hover:shadow-xl transition-shadow">
+          <div className="flex items-center justify-between mb-4">
+            <FileText className="w-8 h-8 text-blue-600" />
+            <span className="text-xs bg-gray-100 px-2 py-1 rounded">{doc.type}</span>
+          </div>
+          <h4 className="font-semibold text-gray-900 mb-2">{doc.name}</h4>
+          <p className="text-sm text-gray-600 mb-4">{doc.size}</p>
+          <div className="flex space-x-2">
+            <Button variant="outline" size="sm" icon={<Eye className="w-4 h-4" />}>
+              View
+            </Button>
+            <Button variant="ghost" size="sm" icon={<Download className="w-4 h-4" />}>
+              Download
+            </Button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+);
+
+return (
+  <div className="min-h-screen bg-gray-50 mt-[150px]">
+    <SEOHead
+      title="Wings of Hope Impact Story - Women Empowerment Success | Community Support Platform"
+      description="Explore the Wings of Hope impact story through our giving platform and community support platform. See how our giving community supports social causes through social giving and community support. Give and help create real impact through our circle of support for women empowerment in India."
+      keywords="Wings of Hope, impact story, success story, women empowerment, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, supporting india, giving india"
+      canonicalUrl="https://www.thegivingcircle.in/impact-stories/wings-of-hope"
+    />
+    {/* Navigation */}
+    <div className="bg-white shadow-sm sticky top-0 z-40">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Button
+            variant="ghost"
+            icon={<ArrowLeft className="w-4 h-4" />}
+            onClick={() => window.history.back()}
+          >
+            Back to Stories
+          </Button>
+
+          <div className="flex items-center space-x-4">
+
+
+            <div className="flex items-center space-x-2">
+
+
+              <Button
+                variant="ghost"
+                size="sm"
+                icon={<BookOpen className={`w-4 h-4 ${isBookmarked ? 'text-blue-500 fill-current' : ''}`} />}
+                onClick={() => setIsBookmarked(!isBookmarked)}
+              >
+                {isBookmarked ? 'Saved' : 'Save'}
+              </Button>
+
+              <Button
+                variant="outline"
+                size="sm"
+                icon={<Share2 className="w-4 h-4" />}
+                onClick={() => setShowShareModal(true)}
+              >
+                Share
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Header with basic info */}
+    <div className="bg-white border-b">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-2">
+              <Badge className="w-5 h-5 text-black" />
+              <span className="font-bold text-black">{storyData.ngoName}</span>
+            </div>
+            <div className="flex items-center space-x-2">
+              {storyData.verified && (
+                <div className="flex items-center space-x-1 bg-blue-100 px-2 py-1 rounded-full">
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <span className="text-xs font-medium text-blue-700">Verified</span>
+                </div>
+              )}
+              <div className="flex items-center space-x-1 bg-green-100 px-2 py-1 rounded-full">
+                <Building2 className="w-4 h-4 text-green-600" />
+                <span className="text-xs font-medium text-green-700">Registered NGO</span>
+              </div>
+              <div className="flex items-center space-x-1 bg-amber-100 px-2 py-1 rounded-full">
+                <Award className="w-4 h-4 text-amber-600" />
+                <span className="text-xs font-medium text-amber-700">Certified</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-1 text-gray-600">
+              <MapPin className="w-4 h-4" />
+              <span className="text-sm">{storyData.location}</span>
+            </div>
+            <div className="flex items-center space-x-1 text-gray-600">
+              <Calendar className="w-4 h-4" />
+              <span className="text-sm">{new Date(storyData.endDate).toLocaleDateString()}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Status Banner */}
+        {storyData.status === 'Completed' && (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+            <div className="flex items-center">
+              <CheckCircle className="w-5 h-5 text-blue-600 mr-2" />
+              <span className="font-medium text-blue-900">Project Successfully Completed</span>
+              <span className="ml-2 text-sm text-blue-700">
+                All milestones achieved and impact verified
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+
+    {/* Tabs */}
+    <div className="bg-white border-b sticky top-16 z-30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex space-x-8 overflow-x-auto">
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`flex items-center space-x-2 py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap transition-colors ${activeTab === tab.id
+                ? 'border-blue-500 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                }`}
+            >
+              {tab.icon}
+              <span>{tab.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    {/* Content */}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
+      <motion.div
+        key={activeTab}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+      >
+        {activeTab === 'overview' && renderOverview()}
+        {activeTab === 'impact' && renderImpactMetrics()}
+        {activeTab === 'timeline' && renderTimeline()}
+        {activeTab === 'team' && renderTeam()}
+        {activeTab === 'documents' && renderDocuments()}
+      </motion.div>
+    </div>
+
+    {/* Share Modal */}
+    {showShareModal && <ShareModal />}
+  </div>
+);
 };
 
 export default ImpactStoriesDetails;

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Share2, Shield, Facebook, Twitter, AlertTriangle, FileText, CheckCircle, Award, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
+import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
-import CloudinaryImage from '../ui/CloudinaryImage';
 
 const FloodReliefCauseDetailPage = () => {
   const { id } = useParams();
@@ -215,9 +215,9 @@ const FloodReliefCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Relief in Uttarakhand: Emergency Disaster Relief & Rehabilitation | Donate to GUS Disaster Relief — The Giving Circle"
-        description="When floods devastate Uttarakhand, thousands of families are left without homes, food, or hope. Flood Relief Uttarakhand provides immediate emergency response and long-term rehabilitation. 73% funded. 30 days left. Donate now. Tax-deductible under 80G."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Relief Uttarakhand, disaster relief India, emergency response India"
+        title="Flood Relief Uttarakhand | Emergency Disaster Response"
+        description="Support flood relief Uttarakhand. Our animal welfare NGO India provides emergency animal rescue India and disaster relief for families in high-risk flood zones."
+        keywords="flood relief Uttarakhand, help flood victims Uttarakhand, emergency animal rescue India, disaster relief operations, animal welfare NGO India, flood rehabilitation, rescue trapped animals, CSR for disaster relief, corporate partnership for disaster relief, Flood Relief Uttarakhand, disaster relief India, emergency response India"
         canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
       />

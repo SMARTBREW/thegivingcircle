@@ -207,9 +207,9 @@ const BowlsOfHopeCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Bowls of Hope: Feed Stray Animals Daily | Donate to AnimalCare India — The Giving Circle"
-        description="Thousands of hungry street animals struggle daily without food. Bowls of Hope provides daily nutrition through organized feeding stations. 79% funded. 18 days left. Donate now. Tax-deductible under 80G."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Bowls of Hope, animal feeding programs, support animal welfare, animal welfare India"
+        title="Feed Stray Animals Daily | Support Animal Welfare India"
+        description="Help feed hungry animals in India. Support stray dog feeding programs and animal nutrition initiatives. Your contribution helps verified animal welfare NGO India reach more street animals."
+        keywords="animal welfare NGO India, feed stray animals India, animal feeding programs, animal nutrition support, help feed street animals, feed hungry animals India, animal feeding programs Mumbai, animal feeding programs Chennai, donate for rabies vaccination drive near me, animal vaccination NGO donation India, support animal feeding initiatives, street animal care India, CSR for animal welfare, corporate sponsorship for animal feeding, CSR project for animal nutrition"
         canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
       />
@@ -412,9 +412,22 @@ const BowlsOfHopeCauseDetailPage = () => {
               </p>
 
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Nutrition Monitoring and Health Support</h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                One of the most important and most overlooked aspects of animal feeding is health monitoring. When animals receive consistent nutrition, their health improves. The programme monitors animal health, identifies animals needing medical care, and coordinates with partner veterinary facilities. In the 2024 program year, Bowls of Hope referred over 200 animals to veterinary care, ensuring that fed animals remain healthy and strong.
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-8">
+                One of the most important and most overlooked aspects of animal feeding is health monitoring. When animals receive consistent nutrition, their health improves. The programme monitors animal health, identifies animals needing medical care, and coordinates with partner veterinary facilities. This work directly supports the **Zero Rabies Deaths by 2030** mission by ensuring animals are healthy enough for vaccination. In the 2024 program year, Bowls of Hope referred over 200 animals to veterinary care, ensuring that fed animals remain healthy and strong.
               </p>
+
+              {/* Corporate CSR Section */}
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg my-10">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">CSR & Corporate Partnerships</h3>
+                <p className="text-gray-700 mb-4">
+                  We invite companies to join our **CSR for animal welfare** initiatives. Our **CSR project for animal nutrition** and **corporate sponsorship for animal feeding** provide sustainable impact.
+                </p>
+                <ul className="list-disc ml-5 text-gray-700 space-y-2">
+                  <li>Support animal welfare NGO India programs through CSR</li>
+                  <li>Customized feeding station sponsorships in your city</li>
+                  <li>Employee engagement in animal care and feeding</li>
+                </ul>
+              </div>
             </section>
 
             {/* Section 4: In Their Own Words (Testimonials) */}

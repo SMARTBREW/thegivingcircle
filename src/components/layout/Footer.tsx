@@ -36,11 +36,11 @@ export const Footer: React.FC = () => {
               </div>
               <div className="space-y-3 sm:space-y-4">
                 <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words" style={{ minHeight: '48px', lineHeight: '1.5' }}>
-                  Trusted giving platform connecting verified NGOs.
+                  Trusted giving platform connecting verified NGOs for social impact. Supporting education, menstrual hygiene, and animal welfare NGO India programs.
                 </p>
                 <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-gray-600 break-words">
                   <Network className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />
-                  <span>Community Support Platform for Giving India</span>
+                  <span>Community Support Platform for Giving India & Social Impact</span>
                 </div>
                 <div className="flex items-center space-x-2 text-xs sm:text-sm md:text-base text-gray-600 break-words">
                   <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-700 flex-shrink-0" />

@@ -12,8 +12,20 @@ const PawsitiveProtectorsCauseDetailPage = () => {
 
   const faqs = [
     {
+      question: "How can I sponsor vaccination for stray dogs in India?",
+      answer: "You can sponsor anti rabies vaccine for dogs directly through Pawsitive Protectors. Your donation for stray dog vaccination drive near me helps us reach street animals in Delhi NCR and Mumbai, providing them with life-saving shots and medical care. Sponsor street dog vaccination drives to make your city rabies free."
+    },
+    {
+      question: "Where to find a donate for rabies vaccination drive near me?",
+      answer: "The Giving Circle hosts active rabies prevention donation campaigns across major cities in North India. If you want to contribute to rabies control program or fund rabies prevention campaign, you can do so online. We partner with the best animal vaccination NGO donation India partners to ensure your contribution has the most impact."
+    },
+    {
+      question: "Which animal vaccination NGO donation India should I choose?",
+      answer: "Choose AnimalCare India for your animal welfare NGO India contribution. We are a verified NGO focusing on Zero Rabies Deaths by 2030. Your support public health vaccination drive contribution is used transparently for stray dog vaccination programs and community animal vaccination support."
+    },
+    {
       question: "How are donations used for rabies prevention programs?",
-      answer: "95% of every donation goes directly to vaccination operations: purchasing rabies vaccines, conducting vaccination campaigns, providing medical care, and coordinating rescue operations. The remaining 5% covers essential coordination costs including communications, reporting, and logistics management. All expenditures are audited annually and financial reports are published quarterly on the AnimalCare India website."
+      answer: "Your donations are used to save stray dogs from rabies and protect community from rabies. We fund rabies prevention campaign operations, purchase vaccines, and provide medical care to rescue dogs. 95% of every donation goes directly to vaccination operations."
     },
     {
       question: "Is my donation tax-deductible?",
@@ -215,9 +227,9 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Pawsitive Protectors: Zero Rabies Deaths by 2030 | Donate to AnimalCare India — The Giving Circle"
-        description="Thousands die annually from rabies transmitted by unvaccinated street animals. Pawsitive Protectors provides free rabies vaccinations and animal rescue. 56% funded. 18 days left. Donate now. Tax-deductible under 80G."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Pawsitive Protectors, animal vaccination, rabies prevention, animal welfare India"
+        title="Donate for Stray Dog Vaccination | Sponsor Anti Rabies Vaccine"
+        description="Help save stray dogs from rabies and protect your community. Sponsor street dog vaccination drives in India. Contribute to verified animal welfare NGO rabies prevention programs."
+        keywords="rabies prevention donation, animal welfare NGO India, stray dog vaccination programs, rabies prevention India, donate for stray dog vaccination, sponsor anti rabies vaccine for dogs, support street dog vaccination drive, fund rabies prevention campaign, contribute to rabies control program, save stray dogs from rabies, protect community from rabies, prevent dog bite deaths, help vaccinate street dogs, make your city rabies free, support public health vaccination drive, community animal vaccination support, sponsor rabies awareness camps, CSR for animal welfare, CSR project for rabies control, corporate partnership for stray dog vaccination, sponsor vaccination for stray dogs in India, donate for rabies vaccination drive near me, animal vaccination NGO donation India"
         canonicalUrl="https://www.thegivingcircle.in/pawsitive-protectors-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"
       />
@@ -234,11 +246,12 @@ const PawsitiveProtectorsCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Pawsitive Protectors — When Rabies Threatens, We Vaccinate
+            Sponsor Anti Rabies Vaccine for Dogs — Save Stray Dogs from Rabies
           </h1>
+          <div className="w-20 h-1.5 bg-green-700 mb-8"></div>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Every year, thousands of people die from rabies transmitted by unvaccinated street animals. They cannot protect themselves. They cannot ask for help. They can only hope — that someone will vaccinate the animals, someone will prevent the disease, someone will save lives. This campaign is that someone.
+            Every year, thousands of people die from rabies transmitted by unvaccinated street animals. Help vaccinate street dogs and protect community from rabies. Fund rabies prevention campaigns to make your city rabies free and prevent dog bite deaths.
           </p>
 
           {/* Trust Badges */}
@@ -420,9 +433,22 @@ const PawsitiveProtectorsCauseDetailPage = () => {
               </p>
 
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Community Education and Awareness</h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-8">
                 One of the most important and most overlooked aspects of rabies prevention is community education. When communities understand rabies prevention, animals receive better support. The programme conducts community sessions, awareness campaigns, and educational programs that break fear and create supportive environments. In the 2024 program year, Pawsitive Protectors educated over 50,000 community members about rabies prevention and animal welfare, creating a supportive ecosystem for Zero Rabies Deaths by 2030.
               </p>
+
+              {/* Corporate CSR Section */}
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg my-10">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">CSR & Corporate Partnerships</h3>
+                <p className="text-gray-700 mb-4">
+                  We invite companies to support our **CSR for animal welfare** initiatives. Our **CSR project for rabies control** and **corporate partnership for stray dog vaccination** help build safer, rabies-free cities.
+                </p>
+                <ul className="list-disc ml-5 text-gray-700 space-y-2">
+                  <li>Support public health vaccination drives through CSR</li>
+                  <li>Sponsor rabies awareness camps in your operation areas</li>
+                  <li>Empower community animal vaccination support</li>
+                </ul>
+              </div>
             </section>
 
             {/* Section 4: In Their Own Words (Testimonials) */}

@@ -71,7 +71,7 @@ export const NGOPartner: React.FC = () => {
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Become Partner, Partnership');
+      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, corporate giving platforms, give and help, CSR for animal welfare, corporate giving platforms India, CSR project for animal nutrition, CSR project for menstrual health, NGO partnership India, corporate social responsibility NGOs, donate for social impact, partner with verified NGO');
     }
   }, []);
 

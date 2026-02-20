@@ -9,9 +9,9 @@ export const OurStory: React.FC = () => {
   return (
     <div className="min-h-screen">
       <SEOHead
-        title="About The Giving Circle | Verified NGO Network"
-        description="Learn how The Giving Circle connects donors with trusted NGOs across India to create measurable and transparent social impact"
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india"
+        title="About The Giving Circle | Verified NGO Network India"
+        description="Learn how The Giving Circle connects donors with trusted NGOs to tackle period poverty, rabies prevention, and disaster relief across India."
+        keywords="giving circle, giving community, giving platform, donate sanitary pads India, animal welfare NGO India, period poverty India, rabies prevention donation, community support platform, verified NGO network, social impact India"
         canonicalUrl="https://www.thegivingcircle.in/the-giving-circle"
       />
       <SimplifiedAboutPage />

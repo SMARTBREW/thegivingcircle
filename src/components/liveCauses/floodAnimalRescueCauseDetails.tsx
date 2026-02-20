@@ -201,9 +201,9 @@ const FloodAnimalRescueCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Animal Rescue: Save Animals Trapped in India's Floods | Donate to AnimalCare India — The Giving Circle"
-        description="When floodwaters rise across India, millions of animals are left stranded with no way to escape. Flood Animal Rescue deploys rapid response teams across 8 states. 62% funded. 15 days left. Donate now. Tax-deductible under 80G."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Flood Animal Rescue, emergency animal rescue, disaster relief India"
+        title="Flood Animal Rescue India | Emergency Response & Recovery"
+        description="Save animals trapped in India's floods. Support emergency animal rescue operations and disaster relief. Join a trusted animal welfare NGO India in protecting voiceless victims."
+        keywords="flood animal rescue operations, emergency animal rescue India, disaster relief India, animal welfare NGO India, save stray dogs from rabies, emergency response India, disaster rehabilitation animals, help flood victims Uttarakhand, flood relief Uttarakhand, animal rescue Mumbai, support animal evacuation, CSR for animal welfare, corporate partnership for disaster relief, animal safety India"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
       />
@@ -241,7 +241,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <TrendingUp className="text-green-700" size={16} />
               3+ Years Active
             </div>
-            
+
           </div>
 
           {/* Geographic Line */}
@@ -409,9 +409,22 @@ const FloodAnimalRescueCauseDetailPage = () => {
               </p>
 
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Reunification With Owners</h3>
-              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
-                One of the most important and most overlooked aspects of flood animal rescue is reunification. When families are evacuated, they are rarely told where to find their animals afterward. The programme photographs every rescued animal, records the location of rescue, and posts details on local community boards and social media groups. Where possible, rescued livestock are tagged with temporary identification. In the 2024 season, the programme successfully reunited over 600 animals with their owners, a number that represents not just animal welfare but family stability and economic recovery for hundreds of rural households.
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base mb-8">
+                One of the most important and most overlooked aspects of flood animal rescue is reunification. When families are evacuated, they are rarely told where to find their animals afterward. The programme photographs every rescued animal, records the location of rescue, and posts details on local community boards and social media groups. In the 2024 season, the programme successfully reunited over 600 animals with their owners, ensuring long-term health and stability, including necessary protocols to **save stray dogs from rabies** during post-disaster care.
               </p>
+
+              {/* Corporate CSR Section */}
+              <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg my-10">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">CSR & Corporate Partnerships</h3>
+                <p className="text-gray-700 mb-4">
+                  Join our **CSR for animal welfare** disaster response network. Your **corporate partnership for disaster relief** helps us scale emergency animal rescue India operations.
+                </p>
+                <ul className="list-disc ml-5 text-gray-700 space-y-2">
+                  <li>Support animal welfare NGO India in high-risk zones</li>
+                  <li>Sponsor specialized water rescue equipment</li>
+                  <li>Build animal disaster rehabilitation hubs</li>
+                </ul>
+              </div>
             </section>
 
             {/* Section 4: Multi-State Operations */}
