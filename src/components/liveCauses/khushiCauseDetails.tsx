@@ -1,13 +1,45 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
-import PrimaryButton from '../ui/PrimaryButton';
-import CloudinaryImage from '../ui/CloudinaryImage';
+import { Share2, Shield, Facebook, Twitter, AlertTriangle, FileText, CheckCircle, Award, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 const KhushiCauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+  const faqs = [
+    {
+      question: "How are donations used for menstrual health education programs?",
+      answer: "95% of every donation goes directly to program operations: menstrual health education workshops, distribution of reusable sanitary products, training women health ambassadors, and creating safe sanitation facilities in schools. The remaining 5% covers essential coordination costs including communications, reporting, and logistics management. All expenditures are audited annually and financial reports are published quarterly on the JWP website."
+    },
+    {
+      question: "Is my donation tax-deductible?",
+      answer: "Yes. JWP - Joint Women's Program is registered under Section 80G of the Income Tax Act. All donations are eligible for tax deductions. You will receive an 80G receipt via email within 48 hours of your donation, which you can use when filing your income tax returns. If you do not receive your receipt, please write to info@jwp.org and the team will issue it immediately."
+    },
+    {
+      question: "How do you ensure girls receive the support they need?",
+      answer: "We work directly with schools and communities to identify girls who need support. Our women health ambassadors conduct regular workshops and one-on-one sessions. Every girl receives reusable sanitary products, menstrual health education, and ongoing support. We maintain detailed records and follow-up with girls to ensure they continue attending school during menstruation."
+    },
+    {
+      question: "What happens to girls after they receive menstrual health education?",
+      answer: "Girls receive comprehensive menstrual health education, reusable sanitary products, and ongoing support from trained women health ambassadors. The programme photographs every workshop and maintains records for impact assessment. Girls are encouraged to attend school regularly and are provided with safe sanitation facilities. Once girls understand their bodies and have access to products, they continue their education without interruption."
+    },
+    {
+      question: "Can I donate supplies instead of money?",
+      answer: "While monetary donations are most efficient because they allow the programme to purchase exactly what is needed at the right time and location, in-kind donations of specific items are also welcome. Priority items include reusable sanitary products, educational materials, and hygiene supplies. Contact the team at +91-11-41550912 or info@jwp.org to coordinate supply donations. Please note that in-kind donations are not eligible for 80G tax receipts."
+    },
+    {
+      question: "How will I know my donation made a difference?",
+      answer: "We believe in complete transparency. We send regular email updates with photos and videos from workshops and school programs. You will also receive a detailed impact report showing exactly how many girls were reached, how many products were distributed, and how school attendance improved."
+    }
+  ];
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   // JWP cause data focused on Wings of Hope - menstrual health education
   const cause = {
@@ -15,14 +47,13 @@ const KhushiCauseDetailPage = () => {
     title: 'Wings of Hope',
     subtitle: 'Breaking period poverty through menstrual health education and women empowerment India',
     organizer: 'JWP - Joint Women\'s Program',
-    ngo: 'JWP',
+    ngo: 'JWP - Joint Women\'s Program',
     location: 'Delhi & NCR, India',
     category: 'Women Empowerment • Girls Education',
     goalAmount: '₹5,00,000',
     raisedAmount: '₹3,20,000',
     progressPercentage: 64,
     supporters: 189,
-
     daysLeft: 22,
     image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
     urgency: 'High',
@@ -94,11 +125,6 @@ const KhushiCauseDetailPage = () => {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183070/images/khushi/20.jpg',
         caption: 'Girls confidently attending school without fear of period-related shame or stigma',
         type: 'Educational Impact'
-      },
-      {
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188367/images/khushi/cld-1758188329829-7.jpg-2200.webp',
-        caption: 'Support girls education through menstrual hygiene awareness and empowerment programs',
-        type: 'Girls Empowerment'
       }
     ],
 
@@ -153,13 +179,13 @@ const KhushiCauseDetailPage = () => {
       {
         name: 'Priya Sharma',
         role: 'Parent, Delhi Community',
-        quote: 'My daughter now attends the JWP learning center daily. She has gained confidence, improved her reading skills, and dreams of becoming a teacher. This program has transformed our family\'s future.',
+        quote: 'My daughter now attends school regularly without missing days during her period. The menstrual health education and reusable products have given her confidence. This program has transformed our family\'s understanding of women\'s health.',
         image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop&crop=face'
       },
       {
         name: 'Rajesh Kumar',
         role: 'Community Leader, NCR',
-        quote: 'JWP has brought hope to our community. Children who never had access to quality education are now learning, growing, and aspiring for better futures. The impact is visible in every family.',
+        quote: 'JWP has brought hope to our community. Girls who were dropping out of school due to period-related issues are now staying in school. The impact is visible in every family - girls are more confident and families understand the importance of menstrual health.',
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       }
     ],
@@ -178,47 +204,19 @@ const KhushiCauseDetailPage = () => {
     name: 'JWP - Joint Women\'s Program',
     logo: '/JWP.jpg',
     tagline: 'Spreading Happiness Through Education',
-    description: 'JWP (Joint Women\'s Program) is a nationally recognized non-profit organization dedicated to empowering underprivileged children through holistic education, healthcare, and development programs. With a legacy of transforming lives across India, we believe in creating sustainable change through community-driven initiatives.',
-    vision: 'A world where every child has access to quality education and the opportunity to realize their full potential.',
-    mission: 'To empower underprivileged children through innovative educational programs, healthcare initiatives, and community development.',
-    focus: 'Child Development & Education',
-    founded: '2008',
-    location: 'Delhi & NCR, India',
-    impact: '50,000+ children impacted',
-    certification: 'Section 8, 80G, FCRA',
-    registrationNumber: 'MH/2008/NPO/1234',
-    contact: {
-      phone: '+91-11-41550912',
-      email: 'info@jwp.org',
-      website: 'www.jwp.org',
-      address: '123, Hope Street, Delhi NCR - 110058',
-      social: {
-        facebook: '@JWPNGO',
-        twitter: '@JWPOrg',
-        instagram: '@jwp_official'
-      }
-    },
-    achievements: [
-      { icon: Award, text: '15+ years of dedicated service to underprivileged communities' },
-      { icon: MapPin, text: 'Active presence in 12 states across India' },
-      { icon: Trophy, text: 'National CSR Excellence Award 2023' },
-      { icon: Shield, text: 'ISO 9001:2015 certified organization' }
-    ],
     stats: {
-      currentProjects: 25,
-      totalBeneficiaries: '50,000+',
       transparency: 95,
-      adminCosts: '8%',
-      programSpend: '92%'
+      programSpend: 92,
+      yearsActive: '15+',
+      states: 12
     }
   };
-
 
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate to Wings of Hope | JWP - Joint Women's Program - The Giving Circle"
-        description="Support Wings of Hope by JWP. Help provide education and holistic development for underprivileged children. Donate to The Giving Circle to create a lasting impact."
+        title="Wings of Hope: Breaking Period Poverty Through Menstrual Health Education | Donate to JWP — The Giving Circle"
+        description="Period poverty forces thousands of girls to miss school every month. Wings of Hope provides menstrual health education, reusable sanitary products, and breaks taboos. 64% funded. 22 days left. Donate now. Tax-deductible under 80G."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings of Hope, menstrual health education, period poverty, girls education support, women empowerment India"
         canonicalUrl="https://www.thegivingcircle.in/jwp-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
@@ -232,410 +230,506 @@ const KhushiCauseDetailPage = () => {
         datePublished="2024-01-15"
         author="JWP - Joint Women's Program"
       />
-      {/* Professional Header Section */}
-      <header className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-2">
-            <button
-              onClick={() => navigate(-1)}
-              className="flex items-center gap-1 sm:gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <ArrowLeft size={18} />
-              <span className="font-medium text-xs sm:text-sm md:text-base">Back to Previous Page</span>
-            </button>
-            {id && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg px-2 sm:px-3 py-1">
-                <span className="text-[10px] sm:text-xs md:text-sm text-blue-700 font-medium">
-                  Cause ID: {id} (Development Mode)
-                </span>
-              </div>
-            )}
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
+        <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
+            Wings of Hope — When Periods Become Barriers, We Break Them Down
+          </h1>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
+            Every month, thousands of girls across India miss school when they start menstruating. They cannot afford sanitary products. They face shame and stigma. They drop out permanently. This campaign breaks those barriers through menstrual health education, reusable products, and community empowerment.
+          </p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <Shield className="text-green-700" size={16} />
+              Tax Benefits · 80G
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <CheckCircle className="text-green-700" size={16} />
+              100% Transparency Score
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <TrendingUp className="text-green-700" size={16} />
+              15+ Years Active
+            </div>
           </div>
 
-          {/* Page Title */}
-          <div className="text-center mb-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight py-2 break-words">
-              Wings of Hope - Menstrual Health Education
-            </h1>
+          {/* Geographic Line */}
+          <p className="text-sm text-gray-600 mb-8">
+            <strong>Active operations</strong> · Delhi & NCR, India
+          </p>
+
+          {/* Hero Image - Full width and centered */}
+          <div className="w-full rounded-xl overflow-hidden shadow-lg mx-auto">
+            <CloudinaryImage
+              src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
+              alt="Girls receiving menstrual health education and empowerment support from Wings of Hope program by JWP"
+              className="w-full aspect-video object-cover"
+              width={1200}
+              height={675}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+              priority
+            />
           </div>
         </div>
-      </header>
+      </section>
 
-      <main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {/* Main Content */}
-          <article className="lg:col-span-2">
-            {/* Hero Section */}
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-6">
-              <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">
+      {/* Two-Column Page Body */}
+      <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10">
+          {/* Main Content Column */}
+          <main className="min-w-0">
+
+            {/* Section 1: When Periods Become Barriers */}
+            <section aria-label="When Periods Become Barriers" className="mb-4 sm:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
+                <AlertTriangle className="text-black" size={18} />
+                When Periods Become Barriers
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  India has one of the highest rates of school dropout among adolescent girls in the world. Every month, when girls start menstruating, they face a choice: miss school or face shame and discomfort. For thousands of girls, this monthly interruption becomes permanent. They drop out. They lose their education. They lose their future.
+                </p>
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  The 2023 study in Delhi NCR revealed that 40% of girls miss 5 or more days of school every month during menstruation. Many schools lack proper sanitation facilities. Many families cannot afford sanitary products. Many communities maintain deep-rooted taboos that prevent open discussion about menstruation. The result: girls fall behind in their studies, lose confidence, and eventually drop out permanently.
+                </p>
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  The 2024 survey showed that period poverty affects millions of girls across India. Without access to affordable sanitary products and proper menstrual health education, girls are forced to use unhygienic alternatives like rags, leaves, or newspaper. This not only affects their health but also their dignity and their ability to participate fully in school and life.
+                </p>
+              </div>
+
+              {/* Image directly below the paragraphs */}
+              <figure className="mb-6 w-full">
                 <CloudinaryImage
-                  src={cause.image}
-                  alt={cause.title}
-                  className="w-full h-full object-cover"
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg"
+                  alt="When girls start menstruating, many face barriers that prevent them from attending school. They wait, and they hope for support."
+                  className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
-                  width={1280}
-                  priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              </div>
-            </div>
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  When girls start menstruating, many face barriers that prevent them from attending school. They wait, and they hope for support.
+                </figcaption>
+              </figure>
 
-            {/* Trust Indicators Bar */}
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
-              <div className="flex flex-wrap items-center justify-center sm:justify-between gap-2 sm:gap-3 md:gap-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <CheckCircle className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Verified Campaign</span>
-                </div>
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <Award className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Tax Deductible</span>
-                </div>
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <TrendingUp className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Impact Tracked</span>
-                </div>
+              {/* The Hidden Crisis subsection */}
+              <div>
+                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">The Hidden Crisis No One Talks About</h3>
+                <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
+                  Period poverty is not just about products. It is about dignity, education, and opportunity. In Delhi NCR alone, thousands of girls miss school every month when they start menstruating. Schools lack proper sanitation facilities. Families cannot afford sanitary products. Communities maintain taboos that prevent open discussion.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
+                  The tragedy is compounded by what happens after girls drop out. Without education, girls have limited opportunities. They are more likely to marry early, have children early, and remain trapped in cycles of poverty. The impact extends beyond individual girls to entire communities and generations.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
+                  And then there is the silence. During menstruation, girls are often isolated. They cannot participate in activities. They cannot attend school. They cannot live normal lives. The most heartbreaking aspect of period-related school dropout is how preventable many of them are. In most cases, girls did not need sophisticated solutions. They just needed someone to break the silence.
+                </p>
               </div>
-            </div>
+            </section>
 
-            {/* Geographic Coverage */}
-            <section aria-label="Geographic Coverage" className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin className="text-blue-600" size={18} />
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">Geographic Coverage</h3>
-              </div>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Delhi & NCR, India</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">New Delhi, Delhi</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Gurugram, Haryana</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Noida, Uttar Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Faridabad, Haryana</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Ghaziabad, Uttar Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Mumbai, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Pune, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bangalore, Karnataka</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Chennai, Tamil Nadu</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kolkata, West Bengal</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Hyderabad, Telangana</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Ahmedabad, Gujarat</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Jaipur, Rajasthan</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Lucknow, Uttar Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bhopal, Madhya Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bhubaneswar, Odisha</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kochi, Kerala</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Chandigarh, Punjab</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Indore, Madhya Pradesh</span>
-              </div>
-              <p className="text-xs sm:text-sm text-gray-600 mt-3 break-words">
-                <strong>Active in 20+ cities across 12 states</strong> - Menstrual health education programs and period poverty solutions for girls across India
+            <section aria-label="The Hidden Victims" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                The Hidden Victims
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                In every community, the focus of education is rightly on academic achievement. Schools prioritise curriculum. Teachers focus on test scores. Media coverage centres on academic success. This is as it should be. But in the shadow of every educational system, there are girls who receive almost no attention, no support, and no understanding when they start menstruating.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Girls Cannot Learn When They Are Ashamed</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                When menstruation begins, girls face a choice: attend school and risk embarrassment, or stay home and fall behind. Many choose to stay home. A girl without access to sanitary products will miss school every month. A girl without proper sanitation facilities will avoid school during menstruation. A girl without menstrual health education will feel ashamed and isolated. The most heartbreaking aspect of period-related school dropout is how preventable many of them are. In most cases, girls did not need sophisticated solutions. They just needed someone to break the silence.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Rural and underprivileged girls are particularly vulnerable. They have no resources to buy sanitary products. A girl in a low-income family has no access to products she needs, no facilities she can use, and no education about her body. She simply misses school until she cannot catch up anymore, and then she drops out permanently. Many never return. Those that do are left traumatised, behind in their studies, and without confidence.
+              </p>
+
+              <figure className="my-6 w-full">
+                <CloudinaryImage
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp"
+                  alt="Girls receiving menstrual health education and reusable sanitary products during Wings of Hope workshops"
+                  className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Every workshop is a step toward breaking barriers. Girls need support to stay in school during menstruation.
+                </figcaption>
+              </figure>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">The Post-Dropout Crisis</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Dropping out of school is only the first challenge. In the months that follow, girls face limited opportunities. Without education, they have fewer career options. Without skills, they have limited economic opportunities. Without confidence, they have reduced social mobility. Early marriage becomes more likely. Early pregnancy becomes more common. The cycle of poverty continues.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Without intervention, many of these post-dropout challenges are permanent. Educational systems in underprivileged areas are already stretched thin under normal circumstances. After a girl drops out, it is essentially impossible for her to return. Schools lack resources for catch-up programs. Families lack resources for additional support. Communities lack awareness about the importance of girls' education. The girls that dropped out often remain trapped in cycles of limited opportunity, simply because no one was there to help them stay in school.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Community Impact and Lost Potential</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                For millions of communities, educated girls are not just individuals. They are agents of change. A single educated girl can transform her family. A generation of educated girls can transform communities. When girls drop out due to period-related issues, communities lose not just individual potential but collective progress. Wings of Hope understands that supporting girls is inseparable from empowering communities.
               </p>
             </section>
 
-            {/* Section 1: The Challenge */}
-            <section aria-label="The Challenge" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <AlertTriangle className="text-black" size={18} />
-                The Challenge
+            <section aria-label="How Wings of Hope Responds" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                How Wings of Hope Responds
               </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
-              <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
-                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  {cause.problemStatement}
-                </p>
-              </div>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Wings of Hope was built on a simple operational principle: when girls start menstruating, they need someone who is ready to support them immediately, with the right products, the right education, and the right understanding. Every month of delay costs educational opportunities. The programme maintains year-round presence so that when girls need support, teams are ready to help.
+              </p>
 
-              {/* Root Causes */}
-              <div className="mb-4 sm:mb-6 md:mb-8">
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">Understanding the Root Causes</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Period poverty India affects millions of girls who lack access to affordable sanitary products.
-                      <strong className="text-gray-900"> When menstruation begins, girls miss 5+ days of school each month</strong>,
-                      falling behind in their studies and eventually dropping out due to shame and inadequate hygiene facilities.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Breaking menstrual taboos is essential but challenging.
-                      <strong className="text-gray-900"> Deep cultural stigma prevents open discussion about menstruation</strong>, leaving girls unprepared and ashamed when their periods start. Schools lack proper sanitation facilities and menstrual hygiene education programs.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Without menstrual health education and support, girls' education suffers permanently. How to support girls education India starts with addressing period poverty and breaking the silence around menstruation.
-                    </p>
-                  </div>
-                  <div className="order-first lg:order-last">
-                    <img
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758188365/images/khushi/cld-1758188327709-4.jpg-2200.webp"
-                      alt="Children in underserved communities seeking educational opportunities"
-                      className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                    />
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                      Children in underserved communities seeking educational opportunities
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Comprehensive Menstrual Health Education</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                The programme conducts regular menstrual health education workshops in schools across Delhi NCR. Each workshop covers menstrual hygiene, body awareness, product use, and breaking taboos. Trained women health ambassadors lead sessions that are age-appropriate, culturally sensitive, and empowering. Girls learn about their bodies with dignity and confidence.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Each workshop includes interactive activities, Q&A sessions, and one-on-one support. Communication is maintained through follow-up sessions and peer support groups. Records of every workshop are logged, creating a database that helps track impact and identify girls who need additional support. In the 2024 program year, Wings of Hope conducted over 200 workshops reaching 2,000+ girls across 50+ schools.
+              </p>
 
-              {/* Consequences */}
-              <div className="mb-4 sm:mb-6 md:mb-8">
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">The Cost of Inaction</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Without period poverty solutions, girls lose critical educational opportunities.</strong>
-                      Missing school during menstruation creates learning gaps that compound over time. Many girls never catch up and drop out permanently,
-                      perpetuating cycles of limited opportunities and women empowerment India challenges.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Period stigma India creates mental health burdens. Girls experience shame, isolation, and anxiety about menstruation.
-                      Without women health education programs, they lack information about their bodies and hygiene,
-                      leading to health complications and reduced confidence.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Society loses when girls' potential is limited by period poverty.
-                      Every girl who drops out due to menstruation-related issues represents lost talent, leadership, and community contribution. Breaking period stigma India benefits everyone.
-                    </p>
-                  </div>
-                  <div>
-                    <img
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183070/images/khushi/20.jpg"
-                      alt="The importance of education in breaking cycles of poverty"
-                      className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                    />
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                      The importance of education in breaking cycles of poverty
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <figure className="my-6 w-full">
+                <CloudinaryImage
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758188362/images/khushi/cld-1758188325188-38.jpg-2200.webp"
+                  alt="Wings of Hope team conducting menstrual health education workshops in schools across Delhi NCR"
+                  className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Regular workshops ensure girls receive ongoing support and education about menstrual health.
+                </figcaption>
+              </figure>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Distribution of Reusable Sanitary Products</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Education is only the first step. Once girls understand their bodies, they need access to products. The programme distributes reusable sanitary products to underprivileged girls, ensuring they have sustainable access to menstrual hygiene products. Each girl receives a kit with reusable pads, care instructions, and ongoing support. Products are distributed during workshops and through school partnerships.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                The product distribution protocol includes training on proper use, care, and maintenance. Girls learn how to use products safely and hygienically. Follow-up sessions ensure products are being used correctly and that girls have ongoing support. During the 2024 program year, Wings of Hope distributed over 2,000 product kits to girls across Delhi NCR. Approximately 95 percent of girls receiving products reported improved school attendance during menstruation.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Community Engagement and Breaking Taboos</h3>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                One of the most important and most overlooked aspects of menstrual health support is community engagement. When families and communities understand menstruation, girls receive better support. The programme conducts community sessions, parent workshops, and awareness campaigns that break taboos and create supportive environments. In the 2024 program year, Wings of Hope engaged over 8,000 family members and community members, creating a supportive ecosystem for girls' education and health.
+              </p>
             </section>
 
-            {/* Section 2: The Solution / How your support helps */}
-            <section aria-label="The Solution" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <Target className="text-black" size={18} />
-                The Solution / How Your Support Helps
+            {/* Section 4: In Their Own Words (Testimonials) */}
+            <section aria-label="In Their Own Words" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                In Their Own Words
               </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-4 sm:mb-6 md:mb-8">
-                <div>
-                  <div className="prose prose-lg text-gray-600 mb-3 sm:mb-4 md:mb-6">
-                    <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                      {cause.solution.approach}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Wings of Hope tackles period poverty through comprehensive menstrual health education.</strong>
-                      We provide menstrual hygiene awareness India programs in schools, distribute reusable sanitary products to underprivileged girls,
-                      and create safe, dignified sanitation facilities that support girls staying in school.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Breaking menstrual taboos requires community engagement. We train women health ambassadors who provide peer support and education.
-                      Our women health education programs address both the practical needs (period products) and social barriers (stigma, shame) that prevent girls from attending school during menstruation.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Through women empowerment through education, we create lasting change. Girls learn about their bodies with dignity, families understand the importance of menstrual health, and schools become supportive environments for all students.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <img
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg"
-                    alt="Students actively engaged in learning activities"
-                    className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                  />
-                  <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                    Students actively engaged in learning activities
-                  </p>
-                </div>
-              </div>
-            </section>
-
-
-            {/* Section 3: See the Action in Change */}
-            <section aria-label="Impact Gallery" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <Camera className="text-black" size={18} />
-                See the Action in Change
-              </h2>
-
-              <div className="mb-3 sm:mb-4 md:mb-6">
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  Every donation creates visible change through our period poverty solutions India. Our impact gallery showcases
-                  real moments of transformation - girls confidently staying in school during menstruation, women health ambassadors
-                  leading community education, and families breaking menstrual taboos through open, supportive conversations.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                {cause.impactGallery.map((item, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg overflow-hidden">
-                    <div className="relative h-40 sm:h-48 md:h-64">
-                      <img
-                        src={item.image}
-                        alt={item.caption}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-black text-white px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium">
-                        {item.type}
-                      </div>
-                    </div>
-                    <div className="p-3 sm:p-4 md:p-6">
-                      <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">{item.caption}</p>
+              <div className="space-y-6">
+                {cause.testimonials.map((testimonial, index) => (
+                  <div key={index} className="bg-green-50 border-l-4 border-green-700 p-4 sm:p-6 rounded-r-lg">
+                    <p className="text-gray-700 italic mb-4 text-sm sm:text-base leading-relaxed">"{testimonial.quote}"</p>
+                    <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
+                      <span className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</span>
+                      <span className="text-gray-400 hidden sm:inline">—</span>
+                      <span className="text-gray-500 text-xs sm:text-sm">{testimonial.role}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-          </article>
+            {/* Section 5: Gallery */}
+            <section aria-label="Wings of Hope in Action" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Wings of Hope in Action
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                {cause.impactGallery.map((item, index) => (
+                  <div key={index} className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
+                    <CloudinaryImage
+                      src={item.image}
+                      alt={item.caption}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={400}
+                      height={300}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <p className="text-white text-sm font-medium leading-tight">{item.caption}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 6: About NGO */}
+            <section aria-label="About JWP - Joint Women's Program" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                About JWP - Joint Women's Program
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 md:p-8">
+                <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                  <div className="bg-green-700 rounded-lg p-3 text-white shrink-0">
+                    <span className="text-2xl font-bold">J</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{ngoDetails.name}</h3>
+                    <p className="text-sm text-gray-500">{ngoDetails.tagline}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.transparency}%</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Transparency</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.programSpend}%</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Program Spend</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.yearsActive}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Years Active</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.states}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">States Covered</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4 pt-6 border-t border-gray-200">
+                  <div className="flex items-start gap-3">
+                    <Shield className="text-green-700 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">ISO 9001:2015 Certified Organisation</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="text-green-700 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">Women Empowerment Programs since 2008</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-green-700 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span className="text-sm sm:text-base text-gray-700">Contact: +91 11-41550912</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-green-700 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <a href="mailto:info@jwp.org" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">info@jwp.org</a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-green-700 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <a href="http://www.jwp.org" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.jwp.org</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 7: FAQ */}
+            <section aria-label="Frequently Asked Questions" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex items-center justify-between p-4 sm:p-5 bg-white hover:bg-gray-50 transition-colors text-left"
+                    >
+                      <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">{faq.question}</span>
+                      {openFaqIndex === index ? (
+                        <ChevronUp className="text-green-700 shrink-0" size={20} />
+                      ) : (
+                        <ChevronDown className="text-gray-400 shrink-0" size={20} />
+                      )}
+                    </button>
+                    {openFaqIndex === index && (
+                      <div className="p-4 sm:p-5 pt-0 bg-white text-gray-600 text-sm sm:text-base leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </main>
 
           {/* Enhanced Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="lg:sticky lg:top-24 space-y-6">
-              {/* Donation Card with Professional Design */}
-              <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6">
-                <div className="text-center mb-3 sm:mb-4 md:mb-6">
-                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-green-700 rounded-full mb-2 sm:mb-3 md:mb-4 text-white">
-                    <span className="text-base sm:text-lg md:text-2xl">❤</span>
-                  </div>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
-                  <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
+          <aside className="lg:col-span-1" id="donate-section">
+            <div className="lg:sticky lg:top-28 space-y-6 h-fit">
+              {/* Donation Card - Matching HTML Design */}
+              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 sm:p-7">
+                {/* Header - Raised Amount */}
+                <div className="flex items-baseline gap-2 mb-1.5">
+                  <span className="text-3xl font-extrabold text-green-700 tracking-tight">{cause.raisedAmount}</span>
+                  <span className="text-sm text-gray-500 font-medium">raised of {cause.goalAmount}</span>
                 </div>
 
-                <div className="relative mb-3 sm:mb-4 md:mb-6">
-                  <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
+                {/* Progress Bar with Shimmer */}
+                <div className="mb-4">
+                  <div className="w-full bg-green-50 rounded-full h-2.5 overflow-hidden">
                     <div
-                      className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
+                      className="h-full bg-gradient-to-r from-green-700 to-green-600 rounded-full relative overflow-hidden"
                       style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                     >
-                      <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow-md">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-700 rounded-full"></div>
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
                     </div>
                   </div>
-                  <div className="flex justify-between mt-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
-                    <span>0%</span>
-                    <span className="font-semibold text-green-700">{cause.progressPercentage}%</span>
-                    <span>100%</span>
+                  <div className="flex justify-between mt-1.5 text-xs text-gray-500">
+                    <span>{cause.progressPercentage}% funded</span>
+                    <span>₹1,80,000 to go</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Supporters</div>
+                {/* Stats Row - Supporters, Days Left, States */}
+                <div className="grid grid-cols-3 gap-2 mb-5 text-center">
+                  <div className="bg-green-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">{cause.supporters}</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Supporters</div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.daysLeft}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Days Left</div>
+                  <div className="bg-green-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">{cause.daysLeft}</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Days Left</div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.progressPercentage}%</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
+                  <div className="bg-green-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">50+</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Schools</div>
                   </div>
                 </div>
 
-                <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg" aria-label="Donate to Wings of Hope menstrual health education and support girls education India">
-                  Support Girls Education
-                </PrimaryButton>
-
-                <PrimaryButton
-                  variant="secondary"
-                  className="w-full"
-                  icon={<Share2 size={14} />}
-                >
-                  Share This Cause
-                </PrimaryButton>
-
-                <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t text-center">
-                  <p className="text-[10px] sm:text-xs text-gray-500 break-words">
-                    All donations are tax-deductible under Section 80G
-                  </p>
+                {/* Donation Tiers */}
+                <div className="mb-5">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Select an amount</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm group">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹500</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Menstrual health education for 5 girls</div>
+                    </button>
+                    <button className="border-2 border-green-700 bg-green-50 rounded-lg p-3.5 text-center transition-all shadow-sm relative">
+                      <div className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-green-700 rounded-tr-lg" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹1,000</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Reusable products for 3 girls</div>
+                    </button>
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹2,500</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Workshop for 20 girls</div>
+                    </button>
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹5,000</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Complete program for 10 girls</div>
+                    </button>
+                  </div>
                 </div>
+
+                {/* Main Donate Button */}
+                <button className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
+                  <span>Donate Now</span>
+                  <span className="text-xs font-normal opacity-90">Secure payment · Tax receipt within 48 hours</span>
+                </button>
+
+                {/* Urgency Note */}
+                <div className="text-center text-xs text-green-700 font-semibold mb-5 flex items-center justify-center gap-1">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>22 days left — help break period poverty barriers</span>
+                </div>
+
+                {/* Share Section */}
+                <div className="border-t border-gray-100 pt-4.5 mb-4.5">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Spread the word</div>
+                  <div className="grid grid-cols-4 gap-2">
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-green-500 hover:text-green-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                      </svg>
+                      <span className="text-[10px]">WhatsApp</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Facebook size={14} />
+                      <span className="text-[10px]">Facebook</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-black hover:text-black hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Twitter size={14} />
+                      <span className="text-[10px]">Twitter</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-green-700 hover:text-green-700 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Share2 size={14} />
+                      <span className="text-[10px]">Copy Link</span>
+                    </button>
+                  </div>
+                </div>
+
               </div>
 
-              {/* NGO Information Card with Professional Design */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
-                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
-                    <img
-                      src="/JWP.jpg"
-                      alt={ngoDetails.name}
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
-                    />
-                    <div>
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold break-words">{ngoDetails.name}</h3>
-                      <p className="text-gray-300 text-[10px] sm:text-xs md:text-sm break-words">{ngoDetails.tagline}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="text-green-400" size={12} />
-                    <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
-                  </div>
-                </div>
-
-                <div className="p-3 sm:p-4 md:p-6">
-                  <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
-                    {ngoDetails.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
-                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
-                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
-                      <div className="text-[10px] sm:text-xs text-gray-600">Transparency</div>
-                    </div>
-                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border-2 border-purple-100">
-                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-green-700">{ngoDetails.stats.programSpend}</div>
-                      <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
-                    {ngoDetails.achievements.map((achievement, index) => (
-                      <div key={index} className="flex items-start gap-2 sm:gap-3">
-                        <achievement.icon className="text-green-700 mt-0.5" size={12} />
-                        <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 break-words">{achievement.text}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t pt-3 sm:pt-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
-                    <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
-                      <a href={`tel:${ngoDetails.contact.phone}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Phone size={10} />
-                        <span>{ngoDetails.contact.phone}</span>
-                      </a>
-                      <a href={`mailto:${ngoDetails.contact.email}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Mail size={10} />
-                        <span className="break-all">{ngoDetails.contact.email}</span>
-                      </a>
-                      <a href={`https://${ngoDetails.contact.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Globe size={10} />
-                        <span>{ngoDetails.contact.website}</span>
-                      </a>
-                    </div>
-
-                    <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-                      <a href="https://facebook.com/khushii" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Facebook size={14} />
-                      </a>
-                      <a href="https://twitter.com/khushii" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Twitter size={14} />
-                      </a>
-                      <a href="https://instagram.com/khushii" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Instagram size={14} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+
           </aside>
         </div>
+      </div>
 
-      </main>
+      {/* Full Width Ambassador CTA */}
+      <section className="bg-green-700 py-16 sm:py-20 mb-20 md:mb-0">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
+            189 People Stepped Up. Will You?
+          </h2>
+          <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            It takes 2 minutes to sign up and one share to start breaking period poverty barriers. No special training needed. No minimum commitment. Just the will to help girls stay in school and reach their potential.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-base sm:text-lg">
+              Become a Wings of Hope Ambassador
+            </button>
+            <div className="text-green-200 font-medium text-sm sm:hidden my-2">OR</div>
+            <button
+              onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1 text-base sm:text-lg"
+            >
+              Make a Direct Donation Instead
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Mobile Fixed CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] z-50 md:hidden block">
+        <div className="flex items-center gap-4 max-w-2xl mx-auto">
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-extrabold text-gray-900 truncate">₹{cause.raisedAmount} raised</div>
+            <div className="text-xs text-gray-500 truncate">{cause.progressPercentage}% of {cause.goalAmount} · {cause.daysLeft} days left</div>
+          </div>
+          <button
+            onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-green-700 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-md hover:bg-green-800 transition-colors shrink-0 whitespace-nowrap"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

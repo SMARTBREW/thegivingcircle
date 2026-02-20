@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { Share2, Shield, Facebook, Twitter, AlertTriangle, Lock, FileText, CheckCircle, Award, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
+import { Share2, Shield, Facebook, Twitter, AlertTriangle, FileText, CheckCircle, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 const FloodAnimalRescueCauseDetailPage = () => {
   const { id } = useParams();
@@ -216,7 +217,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
         author="Animal Care India"
       />
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-teal-50 via-white to-teal-100 pt-32 pb-12 sm:pb-16">
+      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
             Flood Animal Rescue — When Waters Rise, They Have No One But Us
@@ -229,21 +230,18 @@ const FloodAnimalRescueCauseDetailPage = () => {
           {/* Trust Badges */}
           <div className="flex flex-wrap gap-3 mb-6">
             <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
-              <Shield className="text-teal-600" size={16} />
-              Tax Deductible · 80G
+              <Shield className="text-green-700" size={16} />
+              Tax Benefits · 80G
             </div>
             <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
-              <CheckCircle className="text-teal-600" size={16} />
-              98% Transparency Score
+              <CheckCircle className="text-green-700" size={16} />
+              100% Transparency Score
             </div>
             <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
-              <TrendingUp className="text-teal-600" size={16} />
-              8+ Years Active
+              <TrendingUp className="text-green-700" size={16} />
+              3+ Years Active
             </div>
-            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
-              <Award className="text-teal-600" size={16} />
-              ISO 9001:2015
-            </div>
+            
           </div>
 
           {/* Geographic Line */}
@@ -251,12 +249,16 @@ const FloodAnimalRescueCauseDetailPage = () => {
             <strong>Multi-state operations</strong> · Uttarakhand, Kerala, Assam, Bihar, West Bengal, Odisha, Andhra Pradesh, Tamil Nadu
           </p>
 
-          {/* Hero Image */}
-          <div className="w-full max-w-4xl rounded-xl overflow-hidden shadow-lg">
-            <img
+          {/* Hero Image - Full width and centered */}
+          <div className="w-full rounded-xl overflow-hidden shadow-lg mx-auto">
+            <CloudinaryImage
               src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183008/images/animal-flood/animal6.png"
               alt="Animals stranded during flooding in India, awaiting rescue by Flood Animal Rescue teams deployed by AnimalCare India"
               className="w-full aspect-video object-cover"
+              width={1200}
+              height={675}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+              priority
             />
           </div>
         </div>
@@ -274,7 +276,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <AlertTriangle className="text-black" size={18} />
                 When the Floods Come
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
                 <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
@@ -289,11 +291,14 @@ const FloodAnimalRescueCauseDetailPage = () => {
               </div>
 
               {/* Image directly below the paragraphs */}
-              <figure className="mb-6">
-                <img
+              <figure className="mb-6 w-full">
+                <CloudinaryImage
                   src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
                   alt="When floodwaters rise, animals have nowhere to go. They wait, and they hope."
                   className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
                 />
                 <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                   When floodwaters rise, animals have nowhere to go. They wait, and they hope.
@@ -315,13 +320,12 @@ const FloodAnimalRescueCauseDetailPage = () => {
               </div>
             </section>
 
-            {/* Section 2: The Hidden Victims */}
-            {/* Section 2: The Hidden Victims */}
+
             <section aria-label="The Hidden Victims" className="mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
                 The Hidden Victims
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
                 In every flood, the focus of relief operations is rightly on human lives. Evacuations prioritise people. Relief camps are designed for people. Media coverage centres on human stories. This is as it should be. But in the shadow of every human disaster, there is a parallel animal disaster that receives almost no attention, no funding, and no coordinated response.
@@ -335,11 +339,14 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 Strays are particularly vulnerable. They have no owners coming to get them. A street dog in a flood-affected town has no higher ground it has been trained to seek, no shelter it associates with safety. It simply runs until it cannot run anymore, and then it swims until it cannot swim anymore. Many do not survive. Those that do are left traumatised, malnourished, and sick from ingesting contaminated water.
               </p>
 
-              <figure className="my-6">
-                <img
+              <figure className="my-6 w-full">
+                <CloudinaryImage
                   src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183014/images/animal-flood/animal8.png"
                   alt="Rescue volunteers carrying a flood-affected animal to safety during monsoon operations in India"
                   className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
                 />
                 <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                   Every rescue is a race against time. Flood-affected animals need immediate intervention.
@@ -360,13 +367,12 @@ const FloodAnimalRescueCauseDetailPage = () => {
               </p>
             </section>
 
-            {/* Section 3: How Flood Animal Rescue Responds */}
-            {/* Section 3: How Flood Animal Rescue Responds */}
+
             <section aria-label="How Flood Animal Rescue Responds" className="mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
                 How Flood Animal Rescue Responds
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
                 Flood Animal Rescue was built on a simple operational principle: when disaster strikes, animals need someone who is ready to act immediately, with the right equipment, the right training, and the right coordination. Every hour of delay during a flood costs animal lives. The programme maintains year-round readiness so that when the first warnings come, teams can deploy within 24 to 48 hours.
@@ -380,11 +386,14 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 Each rapid response team consists of trained animal handlers, boat operators, and a veterinary first-aid specialist. They operate in pairs during rescues, with one person managing the boat and another handling the animals. Communication is maintained through satellite phones in areas where cellular networks have been knocked out by the flooding. GPS coordinates of every rescue are logged, creating a database that helps predict where animals are most likely to need help during future floods.
               </p>
 
-              <figure className="my-6">
-                <img
+              <figure className="my-6 w-full">
+                <CloudinaryImage
                   src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183003/images/animal-flood/animal10.jpg"
                   alt="Flood Animal Rescue team deploying inflatable boats in a flood zone to rescue stranded animals in India"
                   className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
                 />
                 <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
                   Rapid response teams deploy within 24-48 hours of flood alerts with pre-positioned rescue equipment.
@@ -411,7 +420,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Multi-State Operations
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
                 India's flood landscape is as diverse as the country itself. Mountain flash floods in Uttarakhand behave very differently from the slow, persistent inundation of the Brahmaputra floodplains in Assam. Coastal cyclone flooding in Odisha and Tamil Nadu presents challenges that are distinct from the monsoon-driven river overflow in Bihar and West Bengal. Flood Animal Rescue has developed operational protocols adapted to each of these environments, working through a network of local partners while maintaining central coordination for resource allocation, training standards, and quality oversight.
@@ -444,11 +453,11 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                 In Their Own Words
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <div className="space-y-6">
                 {cause.testimonials.map((testimonial, index) => (
-                  <div key={index} className="bg-teal-50 border-l-4 border-teal-400 p-4 sm:p-6 rounded-r-lg">
+                  <div key={index} className="bg-green-50 border-l-4 border-green-700 p-4 sm:p-6 rounded-r-lg">
                     <p className="text-gray-700 italic mb-4 text-sm sm:text-base leading-relaxed">"{testimonial.quote}"</p>
                     <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
                       <span className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</span>
@@ -466,15 +475,18 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                 Flood Animal Rescue in Action
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                 {cause.impactGallery.map((item, index) => (
                   <div key={index} className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
-                    <img
+                    <CloudinaryImage
                       src={item.image}
                       alt={item.caption}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={400}
+                      height={300}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
                     />
                     <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                       <p className="text-white text-sm font-medium leading-tight">{item.caption}</p>
@@ -489,11 +501,11 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                 About AnimalCare India
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 md:p-8">
                 <div className="flex items-center gap-4 mb-6 sm:mb-8">
-                  <div className="bg-teal-600 rounded-lg p-3 text-white shrink-0">
+                  <div className="bg-green-700 rounded-lg p-3 text-white shrink-0">
                     <span className="text-2xl font-bold">A</span>
                   </div>
                   <div>
@@ -504,53 +516,53 @@ const FloodAnimalRescueCauseDetailPage = () => {
 
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.transparency}%</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.transparency}%</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Transparency</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.programSpend}%</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.programSpend}%</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Program Spend</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.yearsActive}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.yearsActive}</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Years Active</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-teal-700 mb-1">{ngoDetails.stats.states}</div>
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.states}</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">States Covered</div>
                   </div>
                 </div>
 
                 <div className="space-y-4 pt-6 border-t border-gray-200">
                   <div className="flex items-start gap-3">
-                    <Shield className="text-teal-600 mt-0.5 shrink-0" size={18} />
+                    <Shield className="text-green-700 mt-0.5 shrink-0" size={18} />
                     <span className="text-sm sm:text-base text-gray-700">ISO 9001:2015 Certified Organisation</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="text-teal-600 mt-0.5 shrink-0" size={18} />
+                    <CheckCircle className="text-green-700 mt-0.5 shrink-0" size={18} />
                     <span className="text-sm sm:text-base text-gray-700">Multi-State Disaster Response Operations since 2018</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <FileText className="text-teal-600 mt-0.5 shrink-0" size={18} />
+                    <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
                     <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="text-teal-600 mt-0.5 shrink-0">
+                    <div className="text-green-700 mt-0.5 shrink-0">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                     </div>
                     <span className="text-sm sm:text-base text-gray-700">Contact: +91 98103 53603</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="text-teal-600 mt-0.5 shrink-0">
+                    <div className="text-green-700 mt-0.5 shrink-0">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                     </div>
-                    <a href="mailto:info@animalcareindia.org.in" className="text-sm sm:text-base text-gray-700 hover:text-teal-600 hover:underline">hello@thegivingcircle.in</a>
+                    <a href="mailto:info@animalcareindia.org.in" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">hello@thegivingcircle.in</a>
                   </div>
                   <div className="flex items-start gap-3">
-                    <div className="text-teal-600 mt-0.5 shrink-0">
+                    <div className="text-green-700 mt-0.5 shrink-0">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
                     </div>
-                    <a href="http://www.animalcareindia.org.in" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-teal-600 hover:underline">www.animalcareindia.org.in</a>
+                    <a href="http://www.animalcareindia.org.in" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.animalcareindia.org.in</a>
                   </div>
                 </div>
               </div>
@@ -561,7 +573,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
                 Frequently Asked Questions
               </h2>
-              <div className="w-16 h-1 bg-teal-500 mb-6 sm:mb-8"></div>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <div className="space-y-4">
                 {faqs.map((faq, index) => (
@@ -572,7 +584,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     >
                       <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">{faq.question}</span>
                       {openFaqIndex === index ? (
-                        <ChevronUp className="text-teal-600 shrink-0" size={20} />
+                        <ChevronUp className="text-green-700 shrink-0" size={20} />
                       ) : (
                         <ChevronDown className="text-gray-400 shrink-0" size={20} />
                       )}
@@ -596,15 +608,15 @@ const FloodAnimalRescueCauseDetailPage = () => {
               <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 sm:p-7">
                 {/* Header - Raised Amount */}
                 <div className="flex items-baseline gap-2 mb-1.5">
-                  <span className="text-3xl font-extrabold text-teal-600 tracking-tight">{cause.raisedAmount}</span>
+                  <span className="text-3xl font-extrabold text-green-700 tracking-tight">{cause.raisedAmount}</span>
                   <span className="text-sm text-gray-500 font-medium">raised of {cause.goalAmount}</span>
                 </div>
 
                 {/* Progress Bar with Shimmer */}
                 <div className="mb-4">
-                  <div className="w-full bg-teal-50 rounded-full h-2.5 overflow-hidden">
+                  <div className="w-full bg-green-50 rounded-full h-2.5 overflow-hidden">
                     <div
-                      className="h-full bg-gradient-to-r from-teal-600 to-teal-500 rounded-full relative overflow-hidden"
+                      className="h-full bg-gradient-to-r from-green-700 to-green-600 rounded-full relative overflow-hidden"
                       style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                     >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
@@ -618,15 +630,15 @@ const FloodAnimalRescueCauseDetailPage = () => {
 
                 {/* Stats Row - Supporters, Days Left, States */}
                 <div className="grid grid-cols-3 gap-2 mb-5 text-center">
-                  <div className="bg-teal-50 rounded-lg p-2.5">
+                  <div className="bg-green-50 rounded-lg p-2.5">
                     <div className="text-lg font-extrabold text-gray-900">{cause.supporters}</div>
                     <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Supporters</div>
                   </div>
-                  <div className="bg-teal-50 rounded-lg p-2.5">
+                  <div className="bg-green-50 rounded-lg p-2.5">
                     <div className="text-lg font-extrabold text-gray-900">{cause.daysLeft}</div>
                     <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Days Left</div>
                   </div>
-                  <div className="bg-teal-50 rounded-lg p-2.5">
+                  <div className="bg-green-50 rounded-lg p-2.5">
                     <div className="text-lg font-extrabold text-gray-900">8</div>
                     <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">States</div>
                   </div>
@@ -636,20 +648,20 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 <div className="mb-5">
                   <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Select an amount</div>
                   <div className="grid grid-cols-2 gap-2">
-                    <button className="border-2 border-gray-200 hover:border-teal-600 hover:bg-teal-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm group">
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm group">
                       <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹500</div>
                       <div className="text-[11px] text-gray-500 leading-tight">Emergency food kit for 5 animals</div>
                     </button>
-                    <button className="border-2 border-teal-600 bg-teal-50 rounded-lg p-3.5 text-center transition-all shadow-sm relative">
-                      <div className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-teal-600 rounded-tr-lg" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
+                    <button className="border-2 border-green-700 bg-green-50 rounded-lg p-3.5 text-center transition-all shadow-sm relative">
+                      <div className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-green-700 rounded-tr-lg" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
                       <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹1,500</div>
                       <div className="text-[11px] text-gray-500 leading-tight">Rescue & shelter for 3 animals</div>
                     </button>
-                    <button className="border-2 border-gray-200 hover:border-teal-600 hover:bg-teal-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
                       <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹5,000</div>
                       <div className="text-[11px] text-gray-500 leading-tight">Vet treatment for 10 flood-affected animals</div>
                     </button>
-                    <button className="border-2 border-gray-200 hover:border-teal-600 hover:bg-teal-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
                       <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹10,000</div>
                       <div className="text-[11px] text-gray-500 leading-tight">Full rescue operation for one flood zone</div>
                     </button>
@@ -657,13 +669,13 @@ const FloodAnimalRescueCauseDetailPage = () => {
                 </div>
 
                 {/* Main Donate Button */}
-                <button className="w-full bg-teal-600 hover:bg-teal-700 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
+                <button className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
                   <span>Donate Now</span>
                   <span className="text-xs font-normal opacity-90">Secure payment · Tax receipt within 48 hours</span>
                 </button>
 
                 {/* Urgency Note */}
-                <div className="text-center text-xs text-teal-600 font-semibold mb-5 flex items-center justify-center gap-1">
+                <div className="text-center text-xs text-green-700 font-semibold mb-5 flex items-center justify-center gap-1">
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
@@ -688,7 +700,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                       <Twitter size={14} />
                       <span className="text-[10px]">Twitter</span>
                     </button>
-                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-teal-600 hover:text-teal-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-green-700 hover:text-green-700 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
                       <Share2 size={14} />
                       <span className="text-[10px]">Copy Link</span>
                     </button>
@@ -706,19 +718,19 @@ const FloodAnimalRescueCauseDetailPage = () => {
       </div>
 
       {/* Full Width Ambassador CTA */}
-      <section className="bg-teal-700 py-16 sm:py-20 mb-20 md:mb-0">
+      <section className="bg-green-700 py-16 sm:py-20 mb-20 md:mb-0">
         <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             189 People Stepped Up. Will You?
           </h2>
-          <p className="text-teal-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             It takes 2 minutes to sign up and one share to start saving animals from India's deadliest floods. No rescue training needed. No minimum commitment. Just the will to be the voice animals can't have when the waters rise.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="w-full sm:w-auto bg-white text-teal-700 hover:bg-teal-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-base sm:text-lg">
+            <button className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-base sm:text-lg">
               Become a Flood Rescue Ambassador
             </button>
-            <div className="text-teal-200 font-medium text-sm sm:hidden my-2">OR</div>
+            <div className="text-green-200 font-medium text-sm sm:hidden my-2">OR</div>
             <button
               onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1 text-base sm:text-lg"
@@ -738,7 +750,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
           </div>
           <button
             onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
-            className="bg-teal-600 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-md hover:bg-teal-700 transition-colors shrink-0 whitespace-nowrap"
+            className="bg-green-700 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-md hover:bg-green-800 transition-colors shrink-0 whitespace-nowrap"
           >
             Donate Now
           </button>

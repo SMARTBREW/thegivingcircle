@@ -1,23 +1,50 @@
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, Share2, Shield, Award, CheckCircle, Phone, Mail, Globe, Facebook, Twitter, Instagram, MapPin, Target, TrendingUp, Trophy, Camera, AlertTriangle } from 'lucide-react';
-import PrimaryButton from '../ui/PrimaryButton';
-import CloudinaryImage from '../ui/CloudinaryImage';
+import { Share2, Shield, Facebook, Twitter, AlertTriangle, FileText, CheckCircle, Award, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
+import CloudinaryImage from '../ui/CloudinaryImage';
 
 const CauseDetailPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // DYNAMIC IMPLEMENTATION ROADMAP:
-  // Current: Static cause data for demonstration
-  // Future: Fetch cause data based on ID parameter from API
-  // Example: const cause = await fetchCauseById(id);
-  // This will enable each NGO's program areas to show their specific cause details
+  const faqs = [
+    {
+      question: "How are donations used for education programs?",
+      answer: "95% of every donation goes directly to educational programs: providing school uniforms and educational materials, establishing learning centers, training teachers, creating safe learning environments, and supporting students with scholarships. The remaining 5% covers essential coordination costs including communications, reporting, and logistics management. All expenditures are audited annually and financial reports are published quarterly."
+    },
+    {
+      question: "Is my donation tax-deductible?",
+      answer: "Yes. All donations are eligible for tax deductions under Section 80G of the Income Tax Act. You will receive an 80G receipt via email within 48 hours of your donation, which you can use when filing your income tax returns. If you do not receive your receipt, please contact us and the team will issue it immediately."
+    },
+    {
+      question: "How quickly can programs be implemented?",
+      answer: "Programs can begin implementation within 2-4 weeks of funding. We maintain pre-positioned resources and trained staff to ensure rapid deployment. Learning centers can be operational within 30 days, and educational materials distribution can begin immediately upon funding confirmation."
+    },
+    {
+      question: "What happens to students after program completion?",
+      answer: "Students receive ongoing support through our comprehensive follow-up programs. We track academic progress, provide continued educational resources, and offer mentorship opportunities. Our goal is to ensure students not only complete their education but also transition successfully to higher education or vocational training programs."
+    },
+    {
+      question: "Can I donate supplies instead of money?",
+      answer: "While monetary donations are most efficient because they allow us to purchase exactly what is needed at the right time and location, in-kind donations of specific items are also welcome. Priority items include educational books, school supplies, uniforms, and learning materials. Contact us to coordinate supply donations. Please note that in-kind donations are not eligible for 80G tax receipts."
+    },
+    {
+      question: "How will I know my donation made a difference?",
+      answer: "We believe in complete transparency. We send regular email updates with photos and videos from the ground showing students benefiting from your support. You will also receive a detailed impact report after program milestones, showing exactly how many students were supported and what educational outcomes were achieved."
+    }
+  ];
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   // Sample cause data focused on the cause itself
   const cause = {
     id: 1,
+    title: 'Wings Of Hope',
     subtitle: 'Breaking the cycle of poverty through quality education',
     organizer: 'KHUSHII',
     ngo: 'KHUSHII',
@@ -27,7 +54,6 @@ const CauseDetailPage = () => {
     raisedAmount: '₹2,80,000',
     progressPercentage: 62,
     supporters: 143,
-
     daysLeft: 18,
     image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183054/images/jwp/_DSC8339.jpg',
     urgency: 'High',
@@ -175,51 +201,23 @@ const CauseDetailPage = () => {
 
   // NGO details
   const ngoDetails = {
-    name: 'JWP',
+    name: 'KHUSHII',
     logo: 'https://khushii.org/wp-content/uploads/2021/01/khushii-black-logo.png',
     tagline: 'Spreading Happiness Through Education',
-    description: 'JWP is a nationally recognized non-profit organization dedicated to empowering underprivileged children through holistic education, healthcare, and development programs. With a legacy of transforming lives across India, we believe in creating sustainable change through community-driven initiatives.',
-    vision: 'A world where every child has access to quality education and the opportunity to realize their full potential.',
-    mission: 'To empower underprivileged children through innovative educational programs, healthcare initiatives, and community development.',
-    focus: 'Child Development & Education',
-    founded: '2008',
-    location: 'Mumbai, Maharashtra',
-    impact: '50,000+ children impacted',
-    certification: 'Section 8, 80G, FCRA',
-    registrationNumber: 'MH/2008/NPO/1234',
-    contact: {
-      phone: '+91-9876543210',
-      email: 'info@khushii.org',
-      website: 'www.khushii.org',
-      address: '123, Hope Street, Andheri West, Mumbai - 400058',
-      social: {
-        facebook: '@KhushiiNGO',
-        twitter: '@KhushiiOrg',
-        instagram: '@khushii_official'
-      }
-    },
-    achievements: [
-      { icon: Award, text: '15+ years of dedicated service to underprivileged communities' },
-      { icon: MapPin, text: 'Active presence in 12 states across India' },
-      { icon: Trophy, text: 'National CSR Excellence Award 2023' },
-      { icon: Shield, text: 'ISO 9001:2015 certified organization' }
-    ],
     stats: {
-      currentProjects: 25,
-      totalBeneficiaries: '50,000+',
       transparency: 95,
-      adminCosts: '8%',
-      programSpend: '92%'
+      programSpend: 92,
+      yearsActive: '15+',
+      states: 12
     }
   };
-
 
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate to Wings of Hope | KHUSHII - The Giving Circle"
-        description="Support Wings of Hope by KHUSHII. Help provide education and holistic development for underprivileged children. Donate to The Giving Circle to create a lasting impact."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings Of Hope, verified charity, donate to NGO India, transparent charity, impact stories"
+        title="Wings Of Hope: Quality Education for Underprivileged Children | Donate to KHUSHII — The Giving Circle"
+        description="Breaking the cycle of poverty through quality education. Wings Of Hope provides educational support, learning centers, and resources to underprivileged children. 62% funded. 18 days left. Donate now. Tax-deductible under 80G."
+        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings Of Hope, education, children, verified charity, donate to NGO India, transparent charity, impact stories"
         canonicalUrl="https://www.thegivingcircle.in/causes-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg"
       />
@@ -227,434 +225,541 @@ const CauseDetailPage = () => {
         title="Wings Of Hope - Education & Empowerment Programs India"
         description="Support Wings Of Hope and verified social causes through The Giving Circle. Donate to trusted charity programs providing education, healthcare, and empowerment to underprivileged communities across India."
         image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg"
-        category="Social Impact"
-        location="India"
+        category="Education"
+        location="Mumbai, Maharashtra"
         datePublished="2024-01-15"
-        author="The Giving Circle"
+        author="KHUSHII"
       />
-      {/* Professional Header Section */}
-      <header className="bg-gray-50 shadow-sm border-b mt-[80px] relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-2 sm:py-3">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-0 mb-2">
-            <button
-              onClick={() => navigate(-1)}
-              className="flex items-center gap-1 sm:gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-            >
-              <ArrowLeft size={18} />
-              <span className="font-medium text-xs sm:text-sm md:text-base">Back to Previous Page</span>
-            </button>
-            {id && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg px-2 sm:px-3 py-1">
-                <span className="text-[10px] sm:text-xs md:text-sm text-blue-700 font-medium">
-                  Cause ID: {id} (Development Mode)
-                </span>
-              </div>
-            )}
+      {/* Hero Section */}
+      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
+        <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
+            Wings Of Hope — Breaking the Cycle of Poverty Through Quality Education
+          </h1>
+
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
+            In underserved communities across India, thousands of children lack access to quality education and proper school infrastructure. Many students attend schools without adequate resources, proper uniforms, or learning materials, creating barriers to their educational success and future opportunities.
+          </p>
+
+          {/* Trust Badges */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <Shield className="text-green-700" size={16} />
+              Tax Benefits · 80G
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <CheckCircle className="text-green-700" size={16} />
+              100% Transparency Score
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <TrendingUp className="text-green-700" size={16} />
+              15+ Years Active
+            </div>
+            
           </div>
 
-          {/* Page Title */}
-          <div className="text-center mb-1">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight py-2 break-words">
-              Wings Of Hope
-            </h1>
+          {/* Geographic Line */}
+          <p className="text-sm text-gray-600 mb-8">
+            <strong>Active operations</strong> · Mumbai, Maharashtra and 20+ cities across 8 states
+          </p>
+
+          {/* Hero Image - Full width and centered */}
+          <div className="w-full rounded-xl overflow-hidden shadow-lg mx-auto">
+            <CloudinaryImage
+              src={cause.image}
+              alt="Students engaged in educational activities at Wings Of Hope learning centers"
+              className="w-full aspect-video object-cover"
+              width={1200}
+              height={675}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 1200px"
+              priority
+            />
           </div>
         </div>
-      </header>
+      </section>
 
-      <main className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 md:py-10 lg:py-12 pb-12 sm:pb-16 md:pb-20 lg:pb-24">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-          {/* Main Content */}
-          <article className="lg:col-span-2">
-            {/* Hero Section */}
-            <section className="bg-white rounded-xl shadow-lg overflow-hidden mb-4 sm:mb-6">
-              <div className="relative h-48 sm:h-64 md:h-80 lg:h-96">
-                <CloudinaryImage
-                  src={cause.image}
-                  alt="Educational cause campaign image"
-                  className="w-full h-full object-cover"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 66vw, 66vw"
-                  width={1280}
-                  height={384}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-              </div>
-            </section>
-
-            {/* Trust Indicators Bar */}
-            <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4 mb-4 sm:mb-6">
-              <div className="flex flex-wrap items-center justify-center sm:justify-between gap-2 sm:gap-3 md:gap-4">
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <CheckCircle className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Verified Campaign</span>
-                </div>
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <Award className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Tax Deductible</span>
-                </div>
-                <div className="flex items-center gap-1 sm:gap-2">
-                  <TrendingUp className="text-green-700" size={14} />
-                  <span className="text-gray-600 font-medium text-xs sm:text-sm md:text-base">Impact Tracked</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Geographic Coverage */}
-            <section aria-label="Geographic Coverage" className="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-3 sm:p-4 md:p-6 mb-4 sm:mb-6 md:mb-8">
-              <div className="flex items-center gap-2 mb-3">
-                <MapPin className="text-blue-600" size={18} />
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900">Geographic Coverage</h3>
-              </div>
-              <div className="flex flex-wrap gap-1.5 sm:gap-2">
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Mumbai, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Dharavi, Mumbai</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kurla, Mumbai</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Andheri West, Mumbai</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Thane, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Navi Mumbai, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Pune, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Nashik, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Aurangabad, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Nagpur, Maharashtra</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Delhi, NCR</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bangalore, Karnataka</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Chennai, Tamil Nadu</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Kolkata, West Bengal</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Hyderabad, Telangana</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Ahmedabad, Gujarat</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Jaipur, Rajasthan</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Lucknow, Uttar Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bhopal, Madhya Pradesh</span>
-                <span className="bg-blue-100 text-blue-800 px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs md:text-sm font-medium">Bhubaneswar, Odisha</span>
-              </div>
-              <p className="text-xs sm:text-sm text-gray-600 mt-3 break-words">
-                <strong>Active in 20+ cities across 8 states</strong> - Transforming lives through education and community development
-              </p>
-            </section>
+      {/* Two-Column Page Body */}
+      <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-10">
+          {/* Main Content Column */}
+          <main className="min-w-0">
 
             {/* Section 1: The Challenge */}
-            <section aria-label="The Challenge" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
+            <section aria-label="The Challenge" className="mb-4 sm:mb-6">
               <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
                 <AlertTriangle className="text-black" size={18} />
                 The Challenge
               </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
               <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
-                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  {cause.problemStatement}
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  In underserved communities across India, thousands of children lack access to quality education and proper school infrastructure. Many students attend schools without adequate resources, proper uniforms, or learning materials, creating barriers to their educational success and future opportunities.
+                </p>
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  The classroom environment plays a crucial role in student success. When schools lack proper infrastructure, learning materials, and trained teachers, students struggle to engage effectively with their studies. Without adequate resources and support, even motivated students find it difficult to excel academically.
+                </p>
+                <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
+                  These educational gaps create long-term challenges for students, limiting their opportunities for higher education and future career prospects, ultimately affecting their ability to contribute meaningfully to their communities.
                 </p>
               </div>
 
-              {/* Root Causes */}
-              <div className="mb-4 sm:mb-6 md:mb-8">
+              {/* Image directly below the paragraphs */}
+              <figure className="mb-6 w-full">
+                <CloudinaryImage
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183051/images/jwp/WhatsApp_Image_2025-06-29_at_22.44.35_68c59220.jpg"
+                  alt="Students engaged in classroom learning activities with proper educational resources"
+                  className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Students engaged in classroom learning activities with proper educational resources
+                </figcaption>
+              </figure>
+
+              {/* Understanding the Root Causes subsection */}
+              <div>
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">Understanding the Root Causes</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Many schools in underserved communities face significant challenges in providing quality education.
-                      <strong className="text-gray-900"> Students often lack access to proper learning materials, adequate classroom resources, and consistent educational support</strong>,
-                      which hinders their ability to reach their full academic potential.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      The classroom environment plays a crucial role in student success. When schools lack proper infrastructure,
-                      learning materials, and trained teachers, students struggle to engage effectively with their studies.
-                      <strong className="text-gray-900"> Without adequate resources and support, even motivated students find it difficult to excel academically</strong>.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      These educational gaps create long-term challenges for students, limiting their opportunities for higher education
-                      and future career prospects, ultimately affecting their ability to contribute meaningfully to their communities.
-                    </p>
-                  </div>
-                  <div className="order-first lg:order-last">
-                    <CloudinaryImage
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183051/images/jwp/WhatsApp_Image_2025-06-29_at_22.44.35_68c59220.jpg"
-                      alt="Students engaged in classroom learning activities with proper educational resources"
-                      className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      width={800}
-                      height={320}
-                    />
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                      Students engaged in classroom learning activities with proper educational resources
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Consequences */}
-              <div className="mb-4 sm:mb-6 md:mb-8">
-                <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">The Cost of Inaction</h3>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center">
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Without comprehensive educational and health support, communities face significant challenges.</strong>
-                      Students continue to struggle with inadequate learning resources, while health education gaps,
-                      particularly around menstrual health, create additional barriers to education and empowerment.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Limited access to proper health education and resources affects students' ability to attend school regularly.
-                      Many girls miss school due to lack of menstrual health support, while boys and girls alike
-                      lack essential health knowledge that impacts their overall development.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      The combination of educational and health challenges creates a cycle where students cannot reach their full potential.
-                      Without proper support, we miss the opportunity to develop future leaders, healthcare workers,
-                      and community advocates who could transform their communities through knowledge and empowerment.
-                    </p>
-                  </div>
-                  <div>
-                    <CloudinaryImage
-                      src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183052/images/jwp/WhatsApp_Image_2025-07-04_at_15.38.58_a93f5478.jpg"
-                      alt="Women learning about menstrual health and hygiene education"
-                      className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                      sizes="(max-width: 640px) 100vw, 50vw"
-                      width={800}
-                      height={320}
-                    />
-                    <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                      Women learning about menstrual health and hygiene education
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </section>
-
-            {/* Section 2: The Solution / How your support helps */}
-            <section aria-label="The Solution" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <Target className="text-black" size={18} />
-                The Solution / How Your Support Helps
-              </h2>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center mb-4 sm:mb-6 md:mb-8">
-                <div>
-                  <div className="prose prose-lg text-gray-600 mb-3 sm:mb-4 md:mb-6">
-                    <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                      {cause.solution.approach}
-                    </p>
-                  </div>
-                  <div>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      <strong className="text-gray-900">Our comprehensive approach transforms schools into thriving learning environments.</strong>
-                      We provide proper school uniforms, educational materials, and infrastructure improvements that create
-                      professional, welcoming spaces where students feel proud to learn and grow.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed mb-3 sm:mb-4 text-xs sm:text-sm md:text-base break-words">
-                      Through our JWP (Joint Women Program) initiatives, we ensure students have access to quality education
-                      with proper resources, trained teachers, and supportive learning environments. We focus on both
-                      academic excellence and holistic development, including health education and life skills.
-                    </p>
-                    <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                      Our programs create a sense of pride and belonging among students, as evidenced by their
-                      enthusiastic participation and the visible improvements in school infrastructure and student engagement.
-                    </p>
-                  </div>
-                </div>
-                <div>
-                  <CloudinaryImage
-                    src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg"
-                    alt="Students actively engaged in learning activities"
-                    className="w-full h-40 sm:h-56 md:h-80 object-cover rounded-lg shadow-lg"
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    width={800}
-                    height={320}
-                  />
-                  <p className="text-[10px] sm:text-xs md:text-sm text-gray-600 mt-2 text-center italic break-words">
-                    Students actively engaged in learning activities
-                  </p>
-                </div>
-              </div>
-            </section>
-
-
-            {/* Section 3: See the Action in Change */}
-            <section aria-label="Impact Gallery" className="bg-white rounded-xl shadow-md p-4 sm:p-6 md:p-8 mb-4 sm:mb-6 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
-              <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 flex items-center gap-2 break-words">
-                <Camera className="text-black" size={18} />
-                See the Action in Change
-              </h2>
-
-              <div className="mb-3 sm:mb-4 md:mb-6">
-                <p className="text-gray-600 leading-relaxed text-sm sm:text-base md:text-lg break-words">
-                  Every donation creates visible, measurable change in children's lives. Our impact gallery showcases
-                  real moments of transformation, from the joy of a child receiving their first school uniform to
-                  the pride of parents attending their first literacy class.
+                <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
+                  Many schools in underserved communities face significant challenges in providing quality education. Students often lack access to proper learning materials, adequate classroom resources, and consistent educational support, which hinders their ability to reach their full academic potential.
+                </p>
+                <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
+                  The classroom environment plays a crucial role in student success. When schools lack proper infrastructure, learning materials, and trained teachers, students struggle to engage effectively with their studies. Without adequate resources and support, even motivated students find it difficult to excel academically.
+                </p>
+                <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
+                  These educational gaps create long-term challenges for students, limiting their opportunities for higher education and future career prospects, ultimately affecting their ability to contribute meaningfully to their communities.
                 </p>
               </div>
+            </section>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-6">
-                {cause.impactGallery.map((item, index) => (
-                  <div key={index} className="bg-gray-50 rounded-lg overflow-hidden">
-                    <div className="relative h-40 sm:h-48 md:h-64">
-                      <CloudinaryImage
-                        src={item.image}
-                        alt={item.caption}
-                        className="w-full h-full object-cover"
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                        width={800}
-                        height={256}
-                      />
-                      <div className="absolute top-2 sm:top-3 right-2 sm:right-3 bg-black text-white px-2 sm:px-3 py-1 rounded-full text-[10px] sm:text-xs font-medium">
-                        {item.type}
-                      </div>
-                    </div>
-                    <div className="p-3 sm:p-4 md:p-6 pb-6 sm:pb-8 md:pb-10">
-                      <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base pb-3 sm:pb-4 break-words">{item.caption}</p>
+
+            <section aria-label="The Cost of Inaction" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                The Cost of Inaction
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Without comprehensive educational and health support, communities face significant challenges. Students continue to struggle with inadequate learning resources, while health education gaps, particularly around menstrual health, create additional barriers to education and empowerment.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Limited Educational Opportunities</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Limited access to proper health education and resources affects students' ability to attend school regularly. Many girls miss school due to lack of menstrual health support, while boys and girls alike lack essential health knowledge that impacts their overall development.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                The combination of educational and health challenges creates a cycle where students cannot reach their full potential. Without proper support, we miss the opportunity to develop future leaders, healthcare workers, and community advocates who could transform their communities through knowledge and empowerment.
+              </p>
+
+              <figure className="my-6 w-full">
+                <CloudinaryImage
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183052/images/jwp/WhatsApp_Image_2025-07-04_at_15.38.58_a93f5478.jpg"
+                  alt="Women learning about menstrual health and hygiene education"
+                  className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Health education programs are essential for student success and empowerment.
+                </figcaption>
+              </figure>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Long-term Impact on Communities</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                When children lack access to quality education, entire communities suffer. Without educated citizens, communities struggle with economic development, health awareness, and social progress. The cycle of poverty continues from generation to generation, limiting opportunities for growth and prosperity.
+              </p>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                Educational inequality creates lasting social divisions and prevents communities from reaching their full potential. By investing in education today, we break cycles of poverty and create pathways for sustainable community development.
+              </p>
+            </section>
+
+
+            <section aria-label="How Wings Of Hope Responds" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                How Wings Of Hope Responds
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Wings Of Hope was built on a simple operational principle: every child deserves access to quality education, regardless of their background or circumstances. We provide comprehensive educational support through learning centers, educational materials, teacher training, and community engagement programs.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Learning Centers and Infrastructure</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                We establish well-equipped learning centers in underserved communities, providing safe and conducive learning environments where students can thrive. Each center is equipped with educational materials, proper furniture, and learning resources that create professional, welcoming spaces where students feel proud to learn and grow.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Our learning centers serve as hubs for educational activities, community engagement, and holistic development programs. They provide not just academic support but also health education, life skills training, and extracurricular activities that help students develop into well-rounded individuals.
+              </p>
+
+              <figure className="my-6 w-full">
+                <CloudinaryImage
+                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183058/images/jwp/_DSC9857.jpg"
+                  alt="Students actively engaged in learning activities at Wings Of Hope learning centers"
+                  className="w-full rounded-lg shadow-lg"
+                  width={800}
+                  height={450}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
+                />
+                <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
+                  Learning centers provide safe, well-equipped spaces for quality education.
+                </figcaption>
+              </figure>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Educational Materials and Resources</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                We provide proper school uniforms, educational materials, books, and learning resources to ensure students have everything they need to succeed academically. These resources create a sense of pride and belonging among students, as evidenced by their enthusiastic participation and visible improvements in academic performance.
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Through our comprehensive resource provision, we ensure that financial constraints do not prevent students from accessing quality education. Every student receives the materials they need to participate fully in their educational journey.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Teacher Training and Support</h3>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                We train teachers and support staff to deliver quality education effectively. Our training programs focus on modern teaching methodologies, student engagement techniques, and holistic development approaches that help teachers create impactful learning experiences for their students.
+              </p>
+            </section>
+
+            {/* Section 4: Community Engagement */}
+            <section aria-label="Community Engagement" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4 sm:mb-6">
+                Community Engagement
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                Education cannot succeed in isolation. We work closely with communities, parents, and local leaders to create a supportive ecosystem for student success. Our community engagement programs include parent awareness sessions, community celebrations, and collaborative initiatives that build lasting relationships.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Parent Involvement</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                We conduct regular parent awareness sessions to educate families about the importance of education and how they can support their children's learning journey. These sessions help build strong partnerships between families and educational programs, ensuring students receive support both at school and at home.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Community Celebrations</h3>
+              <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
+                We organize community celebrations and events that recognize student achievements and program milestones. These events create a sense of pride and belonging, bringing communities together to celebrate educational progress and inspire continued commitment to learning.
+              </p>
+
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Holistic Development</h3>
+              <p className="text-gray-700 leading-relaxed text-sm sm:text-base">
+                Our programs extend beyond academics to include health education, life skills training, and extracurricular activities. We believe in holistic development that prepares students not just for academic success but for life success, creating well-rounded individuals who can contribute meaningfully to their communities.
+              </p>
+            </section>
+
+
+            {/* Section 5: In Their Own Words (Testimonials) */}
+            <section aria-label="In Their Own Words" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                In Their Own Words
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="space-y-6">
+                {cause.testimonials.map((testimonial, index) => (
+                  <div key={index} className="bg-green-50 border-l-4 border-green-700 p-4 sm:p-6 rounded-r-lg">
+                    <p className="text-gray-700 italic mb-4 text-sm sm:text-base leading-relaxed">"{testimonial.quote}"</p>
+                    <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
+                      <span className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</span>
+                      <span className="text-gray-400 hidden sm:inline">—</span>
+                      <span className="text-gray-500 text-xs sm:text-sm">{testimonial.role}</span>
                     </div>
                   </div>
                 ))}
               </div>
             </section>
 
-          </article>
+            {/* Section 6: Gallery */}
+            {/* Section 6: Gallery - Masonry Grid Style */}
+            <section aria-label="Wings Of Hope in Action" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Wings Of Hope in Action
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                {cause.impactGallery.map((item, index) => (
+                  <div key={index} className="relative aspect-[4/3] rounded-xl overflow-hidden group cursor-pointer">
+                    <CloudinaryImage
+                      src={item.image}
+                      alt={item.caption}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      width={400}
+                      height={300}
+                      sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 400px"
+                    />
+                    <div className="absolute bottom-0 left-0 right-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                      <p className="text-white text-sm font-medium leading-tight">{item.caption}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Section 6: About NGO */}
+            <section aria-label="About KHUSHII" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
+                About KHUSHII
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="bg-white rounded-xl shadow-sm border border-gray-100 p-4 sm:p-6 md:p-8">
+                <div className="flex items-center gap-4 mb-6 sm:mb-8">
+                  <div className="bg-green-700 rounded-lg p-3 text-white shrink-0">
+                    <span className="text-2xl font-bold">K</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900">{ngoDetails.name}</h3>
+                    <p className="text-sm text-gray-500">{ngoDetails.tagline}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.transparency}%</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Transparency</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.programSpend}%</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Program Spend</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.yearsActive}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Years Active</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.states}</div>
+                    <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">States Covered</div>
+                  </div>
+                </div>
+
+                <div className="space-y-4 pt-6 border-t border-gray-200">
+                  <div className="flex items-start gap-3">
+                    <Shield className="text-green-700 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">ISO 9001:2015 Certified Organisation</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <CheckCircle className="text-green-700 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">Multi-State Education Programs since 2008</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-green-700 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    </div>
+                    <span className="text-sm sm:text-base text-gray-700">Contact: +91 98103 53603</span>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-green-700 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    </div>
+                    <a href="mailto:info@khushii.org" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">info@khushii.org</a>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <div className="text-green-700 mt-0.5 shrink-0">
+                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <a href="http://www.khushii.org" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.khushii.org</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Section 7: FAQ */}
+            <section aria-label="Frequently Asked Questions" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Frequently Asked Questions
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+              <div className="space-y-4">
+                {faqs.map((faq, index) => (
+                  <div key={index} className="border border-gray-200 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggleFaq(index)}
+                      className="w-full flex items-center justify-between p-4 sm:p-5 bg-white hover:bg-gray-50 transition-colors text-left"
+                    >
+                      <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">{faq.question}</span>
+                      {openFaqIndex === index ? (
+                        <ChevronUp className="text-green-700 shrink-0" size={20} />
+                      ) : (
+                        <ChevronDown className="text-gray-400 shrink-0" size={20} />
+                      )}
+                    </button>
+                    {openFaqIndex === index && (
+                      <div className="p-4 sm:p-5 pt-0 bg-white text-gray-600 text-sm sm:text-base leading-relaxed">
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </section>
+
+          </main>
 
           {/* Enhanced Sidebar */}
-          <aside className="lg:col-span-1">
-            <div className="lg:sticky lg:top-24 space-y-6">
-              {/* Donation Card with Professional Design */}
-              <div className="bg-white rounded-xl shadow-lg p-3 sm:p-4 md:p-6">
-                <div className="text-center mb-3 sm:mb-4 md:mb-6">
-                  <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 bg-green-700 rounded-full mb-2 sm:mb-3 md:mb-4 text-white">
-                    <span className="text-base sm:text-lg md:text-2xl">❤</span>
-                  </div>
-                  <div className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-1">{cause.raisedAmount}</div>
-                  <div className="text-xs sm:text-sm md:text-base text-gray-600 break-words">raised of <span className="font-semibold">{cause.goalAmount}</span> goal</div>
+          <aside className="lg:col-span-1" id="donate-section">
+            <div className="lg:sticky lg:top-28 space-y-6 h-fit">
+              {/* Donation Card - Matching HTML Design */}
+              <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-6 sm:p-7">
+                {/* Header - Raised Amount */}
+                <div className="flex items-baseline gap-2 mb-1.5">
+                  <span className="text-3xl font-extrabold text-green-700 tracking-tight">{cause.raisedAmount}</span>
+                  <span className="text-sm text-gray-500 font-medium">raised of {cause.goalAmount}</span>
                 </div>
 
-                <div className="relative mb-3 sm:mb-4 md:mb-6">
-                  <div className="w-full bg-gray-200 rounded-full h-2 sm:h-2.5 md:h-3">
+                {/* Progress Bar with Shimmer */}
+                <div className="mb-4">
+                  <div className="w-full bg-green-50 rounded-full h-2.5 overflow-hidden">
                     <div
-                      className="bg-green-700 h-2 sm:h-2.5 md:h-3 rounded-full transition-all duration-500 relative"
+                      className="h-full bg-gradient-to-r from-green-700 to-green-600 rounded-full relative overflow-hidden"
                       style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
                     >
-                      <div className="absolute right-0 top-1/2 transform translate-x-1/2 -translate-y-1/2 bg-white rounded-full p-1 shadow-md">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-700 rounded-full"></div>
-                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
                     </div>
                   </div>
-                  <div className="flex justify-between mt-2 text-[10px] sm:text-xs md:text-sm text-gray-600">
-                    <span>0%</span>
-                    <span className="font-semibold text-green-700">{cause.progressPercentage}%</span>
-                    <span>100%</span>
+                  <div className="flex justify-between mt-1.5 text-xs text-gray-500">
+                    <span>{cause.progressPercentage}% funded</span>
+                    <span>₹1,70,000 to go</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6 text-center">
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.supporters}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Supporters</div>
+                {/* Stats Row - Supporters, Days Left, States */}
+                <div className="grid grid-cols-3 gap-2 mb-5 text-center">
+                  <div className="bg-green-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">{cause.supporters}</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Supporters</div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.daysLeft}</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Days Left</div>
+                  <div className="bg-green-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">{cause.daysLeft}</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Days Left</div>
                   </div>
-                  <div className="bg-gray-50 rounded-lg p-2 sm:p-3">
-                    <div className="text-xs sm:text-sm md:text-lg font-bold text-gray-900">{cause.progressPercentage}%</div>
-                    <div className="text-[10px] sm:text-xs text-gray-600">Funded</div>
+                  <div className="bg-green-50 rounded-lg p-2.5">
+                    <div className="text-lg font-extrabold text-gray-900">12</div>
+                    <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">States</div>
                   </div>
                 </div>
 
-                <PrimaryButton className="w-full mb-2 sm:mb-3" size="lg">
-                  Support This Cause
-                </PrimaryButton>
-
-                <PrimaryButton
-                  variant="secondary"
-                  className="w-full"
-                  icon={<Share2 size={14} />}
-                >
-                  Share This Cause
-                </PrimaryButton>
-
-                <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t text-center">
-                  <p className="text-[10px] sm:text-xs text-gray-500 break-words">
-                    All donations are tax-deductible under Section 80G
-                  </p>
+                {/* Donation Tiers */}
+                <div className="mb-5">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Select an amount</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm group">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹500</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Educational kit for 1 student</div>
+                    </button>
+                    <button className="border-2 border-green-700 bg-green-50 rounded-lg p-3.5 text-center transition-all shadow-sm relative">
+                      <div className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-green-700 rounded-tr-lg" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%)' }}></div>
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹1,500</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Uniform & books for 3 students</div>
+                    </button>
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹5,000</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Teacher training for 1 month</div>
+                    </button>
+                    <button className="border-2 border-gray-200 hover:border-green-700 hover:bg-green-50 rounded-lg p-3.5 text-center transition-all hover:-translate-y-0.5 hover:shadow-sm">
+                      <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹10,000</div>
+                      <div className="text-[11px] text-gray-500 leading-tight">Learning center setup for 1 month</div>
+                    </button>
+                  </div>
                 </div>
+
+                {/* Main Donate Button */}
+                <button className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
+                  <span>Donate Now</span>
+                  <span className="text-xs font-normal opacity-90">Secure payment · Tax receipt within 48 hours</span>
+                </button>
+
+                {/* Urgency Note */}
+                <div className="text-center text-xs text-green-700 font-semibold mb-5 flex items-center justify-center gap-1">
+                  <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
+                  <span>18 days left — help us reach our goal</span>
+                </div>
+
+                {/* Share Section */}
+                <div className="border-t border-gray-100 pt-4.5 mb-4.5">
+                  <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Spread the word</div>
+                  <div className="grid grid-cols-4 gap-2">
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-green-500 hover:text-green-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                      </svg>
+                      <span className="text-[10px]">WhatsApp</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-blue-600 hover:text-blue-600 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Facebook size={14} />
+                      <span className="text-[10px]">Facebook</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-black hover:text-black hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Twitter size={14} />
+                      <span className="text-[10px]">Twitter</span>
+                    </button>
+                    <button className="flex flex-col items-center justify-center gap-1.5 py-2.5 px-2 border border-gray-200 hover:border-green-700 hover:text-green-700 hover:bg-gray-50 rounded-lg text-xs font-semibold text-gray-600 transition-all hover:-translate-y-0.5">
+                      <Share2 size={14} />
+                      <span className="text-[10px]">Copy Link</span>
+                    </button>
+                  </div>
+                </div>
+
               </div>
 
-              {/* NGO Information Card with Professional Design */}
-              <div className="bg-white rounded-xl shadow-lg overflow-hidden">
-                <div className="bg-gradient-to-r from-gray-800 to-black p-3 sm:p-4 md:p-6 text-white">
-                  <div className="flex items-center gap-2 sm:gap-3 md:gap-4 mb-2 sm:mb-3">
-                    <img
-                      src="/JWP.jpg"
-                      alt={ngoDetails.name}
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-16 md:h-16 rounded-lg bg-white p-1 object-contain"
-                    />
-                    <div>
-                      <h3 className="text-base sm:text-lg md:text-xl font-bold break-words">{ngoDetails.name}</h3>
-                      <p className="text-gray-300 text-[10px] sm:text-xs md:text-sm break-words">{ngoDetails.tagline}</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckCircle className="text-green-400" size={12} />
-                    <span className="text-[10px] sm:text-xs md:text-sm font-medium">Verified NGO Partner</span>
-                  </div>
-                </div>
+              {/* Trust Signals - Outside the card, matching HTML structure */}
 
-                <div className="p-3 sm:p-4 md:p-6">
-                  <p className="text-gray-600 text-[10px] sm:text-xs md:text-sm mb-3 sm:mb-4 md:mb-6 leading-relaxed break-words">
-                    {ngoDetails.description}
-                  </p>
-
-                  <div className="grid grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-6">
-                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg">
-                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-gray-900">{ngoDetails.stats.transparency}%</div>
-                      <div className="text-[10px] sm:text-xs text-gray-600">Transparency</div>
-                    </div>
-                    <div className="text-center p-2 sm:p-3 bg-gray-50 rounded-lg border-2 border-purple-100">
-                      <div className="text-sm sm:text-lg md:text-2xl font-bold text-green-700">{ngoDetails.stats.programSpend}</div>
-                      <div className="text-[10px] sm:text-xs text-gray-600">Program Spend</div>
-                    </div>
-                  </div>
-
-                  <div className="space-y-2 sm:space-y-3 mb-3 sm:mb-4 md:mb-6">
-                    {ngoDetails.achievements.map((achievement, index) => (
-                      <div key={index} className="flex items-start gap-2 sm:gap-3">
-                        <achievement.icon className="text-green-700 mt-0.5" size={12} />
-                        <span className="text-[10px] sm:text-xs md:text-sm text-gray-600 break-words">{achievement.text}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="border-t pt-3 sm:pt-4">
-                    <h4 className="font-semibold text-gray-900 mb-2 sm:mb-3 text-xs sm:text-sm md:text-base break-words">Get in Touch</h4>
-                    <div className="space-y-1 sm:space-y-2 text-[10px] sm:text-xs md:text-sm">
-                      <a href={`tel:${ngoDetails.contact.phone}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Phone size={10} />
-                        <span>{ngoDetails.contact.phone}</span>
-                      </a>
-                      <a href={`mailto:${ngoDetails.contact.email}`} className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Mail size={10} />
-                        <span className="break-all">{ngoDetails.contact.email}</span>
-                      </a>
-                      <a href={`https://${ngoDetails.contact.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-600 hover:text-green-700 transition-colors break-words">
-                        <Globe size={10} />
-                        <span>{ngoDetails.contact.website}</span>
-                      </a>
-                    </div>
-
-                    <div className="flex items-center gap-2 sm:gap-3 mt-3 sm:mt-4">
-                      <a href="https://facebook.com/khushii" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Facebook size={14} />
-                      </a>
-                      <a href="https://twitter.com/khushii" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Twitter size={14} />
-                      </a>
-                      <a href="https://instagram.com/khushii" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-green-700 transition-colors">
-                        <Instagram size={14} />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
+
           </aside>
         </div>
+      </div>
 
+      {/* Full Width Ambassador CTA */}
+      <section className="bg-green-700 py-16 sm:py-20 mb-20 md:mb-0">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
+            143 People Stepped Up. Will You?
+          </h2>
+          <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            It takes 2 minutes to sign up and one share to start transforming children's lives through education. No teaching experience needed. No minimum commitment. Just the will to be the voice children need to break the cycle of poverty.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1 text-base sm:text-lg">
+              Become an Education Ambassador
+            </button>
+            <div className="text-green-200 font-medium text-sm sm:hidden my-2">OR</div>
+            <button
+              onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+              className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1 text-base sm:text-lg"
+            >
+              Make a Direct Donation Instead
+            </button>
+          </div>
+        </div>
+      </section>
 
-      </main>
-    </div>
+      {/* Mobile Fixed CTA Bar */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 p-4 shadow-[0_-4px_12px_rgba(0,0,0,0.1)] z-50 md:hidden block">
+        <div className="flex items-center gap-4 max-w-2xl mx-auto">
+          <div className="flex-1 min-w-0">
+            <div className="text-sm font-extrabold text-gray-900 truncate">₹{cause.raisedAmount} raised</div>
+            <div className="text-xs text-gray-500 truncate">{cause.progressPercentage}% of {cause.goalAmount} · {cause.daysLeft} days left</div>
+          </div>
+          <button
+            onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+            className="bg-green-700 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-md hover:bg-green-800 transition-colors shrink-0 whitespace-nowrap"
+          >
+            Donate Now
+          </button>
+        </div>
+      </div>
+    </div >
   );
 };
 
