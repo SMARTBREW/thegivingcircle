@@ -114,6 +114,32 @@ const LiveCausesPage = () => {
         'Rehabilitation centers operational'
       ]
     },
+    // New Cause SEO causes
+    {
+      id: 5,
+      title: 'Donate for Child Education',
+      organizer: 'JWP Team',
+      ngo: 'JWP',
+      location: 'Delhi NCR, India',
+      category: 'Child Education India',
+      goalAmount: '₹5,00,000',
+      raisedAmount: '₹2,10,000',
+      progressPercentage: 42,
+      supporters: 176,
+      daysLeft: 45,
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183060/images/jwp/_MG_6955.jpg',
+      urgency: 'High',
+      description: 'Fund school fees, books, uniforms and mid-day meals for underprivileged children in Delhi NCR. 80G tax benefits available. Every ₹500 covers one month of education.',
+      beneficiaries: '300+ children',
+      timeline: '12 months',
+      updates: [
+        '150 children enrolled in after-school programmes',
+        'Digital literacy kits distributed',
+        '3 new learning centres operational'
+      ]
+    },
+    // id: 6 (NGOs for Women Empowerment) — hidden
+    // id: 7 (CSR Projects in India) — hidden
     // KHUSHII causes
     // {
     //   id: 5,
@@ -187,14 +213,14 @@ const LiveCausesPage = () => {
 
   // Function to handle navigation to cause details page
   const handleViewDetails = (cause: any) => {
-    // Simulate navigation - in a real app, you would use React Router
-    // Redirect to specific cause detail pages based on cause
     const routeMap: { [key: number]: string } = {
       1: '/jwp-cause-details',
       2: '/pawsitive-protectors-cause-details',
-      4: '/bowls-of-hope-cause-details',
-      5: '/flood-relief-cause-details',
-      6: '/flood-animal-rescue-cause-details',
+      3: '/bowls-of-hope-cause-details',
+      4: '/flood-animal-rescue-cause-details',
+      5: '/donate-for-education-india',
+      6: '/ngo-for-women-empowerment',
+      7: '/csr-projects-in-india',
     };
     window.location.href = routeMap[cause.id] || '/live-causes';
   };
@@ -213,6 +239,12 @@ const LiveCausesPage = () => {
       window.location.href = `/flood-animal-rescue-cause-details`;
     } else if (cause.title === 'Flood Relief in Uttarakhand') {
       window.location.href = `/flood-relief-cause-details`;
+    } else if (cause.title === 'Donate for Child Education') {
+      window.location.href = `/donate-for-education-india`;
+    } else if (cause.title === 'NGOs for Women Empowerment') {
+      window.location.href = `/ngo-for-women-empowerment`;
+    } else if (cause.title === 'CSR Projects in India') {
+      window.location.href = `/csr-projects-in-india`;
     } else {
       handleViewDetails(cause);
     }
@@ -228,7 +260,7 @@ const LiveCausesPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <SEOHead
         title="Live NGO Causes | Donate for Urgent Relief India"
         description="Explore active causes including medical crowdfunding, child education, disaster relief and animal rescue across India"

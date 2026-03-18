@@ -72,7 +72,7 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
   const filteredGallery = ngoDetails.gallery;
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gray-50">
       <SEOHead
         title={seoTitle || `${ngoDetails.name} - Verified NGO Partner | Community Support Platform`}
         description={seoDescription || `Support ${ngoDetails.name}, a verified NGO partner on our community support platform. Join our giving community to support social causes. Give and help through social giving. Create a circle of support for ${ngoDetails.causes.map(c => c.name.toLowerCase()).join(', ')} and india care initiatives.`}
@@ -81,13 +81,13 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
         ogImage={ngoDetails.logo}
       />
       {/* Executive Header Section */}
-      <header className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white pt-16 sm:pt-20">
+      <header className="relative bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900 text-white pt-32">
         <div className="absolute inset-0 bg-black/30"></div>
         <div className="absolute inset-0 opacity-10">
           <div className="w-full h-full bg-gradient-to-br from-white/5 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
+        <div className="relative z-10 container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">
           {onBack && (
             <button
               onClick={onBack}

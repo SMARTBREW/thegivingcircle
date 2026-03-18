@@ -32,7 +32,7 @@ export default function MissionVisionPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <section className="py-6 sm:py-8 md:py-10 lg:py-12 bg-white">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-4 sm:mb-6 md:mb-8 lg:mb-10">

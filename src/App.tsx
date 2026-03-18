@@ -61,6 +61,20 @@ const VerifiedNGOInFaridabad = lazy(() => import('./pages/local-seo/VerifiedNGOI
 const TrustedNGOInFaridabad = lazy(() => import('./pages/local-seo/TrustedNGOInFaridabad'));
 const LeadingNGOInFaridabad = lazy(() => import('./pages/local-seo/LeadingNGOInFaridabad'));
 
+// NGO Index & Cause SEO Pages
+const NGOIndexPage = lazy(() => import('./pages/local-seo/NGOIndexPage'));
+const DonateForEducationIndia = lazy(() => import('./pages/cause-seo/DonateForEducationIndia'));
+const NGOForWomenEmpowerment = lazy(() => import('./pages/cause-seo/NGOForWomenEmpowerment'));
+const VerifiedNGOsInDelhi = lazy(() => import('./pages/cause-seo/VerifiedNGOsInDelhi'));
+const CSRProjectsInIndia = lazy(() => import('./pages/cause-seo/CSRProjectsInIndia'));
+
+// Article Pages
+const TopVerifiedNGOsIndia2026 = lazy(() => import('./pages/articles/TopVerifiedNGOsIndia2026'));
+const WhatIsAGivingCircle = lazy(() => import('./pages/articles/WhatIsAGivingCircle'));
+const TopNGOsInDelhi2026 = lazy(() => import('./pages/articles/TopNGOsInDelhi2026'));
+const VolunteerOpportunitiesDelhi = lazy(() => import('./pages/articles/VolunteerOpportunitiesDelhi'));
+const HowToVolunteerIndia = lazy(() => import('./pages/articles/HowToVolunteerIndia'));
+
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh]">
     <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-green-700"></div>
@@ -133,6 +147,22 @@ function App() {
                   />
                 }
               />
+
+              {/* NGO Directory Index - fixes /ngos 404 */}
+              <Route path="/ngos" element={<NGOIndexPage />} />
+
+              {/* Cause SEO Landing Pages */}
+              <Route path="/donate-for-education-india" element={<DonateForEducationIndia />} />
+              <Route path="/ngo-for-women-empowerment" element={<NGOForWomenEmpowerment />} />
+              <Route path="/verified-ngos-in-delhi" element={<VerifiedNGOsInDelhi />} />
+              <Route path="/csr-projects-in-india" element={<CSRProjectsInIndia />} />
+
+              {/* Article Pages */}
+              <Route path="/top-verified-ngos-india-2026" element={<TopVerifiedNGOsIndia2026 />} />
+              <Route path="/what-is-a-giving-circle" element={<WhatIsAGivingCircle />} />
+              <Route path="/top-ngos-in-delhi-2026" element={<TopNGOsInDelhi2026 />} />
+              <Route path="/volunteer-opportunities-delhi" element={<VolunteerOpportunitiesDelhi />} />
+              <Route path="/how-to-volunteer-india" element={<HowToVolunteerIndia />} />
 
               {/* Dynamic Local SEO */}
               <Route path="/ngos/:location" element={<SEOHubIndex />} />

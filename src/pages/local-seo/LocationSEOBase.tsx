@@ -1,7 +1,8 @@
-import React from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Shield, CheckCircle, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
-import { Link } from 'react-router-dom';
 
 interface LocationSEOBaseProps {
   location: string;
@@ -14,7 +15,8 @@ interface LocationSEOBaseProps {
   relatedKeywords?: Array<{ keyword: string; slug: string }>;
 }
 
-const GLOBAL_KEYWORDS = "causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, donate sanitary pads India, period poverty India, rabies prevention donation, stray dog vaccination programs, animal welfare NGO India, menstrual hygiene projects";
+const GLOBAL_KEYWORDS =
+  'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, donate sanitary pads India, period poverty India, rabies prevention donation, stray dog vaccination programs, animal welfare NGO India, menstrual hygiene projects';
 
 const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
   location,
@@ -28,19 +30,34 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
 }) => {
   const canonicalUrl = `https://www.thegivingcircle.in/ngos/${locationSlug}`;
   const currentDate = new Date().toISOString().split('T')[0];
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
-  // Default related locations if not provided
   const defaultLocations = [
     { name: 'Delhi', slug: 'best-ngo-in-delhi' },
     { name: 'Gurugram', slug: 'best-ngo-in-gurugram' },
     { name: 'Noida', slug: 'best-ngo-in-noida' },
     { name: 'Faridabad', slug: 'best-ngo-in-faridabad' },
-  ].filter(loc => loc.slug !== locationSlug);
+  ].filter((loc) => loc.slug !== locationSlug);
 
   const locationsToShow = relatedLocations.length > 0 ? relatedLocations : defaultLocations;
 
+  const faqItems = [
+    {
+      q: `How do I verify an NGO in ${location}?`,
+      a: 'Check FCRA registration on the Ministry of Home Affairs portal, 80G certification on the Income Tax website, and annual audited statements. The Giving Circle verifies these before listing.',
+    },
+    {
+      q: 'Are donations tax-deductible?',
+      a: 'Yes. Donations to 80G-certified NGOs are eligible for tax deductions. You receive a receipt within 48 hours.',
+    },
+    {
+      q: 'How do I know my donation created impact?',
+      a: 'We publish quarterly impact reports and fund utilisation updates on cause pages so donors can track outcomes.',
+    },
+  ];
+
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <SEOHead
         title={title}
         description={description}
@@ -60,246 +77,195 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
         location={location}
       />
 
-      {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-3 px-4 border-b">
-        <div className="max-w-7xl mx-auto">
-          <ol className="flex items-center space-x-2 text-sm">
-            <li><Link to="/" className="text-blue-600 hover:text-blue-800">Home</Link></li>
-            <li className="text-gray-500">/</li>
-            <li><Link to="/ngos" className="text-blue-600 hover:text-blue-800">NGO Directory</Link></li>
-            <li className="text-gray-500">/</li>
-            <li className="text-gray-700">{location}</li>
-          </ol>
-        </div>
-      </nav>
+      {/* Hero */}
+      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
+        <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
+          <nav className="mb-6">
+            <ol className="flex items-center space-x-2 text-sm">
+              <li>
+                <Link to="/" className="text-green-700 hover:text-green-900">
+                  Home
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li>
+                <Link to="/ngos" className="text-green-700 hover:text-green-900">
+                  NGO Directory
+                </Link>
+              </li>
+              <li className="text-gray-400">/</li>
+              <li className="text-gray-600">{location}</li>
+            </ol>
+          </nav>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        {/* Hero Section */}
-        <header className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
             {primaryKeyword} in {location}
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover verified and trusted NGOs in {location} making a real impact. Connect with top-rated charity organizations through our giving platform and community support platform. Join our giving community to support social causes, give and help create positive change through social giving and community support initiatives.
+          <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
+            Discover verified and trusted NGOs in {location} making a real impact. Connect with top-rated charity organizations through The Giving Circle and donate with confidence.
           </p>
-        </header>
 
-        {/* Introduction */}
-        <section className="mb-12">
-          <div className="prose prose-lg max-w-none">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Leading NGOs in {location} - Verified & Trusted
-            </h2>
-            <p className="text-gray-700 mb-4">
-              {location} is home to numerous non-profit organizations working tirelessly to create positive social change through community giving and social giving. At The Giving Circle, our giving platform and community support platform connect you with the most trusted and verified NGOs in {location} that are making a real difference through community support and support of community initiatives. Join our support circle and giving community to support social causes in the india community.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Our giving platform ensures transparency, accountability, and real impact through community support and giving to community initiatives. We collaborate with leading corporate giving platforms to amplify our reach. Every NGO partner undergoes a rigorous verification process, creating supported causes and causes to support where your contributions reach those who need them most. By supporting india's communities, we enable communities for communities and provide giving support, circle aid, and community helpline resources for meaningful social impact.
-            </p>
+          <div className="flex flex-wrap gap-3 mb-8">
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <Shield className="text-green-700" size={16} />
+              FCRA & 80G Verified
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <CheckCircle className="text-green-700" size={16} />
+              Transparent Reporting
+            </div>
+            <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
+              <TrendingUp className="text-green-700" size={16} />
+              Real Impact Data
+            </div>
           </div>
-        </section>
 
-        {/* Why Choose NGOs on The Giving Circle */}
-        <section className="mb-12 bg-blue-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Why Choose NGOs on Our Community Support Platform?
+          <div className="flex flex-wrap gap-4">
+            <Link
+              to="/live-causes"
+              className="bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors"
+            >
+              Explore Live Causes
+            </Link>
+            <Link
+              to="/onboarding"
+              className="border-2 border-green-700 text-green-700 px-8 py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
+            >
+              Become a Cause Champion
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Content */}
+      <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+            Leading NGOs in {location} — Verified & Trusted
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">✓ Verified & Trusted</h3>
-              <p className="text-gray-700">
-                All NGOs undergo comprehensive verification to ensure legitimacy and transparency.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">✓ Real Impact Tracking</h3>
-              <p className="text-gray-700">
-                Track your contributions through our giving platform and see the real-world impact of your social giving and support to communities.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">✓ Transparent Operations</h3>
-              <p className="text-gray-700">
-                Complete transparency in how funds are used and distributed to beneficiaries.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">✓ Multiple Causes</h3>
-              <p className="text-gray-700">
-                Support social causes including education, healthcare, animal welfare, disaster relief through our community support platform. Find causes to support that matter to you.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">✓ Easy Donation Process</h3>
-              <p className="text-gray-700">
-                Simple, secure, and hassle-free donation process with multiple payment options.
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">✓ Community Driven</h3>
-              <p className="text-gray-700">
-                Join our giving community and support community of Cause Champions working together. Create a circle of support, give and help through community giving, providing support from community to support social causes across the india community.
-              </p>
-            </div>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+          <div className="prose prose-lg max-w-none">
+            <p className="text-gray-700 mb-4">
+              {location} is home to numerous non-profit organizations working tirelessly to create positive social change through community giving and social giving. At The Giving Circle, our giving platform and community support platform connect you with the most trusted and verified NGOs in {location} that are making a real difference through community support and support of community initiatives.
+            </p>
+            <p className="text-gray-700 mb-4">
+              Our giving platform ensures transparency, accountability, and real impact through community support and giving to community initiatives. Every NGO partner undergoes a rigorous verification process so your contributions reach those who need them most.
+            </p>
           </div>
         </section>
 
-        {/* Top NGO Categories in Location */}
         <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
+            Why Donate Through The Giving Circle?
+          </h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { title: '✓ Verified & Trusted', body: 'All NGOs undergo verification for legitimacy, compliance and transparency.' },
+              { title: '✓ Real Impact Tracking', body: 'Quarterly reporting so donors can track outcomes, not just spend.' },
+              { title: '✓ Transparent Operations', body: 'Clear fund utilisation updates and public reporting practices.' },
+              { title: '✓ Multiple Causes', body: 'Support education, healthcare, animal welfare, disaster relief and more.' },
+              { title: '✓ Secure Giving', body: 'Simple, secure payments and a consistent donor experience.' },
+              { title: '✓ Community Driven', body: 'Join a giving community of Cause Champions creating collective impact.' },
+            ].map(({ title: t, body }) => (
+              <div key={t} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">{t}</h3>
+                <p className="text-gray-700">{body}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
             Top NGO Categories in {location}
           </h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Education</h3>
-              <p className="text-gray-600 text-sm">
-                NGOs working on education, literacy, and skill development programs.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Healthcare</h3>
-              <p className="text-gray-600 text-sm">
-                Health services, medical camps, and healthcare access initiatives.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Animal Welfare</h3>
-              <p className="text-gray-600 text-sm">
-                Animal rescue, vaccination, and care programs for stray animals.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Disaster Relief</h3>
-              <p className="text-gray-600 text-sm">
-                Emergency response and disaster relief operations.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Women Empowerment</h3>
-              <p className="text-gray-600 text-sm">
-                Programs focused on women's rights, education, and economic empowerment.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Child Welfare</h3>
-              <p className="text-gray-600 text-sm">
-                Child protection, education, and development programs.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Environmental</h3>
-              <p className="text-gray-600 text-sm">
-                Environmental conservation and sustainability initiatives.
-              </p>
-            </div>
-            <div className="border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold text-gray-900 mb-2">Rural Development</h3>
-              <p className="text-gray-600 text-sm">
-                Rural infrastructure, livelihood, and community development programs.
-              </p>
-            </div>
+            {[
+              { label: 'Education', desc: 'Education, literacy and skill development programmes.' },
+              { label: 'Healthcare', desc: 'Medical camps, treatment access and preventive health.' },
+              { label: 'Animal Welfare', desc: 'Rescue, vaccination, feeding and shelter programmes.' },
+              { label: 'Disaster Relief', desc: 'Emergency response and rehabilitation support.' },
+              { label: 'Women Empowerment', desc: 'Rights, education, skills training and livelihoods.' },
+              { label: 'Child Welfare', desc: 'Protection, nutrition, education and development.' },
+              { label: 'Environment', desc: 'Sustainability, clean-up and conservation work.' },
+              { label: 'Rural Development', desc: 'Infrastructure, livelihoods and community development.' },
+            ].map(({ label, desc }) => (
+              <div key={label} className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{label}</h3>
+                <p className="text-gray-600 text-sm">{desc}</p>
+              </div>
+            ))}
           </div>
         </section>
 
-        {/* How to Support NGOs in Location */}
-        <section className="mb-12 bg-gray-50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
             How to Support NGOs in {location}
           </h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+
           <div className="space-y-4">
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-                1
+            {[
+              { step: 1, title: 'Browse verified NGOs', body: `Explore verified NGOs in ${location} working across multiple causes.` },
+              { step: 2, title: 'Choose a cause', body: 'Pick a cause that resonates: education, healthcare, animals, disaster relief and more.' },
+              { step: 3, title: 'Donate securely', body: 'Give through our platform with secure payments and transparent reporting.' },
+              { step: 4, title: 'Track impact', body: 'Receive updates and reports showing what your donation achieved.' },
+            ].map(({ step, title: t, body }) => (
+              <div key={step} className="flex items-start">
+                <div className="flex-shrink-0 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center font-bold mr-4">
+                  {step}
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{t}</h3>
+                  <p className="text-gray-700">{body}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Browse Verified NGOs</h3>
-                <p className="text-gray-700">
-                  Explore our directory of verified NGOs in {location} working across various social causes. Find causes to support and supported causes through our giving platform.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-                2
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Choose Your Cause</h3>
-                <p className="text-gray-700">
-                  Select causes to support that resonate with you - community causes including education, healthcare, animal welfare, or disaster relief. Join our support circle for social giving.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-                3
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Make a Contribution</h3>
-                <p className="text-gray-700">
-                  Give through our giving platform securely and track the impact of your social giving. Provide community support and giving to community through our community support platform.
-                </p>
-              </div>
-            </div>
-            <div className="flex items-start">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold mr-4">
-                4
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Track Impact</h3>
-                <p className="text-gray-700">
-                  Receive updates on how your giving support and community support are making a difference in {location} communities. See how our support community and circle of support create impact through communities for communities initiatives.
-                </p>
-              </div>
-            </div>
+            ))}
           </div>
           <div className="mt-8 text-center">
             <Link
               to="/live-causes"
-              className="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors"
+              className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors"
             >
               Explore Live Causes
             </Link>
           </div>
         </section>
 
-        {/* Related Locations */}
         {locationsToShow.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Explore NGOs in Nearby Locations
-            </h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Explore NGOs in Nearby Locations</h2>
+            <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
               {locationsToShow.map((loc) => (
                 <Link
                   key={loc.slug}
                   to={`/ngos/${loc.slug}`}
-                  className="block border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-blue-500 transition-all"
+                  className="block bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg hover:border-green-500 transition-all"
                 >
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                    Best NGOs in {loc.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm">
-                    Discover verified NGOs and causes to support making impact through community support in {loc.name}
-                  </p>
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2">Best NGOs in {loc.name}</h3>
+                  <p className="text-gray-600 text-sm">Discover verified NGOs and causes to support in {loc.name}.</p>
                 </Link>
               ))}
             </div>
           </section>
         )}
 
-        {/* Related Keywords */}
         {relatedKeywords.length > 0 && (
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Related Topics
-            </h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Related Topics</h2>
+            <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
             <div className="flex flex-wrap gap-3">
               {relatedKeywords.map((kw) => (
                 <Link
                   key={kw.slug}
                   to={`/ngos/${kw.slug}`}
-                  className="inline-block bg-gray-100 hover:bg-blue-100 text-gray-700 hover:text-blue-700 px-4 py-2 rounded-full text-sm font-medium transition-colors"
+                  className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors"
                 >
                   {kw.keyword}
                 </Link>
@@ -308,30 +274,56 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
           </section>
         )}
 
-        {/* CTA Section */}
-        <section className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-lg p-12 text-center text-white">
-          <h2 className="text-3xl font-bold mb-4">
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="space-y-4">
+            {faqItems.map((faq, index) => (
+              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 hover:bg-gray-50 transition-colors text-left"
+                >
+                  <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">{faq.q}</span>
+                  {openFaqIndex === index ? (
+                    <ChevronUp className="text-green-700 shrink-0" size={20} />
+                  ) : (
+                    <ChevronDown className="text-gray-400 shrink-0" size={20} />
+                  )}
+                </button>
+                {openFaqIndex === index && (
+                  <div className="p-4 sm:p-5 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">{faq.a}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      </div>
+
+      <section className="bg-green-700 py-16 sm:py-20">
+        <div className="container max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Make a Difference in {location}?
           </h2>
-          <p className="text-xl mb-8 text-blue-100">
-            Join our giving community and community support platform to connect with verified NGOs creating real impact. Be part of our support circle, give through our giving platform, and support social causes through social giving and community support. Together we create a circle of support for supporting india's communities for communities.
+          <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
+            Join The Giving Circle to connect with verified NGOs creating real impact — and track your contribution transparently.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               to="/onboarding"
-              className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+              className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
               Become a Cause Champion
             </Link>
             <Link
               to="/live-causes"
-              className="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors"
+              className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1"
             >
               Explore Causes
             </Link>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };

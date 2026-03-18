@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function SimplifiedAboutPage() {
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gray-50">
       <section className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img

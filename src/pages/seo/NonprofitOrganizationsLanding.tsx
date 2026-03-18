@@ -1,4 +1,3 @@
-import React from 'react';
 import SEOHead from '../../components/SEO/SEOHead';
 import { Link } from 'react-router-dom';
 import { Search, CheckCircle, HandHeart, Trophy } from 'lucide-react';
@@ -6,7 +5,7 @@ import { Section } from '../../components/ui';
 
 const NonprofitOrganizationsLanding = () => {
     return (
-        <div className="min-h-screen bg-white">
+        <div className="min-h-screen bg-gray-50">
             <SEOHead
                 title="Nonprofit Organizations India | List of NGOs"
                 description="Comprehensive directory of verified nonprofit organizations in India. Find and support trusted NGOs working in education, health, environment and social welfare."
@@ -15,19 +14,19 @@ const NonprofitOrganizationsLanding = () => {
             />
 
             {/* Hero */}
-            <section className="bg-blue-900 text-white py-20 md:py-28">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                    <div className="inline-block px-4 py-1.5 bg-blue-800 rounded-full text-blue-200 font-medium text-sm mb-6">
-                        Trusted by 5000+ Donors
+            <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
+                <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <div className="inline-block px-4 py-1.5 bg-green-100 rounded-full text-green-800 font-medium text-sm mb-6">
+                        Verified NGO Directory
                     </div>
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                        Verified <span className="text-blue-400">Nonprofit Organizations</span>
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900">
+                        Verified <span className="text-green-700">Nonprofit Organizations</span> in India
                     </h1>
-                    <p className="text-xl text-blue-100 max-w-2xl mx-auto mb-10">
-                        Discover and support the most impactful NGOs in India. We verify every organization so you can give with 100% confidence.
+                    <p className="text-base sm:text-lg text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
+                        Discover and support trusted NGOs in India. We verify partners for transparency and compliance so you can give with confidence and track real impact.
                     </p>
 
-                    <div className="max-w-3xl mx-auto bg-white rounded-lg p-2 flex shadow-xl">
+                    <div className="max-w-3xl mx-auto bg-white rounded-xl p-2 flex shadow-lg border border-gray-200">
                         <input
                             type="text"
                             placeholder="Search for a cause or NGO (e.g., Animal Welfare)"
@@ -37,7 +36,7 @@ const NonprofitOrganizationsLanding = () => {
                         />
                         <button
                             onClick={() => window.location.href = '/live-causes'}
-                            className="bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition"
+                            className="bg-green-700 text-white px-6 py-3 rounded-lg font-bold hover:bg-green-800 transition"
                         >
                             <Search className="w-5 h-5" />
                         </button>
@@ -47,21 +46,21 @@ const NonprofitOrganizationsLanding = () => {
 
             {/* Trust Indicators */}
             <div className="bg-gray-50 border-b border-gray-200">
-                <div className="max-w-7xl mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div className="container max-w-[1200px] mx-auto px-4 py-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                     <div>
-                        <div className="text-3xl font-bold text-blue-900">50+</div>
+                        <div className="text-3xl font-bold text-green-700">50+</div>
                         <div className="text-gray-600 text-sm">Verified Partners</div>
                     </div>
                     <div>
-                        <div className="text-3xl font-bold text-blue-900">₹1 Cr+</div>
+                        <div className="text-3xl font-bold text-green-700">₹1 Cr+</div>
                         <div className="text-gray-600 text-sm">Funds Raised</div>
                     </div>
                     <div>
-                        <div className="text-3xl font-bold text-blue-900">100%</div>
+                        <div className="text-3xl font-bold text-green-700">100%</div>
                         <div className="text-gray-600 text-sm">Transparency</div>
                     </div>
                     <div>
-                        <div className="text-3xl font-bold text-blue-900">12+</div>
+                        <div className="text-3xl font-bold text-green-700">12+</div>
                         <div className="text-gray-600 text-sm">Cities Covered</div>
                     </div>
                 </div>
@@ -69,12 +68,14 @@ const NonprofitOrganizationsLanding = () => {
 
             {/* Categories */}
             <Section className="py-20">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-gray-900">Browse by Cause</h2>
-                    <p className="text-gray-600 mt-4">Find a nonprofit organization dedicated to what matters most to you.</p>
-                </div>
+                <div className="container max-w-[1200px] mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Browse by Cause</h2>
+                        <div className="w-16 h-1 bg-green-700 mx-auto mb-6"></div>
+                        <p className="text-gray-600">Find a nonprofit organization dedicated to what matters most to you.</p>
+                    </div>
 
-                <div className="grid md:grid-cols-3 gap-8">
+                    <div className="grid md:grid-cols-3 gap-8">
                     {/* Card 1 */}
                     <Link to="/live-causes?category=Education" className="group block bg-white border border-gray-100 rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all">
                         <div className="w-14 h-14 bg-orange-100 rounded-xl flex items-center justify-center mb-6 group-hover:bg-orange-600 transition-colors">
@@ -105,16 +106,17 @@ const NonprofitOrganizationsLanding = () => {
                         <span className="text-green-600 font-semibold flex items-center gap-2 group-hover:gap-3 transition-all">View NGOs <ArrowRight className="w-4 h-4" /></span>
                     </Link>
                 </div>
+                </div>
             </Section>
 
             {/* Featured Location: Noida & Gurugram Links */}
-            <section className="bg-gray-900 text-gray-300 py-16">
-                <div className="max-w-7xl mx-auto px-4 text-center">
-                    <h2 className="text-2xl font-bold text-white mb-8">Change starts locally. Find NGOs near you.</h2>
+            <section className="bg-green-700 py-16 sm:py-20">
+                <div className="container max-w-4xl mx-auto px-4 text-center">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6">Change starts locally. Find NGOs near you.</h2>
                     <div className="flex flex-wrap justify-center gap-4">
-                        <Link to="/ngo-in-noida" className="px-6 py-3 border border-gray-600 rounded-full hover:border-white hover:text-white transition">NGOs in Noida</Link>
-                        <Link to="/ngo-in-gurugram" className="px-6 py-3 border border-gray-600 rounded-full hover:border-white hover:text-white transition">NGOs in Gurugram</Link>
-                        <Link to="/ngos/delhi" className="px-6 py-3 border border-gray-600 rounded-full hover:border-white hover:text-white transition">NGOs in Delhi</Link>
+                        <Link to="/ngos/best-ngo-in-noida" className="px-6 py-3 border border-white/60 text-white rounded-full hover:border-white hover:bg-white/10 transition">NGOs in Noida</Link>
+                        <Link to="/ngos/best-ngo-in-gurugram" className="px-6 py-3 border border-white/60 text-white rounded-full hover:border-white hover:bg-white/10 transition">NGOs in Gurugram</Link>
+                        <Link to="/ngos/best-ngo-in-delhi" className="px-6 py-3 border border-white/60 text-white rounded-full hover:border-white hover:bg-white/10 transition">NGOs in Delhi</Link>
                     </div>
                 </div>
             </section>
@@ -124,7 +126,7 @@ const NonprofitOrganizationsLanding = () => {
 };
 
 // Helper icon component
-function ArrowRight(props: any) {
+function ArrowRight(props: React.SVGProps<SVGSVGElement>) {
     return (
         <svg
             {...props}
