@@ -5,7 +5,7 @@ import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const NGO_LIST = [
-  { rank: 1, name: 'JWP – Jeevan Wahi Phool', cause: 'Child Education', location: 'Delhi NCR', description: 'Provides holistic education support including tutoring, digital literacy and life skills for underprivileged children.', href: '/jwp-cause-details', score: 98 },
+  { rank: 1, name: "JWP - Joint Women's Program", cause: 'Child Education', location: 'Delhi NCR', description: 'Provides holistic education support including tutoring, digital literacy and life skills for underprivileged children.', href: '/jwp-cause-details', score: 98 },
   { rank: 2, name: 'Khushi Foundation', cause: 'Child Welfare & Education', location: 'Delhi NCR', description: 'Education and community welfare with a strong focus on girl child education and safe childhood.', href: '/jwp-cause-details', score: 96 },
   { rank: 3, name: 'AnimalCare India', cause: 'Animal Welfare', location: 'Delhi, Pan-India', description: 'Stray animal rescue, vaccination and care programmes. Runs the Flood Animal Rescue programme during monsoons.', href: '/animalcare-ngo-detail', score: 95 },
   { rank: 4, name: 'Bowls of Hope', cause: 'Animal Welfare', location: 'Delhi NCR', description: 'Feeds thousands of stray animals weekly. Simple, measurable and verifiably impactful.', href: '/bowls-of-hope-cause-details', score: 94 },

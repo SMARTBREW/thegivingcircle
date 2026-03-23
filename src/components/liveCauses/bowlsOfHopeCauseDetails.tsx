@@ -226,11 +226,11 @@ const BowlsOfHopeCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Bowls of Hope — When Hunger Strikes, We Feed Them
+            Bowls of Hope When Hunger Strikes, We Feed Them
           </h1>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Every day, thousands of street animals across India go hungry. They cannot find food. They cannot ask for help. They can only wait — hoping someone will notice, someone will care, someone will feed them. This campaign is that someone.
+            Every day, thousands of street animals across India go hungry. They cannot find food. They cannot ask for help. They can only wait hoping someone will notice, someone will care, someone will feed them. This campaign is that someone.
           </p>
 
           {/* Trust Badges */}
@@ -320,7 +320,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                   The tragedy is compounded by what happens when animals are malnourished. Weak animals are more susceptible to disease. Hungry animals are more likely to engage in conflicts. Starving animals cannot survive extreme weather conditions. Without intervention, the cycle of hunger continues, affecting both animal welfare and community harmony.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                  And then there is the suffering. During hunger, animals are often desperate. They cannot find food. They cannot ask for help. They can only wait — hoping someone will notice, someone will care, someone will feed them. The most heartbreaking aspect of street animal hunger is how preventable many of them are. In most cases, animals did not need sophisticated solutions. They just needed someone to feed them.
+                  And then there is the suffering. During hunger, animals are often desperate. They cannot find food. They cannot ask for help. They can only wait hoping someone will notice, someone will care, someone will feed them. The most heartbreaking aspect of street animal hunger is how preventable many of them are. In most cases, animals did not need sophisticated solutions. They just needed someone to feed them.
                 </p>
               </div>
             </section>

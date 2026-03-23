@@ -7,7 +7,10 @@ import morgan from 'morgan';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import { submitCauseChampionForm, submitNGOPartnerForm } from './routes/forms.js';
+import blogRoutes from './routes/blog.js';
 import { verifyEmailConfig } from './config/email.js';
+import { connectMongo, closeMongo } from './config/mongo.js';
+import { seedBlogPostsFromJsonIfEmpty } from './services/blogStore.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -104,6 +107,9 @@ app.get('/api/health', (req, res) => {
 app.post('/api/submit/cause-champion', formLimiter, submitCauseChampionForm);
 app.post('/api/submit/ngo-partner', formLimiter, submitNGOPartnerForm);
 
+// Blog APIs (read + AI generation)
+app.use('/api/blog', blogRoutes);
+
 app.use((req, res) => {
   res.status(404).json({ 
     success: false,
@@ -125,38 +131,53 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, async () => {
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('🚀 The Giving Circle Backend API');
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log(`📡 Server running on port ${PORT}`);
-  console.log(`🌍 Environment: ${NODE_ENV}`);
-  console.log(`⏰ Started at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
-  
-  const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
-  const emailService = process.env.EMAIL_SERVICE || 'gmail';
-  console.log(`📧 Email service: ${emailService.toUpperCase()}`);
-  console.log(`📬 Forms will be sent to: ${receiverEmail}`);
-  
-  const isEmailConfigured = await verifyEmailConfig();
-  if (!isEmailConfigured) {
-    console.warn('⚠️  WARNING: Email configuration not verified!');
-    console.warn('   Please check your EMAIL_USER and EMAIL_PASSWORD in .env');
-    console.warn('   Form submissions may fail until email is configured.');
+async function start() {
+  try {
+    await connectMongo();
+    await seedBlogPostsFromJsonIfEmpty();
+  } catch (err) {
+    console.error('❌ MongoDB connection failed:', err?.message || err);
+    console.error('   Set MONGODB_URI or MONGO_URI in server/.env');
+    process.exit(1);
   }
-  
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
-  console.log('✅ Server ready to accept requests');
-  console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
-});
 
-process.on('SIGTERM', () => {
+  app.listen(PORT, async () => {
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('🚀 The Giving Circle Backend API');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log(`📡 Server running on port ${PORT}`);
+    console.log(`🌍 Environment: ${NODE_ENV}`);
+    console.log(`⏰ Started at: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`);
+
+    const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
+    const emailService = process.env.EMAIL_SERVICE || 'gmail';
+    console.log(`📧 Email service: ${emailService.toUpperCase()}`);
+    console.log(`📬 Forms will be sent to: ${receiverEmail}`);
+
+    const isEmailConfigured = await verifyEmailConfig();
+    if (!isEmailConfigured) {
+      console.warn('⚠️  WARNING: Email configuration not verified!');
+      console.warn('   Please check your EMAIL_USER and EMAIL_PASSWORD in .env');
+      console.warn('   Form submissions may fail until email is configured.');
+    }
+
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');
+    console.log('✅ Server ready to accept requests');
+    console.log('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+  });
+}
+
+start();
+
+process.on('SIGTERM', async () => {
   console.log('SIGTERM signal received: closing HTTP server');
+  await closeMongo();
   process.exit(0);
 });
 
-process.on('SIGINT', () => {
+process.on('SIGINT', async () => {
   console.log('\nSIGINT signal received: closing HTTP server');
+  await closeMongo();
   process.exit(0);
 });
 

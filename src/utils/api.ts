@@ -91,6 +91,30 @@ export class ApiClient {
       setTimeout(() => resolve([]), 500);
     });
   }
+
+  static async getBlogPosts() {
+    const response = await fetch(`${API_BASE_URL}/blog/posts`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result?.message || 'Failed to load blog posts');
+    }
+    return result.posts || [];
+  }
+
+  static async getBlogPostBySlug(slug: string) {
+    const response = await fetch(`${API_BASE_URL}/blog/post/${encodeURIComponent(slug)}`, {
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      throw new Error(result?.message || 'Failed to load blog post');
+    }
+    return result.post;
+  }
 }
 
 export const formatPhoneNumber = (phone: string) => {

@@ -234,7 +234,7 @@ const CauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Wings Of Hope — Breaking the Cycle of Poverty Through Quality Education
+            Wings Of Hope Breaking the Cycle of Poverty Through Quality Education
           </h1>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">

@@ -74,6 +74,8 @@ const WhatIsAGivingCircle = lazy(() => import('./pages/articles/WhatIsAGivingCir
 const TopNGOsInDelhi2026 = lazy(() => import('./pages/articles/TopNGOsInDelhi2026'));
 const VolunteerOpportunitiesDelhi = lazy(() => import('./pages/articles/VolunteerOpportunitiesDelhi'));
 const HowToVolunteerIndia = lazy(() => import('./pages/articles/HowToVolunteerIndia'));
+const BlogIndex = lazy(() => import('./pages/blog/BlogIndex'));
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
 
 const PageLoader = () => (
   <div className="flex items-center justify-center min-h-[60vh]">
@@ -163,6 +165,10 @@ function App() {
               <Route path="/top-ngos-in-delhi-2026" element={<TopNGOsInDelhi2026 />} />
               <Route path="/volunteer-opportunities-delhi" element={<VolunteerOpportunitiesDelhi />} />
               <Route path="/how-to-volunteer-india" element={<HowToVolunteerIndia />} />
+
+              {/* Blog */}
+              <Route path="/blog" element={<BlogIndex />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
 
               {/* Dynamic Local SEO */}
               <Route path="/ngos/:location" element={<SEOHubIndex />} />

@@ -69,6 +69,10 @@ const NavbarComponent = () => {
       href: '/impact-stories'
     },
     {
+      name: 'Blog',
+      href: '/blog',
+    },
+    {
       name: 'About Us',
       href: '/the-giving-circle',
     },

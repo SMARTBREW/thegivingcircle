@@ -400,7 +400,7 @@ export const animalCareNGODetails: NGODetails = {
 
 export const sampleNGODetails: NGODetails = {
   id: '1',
-  name: 'JWP (Janakalyan Welfare Program)',
+  name: "JWP (Joint Women's Program)",
   shortDescription: 'Empowering tribal communities through education, sustainable development, and cultural preservation across central India since 2008.',
   fullDescription: 'JWP is a dedicated organization working with indigenous communities in remote areas of central India where access to basic services is limited. We focus on tribal welfare, education, and sustainable livelihood development while preserving cultural heritage. Our programs emphasize community participation and traditional knowledge integration with contemporary development approaches, directly benefiting over 5,800 children and 240 tribal communities across Chhattisgarh and surrounding regions.',
   verified: true,

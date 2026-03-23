@@ -127,7 +127,7 @@ const LiveCausesPage = () => {
       progressPercentage: 42,
       supporters: 176,
       daysLeft: 45,
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183060/images/jwp/_MG_6955.jpg',
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904132/images/animal-protect/20250908_114315.webp',
       urgency: 'High',
       description: 'Fund school fees, books, uniforms and mid-day meals for underprivileged children in Delhi NCR. 80G tax benefits available. Every ₹500 covers one month of education.',
       beneficiaries: '300+ children',

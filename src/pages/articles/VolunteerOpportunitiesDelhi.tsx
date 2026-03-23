@@ -103,7 +103,7 @@ const VolunteerOpportunitiesDelhi = () => {
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <div className="space-y-5">
             {[
-              { name: 'JWP – Jeevan Wahi Phool', roles: ['Weekend tutors for children (Classes 1–8)', 'Digital literacy trainers', 'Event coordinators'], location: 'Okhla, South Delhi', href: '/jwp-cause-details' },
+              { name: "JWP - Joint Women's Program", roles: ['Weekend tutors for children (Classes 1–8)', 'Digital literacy trainers', 'Event coordinators'], location: 'Okhla, South Delhi', href: '/jwp-cause-details' },
               { name: 'Khushi Foundation', roles: ['After-school teachers', 'Community health volunteers', 'Fundraising support'], location: 'Multiple locations, Delhi NCR', href: '/jwp-cause-details' },
               { name: 'AnimalCare India', roles: ['Animal rescue assistants', 'Vaccination camp helpers', 'Feeding drive coordinators'], location: 'Pan Delhi NCR', href: '/animalcare-ngo-detail' },
               { name: 'Bowls of Hope', roles: ['Morning feeding drive volunteers', 'Social media volunteers', 'Donation drive organisers'], location: 'Delhi NCR', href: '/bowls-of-hope-cause-details' },

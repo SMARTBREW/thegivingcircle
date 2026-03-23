@@ -5,6 +5,15 @@ import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
 import CloudinaryImage from '../../components/ui/CloudinaryImage';
 
+const EDUCATION_IMAGE_URLS = {
+  hero: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904138/images/animal-protect/20250910_112120.webp',
+  classroom: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904132/images/animal-protect/20250908_114315.webp',
+  digital: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904147/images/animal-protect/DSC_0711.webp',
+  community: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904158/images/animal-protect/DSC_0713.webp',
+  milestone: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904165/images/animal-protect/IMG_9075.webp',
+  scholarship: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1773904171/images/animal-protect/IMG_9115.webp',
+};
+
 const DonateForEducationIndia = () => {
   const navigate = useNavigate();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -12,7 +21,7 @@ const DonateForEducationIndia = () => {
   const faqs = [
     {
       question: "Is my donation tax-deductible?",
-      answer: "Yes. JWP (Jeevan Wahi Phool) is registered under Section 80G of the Income Tax Act. All donations are eligible for tax deductions. You will receive an 80G receipt via email within 48 hours of your donation."
+      answer: "Yes. JWP (Joint Women's Program) is registered under Section 80G of the Income Tax Act. All donations are eligible for tax deductions. You will receive an 80G receipt via email within 48 hours of your donation."
     },
     {
       question: "How do I know my money is actually used for education?",
@@ -40,7 +49,7 @@ const DonateForEducationIndia = () => {
     id: 5,
     title: 'Donate for Child Education',
     subtitle: 'Fund school fees, books, meals and tutoring for underprivileged children in Delhi NCR',
-    organizer: 'JWP – Jeevan Wahi Phool',
+    organizer: "JWP - Joint Women's Program",
     ngo: 'JWP',
     location: 'Delhi NCR, India',
     category: 'Child Education · Skill Development',
@@ -49,7 +58,7 @@ const DonateForEducationIndia = () => {
     progressPercentage: 42,
     supporters: 176,
     daysLeft: 45,
-    image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
+    image: EDUCATION_IMAGE_URLS.hero,
     urgency: 'High',
 
     problemStatement: 'Over 250 million children in India are out of school or learning below grade level. In Delhi NCR\'s low-income communities, children drop out because families cannot afford school fees, books or uniforms. Without intervention, these children face a lifetime of limited opportunity.',
@@ -89,11 +98,11 @@ const DonateForEducationIndia = () => {
     },
 
     impactGallery: [
-      { type: 'Classroom', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg', caption: 'Children in JWP\'s after-school learning centre' },
-      { type: 'Learning', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg', caption: 'Girls staying in school through JWP\'s scholarship programme' },
-      { type: 'Digital', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp', caption: 'Digital literacy sessions opening new opportunities' },
-      { type: 'Community', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188362/images/khushi/cld-1758188325188-38.jpg-2200.webp', caption: 'Community engagement building parent awareness' },
-      { type: 'Milestone', image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183070/images/khushi/20.jpg', caption: 'Every milestone celebrated — small wins matter' }
+      { type: 'Classroom', image: EDUCATION_IMAGE_URLS.hero, caption: 'Children in JWP\'s after-school learning centre' },
+      { type: 'Learning', image: EDUCATION_IMAGE_URLS.classroom, caption: 'Girls staying in school through JWP\'s scholarship programme' },
+      { type: 'Digital', image: EDUCATION_IMAGE_URLS.digital, caption: 'Digital literacy sessions opening new opportunities' },
+      { type: 'Community', image: EDUCATION_IMAGE_URLS.community, caption: 'Community engagement building parent awareness' },
+      { type: 'Milestone', image: EDUCATION_IMAGE_URLS.milestone, caption: 'Every milestone celebrated — small wins matter' }
     ],
 
     expectedOutcomes: [
@@ -110,19 +119,19 @@ const DonateForEducationIndia = () => {
         date: '15 January 2025',
         title: '3 New Learning Centres Launched',
         description: 'Opened three new after-school centres in Okhla, Sangam Vihar and Dwarka reaching 80 new children.',
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg'
+        image: EDUCATION_IMAGE_URLS.hero
       },
       {
         date: '1 March 2025',
         title: 'Digital Literacy Kits Distributed',
         description: 'Donated tablets and training provided to 120 children in Classes 5–8, opening access to online learning resources.',
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg'
+        image: EDUCATION_IMAGE_URLS.classroom
       },
       {
         date: '5 April 2025',
         title: 'Girls\' Scholarship Programme Expanded',
         description: 'School fee sponsorships extended to 45 girls in Classes 6–10 at risk of dropout due to family financial pressure.',
-        image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp'
+        image: EDUCATION_IMAGE_URLS.scholarship
       }
     ],
 
@@ -154,7 +163,7 @@ const DonateForEducationIndia = () => {
   };
 
   const ngoDetails = {
-    name: 'JWP – Jeevan Wahi Phool',
+    name: "JWP - Joint Women's Program",
     tagline: 'Every child deserves a future — we make that possible',
     stats: {
       transparency: 96,
@@ -171,16 +180,16 @@ const DonateForEducationIndia = () => {
         description="Support child education in India by donating to verified NGOs. Fund school fees, books, uniforms and tuition for underprivileged children in Delhi NCR. 80G tax benefits available."
         keywords="donate for child education India, NGO for education India, child education donation India, fund child education, education NGO donation, support underprivileged children India, 80G donation education, JWP education NGO Delhi"
         canonicalUrl="https://www.thegivingcircle.in/donate-for-education-india"
-        ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
+        ogImage={EDUCATION_IMAGE_URLS.hero}
       />
       <ArticleSchema
         title="Donate for Child Education in India — Verified NGOs with Real Impact"
         description="Support child education in India by donating to verified NGOs through The Giving Circle. 80G tax benefits available."
-        image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
+        image={EDUCATION_IMAGE_URLS.hero}
         category="Child Education"
         location="Delhi NCR, India"
         datePublished="2025-01-01"
-        author="JWP – Jeevan Wahi Phool"
+        author="JWP - Joint Women's Program"
       />
 
       {/* Hero Section */}
@@ -217,7 +226,7 @@ const DonateForEducationIndia = () => {
           {/* Hero Image */}
           <div className="w-full rounded-xl overflow-hidden shadow-lg mx-auto">
             <CloudinaryImage
-              src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
+              src={EDUCATION_IMAGE_URLS.hero}
               alt="Underprivileged children studying in JWP's after-school learning centre in Delhi NCR"
               className="w-full aspect-video object-cover"
               width={1200}
@@ -258,7 +267,7 @@ const DonateForEducationIndia = () => {
 
               <figure className="mb-6 w-full">
                 <CloudinaryImage
-                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg"
+                  src={EDUCATION_IMAGE_URLS.classroom}
                   alt="Girls attending JWP's after-school tutoring sessions in Delhi to stay in school"
                   className="w-full rounded-lg shadow-lg"
                   width={800}
@@ -301,7 +310,7 @@ const DonateForEducationIndia = () => {
 
               <figure className="my-6 w-full">
                 <CloudinaryImage
-                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758188369/images/khushi/cld-1758188331812-77.jpg-2200.webp"
+                  src={EDUCATION_IMAGE_URLS.digital}
                   alt="Children using tablets in JWP's digital literacy programme in Delhi NCR"
                   className="w-full rounded-lg shadow-lg"
                   width={800}
@@ -323,7 +332,7 @@ const DonateForEducationIndia = () => {
 
               <figure className="my-6 w-full">
                 <CloudinaryImage
-                  src="https://res.cloudinary.com/dcdhhylin/image/upload/v1758188362/images/khushi/cld-1758188325188-38.jpg-2200.webp"
+                  src={EDUCATION_IMAGE_URLS.community}
                   alt="JWP students in life skills and career counselling sessions in Delhi NCR"
                   className="w-full rounded-lg shadow-lg"
                   width={800}
@@ -399,7 +408,7 @@ const DonateForEducationIndia = () => {
             {/* Section 5: About NGO */}
             <section aria-label="About JWP" className="mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                About JWP – Jeevan Wahi Phool
+                About JWP - Joint Women's Program
               </h2>
               <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 

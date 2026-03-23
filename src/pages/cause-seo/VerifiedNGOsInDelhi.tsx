@@ -6,7 +6,7 @@ import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const faqs = [
   { q: 'How do I verify if an NGO in Delhi is legitimate?', a: 'Check for FCRA registration on the Ministry of Home Affairs portal, 80G certification on the Income Tax website, and annual returns filed with the Registrar of Societies. The Giving Circle does all of this before listing any NGO.' },
-  { q: 'Which is the most trusted NGO in Delhi for education donations?', a: 'JWP (Jeevan Wahi Phool) and Khushi Foundation are among the most transparent education NGOs in Delhi NCR listed on The Giving Circle, with published quarterly impact reports.' },
+  { q: 'Which is the most trusted NGO in Delhi for education donations?', a: "JWP (Joint Women's Program) and Khushi Foundation are among the most transparent education NGOs in Delhi NCR listed on The Giving Circle, with published quarterly impact reports." },
   { q: 'Can I get a tax receipt for donating to a Delhi NGO?', a: 'Yes. All NGOs listed on The Giving Circle have valid 80G certification. Donations generate an automatic 80G receipt emailed to you within 48 hours.' },
   { q: 'How is The Giving Circle different from other donation platforms?', a: 'We use a collective giving model where communities pool donations to fund larger interventions. We also do independent verification of every listed NGO rather than relying on self-reported data.' },
 ];
@@ -112,7 +112,7 @@ const VerifiedNGOsInDelhi = () => {
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { name: 'JWP (Jeevan Wahi Phool)', cause: 'Education', description: 'Provides after-school tutoring, digital literacy and livelihood skills to underprivileged children in Delhi.', href: '/jwp-cause-details' },
+              { name: "JWP (Joint Women's Program)", cause: 'Education', description: 'Provides after-school tutoring, digital literacy and livelihood skills to underprivileged children in Delhi.', href: '/jwp-cause-details' },
               { name: 'Khushi Foundation', cause: 'Education & Welfare', description: 'Holistic education and community welfare programmes across Delhi NCR with a focus on girl child education.', href: '/jwp-cause-details' },
               { name: 'AnimalCare India', cause: 'Animal Welfare', description: 'Stray animal rescue, vaccination and care programmes operating across Delhi and surrounding districts.', href: '/animalcare-ngo-detail' },
               { name: 'Partner Your NGO', cause: 'All Causes', description: 'Are you a Delhi-based NGO with FCRA and 80G status? Apply to be listed and reach thousands of verified donors.', href: '/ngo-partner' },
