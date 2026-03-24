@@ -7,6 +7,15 @@ import { getBlogPostBySlug } from './blogPosts';
 import type { BlogPost } from './blogPosts';
 import { ApiClient } from '../../utils/api';
 
+const FRONTEND_HERO_OVERRIDES: Record<string, string> = {
+  'how-to-donate-for-child-education-in-india-80g':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1774264931/images/blogs/school-day-focus-and-support.png',
+  'verified-ngos-in-delhi':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1774264924/images/blogs/reviewing-impact-reports-in-delhi.png',
+  'csr-projects-in-india':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1774264920/images/blogs/business-professionals-reviewing-csr-project-data.png',
+};
+
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const resolvedSlug = slug || '';
@@ -54,6 +63,10 @@ const BlogPostPage = () => {
   }
 
   const canonicalUrl = `https://www.thegivingcircle.in/blog/${post.slug}`;
+  const heroImage =
+    FRONTEND_HERO_OVERRIDES[post.slug] ||
+    post.heroImage ||
+    'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png';
   const lastUpdatedLabel = post.dateModified
     ? new Date(post.dateModified).toLocaleDateString('en-IN', {
       day: '2-digit',
@@ -71,12 +84,12 @@ const BlogPostPage = () => {
         canonicalUrl={canonicalUrl}
         ogTitle={post.title}
         ogDescription={post.description}
-        ogImage={post.heroImage}
+        ogImage={heroImage}
       />
       <ArticleSchema
         title={post.title}
         description={post.description}
-        image={post.heroImage || 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png'}
+        image={heroImage}
         datePublished={post.datePublished}
         dateModified={post.dateModified}
         category={post.category}
@@ -84,8 +97,22 @@ const BlogPostPage = () => {
         author="The Giving Circle Team"
       />
 
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
+      {/* Hero Image (About Us style) */}
+      <section className="relative h-[56vh] sm:h-[66vh] md:h-[74vh] lg:h-[82vh] overflow-hidden pt-20 sm:pt-24">
+        <div className="absolute inset-0">
+          <img
+            src={heroImage}
+            alt={post.title}
+            className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/10 to-black/45"></div>
+        </div>
+      </section>
+
+      {/* Hero Text */}
+      <section className="bg-gradient-to-br from-green-50 via-white to-green-100 py-10 sm:py-14">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="mb-6">
             <ol className="flex items-center space-x-2 text-sm">

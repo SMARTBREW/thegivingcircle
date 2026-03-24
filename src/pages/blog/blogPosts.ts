@@ -41,7 +41,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Giving Guide',
     datePublished: '2026-03-19',
     dateModified: TODAY,
-    heroImage: 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png',
+    heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
     readingTime: '7 min read',
     toc: [
       'Why child education donations matter',
