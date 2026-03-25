@@ -26,8 +26,6 @@ export type BlogPost = {
   related: { title: string; href: string }[];
 };
 
-const TODAY = new Date().toISOString().split('T')[0];
-
 // Initial post set. You can keep adding posts weekly by extending this array
 // (or later by moving to a CMS / codegen workflow).
 export const BLOG_POSTS: BlogPost[] = [
@@ -40,7 +38,8 @@ export const BLOG_POSTS: BlogPost[] = [
       'donate for child education India, education NGO donation, NGO for education India, 80G tax benefit donation India, verified NGO India, how to donate effectively',
     category: 'Giving Guide',
     datePublished: '2026-03-19',
-    dateModified: TODAY,
+    // Fallback only. Backend should control the real weekly "Last updated".
+    dateModified: '2026-03-20',
     heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
     readingTime: '7 min read',
     toc: [
@@ -136,7 +135,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'verified NGOs in Delhi, trusted NGO in Delhi, NGO verification, donate to verified NGO Delhi, education NGO donation Delhi, 80G donation Delhi, charity in Delhi',
     category: 'Trust & Verification Guide',
     datePublished: '2026-03-23',
-    dateModified: TODAY,
+    dateModified: '2026-03-23',
     heroImage: 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png',
     readingTime: '6 min read',
     toc: [
@@ -223,7 +222,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'CSR projects in India, company CSR funding, CSR reporting, verified NGO partnership, education CSR funding, women empowerment CSR, CSR compliance basics',
     category: 'CSR for Companies',
     datePublished: '2026-03-23',
-    dateModified: TODAY,
+    dateModified: '2026-03-23',
     heroImage: 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png',
     readingTime: '7 min read',
     toc: [

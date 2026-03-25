@@ -6,12 +6,14 @@ import { ApiClient } from '../../utils/api';
 
 const BlogIndex = () => {
   const [posts, setPosts] = useState<BlogPost[]>(BLOG_POSTS);
+  const [isApiLoaded, setIsApiLoaded] = useState(false);
 
   useEffect(() => {
     ApiClient.getBlogPosts()
       .then((serverPosts) => {
         if (Array.isArray(serverPosts) && serverPosts.length) {
           setPosts(serverPosts);
+          setIsApiLoaded(true);
         }
       })
       .catch((err) => {
@@ -59,7 +61,7 @@ const BlogIndex = () => {
       <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid sm:grid-cols-2 gap-6">
           {posts.map((post) => {
-            const lastUpdatedLabel = post.dateModified
+            const lastUpdatedLabel = isApiLoaded && post.dateModified
               ? new Date(post.dateModified).toLocaleDateString('en-IN', {
                 day: '2-digit',
                 month: 'short',

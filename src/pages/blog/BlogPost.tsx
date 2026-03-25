@@ -21,18 +21,23 @@ const BlogPostPage = () => {
   const resolvedSlug = slug || '';
 
   const [post, setPost] = useState<BlogPost | undefined>(() => getBlogPostBySlug(resolvedSlug));
+  const [isApiLoaded, setIsApiLoaded] = useState(false);
 
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   useEffect(() => {
     // Always reset to fallback first (for predictable SEO metadata + UI),
     // then attempt to load the latest content from the backend.
+    setIsApiLoaded(false);
     setPost(getBlogPostBySlug(resolvedSlug));
     setOpenFaqIndex(null);
 
     ApiClient.getBlogPostBySlug(resolvedSlug)
       .then((serverPost) => {
-        if (serverPost) setPost(serverPost);
+        if (serverPost) {
+          setPost(serverPost);
+          setIsApiLoaded(true);
+        }
       })
       .catch((err) => {
         console.error('Failed to load blog post from backend:', err);
@@ -67,12 +72,12 @@ const BlogPostPage = () => {
     FRONTEND_HERO_OVERRIDES[post.slug] ||
     post.heroImage ||
     'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png';
-  const lastUpdatedLabel = post.dateModified
+  const lastUpdatedLabel = isApiLoaded && post.dateModified
     ? new Date(post.dateModified).toLocaleDateString('en-IN', {
-      day: '2-digit',
-      month: 'short',
-      year: 'numeric',
-    })
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      })
     : '';
 
   return (
