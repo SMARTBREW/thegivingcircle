@@ -30,18 +30,34 @@ app.use(helmet({
 }));
 
 
-app.use(cors({
-  origin: [
-    'https://www.thegivingcircle.in',
-    'https://thegivingcircle.in',
-    'http://localhost:5173',
-    'http://localhost:3000',
-    process.env.FRONTEND_URL
-  ].filter(Boolean),
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization'],
-}));
+app.use(
+  cors({
+    // Keep production locked down, but be flexible for local dev ports.
+    origin: (requestOrigin, callback) => {
+      const allowedProduction = [
+        'https://www.thegivingcircle.in',
+        'https://thegivingcircle.in',
+        process.env.FRONTEND_URL,
+      ].filter(Boolean);
+
+      if (!requestOrigin) return callback(null, true); // non-browser / same-origin
+      if (allowedProduction.includes(requestOrigin)) return callback(null, true);
+
+      // Dev: allow any localhost port (ex: http://localhost:5174)
+      if (
+        requestOrigin.startsWith('http://localhost:') ||
+        requestOrigin.startsWith('https://localhost:')
+      ) {
+        return callback(null, true);
+      }
+
+      return callback(new Error(`CORS blocked origin: ${requestOrigin}`));
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
