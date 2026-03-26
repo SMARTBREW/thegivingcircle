@@ -220,11 +220,11 @@ const FloodAnimalRescueCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Flood Animal Rescue — When Waters Rise, They Have No One But Us
+            Flood Animal Rescue When Waters Rise, They Have No One But Us
           </h1>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Every monsoon season, India's floods devastate millions of animals. They cannot evacuate. They cannot call for help. They can only wait — stranded on rooftops, clinging to trees, submerged in rising water — hoping someone will come. This campaign is that someone.
+            Every monsoon season, India's floods devastate millions of animals. They cannot evacuate. They cannot call for help. They can only wait stranded on rooftops, clinging to trees, submerged in rising water hoping someone will come. This campaign is that someone.
           </p>
 
           {/* Trust Badges */}
@@ -557,7 +557,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
-                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="text-green-700 mt-0.5 shrink-0">
@@ -692,7 +692,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>15 days left — monsoon season is approaching</span>
+                  <span>15 days left monsoon season is approaching</span>
                 </div>
 
                 {/* Share Section */}

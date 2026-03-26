@@ -86,7 +86,7 @@ const HowToVolunteerIndia = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Why Volunteer in India?</h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            India faces enormous social challenges — child illiteracy, animal welfare crises, gender inequality and recurring disaster emergencies. NGOs doing frontline work are often short-staffed and deeply underfunded. Skilled volunteers can multiply their impact many times over.
+            India faces enormous social challenges child illiteracy, animal welfare crises, gender inequality and recurring disaster emergencies. NGOs doing frontline work are often short-staffed and deeply underfunded. Skilled volunteers can multiply their impact many times over.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 my-6">
             {[
@@ -154,7 +154,7 @@ const HowToVolunteerIndia = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Corporate Volunteering Programmes in India</h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <p className="text-gray-700 mb-6">
-            Many Indian companies are building structured corporate volunteering programmes — both for employee engagement and CSR compliance. The Giving Circle works with corporate teams to design and execute volunteering days.
+            Many Indian companies are building structured corporate volunteering programmes both for employee engagement and CSR compliance. The Giving Circle works with corporate teams to design and execute volunteering days.
           </p>
           <div className="grid md:grid-cols-2 gap-4 mb-6">
             {[

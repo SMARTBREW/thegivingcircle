@@ -72,7 +72,7 @@ const TopNGOsInDelhi2026 = () => {
         {/* Intro */}
         <section className="mb-12">
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Delhi NCR is home to some of India's most active and impactful NGOs — but also to thousands of poorly run or opaque organisations. This guide lists only the NGOs that passed our multi-layer verification in 2026.
+            Delhi NCR is home to some of India's most active and impactful NGOs but also to thousands of poorly run or opaque organisations. This guide lists only the NGOs that passed our multi-layer verification in 2026.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
             We evaluated over 100 Delhi-based NGOs on financial transparency, programme delivery, governance and impact reporting. Here are the ones that made the cut.
@@ -122,9 +122,9 @@ const TopNGOsInDelhi2026 = () => {
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <div className="space-y-4">
             {[
-              { tip: 'Match your values', body: 'Choose a cause that resonates with you personally — education, animal welfare, women empowerment or disaster relief. Sustained giving comes from genuine alignment.' },
+              { tip: 'Match your values', body: 'Choose a cause that resonates with you personally education, animal welfare, women empowerment or disaster relief. Sustained giving comes from genuine alignment.' },
               { tip: 'Verify independently', body: 'Check FCRA on MHA\'s portal and 80G on the Income Tax website. Never donate based on social media posts alone.' },
-              { tip: 'Ask for impact data', body: 'Any credible NGO will share outcome data — not just photos, but numbers: how many children educated, animals treated, families fed.' },
+              { tip: 'Ask for impact data', body: 'Any credible NGO will share outcome data not just photos, but numbers: how many children educated, animals treated, families fed.' },
               { tip: 'Check overhead ratios', body: 'Administrative expenses above 30% of total spending is a red flag. The Giving Circle displays this for all listed NGOs.' },
             ].map(({ tip, body }) => (
               <div key={tip} className="flex items-start gap-3 bg-white rounded-lg p-4 border border-gray-100">
@@ -167,7 +167,7 @@ const TopNGOsInDelhi2026 = () => {
             Donate to a Verified Delhi NGO Today
           </h2>
           <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Safe, transparent, impactful — every cause on The Giving Circle is independently verified.
+            Safe, transparent, impactful every cause on The Giving Circle is independently verified.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/live-causes" className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">

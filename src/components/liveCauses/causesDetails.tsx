@@ -215,7 +215,7 @@ const CauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Wings Of Hope: Quality Education for Underprivileged Children | Donate to KHUSHII — The Giving Circle"
+        title="Wings Of Hope: Quality Education for Underprivileged Children | Donate to KHUSHII The Giving Circle"
         description="Breaking the cycle of poverty through quality education. Wings Of Hope provides educational support, learning centers, and resources to underprivileged children. 62% funded. 18 days left. Donate now. Tax-deductible under 80G."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings Of Hope, education, children, verified charity, donate to NGO India, transparent charity, impact stories"
         canonicalUrl="https://www.thegivingcircle.in/causes-details"
@@ -547,7 +547,7 @@ const CauseDetailPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
-                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="text-green-700 mt-0.5 shrink-0">
@@ -682,7 +682,7 @@ const CauseDetailPage = () => {
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>18 days left — help us reach our goal</span>
+                  <span>18 days left help us reach our goal</span>
                 </div>
 
                 {/* Share Section */}

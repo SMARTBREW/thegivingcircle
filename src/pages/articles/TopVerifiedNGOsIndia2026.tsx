@@ -87,10 +87,10 @@ const TopVerifiedNGOsIndia2026 = () => {
         {/* Intro */}
         <section className="mb-12">
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            India has over 3.3 million registered NGOs — but fewer than 1% have independently verified financials, active FCRA registration and published impact data. Finding the right charity to donate to can feel overwhelming and risky.
+            India has over 3.3 million registered NGOs but fewer than 1% have independently verified financials, active FCRA registration and published impact data. Finding the right charity to donate to can feel overwhelming and risky.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed mb-6">
-            This guide cuts through the noise. We've ranked the most transparent, impactful and donor-trusted NGOs operating in India in 2026 — all listed on The Giving Circle's verified platform.
+            This guide cuts through the noise. We've ranked the most transparent, impactful and donor-trusted NGOs operating in India in 2026 all listed on The Giving Circle's verified platform.
           </p>
           <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg">
             <p className="text-green-900 font-medium">Our Verification Criteria: FCRA status · 80G certification · Audited financials · Programme verification · Quarterly impact reporting · Donor satisfaction score</p>
@@ -166,7 +166,7 @@ const TopVerifiedNGOsIndia2026 = () => {
             {[
               'Always verify FCRA status on the Ministry of Home Affairs portal (fcraonline.nic.in) before donating.',
               'Check 80G status on the Income Tax Department website to confirm tax deductibility.',
-              'Ask for annual reports — any legitimate NGO will share them willingly.',
+              'Ask for annual reports any legitimate NGO will share them willingly.',
               'Prefer NGOs that show outcome data (lives changed) not just output data (money spent).',
               'Be cautious of NGOs that spend more than 30% on administration and fundraising costs.',
               'Donate through platforms like The Giving Circle that pre-verify all partners.',

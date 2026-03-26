@@ -246,7 +246,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Sponsor Anti Rabies Vaccine for Dogs — Save Stray Dogs from Rabies
+            Sponsor Anti Rabies Vaccine for Dogs Save Stray Dogs from Rabies
           </h1>
           <div className="w-20 h-1.5 bg-green-700 mb-8"></div>
 
@@ -341,7 +341,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   The tragedy is compounded by what happens when rabies spreads. Once symptoms appear, rabies is almost always fatal. People bitten by rabid animals face a race against time to receive post-exposure prophylaxis. Animals showing symptoms must be euthanized. Communities panic. The cycle of fear and disease continues, affecting both animal welfare and public health.
                 </p>
                 <p className="text-gray-600 leading-relaxed text-xs sm:text-sm md:text-base break-words">
-                  And then there is the suffering. During rabies outbreaks, animals are often feared and harmed. They cannot protect themselves. They cannot ask for help. They can only wait — hoping someone will vaccinate them, someone will prevent the disease, someone will save lives. The most heartbreaking aspect of rabies deaths is how preventable many of them are. In most cases, animals did not need sophisticated solutions. They just needed someone to vaccinate them.
+                  And then there is the suffering. During rabies outbreaks, animals are often feared and harmed. They cannot protect themselves. They cannot ask for help. They can only wait hoping someone will vaccinate them, someone will prevent the disease, someone will save lives. The most heartbreaking aspect of rabies deaths is how preventable many of them are. In most cases, animals did not need sophisticated solutions. They just needed someone to vaccinate them.
                 </p>
               </div>
             </section>
@@ -546,7 +546,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
-                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="text-green-700 mt-0.5 shrink-0">
@@ -681,7 +681,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>18 days left — help achieve Zero Rabies Deaths by 2030</span>
+                  <span>18 days left help achieve Zero Rabies Deaths by 2030</span>
                 </div>
 
                 {/* Share Section */}

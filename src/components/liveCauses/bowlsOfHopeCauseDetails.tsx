@@ -525,7 +525,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
-                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="text-green-700 mt-0.5 shrink-0">
@@ -660,7 +660,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>18 days left — help feed hungry animals</span>
+                  <span>18 days left help feed hungry animals</span>
                 </div>
 
                 {/* Share Section */}

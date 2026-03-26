@@ -5,7 +5,7 @@ import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const faqs = [
-  { q: 'Is The Giving Circle the same as a giving circle?', a: 'Yes — The Giving Circle is a platform built on the giving circle model. It enables groups of people to pool charitable donations and give collectively to verified causes.' },
+  { q: 'Is The Giving Circle the same as a giving circle?', a: 'Yes The Giving Circle is a platform built on the giving circle model. It enables groups of people to pool charitable donations and give collectively to verified causes.' },
   { q: 'How much do I need to donate to join?', a: 'There is no minimum. Most Cause Champions start with ₹500–₹1,000 per month. The power comes from pooling, not individual amount sizes.' },
   { q: 'Are giving circle donations tax deductible?', a: 'Yes. All individual donations through The Giving Circle to 80G-certified NGOs qualify for Section 80G tax deduction. Receipts are generated automatically.' },
   { q: 'Can I choose which causes my money goes to?', a: 'You can express preferences and choose from active causes. The collective decision-making process means final allocation considers all members\' preferences.' },
@@ -93,7 +93,7 @@ const WhatIsAGivingCircle = () => {
             A <strong>giving circle</strong> is a group of individuals who pool their financial resources and decide together how to donate to charitable causes. Rather than each person donating small amounts independently, members of a giving circle combine their contributions to make larger, more impactful grants to verified NGOs.
           </p>
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Think of it like this: if 50 people each donate ₹1,000, they create a ₹50,000 grant that can fund a child's entire year of education — something no single small donation could achieve.
+            Think of it like this: if 50 people each donate ₹1,000, they create a ₹50,000 grant that can fund a child's entire year of education something no single small donation could achieve.
           </p>
           <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg">
             <p className="text-green-900"><strong>In short:</strong> A giving circle turns small donations into collective impact.</p>
@@ -109,9 +109,9 @@ const WhatIsAGivingCircle = () => {
             {[
               { step: 1, title: 'Members Join', body: 'Individuals or families join the giving circle, committing a recurring monthly or annual contribution (as low as ₹500/month).' },
               { step: 2, title: 'Funds Pool', body: 'All contributions are pooled into a collective fund managed by the platform with full transparency.' },
-              { step: 3, title: 'Causes are Vetted', body: 'The platform presents verified, vetted NGO causes to the group — covering education, animal welfare, disaster relief and more.' },
+              { step: 3, title: 'Causes are Vetted', body: 'The platform presents verified, vetted NGO causes to the group covering education, animal welfare, disaster relief and more.' },
               { step: 4, title: 'Collective Decision', body: 'Members can vote on or influence which causes receive funding that cycle, creating genuine community ownership.' },
-              { step: 5, title: 'Impact is Tracked', body: 'After funds are deployed, members receive quarterly impact reports showing outcomes — children educated, animals rescued, families fed.' },
+              { step: 5, title: 'Impact is Tracked', body: 'After funds are deployed, members receive quarterly impact reports showing outcomes children educated, animals rescued, families fed.' },
             ].map(({ step, title, body }) => (
               <div key={step} className="flex items-start gap-4 bg-white rounded-lg p-4 border border-gray-100">
                 <div className="flex-shrink-0 w-10 h-10 bg-green-700 text-white rounded-full flex items-center justify-center font-bold">{step}</div>
@@ -178,7 +178,7 @@ const WhatIsAGivingCircle = () => {
           <div className="space-y-4">
             {[
               { step: 1, action: 'Sign up as a Cause Champion', desc: 'Create your profile on The Giving Circle and choose your giving amount.' },
-              { step: 2, action: 'Choose your cause areas', desc: 'Select which causes matter most to you — education, animals, disaster relief or women empowerment.' },
+              { step: 2, action: 'Choose your cause areas', desc: 'Select which causes matter most to you education, animals, disaster relief or women empowerment.' },
               { step: 3, action: 'Set up a recurring contribution', desc: 'Any amount from ₹500/month. Pause or cancel any time.' },
               { step: 4, action: 'Track your collective impact', desc: 'Receive quarterly reports showing the collective outcomes your giving circle achieved.' },
             ].map(({ step, action, desc }) => (

@@ -6,7 +6,7 @@ import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const faqs = [
   { q: 'Do I need prior experience to volunteer with an NGO in Delhi?', a: 'No. Most NGOs welcome first-time volunteers and provide training. Enthusiasm and consistency matter more than prior experience.' },
-  { q: 'Can corporate employees volunteer as a team?', a: 'Yes — most NGO partners welcome corporate volunteering groups and can structure team volunteering days. This also counts toward employee engagement and CSR programmes.' },
+  { q: 'Can corporate employees volunteer as a team?', a: 'Yes most NGO partners welcome corporate volunteering groups and can structure team volunteering days. This also counts toward employee engagement and CSR programmes.' },
   { q: 'Is weekend volunteering available?', a: 'Yes. Most teaching and feeding drive opportunities are available on Saturdays and Sundays for working professionals.' },
   { q: 'Can I volunteer remotely?', a: 'Yes. Skills-based volunteering (design, accounting, IT, social media) can be done entirely remotely. Several NGOs also have remote education support roles.' },
 ];
@@ -83,7 +83,7 @@ const VolunteerOpportunitiesDelhi = () => {
               { type: 'Teaching & Tutoring', desc: 'Teach underprivileged children English, Maths or digital skills. Flexible weekend slots available.', commitment: '2–4 hrs/week', icon: '✏️' },
               { type: 'Animal Rescue & Care', desc: 'Assist with stray animal rescues, feeding drives and vaccination camps across Delhi.', commitment: '4 hrs/week', icon: '🐾' },
               { type: 'Fundraising & Awareness', desc: 'Help NGOs run donation campaigns, social media drives and donor engagement events.', commitment: 'Flexible', icon: '📢' },
-              { type: 'Skills-Based Volunteering', desc: 'Offer professional skills — accounting, legal, IT, design or marketing — to help NGOs operate better.', commitment: 'Project-based', icon: '💼' },
+              { type: 'Skills-Based Volunteering', desc: 'Offer professional skills accounting, legal, IT, design or marketing to help NGOs operate better.', commitment: 'Project-based', icon: '💼' },
               { type: 'Community Outreach', desc: 'Door-to-door awareness drives about education, health and sanitation in low-income neighbourhoods.', commitment: '1 day/month', icon: '🏘️' },
               { type: 'Event Support', desc: 'Help organise fundraising events, education camps, vaccination drives and cultural programmes.', commitment: 'Event-based', icon: '🎪' },
             ].map(({ type, desc, commitment, icon }) => (
@@ -131,7 +131,7 @@ const VolunteerOpportunitiesDelhi = () => {
           <div className="space-y-4">
             {[
               { step: 1, action: 'Explore the NGO profiles above', body: 'Read about each organisation\'s cause, culture and volunteer requirements.' },
-              { step: 2, action: 'Register on The Giving Circle', body: 'Create a profile as a Cause Champion — this connects you to our NGO partner network.' },
+              { step: 2, action: 'Register on The Giving Circle', body: 'Create a profile as a Cause Champion this connects you to our NGO partner network.' },
               { step: 3, action: 'Select your preferred NGO', body: 'Reach out through the cause page or contact form. Our team can facilitate introductions.' },
               { step: 4, action: 'Complete orientation', body: 'Most NGOs have a 1–2 hour online or in-person orientation before your first session.' },
               { step: 5, action: 'Show up and create impact', body: 'Begin your volunteering journey. Track your hours and impact through your profile dashboard.' },

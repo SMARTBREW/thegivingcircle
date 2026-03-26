@@ -50,7 +50,7 @@ export async function seedBlogPostsFromJsonIfEmpty() {
   } catch (err) {
     if (err && err.code === 'ENOENT') {
       console.warn(
-        '⚠️  Blog collection is empty and no blog-posts.json found — add posts via API or seed file.'
+        '⚠️  Blog collection is empty and no blog-posts.json found add posts via API or seed file.'
       );
       return;
     }

@@ -250,7 +250,7 @@ const KhushiCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Donate for Menstrual Hygiene — Help Girls Stay in School During Periods
+            Donate for Menstrual Hygiene Help Girls Stay in School During Periods
           </h1>
           <div className="w-20 h-1.5 bg-green-700 mb-8"></div>
 
@@ -550,7 +550,7 @@ const KhushiCauseDetailPage = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
-                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G — all donations are tax-deductible</span>
+                    <span className="text-sm sm:text-base text-gray-700">Registered under Section 80G all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="text-green-700 mt-0.5 shrink-0">
@@ -685,7 +685,7 @@ const KhushiCauseDetailPage = () => {
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>22 days left — help break period poverty barriers</span>
+                  <span>22 days left help break period poverty barriers</span>
                 </div>
 
                 {/* Share Section */}

@@ -84,14 +84,14 @@ export const BLOG_POSTS: BlogPost[] = [
         heading: 'How to Choose a Verified NGO',
         paragraphs: [
           'A “verified” NGO should have documentation and transparency standards. On The Giving Circle, we focus on causes where verification and reporting help reduce uncertainty.',
-          'Before you donate, look for clear beneficiary focus, documented operations, and regular updates that show outcomes—not just announcements.',
+          'Before you donate, look for clear beneficiary focus, documented operations, and regular updates that show outcomes not just announcements.',
         ],
         callout:
           'Prefer NGOs that share utilization/impact reporting regularly and clearly explain what your funds support.',
       },
       {
         heading: 'Common Mistakes to Avoid',
-        paragraphs: [
+        paragraphs: [ 
           'Avoid these pitfalls when donating for child education:',
         ],
         bullets: [
