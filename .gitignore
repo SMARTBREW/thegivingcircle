@@ -23,6 +23,8 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.env.local
+.env.development.local
 server/.env
 
 # Documentation files
