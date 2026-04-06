@@ -113,7 +113,7 @@ const VerifiedNGOsInDelhi = () => {
           <div className="grid md:grid-cols-2 gap-6">
             {[
               { name: "JWP (Joint Women's Program)", cause: 'Education', description: 'Provides after-school tutoring, digital literacy and livelihood skills to underprivileged children in Delhi.', href: '/jwp-cause-details' },
-              { name: 'Khushi Foundation', cause: 'Education & Welfare', description: 'Holistic education and community welfare programmes across Delhi NCR with a focus on girl child education.', href: '/jwp-cause-details' },
+              // { name: 'Khushi Foundation', cause: 'Education & Welfare', description: 'Holistic education and community welfare programmes across Delhi NCR with a focus on girl child education.', href: '/jwp-cause-details' },
               { name: 'AnimalCare India', cause: 'Animal Welfare', description: 'Stray animal rescue, vaccination and care programmes operating across Delhi and surrounding districts.', href: '/animalcare-ngo-detail' },
               { name: 'Partner Your NGO', cause: 'All Causes', description: 'Are you a Delhi-based NGO with FCRA and 80G status? Apply to be listed and reach thousands of verified donors.', href: '/ngo-partner' },
             ].map(({ name, cause, description, href }) => (

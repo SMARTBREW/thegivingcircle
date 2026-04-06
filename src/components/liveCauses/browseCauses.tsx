@@ -229,8 +229,6 @@ const LiveCausesPage = () => {
   const handleCardClick = (cause: any) => {
     if (cause.title === 'Wings of Hope') {
       window.location.href = `/jwp-cause-details`;
-    } else if (cause.ngo === 'KHUSHII') {
-      window.location.href = `/jwp-cause-details`;
     } else if (cause.title === 'Pawsitive Protectors') {
       window.location.href = `/pawsitive-protectors-cause-details`;
     } else if (cause.title === 'Bowls of Hope') {

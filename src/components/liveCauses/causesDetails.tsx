@@ -46,8 +46,8 @@ const CauseDetailPage = () => {
     id: 1,
     title: 'Wings Of Hope',
     subtitle: 'Breaking the cycle of poverty through quality education',
-    organizer: 'KHUSHII',
-    ngo: 'KHUSHII',
+    organizer: 'JWP',
+    ngo: 'JWP',
     location: 'Mumbai, Maharashtra',
     category: 'Education',
     goalAmount: '₹4,50,000',
@@ -201,7 +201,7 @@ const CauseDetailPage = () => {
 
   // NGO details
   const ngoDetails = {
-    name: 'KHUSHII',
+    name: 'JWP',
     logo: 'https://khushii.org/wp-content/uploads/2021/01/khushii-black-logo.png',
     tagline: 'Spreading Happiness Through Education',
     stats: {
@@ -215,7 +215,7 @@ const CauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Wings Of Hope: Quality Education for Underprivileged Children | Donate to KHUSHII The Giving Circle"
+        title="Wings Of Hope: Quality Education for Underprivileged Children | Donate to The Giving Circle"
         description="Breaking the cycle of poverty through quality education. Wings Of Hope provides educational support, learning centers, and resources to underprivileged children. 62% funded. 18 days left. Donate now. Tax-deductible under 80G."
         keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings Of Hope, education, children, verified charity, donate to NGO India, transparent charity, impact stories"
         canonicalUrl="https://www.thegivingcircle.in/causes-details"
@@ -228,7 +228,7 @@ const CauseDetailPage = () => {
         category="Education"
         location="Mumbai, Maharashtra"
         datePublished="2024-01-15"
-        author="KHUSHII"
+        author="JWP"
       />
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
@@ -500,9 +500,9 @@ const CauseDetailPage = () => {
             </section>
 
             {/* Section 6: About NGO */}
-            <section aria-label="About KHUSHII" className="mb-8 sm:mb-12">
+            <section aria-label="About JWP" className="mb-8 sm:mb-12">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-                About KHUSHII
+                About JWP
               </h2>
               <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 

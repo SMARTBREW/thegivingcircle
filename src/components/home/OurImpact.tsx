@@ -33,7 +33,7 @@ export const OurImpact: React.FC = () => {
             viewport={{ once: true }}
             className="text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto leading-relaxed"
           >
-            "The Giving Circle has transformed how we create impact together through our giving platform and community support platform. Our giving community connects passionate Cause Champions with verified NGO partners (JWP, Animal Care, KHUSHII, and GUS) to support social causes. Through social giving and community support, we've built a support circle where every contribution creates a circle of support. Give and help us build lasting change for India."
+            "The Giving Circle has transformed how we create impact together through our giving platform and community support platform. Our giving community connects passionate Cause Champions with verified NGO partners (JWP, Animal Care, and GUS) to support social causes. Through social giving and community support, we've built a support circle where every contribution creates a circle of support. Give and help us build lasting change for India."
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
