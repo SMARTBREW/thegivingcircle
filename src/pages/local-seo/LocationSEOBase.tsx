@@ -141,7 +141,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
       <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-            Leading NGOs in {location} — Verified & Trusted
+            Leading NGOs in {location}  -  Verified & Trusted
           </h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
@@ -306,7 +306,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
             Ready to Make a Difference in {location}?
           </h2>
           <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join The Giving Circle to connect with verified NGOs creating real impact — and track your contribution transparently.
+            Join The Giving Circle to connect with verified NGOs creating real impact  -  and track your contribution transparently.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

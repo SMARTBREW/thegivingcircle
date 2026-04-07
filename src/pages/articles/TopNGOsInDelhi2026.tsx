@@ -13,7 +13,7 @@ const TopNGOsInDelhi2026 = () => {
         description="Find the most trusted and transparent NGOs in Delhi in 2026. Ranked by impact, transparency and donor trust. Includes 80G status, cause areas and how to donate safely."
         keywords="top NGOs in Delhi 2026, best NGOs Delhi, trusted charities Delhi, donate to NGO Delhi, verified Delhi NGOs, most transparent NGOs Delhi, top charities Delhi NCR"
         canonicalUrl="https://www.thegivingcircle.in/top-ngos-in-delhi-2026"
-        ogTitle="Top NGOs in Delhi 2026 — Trusted Charities | The Giving Circle"
+        ogTitle="Top NGOs in Delhi 2026  -  Trusted Charities | The Giving Circle"
         ogDescription="Delhi's most trusted NGOs ranked by transparency, impact and donor satisfaction. 80G tax benefits available."
       />
       <ArticleSchema

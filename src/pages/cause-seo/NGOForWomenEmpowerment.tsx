@@ -26,7 +26,7 @@ const NGOForWomenEmpowerment = () => {
         ogDescription="Donate to verified NGOs enabling women's rights, livelihood and safety in India."
       />
       <ArticleSchema
-        title="NGOs for Women Empowerment in India — Donate to Verified Organisations"
+        title="NGOs for Women Empowerment in India  -  Donate to Verified Organisations"
         description="Support women empowerment in India by donating to verified NGOs. 80G tax benefits and real impact tracking."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
@@ -51,7 +51,7 @@ const NGOForWomenEmpowerment = () => {
             NGOs for Women Empowerment in India
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Millions of women across India lack access to education, economic opportunities and basic safety. Donating to verified women empowerment NGOs creates lasting change — and qualifies for 80G tax deductions.
+            Millions of women across India lack access to education, economic opportunities and basic safety. Donating to verified women empowerment NGOs creates lasting change  -  and qualifies for 80G tax deductions.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -131,7 +131,7 @@ const NGOForWomenEmpowerment = () => {
           <p className="text-gray-600 mb-6">While The Giving Circle is actively onboarding dedicated women empowerment NGOs, here are live causes where women form a key beneficiary group.</p>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Khushi (JWP) — Women & Girls Education</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">Khushi (JWP)  -  Women & Girls Education</h3>
               <p className="text-gray-700 text-sm mb-3">JWP's programmes include education support for girls from low-income families, helping them stay in school and build futures.</p>
               <Link to="/jwp-cause-details" className="text-green-700 font-medium text-sm hover:text-green-900">View Cause →</Link>
             </div>
@@ -152,7 +152,7 @@ const NGOForWomenEmpowerment = () => {
               { title: '✓ Verified NGOs', body: 'Every partner NGO is independently verified for FCRA, 80G and financial transparency.' },
               { title: '✓ 80G Tax Benefits', body: 'Claim tax deductions on donations. Auto-generated receipts sent by email.' },
               { title: '✓ Collective Giving', body: 'Your donation pools with others to fund larger women empowerment programmes.' },
-              { title: '✓ Impact Tracking', body: 'Regular updates on programme outcomes — number of women trained, employed or educated.' },
+              { title: '✓ Impact Tracking', body: 'Regular updates on programme outcomes  -  number of women trained, employed or educated.' },
               { title: '✓ Corporate CSR', body: 'Women empowerment qualifies under Schedule VII CSR. We help structure your corporate giving.' },
               { title: '✓ 100% Transparency', body: 'Full fund utilisation reports published publicly for every active cause.' },
             ].map(({ title, body }) => (

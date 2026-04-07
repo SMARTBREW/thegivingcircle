@@ -54,7 +54,7 @@ export const BLOG_POSTS: BlogPost[] = [
       {
         heading: 'Why Child Education Donations Matter',
         paragraphs: [
-          'When children stay in school, families break the cycle of poverty over time. Education funding doesn’t only cover textbooks—it supports attendance, learning, and long-term pathways to livelihoods.',
+          'When children stay in school, families break the cycle of poverty over time. Education funding doesn’t only cover textbooks - it supports attendance, learning, and long-term pathways to livelihoods.',
           'But education impact depends on execution quality. That’s why choosing the right, verified NGO and understanding how your donation is tracked matters just as much as the amount you contribute.',
         ],
         callout:

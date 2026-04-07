@@ -33,7 +33,7 @@ const TopVerifiedNGOsIndia2026 = () => {
         ogDescription="India's top-ranked verified NGOs by transparency, impact and trust. 80G tax benefits available."
       />
       <ArticleSchema
-        title="Top Verified NGOs in India 2026 — With Tax Benefits & Impact Scores"
+        title="Top Verified NGOs in India 2026  -  With Tax Benefits & Impact Scores"
         description="Discover India's top verified NGOs in 2026 ranked by transparency, impact and trust."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}

@@ -138,8 +138,8 @@ const LiveCausesPage = () => {
         '3 new learning centres operational'
       ]
     },
-    // id: 6 (NGOs for Women Empowerment) — hidden
-    // id: 7 (CSR Projects in India) — hidden
+    // id: 6 (NGOs for Women Empowerment)  -  hidden
+    // id: 7 (CSR Projects in India)  -  hidden
     // KHUSHII causes
     // {
     //   id: 5,

@@ -37,7 +37,7 @@ const DonateForEducationIndia = () => {
     },
     {
       question: "How will I receive updates after donating?",
-      answer: "You will receive a welcome email within 24 hours, followed by quarterly impact updates with photos and outcome data from the ground. Major milestones — like when a new learning centre opens — are communicated directly to donors."
+      answer: "You will receive a welcome email within 24 hours, followed by quarterly impact updates with photos and outcome data from the ground. Major milestones  -  like when a new learning centre opens  -  are communicated directly to donors."
     }
   ];
 
@@ -80,7 +80,7 @@ const DonateForEducationIndia = () => {
     ],
 
     solution: {
-      approach: 'JWP provides holistic, sustained education support to underprivileged children in Delhi NCR — covering fees, materials, after-school tutoring, digital literacy and life skills training. Every child enrolled gets a complete support package, not just a one-time donation.',
+      approach: 'JWP provides holistic, sustained education support to underprivileged children in Delhi NCR  -  covering fees, materials, after-school tutoring, digital literacy and life skills training. Every child enrolled gets a complete support package, not just a one-time donation.',
       components: [
         'School fee sponsorship and uniform + stationery kits',
         'Daily after-school tutoring centres across Delhi NCR',
@@ -102,7 +102,7 @@ const DonateForEducationIndia = () => {
       { type: 'Learning', image: EDUCATION_IMAGE_URLS.classroom, caption: 'Girls staying in school through JWP\'s scholarship programme' },
       { type: 'Digital', image: EDUCATION_IMAGE_URLS.digital, caption: 'Digital literacy sessions opening new opportunities' },
       { type: 'Community', image: EDUCATION_IMAGE_URLS.community, caption: 'Community engagement building parent awareness' },
-      { type: 'Milestone', image: EDUCATION_IMAGE_URLS.milestone, caption: 'Every milestone celebrated — small wins matter' }
+      { type: 'Milestone', image: EDUCATION_IMAGE_URLS.milestone, caption: 'Every milestone celebrated  -  small wins matter' }
     ],
 
     expectedOutcomes: [
@@ -164,7 +164,7 @@ const DonateForEducationIndia = () => {
 
   const ngoDetails = {
     name: "JWP - Joint Women's Program",
-    tagline: 'Every child deserves a future — we make that possible',
+    tagline: 'Every child deserves a future  -  we make that possible',
     stats: {
       transparency: 96,
       programSpend: 95,
@@ -183,7 +183,7 @@ const DonateForEducationIndia = () => {
         ogImage={EDUCATION_IMAGE_URLS.hero}
       />
       <ArticleSchema
-        title="Donate for Child Education in India — Verified NGOs with Real Impact"
+        title="Donate for Child Education in India  -  Verified NGOs with Real Impact"
         description="Support child education in India by donating to verified NGOs through The Giving Circle. 80G tax benefits available."
         image={EDUCATION_IMAGE_URLS.hero}
         category="Child Education"
@@ -196,11 +196,11 @@ const DonateForEducationIndia = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Donate for Child Education in India — Every ₹500 Opens a Door
+            Donate for Child Education in India  -  Every ₹500 Opens a Door
           </h1>
 
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Over 250 million children in India are out of school or learning below grade level. In Delhi NCR's low-income communities, children drop out not because they lack ability — but because their families cannot afford school fees, books or uniforms. This campaign changes that.
+            Over 250 million children in India are out of school or learning below grade level. In Delhi NCR's low-income communities, children drop out not because they lack ability  -  but because their families cannot afford school fees, books or uniforms. This campaign changes that.
           </p>
 
           {/* Trust Badges */}
@@ -255,7 +255,7 @@ const DonateForEducationIndia = () => {
 
               <div className="prose prose-lg text-gray-600 mb-4 sm:mb-6 md:mb-8">
                 <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
-                  India's Right to Education Act guarantees free schooling up to Class 8. But the reality for millions of low-income families in Delhi NCR is far more complicated. Tuition fees, uniforms, school bags, stationery, exam fees, and private coaching costs all fall on parents who earn ₹8,000–₹15,000 a month. When money runs out, children — especially girls — are the first casualty.
+                  India's Right to Education Act guarantees free schooling up to Class 8. But the reality for millions of low-income families in Delhi NCR is far more complicated. Tuition fees, uniforms, school bags, stationery, exam fees, and private coaching costs all fall on parents who earn ₹8,000–₹15,000 a month. When money runs out, children  -  especially girls  -  are the first casualty.
                 </p>
                 <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
                   In the communities JWP works across Delhi NCR, over 60% of enrolled children are at risk of dropping out between Classes 5 and 9. These are the critical years when foundational skills solidify and pathways to higher education open or close permanently. A child who drops out at Class 7 will, statistically, never return to formal education. The window is narrow and irreversible.
@@ -282,10 +282,10 @@ const DonateForEducationIndia = () => {
               <div>
                 <h3 className="text-base sm:text-lg md:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 md:mb-6 break-words">The Hidden Costs That Keep Children Out of School</h3>
                 <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
-                  The government school may be free, but education is not. In a typical year, a family in Delhi NCR pays ₹2,000–₹5,000 for books, notebooks and stationery. School uniforms cost ₹800–₹1,500. Examination fees, project materials, and field trips add more. Private coaching — considered essential to pass Class 10 and 12 board exams — can cost ₹1,500–₹3,000 per month. For a family earning ₹12,000 a month, these costs represent an impossible burden.
+                  The government school may be free, but education is not. In a typical year, a family in Delhi NCR pays ₹2,000–₹5,000 for books, notebooks and stationery. School uniforms cost ₹800–₹1,500. Examination fees, project materials, and field trips add more. Private coaching  -  considered essential to pass Class 10 and 12 board exams  -  can cost ₹1,500–₹3,000 per month. For a family earning ₹12,000 a month, these costs represent an impossible burden.
                 </p>
                 <p className="text-gray-600 leading-relaxed mb-4 text-xs sm:text-sm md:text-base break-words">
-                  JWP covers all of these costs for enrolled children — fees, materials, uniforms and coaching — removing the financial barriers that cause dropout entirely. The effect is immediate and measurable. Attendance in JWP-enrolled children averages over 85%, compared to 62% for non-enrolled peers in the same communities.
+                  JWP covers all of these costs for enrolled children  -  fees, materials, uniforms and coaching  -  removing the financial barriers that cause dropout entirely. The effect is immediate and measurable. Attendance in JWP-enrolled children averages over 85%, compared to 62% for non-enrolled peers in the same communities.
                 </p>
               </div>
             </section>
@@ -302,7 +302,7 @@ const DonateForEducationIndia = () => {
 
               <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 mt-6">Digital Literacy as a Core Programme</h3>
               <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
-                JWP responded to the digital gap by making digital literacy a core component of every learning centre. Donated tablets and locally hosted educational content give children access to quality learning materials even without internet. Teachers are trained to integrate digital tools into daily lessons. Children learn to use productivity software, research skills and basic coding — skills that directly impact their employment prospects after Class 12.
+                JWP responded to the digital gap by making digital literacy a core component of every learning centre. Donated tablets and locally hosted educational content give children access to quality learning materials even without internet. Teachers are trained to integrate digital tools into daily lessons. Children learn to use productivity software, research skills and basic coding  -  skills that directly impact their employment prospects after Class 12.
               </p>
               <p className="text-gray-700 leading-relaxed mb-4 text-sm sm:text-base">
                 In the 2024–25 academic year, JWP distributed 120 digital kits across its learning centres. Children who used digital tools showed a 34% improvement in English and Math assessment scores compared to baseline within six months.
@@ -318,7 +318,7 @@ const DonateForEducationIndia = () => {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 70vw, 800px"
                 />
                 <figcaption className="text-xs sm:text-sm text-gray-600 mt-2 text-center italic">
-                  Digital literacy is no longer optional — JWP's programme bridges the gap for children left behind.
+                  Digital literacy is no longer optional  -  JWP's programme bridges the gap for children left behind.
                 </figcaption>
               </figure>
 
@@ -351,9 +351,9 @@ const DonateForEducationIndia = () => {
                   Child education qualifies under Schedule VII of the Companies Act. JWP provides full MoU, utilisation certificates and impact reports for CSR compliance. Minimum CSR contribution: ₹5 lakh.
                 </p>
                 <ul className="list-disc ml-5 text-gray-700 space-y-2">
-                  <li>Sponsor a classroom (₹50,000 — covers 20 children for one year)</li>
-                  <li>Fund a digital literacy kit deployment (₹30,000 — 20 tablets + teacher training)</li>
-                  <li>Support a girls' scholarship cohort (₹75,000 — 15 girls through Class 10)</li>
+                  <li>Sponsor a classroom (₹50,000  -  covers 20 children for one year)</li>
+                  <li>Fund a digital literacy kit deployment (₹30,000  -  20 tablets + teacher training)</li>
+                  <li>Support a girls' scholarship cohort (₹75,000  -  15 girls through Class 10)</li>
                 </ul>
               </div>
             </section>
@@ -371,7 +371,7 @@ const DonateForEducationIndia = () => {
                     <p className="text-gray-700 italic mb-4 text-sm sm:text-base leading-relaxed">"{testimonial.quote}"</p>
                     <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
                       <span className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</span>
-                      <span className="text-gray-400 hidden sm:inline">—</span>
+                      <span className="text-gray-400 hidden sm:inline"> - </span>
                       <span className="text-gray-500 text-xs sm:text-sm">{testimonial.role}</span>
                     </div>
                   </div>
@@ -453,7 +453,7 @@ const DonateForEducationIndia = () => {
                   </div>
                   <div className="flex items-start gap-3">
                     <FileText className="text-green-700 mt-0.5 shrink-0" size={18} />
-                    <span className="text-sm sm:text-base text-gray-700">Section 80G certified — all donations are tax-deductible</span>
+                    <span className="text-sm sm:text-base text-gray-700">Section 80G certified  -  all donations are tax-deductible</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="text-green-700 mt-0.5 shrink-0">
@@ -576,7 +576,7 @@ const DonateForEducationIndia = () => {
                   <svg width="14" height="14" fill="none" viewBox="0 0 24 24" className="flex-shrink-0">
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                  <span>{cause.daysLeft} days left — new academic year begins soon</span>
+                  <span>{cause.daysLeft} days left  -  new academic year begins soon</span>
                 </div>
 
                 {/* Share */}

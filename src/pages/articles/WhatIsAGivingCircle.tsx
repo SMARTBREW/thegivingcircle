@@ -134,7 +134,7 @@ const WhatIsAGivingCircle = () => {
               { title: 'Lower Overhead', body: 'Pooled giving reduces per-donation processing costs, meaning more of your money reaches beneficiaries.' },
               { title: 'Better Due Diligence', body: 'The platform performs thorough NGO verification that individuals rarely do before donating.' },
               { title: 'Sustained Impact', body: 'Recurring collective contributions fund multi-year programmes rather than one-off donations.' },
-              { title: 'Community & Learning', body: 'Members learn about causes, discuss impact and build a shared purpose — making giving meaningful beyond the money.' },
+              { title: 'Community & Learning', body: 'Members learn about causes, discuss impact and build a shared purpose  -  making giving meaningful beyond the money.' },
               { title: '80G Benefits', body: 'Each individual member still gets their personal 80G receipt for tax deduction on their contribution.' },
             ].map(({ title, body }) => (
               <div key={title} className="bg-white border border-gray-100 rounded-xl p-5 shadow-sm">

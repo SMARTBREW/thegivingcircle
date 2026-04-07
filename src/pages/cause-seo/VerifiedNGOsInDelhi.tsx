@@ -22,11 +22,11 @@ const VerifiedNGOsInDelhi = () => {
         description="Find verified, background-checked NGOs in Delhi you can safely donate to in 2026. All organisations have valid FCRA, 80G status and published audit reports. Tax benefits available."
         keywords="verified NGOs in Delhi, trusted NGOs Delhi, best NGOs Delhi 2026, donate to NGO Delhi, verified charities Delhi, background checked NGO Delhi, 80G NGO Delhi"
         canonicalUrl="https://www.thegivingcircle.in/verified-ngos-in-delhi"
-        ogTitle="Verified NGOs in Delhi — Trusted Charities 2026 | The Giving Circle"
+        ogTitle="Verified NGOs in Delhi  -  Trusted Charities 2026 | The Giving Circle"
         ogDescription="Delhi's most trusted NGOs verified for FCRA, 80G and financial transparency. Donate with confidence."
       />
       <ArticleSchema
-        title="Verified NGOs in Delhi — Trusted Charities You Can Donate To in 2026"
+        title="Verified NGOs in Delhi  -  Trusted Charities You Can Donate To in 2026"
         description="Find verified NGOs in Delhi with FCRA, 80G and audit trail. 80G tax benefits and real impact tracking."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
@@ -52,7 +52,7 @@ const VerifiedNGOsInDelhi = () => {
             Verified NGOs in Delhi
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Delhi has thousands of registered NGOs — but fewer than 20% have independently verified financials. The Giving Circle lists only background-checked organisations with valid FCRA, 80G and published audit reports.
+            Delhi has thousands of registered NGOs  -  but fewer than 20% have independently verified financials. The Giving Circle lists only background-checked organisations with valid FCRA, 80G and published audit reports.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -218,7 +218,7 @@ const VerifiedNGOsInDelhi = () => {
             Donate to a Verified Delhi NGO Today
           </h2>
           <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
-            Every organisation on The Giving Circle is independently verified. Give with confidence — and track your impact.
+            Every organisation on The Giving Circle is independently verified. Give with confidence  -  and track your impact.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/live-causes" className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">

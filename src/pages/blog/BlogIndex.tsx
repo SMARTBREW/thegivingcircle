@@ -53,7 +53,7 @@ const BlogIndex = () => {
             The Giving Circle Blog
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Practical, trust-first guides to help you donate confidently—especially for education giving, 80G tax benefits, and verified NGO impact.
+            Practical, trust-first guides to help you donate confidently - especially for education giving, 80G tax benefits, and verified NGO impact.
           </p>
         </div>
       </section>

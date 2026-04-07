@@ -39,7 +39,7 @@ const SEOHubIndex = () => {
           </nav>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            NGO Directory — Find Verified NGOs Near You
+            NGO Directory  -  Find Verified NGOs Near You
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
             Explore city-wise NGO listings and keyword directories across Delhi NCR. Every listing is designed to help donors discover verified NGOs and give with confidence.

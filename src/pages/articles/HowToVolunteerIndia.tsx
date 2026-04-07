@@ -8,7 +8,7 @@ const faqs = [
   { q: 'Do I need to know Hindi to volunteer in India?', a: 'Not necessarily. Many urban NGOs work in English or Hindi. For rural or community work, basic Hindi helps but isn\'t mandatory for most roles.' },
   { q: 'Can students volunteer with NGOs in India?', a: 'Absolutely. Many NGOs actively welcome college students for tutoring, awareness campaigns and event support. It also counts toward internship credits at many universities.' },
   { q: 'How many hours per week should I commit?', a: 'Most NGOs ask for a minimum of 2–4 hours per week for a minimum of 3 months. This gives you enough time to build rapport and create meaningful impact.' },
-  { q: 'Will I get a certificate for volunteering?', a: 'Yes — most NGOs provide experience certificates after completing a defined volunteering period. The Giving Circle also issues Cause Champion recognition badges.' },
+  { q: 'Will I get a certificate for volunteering?', a: 'Yes  -  most NGOs provide experience certificates after completing a defined volunteering period. The Giving Circle also issues Cause Champion recognition badges.' },
 ];
 
 const HowToVolunteerIndia = () => {
@@ -26,7 +26,7 @@ const HowToVolunteerIndia = () => {
         ogDescription="Practical guide to volunteering with NGOs in India. Find opportunities, understand what to expect and start today."
       />
       <ArticleSchema
-        title="How to Volunteer in India 2026 — Top NGOs & Opportunities"
+        title="How to Volunteer in India 2026  -  Top NGOs & Opportunities"
         description="A practical guide to volunteering with NGOs in India in 2026. How to find opportunities, what to expect and how to start today."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
@@ -160,7 +160,7 @@ const HowToVolunteerIndia = () => {
             {[
               { title: 'Teaching Days', body: 'Send a team of 10–50 employees to spend a day teaching at a partner NGO school.' },
               { title: 'Animal Welfare Drives', body: 'Organise a team feeding drive, rescue day or vaccination camp with AnimalCare India.' },
-              { title: 'Skills Clinics', body: 'Run a one-day skills workshop for NGO staff — HR, finance, marketing or IT.' },
+              { title: 'Skills Clinics', body: 'Run a one-day skills workshop for NGO staff  -  HR, finance, marketing or IT.' },
               { title: 'Fundraising Events', body: 'Organise an internal fundraiser with your company, amplified by The Giving Circle platform.' },
             ].map(({ title, body }) => (
               <div key={title} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">

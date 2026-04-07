@@ -8,7 +8,7 @@ const faqs = [
   { q: 'Can we donate to The Giving Circle directly as CSR?', a: 'Yes. The Giving Circle can act as an implementing agency if registered as a CSR-1 entity, or we can facilitate donations directly to our verified NGO partners who are registered implementing organisations.' },
   { q: 'What documentation do we get for CSR compliance?', a: 'We provide: NGO FCRA/80G certificates, MoU, fund utilisation certificates, impact reports, photographic evidence and Form CSR-2 support documentation.' },
   { q: 'Is animal welfare CSR-eligible in India?', a: 'Yes. Schedule VII Clause (iv) covers animal welfare, agroforestry, conservation of natural resources and biodiversity. Our animal welfare causes on The Giving Circle are eligible for CSR funding.' },
-  { q: 'Can multiple companies co-fund a single CSR project?', a: 'Yes — this is the core of our Giving Circle model. Multiple corporates can co-fund a single programme with clearly defined contribution percentages and joint impact reporting.' },
+  { q: 'Can multiple companies co-fund a single CSR project?', a: 'Yes  -  this is the core of our Giving Circle model. Multiple corporates can co-fund a single programme with clearly defined contribution percentages and joint impact reporting.' },
   { q: 'What is the minimum CSR contribution you work with?', a: 'We typically work with CSR contributions of ₹5 lakh and above for structured partnerships. Smaller amounts can be directed to live causes directly.' },
 ];
 
@@ -27,7 +27,7 @@ const CSRProjectsInIndia = () => {
         ogDescription="Fund high-impact CSR projects in India through verified NGOs. Schedule VII compliant with full documentation."
       />
       <ArticleSchema
-        title="CSR Projects in India — Fund Verified NGOs Through The Giving Circle"
+        title="CSR Projects in India  -  Fund Verified NGOs Through The Giving Circle"
         description="Fund high-impact CSR projects in India through verified NGOs. Education, women empowerment, disaster relief and more."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
@@ -86,7 +86,7 @@ const CSRProjectsInIndia = () => {
 
         {/* CSR Law Overview */}
         <section className="mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">CSR Mandate in India — What You Need to Know</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">CSR Mandate in India  -  What You Need to Know</h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <p className="text-gray-700 mb-6">Under Section 135 of the Companies Act 2013, companies meeting certain thresholds must spend 2% of average net profits on eligible CSR activities. Non-compliance attracts penalties.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -137,7 +137,7 @@ const CSRProjectsInIndia = () => {
             {[
               { title: '✓ Pre-Verified NGO Partners', body: 'All our NGO partners have FCRA, 80G, audited financials and programme verifications complete. No compliance risk for your company.' },
               { title: '✓ Schedule VII Compliance', body: 'We ensure your CSR activity clearly falls under the eligible categories with proper documentation for your board and auditors.' },
-              { title: '✓ Impact Measurement', body: 'Quarterly impact reports with photos, beneficiary data and outcome metrics — exactly what your Annual Report and BRSR need.' },
+              { title: '✓ Impact Measurement', body: 'Quarterly impact reports with photos, beneficiary data and outcome metrics  -  exactly what your Annual Report and BRSR need.' },
               { title: '✓ Collective Giving Model', body: 'Pool your CSR with other corporates to fund larger programmes than any single company could run alone.' },
               { title: '✓ Cause Selection Support', body: 'Our team helps you identify the most relevant causes for your sector, geography and stakeholder priorities.' },
               { title: '✓ MCA-2 Compliance Documents', body: 'Complete documentation for Form CSR-1, Form CSR-2 and Board Committee reporting.' },

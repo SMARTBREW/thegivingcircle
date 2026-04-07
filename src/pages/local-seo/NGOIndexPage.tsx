@@ -13,7 +13,7 @@ const CAUSE_PAGES = [
 
 const ARTICLE_PAGES = [
   { title: 'Top Verified NGOs in India 2026', description: 'With tax benefits, impact data and full transparency scores.', href: '/top-verified-ngos-india-2026' },
-  { title: 'What is a Giving Circle?', description: 'A complete guide to collective giving in India — how it works and why it matters.', href: '/what-is-a-giving-circle' },
+  { title: 'What is a Giving Circle?', description: 'A complete guide to collective giving in India  -  how it works and why it matters.', href: '/what-is-a-giving-circle' },
   { title: 'Top NGOs in Delhi 2026', description: 'Trusted organisations ranked by transparency, impact and donor reviews.', href: '/top-ngos-in-delhi-2026' },
   { title: 'Volunteering Opportunities in Delhi', description: 'NGOs you can join to make real impact with your time and skills.', href: '/volunteer-opportunities-delhi' },
   { title: 'How to Volunteer in India', description: 'A practical guide to finding and joining reputable NGO volunteering programmes.', href: '/how-to-volunteer-india' },
@@ -41,7 +41,7 @@ const NGOIndexPage = () => {
         ogDescription="India's most comprehensive directory of verified NGOs by city and cause."
       />
       <ArticleSchema
-        title="NGO Directory India — Verified NGOs by City & Cause"
+        title="NGO Directory India  -  Verified NGOs by City & Cause"
         description="Browse verified NGOs by city and cause. Find trusted charity organisations in Delhi, Noida, Gurugram & Faridabad."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
@@ -64,7 +64,7 @@ const NGOIndexPage = () => {
             NGO Directory India
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Find verified, transparent NGOs by city or cause. Every organisation on The Giving Circle is background-checked — FCRA, 80G, audited financials — so your donation creates real, trackable impact.
+            Find verified, transparent NGOs by city or cause. Every organisation on The Giving Circle is background-checked  -  FCRA, 80G, audited financials  -  so your donation creates real, trackable impact.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">

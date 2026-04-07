@@ -443,7 +443,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                     <p className="text-gray-700 italic mb-4 text-sm sm:text-base leading-relaxed">"{testimonial.quote}"</p>
                     <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
                       <span className="font-bold text-gray-900 text-sm sm:text-base">{testimonial.name}</span>
-                      <span className="text-gray-400 hidden sm:inline">—</span>
+                      <span className="text-gray-400 hidden sm:inline"> - </span>
                       <span className="text-gray-500 text-xs sm:text-sm">{testimonial.role}</span>
                     </div>
                   </div>

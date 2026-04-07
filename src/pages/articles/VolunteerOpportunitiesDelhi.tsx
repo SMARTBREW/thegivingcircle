@@ -26,7 +26,7 @@ const VolunteerOpportunitiesDelhi = () => {
         ogDescription="Find verified NGOs in Delhi looking for volunteers. Teach, rescue, support and make real impact."
       />
       <ArticleSchema
-        title="Volunteering Opportunities in Delhi 2026 — NGOs You Can Join to Make Real Impact"
+        title="Volunteering Opportunities in Delhi 2026  -  NGOs You Can Join to Make Real Impact"
         description="Find real volunteering opportunities in Delhi with verified NGOs. Teach children, rescue animals, or support community programmes."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
