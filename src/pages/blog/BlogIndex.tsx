@@ -12,7 +12,13 @@ const BlogIndex = () => {
     ApiClient.getBlogPosts()
       .then((serverPosts) => {
         if (Array.isArray(serverPosts) && serverPosts.length) {
-          setPosts(serverPosts);
+          // Merge: prefer API version where available, keep static posts that
+          // aren't in MongoDB yet (e.g. newly added posts pending first seed)
+          const apiBySlug = new Map(serverPosts.map((p) => [p.slug, p]));
+          const merged = BLOG_POSTS.map((staticPost) =>
+            apiBySlug.has(staticPost.slug) ? apiBySlug.get(staticPost.slug)! : staticPost
+          );
+          setPosts(merged);
           setIsApiLoaded(true);
         }
       })
