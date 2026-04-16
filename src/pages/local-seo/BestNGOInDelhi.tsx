@@ -8,7 +8,7 @@ const BestNGOInDelhi: React.FC = () => {
       locationSlug="best-ngo-in-delhi"
       title="Best NGO in Delhi | Top Verified NGOs | The Giving Circle"
       description="Discover the best NGOs in Delhi making real social impact through our giving platform and community support platform. Verified, trusted charity organizations in Delhi. Join our giving community to support social causes, give and help through social giving and community support initiatives."
-      keywords="best NGO in Delhi, top NGOs Delhi, verified NGOs Delhi, trusted charity Delhi, NGO directory Delhi, social impact Delhi, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, giving to community, support circle, india community, communities for communities, giving india"
+      keywords="best NGO in Delhi, top NGOs Delhi, best ngo in delhi ncr, delhi ngo list, delhi best ngo, ngo delhi, verified NGOs Delhi, trusted charity Delhi, NGO directory Delhi, charitable trust in delhi ncr, dog shelter delhi, stray dog in delhi, social impact, giving platform, community support, support social causes, give and help, causes to support, donation 80g"
       primaryKeyword="Best NGO in Delhi"
       relatedLocations={[
         { name: 'Gurugram', slug: 'best-ngo-in-gurugram' },

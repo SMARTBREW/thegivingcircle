@@ -35,7 +35,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'A step-by-step guide to donating for child education in India, understanding 80G tax benefits, and choosing verified NGOs for real, trackable impact.',
     keywords:
-      'donate for child education India, education NGO donation, NGO for education India, 80G tax benefit donation India, verified NGO India, how to donate effectively',
+      'donate for child education India, ngo on education, ngo for education, donors for education in india, fund for education in india, 80G tax benefit donation, 80g donation limit, verified NGO, how to donate effectively',
     category: 'Giving Guide',
     datePublished: '2026-03-19',
     // Fallback only. Backend should control the real weekly "Last updated".
@@ -132,7 +132,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Learn what "verified NGOs" mean on The Giving Circle, which transparency signals to check, and how to donate to trusted education causes in Delhi (80G basics).',
     keywords:
-      'verified NGOs in Delhi, trusted NGO in Delhi, NGO verification, donate to verified NGO Delhi, education NGO donation Delhi, 80G donation Delhi, charity in Delhi',
+      'verified NGOs in Delhi, best ngo in delhi ncr, delhi ngo list, delhi best ngo, ngo delhi, NGO verification, donate to verified NGO Delhi, education ngo in delhi, 80g donation limit, charitable trust in delhi ncr, charity in Delhi',
     category: 'Trust & Verification Guide',
     datePublished: '2026-03-23',
     dateModified: '2026-03-23',
@@ -219,7 +219,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Understand CSR projects in India: how companies fund verified causes, what partners do, and how monitoring/reporting typically works (high-level) for planning.',
     keywords:
-      'CSR projects in India, company CSR funding, CSR reporting, verified NGO partnership, education CSR funding, women empowerment CSR, CSR compliance basics',
+      'CSR projects in India, csr by indian companies, csr initiatives of indian companies, csr funding means, why csr is important, csr for education, women empowerment CSR, CSR compliance basics, verified NGO partnership',
     category: 'CSR for Companies',
     datePublished: '2026-03-23',
     dateModified: '2026-03-23',
@@ -312,7 +312,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Understand what a philanthropist is, how philanthropy works in India, and why giving circles are making social impact accessible to everyone - not just the wealthy.',
     keywords:
-      'what is a philanthropist, philanthropist meaning India, philanthropy India, giving circle India, collective giving India, how to become a philanthropist India',
+      'what is a philanthropist, what is philanthropist, meaning of philanthropy, definition of philanthropy, philanthropy India, giving circle, collective giving, how to become a philanthropist',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
@@ -411,7 +411,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'A clear explanation of what philanthropy means, how it works in India, and why collective giving through giving circles is the most effective form of modern philanthropy.',
     keywords:
-      'what is philanthropy, philanthropy meaning, philanthropy India, definition of philanthropy, collective giving India, giving circle India, social impact India',
+      'what is philanthropy, philanthropy meaning, meaning of philanthropy, definition of philanthropy, collective giving, giving circle, social impact, giving pledge',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
@@ -510,7 +510,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'A step-by-step guide to donating to verified NGOs in India. Learn how to find trustworthy organisations, verify credentials, claim 80G tax benefits, and track your impact.',
     keywords:
-      'how to donate to NGOs India, donate to NGO India, verified NGO donation India, 80G donation India, charity donation India, NGO verification India, trusted NGO India',
+      'how to donate to NGOs India, donate in india, donate to NGO, verified NGO donation, 80G donation, 80g tax benefit, charity donation, NGO verification, trusted NGO, top ngo in india, best ngo in india',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
@@ -619,7 +619,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Find verified NGOs working on women empowerment in India. Learn how to donate effectively, claim 80G tax benefits, and track real outcomes for women and girls.',
     keywords:
-      'donate for women empowerment India, NGO for women empowerment India, women empowerment NGO Delhi, 80G donation women India, girl child scholarship India, verified NGO women India',
+      'donate for women empowerment India, ngo for woman, role of ngo in women empowerment, ngos for women empowerment, women empowerment NGO Delhi, educational empowerment of women, conclusion of women empowerment, education is important for women, 80g donation, girl child scholarship',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',

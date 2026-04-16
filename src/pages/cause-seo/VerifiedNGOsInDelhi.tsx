@@ -20,7 +20,7 @@ const VerifiedNGOsInDelhi = () => {
       <SEOHead
         title="Verified NGOs in Delhi | Trusted Charities to Donate To 2026 | The Giving Circle"
         description="Find verified, background-checked NGOs in Delhi you can safely donate to in 2026. All organisations have valid FCRA, 80G status and published audit reports. Tax benefits available."
-        keywords="verified NGOs in Delhi, trusted NGOs Delhi, best NGOs Delhi 2026, donate to NGO Delhi, verified charities Delhi, background checked NGO Delhi, 80G NGO Delhi"
+        keywords="verified NGOs in Delhi, best ngo in delhi ncr, delhi ngo list, delhi best ngo, ngo delhi, trusted NGOs Delhi, donate to NGO Delhi, charitable trust in delhi ncr, background checked NGO Delhi, 80G NGO Delhi, 80g donation limit"
         canonicalUrl="https://www.thegivingcircle.in/verified-ngos-in-delhi"
         ogTitle="Verified NGOs in Delhi  -  Trusted Charities 2026 | The Giving Circle"
         ogDescription="Delhi's most trusted NGOs verified for FCRA, 80G and financial transparency. Donate with confidence."

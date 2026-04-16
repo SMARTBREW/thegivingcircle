@@ -8,7 +8,7 @@ const TrustedNGOInFaridabad: React.FC = () => {
       locationSlug="trusted-ngo-in-faridabad"
       title="Trusted NGOs in Faridabad | Reliable Charity Organizations | The Giving Circle"
       description="Connect with trusted and reliable NGOs in Faridabad through our community support platform. Join our giving community to support social causes through social giving and community support."
-      keywords="trusted NGOs in Faridabad, reliable NGOs Faridabad, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support from community, supporting india, giving india"
+      keywords="trusted NGOs in Faridabad, reliable NGOs Faridabad, giving platform, community support, social giving, support social causes, give and help, causes to support, donation 80g"
       primaryKeyword="Trusted NGOs in Faridabad"
       relatedLocations={[
         { name: 'Delhi', slug: 'trusted-ngo-in-delhi' },

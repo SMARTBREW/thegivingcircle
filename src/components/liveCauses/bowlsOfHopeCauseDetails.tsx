@@ -209,7 +209,7 @@ const BowlsOfHopeCauseDetailPage = () => {
       <SEOHead
         title="Feed Stray Animals Daily | Support Animal Welfare India"
         description="Help feed hungry animals in India. Support stray dog feeding programs and animal nutrition initiatives. Your contribution helps verified animal welfare NGO India reach more street animals."
-        keywords="animal welfare NGO India, feed stray animals India, animal feeding programs, animal nutrition support, help feed street animals, feed hungry animals India, animal feeding programs Mumbai, animal feeding programs Chennai, donate for rabies vaccination drive near me, animal vaccination NGO donation India, support animal feeding initiatives, street animal care India, CSR for animal welfare, corporate sponsorship for animal feeding, CSR project for animal nutrition"
+        keywords="animal welfare ngo, feed stray animals, feed stray dogs, animal feeding programs, animal nutrition support, help feed street animals, feed hungry animals, animal feeding programs Mumbai, animal feeding programs Chennai, donate for rabies vaccination drive near me, animal vaccination NGO donation, support animal feeding, street animal care, straying animals, animal ngo, animal help, animal helpline, animal welfare association, people for animals, CSR for animal welfare, corporate sponsorship for animal feeding, CSR project for animal nutrition"
         canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
       />

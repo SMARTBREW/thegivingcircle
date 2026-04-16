@@ -8,7 +8,7 @@ export const Causes: React.FC = () => {
       <SEOHead 
         title="Browse Live Causes - Active Campaigns & Fundraising | Community Support Platform"
         description="Browse live causes and active campaigns through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support. Find causes to support including animal welfare, disaster relief, women empowerment. Give and help create real impact through our circle of support."
-        keywords="live causes India, active campaigns, browse causes, causes to support, support social causes, giving platform, community support platform, giving community, social giving, community support, give and help, circle of support, support circle, communities support, giving india, supporting india"
+        keywords="live causes, active campaigns, browse causes, causes to support, support social causes, giving platform, community support, giving community, social giving, give and help, act of kindness, helping the poor, fundraising meaning, donation 80g, donate to NGO"
         canonicalUrl="https://www.thegivingcircle.in/causes"
       />
       <LiveCausesPage />

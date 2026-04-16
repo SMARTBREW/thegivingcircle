@@ -8,7 +8,7 @@ const BestNGOInFaridabad: React.FC = () => {
       locationSlug="best-ngo-in-faridabad"
       title="Best NGO in Faridabad | Top Verified NGOs | The Giving Circle"
       description="Discover the best NGOs in Faridabad making real social impact through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support."
-      keywords="best NGO in Faridabad, top NGOs Faridabad, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, circle of support, supporting india, giving india"
+      keywords="best NGO in Faridabad, top NGOs Faridabad, giving platform, community support, social giving, support social causes, give and help, causes to support, donation 80g, act of kindness"
       primaryKeyword="Best NGO in Faridabad"
       relatedLocations={[
         { name: 'Delhi', slug: 'best-ngo-in-delhi' },

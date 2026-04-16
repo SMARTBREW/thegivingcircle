@@ -21,7 +21,7 @@ const CSRProjectsInIndia = () => {
       <SEOHead
         title="CSR Projects in India | Fund Verified NGOs | The Giving Circle"
         description="Fund high-impact CSR projects in India through verified NGOs. Education, women empowerment, disaster relief and animal welfare projects qualifying under Schedule VII. Full compliance documentation provided."
-        keywords="CSR projects India, CSR funding NGOs India, corporate social responsibility India, Schedule VII CSR, CSR donation India, CSR NGO partnership India, CSR compliance India"
+        keywords="CSR projects India, csr by indian companies, csr initiatives of indian companies, csr funding means, why csr is important, csr for education, corporate social responsibility India, Schedule VII CSR, CSR donation India, CSR NGO partnership India, CSR compliance India, women empowerment CSR"
         canonicalUrl="https://www.thegivingcircle.in/csr-projects-in-india"
         ogTitle="CSR Projects in India | Fund Verified NGOs | The Giving Circle"
         ogDescription="Fund high-impact CSR projects in India through verified NGOs. Schedule VII compliant with full documentation."

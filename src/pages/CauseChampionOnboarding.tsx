@@ -51,7 +51,7 @@ const CauseChampionOnboarding: React.FC = () => {
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, become cause champion, start giving circle');
+      metaKeywords.setAttribute('content', 'causes to support, community causes, community giving, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, india care, become cause champion, start giving circle, giving pledge, community helpers, act of kindness, fundraising meaning, empowering youth');
     }
   }, []);
 
@@ -243,7 +243,7 @@ const CauseChampionOnboarding: React.FC = () => {
       <SEOHead
         title="NGO Onboarding | Partner With The Giving Circle"
         description="Join our NGO partner network and gain access to donors, credibility tools and nationwide impact opportunities"
-        keywords="become cause champion, start giving circle, cause champion program, community fundraising India, rally for cause, amplify social impact, cause champion registration, volunteer for causes India, lead social change, community giving leader"
+        keywords="become cause champion, start giving circle, cause champion program, community fundraising, rally for cause, amplify social impact, cause champion registration, volunteer for causes, lead social change, community giving leader, giving pledge, empowering youth, act of kindness"
         canonicalUrl="https://www.thegivingcircle.in/onboarding"
       />
       {/* Simple Background */}

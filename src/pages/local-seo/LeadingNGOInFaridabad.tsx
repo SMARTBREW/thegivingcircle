@@ -8,7 +8,7 @@ const LeadingNGOInFaridabad: React.FC = () => {
       locationSlug="leading-ngo-in-faridabad"
       title="Leading NGOs in Faridabad | Top Charity Organizations | The Giving Circle"
       description="Discover leading and impactful NGOs in Faridabad through our community support platform. Join our giving community to support social causes through social giving, community support, and give through initiatives."
-      keywords="leading NGOs in Faridabad, impactful NGOs Faridabad, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, give through, support of community, supporting india, giving india"
+      keywords="leading NGOs in Faridabad, impactful NGOs Faridabad, giving platform, community support, social giving, support social causes, give and help, causes to support, ngo role, act of kindness"
       primaryKeyword="Leading NGOs in Faridabad"
       relatedLocations={[
         { name: 'Delhi', slug: 'leading-ngo-in-delhi' },

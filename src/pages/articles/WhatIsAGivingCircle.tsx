@@ -21,7 +21,7 @@ const WhatIsAGivingCircle = () => {
       <SEOHead
         title="What is a Giving Circle? A Complete Guide to Collective Giving in India"
         description="Learn what a giving circle is, how it works in India, why collective giving is more powerful than individual donations, and how to join one. Complete guide with examples and tips."
-        keywords="what is a giving circle, giving circle India, collective giving India, community giving India, giving circle meaning, how does a giving circle work, join a giving circle India"
+        keywords="what is a giving circle, giving circle, collective giving, community giving, giving circle meaning, how does a giving circle work, join a giving circle, giving pledge, community helpers, fundraising meaning"
         canonicalUrl="https://www.thegivingcircle.in/what-is-a-giving-circle"
         ogTitle="What is a Giving Circle? Complete Guide | The Giving Circle"
         ogDescription="Learn how giving circles work, why collective giving creates bigger impact, and how to join one in India."

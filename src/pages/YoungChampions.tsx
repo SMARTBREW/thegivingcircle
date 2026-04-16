@@ -13,7 +13,7 @@ export const YoungChampions: React.FC = () => {
       <SEOHead
         title="Young Champions Program | Student Volunteers India"
         description="Empower students to drive social change through volunteering, education support and community impact initiatives"
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, young champions, youth leadership"
+        keywords="young champions, youth leadership, empowering youth, causes to support, community causes, community giving, community support platform, give and help, giving circle, giving platform, social giving, support social causes, act of kindness, community helpers, giving pledge, helping the poor"
         canonicalUrl="https://www.thegivingcircle.in/young-champions"
       />
       <div className="text-center px-4">

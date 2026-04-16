@@ -203,7 +203,7 @@ const FloodAnimalRescueCauseDetailPage = () => {
       <SEOHead
         title="Flood Animal Rescue India | Emergency Response & Recovery"
         description="Save animals trapped in India's floods. Support emergency animal rescue operations and disaster relief. Join a trusted animal welfare NGO India in protecting voiceless victims."
-        keywords="flood animal rescue operations, emergency animal rescue India, disaster relief India, animal welfare NGO India, save stray dogs from rabies, emergency response India, disaster rehabilitation animals, help flood victims Uttarakhand, flood relief Uttarakhand, animal rescue Mumbai, support animal evacuation, CSR for animal welfare, corporate partnership for disaster relief, animal safety India"
+        keywords="flood animal rescue operations, flood rescue team, emergency animal rescue, disaster relief, animal welfare ngo, save stray dogs, emergency response, disaster rehabilitation animals, help flood victims Uttarakhand, flood relief Uttarakhand, animal rescue Mumbai, support animal evacuation, animal welfare board india, animal rescue foundation, prevention of cruelty to animals act, dog rescue, CSR for animal welfare, corporate partnership for disaster relief, animal safety"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
       />

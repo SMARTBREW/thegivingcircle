@@ -71,7 +71,7 @@ export const NGOPartner: React.FC = () => {
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, corporate giving platforms, give and help, CSR for animal welfare, corporate giving platforms India, CSR project for animal nutrition, CSR project for menstrual health, NGO partnership India, corporate social responsibility NGOs, donate for social impact, partner with verified NGO');
+      metaKeywords.setAttribute('content', 'NGO partnership India, partner with verified NGO, corporate social responsibility NGOs, donate for social impact, CSR for animal welfare, CSR project for animal nutrition, CSR project for menstrual health, community giving, corporate giving platforms, give and help, csr initiatives of indian companies, csr by indian companies, why csr is important, csr funding means');
     }
   }, []);
 

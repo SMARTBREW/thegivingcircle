@@ -8,7 +8,7 @@ const LeadingNGOInDelhi: React.FC = () => {
       locationSlug="leading-ngo-in-delhi"
       title="Leading NGOs in Delhi | Top Charity Organizations | The Giving Circle"
       description="Discover leading and impactful NGOs in Delhi through our giving platform and community support platform. Join our giving community to support social causes through social giving and community support. Give and help create lasting change."
-      keywords="leading NGOs in Delhi, impactful NGOs Delhi, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, india community, circle aid, giving india"
+      keywords="leading NGOs in Delhi, impactful NGOs Delhi, ngo delhi, delhi best ngo, giving platform, community support, social giving, support social causes, give and help, causes to support, ngo role, role of ngo, act of kindness"
       primaryKeyword="Leading NGOs in Delhi"
       relatedLocations={[
         { name: 'Gurugram', slug: 'leading-ngo-in-gurugram' },

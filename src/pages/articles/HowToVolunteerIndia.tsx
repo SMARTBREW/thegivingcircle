@@ -20,7 +20,7 @@ const HowToVolunteerIndia = () => {
       <SEOHead
         title="How to Volunteer in India 2026 | Top NGOs & Opportunities | The Giving Circle"
         description="A practical guide to volunteering with NGOs in India in 2026. How to find opportunities, what to expect, corporate volunteering programmes and how to start today. Includes verified NGO list."
-        keywords="how to volunteer in India, volunteer India NGO, volunteering opportunities India 2026, NGO volunteer India, corporate volunteering India, volunteer near me India, how to start volunteering"
+        keywords="how to volunteer in India, how to volunteer for ngo, volunteer India NGO, volunteering opportunities India 2026, NGO volunteer India, corporate volunteering, volunteer near me, how to start volunteering, how to do volunteer work, act of kindness, helping the poor, empowering youth"
         canonicalUrl="https://www.thegivingcircle.in/how-to-volunteer-india"
         ogTitle="How to Volunteer in India 2026 | The Giving Circle"
         ogDescription="Practical guide to volunteering with NGOs in India. Find opportunities, understand what to expect and start today."

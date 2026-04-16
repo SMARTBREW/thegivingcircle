@@ -8,7 +8,7 @@ const TopNGOInNoida: React.FC = () => {
       locationSlug="top-ngo-in-noida"
       title="Top NGOs in Noida | Leading Charity Organizations | The Giving Circle"
       description="Explore top-rated NGOs in Noida creating maximum social impact through our community support platform. Join our giving community to support social causes through social giving and community support."
-      keywords="top NGOs in Noida, leading NGOs Noida, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, circle of support, giving india"
+      keywords="top NGOs in Noida, leading NGOs Noida, ngo in noida, charity in noida, social service noida, noida animal shelter, giving platform, community support, social giving, support social causes, give and help, causes to support"
       primaryKeyword="Top NGOs in Noida"
       relatedLocations={[
         { name: 'Delhi', slug: 'top-ngo-in-delhi' },

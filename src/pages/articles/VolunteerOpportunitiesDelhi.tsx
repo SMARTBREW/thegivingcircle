@@ -20,7 +20,7 @@ const VolunteerOpportunitiesDelhi = () => {
       <SEOHead
         title="Volunteering Opportunities in Delhi 2026 | NGOs You Can Join | The Giving Circle"
         description="Find real volunteering opportunities in Delhi with verified NGOs. Teach children, rescue animals, support disaster relief or help with community programmes. Join an NGO in Delhi today."
-        keywords="volunteering opportunities Delhi, volunteer Delhi NGO, how to volunteer in Delhi, NGO volunteer Delhi, volunteer near me Delhi, teach underprivileged children Delhi, animal welfare volunteer Delhi"
+        keywords="volunteering opportunities Delhi, volunteer in ngo delhi, volunteer delhi, how to do volunteer work, how to volunteer in Delhi, NGO volunteer Delhi, volunteer near me Delhi, teach underprivileged children Delhi, animal welfare volunteer Delhi, animal welfare donation, dog rescue delhi"
         canonicalUrl="https://www.thegivingcircle.in/volunteer-opportunities-delhi"
         ogTitle="Volunteering Opportunities in Delhi 2026 | The Giving Circle"
         ogDescription="Find verified NGOs in Delhi looking for volunteers. Teach, rescue, support and make real impact."
