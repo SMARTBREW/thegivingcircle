@@ -554,7 +554,7 @@ return (
     <SEOHead
       title="Wings of Hope Impact Story - Women Empowerment Success | Community Support Platform"
       description="Explore the Wings of Hope impact story through our giving platform and community support platform. See how our giving community supports social causes through social giving and community support. Give and help create real impact through our circle of support for women empowerment in India."
-      keywords="Wings of Hope, impact story, success story, women empowerment, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, circle of support, supporting india, giving india"
+      keywords="Wings of Hope, impact story, success story, women empowerment, empowering women, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, act of kindness, helping the poor, help in suffering, ngo role, role of ngo"
       canonicalUrl="https://www.thegivingcircle.in/impact-stories/wings-of-hope"
     />
     {/* Navigation */}

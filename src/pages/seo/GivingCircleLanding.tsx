@@ -10,7 +10,7 @@ const GivingCircleLanding = () => {
             <SEOHead
                 title="Giving Circle | Join a Community of Changemakers & Social Impact"
                 description="What is a Giving Circle? Join The Giving Circle India to pool resources, support trusted NGOs, and create massive social impact through collective giving."
-                keywords="giving circle, collective giving, giving circle india, donation circle, community giving, social impact community"
+                keywords="giving circle, collective giving, giving circle india, donation circle, community giving, social impact community, giving pledge, community helpers, fundraising meaning, act of kindness, helping the poor, donate in india"
                 canonicalUrl="https://www.thegivingcircle.in/giving-circle"
             />
 

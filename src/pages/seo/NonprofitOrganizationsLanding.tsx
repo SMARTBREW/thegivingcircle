@@ -9,7 +9,7 @@ const NonprofitOrganizationsLanding = () => {
             <SEOHead
                 title="Nonprofit Organizations India | List of NGOs"
                 description="Comprehensive directory of verified nonprofit organizations in India. Find and support trusted NGOs working in education, health, environment and social welfare."
-                keywords="nonprofit organizations, ngo directory india, trusted charities, donate to nonprofit, social impact india"
+                keywords="nonprofit organizations, ngo directory india, trusted charities, donate to nonprofit, social impact, ngo full form, top ngo in india, best ngo in india, ngo role, role of ngo, indian ngo, helping the poor, act of kindness, donation 80g, giveindia"
                 canonicalUrl="https://www.thegivingcircle.in/nonprofit-organizations"
             />
 

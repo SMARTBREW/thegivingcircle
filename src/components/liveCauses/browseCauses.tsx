@@ -262,7 +262,7 @@ const LiveCausesPage = () => {
       <SEOHead
         title="Live NGO Causes | Donate for Urgent Relief India"
         description="Explore active causes including medical crowdfunding, child education, disaster relief and animal rescue across India"
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india"
+        keywords="causes to support, community causes, community giving, community helpline, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, india care, act of kindness, helping the poor, food donation, donate in india, fundraising meaning, ngo role, donation 80g"
         canonicalUrl="https://www.thegivingcircle.in/live-causes"
       />
       {/* Professional Hero Section with NGO Showcase */}

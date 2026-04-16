@@ -20,7 +20,7 @@ const ChampionStoryDetail: React.FC = () => {
       <SEOHead
         title="Champion Stories - Real Impact Stories | Community Support Platform"
         description="Explore champion stories and real impact stories from our giving community. See how Cause Champions support social causes through our giving platform and create a circle of support. Give and help through our community support platform and discover causes to support."
-        keywords="champion stories, impact stories, success stories, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, support circle, communities stories, giving india"
+        keywords="champion stories, impact stories, success stories, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, giving pledge, act of kindness, community helpers, empowering youth in india, fundraising meaning"
         canonicalUrl="https://www.thegivingcircle.in/champion-story"
       />
       <div className="text-center max-w-2xl mx-auto p-8">

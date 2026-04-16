@@ -11,7 +11,7 @@ const TopNGOsInDelhi2026 = () => {
       <SEOHead
         title="Top NGOs in Delhi You Can Trust for Donations in 2026 | The Giving Circle"
         description="Find the most trusted and transparent NGOs in Delhi in 2026. Ranked by impact, transparency and donor trust. Includes 80G status, cause areas and how to donate safely."
-        keywords="top NGOs in Delhi 2026, best NGOs Delhi, best ngo in delhi ncr, delhi best ngo, ngo delhi, delhi ngo list, trusted charities Delhi, donate to NGO Delhi, verified Delhi NGOs, most transparent NGOs Delhi, charitable trust in delhi ncr, dog shelter delhi, stray dog in delhi"
+        keywords="top NGOs in Delhi 2026, best NGOs Delhi, best ngo in delhi ncr, delhi best ngo, ngo delhi, delhi ngo list, trusted charities Delhi, donate to NGO Delhi, verified Delhi NGOs, most transparent NGOs Delhi, charitable trust in delhi ncr, dog shelter delhi, dog rescue delhi, pet shelters in delhi, stray dog in delhi, street dog food, people for animals, animal welfare association"
         canonicalUrl="https://www.thegivingcircle.in/top-ngos-in-delhi-2026"
         ogTitle="Top NGOs in Delhi 2026  -  Trusted Charities | The Giving Circle"
         ogDescription="Delhi's most trusted NGOs ranked by transparency, impact and donor satisfaction. 80G tax benefits available."

@@ -178,7 +178,7 @@ const DonateForEducationIndia = () => {
       <SEOHead
         title="Donate for Child Education in India | Verified NGOs | The Giving Circle"
         description="Support child education in India by donating to verified NGOs. Fund school fees, books, uniforms and tuition for underprivileged children in Delhi NCR. 80G tax benefits available."
-        keywords="donate for child education India, ngo for education, ngo on education, donors for education in india, fund for education in india, fund child education, child education donation, support underprivileged children, 80G donation education, 80g donation limit, education is important for women, JWP education NGO Delhi"
+        keywords="donate for child education India, ngo for education, ngo on education, donors for education in india, fund for education in india, fund child education, child education donation, support underprivileged children, 80G donation education, 80g donation limit, education is important for women, food donation, help in suffering, JWP education NGO Delhi"
         canonicalUrl="https://www.thegivingcircle.in/donate-for-education-india"
         ogImage={EDUCATION_IMAGE_URLS.hero}
       />

@@ -217,7 +217,7 @@ const CauseDetailPage = () => {
       <SEOHead
         title="Wings Of Hope: Quality Education for Underprivileged Children | Donate to The Giving Circle"
         description="Breaking the cycle of poverty through quality education. Wings Of Hope provides educational support, learning centers, and resources to underprivileged children. 62% funded. 18 days left. Donate now. Tax-deductible under 80G."
-        keywords="causes to support, circle aid, circle of support, communities for communities, communities support, community causes, community giving, community helpline, community offering, community support platform, corporate giving platforms, give and help, give through, giving circle, giving community, giving india, giving platform, giving support, giving to community, india care, india community, social causes to support, social giving, support circle, support community, support from community, support of community, support social causes, supported causes, supporting india, Wings Of Hope, education, children, verified charity, donate to NGO India, transparent charity, impact stories"
+        keywords="Wings Of Hope, education, children, verified charity, donate to NGO, transparent charity, impact stories, causes to support, community causes, community giving, community support platform, corporate giving platforms, give and help, giving circle, giving platform, social giving, support social causes, india care, ngo for education, donors for education in india, fund child education, 80g donation limit, food donation, help in suffering, act of kindness"
         canonicalUrl="https://www.thegivingcircle.in/causes-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg"
       />

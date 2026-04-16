@@ -20,7 +20,7 @@ const NGOForWomenEmpowerment = () => {
       <SEOHead
         title="NGOs for Women Empowerment in India | Donate & Support | The Giving Circle"
         description="Support women empowerment in India by donating to verified NGOs focused on women's rights, education, livelihood and safety. Get 80G tax benefits and track real impact."
-        keywords="NGOs for women empowerment India, ngo for woman, role of ngo in women empowerment, ngos for women empowerment, donate for women empowerment, women empowerment NGO, female education NGO, educational empowerment of women, conclusion of women empowerment, empowering women, education is important for women, empowering youth"
+        keywords="NGOs for women empowerment India, ngo for woman, role of ngo in women empowerment, ngos for women empowerment, donate for women empowerment, women empowerment NGO, female education NGO, educational empowerment of women, conclusion of women empowerment, empowering women, education is important for women, empowering youth in india, help in suffering, giving pledge"
         canonicalUrl="https://www.thegivingcircle.in/ngo-for-women-empowerment"
         ogTitle="NGOs for Women Empowerment in India | The Giving Circle"
         ogDescription="Donate to verified NGOs enabling women's rights, livelihood and safety in India."
