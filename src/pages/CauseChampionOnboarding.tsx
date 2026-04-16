@@ -51,7 +51,7 @@ const CauseChampionOnboarding: React.FC = () => {
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, community causes, community giving, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, india care, become cause champion, start giving circle, giving pledge, community helpers, act of kindness, fundraising meaning, empowering youth');
+      metaKeywords.setAttribute('content', 'causes to support, community causes, community giving, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, community care, become cause champion, start giving circle, giving pledge, community helpers, act of kindness, fundraising meaning, empowering youth');
     }
   }, []);
 

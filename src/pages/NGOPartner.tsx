@@ -71,7 +71,7 @@ export const NGOPartner: React.FC = () => {
     // Update keywords
     const metaKeywords = document.querySelector('meta[name="keywords"]');
     if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'NGO partnership India, partner with verified NGO, corporate social responsibility NGOs, donate for social impact, CSR for animal welfare, CSR project for animal nutrition, CSR project for menstrual health, community giving, corporate giving platforms, give and help, csr initiatives of indian companies, csr by indian companies, why csr is important, csr funding means');
+      metaKeywords.setAttribute('content', 'NGO partnership, partner with verified NGO, corporate social responsibility NGOs, donate for social impact, CSR for animal welfare, CSR project for animal nutrition, CSR project for menstrual health, community giving, corporate giving platforms, give and help, csr initiatives, csr by companies, why csr is important, csr funding means');
     }
   }, []);
 
@@ -168,7 +168,7 @@ export const NGOPartner: React.FC = () => {
       <SEOHead
         title="NGO Partnership Program India | Trusted Platform"
         description="Become a verified NGO partner and connect with donors supporting education, health and relief initiatives"
-        keywords="NGO partnership India, partner with giving circle, verified NGO platform, NGO fundraising platform India, register NGO online, NGO partner program, charity partnership India, social impact partnerships, verified charity platform, NGO registration India"
+        keywords="NGO partnership, partner with giving circle, verified NGO platform, NGO fundraising platform, register NGO online, NGO partner program, charity partnership, social impact partnerships, verified charity platform, NGO registration"
         canonicalUrl="https://www.thegivingcircle.in/ngo-partner"
       />
       {/* Background */}

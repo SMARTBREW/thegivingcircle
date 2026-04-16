@@ -35,7 +35,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'A step-by-step guide to donating for child education in India, understanding 80G tax benefits, and choosing verified NGOs for real, trackable impact.',
     keywords:
-      'donate for child education India, ngo on education, ngo for education, donors for education in india, fund for education in india, education is important for women, 80G tax benefit donation, 80g donation limit, verified NGO, how to donate effectively, help in suffering, food donation',
+      'donate for child education, ngo on education, ngo for education, donors for education, fund for education, education is important for women, 80G tax benefit donation, 80g donation limit, verified NGO, how to donate effectively, help in suffering, food donation',
     category: 'Giving Guide',
     datePublished: '2026-03-19',
     // Fallback only. Backend should control the real weekly "Last updated".
@@ -219,7 +219,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Understand CSR projects in India: how companies fund verified causes, what partners do, and how monitoring/reporting typically works (high-level) for planning.',
     keywords:
-      'CSR projects in India, csr by indian companies, csr initiatives of indian companies, csr funding means, csr funds meaning, why csr is important, csr for education, women empowerment CSR, CSR compliance basics, verified NGO partnership',
+      'CSR projects, csr by companies, csr initiatives, csr funding means, csr funds meaning, why csr is important, csr for education, women empowerment CSR, CSR compliance basics, verified NGO partnership',
     category: 'CSR for Companies',
     datePublished: '2026-03-23',
     dateModified: '2026-03-23',
@@ -312,7 +312,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Understand what a philanthropist is, how philanthropy works in India, and why giving circles are making social impact accessible to everyone - not just the wealthy.',
     keywords:
-      'what is a philanthropist, what is philanthropist, meaning of philanthropy, definition of philanthropy, philanthropy India, giving circle, collective giving, giving pledge, how to become a philanthropist',
+      'what is a philanthropist, what is philanthropist, meaning of philanthropy, definition of philanthropy, philanthropy, giving circle, collective giving, giving pledge, how to become a philanthropist',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
@@ -510,7 +510,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'A step-by-step guide to donating to verified NGOs in India. Learn how to find trustworthy organisations, verify credentials, claim 80G tax benefits, and track your impact.',
     keywords:
-      'how to donate to NGOs India, donate in india, donate to NGO, verified NGO donation, 80G donation, 80g tax benefit, charity donation, NGO verification, trusted NGO, top ngo in india, best ngo in india',
+      'how to donate to NGOs, donate online, donate to NGO, verified NGO donation, 80G donation, 80g tax benefit, charity donation, NGO verification, trusted NGO, top NGO, best NGO',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
@@ -619,7 +619,7 @@ export const BLOG_POSTS: BlogPost[] = [
     description:
       'Find verified NGOs working on women empowerment in India. Learn how to donate effectively, claim 80G tax benefits, and track real outcomes for women and girls.',
     keywords:
-      'donate for women empowerment India, ngo for woman, role of ngo in women empowerment, ngos for women empowerment, women empowerment NGO Delhi, educational empowerment of women, conclusion of women empowerment, education is important for women, empowering women, 80g donation, girl child scholarship, help in suffering',
+      'donate for women empowerment, ngo for woman, role of ngo in women empowerment, ngos for women empowerment, women empowerment NGO Delhi, educational empowerment of women, conclusion of women empowerment, education is important for women, empowering women, 80g donation, girl child scholarship, help in suffering',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',

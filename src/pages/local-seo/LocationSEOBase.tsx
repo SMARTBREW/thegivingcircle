@@ -16,7 +16,7 @@ interface LocationSEOBaseProps {
 }
 
 const GLOBAL_KEYWORDS =
-  'causes to support, community causes, community giving, community helpline, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, india care, social causes to support, social giving, support social causes, donate sanitary pads, period poverty, rabies prevention, stray dog vaccination, animal welfare ngo, menstrual hygiene, ngo role, role of ngo, donation 80g, act of kindness, helping the poor, fundraising meaning, top ngo in india, best ngo in india';
+  'causes to support, community causes, community giving, community helpline, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, community care, social causes to support, social giving, support social causes, donate sanitary pads, period poverty, rabies prevention, stray dog vaccination, animal welfare ngo, menstrual hygiene, ngo role, role of ngo, donation 80g, act of kindness, helping the poor, fundraising meaning, top NGO, best NGO';
 
 const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
   location,

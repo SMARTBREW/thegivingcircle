@@ -125,7 +125,7 @@ const ImpactStories: React.FC = () => {
       <SEOHead
         title="Impact Stories - Real Change by Cause Champions | The Giving Circle"
         description="Read inspiring impact stories from verified causes and Cause Champions across India. See how community giving creates real change in animal welfare, women empowerment, education, and disaster relief. Verified transformation stories with measurable impact."
-        keywords="impact stories, causes to support, community causes, community giving, community support platform, give and help, giving circle, giving platform, social giving, support social causes, india care, act of kindness, helping the poor, ngo role, role of ngo"
+        keywords="impact stories, causes to support, community causes, community giving, community support platform, give and help, giving circle, giving platform, social giving, support social causes, community care, act of kindness, helping the poor, ngo role, role of ngo"
         canonicalUrl="https://www.thegivingcircle.in/impact-stories"
       />
       {/* Impact Stories Section */}

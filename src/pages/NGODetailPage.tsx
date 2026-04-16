@@ -75,8 +75,8 @@ const NGODetailPage: React.FC<NGODetailPageProps> = ({
     <main className="min-h-screen bg-gray-50">
       <SEOHead
         title={seoTitle || `${ngoDetails.name} - Verified NGO Partner | Community Support Platform`}
-        description={seoDescription || `Support ${ngoDetails.name}, a verified NGO partner on our community support platform. Join our giving community to support social causes. Give and help through social giving. Create a circle of support for ${ngoDetails.causes.map(c => c.name.toLowerCase()).join(', ')} and india care initiatives.`}
-        keywords={`${ngoDetails.name}, ${ngoDetails.causes.map(c => c.name).join(', ')}, ${ngoDetails.location}, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, india care, verified charity, donate to NGO, ngo role, role of ngo, top ngo in india, best ngo in india, indian ngo, donation 80g, 80g donation limit, act of kindness, help in suffering, fundraising meaning`}
+        description={seoDescription || `Support ${ngoDetails.name}, a verified NGO partner on our community support platform. Join our giving community to support social causes. Give and help through social giving. Create a circle of support for ${ngoDetails.causes.map(c => c.name.toLowerCase()).join(', ')} and community care initiatives.`}
+        keywords={`${ngoDetails.name}, ${ngoDetails.causes.map(c => c.name).join(', ')}, ${ngoDetails.location}, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, community care, verified charity, donate to NGO, ngo role, role of ngo, top NGO, best NGO, donation 80g, 80g donation limit, act of kindness, help in suffering, fundraising meaning`}
         canonicalUrl={`https://www.thegivingcircle.in/ngo/${ngoDetails.name.toLowerCase().replace(/\s+/g, '-')}`}
         ogImage={ngoDetails.logo}
       />

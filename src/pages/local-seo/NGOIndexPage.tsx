@@ -35,7 +35,7 @@ const NGOIndexPage = () => {
       <SEOHead
         title="NGO Directory India | Verified NGOs by City & Cause | The Giving Circle"
         description="Browse India's most comprehensive directory of verified NGOs by city and cause. Find trusted charity organisations in Delhi, Noida, Gurugram & Faridabad and donate with confidence."
-        keywords="ngo directory india, verified ngos india, best ngos in india, top ngo in india, best ngo in india, donate to ngo india, ngo list india 2026, top charities india, ngo full form, ngo role, role of ngo, indian ngo, donation 80g, giving pledge"
+        keywords="ngo directory, verified ngos, best ngos, top NGO, best NGO, donate to NGO, ngo list 2026, top charities, ngo full form, ngo role, role of ngo, verified NGO, donation 80g, giving pledge"
         canonicalUrl="https://www.thegivingcircle.in/ngos"
         ogTitle="NGO Directory India | The Giving Circle"
         ogDescription="India's most comprehensive directory of verified NGOs by city and cause."

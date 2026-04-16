@@ -32,7 +32,7 @@ const BlogIndex = () => {
       <SEOHead
         title="Blog | The Giving Circle - Community Giving Guides"
         description="Guides on donating, choosing verified NGOs, understanding 80G, and making education, women empowerment, and CSR giving more impactful in India."
-        keywords="giving circle blog, donate in india, donate NGO, 80G tax benefit guide, 80g tax benefit, verified NGO, csr initiatives of indian companies, education donation, ngo role, role of ngo, fundraising meaning"
+        keywords="giving circle blog, donate online, donate NGO, 80G tax benefit guide, 80g tax benefit, verified NGO, csr initiatives, education donation, ngo role, role of ngo, fundraising meaning"
         canonicalUrl="https://www.thegivingcircle.in/blog"
         ogTitle="The Giving Circle Blog | Guides to Donate with Confidence"
         ogDescription="Weekly-style giving guides built for clarity: donate effectively, choose verified NGOs, and understand 80G in India."

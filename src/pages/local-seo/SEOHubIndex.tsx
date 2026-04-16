@@ -23,7 +23,7 @@ const SEOHubIndex = () => {
       <SEOHead
         title="NGO Directory - Find Best NGOs in Delhi, Gurugram, Noida, Faridabad | Community Support Platform"
         description="Comprehensive directory of verified NGOs in Delhi NCR region. Find best, top-rated, trusted, and leading NGOs in Delhi, Gurugram, Noida, and Faridabad. Support verified charity organizations through India's leading community giving platform and corporate giving platforms. Join our circle of support to connect with trusted NGOs and support social causes."
-        keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations, community support platform, giving platform, community giving, support social causes, india care, social giving, community causes, community helpline, causes to support, corporate giving platforms, give and help, giving circle, giving community, social causes to support, top ngo in india, best ngo in india, ngo full form, ngo role, role of ngo, indian ngo, donation 80g, giveindia, dog ngos, helping the poor"
+        keywords="NGO directory, best NGOs Delhi, top NGOs Gurugram, verified NGOs Noida, trusted NGOs Faridabad, NGO list Delhi NCR, charity directory, social impact organizations, community support platform, giving platform, community giving, support social causes, community care, social giving, community causes, community helpline, causes to support, corporate giving platforms, give and help, giving circle, giving community, social causes to support, top NGO, best NGO, ngo full form, ngo role, role of ngo, verified NGO, donation 80g, dog ngos, helping the poor"
         canonicalUrl="https://www.thegivingcircle.in/ngos"
       />
 

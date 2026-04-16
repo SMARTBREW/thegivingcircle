@@ -217,7 +217,7 @@ const FloodReliefCauseDetailPage = () => {
       <SEOHead
         title="Flood Relief Uttarakhand | Emergency Disaster Response"
         description="Support flood relief Uttarakhand. Our animal welfare NGO India provides emergency animal rescue India and disaster relief for families in high-risk flood zones."
-        keywords="flood relief Uttarakhand, help flood victims Uttarakhand, emergency animal rescue, disaster relief operations, animal welfare ngo, flood rehabilitation, rescue trapped animals, animal welfare board india, CSR for disaster relief, corporate partnership for disaster relief, disaster relief, emergency response"
+        keywords="flood relief Uttarakhand, help flood victims Uttarakhand, emergency animal rescue, disaster relief operations, animal welfare ngo, flood rehabilitation, rescue trapped animals, animal welfare board, CSR for disaster relief, corporate partnership for disaster relief, disaster relief, emergency response"
         canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
       />
