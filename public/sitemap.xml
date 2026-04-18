@@ -154,14 +154,6 @@
     <priority>0.65</priority>
   </url>
 
-  <!-- Khushi NGO Detail (standalone route) -->
-  <url>
-    <loc>https://www.thegivingcircle.in/khushi-ngo-detail</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-
   <!-- Animal Care NGO Detail -->
   <url>
     <loc>https://www.thegivingcircle.in/animalcare-ngo-detail</loc>

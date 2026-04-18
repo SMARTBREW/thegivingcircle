@@ -30,7 +30,6 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
       'ngo-partner': 'NGO Partnership',
       'ngo-list': 'Our NGO Partners',
       'ngo-detail': 'NGO Details',
-      // 'khushi-ngo-detail': 'KHUSHII Details',
       'animalcare-ngo-detail': 'Animal Care Details',
       'causes': 'Browse Causes',
       'live-causes': 'Live Causes',

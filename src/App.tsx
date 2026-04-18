@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import ScrollToTop from './components/ScrollToTop';
@@ -21,7 +21,6 @@ const NGOList = lazy(() => import('./pages/ngo-list').then(module => ({ default:
 const Causes = lazy(() => import('./pages/Causes').then(module => ({ default: module.Causes })));
 const ChampionStoryDetail = lazy(() => import('./pages/ChampionStoryDetail'));
 const NGODetailContainer = lazy(() => import('./pages/NGODetailContainer'));
-const KhushiNGODetailContainer = lazy(() => import('./pages/KhushiNGODetailContainer'));
 const AnimalCareNGODetailContainer = lazy(() => import('./pages/AnimalCareNGODetailContainer'));
 const LocationSEOBase = lazy(() => import('./pages/local-seo/LocationSEOBase'));
 const GivingCircleLanding = lazy(() => import('./pages/seo/GivingCircleLanding'));
@@ -106,7 +105,7 @@ function App() {
               <Route path="/ngo-partner" element={<NGOPartner />} />
               <Route path="/ngo-list" element={<NGOList />} />
               <Route path="/ngo-detail/:id" element={<NGODetailContainer />} />
-              <Route path="/khushi-ngo-detail" element={<KhushiNGODetailContainer />} />
+              <Route path="/khushi-ngo-detail" element={<Navigate to="/jwp-cause-details" replace />} />
               <Route path="/animalcare-ngo-detail" element={<AnimalCareNGODetailContainer />} />
               <Route path="/causes" element={<Causes />} />
               <Route path="/live-causes" element={<LiveCausesPage />} />
