@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
 import { Share2, Shield, Facebook, Twitter, AlertTriangle, FileText, CheckCircle, Award, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../SEO/SEOHead';
 import ArticleSchema from '../SEO/ArticleSchema';
 import CloudinaryImage from '../ui/CloudinaryImage';
+import { trackEvent } from '../../utils/analytics';
 
-const KhushiCauseDetailPage = () => {
-  const { id } = useParams();
-  const navigate = useNavigate();
+function scrollDonateIntoView() {
+  document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' });
+}
+
+const JwpCauseDetailPage = () => {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   const faqs = [
@@ -445,10 +447,10 @@ const KhushiCauseDetailPage = () => {
               <div className="bg-blue-50 border-l-4 border-blue-600 p-6 rounded-r-lg my-10">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">CSR & Corporate Partnerships</h3>
                 <p className="text-gray-700 mb-4">
-                  We invite companies to join our **CSR for menstrual hygiene** initiatives. Our **corporate sponsorship for sanitary pad distribution** and **CSR project for girl child health** are designed for high social impact and compliance.
+                  We invite companies to join our CSR programmes for menstrual hygiene. Corporate sponsorship for sanitary pad distribution and girl child health projects are designed for high social impact and compliance.
                 </p>
                 <ul className="list-disc ml-5 text-gray-700 space-y-2">
-                  <li>Customized **menstrual hygiene CSR partnership India** programs</li>
+                  <li>Customized menstrual hygiene CSR partnership programmes</li>
                   <li>Impact reports for your sustainability goals</li>
                   <li>Employee engagement in menstrual health workshops</li>
                 </ul>
@@ -675,7 +677,13 @@ const KhushiCauseDetailPage = () => {
                 </div>
 
                 {/* Main Donate Button */}
-                <button className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
+                <button
+                  type="button"
+                  onClick={() =>
+                    trackEvent('donate_cta_click', { cause_page: 'jwp-cause-details', placement: 'sidebar_primary' })
+                  }
+                  className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5"
+                >
                   <span>Donate Now</span>
                   <span className="text-xs font-normal opacity-90">Secure payment · Tax receipt within 48 hours</span>
                 </button>
@@ -736,7 +744,11 @@ const KhushiCauseDetailPage = () => {
             </button>
             <div className="text-green-200 font-medium text-sm sm:hidden my-2">OR</div>
             <button
-              onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+              type="button"
+              onClick={() => {
+                trackEvent('donate_cta_click', { cause_page: 'jwp-cause-details', placement: 'footer_cta_secondary' });
+                scrollDonateIntoView();
+              }}
               className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1 text-base sm:text-lg"
             >
               Make a Direct Donation Instead
@@ -753,7 +765,11 @@ const KhushiCauseDetailPage = () => {
             <div className="text-xs text-gray-500 truncate">{cause.progressPercentage}% of {cause.goalAmount} · {cause.daysLeft} days left</div>
           </div>
           <button
-            onClick={() => document.getElementById('donate-section')?.scrollIntoView({ behavior: 'smooth' })}
+            type="button"
+            onClick={() => {
+              trackEvent('donate_cta_click', { cause_page: 'jwp-cause-details', placement: 'mobile_fixed_bar' });
+              scrollDonateIntoView();
+            }}
             className="bg-green-700 text-white px-6 py-3 rounded-lg font-bold text-sm shadow-md hover:bg-green-800 transition-colors shrink-0 whitespace-nowrap"
           >
             Donate Now
@@ -764,4 +780,4 @@ const KhushiCauseDetailPage = () => {
   );
 };
 
-export default KhushiCauseDetailPage;
+export default JwpCauseDetailPage;

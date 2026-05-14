@@ -75,33 +75,15 @@
   <link rel="preconnect" href="https://cloudinary-res.cloudinary.com" crossorigin>
 
   <!-- Preconnect to important third-party origins for faster loading -->
-  <link rel="preconnect" href="https://khushii.org" crossorigin>
   <link rel="preconnect" href="https://mamtahimc.in" crossorigin>
   <link rel="preconnect" href="https://www.kokanngo.org" crossorigin>
   <link rel="preconnect" href="https://www.animalcareindia.org.in" crossorigin>
   <link rel="preconnect" href="https://media.licdn.com" crossorigin>
   <link rel="dns-prefetch" href="https://encrypted-tbn0.gstatic.com">
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
 
   <!-- LCP image preload is handled dynamically by Hero component -->
-
-  <!-- Google Analytics 4 - DISABLED FOR PERFORMANCE TESTING -->
-  <!-- Uncomment to re-enable analytics:
-    <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = 'https://www.googletagmanager.com/gtag/js?id=G-ZNMJNDF71S';
-          document.head.appendChild(script);
-          
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-ZNMJNDF71S');
-        }, 1000);
-      });
-    </script>
-    -->
 
   <!-- Structured Data - Organization Schema -->
   <script type="application/ld+json">
@@ -264,6 +246,15 @@
       ]
     }
     </script>
+
+  <!-- GA4 — send_page_view false; SPA fires page_view from AnalyticsListener -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNMJNDF71S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-ZNMJNDF71S', { send_page_view: false });
+  </script>
 </head>
 
 <body>

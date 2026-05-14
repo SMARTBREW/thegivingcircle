@@ -1,2 +1,4 @@
 # Exclude static assets from redirect
+/khushi-ngo-detail    /jwp-cause-details   301
+/khushi-cause-details /jwp-cause-details   301
 </^[^.]+$|\.(?!(css|gif|ico|jpg|jpeg|js|png|txt|svg|woff|woff2|ttf|eot|json|xml|webp|webmanifest)$)([^.]+$)/>    /index.html   200

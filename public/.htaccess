@@ -5,6 +5,10 @@
   RewriteEngine On
   RewriteBase /
 
+  # Legacy paths → canonical JWP cause page (301 before SPA fallback)
+  RewriteRule ^khushi-ngo-detail/?$ /jwp-cause-details [R=301,L]
+  RewriteRule ^khushi-cause-details/?$ /jwp-cause-details [R=301,L]
+
   # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

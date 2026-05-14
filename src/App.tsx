@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import ScrollToTop from './components/ScrollToTop';
+import AnalyticsListener from './components/AnalyticsListener';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Breadcrumbs from './components/ui/Breadcrumbs';
 
@@ -26,8 +27,7 @@ const LocationSEOBase = lazy(() => import('./pages/local-seo/LocationSEOBase'));
 const GivingCircleLanding = lazy(() => import('./pages/seo/GivingCircleLanding'));
 const NonprofitOrganizationsLanding = lazy(() => import('./pages/seo/NonprofitOrganizationsLanding'));
 const LiveCausesPage = lazy(() => import('./components/liveCauses/browseCauses'));
-const CauseDetailPage = lazy(() => import('./components/liveCauses/causesDetails'));
-const KhushiCauseDetailPage = lazy(() => import('./components/liveCauses/khushiCauseDetails'));
+const JwpCauseDetailPage = lazy(() => import('./components/liveCauses/jwpCauseDetails'));
 const PawsitiveProtectorsCauseDetailPage = lazy(() => import('./components/liveCauses/pawsitiveProtectorsCauseDetails'));
 const BowlsOfHopeCauseDetailPage = lazy(() => import('./components/liveCauses/bowlsOfHopeCauseDetails'));
 const FloodAnimalRescueCauseDetailPage = lazy(() => import('./components/liveCauses/floodAnimalRescueCauseDetails'));
@@ -89,6 +89,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <AnalyticsListener />
       <div className="flex flex-col min-h-screen">
         <Navbar />
         <Breadcrumbs />
@@ -106,11 +107,12 @@ function App() {
               <Route path="/ngo-list" element={<NGOList />} />
               <Route path="/ngo-detail/:id" element={<NGODetailContainer />} />
               <Route path="/khushi-ngo-detail" element={<Navigate to="/jwp-cause-details" replace />} />
+              <Route path="/khushi-cause-details" element={<Navigate to="/jwp-cause-details" replace />} />
               <Route path="/animalcare-ngo-detail" element={<AnimalCareNGODetailContainer />} />
               <Route path="/causes" element={<Causes />} />
               <Route path="/live-causes" element={<LiveCausesPage />} />
               <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
-              <Route path="/jwp-cause-details" element={<KhushiCauseDetailPage />} />
+              <Route path="/jwp-cause-details" element={<JwpCauseDetailPage />} />
               <Route path="/pawsitive-protectors-cause-details" element={<PawsitiveProtectorsCauseDetailPage />} />
               <Route path="/bowls-of-hope-cause-details" element={<BowlsOfHopeCauseDetailPage />} />
               <Route path="/flood-animal-rescue-cause-details" element={<FloodAnimalRescueCauseDetailPage />} />

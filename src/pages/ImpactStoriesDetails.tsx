@@ -89,7 +89,7 @@ const ImpactStoriesDetails: React.FC = () => {
     shares: 312,
     images: [
       '/JWP.jpg',
-      '/khushii.jpg',
+      'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
       '/Animal care.jpg',
       'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
     ],

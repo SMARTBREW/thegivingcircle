@@ -30,12 +30,16 @@ aws s3 sync dist/assets/ s3://${BUCKET_NAME}/assets/ \
   --metadata-directive REPLACE \
   --region ${REGION}
 
-# Upload fonts (1 year cache - immutable)
+# Upload fonts (1 year cache - immutable) — skip if none in build output
 echo "  → Uploading fonts..."
-aws s3 sync dist/fonts/ s3://${BUCKET_NAME}/fonts/ \
-  --cache-control "max-age=31536000,public,immutable" \
-  --metadata-directive REPLACE \
-  --region ${REGION}
+if [ -d "dist/fonts" ] && [ "$(ls -A dist/fonts 2>/dev/null)" ]; then
+  aws s3 sync dist/fonts/ s3://${BUCKET_NAME}/fonts/ \
+    --cache-control "max-age=31536000,public,immutable" \
+    --metadata-directive REPLACE \
+    --region ${REGION}
+else
+  echo "  … no dist/fonts, skipping"
+fi
 
 # Upload images (1 week cache)
 echo "  → Uploading images..."

@@ -140,12 +140,12 @@ const LiveCausesPage = () => {
     },
     // id: 6 (NGOs for Women Empowerment)  -  hidden
     // id: 7 (CSR Projects in India)  -  hidden
-    // KHUSHII causes
+    // JWP / Wings of Hope (legacy sample)
     // {
     //   id: 5,
     //   title: 'Pads for Freedom',
     //   organizer: 'Dr. Meera Singh',
-    //   ngo: 'KHUSHII',
+    //   ngo: 'JWP',
     //   location: 'Delhi, India',
     //   category: 'Women Health',
     //   goalAmount: '₹3,50,000',
@@ -153,7 +153,7 @@ const LiveCausesPage = () => {
     //   progressPercentage: 80,
     //   supporters: 189,
     //   daysLeft: 15,
-    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183089/images/khushi/48.jpg',
+    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
     //   urgency: 'High',
     //   description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
     //   beneficiaries: '2000 girls and women',

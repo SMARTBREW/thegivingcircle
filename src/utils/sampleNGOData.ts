@@ -824,7 +824,7 @@ export const sampleNGODetails: NGODetails = {
 };
 
 // JWP NGO Data
-export const khushiNGODetails: NGODetails = {
+export const jwpNGODetails: NGODetails = {
   id: '3',
   name: 'JWP - Joint Women\'s Program',
   shortDescription: 'Empowering underprivileged children through education, nutrition, and holistic development across Delhi NCR since 2012.',
@@ -834,7 +834,7 @@ export const khushiNGODetails: NGODetails = {
   heroImage: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
   location: 'Delhi NCR, India',
   yearEstablished: 2012,
-  registrationNumber: 'KHUSHII-2012-001',
+  registrationNumber: 'JWP-REG-2012-001',
   
   mission: 'To empower underprivileged children through quality education, nutrition, and holistic development while engaging communities for sustainable change.',
   
@@ -980,7 +980,7 @@ export const khushiNGODetails: NGODetails = {
       id: '4', 
       type: 'image', 
       url: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg', 
-      title: 'KHUSHII Learning Center', 
+      title: 'Community learning center', 
       description: 'Our flagship learning center providing quality education and holistic development opportunities for underprivileged children.', 
       location: 'Delhi NCR', 
       date: 'December 2023', 
@@ -1018,7 +1018,7 @@ export const khushiNGODetails: NGODetails = {
   timeline: [
     {
       year: 2012,
-      title: 'KHUSHII Foundation Established',
+      title: 'JWP programme established',
       description: 'Founded with the vision to provide quality education and nutrition to underprivileged children in Delhi NCR.',
       milestone: 'Organization Launch',
       impact: [
@@ -1123,12 +1123,12 @@ export const khushiNGODetails: NGODetails = {
   partnerships: [
     {
       name: 'Delhi Government',
-      logo: '/images/khushi/KHu-Web.jpg',
+      logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183108/images/khushi/KHu-Web.jpg',
       description: 'Collaborative partnership for education and nutrition programs'
     },
     {
       name: 'NGO Federation of India',
-      logo: '/images/khushi/HomePageTop.jpg',
+      logo: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg',
       description: 'Network partnership for capacity building and resource sharing'
     }
   ],
@@ -1162,6 +1162,6 @@ export const khushiNGODetails: NGODetails = {
 // Additional NGO samples for demonstration
 export const sampleNGOList: NGODetails[] = [
   sampleNGODetails,
-  khushiNGODetails,
+  jwpNGODetails,
   // Add more NGO samples here for a complete listing
 ]; 

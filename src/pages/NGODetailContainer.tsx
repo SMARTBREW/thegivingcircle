@@ -33,14 +33,14 @@ const NGODetailContainer: React.FC = () => {
       try {
         // In development mode, prioritize sample data to avoid API errors
         if (import.meta.env.DEV) {
-          const { sampleNGODetails, khushiNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
+          const { sampleNGODetails, jwpNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
 
           if (sampleNGODetails.id === id) {
             setNgoDetails(sampleNGODetails);
             setLoading(false);
             return;
-          } else if (khushiNGODetails.id === id) {
-            setNgoDetails(khushiNGODetails);
+          } else if (jwpNGODetails.id === id) {
+            setNgoDetails(jwpNGODetails);
             setLoading(false);
             return;
           } else if (animalCareNGODetails.id === id) {
@@ -64,16 +64,16 @@ const NGODetailContainer: React.FC = () => {
 
         // If API fails, try sample data as fallback (for production or if dev sample data failed)
         try {
-          const { sampleNGODetails, khushiNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
+          const { sampleNGODetails, jwpNGODetails, animalCareNGODetails } = await import('../utils/sampleNGOData');
 
           if (sampleNGODetails.id === id) {
             setNgoDetails(sampleNGODetails);
-          } else if (khushiNGODetails.id === id) {
-            setNgoDetails(khushiNGODetails);
+          } else if (jwpNGODetails.id === id) {
+            setNgoDetails(jwpNGODetails);
           } else if (animalCareNGODetails.id === id) {
             setNgoDetails(animalCareNGODetails);
           } else {
-            setError(`NGO not found. Available sample IDs: ${sampleNGODetails.id}, ${khushiNGODetails.id}, ${animalCareNGODetails.id}`);
+            setError(`NGO not found. Available sample IDs: ${sampleNGODetails.id}, ${jwpNGODetails.id}, ${animalCareNGODetails.id}`);
           }
         } catch (sampleError) {
           console.error('Failed to load sample data:', sampleError);

@@ -38,12 +38,6 @@ const imagesToOptimize = [
     description: 'Main logo'
   },
   { 
-    input: 'public/khushii.jpg', 
-    output: 'public/khushii.webp', 
-    quality: 80,
-    description: 'Khushii NGO image'
-  },
-  { 
     input: 'public/JWP.jpg', 
     output: 'public/JWP.webp', 
     quality: 80,
