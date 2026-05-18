@@ -5,6 +5,7 @@ import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const faqs = [
+  { q: 'Is this guide meant for volunteering in India only (not overseas)?', a: 'Yes. It is written for people who live in India or intend to volunteer with registered Indian NGOs, including timelines, Hindi/English realities, FCRA norms and 80G giving. If you are in Delhi NCR, use our Delhi volunteer roster as a shortcut; elsewhere, apply the verification checklist locally.' },
   { q: 'Do I need to know Hindi to volunteer in India?', a: 'Not necessarily. Many urban NGOs work in English or Hindi. For rural or community work, basic Hindi helps but isn\'t mandatory for most roles.' },
   { q: 'Can students volunteer with NGOs in India?', a: 'Absolutely. Many NGOs actively welcome college students for tutoring, awareness campaigns and event support. It also counts toward internship credits at many universities.' },
   { q: 'How many hours per week should I commit?', a: 'Most NGOs ask for a minimum of 2–4 hours per week for a minimum of 3 months. This gives you enough time to build rapport and create meaningful impact.' },
@@ -18,16 +19,16 @@ const HowToVolunteerIndia = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="How to Volunteer in India 2026 | Top NGOs & Opportunities | The Giving Circle"
-        description="A practical guide to volunteering with NGOs in India in 2026. How to find opportunities, what to expect, corporate volunteering programmes and how to start today. Includes verified NGO list."
-        keywords="how to volunteer, how to volunteer for ngo, volunteer NGO, volunteering opportunities 2026, NGO volunteer, corporate volunteering, volunteer near me, how to start volunteering, how to do volunteer work, act of kindness, helping the poor, empowering youth"
+        title="How to Volunteer in India (Delhi NCR + India) | Verified NGO Guide 2026"
+        description="India-only guide: how to find verified NGO volunteer roles, what to expect, weekend vs corporate programmes, and Delhi NCR roles you can apply to this week. Not a generic overseas checklist."
+        keywords="how to volunteer in India, volunteer NGO India, Delhi NCR volunteer NGO, weekend volunteer Delhi, corporate volunteering India, NGO volunteer India, volunteer in Noida Gurgaon, how to volunteer for NGO India, csr volunteering India, how to start volunteering India"
         canonicalUrl="https://www.thegivingcircle.in/how-to-volunteer-india"
-        ogTitle="How to Volunteer in India 2026 | The Giving Circle"
-        ogDescription="Practical guide to volunteering with NGOs in India. Find opportunities, understand what to expect and start today."
+        ogTitle="How to Volunteer in India — Delhi NCR & nationwide | The Giving Circle"
+        ogDescription="For residents in India: verified NGO volunteering, Delhi NCR fast path, corporate programmes, and what to ask before you commit."
       />
       <ArticleSchema
-        title="How to Volunteer in India 2026  -  Top NGOs & Opportunities"
-        description="A practical guide to volunteering with NGOs in India in 2026. How to find opportunities, what to expect and how to start today."
+        title="How to Volunteer in India (Delhi NCR + India) — Verified NGO Guide 2026"
+        description="India-focused practical guide: verified NGOs, Delhi NCR volunteer paths, corporate volunteering, and how to start without wasting time on unverified listings."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
         dateModified={currentDate}
@@ -47,12 +48,12 @@ const HowToVolunteerIndia = () => {
             </ol>
           </nav>
 
-          <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">Volunteering Guide · India 2026</span>
+          <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">India · Delhi NCR fast path · 2026</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            How to Volunteer in India
+            How to Volunteer in India: Verified NGOs &amp; Real Roles
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Top NGOs & Opportunities You Can Join in 2026
+            Built for people in India—not generic global advice. If you are in <strong>Delhi NCR</strong>, jump to mapped weekend and skills roles; everywhere else, use the same vetting steps to avoid scam listings.
           </p>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>By The Giving Circle Team</span><span>•</span><span>7 min read</span>
@@ -69,6 +70,7 @@ const HowToVolunteerIndia = () => {
           <ol className="space-y-1 text-sm">
             {[
               'Why volunteer in India?',
+              'Delhi NCR: quickest way to start this month',
               'Types of volunteering opportunities',
               'How to find the right NGO',
               'What to expect as a volunteer',
@@ -85,8 +87,17 @@ const HowToVolunteerIndia = () => {
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Why Volunteer in India?</h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded-r-lg mb-6">
+            <p className="text-gray-800 text-sm sm:text-base font-medium mb-1">Heads-up if you landed from a broad search (“how to volunteer”)</p>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              This page is anchored in <strong>Indian registration norms (trust/society/FCRA awareness)</strong>, languages you will hear on cohorts (Hindi + English),
+              and a <Link to="/volunteer-opportunities-delhi" className="text-green-800 underline font-medium">Delhi NCR volunteering roster</Link> you can browse today.
+              If you are comparing US/EU NGO scenes, skim our checklist still—but expect India-specific onboarding and paperwork.
+            </p>
+          </div>
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            India faces enormous social challenges child illiteracy, animal welfare crises, gender inequality and recurring disaster emergencies. NGOs doing frontline work are often short-staffed and deeply underfunded. Skilled volunteers can multiply their impact many times over.
+            India faces enormous social challenges—child literacy gaps, stray-animal welfare load, gender-based barriers, and repeat climate disasters.
+            Verified NGOs stay thin on volunteer bandwidth; predictable weekly help matters more than one-off enthusiasm.
           </p>
           <div className="grid sm:grid-cols-3 gap-4 my-6">
             {[
@@ -100,6 +111,22 @@ const HowToVolunteerIndia = () => {
               </div>
             ))}
           </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Delhi NCR: quickest way to start this month</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <p className="text-gray-700 text-lg leading-relaxed mb-4">
+            If you live in Delhi, Gurugram, Noida or Faridabad, skip the abstract research loop: open our{' '}
+            <Link to="/volunteer-opportunities-delhi" className="text-green-700 font-semibold hover:underline">Delhi &amp; NCR volunteer opportunities list</Link>
+            {' '}with partner-specific roles (teaching windows, animal-rescue weekends, remote skills). Then register as a Cause Champion if you want hand-offs to partner NGOs.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Prefer browsing by city hubs? Explore{' '}
+            <Link to="/verified-ngos-in-delhi" className="text-green-700 font-semibold hover:underline">verified NGOs in Delhi NCR</Link>
+            {' '}or niche listings like{' '}
+            <Link to="/ngo-in-noida" className="text-green-700 font-semibold hover:underline">NGOs in Noida</Link>.
+          </p>
         </section>
 
         {/* Types */}

@@ -18,16 +18,16 @@ const VerifiedNGOsInDelhi = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Verified NGOs in Delhi | Trusted Charities to Donate To 2026 | The Giving Circle"
-        description="Find verified, background-checked NGOs in Delhi you can safely donate to in 2026. All organisations have valid FCRA, 80G status and published audit reports. Tax benefits available."
+        title="Verified NGOs in Delhi NCR | Trusted FCRA · 80G Charities | The Giving Circle"
+        description="Find verified NGOs in Delhi NCR: FCRA-checked, 80G-certified organisations with audited financials and quarterly impact reporting. Compare causes, browse Noida/Gurugram guides, volunteer locally, donate with receipts."
         keywords="verified NGOs in Delhi, best ngo in delhi ncr, delhi ngo list, delhi best ngo, ngo delhi, trusted NGOs Delhi, donate to NGO Delhi, charitable trust in delhi ncr, background checked NGO Delhi, 80G NGO Delhi, 80g donation limit"
         canonicalUrl="https://www.thegivingcircle.in/verified-ngos-in-delhi"
-        ogTitle="Verified NGOs in Delhi  -  Trusted Charities 2026 | The Giving Circle"
-        ogDescription="Delhi's most trusted NGOs verified for FCRA, 80G and financial transparency. Donate with confidence."
+        ogTitle="Verified NGOs in Delhi NCR  -  FCRA · 80G Trusted Charities | The Giving Circle"
+        ogDescription="Verified Delhi NCR NGOs with FCRA, 80G and audits. Nearby guides (Noida), volunteering, education campaigns and receipts."
       />
       <ArticleSchema
-        title="Verified NGOs in Delhi  -  Trusted Charities You Can Donate To in 2026"
-        description="Find verified NGOs in Delhi with FCRA, 80G and audit trail. 80G tax benefits and real impact tracking."
+        title="Verified NGOs in Delhi NCR  -  Trusted Charities You Can Donate To in 2026"
+        description="Find verified NGOs across Delhi NCR with FCRA, 80G and audit trail; volunteer guides for Delhi NCR and links to donate with receipts."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
         dateModified={currentDate}
@@ -169,6 +169,33 @@ const VerifiedNGOsInDelhi = () => {
           </div>
         </section>
 
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Guides, Volunteering &amp; Top Lists</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Link to="/ngo-in-noida" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">NGOs in Noida</h3>
+              <p className="text-gray-600 text-sm mb-1">Verified partners and how to donate</p>
+              <p className="text-green-700 text-sm">View guide →</p>
+            </Link>
+            <Link to="/volunteer-opportunities-delhi" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Volunteer in Delhi NCR</h3>
+              <p className="text-gray-600 text-sm mb-1">Roles, onboarding and trustworthy NGOs</p>
+              <p className="text-green-700 text-sm">Read opportunities →</p>
+            </Link>
+            <Link to="/ngos/top-ngo-in-delhi" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Top NGOs in Delhi</h3>
+              <p className="text-gray-600 text-sm mb-1">Curated hub for donors comparing causes</p>
+              <p className="text-green-700 text-sm">Explore hub →</p>
+            </Link>
+            <Link to="/donate-for-education-india" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Donate for Child Education</h3>
+              <p className="text-gray-600 text-sm mb-1">80G-listed education programmes</p>
+              <p className="text-green-700 text-sm">See campaign →</p>
+            </Link>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
@@ -197,7 +224,11 @@ const VerifiedNGOsInDelhi = () => {
           <div className="flex flex-wrap gap-3">
             {[
               { label: 'Best NGOs in Delhi', href: '/ngos/best-ngo-in-delhi' },
+              { label: 'Top NGOs hub', href: '/ngos/top-ngo-in-delhi' },
               { label: 'Top NGOs in Delhi 2026', href: '/top-ngos-in-delhi-2026' },
+              { label: 'NGOs in Noida', href: '/ngo-in-noida' },
+              { label: 'Volunteer in Delhi', href: '/volunteer-opportunities-delhi' },
+              { label: 'Verified NGO list (India)', href: '/ngo-list' },
               { label: 'Donate for Child Education', href: '/donate-for-education-india' },
               { label: 'NGOs for Women Empowerment', href: '/ngo-for-women-empowerment' },
               { label: 'CSR Projects India', href: '/csr-projects-in-india' },

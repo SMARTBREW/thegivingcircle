@@ -1,5 +1,7 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import SEOHead from '../components/SEO/SEOHead';
 
 interface CauseButtonProps {
   title: string;
@@ -102,8 +104,19 @@ const SleepingCat: React.FC = () => (
 );
 
 const NotFoundPage: React.FC = () => {
+  const { pathname } = useLocation();
+  const canonicalUrl = `https://www.thegivingcircle.in${pathname}`;
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-teal-50 flex items-center justify-center px-4">
+      <SEOHead
+        title="Page not found | The Giving Circle"
+        description="This URL is not on The Giving Circle. Explore verified NGOs and live causes to donate with confidence."
+        canonicalUrl={canonicalUrl}
+        noindex
+        ogTitle="Page not found | The Giving Circle"
+        ogDescription="Head back to verified causes and NGO listings on The Giving Circle."
+      />
       <div className="max-w-4xl mx-auto text-center">
         {/* Large 404 with sleeping cat */}
         <motion.div

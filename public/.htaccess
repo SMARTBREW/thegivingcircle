@@ -9,6 +9,13 @@
   RewriteRule ^khushi-ngo-detail/?$ /jwp-cause-details [R=301,L]
   RewriteRule ^khushi-cause-details/?$ /jwp-cause-details [R=301,L]
 
+  # Legacy GSC path consolidation
+  RewriteRule ^local-seo/top-ngo-in-delhi/?$ /ngos/top-ngo-in-delhi [R=301,L]
+
+  # Stray /ngos/ngo-in-* → canonical SPA routes (301 before SPA fallback)
+  RewriteRule ^ngos/ngo-in-noida/?$ /ngo-in-noida [R=301,L]
+  RewriteRule ^ngos/ngo-in-gurugram/?$ /ngo-in-gurugram [R=301,L]
+
   # Force HTTPS
   RewriteCond %{HTTPS} off
   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

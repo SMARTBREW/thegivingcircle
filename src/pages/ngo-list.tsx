@@ -288,9 +288,9 @@ export const NGOList: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 pt-16 sm:pt-20">
       <SEOHead
-        title="NGO List in India | Verified & Trusted NGOs"
-        description="Browse a curated NGO list featuring trusted nonprofit organizations working across education, health and welfare"
-        keywords="NGO directory, verified NGOs, top NGO, best NGO, ngo full form, ngo role, role of ngo, donate to NGO, causes to support, community causes, community giving, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, community care, donation 80g, helping the poor"
+        title="Verified NGO List India | FCRA · 80G Screened Partners | Giving Circle"
+        description="Indian NGO directory with stated verification steps: compliance checks before listing, geography and cause filters, and links to donate or volunteer—all in one skim-friendly list."
+        keywords="ngo list india, verified ngos india, fcra ngos india, donate ngo india, NGO directory india, csr partners india, philanthropists donate india, NGO directory, top NGO"
         canonicalUrl="https://www.thegivingcircle.in/ngo-list"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 md:py-12 lg:py-14">

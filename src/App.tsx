@@ -130,10 +130,18 @@ function App() {
                   <LocationSEOBase
                     location="Noida"
                     locationSlug="ngo-in-noida"
-                    title="NGO in Noida | Verified & Trusted NGOs"
-                    description="Find trusted NGOs in Noida supporting education, welfare and community development"
-                    keywords="ngo in noida, charity in noida, social service noida"
-                    primaryKeyword="NGOs"
+                    canonicalPath="/ngo-in-noida"
+                    heroHeadline="Verified NGOs in Noida & Greater Noida"
+                    heroLead="FCRA-listed, 80G-eligible charities you can support with confidence: education, women’s programmes, animal care, hunger relief, and CSR-ready partners across Noida Extension and Delhi NCR."
+                    title="NGOs in Noida (Verified) | Donate, Volunteer & CSR | The Giving Circle"
+                    description="Find verified NGOs in Noida & Greater Noida—education, women’s empowerment, animal welfare & relief. Transparent impact reports, secure giving, Delhi NCR–focused listings."
+                    keywords="ngo in noida, verified ngo noida, donate noida ngo, charity noida, csr noida, best ngo noida, ngo sector 62 noida, greater noida ngo"
+                    primaryKeyword="Trusted NGOs"
+                    relatedKeywords={[
+                      { keyword: 'Best NGOs in Noida', slug: 'best-ngo-in-noida' },
+                      { keyword: 'Top NGOs in Noida', slug: 'top-ngo-in-noida' },
+                      { keyword: 'Verified NGOs in Noida', slug: 'verified-ngo-in-noida' },
+                    ]}
                   />
                 }
               />
@@ -143,10 +151,18 @@ function App() {
                   <LocationSEOBase
                     location="Gurugram"
                     locationSlug="ngo-in-gurugram"
-                    title="NGO in Gurugram | Verified & Trusted NGOs"
-                    description="Discover verified NGOs in Gurugram working across education, health and relief initiatives"
-                    keywords="ngo in gurugram, ngo gurgaon, charity gurugram"
-                    primaryKeyword="NGOs"
+                    canonicalPath="/ngo-in-gurugram"
+                    heroHeadline="Verified NGOs in Gurugram (Gurgaon)"
+                    heroLead="Corporate hub, large informal settlements, and peri-urban wards need trusted NGOs. Every partner listed here meets our verification bar—ideal for salaries CSR, volunteering, or one-off donations."
+                    title="NGOs in Gurugram (Verified Gurgaon) | Donate & CSR | The Giving Circle"
+                    description="Verified NGOs in Gurugram / Gurgaon: education, livelihoods, health, animal welfare. FCRA · 80G partners with impact reporting—for residents and corporates."
+                    keywords="ngo in gurugram, ngo gurgaon, verified ngo gurugram, charity gurgaon, csr gurugram"
+                    primaryKeyword="Trusted NGOs"
+                    relatedKeywords={[
+                      { keyword: 'Best NGOs in Gurugram', slug: 'best-ngo-in-gurugram' },
+                      { keyword: 'Top NGOs in Gurugram', slug: 'top-ngo-in-gurugram' },
+                      { keyword: 'Verified NGOs in Gurugram', slug: 'verified-ngo-in-gurugram' },
+                    ]}
                   />
                 }
               />
@@ -170,6 +186,10 @@ function App() {
               {/* Blog */}
               <Route path="/blog" element={<BlogIndex />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
+
+              {/* Cannibal URLs → canonical hubs (must be above /ngos/:location) */}
+              <Route path="/ngos/ngo-in-noida" element={<Navigate to="/ngo-in-noida" replace />} />
+              <Route path="/ngos/ngo-in-gurugram" element={<Navigate to="/ngo-in-gurugram" replace />} />
 
               {/* Dynamic Local SEO */}
               <Route path="/ngos/:location" element={<SEOHubIndex />} />

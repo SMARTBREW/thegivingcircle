@@ -7,6 +7,7 @@ import ArticleSchema from '../../components/SEO/ArticleSchema';
 const faqs = [
   { q: 'How do women empowerment donations qualify for tax benefits?', a: 'Donations to registered NGOs with 80G certification qualify for Section 80G tax deductions. The Giving Circle ensures all listed NGOs have valid 80G status, and receipts are generated automatically.' },
   { q: 'What is the difference between women empowerment and women\'s rights NGOs?', a: 'Women empowerment NGOs focus on building capabilities (education, skills, economic independence) while women\'s rights NGOs focus on legal and advocacy work. Many organisations do both. The Giving Circle lists NGOs across the full spectrum.' },
+  { q: 'Are 80G limits and eligibility the same as being a philanthropist?', a: 'No. Section 80G is a tax rule for qualifying donations and receipts; philanthropy is about sustained intent and how you choose causes. Limits and eligible percentages depend on IT rules and each trust\'s registration  -  always confirm on your receipt and with a tax adviser if needed.' },
   { q: 'Can I designate my donation for a specific programme like menstrual health?', a: 'Yes. When donating through a specific cause page, your funds are directed to that programme. You can also contact us for custom giving arrangements.' },
   { q: 'How does corporate CSR for women empowerment work?', a: 'Women empowerment, gender equality and education for girls are all eligible under Schedule VII of the Companies Act. The Giving Circle can structure your CSR contribution with full documentation for compliance.' },
 ];
@@ -18,16 +19,16 @@ const NGOForWomenEmpowerment = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="NGOs for Women Empowerment in India | Donate & Support | The Giving Circle"
-        description="Support women empowerment in India by donating to verified NGOs focused on women's rights, education, livelihood and safety. Get 80G tax benefits and track real impact."
-        keywords="NGOs for women empowerment, ngo for woman, role of ngo in women empowerment, ngos for women empowerment, donate for women empowerment, women empowerment NGO, female education NGO, educational empowerment of women, conclusion of women empowerment, empowering women, education is important for women, empowering youth, help in suffering, giving pledge"
+        title="Women Empowerment NGOs India | Donate with 80G · Verified List | The Giving Circle"
+        description="Donate to verified women empowerment NGOs in India: education, livelihood, safety and menstrual health programmes with FCRA / 80G partners. Compare live causes, browse Delhi verified hubs, and track impact."
+        keywords="NGOs for women empowerment India, women empowerment NGO donate 80G, verified NGO women rights India, female education NGO, donate for women empowerment, role of NGO in women empowerment, educational empowerment of women, girl child education donation India, CSR women empowerment Schedule VII, giving circle women causes"
         canonicalUrl="https://www.thegivingcircle.in/ngo-for-women-empowerment"
-        ogTitle="NGOs for Women Empowerment in India | The Giving Circle"
-        ogDescription="Donate to verified NGOs enabling women's rights, livelihood and safety in India."
+        ogTitle="Women Empowerment NGOs India  -  80G Donations | The Giving Circle"
+        ogDescription="Verified women empowerment NGOs: education, livelihood, safety. Links to Delhi volunteer hubs and national NGO lists."
       />
       <ArticleSchema
-        title="NGOs for Women Empowerment in India  -  Donate to Verified Organisations"
-        description="Support women empowerment in India by donating to verified NGOs. 80G tax benefits and real impact tracking."
+        title="Women Empowerment NGOs in India  -  Donate to Verified Organisations"
+        description="Support women empowerment through verified NGOs with 80G receipts, education and livelihood programmes, plus Delhi volunteering and NGO directory links."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
         dateModified={currentDate}
@@ -48,10 +49,10 @@ const NGOForWomenEmpowerment = () => {
           </nav>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            NGOs for Women Empowerment in India
+            Women Empowerment NGOs in India
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Millions of women across India lack access to education, economic opportunities and basic safety. Donating to verified women empowerment NGOs creates lasting change  -  and qualifies for 80G tax deductions.
+            Millions of women across India lack access to education, economic opportunities and basic safety. Donating to verified women empowerment NGOs creates lasting change  -  and qualifies for 80G tax deductions when you give to registered partners.
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">
@@ -191,8 +192,12 @@ const NGOForWomenEmpowerment = () => {
           <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">Related Pages</h2>
           <div className="flex flex-wrap gap-3">
             {[
+              { label: 'JWP women & girls education', href: '/jwp-cause-details' },
               { label: 'Donate for Child Education', href: '/donate-for-education-india' },
               { label: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
+              { label: 'Volunteer in Delhi NCR', href: '/volunteer-opportunities-delhi' },
+              { label: 'How to volunteer in India', href: '/how-to-volunteer-india' },
+              { label: 'Verified NGO list (India)', href: '/ngo-list' },
               { label: 'CSR Projects in India', href: '/csr-projects-in-india' },
               { label: 'Top Verified NGOs India 2026', href: '/top-verified-ngos-india-2026' },
               { label: 'NGO Directory', href: '/ngos' },

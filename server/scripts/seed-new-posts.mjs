@@ -112,8 +112,10 @@ const NEW_POSTS = [
   {
     slug: 'what-is-philanthropy-india',
     title: 'What is Philanthropy? Why India Needs More Collective Giving',
-    description: 'A clear explanation of what philanthropy means, how it works in India, and why collective giving through giving circles is the most effective form of modern philanthropy.',
-    keywords: 'what is philanthropy, philanthropy meaning, meaning of philanthropy, definition of philanthropy, collective giving, giving circle, social impact, giving pledge, fundraising meaning, community helpers',
+    description:
+      'Philanthropy in India spans CSR, temples and digital giving  -  but Section 80G receipts, audited NGOs and monthly habits are what separate one-off sympathy from accountable impact. Learn definitions, pitfalls and how verified lists help Indian donors.',
+    keywords:
+      'what is philanthropy India, philanthropy meaning India, philanthropy vs charity India, collective giving circle India, CSR philanthropy India, section 80G donation philanthropy, 80G receipt NGO India, definition of philanthropy, social impact India, trustworthy NGO philanthropy',
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
@@ -134,6 +136,7 @@ const NEW_POSTS = [
           'Philanthropy literally means "love of humanity." In practice, it refers to voluntary action for the public good - typically through donations of money, time, or skills to causes that benefit society.',
           'Philanthropy is different from charity in one important way: charity addresses immediate needs (feeding someone today), while philanthropy aims to solve the root causes of problems (changing the systems that cause hunger).',
           'Both are valuable. But effective philanthropy focuses on lasting change, not just short-term relief.',
+          'For Indian taxpayers, recurring gifts routed through NGOs with active 80G approval can produce deductions within current Income-tax limits  -  Section 80G is not "philanthropy" by itself (it is a compliance label), yet it overlaps with how disciplined Indian households plan CSR-style personal giving.',
         ],
         callout: 'Philanthropy is not about the size of the gift. It is about the intention to create lasting change.',
       },
@@ -193,6 +196,10 @@ const NEW_POSTS = [
         a: 'CSR (Corporate Social Responsibility) is a legal obligation for qualifying companies under the Companies Act. Philanthropy is voluntary giving by individuals or organisations beyond any legal requirement.',
       },
       {
+        q: 'Is Section 80G the same as being philanthropic?',
+        a: 'No. A valid 80G receipt describes tax treatment for a qualifying donation; philanthropy is the sustained intent, cause selection and follow-through. You can be deeply philanthropic with or without a deduction, and you should always confirm limits with your adviser.',
+      },
+      {
         q: 'How does The Giving Circle support philanthropy in India?',
         a: 'The Giving Circle provides a platform for verified, transparent giving. Cause Champions lead giving circles, donations flow to background-checked NGOs, and impact reporting keeps donors informed.',
       },
@@ -200,6 +207,7 @@ const NEW_POSTS = [
     related: [
       { title: 'What is a Giving Circle?', href: '/what-is-a-giving-circle' },
       { title: 'What is a Philanthropist?', href: '/blog/what-is-a-philanthropist-india' },
+      { title: 'Verified NGO list (India)', href: '/ngo-list' },
       { title: 'CSR Projects in India', href: '/csr-projects-in-india' },
       { title: 'Explore Live Causes', href: '/live-causes' },
     ],

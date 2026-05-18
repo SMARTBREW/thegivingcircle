@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Share2, Shield, Facebook, Twitter, AlertTriangle, FileText, CheckCircle, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
@@ -176,9 +176,9 @@ const DonateForEducationIndia = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate for Child Education in India | Verified NGOs | The Giving Circle"
-        description="Support child education in India by donating to verified NGOs. Fund school fees, books, uniforms and tuition for underprivileged children in Delhi NCR. 80G tax benefits available."
-        keywords="donate for child education, ngo for education, ngo on education, donors for education, fund for education, fund child education, child education donation, support underprivileged children, 80G donation education, 80g donation limit, education is important for women, food donation, help in suffering, JWP education NGO Delhi"
+        title="Donate for Child Education India | 80G · Verified NGOs · The Giving Circle"
+        description="Fund school fees, books, uniforms and after-school support for underprivileged children  -  especially in Delhi NCR  -  through audited partners with 80G receipts. Compare women- and girl-focused programmes and nearby verified NGO hubs."
+        keywords="donate child education India, NGO education donation 80G, fund school fees India, girl child education donate, JWP education NGO Delhi NCR, donate for underprivileged children, verified education NGO, 80G donation education"
         canonicalUrl="https://www.thegivingcircle.in/donate-for-education-india"
         ogImage={EDUCATION_IMAGE_URLS.hero}
       />
@@ -462,6 +462,31 @@ const DonateForEducationIndia = () => {
                     <a href="mailto:hello@thegivingcircle.in" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">hello@thegivingcircle.in</a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Related NGO and giving guides" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-4">Related guides &amp; hubs</h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="flex flex-wrap gap-3">
+                <Link to="/verified-ngos-in-delhi" className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  Verified NGOs in Delhi NCR
+                </Link>
+                <Link to="/ngo-for-women-empowerment" className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  Women empowerment NGOs
+                </Link>
+                <Link to="/ngo-list" className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  Verified NGO list (India)
+                </Link>
+                <Link to="/volunteer-opportunities-delhi" className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  Volunteer in Delhi NCR
+                </Link>
+                <Link to="/ngos/top-ngo-in-delhi" className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  Top NGOs in Delhi
+                </Link>
+                <Link to="/ngo-in-noida" className="inline-block bg-white border border-gray-200 hover:bg-green-50 hover:border-green-400 text-gray-700 hover:text-green-800 px-4 py-2 rounded-full text-sm font-medium transition-colors">
+                  NGOs in Noida
+                </Link>
               </div>
             </section>
 

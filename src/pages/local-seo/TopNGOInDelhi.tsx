@@ -6,10 +6,12 @@ const TopNGOInDelhi: React.FC = () => {
     <LocationSEOBase
       location="Delhi"
       locationSlug="top-ngo-in-delhi"
-      title="Top NGOs in Delhi | Leading Charity Organizations | The Giving Circle"
-      description="Explore top-rated NGOs in Delhi creating maximum social impact through our community support platform. Join our giving community to support social causes through social giving and community support. Give and help create change."
-      keywords="top NGOs in Delhi, leading NGOs Delhi, best ngo in delhi ncr, ngo delhi, delhi ngo list, giving platform, community support, social giving, support social causes, give and help, causes to support, charitable trust in delhi ncr, dog rescue delhi, pet shelters in delhi, stray dog in delhi, dog shelter near me"
+      title="Top NGOs in Delhi NCR | Verified Charity List & Donate | The Giving Circle"
+      description="Compare top NGOs in Delhi NCR screened for FCRA, 80G and programme transparency. Discover education, livelihood and welfare organisations you can donate to with receipts and quarterly impact reporting."
+      keywords="top NGOs in Delhi, top NGOs Delhi NCR, leading NGOs Delhi, best NGO in Delhi NCR, verified NGO Delhi, donate NGO Delhi 80G, charitable trust Delhi NCR, Delhi NGO list transparent, NGOs with impact reports Delhi"
       primaryKeyword="Top NGOs in Delhi"
+      heroHeadline="Top NGOs in Delhi NCR You Can Actually Trust"
+      heroLead="We highlight Delhi NCR NGOs with serious compliance (FCRA, 80G) and published fund use  -  not generic lists. Explore causes, compare nearby cities, and give through one verified checkout."
       relatedLocations={[
         { name: 'Gurugram', slug: 'top-ngo-in-gurugram' },
         { name: 'Noida', slug: 'top-ngo-in-noida' },

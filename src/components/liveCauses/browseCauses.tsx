@@ -260,10 +260,12 @@ const LiveCausesPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Live NGO Causes | Donate for Urgent Relief India"
-        description="Explore active causes including medical crowdfunding, child education, disaster relief and animal rescue across India"
-        keywords="causes to support, community causes, community giving, community helpline, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, community care, act of kindness, helping the poor, food donation, donate online, fundraising meaning, ngo role, donation 80g"
+        title="Live NGO Causes | Verified Campaigns · Donate India | The Giving Circle"
+        description="Browse active, verified fundraising campaigns: child education, women's programmes, animal welfare and disaster relief across India. Transparent progress, secure checkout, 80G-eligible partners where listed."
+        keywords="live NGO causes India, donate to verified campaign, urgent fundraising India, child education donate, animal welfare India donate, disaster relief donate India, transparent NGO fundraising, donation 80g, verified charity campaigns"
         canonicalUrl="https://www.thegivingcircle.in/live-causes"
+        ogTitle="Live Causes | Verified NGO Campaigns India | The Giving Circle"
+        ogDescription="Support active verified campaigns—education, welfare, animals and relief—with transparent tracking on The Giving Circle."
       />
       {/* Professional Hero Section with NGO Showcase */}
       <header className="relative text-white overflow-hidden bg-gradient-to-br from-slate-800 via-slate-700 to-slate-900">

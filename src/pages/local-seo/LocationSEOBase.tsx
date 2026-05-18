@@ -11,12 +11,29 @@ interface LocationSEOBaseProps {
   description: string;
   keywords: string;
   primaryKeyword: string;
+  /** Default `/ngos/{locationSlug}` — use `/ngo-in-noida` etc. for routes not under `/ngos/`. */
+  canonicalPath?: string;
+  /** Overrides default H1 when keyword already includes the city (avoids duplicate "in Delhi"). */
+  heroHeadline?: string;
+  /** Overrides hero subcopy under H1. */
+  heroLead?: string;
   relatedLocations?: Array<{ name: string; slug: string }>;
   relatedKeywords?: Array<{ keyword: string; slug: string }>;
 }
 
 const GLOBAL_KEYWORDS =
   'causes to support, community causes, community giving, community helpline, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, community care, social causes to support, social giving, support social causes, donate sanitary pads, period poverty, rabies prevention, stray dog vaccination, animal welfare ngo, menstrual hygiene, ngo role, role of ngo, donation 80g, act of kindness, helping the poor, fundraising meaning, top NGO, best NGO';
+
+/** When primaryKeyword already ends with " in {location}", use it as H1 as-is (no double city). */
+function defaultHeroHeadline(primaryKeyword: string, location: string): string {
+  const pk = primaryKeyword.trim();
+  const loc = location.trim();
+  const suffix = ` in ${loc}`;
+  if (pk.toLowerCase().endsWith(suffix.toLowerCase())) {
+    return pk;
+  }
+  return `${pk} in ${loc}`;
+}
 
 const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
   location,
@@ -25,10 +42,14 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
   description,
   keywords,
   primaryKeyword,
+  canonicalPath,
+  heroHeadline,
+  heroLead,
   relatedLocations = [],
   relatedKeywords = [],
 }) => {
-  const canonicalUrl = `https://www.thegivingcircle.in/ngos/${locationSlug}`;
+  const path = canonicalPath ?? `/ngos/${locationSlug}`;
+  const canonicalUrl = `https://www.thegivingcircle.in${path.startsWith('/') ? path : `/${path}`}`;
   const currentDate = new Date().toISOString().split('T')[0];
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -99,10 +120,11 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
           </nav>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
-            {primaryKeyword} in {location}
+            {heroHeadline ?? defaultHeroHeadline(primaryKeyword, location)}
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Discover verified and trusted NGOs in {location} making a real impact. Connect with top-rated charity organizations through The Giving Circle and donate with confidence.
+            {heroLead ??
+              `Discover verified and trusted NGOs in ${location} making a real impact. Connect with top-rated charity organizations through The Giving Circle and donate with confidence.`}
           </p>
 
           <div className="flex flex-wrap gap-3 mb-8">

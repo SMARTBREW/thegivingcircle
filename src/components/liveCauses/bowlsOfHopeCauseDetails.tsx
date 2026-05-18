@@ -207,15 +207,15 @@ const BowlsOfHopeCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Feed Stray Animals Daily | Support Animal Welfare India"
-        description="Help feed hungry animals in India. Support stray dog feeding programs and animal nutrition initiatives. Your contribution helps verified animal welfare NGO India reach more street animals."
-        keywords="animal welfare ngo, feed stray animals, feed stray dogs, animal feeding programs, animal nutrition support, help feed street animals, feed hungry animals, animal feeding programs Mumbai, animal feeding programs Chennai, donate for rabies vaccination drive near me, animal vaccination NGO donation, support animal feeding, street animal care, street dog food, straying animals, animal ngo, animal help, animal helpline, animal resource center, animal welfare association, people for animals, home for animals, help in suffering, dog ngos, CSR for animal welfare, corporate sponsorship for animal feeding, CSR project for animal nutrition"
+        title="Bowls of Hope | Feed Street Dogs Mumbai and Chennai | Animal Nutrition NGO"
+        description="Donate to daily stray dog and street animal feeding in Mumbai and Chennai: hot meals, vaccination drives and Animal Care India outreach. Transparent fund use  -  your gift scales nutrition for hungry animals across India's busiest cities."
+        keywords="bowls of hope, feed stray dogs India, stray dog feeding Mumbai Chennai, street animal feeding programme, animal nutrition NGO India, donate animal welfare Mumbai, stray dog food Chennai, rabies vaccination drive donation India, CSR animal welfare"
         canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
       />
       <ArticleSchema
-        title="Bowls of Hope - Animal Feeding Programs India"
-        description="Bowls of Hope provides animal feeding programs and animal nutrition support India. Feeding 2,000+ street animals daily with nutritious meals in Mumbai and Chennai."
+        title="Bowls of Hope  -  Daily Street Animal Feeding in Mumbai and Chennai"
+        description="Bowls of Hope runs daily feeding for 2,000+ street animals with nutritious meals in Mumbai and Chennai, plus vaccination and welfare outreach via verified partners."
         image="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
         category="Animal Welfare"
         location="Chennai, Tamil Nadu & Mumbai, Maharashtra"

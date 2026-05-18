@@ -5,6 +5,7 @@ import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const faqs = [
+  { q: 'Which areas count as Delhi NCR for weekend volunteering?', a: 'We group Delhi municipal wards together with Gurugram, Noida, Greater Noida, Ghaziabad and Faridabad for recurring drives. Each NGO partner publishes its catchment in the profile—check the pin before you RSVP.' },
   { q: 'Do I need prior experience to volunteer with an NGO in Delhi?', a: 'No. Most NGOs welcome first-time volunteers and provide training. Enthusiasm and consistency matter more than prior experience.' },
   { q: 'Can corporate employees volunteer as a team?', a: 'Yes most NGO partners welcome corporate volunteering groups and can structure team volunteering days. This also counts toward employee engagement and CSR programmes.' },
   { q: 'Is weekend volunteering available?', a: 'Yes. Most teaching and feeding drive opportunities are available on Saturdays and Sundays for working professionals.' },
@@ -18,16 +19,16 @@ const VolunteerOpportunitiesDelhi = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Volunteering Opportunities in Delhi 2026 | NGOs You Can Join | The Giving Circle"
-        description="Find real volunteering opportunities in Delhi with verified NGOs. Teach children, rescue animals, support disaster relief or help with community programmes. Join an NGO in Delhi today."
-        keywords="volunteering opportunities Delhi, volunteer in ngo delhi, volunteer delhi, how to do volunteer work, how to volunteer in Delhi, NGO volunteer Delhi, volunteer near me Delhi, teach underprivileged children Delhi, animal welfare volunteer Delhi, animal welfare donation, dog rescue delhi"
+        title="Volunteer in Delhi & NCR | Verified NGO Roles (Weekends + Skills) | 2026"
+        description="Real Delhi NCR volunteer openings: tutoring, feeding drives, animal rescue weekends, CSR team days—with verified NGOs, typical time commitment, eligibility notes, and how to apply via The Giving Circle."
+        keywords="volunteering opportunities Delhi NCR, volunteer NGO Delhi weekends, Gurugram NGO volunteer, Noida volunteer NGO, CSR volunteer Delhi, teach children volunteer Delhi, animal rescue volunteer Delhi, corporate volunteering Delhi"
         canonicalUrl="https://www.thegivingcircle.in/volunteer-opportunities-delhi"
-        ogTitle="Volunteering Opportunities in Delhi 2026 | The Giving Circle"
-        ogDescription="Find verified NGOs in Delhi looking for volunteers. Teach, rescue, support and make real impact."
+        ogTitle="Volunteer in Delhi & NCR | Verified Roles | The Giving Circle"
+        ogDescription="Benefit-forward Delhi NCR volunteer guide: tutor, rescue, feed, or lend professional skills—all through verified NGO partners."
       />
       <ArticleSchema
-        title="Volunteering Opportunities in Delhi 2026  -  NGOs You Can Join to Make Real Impact"
-        description="Find real volunteering opportunities in Delhi with verified NGOs. Teach children, rescue animals, or support community programmes."
+        title="Volunteer in Delhi & NCR 2026 — Verified NGO Roles (Weekends + Skills)"
+        description="Benefit-forward map of NGO volunteer roles across Delhi NCR: teaching, welfare drives, rescue, CSR team volunteering, remote skills—all with vetting cues before you RSVP."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
         dateModified={currentDate}
@@ -48,12 +49,12 @@ const VolunteerOpportunitiesDelhi = () => {
             </ol>
           </nav>
 
-          <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">Volunteering · Delhi NCR</span>
+          <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">Delhi · Gurugram · Noida · Faridabad</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            Volunteering Opportunities in Delhi
+            Volunteer in Delhi &amp; NCR: Verified NGO Roles You Can Start This Season
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            NGOs You Can Join to Make Real Impact in 2026
+            Weekend tutoring, feeding drives, animal rescue squads, remote design/finance help, and CSR team days—each tied to our vetted partners so you know the time ask before you say yes.
           </p>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>By The Giving Circle Team</span><span>•</span><span>5 min read</span>
@@ -67,10 +68,10 @@ const VolunteerOpportunitiesDelhi = () => {
         {/* Intro */}
         <section className="mb-12">
           <p className="text-gray-700 text-lg leading-relaxed mb-4">
-            Delhi has thousands of NGOs but finding genuine, well-organised volunteering opportunities can be difficult. Many organisations lack structured volunteer programmes. This guide lists verified NGOs in Delhi that actively welcome and train volunteers.
+            Generic “volunteer near me” lists rarely spell out <strong>minimum hours, police/NOC expectations, or Hindi comfort</strong>. We focus on Delhi NCR partners that already run orientation, rosters, and escalation contacts—so you are not cold-messaging random Instagram pages.
           </p>
           <div className="bg-green-50 border-l-4 border-green-600 p-4 rounded-r-lg">
-            <p className="text-green-900 font-medium">All listed organisations are verified partners of The Giving Circle with structured volunteer onboarding.</p>
+            <p className="text-green-900 font-medium">Every NGO below is onboarded via The Giving Circle verification (registration documents, escalation POC, safeguarding notes). Roles update as partners open new cohorts.</p>
           </div>
         </section>
 
