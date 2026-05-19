@@ -5,14 +5,65 @@ import {
 import PrimaryButton from '../ui/PrimaryButton';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import { AnimatedSection } from '../AnimatedSection';
+import { BRICKS_CAMPAIGN_IMAGES } from '../../constants/bricksCampaignImages';
+import { PEHLI_CLASS_IMAGES } from '../../constants/pehliClassCampaignImages';
+
+const WINGS_OF_HOPE_CARD_IMAGE = PEHLI_CLASS_IMAGES.classroomWhatsApp;
+const PEHLI_CLASS_IMAGE = PEHLI_CLASS_IMAGES.hero;
+
+const BRICKS_BY_BRICKS_CARD_IMAGE = BRICKS_CAMPAIGN_IMAGES.hero;
 
 const FUNDRAISING_DATA = [
+  {
+    id: 7,
+    title: "PehliClass",
+    description:
+      "Joint Women’s Programme bridges out-of-school children into formal classrooms—from Mera Sahara, Nithari: close learning gaps, secure documents, walk them through the gate into their first formal class on time.",
+    image: PEHLI_CLASS_IMAGE,
+    cardImage: PEHLI_CLASS_IMAGE,
+    category: "Education • Bridge Learning • JWP",
+    fullDescription:
+      "PehliClass supports first-generation learners and children blocked by missing paperwork or lost years. Up to one year at the Mera Sahara Bridge Learning Centre prepares each child for enrolment in government or private school. Where girls cannot attend regular school, pathways include NIOS and IGNOU—so education continues.",
+    raised: 285000,
+    goal: 500000,
+    donors: 142,
+    daysLeft: 40,
+    location: "Mera Sahara · Nithari, Noida · Delhi NCR",
+    organizer: "JWP",
+    updates: [
+      "Bridge learning and documentation support ongoing",
+      "Enrolment accompaniment into mainstream schools",
+      "NIOS / IGNOU pathways for adolescent girls where needed",
+    ],
+  },
+  {
+    id: 8,
+    title: "Brick by Brick",
+    description:
+      "Animal Care — Building Them A Home 🏠 Brick by brick for injured strays in Gurgaon. ₹10 per brick toward a boundary wall on a 17,500 sq ft rescue plot — then treatment rooms & recovery kennels.",
+    image: BRICKS_BY_BRICKS_CARD_IMAGE,
+    cardImage: BRICKS_BY_BRICKS_CARD_IMAGE,
+    category: "Animal Welfare • Shelter • Gurgaon",
+    fullDescription:
+      "When strays are hit, sick or critical, they often have nowhere safe to heal. AnimalCare India’s Brick by Brick campaign funds the first perimeter wall for a dedicated rescue & rehabilitation centre — verified partner, rabies-prevention mission alignment, 80G where applicable.",
+    raised: 10000,
+    goal: 50000,
+    donors: 1,
+    daysLeft: 1,
+    location: "Gurgaon · Animal Care",
+    organizer: "Animal Care",
+    updates: [
+      "1,000 of 5,000 bricks laid · ₹10 each",
+      "Boundary wall first — then clinic & kennels",
+      "Street rescue · vaccination · feeding programmes India",
+    ],
+  },
   {
     id: 1,
     title: "Wings of Hope",
     description: "Inspired change-makers are taking it upon themselves to give and help underprivileged girls so they don't drop out of school. Their mission is simple yet powerful: keeping girls in school. Period.",
-    image: "https://res.cloudinary.com/dcdhhylin/image/upload/v1758200608/images/_DSC9857.jpg",
-    cardImage: "/images/herosection/hero3.webp",
+    image: WINGS_OF_HOPE_CARD_IMAGE,
+    cardImage: WINGS_OF_HOPE_CARD_IMAGE,
     category: "Education • Health • Empowerment",
     fullDescription: "Education is the foundation of a better future, but many children lack access to quality learning opportunities. Wings of Hope provides scholarships, school supplies, digital learning tools, and mentorship programs to underprivileged students. We support both formal education and skill development, ensuring children can pursue their dreams regardless of their economic background. Through our community giving platform, every child deserves the chance to soar.",
     raised: 34800,

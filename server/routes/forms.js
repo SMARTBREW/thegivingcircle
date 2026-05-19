@@ -1,4 +1,8 @@
 import { formatEmailHTML, sendEmail } from '../config/email.js';
+import {
+  insertFormSubmission,
+  updateFormSubmissionEmailStatus,
+} from '../services/formSubmissionsStore.js';
 
 /**
  * Form submission handlers for The Giving Circle
@@ -27,9 +31,30 @@ export const submitCauseChampionForm = async (req, res) => {
 
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
     const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER || 'noreply@thegivingcircle.in';
-    
-    console.log(`📧 Processing Cause Champion form submission from: ${email}`);
-    
+
+    let submissionId;
+    try {
+      submissionId = await insertFormSubmission({
+        formType: 'cause_champion',
+        payload: {
+          fullName,
+          email,
+          phoneNumber,
+          country,
+          city,
+          selectedCause,
+        },
+      });
+    } catch (dbErr) {
+      console.error('❌ Failed to save Cause Champion submission:', dbErr);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to save your submission. Please try again later.',
+      });
+    }
+
+    console.log(`📧 Processing Cause Champion form submission from: ${email} (saved id: ${submissionId})`);
+
     const submittedAt = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
       dateStyle: 'full',
@@ -98,19 +123,27 @@ This person wants to become a Cause Champion and start their giving journey with
     sendEmail(mailOptions)
       .then(() => {
         console.log(`✅ Cause Champion email sent successfully for: ${email}`);
+        return updateFormSubmissionEmailStatus(submissionId, { emailSent: true });
       })
       .catch((error) => {
         console.error('❌ Failed to send Cause Champion email:', error.message);
-        // Email failed but user already got success response - log for monitoring
+        return updateFormSubmissionEmailStatus(submissionId, {
+          emailSent: false,
+          emailError: error.message || String(error),
+        }).catch((uErr) =>
+          console.error('❌ Failed to update Cause Champion email status in DB:', uErr.message)
+        );
       });
 
   } catch (error) {
     console.error('Error submitting Cause Champion form:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Failed to submit form. Please try again later.',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
-    });
+    if (!res.headersSent) {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to submit form. Please try again later.',
+        error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      });
+    }
   }
 };
 
@@ -137,7 +170,28 @@ export const submitNGOPartnerForm = async (req, res) => {
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
     const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER || 'noreply@thegivingcircle.in';
 
-    console.log(`📧 Processing NGO Partner form submission from: ${organizationName}`);
+    let submissionId;
+    try {
+      submissionId = await insertFormSubmission({
+        formType: 'ngo_partner',
+        payload: {
+          organizationName,
+          email,
+          contactPersonName,
+          phoneNumber,
+        },
+      });
+    } catch (dbErr) {
+      console.error('❌ Failed to save NGO Partner submission:', dbErr);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to save your submission. Please try again later.',
+      });
+    }
+
+    console.log(
+      `📧 Processing NGO Partner form submission from: ${organizationName} (saved id: ${submissionId})`
+    );
 
     const submittedAt = new Date().toLocaleString('en-IN', {
       timeZone: 'Asia/Kolkata',
@@ -198,18 +252,26 @@ This organization wants to become a verified partner with The Giving Circle plat
     sendEmail(mailOptions)
       .then(() => {
         console.log(`✅ NGO Partner email sent successfully for: ${organizationName}`);
+        return updateFormSubmissionEmailStatus(submissionId, { emailSent: true });
       })
       .catch((error) => {
         console.error('❌ Failed to send NGO Partner email:', error.message);
-        // Email failed but user already got success response - log for monitoring
+        return updateFormSubmissionEmailStatus(submissionId, {
+          emailSent: false,
+          emailError: error.message || String(error),
+        }).catch((uErr) =>
+          console.error('❌ Failed to update NGO Partner email status in DB:', uErr.message)
+        );
       });
 
   } catch (error) {
     console.error('Error submitting NGO Partner form:', error);
-    res.status(500).json({
-      success: false,
-      message: 'Failed to submit form. Please try again later.',
-      error: process.env.NODE_ENV === 'development' ? error.message : undefined,
-    });
+    if (!res.headersSent) {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to submit form. Please try again later.',
+        error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      });
+    }
   }
 };

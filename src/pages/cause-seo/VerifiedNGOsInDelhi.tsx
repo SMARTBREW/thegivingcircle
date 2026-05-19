@@ -172,7 +172,7 @@ const VerifiedNGOsInDelhi = () => {
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Guides, Volunteering &amp; Top Lists</h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
             <Link to="/ngo-in-noida" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
               <h3 className="text-lg font-semibold text-gray-900 mb-1">NGOs in Noida</h3>
               <p className="text-gray-600 text-sm mb-1">Verified partners and how to donate</p>
@@ -188,9 +188,14 @@ const VerifiedNGOsInDelhi = () => {
               <p className="text-gray-600 text-sm mb-1">Curated hub for donors comparing causes</p>
               <p className="text-green-700 text-sm">Explore hub →</p>
             </Link>
-            <Link to="/donate-for-education-india" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">Donate for Child Education</h3>
-              <p className="text-gray-600 text-sm mb-1">80G-listed education programmes</p>
+            <Link to="/pehli-class-cause-details" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">#PehliClass · Child education</h3>
+              <p className="text-gray-600 text-sm mb-1">Verified JWP bridge to formal school · 80G where applicable</p>
+              <p className="text-green-700 text-sm">See campaign →</p>
+            </Link>
+            <Link to="/bricks-by-bricks-cause-details" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Brick by Brick · Gurgaon strays</h3>
+              <p className="text-gray-600 text-sm mb-1">Animal Care rescue centre · ₹10/brick · boundary wall · 80G where applicable</p>
               <p className="text-green-700 text-sm">See campaign →</p>
             </Link>
           </div>
@@ -229,7 +234,8 @@ const VerifiedNGOsInDelhi = () => {
               { label: 'NGOs in Noida', href: '/ngo-in-noida' },
               { label: 'Volunteer in Delhi', href: '/volunteer-opportunities-delhi' },
               { label: 'Verified NGO list (India)', href: '/ngo-list' },
-              { label: 'Donate for Child Education', href: '/donate-for-education-india' },
+              { label: '#PehliClass — donate for child education India', href: '/pehli-class-cause-details' },
+              { label: 'Brick by Brick — Animal Care Gurgaon', href: '/bricks-by-bricks-cause-details' },
               { label: 'NGOs for Women Empowerment', href: '/ngo-for-women-empowerment' },
               { label: 'CSR Projects India', href: '/csr-projects-in-india' },
             ].map(({ label, href }) => (

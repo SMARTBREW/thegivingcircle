@@ -106,12 +106,18 @@ const BlogIndex = () => {
           <p className="text-green-100 text-lg sm:text-xl mb-10 max-w-2xl mx-auto leading-relaxed">
             Explore verified education causes and start giving with clarity, transparency, and support for real outcomes.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center gap-4">
             <Link
-              to="/donate-for-education-india"
+              to="/pehli-class-cause-details"
               className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
             >
-              Donate for Education
+              #PehliClass · donate for education
+            </Link>
+            <Link
+              to="/bricks-by-bricks-cause-details"
+              className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1"
+            >
+              Brick by Brick · Gurgaon strays
             </Link>
             <Link
               to="/ngos"

@@ -120,7 +120,8 @@ export const BLOG_POSTS: BlogPost[] = [
       },
     ],
     related: [
-      { title: 'Donate for Education India', href: '/donate-for-education-india' },
+      { title: '#PehliClass · donate for education India', href: '/pehli-class-cause-details' },
+      { title: 'Brick by Brick · Animal Care Gurgaon shelter', href: '/bricks-by-bricks-cause-details' },
       { title: 'Verified NGOs Directory', href: '/ngos' },
       { title: 'What is a Giving Circle?', href: '/what-is-a-giving-circle' },
       { title: 'Explore Live Causes', href: '/live-causes' },
@@ -209,7 +210,8 @@ export const BLOG_POSTS: BlogPost[] = [
     related: [
       { title: 'Verified NGOs Directory', href: '/ngos' },
       { title: 'CSR Projects in India (for companies)', href: '/csr-projects-in-india' },
-      { title: 'Donate for Education India', href: '/donate-for-education-india' },
+      { title: '#PehliClass · donate for education India', href: '/pehli-class-cause-details' },
+      { title: 'Brick by Brick · Animal Care Gurgaon shelter', href: '/bricks-by-bricks-cause-details' },
       { title: 'What is a Giving Circle?', href: '/what-is-a-giving-circle' },
     ],
   },
@@ -415,7 +417,8 @@ export const BLOG_POSTS: BlogPost[] = [
     related: [
       { title: 'What is a Giving Circle?', href: '/what-is-a-giving-circle' },
       { title: 'Explore Live Causes', href: '/live-causes' },
-      { title: 'Donate for Education India', href: '/donate-for-education-india' },
+      { title: '#PehliClass · donate for education India', href: '/pehli-class-cause-details' },
+      { title: 'Brick by Brick · Animal Care Gurgaon shelter', href: '/bricks-by-bricks-cause-details' },
       { title: 'Verified NGO list (India)', href: '/ngo-list' },
       { title: 'Verified NGOs hub', href: '/ngos' },
     ],
@@ -734,7 +737,8 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     related: [
       { title: 'NGO for Women Empowerment India', href: '/ngo-for-women-empowerment' },
-      { title: 'Donate for Education India', href: '/donate-for-education-india' },
+      { title: '#PehliClass · donate for education India', href: '/pehli-class-cause-details' },
+      { title: 'Brick by Brick · Animal Care Gurgaon shelter', href: '/bricks-by-bricks-cause-details' },
       { title: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
       { title: 'CSR Projects in India', href: '/csr-projects-in-india' },
     ],

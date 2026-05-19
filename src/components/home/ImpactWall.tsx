@@ -3,6 +3,8 @@ import { motion } from 'framer-motion';
 import { Badge, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import CloudinaryImage from '../ui/CloudinaryImage';
+import { BRICKS_CAMPAIGN_IMAGES } from '../../constants/bricksCampaignImages';
+import { PEHLI_CLASS_IMAGES } from '../../constants/pehliClassCampaignImages';
 
 interface ImpactCardProps {
   id: string;
@@ -35,6 +37,8 @@ const ImpactCard: React.FC<ImpactCardProps> = ({
     '4': '/bowls-of-hope-cause-details',
     // '5': '/flood-relief-cause-details',
     '6': '/flood-animal-rescue-cause-details',
+    '7': '/pehli-class-cause-details',
+    '8': '/bricks-by-bricks-cause-details',
   };
 
   const detailRoute = routeMap[id] || '/live-causes';
@@ -119,9 +123,33 @@ export const ImpactWall: React.FC = () => {
       ngoName: 'JWP',
       impactNumber: 22418,
       impactUnit: 'Girls Empowered',
-      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
+      image: PEHLI_CLASS_IMAGES.classroomWhatsApp,
       verified: true,
       location: 'Noida',
+    },
+    {
+      id: '7',
+      title: 'PehliClass',
+      description:
+        'Bridge out-of-school children into formal classrooms—documentation, learning support at Mera Sahara Nithari, and pathways including NIOS/IGNOU for girls.',
+      ngoName: 'JWP',
+      impactNumber: 48,
+      impactUnit: 'Years of impact',
+      image: PEHLI_CLASS_IMAGES.hero,
+      verified: true,
+      location: 'Noida',
+    },
+    {
+      id: '8',
+      title: 'Brick by Brick',
+      description:
+        'Animal Care — Building Them A Home in Gurgaon: ₹10/brick for the boundary wall on a 17,500 sq ft stray rescue & rehab plot · Zero Rabies mission · verified welfare partner.',
+      ngoName: 'Animal Care',
+      impactNumber: 1000,
+      impactUnit: 'Bricks laid',
+      image: BRICKS_CAMPAIGN_IMAGES.hero,
+      verified: true,
+      location: 'Gurgaon',
     },
     {
       id: '2',

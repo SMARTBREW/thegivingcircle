@@ -21,8 +21,13 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const NODE_ENV = process.env.NODE_ENV || 'development';
 
-// Trust proxy (needed when behind Nginx reverse proxy)
-app.set('trust proxy', true);
+// Trust only N proxy hops (not `true`). `trust proxy: true` triggers express-rate-limit
+// ERR_ERL_PERMISSIVE_TRUST_PROXY and lets clients spoof X-Forwarded-For.
+// Local dev: omit TRUST_PROXY_HOPS or set 0. Behind one reverse proxy: TRUST_PROXY_HOPS=1
+const trustProxyHops = Number.parseInt(process.env.TRUST_PROXY_HOPS ?? '0', 10);
+if (Number.isFinite(trustProxyHops) && trustProxyHops > 0) {
+  app.set('trust proxy', trustProxyHops);
+}
 
 app.use(helmet({
   contentSecurityPolicy: false, 

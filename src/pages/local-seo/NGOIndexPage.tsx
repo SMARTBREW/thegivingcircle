@@ -5,7 +5,8 @@ import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
 
 const CAUSE_PAGES = [
-  { title: 'Donate for Child Education', description: 'Support NGOs bringing quality education to underprivileged children across India.', href: '/donate-for-education-india', icon: '📚' },
+  { title: '#PehliClass · Child education donate India', description: 'JWP bridge programme—underprivileged & out-of-school children into formal school (verified · 80G where applicable).', href: '/pehli-class-cause-details', icon: '📚' },
+  { title: 'Brick by Brick · Animal shelter Gurgaon', description: 'Animal Care — ₹10/brick boundary wall for a 17,500 sq ft stray rescue centre · rabies mission · 80G where applicable.', href: '/bricks-by-bricks-cause-details', icon: '🧱' },
   { title: 'NGOs for Women Empowerment', description: 'Discover organisations enabling women\'s rights, livelihoods and leadership.', href: '/ngo-for-women-empowerment', icon: '👩' },
   { title: 'Verified NGOs in Delhi', description: 'Find background-checked, transparent NGOs operating in Delhi NCR.', href: '/verified-ngos-in-delhi', icon: '✅' },
   { title: 'CSR Projects in India', description: 'Connect corporate CSR budgets with credible, measurable social impact projects.', href: '/csr-projects-in-india', icon: '🏢' },

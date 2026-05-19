@@ -209,7 +209,8 @@ const TopVerifiedNGOsIndia2026 = () => {
               { title: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi', desc: 'Background-checked NGOs in Delhi NCR.' },
               { title: 'What is a Giving Circle?', href: '/what-is-a-giving-circle', desc: 'How collective giving amplifies your impact.' },
               { title: 'CSR Projects in India', href: '/csr-projects-in-india', desc: 'Schedule VII compliant corporate giving.' },
-              { title: 'Donate for Child Education', href: '/donate-for-education-india', desc: 'Fund a child\'s education from ₹500.' },
+              { title: '#PehliClass · donate for child education India', href: '/pehli-class-cause-details', desc: 'JWP bridge programme—sponsor a child into formal school.' },
+              { title: 'Brick by Brick · stray shelter Gurgaon', href: '/bricks-by-bricks-cause-details', desc: 'Animal Care — ₹10/brick for boundary wall & rescue centre for injured strays.' },
             ].map(({ title, href, desc }) => (
               <Link key={href} to={href} className="block bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-green-400 transition-all">
                 <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>

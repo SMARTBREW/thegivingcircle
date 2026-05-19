@@ -41,6 +41,8 @@ export const NGOPartner: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  /** Snapshot at submit time so success UI always shows the email (form state can be unreliable after unmount/remount). */
+  const [submittedEmail, setSubmittedEmail] = useState('');
 
   // Generate a daily number between 1-5 that changes each day
   const getDailyPartnerCount = () => {
@@ -90,39 +92,42 @@ export const NGOPartner: React.FC = () => {
     }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
 
+    const formEl = e.currentTarget;
+    // Prefer live DOM values so browser autofill still shows up if React state missed sync
+    const organizationName =
+      (formEl.elements.namedItem('organizationName') as HTMLInputElement | null)?.value?.trim() ??
+      formData.organizationName.trim();
+    const email =
+      (formEl.elements.namedItem('email') as HTMLInputElement | null)?.value?.trim() ??
+      formData.email.trim();
+    const contactPersonName =
+      (formEl.elements.namedItem('contactPersonName') as HTMLInputElement | null)?.value?.trim() ??
+      formData.contactPersonName.trim();
+
     try {
       const result = await ApiClient.submitNGOApplication({
-        organizationName: formData.organizationName,
-        email: formData.email,
-        contactPersonName: formData.contactPersonName,
+        organizationName,
+        email,
+        contactPersonName,
         phoneNumber: formData.phoneNumber,
         country: formData.country,
       });
 
       if (result.success) {
+        setSubmittedEmail(email);
         // Track form submission conversion
         trackFormSubmission('ngo_partner', {
           country: formData.country,
-          organization_name: formData.organizationName,
+          organization_name: organizationName,
         });
-        trackConversion('ngo_partner_registration', 0);
-
         trackConversion('ngo_partner_registration', 0);
 
         setIsSubmitted(true);
-        // Reset form
-        setFormData({
-          organizationName: '',
-          email: '',
-          contactPersonName: '',
-          phoneNumber: '',
-          country: 'in',
-        });
         // Scroll form container into view smoothly without going to bottom
         setTimeout(() => {
           if (formContainerRef.current) {
@@ -172,10 +177,10 @@ export const NGOPartner: React.FC = () => {
         canonicalUrl="https://www.thegivingcircle.in/ngo-partner"
       />
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br-gray-100" />
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-gray-100" />
 
       <motion.section
-        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-8 sm:py-10 md:py-12"
+        className="relative z-10 min-h-screen flex items-center justify-center px-4 sm:px-6 md:px-8 py-12"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -188,47 +193,93 @@ export const NGOPartner: React.FC = () => {
         >
           <motion.div
             ref={formContainerRef}
-            className="bg-white rounded-lg p-4 sm:p-6 md:p-8 shadow-lg border border-gray-200"
+            className="bg-white rounded-lg p-6 sm:p-8 shadow-lg border border-gray-200"
           >
-            {/* Form Content */}
-            <>
-              <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
-                <img
-                  src="/Giving Circle logo.png"
-                  alt="Giving Circle Logo - Verified Partner Platform India"
-                  className="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-contain"
-                />
-              </div>
-
-              {!isSubmitted && (
-                <div className="text-center mb-4 sm:mb-6 md:mb-8">
-                  <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4 break-words">Become a Partner in our Community Giving Platform</h1>
-                  <p className="text-sm sm:text-base md:text-lg text-gray-600 leading-relaxed break-words">Partner with The Giving Circle to connect with passionate Cause Champions. Join as a partner in our verified partner platform India. We collaborate with corporate giving platforms and offer a robust community helpline to amplify your reach. Start your partner registration today and join our circle of support.</p>
-                </div>
-              )}
-
-              {isSubmitted ? (
+            {isSubmitted ? (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6 }}
+                className="text-center py-8"
+              >
                 <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-center p-4 sm:p-6 md:p-8 bg-green-50 border border-green-200 rounded-lg"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.2, type: 'spring', stiffness: 200 }}
+                  className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6"
                 >
-                  <div className="text-green-600 text-4xl sm:text-5xl mb-3 sm:mb-4">✓</div>
-                  <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4 break-words">Success! You've Joined the Circle Aid Network</h2>
-                  <p className="text-sm sm:text-base text-gray-600 break-words">
-                    Thank you for your interest in partnering with The Giving Circle. Our team will reach out to you asap to welcome you to our community support platform.
+                  <svg className="w-10 h-10 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                  </svg>
+                </motion.div>
+
+                <motion.h2
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
+                >
+                  Welcome to The Giving Circle
+                </motion.h2>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="text-left sm:text-center space-y-4 text-lg text-gray-700 mb-8 leading-relaxed"
+                >
+                  <p>
+                    Thank you for registering your organization with The Giving Circle. Our Partnerships team will review your
+                    details and connect with you within two working days to begin onboarding and explore how, together, we can bring
+                    more support to your mission.
                   </p>
                 </motion.div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4 md:space-y-5">
+
+                <motion.p
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.6 }}
+                  className="text-sm text-gray-500 mt-6"
+                >
+                  {(submittedEmail || formData.email) ? (
+                    <>
+                      You&apos;ll receive confirmation details at{' '}
+                      <span className="font-medium text-gray-800 break-all">{submittedEmail || formData.email}</span>
+                    </>
+                  ) : (
+                    <>Our Partnerships team will reach out using the contact details you submitted.</>
+                  )}
+                </motion.p>
+              </motion.div>
+            ) : (
+              <>
+                <div className="text-center mb-6 sm:mb-8">
+                  <div className="flex justify-center mb-4">
+                    <img
+                      src="/Giving Circle logo.png"
+                      alt="Giving Circle Logo - Verified Partner Platform India"
+                      className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
+                    />
+                  </div>
+                  <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3 break-words">
+                    Become a Partner in our Community Giving Platform
+                  </h1>
+                  <p className="text-base text-gray-600 leading-relaxed break-words">
+                    Partner with The Giving Circle to connect with passionate Cause Champions. Join as a partner in our verified partner
+                    platform India. We collaborate with corporate giving platforms and offer a robust community helpline to amplify your
+                    reach. Start your partner registration today and join our circle of support.
+                  </p>
+                </div>
+
+                <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   {/* Organization Name */}
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <Building2 className="w-5 h-5 text-green-600" />
                       Organization Name *
                     </label>
                     <input
@@ -236,7 +287,7 @@ export const NGOPartner: React.FC = () => {
                       name="organizationName"
                       value={formData.organizationName}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-sm sm:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                       placeholder="Enter your NGO organization name"
                       required
                       aria-label="Enter your NGO organization name for partner registration"
@@ -249,8 +300,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.3 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <Mail className="w-5 h-5 text-green-600" />
                       Email Address *
                     </label>
                     <input
@@ -258,7 +309,12 @@ export const NGOPartner: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-sm sm:text-base"
+                      onInput={(ev) => {
+                        const v = (ev.target as HTMLInputElement).value;
+                        setFormData((prev) => ({ ...prev, email: v }));
+                      }}
+                      autoComplete="email"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                       placeholder="Enter your email address"
                       required
                     />
@@ -270,8 +326,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <User className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <User className="w-5 h-5 text-green-600" />
                       Contact Person Name *
                     </label>
                     <input
@@ -279,7 +335,7 @@ export const NGOPartner: React.FC = () => {
                       name="contactPersonName"
                       value={formData.contactPersonName}
                       onChange={handleInputChange}
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-sm sm:text-base"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500 transition-colors text-base"
                       placeholder="Enter contact person name"
                       required
                     />
@@ -291,8 +347,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.45 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <Phone className="w-5 h-5 text-green-600" />
                       Phone Number *
                     </label>
                     <PhoneInput
@@ -323,8 +379,8 @@ export const NGOPartner: React.FC = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.5 }}
                   >
-                    <label className="flex items-center gap-2 text-sm sm:text-base font-medium text-gray-700 mb-2">
-                      <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                    <label className="flex items-center gap-2 text-base font-medium text-gray-700 mb-2">
+                      <MapPin className="w-5 h-5 text-green-600" />
                       Country *
                     </label>
                     <Select
@@ -431,8 +487,8 @@ export const NGOPartner: React.FC = () => {
 
 
                 </form>
-              )}
-            </>
+              </>
+            )}
           </motion.div>
         </motion.div>
       </motion.section>

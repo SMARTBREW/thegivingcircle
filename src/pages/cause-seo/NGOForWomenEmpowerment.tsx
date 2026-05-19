@@ -193,7 +193,8 @@ const NGOForWomenEmpowerment = () => {
           <div className="flex flex-wrap gap-3">
             {[
               { label: 'JWP women & girls education', href: '/jwp-cause-details' },
-              { label: 'Donate for Child Education', href: '/donate-for-education-india' },
+              { label: '#PehliClass — donate for child education India', href: '/pehli-class-cause-details' },
+              { label: 'Brick by Brick — Animal Care (Gurgaon shelter)', href: '/bricks-by-bricks-cause-details' },
               { label: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
               { label: 'Volunteer in Delhi NCR', href: '/volunteer-opportunities-delhi' },
               { label: 'How to volunteer in India', href: '/how-to-volunteer-india' },

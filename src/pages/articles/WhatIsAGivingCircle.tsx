@@ -226,7 +226,8 @@ const WhatIsAGivingCircle = () => {
           <div className="grid sm:grid-cols-2 gap-4">
             {[
               { title: 'Top Verified NGOs India 2026', href: '/top-verified-ngos-india-2026' },
-              { title: 'Donate for Child Education', href: '/donate-for-education-india' },
+              { title: '#PehliClass · child education donate India', href: '/pehli-class-cause-details' },
+              { title: 'Brick by Brick · Animal Care Gurgaon shelter', href: '/bricks-by-bricks-cause-details' },
               { title: 'NGO Directory India', href: '/ngos' },
               { title: 'Become a Cause Champion', href: '/onboarding' },
             ].map(({ title, href }) => (

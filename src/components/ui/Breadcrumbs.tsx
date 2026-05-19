@@ -35,6 +35,8 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
       'live-causes': 'Live Causes',
       'champion-story': 'Champion Story',
       'jwp-cause-details': 'Wings of Hope',
+      'pehli-class-cause-details': '#PehliClass',
+      'bricks-by-bricks-cause-details': 'Brick by Brick · Gurgaon',
       'pawsitive-protectors-cause-details': 'Pawsitive Protectors',
       'bowls-of-hope-cause-details': 'Bowls of Hope',
       'flood-animal-rescue-cause-details': 'Flood Animal Rescue',

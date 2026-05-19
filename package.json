@@ -9,6 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "upload:images": "node ./scripts/upload-cloudinary.cjs",
+    "upload:images:bricks": "env CLD_LOCAL_SUBDIR=bricks node ./scripts/upload-cloudinary.cjs",
+    "upload:images:pehli-class": "env CLD_LOCAL_SUBDIR=pehli-class node ./scripts/upload-cloudinary.cjs",
     "optimize:images": "node ./scripts/optimize-images.mjs",
     "server": "node server/index.js",
     "server:dev": "nodemon server/index.js",

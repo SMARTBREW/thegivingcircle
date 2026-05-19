@@ -19,6 +19,9 @@ if (!process.env.CLOUDINARY_CLOUD_NAME || !process.env.CLOUDINARY_API_KEY || !pr
 }
 
 const LOCAL_ROOT = path.join(process.cwd(), 'public', 'images');
+/** Optional: only upload one folder under public/images, e.g. CLD_LOCAL_SUBDIR=bricks */
+const LOCAL_SUBDIR = (process.env.CLD_LOCAL_SUBDIR || '').trim().replace(/^[/\\]+|[/\\]+$/g, '');
+const UPLOAD_ROOT = LOCAL_SUBDIR ? path.join(LOCAL_ROOT, LOCAL_SUBDIR) : LOCAL_ROOT;
 const CLOUD_ROOT = process.env.CLD_DEST_FOLDER || 'images'; // destination root folder in Cloudinary
 const OVERWRITE = (process.env.CLD_OVERWRITE || 'false').toLowerCase() === 'true';
 const FORCE_REUPLOAD = (process.env.CLD_FORCE_REUPLOAD || 'false').toLowerCase() === 'true';
@@ -72,8 +75,16 @@ function walkDir(dirPath, results = []) {
 }
 
 async function uploadAll() {
-  const files = walkDir(LOCAL_ROOT);
-  console.log(`Found ${files.length} image files under ${LOCAL_ROOT}`);
+  if (!fs.existsSync(UPLOAD_ROOT)) {
+    console.error(`Upload root does not exist: ${UPLOAD_ROOT}`);
+    process.exit(1);
+  }
+  const files = walkDir(UPLOAD_ROOT);
+  console.log(
+    LOCAL_SUBDIR
+      ? `Found ${files.length} image files under ${UPLOAD_ROOT} (CLD_LOCAL_SUBDIR=${LOCAL_SUBDIR})`
+      : `Found ${files.length} image files under ${LOCAL_ROOT}`
+  );
 
   // Load existing URL map (skip already uploaded files)
   let existingMap = {};

@@ -7,10 +7,7 @@ import AnalyticsListener from './components/AnalyticsListener';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Breadcrumbs from './components/ui/Breadcrumbs';
 
-// PERFORMANCE MODE: Animations disabled for 90+ score
-// import { useSmoothScroll } from './hooks/useSmoothScroll';
 
-// Lazy load pages
 import { Home } from './pages/Home';
 // Lazy load pages
 // const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
@@ -32,6 +29,8 @@ const PawsitiveProtectorsCauseDetailPage = lazy(() => import('./components/liveC
 const BowlsOfHopeCauseDetailPage = lazy(() => import('./components/liveCauses/bowlsOfHopeCauseDetails'));
 const FloodAnimalRescueCauseDetailPage = lazy(() => import('./components/liveCauses/floodAnimalRescueCauseDetails'));
 const FloodReliefCauseDetailPage = lazy(() => import('./components/liveCauses/floodReliefCauseDetails'));
+const PehliClassCauseDetailPage = lazy(() => import('./components/liveCauses/pehliClassCauseDetails'));
+const BricksByBricksCauseDetailPage = lazy(() => import('./components/liveCauses/bricksByBricksCauseDetails'));
 const AboutChampions = lazy(() => import('./pages/aboutChampion').then(module => ({ default: module.AboutChampions })));
 const OurStory = lazy(() => import('./pages/aboutGivingCircle').then(module => ({ default: module.OurStory })));
 const YoungChampions = lazy(() => import('./pages/YoungChampions'));
@@ -62,7 +61,6 @@ const LeadingNGOInFaridabad = lazy(() => import('./pages/local-seo/LeadingNGOInF
 
 // NGO Index & Cause SEO Pages
 const NGOIndexPage = lazy(() => import('./pages/local-seo/NGOIndexPage'));
-const DonateForEducationIndia = lazy(() => import('./pages/cause-seo/DonateForEducationIndia'));
 const NGOForWomenEmpowerment = lazy(() => import('./pages/cause-seo/NGOForWomenEmpowerment'));
 const VerifiedNGOsInDelhi = lazy(() => import('./pages/cause-seo/VerifiedNGOsInDelhi'));
 const CSRProjectsInIndia = lazy(() => import('./pages/cause-seo/CSRProjectsInIndia'));
@@ -109,10 +107,13 @@ function App() {
               <Route path="/khushi-ngo-detail" element={<Navigate to="/jwp-cause-details" replace />} />
               <Route path="/khushi-cause-details" element={<Navigate to="/jwp-cause-details" replace />} />
               <Route path="/animalcare-ngo-detail" element={<AnimalCareNGODetailContainer />} />
+              <Route path="/animal-emergency" element={<Navigate to="/animal-emergency.html" replace />} />
               <Route path="/causes" element={<Causes />} />
               <Route path="/live-causes" element={<LiveCausesPage />} />
               <Route path="/champion-story/:id" element={<ChampionStoryDetail />} />
               <Route path="/jwp-cause-details" element={<JwpCauseDetailPage />} />
+              <Route path="/pehli-class-cause-details" element={<PehliClassCauseDetailPage />} />
+              <Route path="/bricks-by-bricks-cause-details" element={<BricksByBricksCauseDetailPage />} />
               <Route path="/pawsitive-protectors-cause-details" element={<PawsitiveProtectorsCauseDetailPage />} />
               <Route path="/bowls-of-hope-cause-details" element={<BowlsOfHopeCauseDetailPage />} />
               <Route path="/flood-animal-rescue-cause-details" element={<FloodAnimalRescueCauseDetailPage />} />
@@ -171,7 +172,7 @@ function App() {
               <Route path="/ngos" element={<NGOIndexPage />} />
 
               {/* Cause SEO Landing Pages */}
-              <Route path="/donate-for-education-india" element={<DonateForEducationIndia />} />
+              <Route path="/donate-for-education-india" element={<Navigate to="/pehli-class-cause-details" replace />} />
               <Route path="/ngo-for-women-empowerment" element={<NGOForWomenEmpowerment />} />
               <Route path="/verified-ngos-in-delhi" element={<VerifiedNGOsInDelhi />} />
               <Route path="/csr-projects-in-india" element={<CSRProjectsInIndia />} />

@@ -36,7 +36,9 @@ const CauseChampionOnboarding: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [phoneCountry, setPhoneCountry] = useState<any>('IN');
   const [showValidation, setShowValidation] = useState(false);
+  const [submittedEmail, setSubmittedEmail] = useState('');
   const formContainerRef = useRef<HTMLDivElement>(null);
+  const emailInputRef = useRef<HTMLInputElement>(null);
 
   // Set page title and meta tags for SEO
   useEffect(() => {
@@ -168,8 +170,12 @@ const CauseChampionOnboarding: React.FC = () => {
     setShowValidation(true);
     setError(null);
 
+    const emailResolved =
+      emailInputRef.current?.value?.trim() ||
+      formData.email.trim();
+
     // Validate all fields
-    if (!formData.fullName || !formData.email || !formData.phoneNumber || !formData.country || !formData.city || !formData.selectedCause || !formData.agreeToTerms) {
+    if (!formData.fullName || !emailResolved || !formData.phoneNumber || !formData.country || !formData.city || !formData.selectedCause || !formData.agreeToTerms) {
       setError('Please fill in all required fields marked with *');
       return;
     }
@@ -179,7 +185,7 @@ const CauseChampionOnboarding: React.FC = () => {
     try {
       const result = await ApiClient.submitCauseChampionData({
         fullName: formData.fullName,
-        email: formData.email,
+        email: emailResolved,
         phoneNumber: formData.phoneNumber || '',
         country: formData.country,
         city: formData.city,
@@ -187,6 +193,7 @@ const CauseChampionOnboarding: React.FC = () => {
       });
 
       if (result.success) {
+        setSubmittedEmail(emailResolved);
         // Track form submission conversion
         trackFormSubmission('cause_champion', {
           country: formData.country,
@@ -195,7 +202,7 @@ const CauseChampionOnboarding: React.FC = () => {
         });
         trackConversion('cause_champion_registration', 0);
 
-        setFormData(prev => ({ ...prev, isSubmitted: true }));
+        setFormData(prev => ({ ...prev, email: emailResolved, isSubmitted: true }));
         setShowValidation(false);
         // Scroll form container into view smoothly without going to bottom
         setTimeout(() => {
@@ -287,19 +294,24 @@ const CauseChampionOnboarding: React.FC = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3 }}
-                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4"
+                  className="text-2xl sm:text-3xl font-bold text-gray-900 mb-6"
                 >
-                  Cause Champion Registration Successful!
+                  Thank you!
                 </motion.h2>
 
-                <motion.p
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4 }}
-                  className="text-lg text-gray-600 mb-8 leading-relaxed"
+                  className="text-left sm:text-center space-y-4 text-lg text-gray-700 mb-8 leading-relaxed"
                 >
-                  Welcome to Cause Champions India! Thank you for starting your giving circle with us. Our team will connect with you shortly to guide you through your impact journey and help you start your social cause campaign.
-                </motion.p>
+                  <p>
+                    Most people care. Few decide to do something about it. You just did. Your giving circle is where change begins.
+                  </p>
+                  <p>
+                    Our team will connect with you shortly to walk you through to help you start your impact journey.
+                  </p>
+                </motion.div>
 
                 <motion.p
                   initial={{ opacity: 0 }}
@@ -307,7 +319,14 @@ const CauseChampionOnboarding: React.FC = () => {
                   transition={{ delay: 0.6 }}
                   className="text-sm text-gray-500 mt-6"
                 >
-                  You'll receive confirmation details at <span className="font-medium">{formData.email}</span>
+                  {(submittedEmail || formData.email) ? (
+                    <>
+                      You&apos;ll receive confirmation details at{' '}
+                      <span className="font-medium text-gray-800 break-all">{submittedEmail || formData.email}</span>
+                    </>
+                  ) : (
+                    <>Our team will reach out using the contact details you submitted.</>
+                  )}
                 </motion.p>
               </motion.div>
             ) : (
@@ -361,10 +380,16 @@ const CauseChampionOnboarding: React.FC = () => {
                       Email Address *
                     </label>
                     <motion.input
+                      ref={emailInputRef}
                       type="email"
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
+                      onInput={(ev) => {
+                        const v = (ev.target as HTMLInputElement).value;
+                        setFormData((prev) => ({ ...prev, email: v }));
+                      }}
+                      autoComplete="email"
                       className={`w-full px-4 py-3 border rounded-lg focus:ring-2 transition-colors text-base ${hasError('email', formData.email)
                         ? 'border-red-500 focus:ring-red-500 focus:border-red-500'
                         : 'border-gray-300 focus:ring-green-500 focus:border-green-500'

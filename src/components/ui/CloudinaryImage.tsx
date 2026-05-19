@@ -1,5 +1,9 @@
 import React from 'react';
 
+/**
+ * Cloudinary URLs get delivery transforms aligned with Home Hero (`getOptimizedImageUrl`):
+ * progressive images, auto format/DPR, q_60; when width+height are set we use c_fill + g_auto for smart crops.
+ */
 type CloudinaryImageProps = {
   src: string;
   alt: string;
@@ -43,13 +47,16 @@ function buildSrcSet(url: string, targetWidths: number[], height?: number): stri
   if (!isCloudinaryUrl(url)) return undefined;
   const descriptors: string[] = [];
   for (const w of targetWidths) {
+    const useFill = Boolean(w && height);
     const transforms = [
       `w_${w}`,
       height ? `h_${height}` : undefined,
-      (w && height) ? 'c_fill' : 'c_scale',
+      useFill ? 'c_fill' : 'c_scale',
+      useFill ? 'g_auto' : undefined,
       'dpr_auto',
       'f_auto',
       'q_60', // Better compression
+      'fl_progressive',
     ]
       .filter(Boolean)
       .join(',');
@@ -71,14 +78,17 @@ export function CloudinaryImage({
 }: CloudinaryImageProps) {
   // Limit max width to 1920px to prevent loading huge original images
   const maxWidth = width && width > 1920 ? 1920 : width;
-  
+
+  const useFill = Boolean(maxWidth && height);
   const commonTransforms = [
     maxWidth ? `w_${maxWidth}` : 'w_1920', // Always limit width
     height ? `h_${height}` : undefined,
-    (maxWidth && height) ? 'c_fill' : 'c_scale',
+    useFill ? 'c_fill' : 'c_scale',
+    useFill ? 'g_auto' : undefined,
     'dpr_auto',
     'f_auto',
     'q_60', // Better compression than q_auto
+    'fl_progressive',
   ]
     .filter(Boolean)
     .join(',');

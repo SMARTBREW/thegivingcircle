@@ -201,7 +201,8 @@ const CSRProjectsInIndia = () => {
           <div className="flex flex-wrap gap-3">
             {[
               { label: 'Top Verified NGOs India 2026', href: '/top-verified-ngos-india-2026' },
-              { label: 'Donate for Child Education', href: '/donate-for-education-india' },
+              { label: '#PehliClass · child education', href: '/pehli-class-cause-details' },
+              { label: 'Brick by Brick · animal shelter Gurgaon', href: '/bricks-by-bricks-cause-details' },
               { label: 'NGOs for Women Empowerment', href: '/ngo-for-women-empowerment' },
               { label: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
               { label: 'NGO Directory', href: '/ngos' },
