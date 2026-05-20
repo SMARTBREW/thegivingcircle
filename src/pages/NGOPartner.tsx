@@ -8,7 +8,7 @@ import 'react-phone-number-input/style.css';
 import Select from 'react-select';
 import countries from 'world-countries';
 import SEOHead from '../components/SEO/SEOHead';
-import { trackFormSubmission, trackConversion } from '../utils/analytics';
+import { trackFormSubmission } from '../utils/analytics';
 
 interface NGOFormData {
   organizationName: string;
@@ -125,7 +125,6 @@ export const NGOPartner: React.FC = () => {
           country: formData.country,
           organization_name: organizationName,
         });
-        trackConversion('ngo_partner_registration', 0);
 
         setIsSubmitted(true);
         // Scroll form container into view smoothly without going to bottom

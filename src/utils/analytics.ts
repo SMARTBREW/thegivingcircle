@@ -17,12 +17,23 @@ export function trackEvent(eventName: string, params?: Record<string, unknown>):
   window.gtag('event', eventName, params);
 }
 
+/**
+ * Successful lead/form capture. Sends:
+ * - `form_submit_success` — legacy custom event with `form_type`
+ * - `generate_lead` — GA4 recommended lead event (mark this as a conversion in GA4 → Admin → Events)
+ */
 export function trackFormSubmission(formType: string, params?: Record<string, unknown>): void {
-  trackEvent('form_submit_success', { form_type: formType, ...params });
-}
-
-export function trackConversion(conversionName: string, value: number): void {
-  trackEvent(conversionName, { value, currency: 'INR' });
+  const common = {
+    form_type: formType,
+    lead_source: 'website',
+    ...params,
+  };
+  trackEvent('form_submit_success', common);
+  trackEvent('generate_lead', {
+    currency: 'INR',
+    value: 1,
+    ...common,
+  });
 }
 
 export function trackDonationClick(causeTitle: string, causeId: string): void {

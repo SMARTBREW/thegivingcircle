@@ -8,7 +8,7 @@ import 'react-phone-number-input/style.css';
 import Select from 'react-select';
 import countries from 'world-countries';
 import SEOHead from '../components/SEO/SEOHead';
-import { trackFormSubmission, trackConversion } from '../utils/analytics';
+import { trackFormSubmission } from '../utils/analytics';
 
 interface FormData {
   fullName: string;
@@ -200,7 +200,6 @@ const CauseChampionOnboarding: React.FC = () => {
           city: formData.city,
           selected_cause: formData.selectedCause,
         });
-        trackConversion('cause_champion_registration', 0);
 
         setFormData(prev => ({ ...prev, email: emailResolved, isSubmitted: true }));
         setShowValidation(false);
