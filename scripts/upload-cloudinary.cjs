@@ -3,7 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 
-try { require('dotenv').config(); } catch (_) {}
+try {
+  require('dotenv').config();
+  require('dotenv').config({ path: path.join(process.cwd(), 'server', '.env') });
+} catch (_) {}
 
 // Read creds from env vars. Set in PowerShell before running:
 // $env:CLOUDINARY_CLOUD_NAME="..."; $env:CLOUDINARY_API_KEY="..."; $env:CLOUDINARY_API_SECRET="..."

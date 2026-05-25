@@ -1,3 +1,5 @@
+import { BLOG_CLOUDINARY_HERO_BY_SLUG } from '../../constants/blogHeroCloudinary';
+
 export type BlogFaq = {
   q: string;
   a: string;
@@ -30,6 +32,146 @@ export type BlogPost = {
 // (or later by moving to a CMS / codegen workflow).
 export const BLOG_POSTS: BlogPost[] = [
   {
+    slug: 'meaningful-summer-projects-india',
+    title: 'Meaningful Summer Projects for High School Students in India',
+    description:
+      'What is worth doing with a summer when your child is aiming for universities abroad. A guide for Indian families thinking carefully about extracurriculars.',
+    keywords:
+      'summer projects India high school, meaningful extracurriculars India, US UK university applications India, Common App activities India, verified NGO volunteer India, summer volunteer certificate India, The Giving Circle, Cause Champion, Young Champions, Pehli Class, Wings of Hope, Pawsitive Protectors, Bowls of Hope, Brick by Brick, community service depth over breadth, intellectual vitality Stanford, UCAS personal statement skills, service learning documentation',
+    category: 'Student & Family Guide',
+    datePublished: '2026-05-20',
+    dateModified: '2026-05-20',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['meaningful-summer-projects-india'],
+    readingTime: '14 min read',
+    toc: [
+      'Who this guide is for',
+      'What has shifted in selective admissions',
+      'What universities say they value (public guidance)',
+      'Shapes of summer projects that tend to yield strong stories',
+      'How to choose a cause',
+      'Documentation: why it matters',
+      'How The Giving Circle can help structure the summer',
+      'A sensible week-by-week plan',
+      'Frequently asked questions',
+    ],
+    sections: [
+      {
+        heading: 'Who This Guide Is For',
+        paragraphs: [
+          'Among the families who reach out to The Giving Circle in late summer, one question keeps coming back in different shapes. Their child has spent the previous year doing the things that are supposed to be done: a short internship here, a programme there, a volunteer trip somewhere. The activity list looks reasonable on paper—and yet something about it feels assembled rather than lived.',
+          'This post is for parents and students who want to use the summer with intent: usefully and not just impressively. It is written for families thinking about US, UK, Canadian, Australian, or European universities, where extracurricular involvement still carries weight in admissions outcomes.',
+          'A short upfront note: nothing here is a guarantee. Admissions outcomes depend on many factors. The aim is to share what universities have publicly stated they look for, and what tends to produce work students can later speak about with conviction.',
+        ],
+        callout:
+          'We are not predicting admission outcomes—we are translating public guidance into practical summer planning you can defend in an essay or interview.',
+      },
+      {
+        heading: 'What Has Shifted in Selective Admissions Cycles',
+        paragraphs: ['A few changes are worth naming before you optimise a summer schedule:'],
+        bullets: [
+          'Scores have compressed at the top. Very high SATs and strong AP-style results appear more often among selective applicants—so grades and tests differentiate less than they used to.',
+          'Essays face more scrutiny. With AI drafting everywhere, readers look for specificity: details only that student could have lived through.',
+          'Activity lists are read for depth, not breadth. The Common App allows ten slots, but guidance from multiple universities stresses that what happens in the strongest two or three lines matters far more.',
+        ],
+      },
+      {
+        heading: 'What Admissions Offices Signal They Value',
+        paragraphs: [
+          'We summarise public materials here—not insider rumours. Repeated themes from university-facing guidance boil down to: sustained effort in fewer areas beats scattershot résumés; intellectual curiosity (“intellectual vitality” is language Stanford has used); and evidence that the student cared about outcomes beyond themselves (language in Harvard-facing materials mentions concern for communities and others). UCAS prompts for UK personal statements push for motivation and transferable skills—not generic hero stories.',
+          'In practice, helpful questions to stress-test any summer commitment: Did this require real effort? Did you stay long enough to learn something non-obvious? Did anyone or anything change because of what you did? Could you narrate specifics that prove you were present?',
+          'The type of sticker on the programme matters less than how clearly the arc answers those questions.',
+        ],
+      },
+      {
+        heading: 'Shapes of Summer Projects That Usually Produce Useful Material',
+        paragraphs: ['Most impactful summers resemble one of a handful of repeatable patterns:'],
+        bullets: [
+          'Sustained service with a registered NGO—roughly eight to ten weeks, one trusted partner, roughly six hours weekly of real responsibilities. Depth grows after the novelty wears off.',
+          'Design-and-run campaigns: Pick a narrowly defined issue (period stigma at one school corridor, stray feeding routes in one neighbourhood food waste audit, etc.). Research, intervene, capture honest results.',
+          'Field research with an NGO ally: surveys, interviews, simplified analysis culminating in a short memo the organisation can reuse—strong for econ, public policy, or sociology angles.',
+          'Skill-based lift: build a microsite, edit a video series, teach a workshop, or ship a database for a partner that actually uses it—ideal when the student already has craft-level skills.',
+          'Fundraising with receipts: raise for a verified cause, document every rupee, publish what changed for beneficiaries—teaches stewardship and stakeholder communication.',
+        ],
+      },
+      {
+        heading: 'Patterns That Tend to Yield Thinner Essays',
+        paragraphs: [],
+        bullets: [
+          'Stacking ultra-short bursts across unrelated NGOs or token “certificate farms.”',
+          'Voluntourism itineraries where the traveller is centre-stage and beneficiaries stay abstract.',
+          'Paid factory-style programmes whose main deliverable is a shiny credential without artefacts or supervisor testimony.',
+        ],
+      },
+      {
+        heading: 'How to Think About Choosing a Cause',
+        paragraphs: [
+          'The brittle question is “Which cause photographs best?” The durable question is “Which problem refuses to leave my kid alone?” Insight often emerges from lingering conversations with people outside their usual orbit, stray moments of witnessing need, or even finishing the same depressing news article twice.',
+          'If nothing has surfaced yet, try a disciplined week-long media diet serious newspaper/longform—and note only the pieces genuinely read to completion. The recurring theme becomes the thesis for the summer.',
+        ],
+      },
+      {
+        heading: 'Documentation: Quietly Critical',
+        paragraphs: [
+          'Work that is undocumented frequently collapses into vague application paragraphs six months later. Ten minutes every Sunday night—what happened, who helped, one surprise, one frustration—builds a bank of concrete scenes.',
+          'Also capture photos with consent, save outputs, and log supervisor names and email early. Counsellors, scholarship desks, and university readers often ask for formal verification.',
+        ],
+        callout:
+          'Demand certificates only from credible, registered NGOs whose language matches delivered work. Oversold credentials can undermine trust.',
+      },
+      {
+        heading: 'How The Giving Circle Fits',
+        paragraphs: [
+          'The Giving Circle partners with documented NGOs across India. Campaigns span menstrual-health and girls-education strands (including Wings of Hope), stray feeding (Bowls of Hope), vaccination and outreach for street animals (Pawsitive Protectors), bridge programmes into formal school (#PehliClass with JWP at Mera Sahara), and—as live—animal-shelter build programmes such as Brick by Brick with AnimalCare India.',
+          'When students onboard as sustained volunteers through our concierge model, we help match them with a programmatic contact at the NGO, scope agreed deliverables aligned to verified campaigns, and issue completion certificates anchored in actual contribution—not theatre.',
+          'If your family already has a trusted grassroots partner, deepen that alliance first. Where you need structure, disciplined routing, or cross-cause visibility, these programmes are scaffolding—not the only morally legitimate path.',
+        ],
+      },
+      {
+        heading: 'A Reasonable Timeline If You Begin in Late Spring',
+        paragraphs: [],
+        bullets: [
+          'This week: grounded conversation—not “resume gaps,” but which social fractures genuinely bother your child.',
+          'Next week: Commit to exactly one thematic lane. Speak with your NGO partner early about organisational needs—not student vanity projects.',
+          'Following weeks: protect six disciplined hours weekly of real throughput. Showing up reliably beats melodrama.',
+          'Early–mid July: aim for one tangible artefact—mini campaign, annotated photo essay, field memo, annotated lesson kit, fundraiser accountability deck.',
+          'August close: consolidate certificate, distill notes into a three-page honesty draft for future essay spine.',
+        ],
+      },
+      {
+        heading: 'Continuing Your Reading Journey',
+        paragraphs: [
+          'Pair this essay with actionable giving guides elsewhere on our blog, explore curated cause detail pages built for specificity, then route questions through our onboarding team if you want hands-on structuring.',
+          'Disclaimer: Participation in programmes—ours or elsewhere—never guarantees admissions to any individual institution; use this roadmap to clarify values and evidence, not to reverse-engineer a single school’s mythical checklist.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Will volunteering once through The Giving Circle guarantee admission overseas?',
+        a: 'No programme can promise that. Universities evaluate many factors simultaneously. Verified service does, however, help students collect verifiable artefacts and ethically grounded narratives when they invested real time.',
+      },
+      {
+        q: 'Should my child chase breadth or rack up ten different NGO logos?',
+        a: 'Public guidance overwhelmingly rewards depth inside two or three sustained commitments. Scattershot optics usually collapse under interviewer follow-up.',
+      },
+      {
+        q: 'What should a certificate prove?',
+        a: 'Dates, organisational legal name and registration context, supervised responsibilities, approximate hours, honest outcome description—all signed by someone who genuinely oversaw them.',
+      },
+      {
+        q: 'Is fundraising a legitimate summer storyline?',
+        a: 'Yes—when routed through trusted organisations with transparent tallying of funds and beneficiaries served. Stewardship narratives signal maturity.',
+      },
+    ],
+    related: [
+      { title: 'Young Champions · School & university projects', href: '/young-champions' },
+      { title: '#PehliClass · donate for education India', href: '/pehli-class-cause-details' },
+      { title: 'Become a Cause Champion', href: '/onboarding' },
+      { title: 'How to Donate for Child Education in India (Step-by-Step + 80G)', href: '/blog/how-to-donate-for-child-education-in-india-80g' },
+      { title: 'Volunteer Opportunities (Delhi focus)', href: '/volunteer-opportunities-delhi' },
+    ],
+  },
+  {
     slug: 'how-to-donate-for-child-education-in-india-80g',
     title: 'How to Donate for Child Education in India (Step-by-Step + 80G)',
     description:
@@ -40,7 +182,7 @@ export const BLOG_POSTS: BlogPost[] = [
     datePublished: '2026-03-19',
     // Fallback only. Backend should control the real weekly "Last updated".
     dateModified: '2026-03-20',
-    heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['how-to-donate-for-child-education-in-india-80g'],
     readingTime: '7 min read',
     toc: [
       'Why child education donations matter',
@@ -137,7 +279,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Trust & Verification Guide',
     datePublished: '2026-03-23',
     dateModified: '2026-03-23',
-    heroImage: 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['verified-ngos-in-delhi'],
     readingTime: '6 min read',
     toc: [
       'What “verified” means',
@@ -225,7 +367,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'CSR for Companies',
     datePublished: '2026-03-23',
     dateModified: '2026-03-23',
-    heroImage: 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['csr-projects-in-india'],
     readingTime: '7 min read',
     toc: [
       'What CSR means (high-level)',
@@ -319,7 +461,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
-    heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['what-is-a-philanthropist-india'],
     readingTime: '6 min read',
     toc: [
       'What is a philanthropist?',
@@ -433,7 +575,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
-    heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['what-is-philanthropy-india'],
     readingTime: '5 min read',
     toc: [
       'What philanthropy means',
@@ -538,7 +680,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
-    heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['how-to-donate-to-ngos-india'],
     readingTime: '7 min read',
     toc: [
       'Why NGO verification matters before donating',
@@ -647,7 +789,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Giving Guide',
     datePublished: '2026-04-10',
     dateModified: '2026-04-10',
-    heroImage: 'https://www.thegivingcircle.in/images/blogs/School%20day%20focus%20and%20support.png',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['how-to-donate-for-women-empowerment-india'],
     readingTime: '6 min read',
     toc: [
       'Why women empowerment donations matter',

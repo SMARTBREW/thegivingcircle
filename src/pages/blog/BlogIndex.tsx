@@ -31,8 +31,8 @@ const BlogIndex = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead
         title="Blog | The Giving Circle - Community Giving Guides"
-        description="Guides on donating, choosing verified NGOs, understanding 80G, and making education, women empowerment, and CSR giving more impactful in India."
-        keywords="giving circle blog, donate online, donate NGO, 80G tax benefit guide, 80g tax benefit, verified NGO, csr initiatives, education donation, ngo role, role of ngo, fundraising meaning"
+        description="Guides on donating, choosing verified NGOs, understanding 80G, meaningful summer volunteering for students, Cause Champions, Young Champions, and impactful giving in India."
+        keywords="giving circle blog, donate online, verified NGO India, meaningful summer projects students, extracurricular volunteering India, Cause Champion Young Champions, PehliClass, Wings of Hope, CSR giving, education donation guide, 80G tax benefit, fundraising meaning"
         canonicalUrl="https://www.thegivingcircle.in/blog"
         ogTitle="The Giving Circle Blog | Guides to Donate with Confidence"
         ogDescription="Weekly-style giving guides built for clarity: donate effectively, choose verified NGOs, and understand 80G in India."
@@ -59,7 +59,7 @@ const BlogIndex = () => {
             The Giving Circle Blog
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Practical, trust-first guides to help you donate confidently - especially for education giving, 80G tax benefits, and verified NGO impact.
+            Practical, trust-first guides for families, students, and donors—education and 80G, verified NGO partnerships, internships with impact, Cause Champions &amp; Young Champions, and summers that colleges can recognise for the right reasons.
           </p>
         </div>
       </section>

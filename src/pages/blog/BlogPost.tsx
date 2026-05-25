@@ -6,15 +6,18 @@ import ArticleSchema from '../../components/SEO/ArticleSchema';
 import { getBlogPostBySlug } from './blogPosts';
 import type { BlogPost } from './blogPosts';
 import { ApiClient } from '../../utils/api';
+import { BLOG_CLOUDINARY_HERO_BY_SLUG } from '../../constants/blogHeroCloudinary';
 
-const FRONTEND_HERO_OVERRIDES: Record<string, string> = {
-  'how-to-donate-for-child-education-in-india-80g':
-    'https://res.cloudinary.com/dcdhhylin/image/upload/v1774264931/images/blogs/school-day-focus-and-support.png',
-  'verified-ngos-in-delhi':
-    'https://res.cloudinary.com/dcdhhylin/image/upload/v1774264924/images/blogs/reviewing-impact-reports-in-delhi.png',
-  'csr-projects-in-india':
-    'https://res.cloudinary.com/dcdhhylin/image/upload/v1774264920/images/blogs/business-professionals-reviewing-csr-project-data.png',
-};
+/** Prefer Cloudinary heroes for known slugs so API/static stay in sync */
+const FRONTEND_HERO_OVERRIDES = BLOG_CLOUDINARY_HERO_BY_SLUG;
+
+const SITE_ORIGIN = 'https://www.thegivingcircle.in';
+
+function absoluteImageForMeta(url: string): string {
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  if (url.startsWith('/')) return `${SITE_ORIGIN}${url}`;
+  return url.startsWith('//') ? `https:${url}` : url;
+}
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -72,6 +75,7 @@ const BlogPostPage = () => {
     FRONTEND_HERO_OVERRIDES[post.slug] ||
     post.heroImage ||
     'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png';
+  const heroImageMeta = absoluteImageForMeta(heroImage);
   const lastUpdatedLabel = isApiLoaded && post.dateModified
     ? new Date(post.dateModified).toLocaleDateString('en-IN', {
         day: '2-digit',
@@ -89,12 +93,12 @@ const BlogPostPage = () => {
         canonicalUrl={canonicalUrl}
         ogTitle={post.title}
         ogDescription={post.description}
-        ogImage={heroImage}
+        ogImage={heroImageMeta}
       />
       <ArticleSchema
         title={post.title}
         description={post.description}
-        image={heroImage}
+        image={heroImageMeta}
         datePublished={post.datePublished}
         dateModified={post.dateModified}
         category={post.category}
