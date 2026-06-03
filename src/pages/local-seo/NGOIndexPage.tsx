@@ -124,10 +124,10 @@ const NGOIndexPage = () => {
           <p className="text-gray-600 mb-6">Find verified NGOs close to you in Delhi NCR and beyond.</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { name: 'Delhi', slugs: ['best-ngo-in-delhi', 'top-ngo-in-delhi', 'verified-ngo-in-delhi'] },
-              { name: 'Noida', slugs: ['best-ngo-in-noida', 'top-ngo-in-noida', 'verified-ngo-in-noida'] },
-              { name: 'Gurugram', slugs: ['best-ngo-in-gurugram', 'top-ngo-in-gurugram', 'verified-ngo-in-gurugram'] },
-              { name: 'Faridabad', slugs: ['best-ngo-in-faridabad', 'top-ngo-in-faridabad', 'verified-ngo-in-faridabad'] },
+              { name: 'Delhi', slugs: ['best-ngo-in-delhi'] },
+              { name: 'Noida', slugs: ['best-ngo-in-noida'] },
+              { name: 'Gurugram', slugs: ['best-ngo-in-gurugram'] },
+              { name: 'Faridabad', slugs: ['best-ngo-in-faridabad'] },
             ].map((city) => (
               <div key={city.name} className="bg-white rounded-xl p-5 shadow-sm border border-gray-100">
                 <h3 className="text-lg font-bold text-gray-900 mb-3">{city.name}</h3>

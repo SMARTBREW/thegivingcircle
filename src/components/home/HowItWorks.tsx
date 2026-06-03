@@ -65,9 +65,9 @@ const AboutImpactGallery = () => {
           viewport={{ once: true }}
           className="text-center mb-5 sm:mb-6 md:mb-8 lg:mb-10"
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-2 sm:mb-3 md:mb-4">
             Our Story
-          </h1>
+          </h2>
           <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-2xl md:max-w-3xl mx-auto leading-relaxed break-words px-2">
             Discover how our community giving platform connects Cause Champions with verified social causes across India, creating transparent and meaningful impact.
           </p>

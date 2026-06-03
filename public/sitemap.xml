@@ -21,15 +21,7 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Causes (browse) -->
-  <url>
-    <loc>https://www.thegivingcircle.in/causes</loc>
-    <lastmod>2026-05-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Live Causes - Browse Causes -->
+  <!-- Live Causes (canonical browse URL; /causes redirects here) -->
   <url>
     <loc>https://www.thegivingcircle.in/live-causes</loc>
     <lastmod>2026-05-20</lastmod>
@@ -54,8 +46,8 @@
   </url>
 
   <url>
-    <loc>https://www.thegivingcircle.in/impact-stories-details</loc>
-    <lastmod>2026-04-16</lastmod>
+    <loc>https://www.thegivingcircle.in/impact-stories/wings-of-hope</loc>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -158,26 +150,6 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- NGO Detail Pages (dynamic by id) -->
-  <url>
-    <loc>https://www.thegivingcircle.in/ngo-detail/1</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngo-detail/2</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngo-detail/3</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
-  </url>
-
   <!-- Animal Care NGO Detail -->
   <url>
     <loc>https://www.thegivingcircle.in/animalcare-ngo-detail</loc>
@@ -197,31 +169,7 @@
   <!-- Delhi SEO Pages -->
   <url>
     <loc>https://www.thegivingcircle.in/ngos/best-ngo-in-delhi</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/top-ngo-in-delhi</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/verified-ngo-in-delhi</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/trusted-ngo-in-delhi</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/leading-ngo-in-delhi</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -229,31 +177,7 @@
   <!-- Gurugram SEO Pages -->
   <url>
     <loc>https://www.thegivingcircle.in/ngos/best-ngo-in-gurugram</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/top-ngo-in-gurugram</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/verified-ngo-in-gurugram</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/trusted-ngo-in-gurugram</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/leading-ngo-in-gurugram</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -261,31 +185,7 @@
   <!-- Noida SEO Pages -->
   <url>
     <loc>https://www.thegivingcircle.in/ngos/best-ngo-in-noida</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/top-ngo-in-noida</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/verified-ngo-in-noida</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/trusted-ngo-in-noida</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/leading-ngo-in-noida</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -293,31 +193,7 @@
   <!-- Faridabad SEO Pages -->
   <url>
     <loc>https://www.thegivingcircle.in/ngos/best-ngo-in-faridabad</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/top-ngo-in-faridabad</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/verified-ngo-in-faridabad</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/trusted-ngo-in-faridabad</loc>
-    <lastmod>2026-02-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.thegivingcircle.in/ngos/leading-ngo-in-faridabad</loc>
-    <lastmod>2026-02-05</lastmod>
+    <lastmod>2026-05-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>

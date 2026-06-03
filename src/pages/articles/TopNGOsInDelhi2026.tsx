@@ -145,8 +145,6 @@ const TopNGOsInDelhi2026 = () => {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {[
               { label: 'Best NGOs in Delhi', href: '/ngos/best-ngo-in-delhi' },
-              { label: 'Verified NGOs in Delhi', href: '/ngos/verified-ngo-in-delhi' },
-              { label: 'Trusted NGOs in Delhi', href: '/ngos/trusted-ngo-in-delhi' },
               { label: 'Verified NGOs in Delhi (Guide)', href: '/verified-ngos-in-delhi' },
               { label: 'NGOs for Women Empowerment', href: '/ngo-for-women-empowerment' },
               { label: 'NGO Directory India', href: '/ngos' },

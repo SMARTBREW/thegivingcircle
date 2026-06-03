@@ -183,8 +183,8 @@ const VerifiedNGOsInDelhi = () => {
               <p className="text-gray-600 text-sm mb-1">Roles, onboarding and trustworthy NGOs</p>
               <p className="text-green-700 text-sm">Read opportunities →</p>
             </Link>
-            <Link to="/ngos/top-ngo-in-delhi" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
-              <h3 className="text-lg font-semibold text-gray-900 mb-1">Top NGOs in Delhi</h3>
+            <Link to="/ngos/best-ngo-in-delhi" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+              <h3 className="text-lg font-semibold text-gray-900 mb-1">Best NGOs in Delhi</h3>
               <p className="text-gray-600 text-sm mb-1">Curated hub for donors comparing causes</p>
               <p className="text-green-700 text-sm">Explore hub →</p>
             </Link>
@@ -229,7 +229,6 @@ const VerifiedNGOsInDelhi = () => {
           <div className="flex flex-wrap gap-3">
             {[
               { label: 'Best NGOs in Delhi', href: '/ngos/best-ngo-in-delhi' },
-              { label: 'Top NGOs hub', href: '/ngos/top-ngo-in-delhi' },
               { label: 'Top NGOs in Delhi 2026', href: '/top-ngos-in-delhi-2026' },
               { label: 'NGOs in Noida', href: '/ngo-in-noida' },
               { label: 'Volunteer in Delhi', href: '/volunteer-opportunities-delhi' },

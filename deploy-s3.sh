@@ -10,14 +10,17 @@ npm run build
 
 echo "📦 Uploading to S3 with optimized cache headers..."
 
-# Upload HTML files (no cache)
-echo "  → Uploading HTML files..."
+# Upload HTML files (no cache). --delete purges stale/removed pages (e.g. the
+# old city adjective-variant pages now consolidated via 301) so they don't
+# linger on S3 and stay indexable. Scoped to *.html only via the include/exclude.
+echo "  → Uploading HTML files (with --delete to purge removed pages)..."
 aws s3 sync dist/ s3://${BUCKET_NAME} \
   --exclude "*" \
   --include "*.html" \
   --cache-control "no-cache,no-store,must-revalidate" \
   --content-type "text/html" \
   --metadata-directive REPLACE \
+  --delete \
   --region ${REGION}
 
 # Upload JS/CSS assets (1 year cache - they have content hashes)

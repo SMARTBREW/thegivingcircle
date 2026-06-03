@@ -1,5 +1,5 @@
-import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Head } from 'vite-react-ssg';
 
 interface SEOHeadProps {
   title?: string;
@@ -12,107 +12,62 @@ interface SEOHeadProps {
   noindex?: boolean;
 }
 
+const SITE_ORIGIN = 'https://www.thegivingcircle.in';
+const DEFAULT_TITLE =
+  'The Giving Circle - Community Giving Platform | Support Social Causes India';
+const DEFAULT_DESCRIPTION =
+  "The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Support social causes, donate to verified charity, and create real impact stories across India.";
+
+/**
+ * Renders per-page <head> tags. Uses vite-react-ssg's <Head> so the tags are
+ * baked into the static HTML at build time (correct for crawlers) and stay
+ * reactive on the client during SPA navigation.
+ */
 const SEOHead: React.FC<SEOHeadProps> = ({
   title,
   description,
   keywords,
-  ogImage = 'https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png',
+  ogImage = `${SITE_ORIGIN}/Giving_Circle..-removebg-preview.png`,
   ogTitle,
   ogDescription,
   canonicalUrl,
   noindex = false,
 }) => {
   const location = useLocation();
-  
-  // Default values
-  const defaultTitle = "The Giving Circle - Community Giving Platform | Support Social Causes India | Giving India";
-  const defaultDescription = "The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India. Community support platform for giving circle, giving community, and social giving initiatives.";
-  const defaultCanonical = `https://www.thegivingcircle.in${location.pathname}`;
 
-  useEffect(() => {
-    // Update document title
-    if (title) {
-      document.title = title;
-    }
+  const resolvedTitle = title || DEFAULT_TITLE;
+  const resolvedDescription = description || DEFAULT_DESCRIPTION;
+  const resolvedCanonical = canonicalUrl || `${SITE_ORIGIN}${location.pathname}`;
+  const resolvedOgTitle = ogTitle || title || DEFAULT_TITLE;
+  const resolvedOgDescription = ogDescription || description || DEFAULT_DESCRIPTION;
+  const robots = noindex
+    ? 'noindex, nofollow'
+    : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1';
 
-    // Update or create meta description
-    let metaDescription = document.querySelector('meta[name="description"]');
-    if (!metaDescription) {
-      metaDescription = document.createElement('meta');
-      metaDescription.setAttribute('name', 'description');
-      document.head.appendChild(metaDescription);
-    }
-    metaDescription.setAttribute('content', description || defaultDescription);
+  return (
+    <Head>
+      <title>{resolvedTitle}</title>
+      <meta name="title" content={resolvedTitle} />
+      <meta name="description" content={resolvedDescription} />
+      {keywords ? <meta name="keywords" content={keywords} /> : null}
+      <meta name="robots" content={robots} />
+      <link rel="canonical" href={resolvedCanonical} />
 
-    // Update or create meta keywords
-    if (keywords) {
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (!metaKeywords) {
-        metaKeywords = document.createElement('meta');
-        metaKeywords.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeywords);
-      }
-      metaKeywords.setAttribute('content', keywords);
-    }
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={resolvedCanonical} />
+      <meta property="og:title" content={resolvedOgTitle} />
+      <meta property="og:description" content={resolvedOgDescription} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:site_name" content="The Giving Circle" />
+      <meta property="og:locale" content="en_IN" />
 
-    // Update robots meta tag
-    let metaRobots = document.querySelector('meta[name="robots"]');
-    if (!metaRobots) {
-      metaRobots = document.createElement('meta');
-      metaRobots.setAttribute('name', 'robots');
-      document.head.appendChild(metaRobots);
-    }
-    metaRobots.setAttribute('content', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
-
-    // Update or create canonical URL
-    let canonicalLink = document.querySelector('link[rel="canonical"]');
-    if (!canonicalLink) {
-      canonicalLink = document.createElement('link');
-      canonicalLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(canonicalLink);
-    }
-    canonicalLink.setAttribute('href', canonicalUrl || defaultCanonical);
-
-    // Update Open Graph tags
-    const updateOGTag = (property: string, content: string) => {
-      let ogTag = document.querySelector(`meta[property="${property}"]`);
-      if (!ogTag) {
-        ogTag = document.createElement('meta');
-        ogTag.setAttribute('property', property);
-        document.head.appendChild(ogTag);
-      }
-      ogTag.setAttribute('content', content);
-    };
-
-    updateOGTag('og:url', canonicalUrl || defaultCanonical);
-    updateOGTag('og:title', ogTitle || title || defaultTitle);
-    updateOGTag('og:description', ogDescription || description || defaultDescription);
-    updateOGTag('og:image', ogImage);
-    updateOGTag('og:type', 'website');
-    updateOGTag('og:site_name', 'The Giving Circle');
-    updateOGTag('og:locale', 'en_IN');
-
-    // Update Twitter Card tags
-    const updateTwitterTag = (property: string, content: string) => {
-      let twitterTag = document.querySelector(`meta[property="${property}"]`);
-      if (!twitterTag) {
-        twitterTag = document.createElement('meta');
-        twitterTag.setAttribute('property', property);
-        document.head.appendChild(twitterTag);
-      }
-      twitterTag.setAttribute('content', content);
-    };
-
-    updateTwitterTag('twitter:card', 'summary_large_image');
-    updateTwitterTag('twitter:url', canonicalUrl || defaultCanonical);
-    updateTwitterTag('twitter:title', ogTitle || title || defaultTitle);
-    updateTwitterTag('twitter:description', ogDescription || description || defaultDescription);
-    updateTwitterTag('twitter:image', ogImage);
-
-  }, [title, description, keywords, ogImage, ogTitle, ogDescription, canonicalUrl, noindex, location.pathname, defaultCanonical, defaultTitle, defaultDescription]);
-
-  return null; // This component doesn't render anything
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={resolvedCanonical} />
+      <meta name="twitter:title" content={resolvedOgTitle} />
+      <meta name="twitter:description" content={resolvedOgDescription} />
+      <meta name="twitter:image" content={ogImage} />
+    </Head>
+  );
 };
 
 export default SEOHead;
-

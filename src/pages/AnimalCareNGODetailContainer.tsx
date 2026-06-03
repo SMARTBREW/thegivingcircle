@@ -1,82 +1,31 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import NGODetailPage from './NGODetailPage';
-import { NGODetails } from '../types';
+import { animalCareNGODetails } from '../utils/sampleNGOData';
 
 /**
  * AnimalCare India NGO Detail Container Page
- * 
- * This page component automatically loads AnimalCare India NGO data
- * and displays it using the NGODetailPage component.
+ *
+ * Renders the static AnimalCare India NGO data. The data is imported
+ * synchronously (not via a useEffect async import) so the page renders its
+ * content and SEO tags at build time during static pre-rendering.
  */
 
 const AnimalCareNGODetailContainer: React.FC = () => {
   const navigate = useNavigate();
 
-  const [ngoDetails, setNgoDetails] = useState<NGODetails | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const fetchAnimalCareDetails = async () => {
-      setLoading(true);
-      setError(null);
-
-      try {
-        const { animalCareNGODetails } = await import('../utils/sampleNGOData');
-
-        setNgoDetails(animalCareNGODetails);
-
-      } catch (error) {
-        console.error('Failed to load AnimalCare India data:', error);
-        setError('Failed to load AnimalCare India details. Please try again later.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchAnimalCareDetails();
-  }, []);
-
   const handleBack = () => {
     navigate('/ngo-list');
   };
 
-  if (error) {
-    return (
-      <main className="min-h-screen bg-gradient-to-br from-slate-50 to-gray-100 flex items-center justify-center">
-        <div className="text-center max-w-md mx-auto p-6">
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="text-6xl mb-4">🐾</div>
-            <h2 className="text-2xl font-bold text-slate-800 mb-2">Organization Not Available</h2>
-            <p className="text-slate-600 mb-6">{error}</p>
-            <div className="space-y-3">
-              <button
-                onClick={() => window.location.reload()}
-                className="w-full bg-slate-800 text-white px-6 py-3 rounded-lg hover:bg-slate-900 transition-colors font-medium"
-              >
-                Try Again
-              </button>
-              <button
-                onClick={handleBack}
-                className="w-full border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors font-medium"
-              >
-                Back to Organizations
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
-    );
-  }
-
   return (
     <NGODetailPage
-      ngoDetails={ngoDetails!}
-      loading={loading}
+      ngoDetails={animalCareNGODetails}
+      loading={false}
       onBack={handleBack}
       seoTitle="Animal Care India | Street Animal Welfare NGO"
       seoDescription="Animal Care India is a verified NGO dedicated to street animal welfare. Support rescue, sterilization and vaccination programs to create animal-friendly communities."
+      canonicalUrl="https://www.thegivingcircle.in/animalcare-ngo-detail"
     />
   );
 };

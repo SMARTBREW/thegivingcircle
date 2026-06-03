@@ -5,7 +5,7 @@ import { Search, Filter, CheckCircle, MapPin, ChevronDown, Shield, Award, Extern
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import SEOHead from '../components/SEO/SEOHead';
-// Removed unused imports
+import { getNGOProfilePathById } from '../utils/ngoRoutes';
 
 interface NGO {
   id: string;
@@ -174,7 +174,7 @@ export const NGOList: React.FC = () => {
   // Removed convertToNGODetails function - now using routing with NGODetailContainer
 
   const handleLearnMore = (ngo: NGO) => {
-    navigate(`/ngo-detail/${ngo.id}`);
+    navigate(getNGOProfilePathById(ngo.id));
   };
 
   const NGOCard: React.FC<{ ngo: NGO; index: number }> = ({ ngo, index }) => (

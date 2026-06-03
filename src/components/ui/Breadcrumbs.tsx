@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { Head } from 'vite-react-ssg';
 
 interface BreadcrumbItem {
   label: string;
@@ -26,6 +27,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
     const pathMap: { [key: string]: string } = {
       'onboarding': 'Become a Champion',
       'impact-stories': 'Impact Stories',
+      'wings-of-hope': 'Wings of Hope',
       'impact-stories-details': 'Story Details',
       'ngo-partner': 'NGO Partnership',
       'ngo-list': 'Our NGO Partners',
@@ -60,40 +62,31 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
 
   const breadcrumbs = generateBreadcrumbs();
 
-  // Add BreadcrumbList structured data
-  useEffect(() => {
-    let schemaScript = document.querySelector('script[data-schema="breadcrumb"]');
+  // Only emit BreadcrumbList structured data when there is a real trail
+  // (more than just "Home"); a single-item breadcrumb adds no value.
+  if (breadcrumbs.length < 2) {
+    return null;
+  }
 
-    if (!schemaScript) {
-      schemaScript = document.createElement('script');
-      schemaScript.setAttribute('type', 'application/ld+json');
-      schemaScript.setAttribute('data-schema', 'breadcrumb');
-      document.head.appendChild(schemaScript);
-    }
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: breadcrumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.label,
+      item: `https://www.thegivingcircle.in${crumb.path}`,
+    })),
+  };
 
-    const breadcrumbSchema = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": breadcrumbs.map((crumb, index) => ({
-        "@type": "ListItem",
-        "position": index + 1,
-        "name": crumb.label,
-        "item": `https://www.thegivingcircle.in${crumb.path}`
-      }))
-    };
-
-    schemaScript.textContent = JSON.stringify(breadcrumbSchema);
-
-    return () => {
-      const script = document.querySelector('script[data-schema="breadcrumb"]');
-      if (script && script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, [breadcrumbs]);
-
-  // Don't show breadcrumbs visually, but keep the schema
-  return null;
+  // Rendered into the static <head> at build time (no visual breadcrumb UI).
+  return (
+    <Head>
+      <script type="application/ld+json" data-schema="breadcrumb">
+        {JSON.stringify(breadcrumbSchema)}
+      </script>
+    </Head>
+  );
 };
 
 export default Breadcrumbs;

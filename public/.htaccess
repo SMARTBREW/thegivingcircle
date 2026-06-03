@@ -5,11 +5,19 @@
   RewriteEngine On
   RewriteBase /
 
-  # Legacy paths → canonical JWP cause page (301 before SPA fallback)
+  # Legacy paths → canonical pages (301 before SPA fallback)
   RewriteRule ^khushi-ngo-detail/?$ /jwp-cause-details [R=301,L]
   RewriteRule ^khushi-cause-details/?$ /jwp-cause-details [R=301,L]
-
   RewriteRule ^donate-for-education-india/?$ /pehli-class-cause-details [R=301,L]
+  RewriteRule ^causes/?$ /live-causes [R=301,L]
+  RewriteRule ^local-seo/?$ /ngos [R=301,L]
+  RewriteRule ^local-seo/(.+)$ /ngos/$1 [R=301,L]
+  RewriteRule ^ngo-detail/1/?$ /jwp-cause-details [R=301,L]
+  RewriteRule ^ngo-detail/2/?$ /animalcare-ngo-detail [R=301,L]
+  RewriteRule ^ngo-detail/3/?$ /jwp-cause-details [R=301,L]
+  RewriteRule ^ngo/animalcare-india/?$ /animalcare-ngo-detail [R=301,L]
+  RewriteRule ^ngo/.*jwp.*$ /jwp-cause-details [R=301,L,NC]
+  RewriteRule ^impact-stories-details/?$ /impact-stories/wings-of-hope [R=301,L]
   RewriteRule ^local-seo/top-ngo-in-delhi/?$ /ngos/top-ngo-in-delhi [R=301,L]
 
   # Stray /ngos/ngo-in-* → canonical SPA routes (301 before SPA fallback)

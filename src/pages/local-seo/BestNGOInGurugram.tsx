@@ -15,12 +15,6 @@ const BestNGOInGurugram: React.FC = () => {
         { name: 'Noida', slug: 'best-ngo-in-noida' },
         { name: 'Faridabad', slug: 'best-ngo-in-faridabad' },
       ]}
-      relatedKeywords={[
-        { keyword: 'Top NGOs in Gurugram', slug: 'top-ngo-in-gurugram' },
-        { keyword: 'Verified NGOs in Gurugram', slug: 'verified-ngo-in-gurugram' },
-        { keyword: 'Trusted NGOs in Gurugram', slug: 'trusted-ngo-in-gurugram' },
-        { keyword: 'Leading NGOs in Gurugram', slug: 'leading-ngo-in-gurugram' },
-      ]}
     />
   );
 };

@@ -6,41 +6,17 @@
   <link rel="icon" type="image/png" href="favicon.ico" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Primary Meta Tags -->
-  <title>The Giving Circle | Verified NGO Donations India</title>
-  <meta name="title" content="The Giving Circle | Verified NGO Donations India" />
-  <meta name="description"
-    content="The Giving Circle is India's trusted social impact platform connecting Cause Champions with verified causes. Join our community giving platform to support social causes, donate to verified charity, and create real impact stories across India. Start your giving circle today!" />
-  <meta name="keywords"
-    content="giving circle, giving community, giving platform, giving pledge, community helpers, community giving, community support, community support platform, community causes, community helpline, support circle, support social causes, social causes to support, social giving, community care, corporate giving platforms, give and help, causes to support, circle of support, The Giving Circle, Cause Champions, social impact platform, donate to social causes, join giving circle, impact stories, verified charity platform, transparent giving platform, trusted charity platform, community partnerships, start your giving circle, donate to NGO, verified charities, ngo full form, top NGO, best NGO, local NGO, fundraising meaning, ngo role, role of ngo, helping the poor, act of kindness, donation 80g" />
+  <!--
+    Per-page SEO tags (title, description, canonical, og:*, twitter:*, robots)
+    are injected at build time by SEOHead (vite-react-ssg <Head>). Keeping them
+    out of this shared shell prevents duplicate tags on pre-rendered pages.
+    og:image dimensions/alt are static site defaults retained here.
+  -->
   <meta name="author" content="The Giving Circle" />
   <meta name="theme-color" content="#15803D" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.thegivingcircle.in/" />
-  <meta property="og:title" content="The Giving Circle | Verified NGO Donations India" />
-  <meta property="og:description"
-    content="Join India's trusted social impact platform. Connect with verified causes, become a Cause Champion, and create lasting change through community-driven social impact. Start your giving circle today!" />
-  <meta property="og:image" content="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="The Giving Circle - Community Giving Platform Logo" />
-  <meta property="og:site_name" content="The Giving Circle" />
-  <meta property="og:locale" content="en_IN" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="https://www.thegivingcircle.in/" />
-  <meta name="twitter:title" content="The Giving Circle | Verified NGO Donations India" />
-  <meta name="twitter:description"
-    content="Join India's trusted social impact platform. Connect with verified causes, become a Cause Champion, and create lasting change through community-driven social impact." />
-  <meta name="twitter:image" content="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png" />
-  <meta name="twitter:image:alt" content="The Giving Circle - Community Giving Platform Logo" />
-
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://www.thegivingcircle.in/" />
 
   <!-- Preconnect to Cloudinary for faster image loading -->
   <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
@@ -154,98 +130,30 @@
     }
     </script>
 
-  <!-- Structured Data - WebSite Schema for Sitelinks Search Box -->
+  <!-- Structured Data - WebSite Schema -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "The Giving Circle",
       "alternateName": "Giving Circle India",
-      "url": "https://www.thegivingcircle.in",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {
-          "@type": "EntryPoint",
-          "urlTemplate": "https://www.thegivingcircle.in/live-causes?search={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      }
+      "url": "https://www.thegivingcircle.in"
     }
     </script>
 
-  <!-- Structured Data - BreadcrumbList Schema -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.thegivingcircle.in/"
-        }
-      ]
-    }
-    </script>
+  <!--
+    The shell's single-item "Home" BreadcrumbList was removed: it was baked into
+    every page and duplicated the correct per-page BreadcrumbList that the
+    Breadcrumbs component emits via Head. Deep pages were carrying two
+    BreadcrumbList blocks (a real trail + this generic one).
+  -->
 
-  <!-- Structured Data - FAQPage Schema -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What is The Giving Circle?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Giving Circle is India's trusted social impact platform that connects Cause Champions with verified causes. It's a community giving platform where individuals can support social causes, donate to verified charities, and create real impact stories across India."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How do I become a Cause Champion?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can become a Cause Champion by visiting our onboarding page and filling out the registration form. Cause Champions are individuals who create and lead giving circles to support verified social causes in India."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Are the NGOs verified?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Yes, all NGOs on The Giving Circle platform are verified. We work only with trusted, verified charity partners to ensure transparency and trust in philanthropy. Each NGO partner goes through a verification process before being listed on our platform."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How can I donate to social causes?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "You can browse our Live Causes page to find verified causes that need support. Each cause page provides detailed information about the campaign, the NGO partner, and how your donation will create impact. You can donate directly through the cause pages."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What types of causes does The Giving Circle support?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Giving Circle supports a wide range of social causes including education, women empowerment, animal welfare, disaster relief, healthcare, hunger eradication, environmental conservation, and more. All causes are verified and work with trusted NGO partners."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "How does The Giving Circle ensure transparency?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "The Giving Circle ensures transparency through verified NGO partnerships, detailed impact reporting, regular updates on campaigns, and measurable impact metrics. All causes provide regular updates on how donations are being used and the impact created."
-          }
-        }
-      ]
-    }
-    </script>
+  <!--
+    The site-wide FAQ structured data was removed: it was emitted on every page
+    via this shared shell and had no matching visible content, which Google's
+    guidelines disallow. If a visible Q&A section is added later, render its
+    matching schema on that specific page only (e.g. via SEOHead / Head).
+  -->
 
   <!-- GA4 — send_page_view false; SPA fires page_view from AnalyticsListener -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZNMJNDF71S"></script>

@@ -1,4 +1,6 @@
-import React, { useEffect } from 'react';
+import React from 'react';
+import { useLocation } from 'react-router-dom';
+import { Head } from 'vite-react-ssg';
 
 interface ArticleSchemaProps {
   title: string;
@@ -11,6 +13,8 @@ interface ArticleSchemaProps {
   location?: string;
 }
 
+const SITE_ORIGIN = 'https://www.thegivingcircle.in';
+
 const ArticleSchema: React.FC<ArticleSchemaProps> = ({
   title,
   description,
@@ -21,79 +25,65 @@ const ArticleSchema: React.FC<ArticleSchemaProps> = ({
   category = 'Social Impact',
   location = 'India',
 }) => {
-  useEffect(() => {
-    // Create or update Article schema
-    let schemaScript = document.querySelector('script[data-schema="article"]');
-    
-    if (!schemaScript) {
-      schemaScript = document.createElement('script');
-      schemaScript.setAttribute('type', 'application/ld+json');
-      schemaScript.setAttribute('data-schema', 'article');
-      document.head.appendChild(schemaScript);
-    }
+  const { pathname } = useLocation();
+  const pageUrl = `${SITE_ORIGIN}${pathname}`;
 
-    const articleSchema = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": title,
-      "description": description,
-      "image": {
-        "@type": "ImageObject",
-        "url": image,
-        "width": 1200,
-        "height": 630
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: title,
+    description,
+    image: {
+      '@type': 'ImageObject',
+      url: image,
+      width: 1200,
+      height: 630,
+    },
+    author: {
+      '@type': 'Organization',
+      name: author,
+      url: SITE_ORIGIN,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'The Giving Circle',
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_ORIGIN}/Giving_Circle..-removebg-preview.png`,
+        width: 227,
+        height: 56,
       },
-      "author": {
-        "@type": "Organization",
-        "name": author,
-        "url": "https://www.thegivingcircle.in"
+      url: SITE_ORIGIN,
+    },
+    datePublished,
+    dateModified,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': pageUrl,
+    },
+    articleSection: category,
+    inLanguage: 'en-IN',
+    about: {
+      '@type': 'Thing',
+      name: category,
+    },
+    locationCreated: {
+      '@type': 'Place',
+      name: location,
+      address: {
+        '@type': 'PostalAddress',
+        addressCountry: 'IN',
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "The Giving Circle",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png",
-          "width": 227,
-          "height": 56
-        },
-        "url": "https://www.thegivingcircle.in"
-      },
-      "datePublished": datePublished,
-      "dateModified": dateModified,
-      "mainEntityOfPage": {
-        "@type": "WebPage",
-        "@id": window.location.href
-      },
-      "articleSection": category,
-      "inLanguage": "en-IN",
-      "about": {
-        "@type": "Thing",
-        "name": category
-      },
-      "locationCreated": {
-        "@type": "Place",
-        "name": location,
-        "address": {
-          "@type": "PostalAddress",
-          "addressCountry": "IN"
-        }
-      }
-    };
+    },
+  };
 
-    schemaScript.textContent = JSON.stringify(articleSchema);
-
-    // Cleanup function to remove schema when component unmounts
-    return () => {
-      const script = document.querySelector('script[data-schema="article"]');
-      if (script && script.parentNode) {
-        script.parentNode.removeChild(script);
-      }
-    };
-  }, [title, description, image, datePublished, dateModified, author, category, location]);
-
-  return null; // This component doesn't render anything visible
+  return (
+    <Head>
+      <script type="application/ld+json" data-schema="article">
+        {JSON.stringify(articleSchema)}
+      </script>
+    </Head>
+  );
 };
 
 export default ArticleSchema;
-

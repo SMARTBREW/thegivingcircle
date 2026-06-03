@@ -15,12 +15,6 @@ const BestNGOInDelhi: React.FC = () => {
         { name: 'Noida', slug: 'best-ngo-in-noida' },
         { name: 'Faridabad', slug: 'best-ngo-in-faridabad' },
       ]}
-      relatedKeywords={[
-        { keyword: 'Top NGOs in Delhi', slug: 'top-ngo-in-delhi' },
-        { keyword: 'Verified NGOs in Delhi', slug: 'verified-ngo-in-delhi' },
-        { keyword: 'Trusted NGOs in Delhi', slug: 'trusted-ngo-in-delhi' },
-        { keyword: 'Leading NGOs in Delhi', slug: 'leading-ngo-in-delhi' },
-      ]}
     />
   );
 };
