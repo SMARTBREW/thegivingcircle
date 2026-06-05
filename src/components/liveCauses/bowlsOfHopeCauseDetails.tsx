@@ -57,7 +57,7 @@ const BowlsOfHopeCauseDetailPage = () => {
     image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183036/images/animals-bowl/animal1.jpg',
     urgency: 'Critical',
     problemStatement: 'How to feed stray animals India? Thousands of hungry street animals struggle daily without animal feeding programs. Feed hungry animals India - they face starvation, malnutrition, and death without systematic animal nutrition support. Animal feeding programs Mumbai, Chennai, and across India are critically needed. Help feed street animals before it\'s too late.',
-
+    
     rootCauses: [
       'Lack of organized animal feeding programs for stray animals',
       'Limited animal nutrition support and feeding initiatives',
@@ -119,7 +119,7 @@ const BowlsOfHopeCauseDetailPage = () => {
         type: 'Animal Nutrition'
       }
     ],
-
+    
     // Expected Outcomes
     expectedOutcomes: [
       {
@@ -143,9 +143,9 @@ const BowlsOfHopeCauseDetailPage = () => {
         timeline: 'Medium-term'
       }
     ],
-
+    
     timeline: '12 months',
-
+    
     updates: [
       {
         date: '10 March 2024',
@@ -166,7 +166,7 @@ const BowlsOfHopeCauseDetailPage = () => {
         image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183039/images/animals-bowl/animal3.jpg'
       }
     ],
-
+    
     testimonials: [
       {
         name: 'Dr. Priya Menon',
@@ -181,7 +181,7 @@ const BowlsOfHopeCauseDetailPage = () => {
         image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face'
       }
     ],
-
+    
     milestones: [
       { target: '₹1,95,000', achievement: 'First 5 Feeding Stations Setup', status: 'completed' },
       { target: '₹3,90,000', achievement: 'Community Volunteer Network', status: 'completed' },
@@ -246,9 +246,9 @@ const BowlsOfHopeCauseDetailPage = () => {
             <div className="inline-flex items-center gap-2 bg-white border border-gray-200 px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm">
               <TrendingUp className="text-green-700" size={16} />
               8+ Years Active
-            </div>
+              </div>
           </div>
-
+          
           {/* Geographic Line */}
           <p className="text-sm text-gray-600 mb-8">
             <strong>Multi-city operations</strong> · Chennai, Mumbai, Tamil Nadu, Maharashtra
@@ -293,7 +293,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                 <p className="leading-relaxed text-sm sm:text-base md:text-lg break-words mb-4">
                   The 2024 study showed that without systematic feeding programs, street animals face starvation, disease, and death. During extreme weather conditions, the situation becomes even more critical. Animals cannot find food in flooded streets. They cannot access water during droughts. They cannot survive without help.
                 </p>
-              </div>
+      </div>
 
               {/* Image directly below the paragraphs */}
               <figure className="mb-6 w-full">
@@ -499,11 +499,11 @@ const BowlsOfHopeCauseDetailPage = () => {
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.transparency}%</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Transparency</div>
-                  </div>
+              </div>
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.programSpend}%</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Program Spend</div>
-                  </div>
+            </div>
                   <div className="text-center">
                     <div className="text-2xl sm:text-3xl font-bold text-green-700 mb-1">{ngoDetails.stats.yearsActive}</div>
                     <div className="text-xs sm:text-sm font-semibold text-gray-600 uppercase tracking-wide">Years Active</div>
@@ -591,15 +591,15 @@ const BowlsOfHopeCauseDetailPage = () => {
                 <div className="flex items-baseline gap-2 mb-1.5">
                   <span className="text-3xl font-extrabold text-green-700 tracking-tight">{cause.raisedAmount}</span>
                   <span className="text-sm text-gray-500 font-medium">raised of {cause.goalAmount}</span>
-                </div>
-
+              </div>
+              
                 {/* Progress Bar with Shimmer */}
                 <div className="mb-4">
                   <div className="w-full bg-green-50 rounded-full h-2.5 overflow-hidden">
-                    <div
+                  <div 
                       className="h-full bg-gradient-to-r from-green-700 to-green-600 rounded-full relative overflow-hidden"
-                      style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
-                    >
+                    style={{ width: `${Math.min(cause.progressPercentage, 100)}%` }}
+                  >
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
                     </div>
                   </div>
@@ -614,7 +614,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                   <div className="bg-green-50 rounded-lg p-2.5">
                     <div className="text-lg font-extrabold text-gray-900">{cause.supporters}</div>
                     <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Supporters</div>
-                  </div>
+                </div>
                   <div className="bg-green-50 rounded-lg p-2.5">
                     <div className="text-lg font-extrabold text-gray-900">{cause.daysLeft}</div>
                     <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Days Left</div>
@@ -624,7 +624,7 @@ const BowlsOfHopeCauseDetailPage = () => {
                     <div className="text-[10px] text-gray-600 uppercase tracking-wide font-semibold">Stations</div>
                   </div>
                 </div>
-
+                
                 {/* Donation Tiers */}
                 <div className="mb-5">
                   <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Select an amount</div>
@@ -646,9 +646,9 @@ const BowlsOfHopeCauseDetailPage = () => {
                       <div className="text-lg font-extrabold text-gray-900 mb-0.5">₹5,000</div>
                       <div className="text-[11px] text-gray-500 leading-tight">Feed 100 animals for 1 day</div>
                     </button>
-                  </div>
+                    </div>
                 </div>
-
+                
                 {/* Main Donate Button */}
                 <button className="w-full bg-green-700 hover:bg-green-800 text-white rounded-lg px-6 py-4 font-bold text-base transition-all hover:-translate-y-0.5 hover:shadow-lg mb-2 flex flex-col items-center gap-0.5">
                   <span>Donate Now</span>
@@ -661,8 +661,8 @@ const BowlsOfHopeCauseDetailPage = () => {
                     <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   <span>18 days left help feed hungry animals</span>
-                </div>
-
+                  </div>
+                  
                 {/* Share Section */}
                 <div className="border-t border-gray-100 pt-4.5 mb-4.5">
                   <div className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2.5">Spread the word</div>

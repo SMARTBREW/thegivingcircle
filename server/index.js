@@ -6,11 +6,17 @@ import rateLimit from 'express-rate-limit';
 import morgan from 'morgan';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { submitCauseChampionForm, submitNGOPartnerForm } from './routes/forms.js';
+import {
+  submitCauseChampionForm,
+  submitNGOPartnerForm,
+  submitAnimalWelfarePartnerForm,
+} from './routes/forms.js';
 import blogRoutes from './routes/blog.js';
+import animalWelfareRoutes from './routes/animalWelfare.js';
 import { verifyEmailConfig } from './config/email.js';
 import { connectMongo, closeMongo } from './config/mongo.js';
 import { seedBlogPostsFromJsonIfEmpty } from './services/blogStore.js';
+import { seedAnimalWelfarePartnersIfEmpty } from './services/animalWelfarePartnersStore.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -101,9 +107,13 @@ app.get('/api/health', (req, res) => {
 
 app.post('/api/submit/cause-champion', formLimiter, submitCauseChampionForm);
 app.post('/api/submit/ngo-partner', formLimiter, submitNGOPartnerForm);
+app.post('/api/submit/animal-welfare-partner', formLimiter, submitAnimalWelfarePartnerForm);
 
 // Blog APIs (read + AI generation)
 app.use('/api/blog', blogRoutes);
+
+// Animal welfare directory (MongoDB CRUD)
+app.use('/api/animal-welfare', animalWelfareRoutes);
 
 app.use((req, res) => {
   res.status(404).json({ 
@@ -130,6 +140,7 @@ async function start() {
   try {
     await connectMongo();
     await seedBlogPostsFromJsonIfEmpty();
+    await seedAnimalWelfarePartnersIfEmpty();
   } catch (err) {
     console.error('❌ MongoDB connection failed:', err?.message || err);
     console.error('   Set MONGODB_URI or MONGO_URI in server/.env');

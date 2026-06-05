@@ -37,8 +37,12 @@ export async function connectMongo() {
   await client.connect();
   db = client.db(dbName);
 
-  const coll = db.collection('blog_posts');
-  await coll.createIndex({ slug: 1 }, { unique: true });
+  const blogColl = db.collection('blog_posts');
+  await blogColl.createIndex({ slug: 1 }, { unique: true });
+
+  const partnersColl = db.collection('animal_welfare_partners');
+  await partnersColl.createIndex({ id: 1 }, { unique: true });
+  await partnersColl.createIndex({ citySlug: 1, sortOrder: 1 });
 
   console.log(`🍃 MongoDB connected (database: ${dbName})`);
 }

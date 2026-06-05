@@ -275,3 +275,168 @@ This organization wants to become a verified partner with The Giving Circle plat
     }
   }
 };
+
+export const submitAnimalWelfarePartnerForm = async (req, res) => {
+  try {
+    const {
+      citySlug,
+      regionLabel,
+      person,
+      organisation,
+      contact,
+      city,
+      area,
+      address,
+      email,
+      services,
+    } = req.body || {};
+
+    if (!citySlug || !city?.trim()) {
+      return res.status(400).json({
+        success: false,
+        message: 'Region and city of operation are required',
+      });
+    }
+
+    const hasIdentity =
+      (person && String(person).trim()) ||
+      (organisation && String(organisation).trim()) ||
+      (contact && String(contact).trim());
+
+    if (!hasIdentity) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide at least a name, organisation, or contact number',
+      });
+    }
+
+    if (email?.trim()) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email.trim())) {
+        return res.status(400).json({
+          success: false,
+          message: 'Invalid email address',
+        });
+      }
+    }
+
+    const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
+    const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER || 'noreply@thegivingcircle.in';
+    const label = regionLabel || citySlug;
+
+    const payload = {
+      citySlug,
+      regionLabel: label,
+      person: person?.trim() || '',
+      organisation: organisation?.trim() || '',
+      contact: contact?.trim() || '',
+      city: city.trim(),
+      area: area?.trim() || '',
+      address: address?.trim() || '',
+      email: email?.trim() || '',
+      services: services?.trim() || '',
+    };
+
+    let submissionId;
+    try {
+      submissionId = await insertFormSubmission({
+        formType: 'animal_welfare_partner',
+        payload,
+      });
+    } catch (dbErr) {
+      console.error('❌ Failed to save animal welfare directory submission:', dbErr);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to save your submission. Please try again later.',
+      });
+    }
+
+    console.log(
+      `📧 Animal welfare directory suggestion for ${label} (saved id: ${submissionId})`
+    );
+
+    const submittedAt = new Date().toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      dateStyle: 'full',
+      timeStyle: 'long',
+    });
+
+    const displayName = payload.organisation || payload.person || 'New listing';
+    const replyTo = payload.email || undefined;
+
+    const mailOptions = {
+      from: `"The Giving Circle" <${fromEmail}>`,
+      to: receiverEmail,
+      ...(replyTo ? { replyTo } : {}),
+      subject: `Animal Welfare Directory Suggestion — ${label} — ${displayName}`,
+      html: formatEmailHTML(
+        `Animal Welfare Directory Suggestion (${label})`,
+        {
+          Region: label,
+          'Directory slug': citySlug,
+          'Concerned Person': payload.person || '—',
+          'Organisation / Individual': payload.organisation || '—',
+          'Contact No.': payload.contact || '—',
+          'City of Operation': payload.city,
+          'Area of Operation': payload.area || '—',
+          Address: payload.address || '—',
+          Email: payload.email || '—',
+          Services: payload.services || '—',
+        },
+        submittedAt
+      ),
+      text: `
+Animal Welfare Directory Suggestion
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REGION: ${label} (${citySlug})
+
+Concerned Person: ${payload.person || '—'}
+Organisation / Individual: ${payload.organisation || '—'}
+Contact No.: ${payload.contact || '—'}
+City of Operation: ${payload.city}
+Area of Operation: ${payload.area || '—'}
+Address: ${payload.address || '—'}
+Email: ${payload.email || '—'}
+Services: ${payload.services || '—'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Submitted: ${submittedAt}
+
+Add this entry to the animal welfare directory after verification.
+      `.trim(),
+    };
+
+    res.json({
+      success: true,
+      message:
+        'Thank you! Your suggestion has been sent for review. We will add verified listings to the directory soon.',
+    });
+
+    sendEmail(mailOptions)
+      .then(() => {
+        console.log(`✅ Animal welfare directory email sent for: ${displayName}`);
+        return updateFormSubmissionEmailStatus(submissionId, { emailSent: true });
+      })
+      .catch((error) => {
+        console.error('❌ Failed to send animal welfare directory email:', error.message);
+        return updateFormSubmissionEmailStatus(submissionId, {
+          emailSent: false,
+          emailError: error.message || String(error),
+        }).catch((uErr) =>
+          console.error('❌ Failed to update animal welfare email status in DB:', uErr.message)
+        );
+      });
+  } catch (error) {
+    console.error('Error submitting animal welfare directory form:', error);
+    if (!res.headersSent) {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to submit. Please try again later.',
+        error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      });
+    }
+  }
+};

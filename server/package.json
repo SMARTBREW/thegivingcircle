@@ -7,6 +7,8 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
+    "seed:animal-welfare": "node scripts/seed-animal-welfare.mjs",
+    "seed:animal-welfare:force": "node scripts/seed-animal-welfare.mjs -- --force",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [

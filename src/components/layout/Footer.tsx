@@ -77,13 +77,13 @@ export const Footer: React.FC = () => {
                   <span className="text-xs sm:text-sm md:text-base break-words">Browse Causes</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </Link>
-                <Link
-                  to="/ngo-list"
+                <a
+                  href="/animal-emergency.html"
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
-                  <span className="text-xs sm:text-sm md:text-base break-words">NGO Partners</span>
+                  <span className="text-xs sm:text-sm md:text-base break-words">Animal Care</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
-                </Link>
+                </a>
                 <Link
                   to="/ngos"
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"

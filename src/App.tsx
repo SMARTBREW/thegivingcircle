@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import AnalyticsListener from './components/AnalyticsListener';
 import ScrollToTopButton from './components/ScrollToTopButton';
 import Breadcrumbs from './components/ui/Breadcrumbs';
+import { ANIMAL_WELFARE_CITY_SLUGS } from './constants/animalWelfareCities';
 
 import { Home } from './pages/Home';
 // Lazy load pages
@@ -62,6 +63,7 @@ const VolunteerOpportunitiesDelhi = lazy(() => import('./pages/articles/Voluntee
 const HowToVolunteerIndia = lazy(() => import('./pages/articles/HowToVolunteerIndia'));
 const BlogIndex = lazy(() => import('./pages/blog/BlogIndex'));
 const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
+const AnimalWelfareCityPage = lazy(() => import('./pages/animal-welfare/AnimalWelfareCityPage'));
 
 // Slugs that should be pre-rendered for /blog/:slug at build time.
 const BLOG_SLUGS = [
@@ -126,6 +128,12 @@ export const routes: RouteRecord[] = [
       { path: 'khushi-cause-details', element: <Navigate to="/jwp-cause-details" replace /> },
       { path: 'animalcare-ngo-detail', element: <AnimalCareNGODetailContainer /> },
       { path: 'animal-emergency', element: <Navigate to="/animal-emergency.html" replace /> },
+      {
+        path: 'animal-welfare/:citySlug',
+        element: <AnimalWelfareCityPage />,
+        getStaticPaths: () =>
+          ANIMAL_WELFARE_CITY_SLUGS.map((slug) => `/animal-welfare/${slug}`),
+      },
       { path: 'causes', element: <Navigate to="/live-causes" replace /> },
       { path: 'live-causes', element: <LiveCausesPage /> },
       { path: 'champion-story/:id', element: <ChampionStoryDetail /> },

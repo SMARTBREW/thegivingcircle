@@ -33,6 +33,15 @@ aws s3 sync dist/assets/ s3://${BUCKET_NAME}/assets/ \
   --metadata-directive REPLACE \
   --region ${REGION}
 
+# Upload static JS from public/ (e.g. animal-emergency directory CRUD — not Vite-hashed)
+if [ -d "dist/js" ] && [ "$(ls -A dist/js 2>/dev/null)" ]; then
+  echo "  → Uploading static /js..."
+  aws s3 sync dist/js/ s3://${BUCKET_NAME}/js/ \
+    --cache-control "max-age=86400,public" \
+    --metadata-directive REPLACE \
+    --region ${REGION}
+fi
+
 # Upload fonts (1 year cache - immutable) — skip if none in build output
 echo "  → Uploading fonts..."
 if [ -d "dist/fonts" ] && [ "$(ls -A dist/fonts 2>/dev/null)" ]; then
