@@ -298,26 +298,61 @@ export const submitAnimalWelfarePartnerForm = async (req, res) => {
       });
     }
 
-    const hasIdentity =
-      (person && String(person).trim()) ||
-      (organisation && String(organisation).trim()) ||
-      (contact && String(contact).trim());
+    const personTrimmed = person?.trim() || '';
+    const contactTrimmed = contact?.trim() || '';
+    const emailTrimmed = email?.trim() || '';
 
-    if (!hasIdentity) {
+    if (!personTrimmed) {
       return res.status(400).json({
         success: false,
-        message: 'Please provide at least a name, organisation, or contact number',
+        message: 'Name is required',
       });
     }
 
-    if (email?.trim()) {
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email.trim())) {
-        return res.status(400).json({
-          success: false,
-          message: 'Invalid email address',
-        });
-      }
+    const nameRegex = /^[a-zA-Z][a-zA-Z\s.'-]*$/;
+    if (personTrimmed.length < 2 || !nameRegex.test(personTrimmed)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Enter a valid name (letters only, at least 2 characters)',
+      });
+    }
+
+    if (!contactTrimmed) {
+      return res.status(400).json({
+        success: false,
+        message: 'Mobile number is required',
+      });
+    }
+
+    const phoneRegex = /^[6-9]\d{9}$/;
+    const contactNumbers = contactTrimmed
+      .split(',')
+      .map((n) => n.trim().replace(/\s/g, ''))
+      .filter(Boolean);
+    if (
+      contactNumbers.length === 0 ||
+      contactNumbers.some((num) => !phoneRegex.test(num))
+    ) {
+      return res.status(400).json({
+        success: false,
+        message:
+          'Enter valid 10-digit Indian mobile number(s) starting with 6–9; separate multiple with comma',
+      });
+    }
+
+    if (!emailTrimmed) {
+      return res.status(400).json({
+        success: false,
+        message: 'Email is required',
+      });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailTrimmed)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Invalid email address',
+      });
     }
 
     const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
@@ -327,13 +362,13 @@ export const submitAnimalWelfarePartnerForm = async (req, res) => {
     const payload = {
       citySlug,
       regionLabel: label,
-      person: person?.trim() || '',
+      person: personTrimmed,
       organisation: organisation?.trim() || '',
-      contact: contact?.trim() || '',
+      contact: contactTrimmed,
       city: city.trim(),
       area: area?.trim() || '',
       address: address?.trim() || '',
-      email: email?.trim() || '',
+      email: emailTrimmed,
       services: services?.trim() || '',
     };
 

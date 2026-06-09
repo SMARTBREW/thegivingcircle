@@ -68,6 +68,7 @@ const AnimalWelfareCityPage = lazy(() => import('./pages/animal-welfare/AnimalWe
 // Slugs that should be pre-rendered for /blog/:slug at build time.
 const BLOG_SLUGS = [
   'meaningful-summer-projects-india',
+  'community-service-college-applications-india',
   'how-to-donate-for-child-education-in-india-80g',
   'verified-ngos-in-delhi',
   'csr-projects-in-india',

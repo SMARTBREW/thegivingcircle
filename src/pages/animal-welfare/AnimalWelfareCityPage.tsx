@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
+import { CheckCircle2 } from 'lucide-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import SEOHead from '../../components/SEO/SEOHead';
 import PartnerFormModal from '../../components/animal-welfare/PartnerFormModal';
@@ -22,7 +23,8 @@ const AnimalWelfareCityPage = () => {
   const [searchDebounced, setSearchDebounced] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
-  const [submitSuccess, setSubmitSuccess] = useState<string | null>(null);
+  const [successModalOpen, setSuccessModalOpen] = useState(false);
+  const [successMessage, setSuccessMessage] = useState('');
 
   useEffect(() => {
     const t = window.setTimeout(() => setSearchDebounced(search.trim()), 300);
@@ -57,7 +59,6 @@ const AnimalWelfareCityPage = () => {
   const serialOffset = (page - 1) * pageSize;
 
   const openCreate = () => {
-    setSubmitSuccess(null);
     setModalOpen(true);
   };
 
@@ -71,7 +72,11 @@ const AnimalWelfareCityPage = () => {
         ...input,
       });
       setModalOpen(false);
-      setSubmitSuccess(result.message);
+      setSuccessMessage(
+        result.message ||
+          'Thank you! Your suggestion has been sent for review. We will add verified listings to the directory soon.'
+      );
+      setSuccessModalOpen(true);
     } catch (err) {
       alert(err instanceof Error ? err.message : 'Submission failed');
     } finally {
@@ -177,12 +182,6 @@ const AnimalWelfareCityPage = () => {
               : `${total} listing${total === 1 ? '' : 's'}${searchDebounced ? ` matching “${searchDebounced}”` : ''}. Suggestions are reviewed before being added to the list.`}
           </p>
 
-          {submitSuccess && (
-            <div className="mx-4 sm:mx-6 mt-4 p-3 rounded-lg bg-green-50 text-green-800 text-sm border border-green-100">
-              {submitSuccess}
-            </div>
-          )}
-
           {error && (
             <div className="mx-4 sm:mx-6 mt-4 p-3 rounded-lg bg-red-50 text-red-800 text-sm border border-red-100">
               {error}. Start the API with <code className="text-xs">cd server && npm run dev</code>, then run{' '}
@@ -234,6 +233,38 @@ const AnimalWelfareCityPage = () => {
         onClose={() => setModalOpen(false)}
         onSubmit={handleSubmit}
       />
+
+      {successModalOpen && (
+        <div
+          className="fixed inset-0 z-[70] flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="submit-success-title"
+        >
+          <button
+            type="button"
+            className="absolute inset-0 bg-black/50"
+            aria-label="Close"
+            onClick={() => setSuccessModalOpen(false)}
+          />
+          <div className="relative bg-white rounded-xl shadow-xl w-full max-w-md p-8 z-10 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-100">
+              <CheckCircle2 className="h-8 w-8 text-green-700" aria-hidden />
+            </div>
+            <h2 id="submit-success-title" className="text-xl font-bold text-gray-900 mb-2">
+              Submitted successfully
+            </h2>
+            <p className="text-sm text-gray-600 leading-relaxed mb-6">{successMessage}</p>
+            <button
+              type="button"
+              onClick={() => setSuccessModalOpen(false)}
+              className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-white bg-green-700 rounded-lg hover:bg-green-800 transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

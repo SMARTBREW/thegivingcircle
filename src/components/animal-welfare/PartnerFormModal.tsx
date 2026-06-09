@@ -1,5 +1,50 @@
 import { useEffect, useState } from 'react';
 import type { AnimalWelfarePartner, AnimalWelfarePartnerInput } from '../../types/animalWelfare';
+import { validatePhoneNumber } from '../../utils/api';
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const NAME_REGEX = /^[a-zA-Z][a-zA-Z\s.'-]*$/;
+
+type FieldErrors = Partial<Record<'person' | 'contact' | 'email', string>>;
+
+function validatePersonName(person: string): string | null {
+  const trimmed = person.trim();
+  if (!trimmed) return 'Name is required';
+  if (trimmed.length < 2) return 'Name must be at least 2 characters';
+  if (!NAME_REGEX.test(trimmed)) return 'Name can only contain letters, spaces, and . \' -';
+  return null;
+}
+
+function validateContactNumbers(contact: string): string | null {
+  const trimmed = contact.trim();
+  if (!trimmed) return 'Mobile number is required';
+  const numbers = trimmed.split(',').map((n) => n.trim().replace(/\s/g, '')).filter(Boolean);
+  if (numbers.length === 0) return 'Mobile number is required';
+  for (const num of numbers) {
+    if (!validatePhoneNumber(num)) {
+      return 'Enter valid 10-digit mobile number(s) starting with 6–9; separate multiple with comma';
+    }
+  }
+  return null;
+}
+
+function validateEmailAddress(email: string): string | null {
+  const trimmed = email.trim();
+  if (!trimmed) return 'Email is required';
+  if (!EMAIL_REGEX.test(trimmed)) return 'Enter a valid email address';
+  return null;
+}
+
+function validateForm(form: AnimalWelfarePartnerInput): FieldErrors {
+  const errors: FieldErrors = {};
+  const personError = validatePersonName(form.person);
+  const contactError = validateContactNumbers(form.contact);
+  const emailError = validateEmailAddress(form.email);
+  if (personError) errors.person = personError;
+  if (contactError) errors.contact = contactError;
+  if (emailError) errors.email = emailError;
+  return errors;
+}
 
 const EMPTY: AnimalWelfarePartnerInput = {
   person: '',
@@ -32,9 +77,11 @@ const PartnerFormModal = ({
   onSubmit,
 }: PartnerFormModalProps) => {
   const [form, setForm] = useState<AnimalWelfarePartnerInput>({ ...EMPTY, city: defaultCity });
+  const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
   useEffect(() => {
     if (!open) return;
+    setFieldErrors({});
     if (initial) {
       setForm({
         person: initial.person,
@@ -55,11 +102,29 @@ const PartnerFormModal = ({
 
   const handleChange = (field: keyof AnimalWelfarePartnerInput, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
+    if (field === 'person' || field === 'contact' || field === 'email') {
+      setFieldErrors((prev) => ({ ...prev, [field]: undefined }));
+    }
   };
+
+  const inputClass = (field?: keyof FieldErrors) =>
+    `w-full border rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-600 outline-none ${
+      field && fieldErrors[field] ? 'border-red-400 focus:ring-red-500' : 'border-gray-200'
+    }`;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    await onSubmit(form);
+    const errors = validateForm(form);
+    if (Object.keys(errors).length > 0) {
+      setFieldErrors(errors);
+      return;
+    }
+    await onSubmit({
+      ...form,
+      person: form.person.trim(),
+      contact: form.contact.trim(),
+      email: form.email.trim(),
+    });
   };
 
   return (
@@ -78,15 +143,24 @@ const PartnerFormModal = ({
         <div className="space-y-4">
           <div>
             <label htmlFor="aw-person" className="block text-sm font-medium text-gray-700 mb-1">
-              Concerned Person
+              Concerned Person <span className="text-red-600">*</span>
             </label>
             <input
               id="aw-person"
               type="text"
+              required
+              autoComplete="name"
               value={form.person}
               onChange={(e) => handleChange('person', e.target.value)}
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-600 outline-none"
+              className={inputClass('person')}
+              aria-invalid={!!fieldErrors.person}
+              aria-describedby={fieldErrors.person ? 'aw-person-error' : undefined}
             />
+            {fieldErrors.person && (
+              <p id="aw-person-error" className="mt-1 text-xs text-red-600">
+                {fieldErrors.person}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="aw-org" className="block text-sm font-medium text-gray-700 mb-1">
@@ -102,16 +176,26 @@ const PartnerFormModal = ({
           </div>
           <div>
             <label htmlFor="aw-contact" className="block text-sm font-medium text-gray-700 mb-1">
-              Contact No.
+              Contact No. <span className="text-red-600">*</span>
             </label>
             <input
               id="aw-contact"
-              type="text"
+              type="tel"
+              required
+              inputMode="numeric"
+              autoComplete="tel"
               value={form.contact}
               onChange={(e) => handleChange('contact', e.target.value)}
               placeholder="10-digit mobile; separate multiple with comma"
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-600 outline-none"
+              className={inputClass('contact')}
+              aria-invalid={!!fieldErrors.contact}
+              aria-describedby={fieldErrors.contact ? 'aw-contact-error' : undefined}
             />
+            {fieldErrors.contact && (
+              <p id="aw-contact-error" className="mt-1 text-xs text-red-600">
+                {fieldErrors.contact}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="aw-city" className="block text-sm font-medium text-gray-700 mb-1">
@@ -153,16 +237,25 @@ const PartnerFormModal = ({
           </div>
           <div>
             <label htmlFor="aw-email" className="block text-sm font-medium text-gray-700 mb-1">
-              Email
+              Email <span className="text-red-600">*</span>
             </label>
             <input
               id="aw-email"
               type="email"
+              required
+              autoComplete="email"
               value={form.email}
               onChange={(e) => handleChange('email', e.target.value)}
               placeholder="contact@example.com"
-              className="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-green-600 outline-none"
+              className={inputClass('email')}
+              aria-invalid={!!fieldErrors.email}
+              aria-describedby={fieldErrors.email ? 'aw-email-error' : undefined}
             />
+            {fieldErrors.email && (
+              <p id="aw-email-error" className="mt-1 text-xs text-red-600">
+                {fieldErrors.email}
+              </p>
+            )}
           </div>
           <div>
             <label htmlFor="aw-services" className="block text-sm font-medium text-gray-700 mb-1">
