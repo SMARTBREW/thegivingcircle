@@ -51,6 +51,24 @@ function handler(event) {
     path = path.slice(0, -1);
   }
 
+  // /local-seo/{variant}-ngo-in-{city} → /ngos/best-ngo-in-{city} (one hop, not via variant URL).
+  function localSeoTarget(path) {
+    if (path.indexOf('/local-seo/') !== 0) return null;
+    var slug = path.slice('/local-seo/'.length);
+    var variantPrefixes = [
+      'top-ngo-in-',
+      'verified-ngo-in-',
+      'trusted-ngo-in-',
+      'leading-ngo-in-',
+    ];
+    for (var v = 0; v < variantPrefixes.length; v++) {
+      if (slug.indexOf(variantPrefixes[v]) === 0) {
+        return '/ngos/best-ngo-in-' + slug.slice(variantPrefixes[v].length);
+      }
+    }
+    return '/ngos/' + slug;
+  }
+
   var rules = {
     '/causes': '/live-causes',
     '/local-seo': '/ngos',
@@ -88,8 +106,9 @@ function handler(event) {
     return redirect(rules[path]);
   }
 
-  if (path.indexOf('/local-seo/') === 0) {
-    return redirect('/ngos/' + path.slice('/local-seo/'.length));
+  var localTarget = localSeoTarget(path);
+  if (localTarget) {
+    return redirect(localTarget);
   }
 
   if (path.indexOf('/ngo/') === 0 && path.toLowerCase().indexOf('jwp') !== -1) {
