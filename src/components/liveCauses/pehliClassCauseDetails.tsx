@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Share2,
   Shield,
@@ -551,12 +552,12 @@ const PehliClassCauseDetailPage = () => {
             {cause.supporters.toLocaleString()} supporters have stepped up for this lane of work. Your gift or share helps a child cross from out-of-school documentation limbo into their first formal class.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              type="button"
-              className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg transition-all hover:-translate-y-1 text-base sm:text-lg"
+            <Link
+              to="/pehli-class/cause-champion"
+              className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg transition-all hover:-translate-y-1 text-base sm:text-lg text-center"
             >
               Become an ambassador
-            </button>
+            </Link>
             <div className="text-green-200 font-medium text-sm sm:hidden my-2">or</div>
             <button
               type="button"

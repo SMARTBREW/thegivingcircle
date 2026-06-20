@@ -28,6 +28,7 @@ const BowlsOfHopeCauseDetailPage = lazy(() => import('./components/liveCauses/bo
 const FloodAnimalRescueCauseDetailPage = lazy(() => import('./components/liveCauses/floodAnimalRescueCauseDetails'));
 const FloodReliefCauseDetailPage = lazy(() => import('./components/liveCauses/floodReliefCauseDetails'));
 const PehliClassCauseDetailPage = lazy(() => import('./components/liveCauses/pehliClassCauseDetails'));
+const PehliClassCauseChampionPage = lazy(() => import('./pages/pehli-class/PehliClassCauseChampionPage'));
 const BricksByBricksCauseDetailPage = lazy(() => import('./components/liveCauses/bricksByBricksCauseDetails'));
 const AboutChampions = lazy(() => import('./pages/aboutChampion').then(module => ({ default: module.AboutChampions })));
 const OurStory = lazy(() => import('./pages/aboutGivingCircle').then(module => ({ default: module.OurStory })));
@@ -140,6 +141,7 @@ export const routes: RouteRecord[] = [
       { path: 'champion-story/:id', element: <ChampionStoryDetail /> },
       { path: 'jwp-cause-details', element: <JwpCauseDetailPage /> },
       { path: 'pehli-class-cause-details', element: <PehliClassCauseDetailPage /> },
+      { path: 'pehli-class/cause-champion', element: <PehliClassCauseChampionPage /> },
       { path: 'bricks-by-bricks-cause-details', element: <BricksByBricksCauseDetailPage /> },
       { path: 'pawsitive-protectors-cause-details', element: <PawsitiveProtectorsCauseDetailPage /> },
       { path: 'bowls-of-hope-cause-details', element: <BowlsOfHopeCauseDetailPage /> },

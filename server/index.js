@@ -10,6 +10,7 @@ import {
   submitCauseChampionForm,
   submitNGOPartnerForm,
   submitAnimalWelfarePartnerForm,
+  submitPehliClassChampionForm,
 } from './routes/forms.js';
 import blogRoutes from './routes/blog.js';
 import animalWelfareRoutes from './routes/animalWelfare.js';
@@ -108,6 +109,7 @@ app.get('/api/health', (req, res) => {
 app.post('/api/submit/cause-champion', formLimiter, submitCauseChampionForm);
 app.post('/api/submit/ngo-partner', formLimiter, submitNGOPartnerForm);
 app.post('/api/submit/animal-welfare-partner', formLimiter, submitAnimalWelfarePartnerForm);
+app.post('/api/submit/pehli-class-champion', formLimiter, submitPehliClassChampionForm);
 
 // Blog APIs (read + AI generation)
 app.use('/api/blog', blogRoutes);

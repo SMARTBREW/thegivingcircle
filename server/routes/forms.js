@@ -475,4 +475,153 @@ Add this entry to the animal welfare directory after verification.
     }
   }
 };
+
+export const submitPehliClassChampionForm = async (req, res) => {
+  try {
+    const { name, email, mobile, city, schoolName, socialHandle, whyItMatters } = req.body || {};
+
+    const nameTrimmed = name?.trim() || '';
+    const emailTrimmed = email?.trim() || '';
+    const mobileTrimmed = mobile?.trim().replace(/\s/g, '') || '';
+    const cityTrimmed = city?.trim() || '';
+
+    if (!nameTrimmed) {
+      return res.status(400).json({ success: false, message: 'Name is required' });
+    }
+
+    const nameRegex = /^[a-zA-Z][a-zA-Z\s.'-]*$/;
+    if (nameTrimmed.length < 2 || !nameRegex.test(nameTrimmed)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Enter a valid name (letters only, at least 2 characters)',
+      });
+    }
+
+    if (!emailTrimmed) {
+      return res.status(400).json({ success: false, message: 'Email is required' });
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailTrimmed)) {
+      return res.status(400).json({ success: false, message: 'Invalid email address' });
+    }
+
+    if (!mobileTrimmed) {
+      return res.status(400).json({ success: false, message: 'Mobile number is required' });
+    }
+
+    const mobileRegex = /^[6-9]\d{9}$/;
+    if (!mobileRegex.test(mobileTrimmed)) {
+      return res.status(400).json({
+        success: false,
+        message: 'Enter a valid 10-digit mobile number starting with 6–9',
+      });
+    }
+
+    if (!cityTrimmed || cityTrimmed.length < 2) {
+      return res.status(400).json({ success: false, message: 'City is required' });
+    }
+
+    const payload = {
+      name: nameTrimmed,
+      email: emailTrimmed,
+      mobile: mobileTrimmed,
+      city: cityTrimmed,
+      schoolName: schoolName?.trim() || '',
+      socialHandle: socialHandle?.trim() || '',
+      whyItMatters: whyItMatters?.trim() || '',
+      campaign: 'pehli-class',
+    };
+
+    const receiverEmail = process.env.RECEIVER_EMAIL || 'hello@thegivingcircle.in';
+    const fromEmail = process.env.FROM_EMAIL || process.env.EMAIL_USER || 'noreply@thegivingcircle.in';
+
+    let submissionId;
+    try {
+      submissionId = await insertFormSubmission({
+        formType: 'cause_champion',
+        payload,
+      });
+    } catch (dbErr) {
+      console.error('❌ Failed to save PehliClass champion submission:', dbErr);
+      return res.status(500).json({
+        success: false,
+        message: 'Failed to save your submission. Please try again later.',
+      });
+    }
+
+    const submittedAt = new Date().toLocaleString('en-IN', {
+      timeZone: 'Asia/Kolkata',
+      dateStyle: 'full',
+      timeStyle: 'long',
+    });
+
+    const mailOptions = {
+      from: `"The Giving Circle" <${fromEmail}>`,
+      to: receiverEmail,
+      replyTo: emailTrimmed,
+      subject: `New #PehliClass Cause Champion — ${nameTrimmed}`,
+      html: formatEmailHTML(
+        '#PehliClass Cause Champion Sign-up',
+        {
+          Name: payload.name,
+          Email: payload.email,
+          Mobile: payload.mobile,
+          City: payload.city,
+          'School name': payload.schoolName || '—',
+          'Social handle': payload.socialHandle || '—',
+          'Why it matters': payload.whyItMatters || '—',
+          Campaign: '#PehliClass / Joint Women\'s Programme',
+        },
+        submittedAt
+      ),
+      text: `
+#PehliClass Cause Champion Sign-up
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Name: ${payload.name}
+Email: ${payload.email}
+Mobile: ${payload.mobile}
+City: ${payload.city}
+School name: ${payload.schoolName || '—'}
+Social handle: ${payload.socialHandle || '—'}
+Why it matters: ${payload.whyItMatters || '—'}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+📅 Submitted: ${submittedAt}
+      `.trim(),
+    };
+
+    res.json({
+      success: true,
+      message: 'Thank you for championing #PehliClass! Share the page with your circle.',
+    });
+
+    sendEmail(mailOptions)
+      .then(() => {
+        console.log(`✅ PehliClass champion email sent for: ${nameTrimmed}`);
+        return updateFormSubmissionEmailStatus(submissionId, { emailSent: true });
+      })
+      .catch((error) => {
+        console.error('❌ Failed to send PehliClass champion email:', error.message);
+        return updateFormSubmissionEmailStatus(submissionId, {
+          emailSent: false,
+          emailError: error.message || String(error),
+        }).catch((uErr) =>
+          console.error('❌ Failed to update PehliClass champion email status in DB:', uErr.message)
+        );
+      });
+  } catch (error) {
+    console.error('Error submitting PehliClass champion form:', error);
+    if (!res.headersSent) {
+      res.status(500).json({
+        success: false,
+        message: 'Failed to submit. Please try again later.',
+        error: process.env.NODE_ENV === 'development' ? error.message : undefined,
+      });
+    }
+  }
+};
    

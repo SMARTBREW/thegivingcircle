@@ -110,6 +110,14 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- PehliClass Cause Champion sign-up -->
+  <url>
+    <loc>https://www.thegivingcircle.in/pehli-class/cause-champion</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Brick by Brick - Animal Care Gurgaon stray shelter build -->
   <url>
     <loc>https://www.thegivingcircle.in/bricks-by-bricks-cause-details</loc>

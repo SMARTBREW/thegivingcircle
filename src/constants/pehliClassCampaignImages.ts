@@ -12,9 +12,17 @@ export const PEHLI_CLASS_IMAGES = {
   programmeWebp:
     'https://res.cloudinary.com/dcdhhylin/image/upload/v1779181640/images/pehli-class/JWP-PehliClass.webp',
   campaignBanner:
-    'https://res.cloudinary.com/dcdhhylin/image/upload/v1779181638/images/pehli-class/App-Ban.png',
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1781946760/images/pehli-class/App-Ban.png',
   campaignBannerAlt:
     'https://res.cloudinary.com/dcdhhylin/image/upload/v1779181640/images/pehli-class/App-BannerWOH.png',
+  presidentLetter:
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1779181640/images/pehli-class/App-BannerWOH.png',
+  /** #PehliClass at a glance — 12 months from out-of-school to first class */
+  promiseOneYearInfographic:
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1781946536/images/pehli-class/App-B.png',
+  /** What sponsorship covers — champion / donor context */
+  championSponsorshipCard:
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1781946760/images/pehli-class/App-Ban.png',
 } as const;
 
 export const PEHLI_CLASS_OG_IMAGE = PEHLI_CLASS_IMAGES.hero;
