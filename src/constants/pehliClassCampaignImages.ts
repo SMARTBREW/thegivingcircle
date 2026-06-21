@@ -23,6 +23,12 @@ export const PEHLI_CLASS_IMAGES = {
   /** What sponsorship covers — champion / donor context */
   championSponsorshipCard:
     'https://res.cloudinary.com/dcdhhylin/image/upload/v1781946760/images/pehli-class/App-Ban.png',
+  /** JWP organisation icon / logo mark */
+  jwpIcon:
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1782040238/images/pehli-class/Scre.webp',
+  /** JWP children in red uniform — used below "Who we're doing this for" */
+  jwpStudentsRed:
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1782041135/images/pehli-class/App-BannerW.png',
 } as const;
 
 export const PEHLI_CLASS_OG_IMAGE = PEHLI_CLASS_IMAGES.hero;

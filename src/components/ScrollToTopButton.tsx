@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
 
+const HIDE_ROUTES = ['/pehli-class/cause-champion'];
+
 const ScrollToTopButton = () => {
+  const { pathname } = useLocation();
   const [isVisible, setIsVisible] = useState(false);
+
+  if (HIDE_ROUTES.includes(pathname)) return null;
 
   useEffect(() => {
     const toggleVisibility = () => {
