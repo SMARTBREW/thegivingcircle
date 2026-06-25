@@ -185,6 +185,7 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Student & Family Guide',
     datePublished: '2026-06-03',
     dateModified: '2026-06-03',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['community-service-college-applications-india'],
     readingTime: '9 min read',
     toc: [
       'The short answer',
@@ -1006,6 +1007,396 @@ export const BLOG_POSTS: BlogPost[] = [
       { title: 'Brick by Brick · Animal Care Gurgaon shelter', href: '/bricks-by-bricks-cause-details' },
       { title: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
       { title: 'CSR Projects in India', href: '/csr-projects-in-india' },
+    ],
+  },
+  {
+    slug: 'cas-duke-of-edinburgh-volunteer-certificate-india',
+    title: 'CAS, Duke of Edinburgh & Verified Volunteer Certificates in India',
+    description:
+      'A practical guide for Indian students to service hours and certificates that count toward CAS, DofE, and PVSA. What the frameworks require, how to document properly.',
+    keywords:
+      'CAS service IB diploma India, Duke of Edinburgh award India, DofE service hours India, PVSA India, verified volunteer certificate India, CAS documentation India, IB CAS service strand, President\'s Volunteer Service Award India, NGO certificate for CAS, service learning documentation India, certificate for college application India',
+    category: 'Student & Family Guide',
+    datePublished: '2026-06-25',
+    dateModified: '2026-06-25',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['cas-duke-of-edinburgh-volunteer-certificate-india'],
+    readingTime: '8 min read',
+    toc: [
+      'The frameworks: CAS, DofE, and PVSA',
+      'What counts as service',
+      'Documentation that holds up',
+      'A note on certificate-mill programmes',
+      'How TGC certificates work',
+      'Practical advice by framework',
+      'Frequently asked questions',
+    ],
+    sections: [
+      {
+        heading: 'The Frameworks: CAS, DofE, and PVSA',
+        paragraphs: [
+          'If your school runs CAS or the Duke of Edinburgh\'s Award, service is not optional and the documentation is not a formality. This post is for IB Diploma candidates, students enrolled in DofE at any level, and anyone aiming for the President\'s Volunteer Service Award.',
+          'CAS (Creativity, Activity, Service) is part of the IB Diploma Programme. The Service strand requires engagement with a community need, demonstrated initiative, meaningful reflection, and evidence across seven learning outcomes. The current IB CAS guide is the authoritative source.',
+          'The Duke of Edinburgh\'s Award runs at Bronze, Silver, and Gold levels. The Service section requires sustained voluntary work, with minimums that vary by level, verified by an assessor who is not a family member. Refer to the official DofE handbook for current Service requirements at each level.',
+          'The President\'s Volunteer Service Award (PVSA) is a US-administered recognition that some Indian families pursue. It requires verified volunteer hours within a 12-month period, certified by an approved certifying organization. The official PVSA website lists current hour thresholds by age group and award level.',
+        ],
+        callout:
+          'The specific hour requirements and timelines change occasionally. Check the official sources before relying on any number you see online, including in this post.',
+      },
+      {
+        heading: 'What Counts as Service',
+        paragraphs: [
+          'Common principles apply across these frameworks. The work has to be voluntary — no compensation, no academic credit, no payment in any form. It has to benefit a community or cause outside the student and the student\'s family. It has to be supervised by someone outside the family. It has to be documented as the work happens, not reconstructed at the end. And it has to involve genuine reflection, not just a log of hours.',
+          'What is generally excluded:',
+        ],
+        bullets: [
+          'Helping at family events or internal school activities without external impact',
+          'Social media activity without underlying work in the community',
+          'Unsupervised "research" hours with no verifiable output or supervisor',
+          'Work that was compensated in any way — including goods, gifts, or favours',
+          'Hours that cannot be independently verified by a named supervisor',
+        ],
+      },
+      {
+        heading: 'Documentation That Holds Up',
+        paragraphs: [
+          'The most common documentation failure is treating it as a final-week task. By then, supervisors have moved on, photos are scattered, and the hours log is full of approximations. Five elements worth having in place by the end of the engagement:',
+        ],
+        bullets: [
+          'A weekly log with dates, hours, what was done, and one or two lines of reflection. A few minutes per week.',
+          'A named supervisor with contact details, captured early. Confirm willingness to verify hours and provide a brief letter if needed.',
+          'Visual evidence: photos, short videos, screenshots of campaign materials. Permissions handled appropriately, especially where children or vulnerable adults are involved.',
+          'Outputs: any work produced, saved in a usable form.',
+          'A certificate from a registered organization at the end, issued in a way that the school or assessor can verify if asked.',
+        ],
+        callout:
+          'Most CAS coordinators and DofE assessors will not contact the partner organization. But they can. The certificate is only as credible as the organization issuing it.',
+      },
+      {
+        heading: 'A Note on Certificate-Mill Programmes',
+        paragraphs: [
+          'There are programmes — some marketed heavily to Indian families — whose primary deliverable is a certificate in exchange for a fee. Some of these are legitimate. Many are not.',
+          'A useful test: can the organization be verified on the NGO Darpan portal or the Ministry of Corporate Affairs portal? Does it have publicly available audited accounts? Does it have a track record longer than its brochure suggests?',
+          'A certificate from a programme that exists primarily to issue certificates may carry less weight than no certificate at all. A CAS coordinator who receives documentation they cannot verify will ask questions — or simply not accept the hours.',
+        ],
+      },
+      {
+        heading: 'How TGC Certificates Work',
+        paragraphs: [
+          'Every volunteer engagement through The Giving Circle is run with a registered partner NGO. We work to match the student with a contact at the partner organization, support their involvement in defined campaign activities, and the partner NGO issues a certificate at the end documenting their participation.',
+          'Where additional verification is requested by a school, assessor, or admissions office, we work to provide it. The intent is straightforward: nothing about the documentation should require an asterisk.',
+        ],
+      },
+      {
+        heading: 'Practical Advice by Framework',
+        paragraphs: [
+          'For IB students starting CAS: the Service strand often has the thinnest evidence among the three CAS components. A sustained summer with one campaign, with reflections written as the work happens, can address this. Use concrete language in reflections, not the generic register. "I learned about inequality" is not a reflection. "The supervisor told me that of the twenty girls who dropped out of school last year, fourteen cited period-related absences" is.',
+          'For DofE candidates: plan the calendar backward from the deadline. Bronze, Silver, and Gold each have minimum durations. Starting early in the season generally helps. Make sure the supervisor you identify is willing and reachable throughout — losing a supervisor mid-engagement is the most common avoidable disruption.',
+          'For PVSA aspirants: track hours weekly, in writing. Students consistently undercount when they estimate at the end. The hour thresholds for the teen levels are achievable with sustained summer involvement plus continuation through one school term.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'Does a certificate from The Giving Circle count as CAS evidence?',
+        a: 'A TGC certificate documents participation in a verified campaign run with a registered partner NGO. Whether it satisfies your specific CAS coordinator\'s requirements depends on the nature of the engagement and your reflection documentation. The certificate is one part of the evidence; the weekly reflections and supervisor contact are equally important.',
+      },
+      {
+        q: 'What documentation should I bring to my CAS coordinator?',
+        a: 'Bring your weekly hours log with dates and reflections, the supervisor\'s name and contact details, a few pieces of visual evidence (photos or outputs), and your completion certificate from the partner NGO. Do not wait until the end of the engagement to gather these.',
+      },
+      {
+        q: 'How do I verify that an NGO is legitimate for DofE purposes?',
+        a: 'Check the NGO Darpan portal (ngoapp.gov.in) for registration details, look for audited accounts on their website or on the MCA portal, and confirm the supervisor is willing to sign the DofE verification form. A registered organization with public accounts and a reachable supervisor is the minimum you need.',
+      },
+      {
+        q: 'What are the current PVSA hour requirements for Indian teens?',
+        a: 'PVSA hour thresholds are set by the certifying organization and are updated periodically. We do not publish specific numbers here because they change. Check the official PVSA website for current thresholds by age group before planning your hours.',
+      },
+    ],
+    related: [
+      {
+        title: 'Meaningful Summer Projects for High School Students in India',
+        href: '/blog/meaningful-summer-projects-india',
+      },
+      {
+        title: 'Does Community Service Help with US/UK College Applications?',
+        href: '/blog/community-service-college-applications-india',
+      },
+      {
+        title: 'Five Volunteer Project Ideas for Indian Students This Summer',
+        href: '/blog/volunteer-project-ideas-students-india',
+      },
+      {
+        title: 'A Parent\'s Guide to a Meaningful Summer',
+        href: '/blog/parents-guide-meaningful-summer-india',
+      },
+      { title: 'Browse Campaigns', href: '/live-causes' },
+    ],
+  },
+  {
+    slug: 'volunteer-project-ideas-students-india',
+    title: 'Five Volunteer Project Ideas for Indian Students This Summer',
+    description:
+      'Concrete projects students can take on across menstrual hygiene, women\'s empowerment, hunger, animal welfare, and education. For IB, DofE, and college applicants.',
+    keywords:
+      'volunteer project ideas India students, summer volunteer projects India, CAS service ideas India, DofE service project India, menstrual hygiene project India, women empowerment volunteer India, animal welfare volunteer India, education volunteer project India, NGO project ideas high school India, community service project India, meaningful summer project',
+    category: 'Student & Family Guide',
+    datePublished: '2026-06-25',
+    dateModified: '2026-06-25',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['volunteer-project-ideas-students-india'],
+    readingTime: '10 min read',
+    toc: [
+      '1. Menstrual hygiene',
+      '2. Women\'s empowerment',
+      '3. Hunger',
+      '4. Animal welfare',
+      '5. Education of children',
+      'Choosing the right cause for you',
+      'Frequently asked questions',
+    ],
+    sections: [
+      {
+        heading: '1. Menstrual Hygiene',
+        paragraphs: [
+          'Menstruation continues to contribute to school absence and dropouts — 23 million underprivileged girls every year. The causes are partly material (access to products) and partly cultural (silence, stigma, inadequate information).',
+          'Projects worth doing:',
+        ],
+        bullets: [
+          'Design a three-session workshop module for one government school in your area, covering biology, hygiene, and the most common myths. Run the workshop. Track whether questions changed between session one and session three.',
+          'Build a set of explanation cards in your local language, properly designed, that the partner NGO can use across multiple schools.',
+          'Conduct a small survey of menstrual awareness in twenty households in an under-served community. Write it up as a short report. The act of doing the survey teaches more than reading about the issue.',
+          'Work with the distribution team on logistics, then write a short piece about what you learned about why distribution alone does not solve the problem.',
+        ],
+        callout:
+          'Strong fit for students interested in public health, medicine, sociology, gender studies, or any field that values fieldwork.',
+      },
+      {
+        heading: '2. Women\'s Empowerment',
+        paragraphs: [
+          'The word "empowerment" has been used so often it has lost meaning. The work that actually changes things tends to be concrete: vocational skills, financial literacy, market access, and confidence with transactions and tools many women have been kept away from.',
+          'Projects worth doing:',
+        ],
+        bullets: [
+          'Run three financial literacy sessions for women in a partner programme, covering savings, digital payments, and how micro-loans work. Use real examples, not abstract ones.',
+          'Help women artisans set up basic online storefronts on Instagram or a simple platform. Write the product descriptions. Take the photographs.',
+          'Document the lives and work of ten women in the programme, with their permission. Short written profiles or a photo essay. These often become useful for the NGO\'s own communications.',
+          'Create a simple skills directory: which women in the programme can do what, who in the local area might hire them, who has hired them before.',
+        ],
+        callout:
+          'Fit: economics, public policy, business, social entrepreneurship.',
+      },
+      {
+        heading: '3. Hunger',
+        paragraphs: [
+          'Hunger in urban India is largely a problem of distribution and what nutritionists describe as hidden hunger — enough calories, not enough micronutrients. The interesting work is often in the logistics and the mapping, not just the moment of giving food.',
+          'Projects worth doing:',
+        ],
+        bullets: [
+          'Help map food access in a specific neighbourhood: where do children eat, how often, what. Unglamorous fieldwork, but produces something the NGO can use afterwards.',
+          'Support meal distribution operations and introduce basic data discipline: routes, quantities, gaps. Build a simple donor and inventory tracking spreadsheet for a partner organization that probably doesn\'t have one. Show them how to use it.',
+          'Run a focused food waste audit in your own school or apartment complex. The audit and the awareness campaign that follows it can be genuinely useful.',
+        ],
+        callout:
+          'Fit: operations research, public health, development economics, business.',
+      },
+      {
+        heading: '4. Animal Welfare',
+        paragraphs: [
+          'Animal welfare is one of the faster-growing areas of philanthropic interest in India. It consistently produces engaged student volunteers, possibly because the work is immediate and tactile.',
+          'Projects worth doing:',
+        ],
+        bullets: [
+          'Volunteer at a partner shelter doing the actual work: feeding, basic care, socialization with newer rescues. The least glamorous option and often the one that produces the strongest material later.',
+          'Run a sterilization and vaccination awareness drive in one residential community. The goal is changed behaviour from a specific RWA, not a poster nobody reads.',
+          'Document rescue cases and produce short videos for the partner NGO. There is a real shortage of decent video content in this space.',
+          'Build a basic lost-and-found portal or adoption-matching system for the shelter. Many still run on WhatsApp, which works poorly at scale.',
+        ],
+        callout:
+          'Fit: veterinary medicine, biology, environmental studies, and engineering applicants who can build useful tools.',
+      },
+      {
+        heading: '5. Education of Children',
+        paragraphs: [
+          'This is the most volunteered-for cause and often the most superficially performed. The work matters when you engage with the actual problem, which is rarely "the children need someone to spend time with them" and usually "the curriculum or method isn\'t working and nobody has time to fix it."',
+          'Projects worth doing:',
+        ],
+        bullets: [
+          'Pick one topic — phonics, basic arithmetic, environmental science. Design a five-session module. Teach it. Refine it after session two when you discover it isn\'t working the way you thought.',
+          'Build low-cost teaching aids the NGO can use after you leave: game-based math materials, story cards, simple science kits.',
+          'Run a small reading programme with weekly progress tracking. Don\'t try to scale it. Twenty children, twelve weeks, careful records.',
+          'Develop short video lessons in the local language and hand the files over to the NGO.',
+        ],
+        callout:
+          'Fits almost any intended major if framed thoughtfully — the key is specificity about what changed for a specific child or group.',
+      },
+      {
+        heading: 'Choosing the Right Cause for You',
+        paragraphs: [
+          'You don\'t choose causes purely rationally. You notice that one of the descriptions above made you slightly uncomfortable, or curious, or annoyed. That is information.',
+          'The most reliable signal is not "which cause looks most impressive" but "which one I kept reading past the point where I was supposed to stop." Pay attention to that.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        q: 'How do I pick one cause if more than one interests me?',
+        a: 'Notice which description you read most carefully, or which you found yourself thinking about afterward. That is usually the right answer. Picking two causes and going deep on neither is a common mistake — commit to one for a full summer first.',
+      },
+      {
+        q: 'How many hours a week do these projects require?',
+        a: 'Six to eight hours a week for eight to ten weeks is a sustainable and effective commitment. This is enough to produce something tangible without disrupting the rest of your summer. Starting early gives you more flexibility if weeks get disrupted.',
+      },
+      {
+        q: 'Can I do these projects remotely?',
+        a: 'Some elements — research, design work, writing, building digital tools — can be done remotely. But the most valuable parts of most of these projects involve being physically present: running the workshop, doing the fieldwork, showing up at the shelter. Remote-only service typically produces thinner documentation and thinner stories.',
+      },
+      {
+        q: 'Do these project ideas count for CAS or DofE service hours?',
+        a: 'They can, if the engagement is with a registered partner organization, supervised by someone outside your family, and documented with a weekly log and reflections. The certificate at the end is important but not sufficient on its own — the documentation you keep throughout the engagement is what makes it credible to a CAS coordinator or DofE assessor.',
+      },
+    ],
+    related: [
+      {
+        title: 'Meaningful Summer Projects for High School Students in India',
+        href: '/blog/meaningful-summer-projects-india',
+      },
+      {
+        title: 'CAS, Duke of Edinburgh & Verified Volunteer Certificates',
+        href: '/blog/cas-duke-of-edinburgh-volunteer-certificate-india',
+      },
+      {
+        title: 'Does Community Service Help with US/UK College Applications?',
+        href: '/blog/community-service-college-applications-india',
+      },
+      {
+        title: 'A Parent\'s Guide to a Meaningful Summer',
+        href: '/blog/parents-guide-meaningful-summer-india',
+      },
+      { title: 'Browse Campaigns', href: '/live-causes' },
+    ],
+  },
+  {
+    slug: 'parents-guide-meaningful-summer-india',
+    title: 'A Parent\'s Guide to a Meaningful Summer: Helping Your Teen Use This Break Well',
+    description:
+      'How to help your teenager use the summer well, without it turning into another item on your to-do list. For Indian parents thinking about universities abroad.',
+    keywords:
+      'parents guide meaningful summer India, how to help teenager volunteer India, university application extracurriculars India, Indian student college application summer, teenager summer project India, meaningful extracurriculars high school India, summer break planning teen India, US university application India parent, Common App activities India parent, NGO volunteer teenager India',
+    category: 'Family & Parent Guide',
+    datePublished: '2026-06-25',
+    dateModified: '2026-06-25',
+    heroImage: BLOG_CLOUDINARY_HERO_BY_SLUG['parents-guide-meaningful-summer-india'],
+    readingTime: '10 min read',
+    toc: [
+      'Why this matters more than it did when you were eighteen',
+      'The two conversations that matter more than the planning',
+      'Patterns that tend to produce thin summers',
+      'What a good summer tends to look like',
+      'How TGC fits in',
+      'A realistic plan for the next eight weeks',
+      'Frequently asked questions',
+    ],
+    sections: [
+      {
+        heading: 'Why This Matters More Than It Did When You Were Eighteen',
+        paragraphs: [
+          'The admissions landscape has shifted in ways your generation did not encounter. Standardized scores have compressed at the top across selective US universities, so they differentiate less than they used to. Essays are now read with more scrutiny because AI tools can produce a competent paragraph. Activity lists have grown similar enough that admissions readers focus on depth rather than length.',
+          'What still differentiates, based on public guidance from admissions offices: a student who has done something for someone else, sustained it long enough to learn something from it, and can speak about it in a way that does not sound rehearsed.',
+          'This is partly good news and partly hard news. Good because money buys less of this advantage than it used to. Hard because there is no shortcut.',
+        ],
+        callout:
+          'This post offers general perspective for families navigating university applications. Admissions outcomes depend on many factors beyond extracurricular involvement, and The Giving Circle does not represent that participating in any volunteer programme guarantees or improves admission to any specific institution.',
+      },
+      {
+        heading: 'The Two Conversations That Matter More Than the Planning',
+        paragraphs: [
+          'Before searching for programmes or NGOs, two conversations tend to do most of the useful work.',
+          'The first is about what bothers your child. Not what would look good. Not what you think they should care about. Ask them what stories they keep noticing, what they argue with their friends about, what they get angry about online. The answer is often more specific than parents expect, and it is usually the right starting point.',
+          'The second is about what they are actually good at. A child who is good with people can contribute to a cause differently from one who is good with code, design, or numbers. Matching the skill to the cause tends to produce better work and, as a side effect, better essays.',
+          'Both conversations work best when they don\'t feel like interviews. Try them in the car or at dinner. Anywhere that isn\'t your study with the laptop open.',
+        ],
+      },
+      {
+        heading: 'Patterns That Tend to Produce Thin Summers',
+        paragraphs: [
+          'A few patterns produce summers that look full and feel empty. Worth naming so they can be recognized.',
+        ],
+        bullets: [
+          'Short volunteer trips abroad. The two-week trip to a school in Tanzania, the photo-heavy week in Ladakh, the orphanage visit in Nepal. Admissions readers see many of these, and they are sometimes read for what they often are: paid experiences.',
+          'Many shallow involvements rather than one or two deep ones. A few days at five organizations tends to read weaker than one month at one. This is counterintuitive enough that many parents do not believe it until later.',
+          'Volunteering at a family friend\'s NGO. It can be difficult to make this read as independent work. Not impossible. Difficult.',
+          'Programmes priced disproportionately to what they deliver. There are good paid programmes; many marketed heavily to Indian parents are not among the strongest. If the programme exists primarily to sell certificates, the certificate is likely to carry less weight than it appears to.',
+          'Performative documentation. A summer documented heavily on Instagram and lightly in real life is increasingly easy to spot.',
+        ],
+      },
+      {
+        heading: 'What a Good Summer Tends to Look Like',
+        paragraphs: [
+          'It is, frankly, less photogenic than parents would like. The child commits to one cause, signs up with a registered organization, spends six to eight hours a week for eight to ten weeks doing real work, and ends with one tangible thing they produced. A campaign, a report, a set of materials, a piece of writing.',
+          'A useful test: in October, can the child tell you the name of the person they worked with at the NGO, one specific thing they did in early July, and one thing they thought about differently after the summer ended. If those three answers exist, the summer worked.',
+          'The certificate at the end is almost a side effect, but it is the side effect that everyone asks for. So it needs to come from a real organization.',
+        ],
+      },
+      {
+        heading: 'How TGC Fits In',
+        paragraphs: [
+          'The Giving Circle partners with registered NGOs working in India. Our five campaigns are built around the kind of sustained engagement that admissions offices have indicated they value. Students who sign up are matched with a contact at the partner organization, contribute to defined campaign activities, and receive a certificate at the end documenting their participation.',
+          'We are not the only way to do this well. We are a reasonable place to start, particularly if you do not already have a relationship with an NGO you trust.',
+        ],
+      },
+      {
+        heading: 'A Realistic Plan for the Next Eight Weeks',
+        paragraphs: [
+          'Have the two conversations this weekend. Pick a cause by next weekend. Sign up. Start the first week of summer break, even if only a few hours, so that the rhythm is established.',
+          'Then sit back. This is the hard part. The summer will go better if you let your child report on it to you rather than manage it for them. Ask what they did this week. Listen. Resist the urge to suggest improvements. Much of what they will learn, they will learn from problems you would have prevented.',
+        ],
+        bullets: [
+          'This week: have the "what bothers you" conversation, without the laptop open.',
+          'Next week: commit to one cause. Contact a registered NGO or sign up through a structured platform.',
+          'First week of summer: begin — even two or three hours — to establish the habit before it can be deferred.',
+          'July: look for one tangible output to produce by the end of August. Let your child define what it is.',
+          'August: save the output. Ask your child to write three pages about what they noticed. These become the spine of the eventual application essay.',
+        ],
+        callout:
+          'In September, ask them to write three pages about what they noticed. Save those pages. They become the spine of the eventual application essay.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'My child is not motivated to plan this. What do I do?',
+        a: 'Avoid prescribing the cause. Start with the conversations described in this post — what bothers them, what they\'re good at. Motivation tends to follow genuine interest. A child who is assigned a cause rarely produces strong documentation or a convincing essay. A child who chose a cause, even if it needed prompting to surface, usually does.',
+      },
+      {
+        q: 'How much should a meaningful summer cost?',
+        a: 'Much less than most programmes charge. The value is in the depth of the engagement, not the fee paid. Signing up with a registered NGO directly or through a platform like The Giving Circle costs significantly less than a branded paid programme — and produces stronger documentation because the work is real, not staged.',
+      },
+      {
+        q: 'My child is starting Class 12. Is it too late to make this count?',
+        a: 'Not too late, but the bar for what the engagement needs to produce is higher. A Class 12 student who commits seriously for one summer and ends with one tangible output can write a strong essay about it. The thread won\'t span multiple years, so the depth of engagement in a single summer needs to compensate.',
+      },
+      {
+        q: 'Should I manage the summer, or let my child lead?',
+        a: 'Let your child lead, with you available. The strongest essays are written by students who made choices — including mistakes — that were genuinely their own. If you manage the summer, the essay will read like a managed summer. The practical role for parents is facilitating the initial decision and asking good questions afterward, not directing the work.',
+      },
+    ],
+    related: [
+      {
+        title: 'Meaningful Summer Projects for High School Students in India',
+        href: '/blog/meaningful-summer-projects-india',
+      },
+      {
+        title: 'Does Community Service Help with US/UK College Applications?',
+        href: '/blog/community-service-college-applications-india',
+      },
+      {
+        title: 'CAS, Duke of Edinburgh & Verified Volunteer Certificates',
+        href: '/blog/cas-duke-of-edinburgh-volunteer-certificate-india',
+      },
+      {
+        title: 'Five Volunteer Project Ideas for Indian Students This Summer',
+        href: '/blog/volunteer-project-ideas-students-india',
+      },
+      { title: 'Browse Campaigns', href: '/live-causes' },
     ],
   },
 ];

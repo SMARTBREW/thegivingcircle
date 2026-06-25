@@ -19,4 +19,12 @@ export const BLOG_CLOUDINARY_HERO_BY_SLUG: Record<string, string> = {
     'https://res.cloudinary.com/dcdhhylin/image/upload/v1779701981/images/blogs/ChatGPT_Image_May_25_2026_03_02_12_PM.png',
   'how-to-donate-for-women-empowerment-india':
     'https://res.cloudinary.com/dcdhhylin/image/upload/v1779701985/images/blogs/ChatGPT_Image_May_25_2026_03_04_17_PM.png',
+  'community-service-college-applications-india':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1782369824/images/blogs/ChatGPT_Image_Jun_25_2026_12_06_46_PM.png',
+  'cas-duke-of-edinburgh-volunteer-certificate-india':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1782369815/images/blogs/ChatGPT_Image_Jun_25_2026_12_01_27_PM.png',
+  'volunteer-project-ideas-students-india':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1782369817/images/blogs/ChatGPT_Image_Jun_25_2026_12_01_48_PM.png',
+  'parents-guide-meaningful-summer-india':
+    'https://res.cloudinary.com/dcdhhylin/image/upload/v1782369820/images/blogs/ChatGPT_Image_Jun_25_2026_12_02_00_PM.png',
 };
