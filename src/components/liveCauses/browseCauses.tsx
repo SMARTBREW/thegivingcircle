@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import CloudinaryImage from '../ui/CloudinaryImage';
 import SEOHead from '../SEO/SEOHead';
 import { Search, MapPin, Heart, Target, Building2, Users, Shield, CheckCircle, Award, Star } from 'lucide-react';
@@ -305,11 +306,11 @@ const LiveCausesPage = () => {
 
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight animate-fade-in text-white drop-shadow-lg break-words mt-20">
-              Live Causes - Support Active Campaigns India
+              Live Causes — Verified Campaigns You Can Support Today
             </h1>
 
             <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 leading-relaxed animate-fade-in-delay text-gray-100 drop-shadow-md max-w-2xl break-words">
-              Discover urgent causes and support live fundraising campaigns across India. Join our giving platform and giving community to support social causes. <span className="font-semibold text-white">1,23,456+ donors</span> are already giving to community initiatives creating real impact through transparent fundraising on verified social causes India.
+              Browse active fundraisers from verified NGO partners: child education, menstrual health, animal rescue, and disaster relief. Every campaign lists progress, implementing organisation, and 80G eligibility where applicable.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4 max-w-2xl mb-4 sm:mb-6 md:mb-8 animate-fade-in-delay">
@@ -346,6 +347,34 @@ const LiveCausesPage = () => {
 
       {/* Main Content */}
       <main className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12">
+        <section className="mb-8 bg-white rounded-xl border border-gray-200 p-6 sm:p-8 shadow-sm">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">How to Choose a Live Cause</h2>
+          <div className="w-12 h-1 bg-green-700 mb-4" />
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed mb-4">
+            Each card below links to a full campaign page with FAQs, fund utilisation notes, and partner contact. Match your giving to cause type, geography, and urgency — then donate once or become a{' '}
+            <Link to="/onboarding" className="text-green-700 font-medium hover:underline">Cause Champion</Link> for recurring support.
+          </p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm">
+            {[
+              { label: 'Education', desc: '#PehliClass, JWP', href: '/pehli-class-cause-details' },
+              { label: 'Women & health', desc: 'Wings of Hope', href: '/jwp-cause-details' },
+              { label: 'Animals', desc: 'Brick by Brick, Bowls, Pawsitive', href: '/bricks-by-bricks-cause-details' },
+              { label: 'Disaster', desc: 'Flood relief & rescue', href: '/flood-relief-cause-details' },
+            ].map(({ label, desc, href }) => (
+              <Link key={href} to={href} className="block border border-gray-100 rounded-lg p-4 hover:border-green-500 hover:bg-green-50/50 transition-colors">
+                <span className="font-semibold text-gray-900">{label}</span>
+                <p className="text-gray-600 text-xs mt-1">{desc}</p>
+              </Link>
+            ))}
+          </div>
+          <p className="text-xs text-gray-500 mt-4">
+            New to giving in India? Read{' '}
+            <Link to="/what-is-a-giving-circle" className="text-green-700 hover:underline">what a giving circle is</Link>
+            {' '}or{' '}
+            <Link to="/top-verified-ngos-india-2026" className="text-green-700 hover:underline">top verified NGOs</Link>.
+          </p>
+        </section>
+
         <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 md:gap-8">
           {/* Professional Sidebar */}
           <aside className="lg:w-1/5">

@@ -51,7 +51,7 @@ function handler(event) {
     path = path.slice(0, -1);
   }
 
-  // /local-seo/{variant}-ngo-in-{city} → /ngos/best-ngo-in-{city} (one hop, not via variant URL).
+  // /local-seo/{slug} → canonical city page (one hop; variant slugs map to best-ngo-in-*).
   function localSeoTarget(path) {
     if (path.indexOf('/local-seo/') !== 0) return null;
     var slug = path.slice('/local-seo/'.length);
@@ -66,7 +66,35 @@ function handler(event) {
         return '/ngos/best-ngo-in-' + slug.slice(variantPrefixes[v].length);
       }
     }
-    return '/ngos/' + slug;
+    if (slug === 'ngo-in-noida') return '/ngos/best-ngo-in-noida';
+    if (slug === 'ngo-in-gurugram') return '/ngos/best-ngo-in-gurugram';
+    if (slug.indexOf('best-ngo-in-') === 0) return '/ngos/' + slug;
+    return '/ngos';
+  }
+
+  function resolveNgoSlug(slug) {
+    var variantPrefixes = [
+      'top-ngo-in-',
+      'verified-ngo-in-',
+      'trusted-ngo-in-',
+      'leading-ngo-in-',
+    ];
+    for (var i = 0; i < variantPrefixes.length; i++) {
+      if (slug.indexOf(variantPrefixes[i]) === 0) {
+        return 'best-ngo-in-' + slug.slice(variantPrefixes[i].length);
+      }
+    }
+    if (slug === 'ngo-in-noida') return 'best-ngo-in-noida';
+    if (slug === 'ngo-in-gurugram') return 'best-ngo-in-gurugram';
+    if (
+      slug === 'best-ngo-in-delhi' ||
+      slug === 'best-ngo-in-gurugram' ||
+      slug === 'best-ngo-in-noida' ||
+      slug === 'best-ngo-in-faridabad'
+    ) {
+      return slug;
+    }
+    return '';
   }
 
   var rules = {
@@ -80,8 +108,10 @@ function handler(event) {
     '/ngo-detail/2': '/animalcare-ngo-detail',
     '/ngo-detail/3': '/jwp-cause-details',
     '/ngo/animalcare-india': '/animalcare-ngo-detail',
-    '/ngos/ngo-in-noida': '/ngo-in-noida',
-    '/ngos/ngo-in-gurugram': '/ngo-in-gurugram',
+    '/ngo-in-noida': '/ngos/best-ngo-in-noida',
+    '/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
+    '/ngos/ngo-in-noida': '/ngos/best-ngo-in-noida',
+    '/ngos/ngo-in-gurugram': '/ngos/best-ngo-in-gurugram',
     '/animal-emergency': '/animal-emergency.html',
     // City NGO adjective variants → one canonical page per city (de-dupe).
     '/ngos/top-ngo-in-delhi': '/ngos/best-ngo-in-delhi',
@@ -113,6 +143,21 @@ function handler(event) {
 
   if (path.indexOf('/ngo/') === 0 && path.toLowerCase().indexOf('jwp') !== -1) {
     return redirect('/jwp-cause-details');
+  }
+
+  if (path.indexOf('/ngo-detail/') === 0) {
+    return redirect('/ngo-list');
+  }
+
+  if (path.indexOf('/ngos/') === 0 && path !== '/ngos') {
+    var ngoSlug = path.slice('/ngos/'.length);
+    var resolvedSlug = resolveNgoSlug(ngoSlug);
+    if (resolvedSlug && resolvedSlug !== ngoSlug) {
+      return redirect('/ngos/' + resolvedSlug);
+    }
+    if (!resolvedSlug) {
+      return redirect('/ngos');
+    }
   }
 
   // Block schema placeholder crawl (legacy SearchAction URL)

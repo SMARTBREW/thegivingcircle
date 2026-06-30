@@ -9,7 +9,10 @@ const faqs = [
   { q: 'Do I need to know Hindi to volunteer in India?', a: 'Not necessarily. Many urban NGOs work in English or Hindi. For rural or community work, basic Hindi helps but isn\'t mandatory for most roles.' },
   { q: 'Can students volunteer with NGOs in India?', a: 'Absolutely. Many NGOs actively welcome college students for tutoring, awareness campaigns and event support. It also counts toward internship credits at many universities.' },
   { q: 'How many hours per week should I commit?', a: 'Most NGOs ask for a minimum of 2–4 hours per week for a minimum of 3 months. This gives you enough time to build rapport and create meaningful impact.' },
-  { q: 'Will I get a certificate for volunteering?', a: 'Yes  -  most NGOs provide experience certificates after completing a defined volunteering period. The Giving Circle also issues Cause Champion recognition badges.' },
+  { q: 'Will I get a certificate for volunteering?', a: 'Yes — most NGOs provide experience certificates after completing a defined volunteering period. The Giving Circle also issues Cause Champion recognition badges.' },
+  { q: 'Can volunteering count toward CAS, Duke of Edinburgh, or college applications?', a: 'Yes. Structured NGO volunteering with logged hours, a supervisor sign-off, and a reflection note is widely accepted for IB CAS, Duke of Edinburgh Award (India centres), and extracurricular sections on Indian and overseas university applications. Ask your NGO contact for a letter on letterhead stating dates, hours, and activities.' },
+  { q: 'What are red flags that an NGO volunteer listing may be a scam?', a: 'Upfront fees to "register" as a volunteer, no registered trust/society number, no physical address, pressure to share OTPs or bank details, and promises of guaranteed placement certificates without any work logged. Legitimate NGOs will share FCRA/80G status when asked and never charge you to volunteer.' },
+  { q: 'Do I need a police verification or background check?', a: 'For roles involving children (tutoring, after-school programmes) or vulnerable adults, reputable NGOs often request ID proof and sometimes police verification or an employer reference. This is normal — ask what documents they need before your first session.' },
 ];
 
 const HowToVolunteerIndia = () => {
@@ -56,7 +59,7 @@ const HowToVolunteerIndia = () => {
             Built for people in India—not generic global advice. If you are in <strong>Delhi NCR</strong>, jump to mapped weekend and skills roles; everywhere else, use the same vetting steps to avoid scam listings.
           </p>
           <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>By The Giving Circle Team</span><span>•</span><span>7 min read</span>
+            <span>By The Giving Circle Team</span><span>•</span><span>12 min read</span>
           </div>
         </div>
       </section>
@@ -125,7 +128,7 @@ const HowToVolunteerIndia = () => {
             Prefer browsing by city hubs? Explore{' '}
             <Link to="/verified-ngos-in-delhi" className="text-green-700 font-semibold hover:underline">verified NGOs in Delhi NCR</Link>
             {' '}or niche listings like{' '}
-            <Link to="/ngo-in-noida" className="text-green-700 font-semibold hover:underline">NGOs in Noida</Link>.
+            <Link to="/ngos/best-ngo-in-noida" className="text-green-700 font-semibold hover:underline">NGOs in Noida</Link>.
           </p>
         </section>
 
@@ -171,6 +174,135 @@ const HowToVolunteerIndia = () => {
                   <h3 className="font-semibold text-gray-900 mb-1">{title}</h3>
                   <p className="text-gray-700 text-sm">{body}</p>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* What to Expect */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">What to Expect as a Volunteer in India</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <p className="text-gray-700 text-lg leading-relaxed mb-6">
+            Indian NGOs rarely mirror corporate internships. Most programmes are lean, field-heavy, and relationship-driven. Knowing the rhythm upfront helps you commit for three months instead of burning out in two weekends.
+          </p>
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {[
+              {
+                phase: 'Week 1 — Orientation',
+                items: ['1–2 hour briefing (online or on-site)', 'Safeguarding rules for working with children', 'WhatsApp group for shift swaps and alerts', 'POC name + escalation number saved on your phone'],
+              },
+              {
+                phase: 'Weeks 2–8 — Active service',
+                items: ['Fixed weekly slot (e.g. Saturday 9–11am tutoring)', 'Simple activity log — date, hours, what you did', 'Monthly check-in with programme lead', 'Occasional donor visits or awareness events you may join'],
+              },
+              {
+                phase: 'Month 3+ — Deeper impact',
+                items: ['Lead a small sub-project (event, content, curriculum)', 'Mentor newer volunteers', 'Eligible for experience certificate / CAS sign-off', 'Option to convert to Cause Champion fundraiser'],
+              },
+              {
+                phase: 'What NGOs expect from you',
+                items: ['Show up on time — no-shows hurt children and animals', 'Follow dress code (closed shoes for rescue, modest wear for communities)', 'No photos of beneficiaries without consent', 'Report safety concerns to staff, not social media'],
+              },
+            ].map(({ phase, items }) => (
+              <div key={phase} className="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 className="font-semibold text-gray-900 mb-3">{phase}</h3>
+                <ul className="space-y-2">
+                  {items.map((item) => (
+                    <li key={item} className="text-gray-700 text-sm flex gap-2">
+                      <span className="text-green-700 shrink-0">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+          <div className="bg-white border border-amber-200 rounded-xl p-6">
+            <h3 className="font-semibold text-gray-900 mb-3">Red flags — walk away if you see these</h3>
+            <ul className="grid sm:grid-cols-2 gap-2 text-sm text-gray-700">
+              {[
+                'Volunteer "registration fee" or donation demanded upfront',
+                'No registered trust/society name on website or letterhead',
+                'Asks for Aadhaar/bank OTP over phone',
+                'No orientation or safeguarding briefing for child-facing roles',
+                'Guaranteed certificate without attendance records',
+                'Only Instagram DMs — no registered office or email domain',
+              ].map((flag) => (
+                <li key={flag} className="flex gap-2">
+                  <span className="text-red-600 shrink-0">✕</span>
+                  <span>{flag}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        {/* Remote Volunteering */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Remote Volunteering Options (India-friendly)</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            You do not need to be in Delhi to help Indian NGOs. Skills-based remote roles are often the highest-leverage way to contribute — and they suit NRIs, tier-2 city residents, and working professionals with limited weekends.
+          </p>
+          <div className="overflow-x-auto mb-6">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold text-gray-900">Skill</th>
+                  <th className="text-left p-4 font-semibold text-gray-900">Typical task</th>
+                  <th className="text-left p-4 font-semibold text-gray-900">Time ask</th>
+                  <th className="text-left p-4 font-semibold text-gray-900">Example partner</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { skill: 'Content / social media', task: 'Cause posts, reel captions, donor thank-you stories', time: '3–5 hrs/week', partner: 'Bowls of Hope, JWP' },
+                  { skill: 'Graphic design', task: 'Campaign banners, volunteer posters, report layouts', time: 'Project-based', partner: 'Any live cause' },
+                  { skill: 'Accounting / compliance', task: 'Expense reconciliation, 80G receipt checks', time: '4–8 hrs/month', partner: 'Smaller trusts' },
+                  { skill: 'Tutoring (online)', task: 'English/Maths over Zoom for Classes 4–8', time: '2 hrs/week', partner: 'JWP, Pehli Class bridge' },
+                  { skill: 'Fundraising strategy', task: 'Corporate outreach, CSR pitch decks', time: 'Flexible', partner: 'The Giving Circle network' },
+                  { skill: 'Translation', task: 'Hindi ↔ English programme materials', time: 'Ad hoc', partner: 'Women empowerment NGOs' },
+                ].map((row) => (
+                  <tr key={row.skill} className="hover:bg-green-50/50">
+                    <td className="p-4 font-medium text-gray-900">{row.skill}</td>
+                    <td className="p-4 text-gray-700">{row.task}</td>
+                    <td className="p-4 text-gray-600">{row.time}</td>
+                    <td className="p-4 text-gray-600">{row.partner}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="text-gray-700 text-sm leading-relaxed">
+            Students building portfolios for{' '}
+            <Link to="/blog/cas-duke-of-edinburgh-volunteer-certificate-india" className="text-green-700 font-medium hover:underline">CAS or Duke of Edinburgh</Link>
+            {' '}should log hours in a simple spreadsheet (date, activity, supervisor email) from day one — auditors and university counsellors ask for this later.
+          </p>
+        </section>
+
+        {/* Students */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Volunteering for Students &amp; Young Champions</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid md:grid-cols-3 gap-5">
+            {[
+              {
+                title: 'School (Classes 9–12)',
+                body: 'Weekend tutoring, awareness stalls, and donation drives work well. Parent/guardian consent is required for minors on field visits. Many schools accept 20–40 logged hours per year toward internal service awards.',
+              },
+              {
+                title: 'College & IB/CBSE CAS',
+                body: 'Aim for 3+ months with one NGO rather than one-day events at five places. Reflection essays matter — note what you learned about inequality, not just hours completed.',
+              },
+              {
+                title: 'Young Professionals',
+                body: 'Skills volunteering (design, data, legal research) often creates more impact than occasional feeding drives. Pair with a ₹500/month micro-donation to stay connected between busy weeks.',
+              },
+            ].map(({ title, body }) => (
+              <div key={title} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed">{body}</p>
               </div>
             ))}
           </div>

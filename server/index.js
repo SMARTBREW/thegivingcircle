@@ -97,6 +97,12 @@ app.get('/health', (req, res) => {
   });
 });
 
+// API subdomain should not be indexed (GSC: api.thegivingcircle.in 404)
+app.get('/robots.txt', (req, res) => {
+  res.type('text/plain');
+  res.send('User-agent: *\nDisallow: /\n');
+});
+
 app.get('/api/health', (req, res) => {
   res.json({ 
     status: 'ok', 

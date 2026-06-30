@@ -7,6 +7,7 @@ import PartnersTable from '../../components/animal-welfare/PartnersTable';
 import PartnersPagination from '../../components/animal-welfare/PartnersPagination';
 import StrengthenNetworkSection from '../../components/animal-welfare/StrengthenNetworkSection';
 import { getAnimalWelfareCity } from '../../constants/animalWelfareCities';
+import { getAnimalWelfareCityGuide } from '../../constants/animalWelfareCityGuides';
 import { submitAnimalWelfarePartnerSuggestion } from '../../api/animalWelfareApi';
 import { useAnimalWelfarePartners } from '../../hooks/useAnimalWelfarePartners';
 import type { AnimalWelfarePartnerInput } from '../../types/animalWelfare';
@@ -85,6 +86,7 @@ const AnimalWelfareCityPage = () => {
   };
 
   const canonicalUrl = `https://www.thegivingcircle.in/animal-welfare/${cityConfig.slug}`;
+  const cityGuide = getAnimalWelfareCityGuide(cityConfig.slug);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -132,6 +134,37 @@ const AnimalWelfareCityPage = () => {
       </section>
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-8 pb-16">
+        <section className="mb-8 bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
+            Animal Welfare in {cityConfig.label} — What You Should Know
+          </h2>
+          <div className="w-12 h-1 bg-green-700 mb-4" />
+          <p className="text-gray-700 leading-relaxed mb-4">{cityGuide.intro}</p>
+          <h3 className="font-semibold text-gray-900 mb-2 text-sm sm:text-base">Local tips before you call or visit</h3>
+          <ul className="space-y-2">
+            {cityGuide.tips.map((tip) => (
+              <li key={tip} className="text-gray-700 text-sm flex gap-2">
+                <span className="text-green-700 shrink-0">•</span>
+                <span>{tip}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="text-sm text-gray-600 mt-4">
+            Urgent injury?{' '}
+            <a href="tel:+919315982650" className="text-green-700 font-medium hover:underline">
+              Call +91 93159 82650
+            </a>
+            {' · '}
+            <a href="/animal-emergency.html" className="text-green-700 font-medium hover:underline">
+              All regions
+            </a>
+            {' · '}
+            <Link to="/pawsitive-protectors-cause-details" className="text-green-700 font-medium hover:underline">
+              Sponsor vaccination
+            </Link>
+          </p>
+        </section>
+
         <div className="bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden">
           <div className="px-4 sm:px-6 py-5 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white flex flex-wrap gap-4 items-center justify-between">
             <div className="flex flex-wrap gap-2 items-center">

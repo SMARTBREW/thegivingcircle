@@ -227,9 +227,9 @@ const PawsitiveProtectorsCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate for Stray Dog Vaccination | Sponsor Anti Rabies Vaccine"
-        description="Help save stray dogs from rabies and protect your community. Sponsor street dog vaccination drives in India. Contribute to verified animal welfare NGO rabies prevention programs."
-        keywords="rabies prevention, rabies prevention shot, how to prevent rabies, rabies vaccine cost, anti rabies vaccine price, rabies vaccination, animal welfare ngo, stray dog vaccination programs, donate for stray dog vaccination, anti rabies vaccine for dogs, support street dog vaccination drive, deaths from dog bites, save street dogs, fund rabies prevention campaign, contribute to rabies control program, protect community from rabies, help vaccinate street dogs, make your city rabies free, support public health vaccination drive, animal vaccination clinic, sponsor rabies awareness camps, vaccinations are important, vaccination importance, benefits of a vaccine, dog ngos, straying animals, CSR for animal welfare, CSR project for rabies control, corporate partnership for stray dog vaccination, donate for rabies vaccination drive near me, animal vaccination NGO donation, poverty percentage"
+        title="Pawsitive Protectors | Sponsor Rabies Vaccination for Street Dogs | 80G"
+        description="Fund anti-rabies vaccination drives for stray dogs across Delhi NCR and Mumbai. Part of AnimalCare India's Zero Rabies Deaths by 2030 mission. Donations eligible for 80G where applicable."
+        keywords="rabies vaccination stray dogs India, donate anti rabies vaccine, street dog vaccination Delhi, animal welfare NGO 80G, Zero Rabies 2030"
         canonicalUrl="https://www.thegivingcircle.in/pawsitive-protectors-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183023/images/animal-protect/animal17.jpg"
       />
@@ -246,7 +246,7 @@ const PawsitiveProtectorsCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Sponsor Anti Rabies Vaccine for Dogs Save Stray Dogs from Rabies
+            Pawsitive Protectors — Vaccinate Street Dogs, Stop Rabies at the Source
           </h1>
           <div className="w-20 h-1.5 bg-green-700 mb-8"></div>
 
@@ -567,6 +567,37 @@ const PawsitiveProtectorsCauseDetailPage = () => {
                     <a href="http://www.animalcareindia.org.in" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.animalcareindia.org.in</a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Rabies in India guide" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Rabies in India — Why Mass Vaccination Beats Fear
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  India accounts for roughly one-third of global human rabies deaths. Almost every case traces to a dog bite that could have been prevented if the animal had received an anti-rabies vaccine. Culling dogs does not work epidemiologically — vaccinating 70%+ of the street dog population creates herd immunity that protects both animals and humans.
+                </p>
+                <p>
+                  Pawsitive Protectors runs camp-style drives: mobile vet teams, cold-chain vaccine storage, catch-vaccinate-release protocols for friendly dogs, and trap-neuter-vaccinate-release for aggressive colonies. Each camp logs GPS coordinates and dose batch numbers for municipal health departments and CSR auditors.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900">What one vaccination camp costs</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>200–400 dogs vaccinated per day in dense urban wards</li>
+                  <li>Community awareness session (what to do after a bite — PEP, not panic)</li>
+                  <li>Follow-up booster scheduling for puppies under 6 months</li>
+                </ul>
+                <p>
+                  Corporates under Schedule VII (iv) animal welfare / public health can sponsor full camps with branded volunteer slots for employees. ₹500 vaccinates roughly 5–8 dogs depending on logistics and ward size.
+                </p>
+                <p className="text-sm text-gray-600">
+                  Related: <a href="/bricks-by-bricks-cause-details" className="text-green-700 hover:underline">Brick by Brick shelter Gurgaon</a>
+                  {' · '}
+                  <a href="/bowls-of-hope-cause-details" className="text-green-700 hover:underline">Bowls of Hope feeding</a>
+                  {' · '}
+                  <a href="/csr-projects-in-india" className="text-green-700 hover:underline">CSR animal welfare</a>
+                </p>
               </div>
             </section>
 

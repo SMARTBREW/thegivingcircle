@@ -169,8 +169,8 @@ const BricksByBricksCauseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <SEOHead
         title="Brick by Brick Gurgaon | Animal Care — Build a Stray Rescue Centre | Donate ₹10 per Brick | The Giving Circle"
-        description="Donate to Animal Care’s Brick by Brick campaign: fund the boundary wall for a 17,500 sq ft stray rescue & rehabilitation centre in Gurgaon. ₹10 = 1 brick · 1,000 of 5,000 bricks laid · verified animal welfare NGO · 80G where applicable · rabies prevention & street animal rescue India."
-        keywords="Animal Care India donation, brick by brick animal shelter Gurgaon, donate stray dog shelter India, animal welfare NGO India 80G, rescue rehabilitation centre strays Gurgaon, donate animal rescue India, street animal rescue Gurugram, rabies prevention NGO India, boundary wall campaign animals, verified NGO animal welfare, donate ₹10 brick shelter"
+        description="Fund Animal Care's Gurgaon rescue centre: boundary wall on a 17,500 sq ft plot for injured strays. ₹10 per brick, transparent milestones, 80G-eligible giving."
+        keywords="Brick by Brick Animal Care Gurgaon, stray dog shelter donation, animal rescue centre India, donate 80G animal welfare, boundary wall campaign"
         canonicalUrl={`https://www.thegivingcircle.in/${CAUSE_PAGE_SLUG}`}
         ogImage={OG_ABSOLUTE}
       />
@@ -437,6 +437,35 @@ const BricksByBricksCauseDetailPage = () => {
                     </a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Shelter build guide" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Why Gurgaon Needs a Permanent Stray Rehabilitation Centre
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  Gurugram&apos;s rapid urbanisation left thousands of injured dogs cycling through temporary foster homes and highway clinics with no long-term beds. AnimalCare India secured a <strong>17,500 sq ft plot</strong> on the city&apos;s periphery — land is secured; what is missing is infrastructure.
+                </p>
+                <p>
+                  Phase 1 (this campaign) builds the <strong>boundary wall</strong>: without a secure perimeter, construction equipment cannot stay on site, night-time thefts occur, and frightened strays cannot be safely contained for treatment. Phase 2 will add kennels, an OPD, isolation wards for distemper cases, and a small surgery room.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900">The ₹10 brick model</h3>
+                <p>
+                  Micro-donations lower the barrier for students and first-time donors. {BRICKS_GOAL.toLocaleString('en-IN')} bricks at ₹{BRICK_RUPEES} each fund the wall milestone (₹{GOAL_RUPEES.toLocaleString('en-IN')}). Progress is photographed weekly — donors see mortar, rebar, and gate posts, not stock images.
+                </p>
+                <p>
+                  Corporate CSR teams can sponsor &quot;walls&quot; of 1,000 bricks (₹10,000) with employee site visits on Saturdays. Volunteers document build progress for social channels — a high-engagement alternative to generic cheque presentations.
+                </p>
+                <p className="text-sm text-gray-600">
+                  Related: <a href="/animalcare-ngo-detail" className="text-green-700 hover:underline">AnimalCare India profile</a>
+                  {' · '}
+                  <a href="/ngos/best-ngo-in-gurugram" className="text-green-700 hover:underline">NGOs in Gurugram</a>
+                  {' · '}
+                  <a href="/volunteer-opportunities-delhi" className="text-green-700 hover:underline">Volunteer Delhi NCR</a>
+                </p>
               </div>
             </section>
 

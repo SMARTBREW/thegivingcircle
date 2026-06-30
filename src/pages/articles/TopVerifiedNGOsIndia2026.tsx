@@ -10,12 +10,16 @@ const NGO_LIST = [
   { rank: 3, name: 'AnimalCare India', cause: 'Animal Welfare', location: 'Delhi, Pan-India', description: 'Stray animal rescue, vaccination and care programmes. Runs the Flood Animal Rescue programme during monsoons.', href: '/animalcare-ngo-detail', score: 95 },
   { rank: 4, name: 'Bowls of Hope', cause: 'Animal Welfare', location: 'Delhi NCR', description: 'Feeds thousands of stray animals weekly. Simple, measurable and verifiably impactful.', href: '/bowls-of-hope-cause-details', score: 94 },
   { rank: 5, name: 'Pawsitive Protectors', cause: 'Animal Welfare', location: 'Delhi NCR', description: 'Comprehensive stray animal care including spay/neuter, vaccination and rescue operations.', href: '/pawsitive-protectors-cause-details', score: 93 },
+  { rank: 6, name: '#PehliClass (JWP)', cause: 'Child Education', location: 'Noida · Delhi NCR', description: 'Finite bridge from informal learning to formal school — documentation, learning gaps, enrolment at Mera Sahara centre.', href: '/pehli-class-cause-details', score: 92 },
+  { rank: 7, name: 'Brick by Brick', cause: 'Animal Welfare', location: 'Gurugram', description: 'Building a permanent stray rehabilitation centre — boundary wall phase on secured 17,500 sq ft plot.', href: '/bricks-by-bricks-cause-details', score: 91 },
 ];
 
 const faqs = [
   { q: 'How do you verify NGOs before listing them?', a: 'Every NGO undergoes a 6-step check: FCRA registration, 80G certification, audited financials review, field programme verification, governance assessment, and impact reporting commitment.' },
   { q: 'Are donations to these NGOs tax deductible?', a: 'Yes. All NGOs listed on The Giving Circle have valid 80G certification. You receive an automatic tax receipt within 48 hours of donation.' },
   { q: 'Can I see how my donation was used?', a: 'Yes. All NGOs on our platform publish quarterly fund utilisation reports. You can see exactly which programmes were funded, how many beneficiaries were reached and what outcomes were achieved.' },
+  { q: 'How is this list different from a government NGO registry?', a: 'Government registries confirm registration status only. We add field verification, donor satisfaction signals, programme audits, and ongoing impact reporting requirements — NGOs can be registered yet still fail our transparency bar.' },
+  { q: 'Which cause area has the most verified partners on TGC?', a: 'As of 2026, animal welfare and child education have the deepest bench (rescue, feeding, vaccination, school bridge programmes). Disaster relief campaigns activate seasonally during monsoon.' },
 ];
 
 const TopVerifiedNGOsIndia2026 = () => {
@@ -130,6 +134,40 @@ const TopVerifiedNGOsIndia2026 = () => {
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Philanthropy in India — Why Verification Matters</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <p className="leading-relaxed">
+              India&apos;s charitable sector grew faster than donor literacy. UPI makes giving frictionless — but also makes scam pages profitable. The average donor spends under two minutes checking credentials before transferring ₹500–₹5,000. Fraudulent &quot;NGOs&quot; exploit that gap with stock photos and copied 80G certificate images.
+            </p>
+            <p className="leading-relaxed">
+              Verified giving means more than a registration number. It means audited accounts you can request, programme staff you can name, beneficiaries counted with methodology, and receipts issued from the NGO&apos;s own domain — not a personal Gmail. The Giving Circle exists so everyday donors get institutional-grade due diligence without hiring a consultant.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Cause Categories on The Giving Circle</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { cat: 'Education & bridge schooling', examples: 'JWP, #PehliClass', href: '/pehli-class-cause-details' },
+              { cat: 'Women & menstrual health', examples: 'Wings of Hope', href: '/jwp-cause-details' },
+              { cat: 'Animal rescue & shelter', examples: 'AnimalCare, Brick by Brick', href: '/bricks-by-bricks-cause-details' },
+              { cat: 'Vaccination & rabies', examples: 'Pawsitive Protectors', href: '/pawsitive-protectors-cause-details' },
+              { cat: 'Street feeding', examples: 'Bowls of Hope', href: '/bowls-of-hope-cause-details' },
+              { cat: 'Disaster relief', examples: 'Flood relief & animal rescue', href: '/flood-relief-cause-details' },
+            ].map(({ cat, examples, href }) => (
+              <Link key={href} to={href} className="block bg-white border border-gray-200 rounded-xl p-5 hover:border-green-500 hover:shadow-md transition-all">
+                <h3 className="font-semibold text-gray-900 mb-1">{cat}</h3>
+                <p className="text-gray-600 text-sm mb-2">{examples}</p>
+                <span className="text-green-700 text-sm font-medium">Explore →</span>
+              </Link>
             ))}
           </div>
         </section>

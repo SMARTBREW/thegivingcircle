@@ -9,6 +9,8 @@ const faqs = [
   { q: 'Which is the most trusted NGO in Delhi for education donations?', a: 'JWP (Joint Women\'s Program) is among the most transparent education-focused NGOs in Delhi NCR listed on The Giving Circle, with published quarterly impact reports.' },
   { q: 'Can I get a tax receipt for donating to a Delhi NGO?', a: 'Yes. All NGOs listed on The Giving Circle have valid 80G certification. Donations generate an automatic 80G receipt emailed to you within 48 hours.' },
   { q: 'How is The Giving Circle different from other donation platforms?', a: 'We use a collective giving model where communities pool donations to fund larger interventions. We also do independent verification of every listed NGO rather than relying on self-reported data.' },
+  { q: 'Which Delhi districts do your listed NGOs serve?', a: 'Partners operate across South Delhi (Okhla), Noida/Nithari, Gurugram, and pan-NCR mobile programmes (animal rescue, feeding). Check each cause page for exact catchment.' },
+  { q: 'How much should I donate to a Delhi NGO?', a: 'Any amount helps — ₹500 may cover a week of supplementary learning materials; ₹5,000 can support a child\'s bridge-school milestone; ₹50,000+ suits CSR or group giving. All listed partners issue 80G receipts where applicable.' },
 ];
 
 const VerifiedNGOsInDelhi = () => {
@@ -173,7 +175,7 @@ const VerifiedNGOsInDelhi = () => {
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Guides, Volunteering &amp; Top Lists</h2>
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
-            <Link to="/ngo-in-noida" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
+            <Link to="/ngos/best-ngo-in-noida" className="block bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:border-green-500 transition-all">
               <h3 className="text-lg font-semibold text-gray-900 mb-1">NGOs in Noida</h3>
               <p className="text-gray-600 text-sm mb-1">Verified partners and how to donate</p>
               <p className="text-green-700 text-sm">View guide →</p>
@@ -198,6 +200,45 @@ const VerifiedNGOsInDelhi = () => {
               <p className="text-gray-600 text-sm mb-1">Animal Care rescue centre · ₹10/brick · boundary wall · 80G where applicable</p>
               <p className="text-green-700 text-sm">See campaign →</p>
             </Link>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Step-by-Step: Verify a Delhi NGO Before You Donate</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="space-y-4">
+            {[
+              { step: 1, title: 'Confirm legal name', body: 'Match the trust/society name on the website with the 80G certificate and bank account beneficiary name — scammers often use similar branding.' },
+              { step: 2, title: 'Check FCRA (if foreign funds)', body: 'Search fcraonline.nic.in for active registration if the NGO receives overseas donations.' },
+              { step: 3, title: 'Validate 80G', body: 'Income Tax portal → "Tax Exemption Institutions" search. Note registration number and validity period on your receipt.' },
+              { step: 4, title: 'Read one annual report', body: 'Legitimate Delhi NGOs publish programme stats — children enrolled, animals treated, not only financial totals.' },
+              { step: 5, title: 'Prefer pre-verified platforms', body: 'The Giving Circle lists only partners that passed steps 1–4 plus field verification — skip the guesswork.' },
+            ].map(({ step, title, body }) => (
+              <div key={step} className="flex gap-4 bg-white rounded-lg p-4 border border-gray-100">
+                <span className="shrink-0 w-8 h-8 bg-green-700 text-white rounded-full flex items-center justify-center font-bold text-sm">{step}</span>
+                <div>
+                  <h3 className="font-semibold text-gray-900">{title}</h3>
+                  <p className="text-gray-700 text-sm">{body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Donation Impact in Delhi NCR (Illustrative)</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid sm:grid-cols-3 gap-4">
+            {[
+              { amt: '₹500', impact: 'Menstrual hygiene kit + counselling for one adolescent girl (JWP programmes)' },
+              { amt: '₹1,600/mo', impact: 'One child\'s bridge-school support via #PehliClass' },
+              { amt: '₹10,000', impact: 'Sponsor 1,000 bricks on Gurgaon stray shelter wall' },
+            ].map(({ amt, impact }) => (
+              <div key={amt} className="bg-white border border-gray-200 rounded-xl p-5 text-center">
+                <div className="text-2xl font-bold text-green-700 mb-2">{amt}</div>
+                <p className="text-gray-700 text-sm">{impact}</p>
+              </div>
+            ))}
           </div>
         </section>
 
@@ -230,7 +271,7 @@ const VerifiedNGOsInDelhi = () => {
             {[
               { label: 'Best NGOs in Delhi', href: '/ngos/best-ngo-in-delhi' },
               { label: 'Top NGOs in Delhi 2026', href: '/top-ngos-in-delhi-2026' },
-              { label: 'NGOs in Noida', href: '/ngo-in-noida' },
+              { label: 'NGOs in Noida', href: '/ngos/best-ngo-in-noida' },
               { label: 'Volunteer in Delhi', href: '/volunteer-opportunities-delhi' },
               { label: 'Verified NGO list (India)', href: '/ngo-list' },
               { label: '#PehliClass — donate for child education India', href: '/pehli-class-cause-details' },

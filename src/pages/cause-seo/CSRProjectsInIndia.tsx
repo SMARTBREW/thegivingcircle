@@ -10,6 +10,8 @@ const faqs = [
   { q: 'Is animal welfare CSR-eligible in India?', a: 'Yes. Schedule VII Clause (iv) covers animal welfare, agroforestry, conservation of natural resources and biodiversity. Our animal welfare causes on The Giving Circle are eligible for CSR funding.' },
   { q: 'Can multiple companies co-fund a single CSR project?', a: 'Yes  -  this is the core of our Giving Circle model. Multiple corporates can co-fund a single programme with clearly defined contribution percentages and joint impact reporting.' },
   { q: 'What is the minimum CSR contribution you work with?', a: 'We typically work with CSR contributions of ₹5 lakh and above for structured partnerships. Smaller amounts can be directed to live causes directly.' },
+  { q: 'What happens to unspent CSR funds?', a: 'Under Companies Act rules, unspent CSR amounts must be transferred to specified government funds (e.g. PM CARES for certain cases) or spent within prescribed timelines with board disclosure. We help corporates plan deployments early in the financial year to avoid last-minute rush and compliance gaps.' },
+  { q: 'How does CSR map to BRSR reporting?', a: 'Listed and large unlisted companies disclose CSR spend, beneficiary themes, and impact in the Business Responsibility and Sustainability Report. Our quarterly impact packs include beneficiary numbers, geotagged photos, and fund utilisation summaries formatted for audit and BRSR annexures.' },
 ];
 
 const CSRProjectsInIndia = () => {
@@ -126,6 +128,119 @@ const CSRProjectsInIndia = () => {
                 <p className="text-gray-700 text-sm">{desc}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* CSR calendar */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">CSR Planning Calendar (India Financial Year)</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="space-y-3">
+            {[
+              { month: 'Apr–Jun', task: 'Board CSR committee approves annual plan; shortlist NGOs; sign MOUs before monsoon disrupts field work.' },
+              { month: 'Jul–Sep', task: 'Deploy first tranche; launch education/animal welfare programmes; document baseline beneficiary counts.' },
+              { month: 'Oct–Dec', task: 'Mid-year review; course-correct underperforming projects; plan employee volunteering days.' },
+              { month: 'Jan–Mar', task: 'Final tranche; impact assessment; Form CSR-2 data prep; Annual Report / BRSR narrative.' },
+            ].map(({ month, task }) => (
+              <div key={month} className="flex gap-4 bg-white rounded-lg p-4 border border-gray-100">
+                <span className="font-bold text-green-800 shrink-0 w-20">{month}</span>
+                <p className="text-gray-700 text-sm">{task}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Live CSR projects */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Live CSR-Eligible Projects on The Giving Circle</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <p className="text-gray-600 mb-6">Each project below maps to Schedule VII categories with implementing NGO documentation available for your CSR committee.</p>
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                title: '#PehliClass — Child education bridge',
+                schedule: 'Schedule VII (ii) — Education',
+                desc: 'Sponsor formal school admissions, uniforms, and learning support for children exiting informal education. Ideal for corporates prioritising girl child education and NCR impact.',
+                budget: 'From ₹5L programme blocks',
+                href: '/pehli-class-cause-details',
+              },
+              {
+                title: 'Brick by Brick — Animal shelter Gurgaon',
+                schedule: 'Schedule VII (iv) — Animal welfare',
+                desc: 'Fund boundary wall and rehabilitation infrastructure for injured strays. Strong employee engagement angle — site visits and brick-laying team days.',
+                budget: '₹10/brick · ₹50K milestone',
+                href: '/bricks-by-bricks-cause-details',
+              },
+              {
+                title: 'JWP — Wings of Hope (menstrual health + education)',
+                schedule: 'Schedule VII (ii) & (iii) — Education / Women',
+                desc: 'Combined girls\' education and menstrual hygiene programme in Delhi NCR. Dual-theme CSR reporting in one audited partner.',
+                budget: 'Flexible grants',
+                href: '/jwp-cause-details',
+              },
+              {
+                title: 'Flood relief & disaster rehabilitation',
+                schedule: 'Schedule VII (xii) — Disaster management',
+                desc: 'Emergency shelter, medical camps, and post-flood livelihood restoration in Uttarakhand. Suitable for disaster-response CSR reserves.',
+                budget: 'Project-based',
+                href: '/flood-relief-cause-details',
+              },
+              {
+                title: 'Pawsitive Protectors — Rabies vaccination',
+                schedule: 'Schedule VII (iv) — Animal welfare / public health',
+                desc: 'Mass anti-rabies drives across Delhi NCR and Mumbai. Measurable KPIs: doses administered, coverage % per ward.',
+                budget: 'Per-camp sponsorship',
+                href: '/pawsitive-protectors-cause-details',
+              },
+              {
+                title: 'Bowls of Hope — Street animal nutrition',
+                schedule: 'Schedule VII (iv) — Animal welfare',
+                desc: 'Daily feeding stations in Mumbai and Chennai. Ongoing OPEX model — ideal for annual CSR retainers.',
+                budget: 'Monthly station sponsorship',
+                href: '/bowls-of-hope-cause-details',
+              },
+            ].map(({ title, schedule, desc, budget, href }) => (
+              <div key={href} className="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow">
+                <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-medium">{schedule}</span>
+                <h3 className="text-lg font-bold text-gray-900 mt-3 mb-2">{title}</h3>
+                <p className="text-gray-700 text-sm mb-3 leading-relaxed">{desc}</p>
+                <p className="text-gray-500 text-xs mb-3"><strong>Typical budget:</strong> {budget}</p>
+                <Link to={href} className="text-green-700 font-medium text-sm hover:underline">View project →</Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Sector ideas */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">CSR Ideas by Corporate Sector</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold">Sector</th>
+                  <th className="text-left p-4 font-semibold">Natural CSR fit</th>
+                  <th className="text-left p-4 font-semibold">Example on TGC</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { sector: 'IT / Tech (NCR)', fit: 'Digital literacy, STEM tutoring, remote skills volunteering', example: 'JWP tutoring + Pehli Class' },
+                  { sector: 'Manufacturing', fit: 'Worker community health, girl child education near plants', example: 'Women empowerment + education' },
+                  { sector: 'FMCG / Retail', fit: 'Menstrual health product distribution, nutrition', example: 'Wings of Hope' },
+                  { sector: 'Real estate / Infra', fit: 'School infrastructure, disaster rehab in project states', example: 'Flood relief, Pehli Class' },
+                  { sector: 'Financial services', fit: 'Financial literacy for SHGs, livelihood programmes', example: 'Women empowerment NGOs' },
+                  { sector: 'Pharma / Healthcare', fit: 'Vaccination camps, rabies prevention, medical relief', example: 'Pawsitive Protectors' },
+                ].map((row) => (
+                  <tr key={row.sector}>
+                    <td className="p-4 font-medium text-gray-900">{row.sector}</td>
+                    <td className="p-4 text-gray-700">{row.fit}</td>
+                    <td className="p-4 text-gray-600">{row.example}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 

@@ -233,9 +233,9 @@ const JwpCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Donate Sanitary Pads to Girls | Support Menstrual Hygiene India"
-        description="Join our giving community to support period poverty in India. Donate for menstrual hygiene, sponsor sanitary pads, and help girls stay in school. Verified NGO partner support for women empowerment India."
-        keywords="menstrual hygiene NGO donation, donate menstrual products, donate sanitary napkins, sanitary napkin donation, sanitary napkins reusable, period poverty, donate for menstrual hygiene, donating pads, donate sanitary pads to girls, support period poverty, sponsor menstrual hygiene kits, donate for girl child health, contribute to menstrual awareness campaign, fund menstrual hygiene program, menstrual hygiene scheme, menstrual hygiene day activities, help girls stay in school during periods, end period poverty in rural, support dignity for women, provide sanitary pads to underprivileged girls, empower girls through menstrual health, menstrual hygiene awareness donation, period awareness campaign support, donate to menstrual education programs, support menstrual health workshops, CSR for menstrual hygiene, corporate sponsorship for sanitary pad distribution, CSR project for girl child health, menstrual hygiene CSR partnership"
+        title="Wings of Hope | JWP Menstrual Health & Girls Education | Donate 80G"
+        description="Support JWP's Wings of Hope programme in Delhi NCR: menstrual health education, sanitary products, and keeping girls in school. Verified partner with 80G tax-deductible donations."
+        keywords="JWP menstrual health, donate sanitary pads girls India, period poverty NGO Delhi, girls education support, Wings of Hope JWP, 80G women empowerment"
         canonicalUrl="https://www.thegivingcircle.in/jwp-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183103/images/khushi/HomePageTop.jpg"
       />
@@ -252,7 +252,7 @@ const JwpCauseDetailPage = () => {
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
         <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-8 sm:mb-10">
-            Donate for Menstrual Hygiene Help Girls Stay in School During Periods
+            Wings of Hope — Menstrual Health So Girls Stay in School
           </h1>
           <div className="w-20 h-1.5 bg-green-700 mb-8"></div>
 
@@ -573,6 +573,36 @@ const JwpCauseDetailPage = () => {
                     <a href="http://www.jwp.org" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.jwp.org</a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Period poverty India guide" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Period Poverty in India — What Donors Should Know
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  Roughly one in five girls in India drop out of school after menarche. The cause is rarely academic — it is shame, lack of products, absent school toilets, and zero counselling when periods begin. Wings of Hope operates at that exact moment: trained community workers, reusable pad kits where appropriate, and classroom sessions that normalise biology without spectacle.
+                </p>
+                <p>
+                  JWP (Joint Women&apos;s Programme) has worked in Delhi&apos;s informal settlements for over a decade. The programme pairs menstrual support with education continuity — because a month of missed school becomes a year, then a lifetime of lost wages.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900">Programme components your donation funds</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Community awareness sessions for girls, mothers, and male family members</li>
+                  <li>Distribution of sanitary products and hygiene kits</li>
+                  <li>School coordination for toilet access and emergency supplies</li>
+                  <li>Follow-up tracking so girls return after absence</li>
+                </ul>
+                <p className="text-sm text-gray-600">
+                  Related:{' '}
+                  <a href="/pehli-class-cause-details" className="text-green-700 hover:underline">#PehliClass education bridge</a>
+                  {' · '}
+                  <a href="/ngo-for-women-empowerment" className="text-green-700 hover:underline">Women empowerment NGOs</a>
+                  {' · '}
+                  <a href="/volunteer-opportunities-delhi" className="text-green-700 hover:underline">Volunteer in Delhi</a>
+                </p>
               </div>
             </section>
 

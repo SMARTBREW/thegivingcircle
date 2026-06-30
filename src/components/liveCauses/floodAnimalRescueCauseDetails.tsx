@@ -201,9 +201,9 @@ const FloodAnimalRescueCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Animal Rescue India | Emergency Response & Recovery"
-        description="Save animals trapped in India's floods. Support emergency animal rescue operations and disaster relief. Join a trusted animal welfare NGO India in protecting voiceless victims."
-        keywords="flood animal rescue operations, flood rescue team, emergency animal rescue, disaster relief, animal welfare ngo, save stray dogs, emergency response, disaster rehabilitation animals, help flood victims Uttarakhand, flood relief Uttarakhand, animal rescue Mumbai, support animal evacuation, animal welfare board, animal rescue foundation, prevention of cruelty to animals act, dog rescue, animal rescue shelters near me, dog rescue home near me, home for animals, people for animals, animal resource center, help in suffering, CSR for animal welfare, corporate partnership for disaster relief, animal safety"
+        title="Flood Animal Rescue India | Emergency Stray & Livestock Rescue | 80G"
+        description="Deploy trained teams to rescue animals trapped in India's monsoon floods. Emergency medical care, evacuation, and post-flood rehabilitation across Uttarakhand, Kerala, Assam, and more."
+        keywords="flood animal rescue India, emergency animal rescue, stray dog flood rescue, disaster relief animals, donate animal rescue, 80G animal welfare"
         canonicalUrl="https://www.thegivingcircle.in/flood-animal-rescue-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183011/images/animal-flood/animal7.png"
       />
@@ -578,6 +578,32 @@ const FloodAnimalRescueCauseDetailPage = () => {
                     <a href="http://www.animalcareindia.org.in" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.animalcareindia.org.in</a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Why flood animal rescue matters" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Why Animals Need Separate Flood Rescue Operations
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  Human disaster protocols rarely include animals. Evacuation buses turn away dogs. Relief camps have no fodder. Livestock owners face an impossible choice: flee and abandon cattle, or stay and drown. Wildlife corridors flood simultaneously — deer, nilgai, and smaller mammals get swept into urban drains.
+                </p>
+                <p>
+                  AnimalCare India&apos;s flood teams operate with inflatable rafts, catch poles, portable oxygen, and field veterinarians. A typical deployment sequence: (1) map stranded clusters via community WhatsApp alerts, (2) extract animals to dry staging areas, (3) treat hypothermia and lacerations, (4) reunite pets with owners when microchips or collar tags exist, (5) transfer unowned animals to partner shelters.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900">States covered during 2024 monsoon</h3>
+                <p>
+                  Active corridors included Uttarakhand (glacial flood fallout), Kerala (Wayanad landslides), Assam (Brahmaputra basin), Bihar, West Bengal, Odisha, Andhra Pradesh, and Tamil Nadu. Teams scale up when NDMA issues multi-state advisories — your donation funds fuel, vet hours, and temporary pens, not overhead marketing.
+                </p>
+                <p className="text-sm text-gray-600">
+                  Related: <a href="/flood-relief-cause-details" className="text-green-700 hover:underline">Human flood relief Uttarakhand</a>
+                  {' · '}
+                  <a href="/animal-emergency.html" className="text-green-700 hover:underline">Animal emergency helpline</a>
+                  {' · '}
+                  <a href="/animal-welfare/delhi-ncr" className="text-green-700 hover:underline">Animal welfare Delhi NCR</a>
+                </p>
               </div>
             </section>
 

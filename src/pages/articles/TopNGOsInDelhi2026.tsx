@@ -1,17 +1,25 @@
 import { Link } from 'react-router-dom';
-import { Shield, CheckCircle } from 'lucide-react';
+import { Shield, CheckCircle, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
+import { useState } from 'react';
+
+const faqs = [
+  { q: 'How often is this Delhi NGO list updated?', a: 'We review partner credentials and impact data quarterly. Rankings change when audits lapse, programmes scale, or new verified partners join The Giving Circle.' },
+  { q: 'Why are some rank numbers skipped (e.g. #1 then #3)?', a: 'We only publish ranks for partners that pass full verification. Gaps mean a slot is reserved for NGOs completing onboarding — we do not pad lists with unverified names.' },
+  { q: 'Can I volunteer with these Delhi NGOs?', a: 'Yes. JWP, AnimalCare India, and Bowls of Hope accept volunteers — see our Delhi NCR volunteer guide for roles, eligibility, and how to apply.' },
+];
 
 const TopNGOsInDelhi2026 = () => {
   const currentDate = new Date().toISOString().split('T')[0];
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
 
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
         title="Top NGOs in Delhi You Can Trust for Donations in 2026 | The Giving Circle"
         description="Find the most trusted and transparent NGOs in Delhi in 2026. Ranked by impact, transparency and donor trust. Includes 80G status, cause areas and how to donate safely."
-        keywords="top NGOs in Delhi 2026, best NGOs Delhi, best ngo in delhi ncr, delhi best ngo, ngo delhi, delhi ngo list, trusted charities Delhi, donate to NGO Delhi, verified Delhi NGOs, most transparent NGOs Delhi, charitable trust in delhi ncr, dog shelter delhi, dog rescue delhi, pet shelters in delhi, stray dog in delhi, street dog food, people for animals, animal welfare association"
+        keywords="top NGOs in Delhi 2026, best NGOs Delhi, verified NGOs Delhi NCR, donate Delhi NGO, trusted charities Delhi, 80G NGO Delhi"
         canonicalUrl="https://www.thegivingcircle.in/top-ngos-in-delhi-2026"
         ogTitle="Top NGOs in Delhi 2026  -  Trusted Charities | The Giving Circle"
         ogDescription="Delhi's most trusted NGOs ranked by transparency, impact and donor satisfaction. 80G tax benefits available."
@@ -61,7 +69,7 @@ const TopNGOsInDelhi2026 = () => {
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>By The Giving Circle Research Team</span>
             <span>•</span>
-            <span>7 min read</span>
+            <span>10 min read</span>
           </div>
         </div>
       </section>
@@ -92,6 +100,7 @@ const TopNGOsInDelhi2026 = () => {
               // { rank: 2, name: 'JWP', cause: 'Education & Child Welfare', description: 'One of Delhi\'s most established NGOs with programmes spanning education, nutrition and community health.', impact: '1,200+ beneficiaries annually', founded: '2008', href: '/jwp-cause-details' },
               { rank: 3, name: 'AnimalCare India', cause: 'Animal Welfare', description: 'Delhi\'s leading stray animal welfare organisation. Runs mass vaccination drives, emergency rescue and a specialised Flood Animal Rescue programme.', impact: '10,000+ animals treated annually', founded: '2014', href: '/animalcare-ngo-detail' },
               { rank: 4, name: 'Bowls of Hope', cause: 'Animal Welfare', description: 'Feeds stray animals across Delhi NCR daily. Simple mission, transparent operations and growing volunteer network.', impact: '5,000+ meals served weekly', founded: '2016', href: '/bowls-of-hope-cause-details' },
+              { rank: 5, name: '#PehliClass (JWP)', cause: 'Child Education', description: 'Bridge programme at Mera Sahara, Nithari — moves out-of-school children into formal schools with documentation, learning support, and 80G where applicable.', impact: 'Finite cohorts with enrolment milestones', founded: '2024', href: '/pehli-class-cause-details' },
             ].map(({ rank, name, cause, description, impact, founded, href }) => (
               <div key={rank} className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
                 <div className="bg-gray-50 px-6 py-3 flex items-center gap-3 border-b border-gray-100">
@@ -116,6 +125,37 @@ const TopNGOsInDelhi2026 = () => {
           </div>
         </section>
 
+        {/* Delhi cause map */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Delhi NCR Cause Areas — Where NGOs Focus</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold">Area</th>
+                  <th className="text-left p-4 font-semibold">Primary need</th>
+                  <th className="text-left p-4 font-semibold">Example partner</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { area: 'South Delhi (Okhla)', need: 'Girl child education, menstrual health', partner: 'JWP Wings of Hope' },
+                  { area: 'Noida / Nithari', need: 'Out-of-school bridge to formal school', partner: '#PehliClass' },
+                  { area: 'Gurugram periphery', need: 'Stray shelter infrastructure', partner: 'Brick by Brick' },
+                  { area: 'Pan-NCR roads', need: 'Rescue, vaccination, feeding', partner: 'AnimalCare / Bowls of Hope' },
+                ].map((row) => (
+                  <tr key={row.area}>
+                    <td className="p-4 font-medium text-gray-900">{row.area}</td>
+                    <td className="p-4 text-gray-700">{row.need}</td>
+                    <td className="p-4 text-gray-600">{row.partner}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
         {/* How to Choose */}
         <section className="mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">How to Choose the Right Delhi NGO to Donate To</h2>
@@ -133,6 +173,27 @@ const TopNGOsInDelhi2026 = () => {
                   <span className="font-semibold text-gray-900">{tip}: </span>
                   <span className="text-gray-700">{body}</span>
                 </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Frequently Asked Questions</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div key={index} className="border border-gray-200 rounded-lg overflow-hidden bg-white">
+                <button
+                  onClick={() => setOpenFaqIndex(openFaqIndex === index ? null : index)}
+                  className="w-full flex items-center justify-between p-4 sm:p-5 hover:bg-gray-50 transition-colors text-left"
+                >
+                  <span className="font-semibold text-gray-900 text-sm sm:text-base pr-4">{faq.q}</span>
+                  {openFaqIndex === index ? <ChevronUp className="text-green-700 shrink-0" size={20} /> : <ChevronDown className="text-gray-400 shrink-0" size={20} />}
+                </button>
+                {openFaqIndex === index && (
+                  <div className="p-4 sm:p-5 pt-0 text-gray-600 text-sm sm:text-base leading-relaxed">{faq.a}</div>
+                )}
               </div>
             ))}
           </div>

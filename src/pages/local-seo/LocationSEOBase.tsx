@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, CheckCircle, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
+import { getCitySeoGuide } from '../../constants/citySeoGuides';
 
 interface LocationSEOBaseProps {
   location: string;
@@ -11,7 +12,7 @@ interface LocationSEOBaseProps {
   description: string;
   keywords: string;
   primaryKeyword: string;
-  /** Default `/ngos/{locationSlug}` — use `/ngo-in-noida` etc. for routes not under `/ngos/`. */
+  /** Default `/ngos/{locationSlug}`. */
   canonicalPath?: string;
   /** Overrides default H1 when keyword already includes the city (avoids duplicate "in Delhi"). */
   heroHeadline?: string;
@@ -20,9 +21,6 @@ interface LocationSEOBaseProps {
   relatedLocations?: Array<{ name: string; slug: string }>;
   relatedKeywords?: Array<{ keyword: string; slug: string }>;
 }
-
-const GLOBAL_KEYWORDS =
-  'causes to support, community causes, community giving, community helpline, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, community care, social causes to support, social giving, support social causes, donate sanitary pads, period poverty, rabies prevention, stray dog vaccination, animal welfare ngo, menstrual hygiene, ngo role, role of ngo, donation 80g, act of kindness, helping the poor, fundraising meaning, top NGO, best NGO';
 
 /** When primaryKeyword already ends with " in {location}", use it as H1 as-is (no double city). */
 function defaultHeroHeadline(primaryKeyword: string, location: string): string {
@@ -50,6 +48,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
 }) => {
   const path = canonicalPath ?? `/ngos/${locationSlug}`;
   const canonicalUrl = `https://www.thegivingcircle.in${path.startsWith('/') ? path : `/${path}`}`;
+  const cityGuide = getCitySeoGuide(locationSlug);
   const currentDate = new Date().toISOString().split('T')[0];
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
@@ -82,7 +81,7 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
       <SEOHead
         title={title}
         description={description}
-        keywords={`${keywords}, ${GLOBAL_KEYWORDS}`}
+        keywords={keywords}
         canonicalUrl={canonicalUrl}
         ogTitle={title}
         ogDescription={description}
@@ -168,12 +167,26 @@ const LocationSEOBase: React.FC<LocationSEOBaseProps> = ({
           <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
 
           <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 mb-4">
-              {location} is home to numerous non-profit organizations working tirelessly to create positive social change through community giving and social giving. At The Giving Circle, our giving platform and community support platform connect you with the most trusted and verified NGOs in {location} that are making a real difference through community support and support of community initiatives.
-            </p>
-            <p className="text-gray-700 mb-4">
-              Our giving platform ensures transparency, accountability, and real impact through community support and giving to community initiatives. Every NGO partner undergoes a rigorous verification process so your contributions reach those who need them most.
-            </p>
+            {cityGuide ? (
+              <>
+                <p className="text-gray-700 mb-4 leading-relaxed">{cityGuide.context}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Featured programmes in {location}</h3>
+                <ul className="list-disc list-inside space-y-2 mb-4 text-gray-700">
+                  {cityGuide.highlights.map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  {location} has active NGOs working on education, health, animal welfare, and disaster response. The Giving Circle lists only partners with FCRA/80G documentation and quarterly impact reporting.
+                </p>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  Compare live causes, volunteer opportunities, and donation routes from one verified directory — without navigating duplicate or unverified listings.
+                </p>
+              </>
+            )}
           </div>
         </section>
 

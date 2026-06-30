@@ -209,7 +209,7 @@ const BowlsOfHopeCauseDetailPage = () => {
       <SEOHead
         title="Bowls of Hope | Feed Street Dogs Mumbai and Chennai | Animal Nutrition NGO"
         description="Donate to daily stray dog and street animal feeding in Mumbai and Chennai: hot meals, vaccination drives and Animal Care India outreach. Transparent fund use  -  your gift scales nutrition for hungry animals across India's busiest cities."
-        keywords="bowls of hope, feed stray dogs India, stray dog feeding Mumbai Chennai, street animal feeding programme, animal nutrition NGO India, donate animal welfare Mumbai, stray dog food Chennai, rabies vaccination drive donation India, CSR animal welfare"
+        keywords="Bowls of Hope, feed stray dogs Mumbai Chennai, street animal feeding programme, animal nutrition NGO India, donate animal welfare 80G"
         canonicalUrl="https://www.thegivingcircle.in/bowls-of-hope-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183042/images/animals-bowl/animal5.jpg"
       />
@@ -546,6 +546,34 @@ const BowlsOfHopeCauseDetailPage = () => {
                     <a href="http://www.animalcareindia.org.in" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.animalcareindia.org.in</a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Street feeding guide" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                How Systematic Street Feeding Changes Cities
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  Random feeding — rice tossed at midnight, bread at traffic junctions — creates territorial fights, waste, and resident complaints. Bowls of Hope runs <strong>mapped feeding stations</strong> with fixed times, measured nutrition, and volunteer rosters so animals know where to come and communities know when routes operate.
+                </p>
+                <p>
+                  In Chennai and Mumbai, the programme serves 2,000+ animals daily across rotating routes. Meals are formulated with vet input (protein, calcium, hydration) — not leftover restaurant scraps. Stations include clean water points; several tie into ABC (animal birth control) census data so the same colonies receive vaccination follow-ups.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900">Volunteer and donor roles</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li><strong>₹100/day donor:</strong> sponsors one feeding round for a station cluster.</li>
+                  <li><strong>Weekend volunteer:</strong> 6–8am route helper — load bowls, log counts, report injured animals.</li>
+                  <li><strong>Corporate team:</strong> sponsor a month of nutrition for one ward + employee feeding day.</li>
+                </ul>
+                <p className="text-sm text-gray-600">
+                  Related: <a href="/volunteer-opportunities-delhi" className="text-green-700 hover:underline">Volunteer in Delhi NCR</a>
+                  {' · '}
+                  <a href="/pawsitive-protectors-cause-details" className="text-green-700 hover:underline">Rabies vaccination drives</a>
+                  {' · '}
+                  <a href="/animal-welfare/mumbai" className="text-green-700 hover:underline">Animal welfare Mumbai</a>
+                </p>
               </div>
             </section>
 

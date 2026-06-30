@@ -552,9 +552,9 @@ const renderDocuments = () => (
 return (
   <div className="min-h-screen bg-gray-50 mt-[150px]">
     <SEOHead
-      title="Wings of Hope Impact Story - Women Empowerment Success | Community Support Platform"
-      description="Explore the Wings of Hope impact story through our giving platform and community support platform. See how our giving community supports social causes through social giving and community support. Give and help create real impact through our circle of support for women empowerment in India."
-      keywords="Wings of Hope, impact story, success story, women empowerment, empowering women, giving platform, community support platform, giving community, social giving, community support, support social causes, give and help, causes to support, act of kindness, helping the poor, help in suffering, ngo role, role of ngo"
+      title="Wings of Hope Impact Story | Women & Girls Education | The Giving Circle"
+      description="How Wings of Hope and Joint Women's Programme helped girls in Delhi NCR stay in school through menstrual health education, bridge learning, and community support."
+      keywords="Wings of Hope, JWP impact story, women empowerment India, girls education Delhi NCR, menstrual health NGO, verified NGO impact"
       canonicalUrl="https://www.thegivingcircle.in/impact-stories/wings-of-hope"
     />
     {/* Navigation */}

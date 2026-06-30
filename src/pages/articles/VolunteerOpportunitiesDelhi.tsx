@@ -10,6 +10,8 @@ const faqs = [
   { q: 'Can corporate employees volunteer as a team?', a: 'Yes most NGO partners welcome corporate volunteering groups and can structure team volunteering days. This also counts toward employee engagement and CSR programmes.' },
   { q: 'Is weekend volunteering available?', a: 'Yes. Most teaching and feeding drive opportunities are available on Saturdays and Sundays for working professionals.' },
   { q: 'Can I volunteer remotely?', a: 'Yes. Skills-based volunteering (design, accounting, IT, social media) can be done entirely remotely. Several NGOs also have remote education support roles.' },
+  { q: 'Which metro stations are near partner NGO sites?', a: 'JWP programmes in Okhla are reachable via Okhla NSIC (Magenta Line) and Kalkaji Mandir. Animal Care rescue sorties often start from Gurugram — Sikanderpur / HUDA City Centre on the Yellow Line. Exact pin codes are shared after onboarding.' },
+  { q: 'Can school students under 18 volunteer?', a: 'Yes for many roles with parent/guardian consent and NGO safeguarding clearance. Field rescue roles typically require 18+. Online tutoring and content roles often accept 16+ with supervision.' },
 ];
 
 const VolunteerOpportunitiesDelhi = () => {
@@ -57,7 +59,7 @@ const VolunteerOpportunitiesDelhi = () => {
             Weekend tutoring, feeding drives, animal rescue squads, remote design/finance help, and CSR team days—each tied to our vetted partners so you know the time ask before you say yes.
           </p>
           <div className="flex items-center gap-4 text-sm text-gray-500">
-            <span>By The Giving Circle Team</span><span>•</span><span>5 min read</span>
+            <span>By The Giving Circle Team</span><span>•</span><span>10 min read</span>
           </div>
         </div>
       </section>
@@ -94,6 +96,127 @@ const VolunteerOpportunitiesDelhi = () => {
                 <p className="text-gray-700 text-sm mb-3">{desc}</p>
                 <span className="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded-full font-medium">Time: {commitment}</span>
               </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Delhi NCR by city */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Volunteer Opportunities by Delhi NCR City</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                city: 'Delhi (South & Central)',
+                focus: 'Education, menstrual health awareness, community outreach',
+                roles: ['Weekend tutors at JWP (Okhla)', 'Event support for Wings of Hope drives', 'Content volunteers for donor updates'],
+                link: { label: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
+              },
+              {
+                city: 'Gurugram / Gurgaon',
+                focus: 'Animal rescue, shelter build, corporate CSR days',
+                roles: ['Animal Care rescue weekends', 'Brick by Brick site visits (by appointment)', 'Skills clinics for NGO back-office'],
+                link: { label: 'NGOs in Gurugram', href: '/ngos/best-ngo-in-gurugram' },
+              },
+              {
+                city: 'Noida & Greater Noida',
+                focus: 'Education bridge programmes, feeding drives',
+                roles: ['Pehli Class mentorship windows', 'Bowls of Hope satellite feeding routes', 'CSR team volunteering from Noida corporates'],
+                link: { label: 'NGOs in Noida', href: '/ngos/best-ngo-in-noida' },
+              },
+              {
+                city: 'Faridabad & Ghaziabad',
+                focus: 'Community health camps, animal welfare periphery',
+                roles: ['Vaccination camp assistants (seasonal)', 'Awareness drives in industrial colonies', 'Remote design/fundraising support'],
+                link: { label: 'NGOs in Faridabad', href: '/ngos/best-ngo-in-faridabad' },
+              },
+            ].map(({ city, focus, roles, link }) => (
+              <div key={city} className="bg-white border border-gray-200 rounded-xl p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{city}</h3>
+                <p className="text-gray-600 text-sm mb-3"><strong>Focus:</strong> {focus}</p>
+                <ul className="list-disc list-inside space-y-1 mb-4">
+                  {roles.map((r) => (
+                    <li key={r} className="text-gray-700 text-sm">{r}</li>
+                  ))}
+                </ul>
+                <Link to={link.href} className="text-green-700 text-sm font-medium hover:underline">{link.label} →</Link>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Seasonal calendar */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">When to Volunteer — Delhi NCR Seasonal Calendar</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="space-y-4">
+            {[
+              { season: 'Jan–Mar (winter)', activity: 'Peak tutoring season; vaccination camps; CSR financial year planning drives', demand: 'High — book slots early' },
+              { season: 'Apr–Jun (summer)', activity: 'Summer bridge classes; Pehli Class intake; student CAS/Duke volunteering surge', demand: 'Very high for education roles' },
+              { season: 'Jul–Sep (monsoon)', activity: 'Flood animal rescue standby; indoor skills volunteering; donor report season', demand: 'Rescue roles spike during heavy rain alerts' },
+              { season: 'Oct–Dec (festive)', activity: 'Fundraising events; feeding drives; corporate team days before year-end', demand: 'High for events and corporate groups' },
+            ].map(({ season, activity, demand }) => (
+              <div key={season} className="flex flex-col sm:flex-row sm:items-center gap-3 bg-white rounded-lg p-4 border border-gray-100">
+                <span className="shrink-0 font-semibold text-green-800 bg-green-50 px-3 py-1 rounded-full text-sm w-fit">{season}</span>
+                <p className="text-gray-700 text-sm flex-1">{activity}</p>
+                <span className="text-xs text-gray-500 sm:text-right shrink-0">{demand}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Eligibility */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Eligibility &amp; What to Bring</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold">Role type</th>
+                  <th className="text-left p-4 font-semibold">Age</th>
+                  <th className="text-left p-4 font-semibold">Documents</th>
+                  <th className="text-left p-4 font-semibold">What to wear/bring</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { role: 'Tutoring (children)', age: '18+ (16+ with guardian)', docs: 'Aadhaar, parent consent if minor', bring: 'Notebook, patience, no flashy jewellery' },
+                  { role: 'Animal rescue', age: '18+', docs: 'ID proof, tetanus vaccination recommended', bring: 'Closed shoes, long sleeves, gloves (provided on site)' },
+                  { role: 'Feeding drives', age: '16+ with consent', docs: 'ID proof', bring: 'Comfortable clothes, water bottle' },
+                  { role: 'Remote skills', age: '16+', docs: 'Portfolio or LinkedIn', bring: 'Laptop, reliable internet' },
+                  { role: 'Corporate team day', age: 'Employees only', docs: 'Company authorization letter', bring: 'Company t-shirts if branding agreed with NGO' },
+                ].map((row) => (
+                  <tr key={row.role}>
+                    <td className="p-4 font-medium text-gray-900">{row.role}</td>
+                    <td className="p-4 text-gray-700">{row.age}</td>
+                    <td className="p-4 text-gray-700">{row.docs}</td>
+                    <td className="p-4 text-gray-700">{row.bring}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Live causes needing volunteers */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Live Causes That Need Delhi NCR Volunteers Now</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {[
+              { name: 'JWP — Wings of Hope', need: 'Weekend tutors, event volunteers', href: '/jwp-cause-details' },
+              { name: 'Pehli Class', need: 'Mentors for school bridge programme', href: '/pehli-class-cause-details' },
+              { name: 'Brick by Brick', need: 'Site documentation, corporate build days', href: '/bricks-by-bricks-cause-details' },
+              { name: 'Bowls of Hope', need: 'Morning feeding route helpers', href: '/bowls-of-hope-cause-details' },
+              { name: 'Pawsitive Protectors', need: 'Vaccination camp assistants', href: '/pawsitive-protectors-cause-details' },
+              { name: 'AnimalCare India', need: 'Rescue transport, foster network', href: '/animalcare-ngo-detail' },
+            ].map(({ name, need, href }) => (
+              <Link key={href} to={href} className="block bg-white border border-gray-200 rounded-xl p-5 hover:border-green-500 hover:shadow-md transition-all">
+                <h3 className="font-semibold text-gray-900 mb-1">{name}</h3>
+                <p className="text-gray-600 text-sm mb-2">{need}</p>
+                <span className="text-green-700 text-sm font-medium">View cause →</span>
+              </Link>
             ))}
           </div>
         </section>

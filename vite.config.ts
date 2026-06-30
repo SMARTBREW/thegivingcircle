@@ -14,6 +14,8 @@ const EXCLUDED_FROM_SSG = new Set([
   'animal-emergency',
   'causes',
   'donate-for-education-india',
+  'ngo-in-noida',
+  'ngo-in-gurugram',
   'ngos/ngo-in-noida',
   'ngos/ngo-in-gurugram',
   // City NGO adjective variants → 301 to /ngos/best-ngo-in-{city} (CloudFront).

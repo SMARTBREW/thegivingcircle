@@ -10,6 +10,8 @@ const faqs = [
   { q: 'Are giving circle donations tax deductible?', a: 'Yes. All individual donations through The Giving Circle to 80G-certified NGOs qualify for Section 80G tax deduction. Receipts are generated automatically.' },
   { q: 'Can I choose which causes my money goes to?', a: 'You can express preferences and choose from active causes. The collective decision-making process means final allocation considers all members\' preferences.' },
   { q: 'What if I want to stop contributing?', a: 'You can pause or cancel your contribution any time from your dashboard. There is no lock-in or penalty.' },
+  { q: 'How is a giving circle different from a crowdfunding page?', a: 'Crowdfunding is usually one campaign, one goal, one deadline. A giving circle pools recurring contributions across causes and cycles — members learn together, vote or influence allocations, and sustain multi-year programmes.' },
+  { q: 'Are there giving circles in India beyond The Giving Circle?', a: 'Yes — alumni groups, housing societies, and corporate ERGs run informal circles. TGC adds verification, compliance (80G receipts), and impact reporting so circles do not have to build back-office infrastructure themselves.' },
 ];
 
 const WhatIsAGivingCircle = () => {
@@ -58,7 +60,7 @@ const WhatIsAGivingCircle = () => {
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>By The Giving Circle Team</span>
             <span>•</span>
-            <span>6 min read</span>
+            <span>9 min read</span>
           </div>
         </div>
       </section>
@@ -167,6 +169,71 @@ const WhatIsAGivingCircle = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Real Examples — What Pooled Giving Funds</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid md:grid-cols-2 gap-5">
+            {[
+              {
+                title: '₹50,000 education bridge grant',
+                body: '50 members × ₹1,000 funds a #PehliClass cohort milestone — birth certificates, uniforms, and three months of bridge classes for ten children entering formal school.',
+                href: '/pehli-class-cause-details',
+              },
+              {
+                title: '₹25,000 vaccination camp',
+                body: '25 members × ₹1,000 sponsors a Pawsitive Protectors ward drive — ~200 anti-rabies doses plus community awareness session.',
+                href: '/pawsitive-protectors-cause-details',
+              },
+              {
+                title: '₹10,000 shelter wall',
+                body: '1,000 bricks at ₹10 each through Brick by Brick — visible perimeter progress on AnimalCare\'s Gurgaon rescue plot.',
+                href: '/bricks-by-bricks-cause-details',
+              },
+              {
+                title: 'Corporate circle — ₹5 lakh CSR',
+                body: 'One company or a consortium of SMEs funds a full programme year with audited utilisation certificates for board and BRSR reporting.',
+                href: '/csr-projects-in-india',
+              },
+            ].map(({ title, body, href }) => (
+              <Link key={href} to={href} className="block bg-white border border-gray-100 rounded-xl p-6 hover:border-green-400 hover:shadow-md transition-all">
+                <h3 className="font-semibold text-gray-900 mb-2">{title}</h3>
+                <p className="text-gray-700 text-sm mb-2">{body}</p>
+                <span className="text-green-700 text-sm font-medium">See campaign →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Giving Circles vs Other Ways to Give</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold">Model</th>
+                  <th className="text-left p-4 font-semibold">Best for</th>
+                  <th className="text-left p-4 font-semibold">Trade-off</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { model: 'Giving circle (TGC)', best: 'Recurring donors who want community + verification', trade: 'Less control over every rupee than direct NGO relationship' },
+                  { model: 'Direct NGO transfer', best: 'Donors who know one organisation deeply', trade: 'You perform your own due diligence' },
+                  { model: 'Crowdfunding (one-off)', best: 'Emergency appeals with clear deadline', trade: 'Hard to sustain multi-year programmes' },
+                  { model: 'CSR corporate grant', best: 'Large structured programmes, compliance docs', trade: 'Minimum amounts and paperwork' },
+                ].map((row) => (
+                  <tr key={row.model}>
+                    <td className="p-4 font-medium text-gray-900">{row.model}</td>
+                    <td className="p-4 text-gray-700">{row.best}</td>
+                    <td className="p-4 text-gray-600">{row.trade}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </section>
 

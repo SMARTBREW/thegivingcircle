@@ -20,7 +20,13 @@
 /local-seo/verified-ngo-in-faridabad  /ngos/best-ngo-in-faridabad       301
 /local-seo/trusted-ngo-in-faridabad   /ngos/best-ngo-in-faridabad       301
 /local-seo/leading-ngo-in-faridabad   /ngos/best-ngo-in-faridabad       301
-/local-seo/*                    /ngos/:splat                    301
+/local-seo/ngo-in-noida                 /ngos/best-ngo-in-noida           301
+/local-seo/ngo-in-gurugram              /ngos/best-ngo-in-gurugram        301
+/local-seo/best-ngo-in-delhi            /ngos/best-ngo-in-delhi           301
+/local-seo/best-ngo-in-gurugram         /ngos/best-ngo-in-gurugram        301
+/local-seo/best-ngo-in-noida            /ngos/best-ngo-in-noida           301
+/local-seo/best-ngo-in-faridabad        /ngos/best-ngo-in-faridabad       301
+/local-seo/*                            /ngos                             301
 /ngos/top-ngo-in-delhi          /ngos/best-ngo-in-delhi         301
 /ngos/verified-ngo-in-delhi     /ngos/best-ngo-in-delhi         301
 /ngos/trusted-ngo-in-delhi        /ngos/best-ngo-in-delhi         301
@@ -42,7 +48,9 @@
 /ngo-detail/3                   /jwp-cause-details              301
 /ngo/animalcare-india           /animalcare-ngo-detail          301
 /impact-stories-details         /impact-stories/wings-of-hope   301
-/ngos/ngo-in-noida              /ngo-in-noida                   301
-/ngos/ngo-in-gurugram           /ngo-in-gurugram                301
+/ngo-in-noida                    /ngos/best-ngo-in-noida         301
+/ngo-in-gurugram                 /ngos/best-ngo-in-gurugram      301
+/ngos/ngo-in-noida              /ngos/best-ngo-in-noida         301
+/ngos/ngo-in-gurugram           /ngos/best-ngo-in-gurugram      301
 /animal-emergency               /animal-emergency.html          301
 </^[^.]+$|\.(?!(css|gif|ico|jpg|jpeg|js|png|txt|svg|woff|woff2|ttf|eot|json|xml|webp|webmanifest|html)$)([^.]+$)/>    /index.html   200

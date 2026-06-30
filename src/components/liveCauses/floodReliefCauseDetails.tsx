@@ -215,9 +215,9 @@ const FloodReliefCauseDetailPage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="Flood Relief Uttarakhand | Emergency Disaster Response"
-        description="Support flood relief Uttarakhand. Our animal welfare NGO India provides emergency animal rescue India and disaster relief for families in high-risk flood zones."
-        keywords="flood relief Uttarakhand, help flood victims Uttarakhand, emergency animal rescue, disaster relief operations, animal welfare ngo, flood rehabilitation, rescue trapped animals, animal welfare board, CSR for disaster relief, corporate partnership for disaster relief, disaster relief, emergency response"
+        title="Flood Relief Uttarakhand | Donate to GUS Disaster Relief | 80G"
+        description="Support flood-affected families in Uttarakhand with emergency shelter, food, clean water, and medical camps. GUS Disaster Relief deploys within 48 hours. Donations eligible for 80G tax deduction."
+        keywords="flood relief Uttarakhand, disaster relief donation India, help flood victims, emergency shelter Uttarakhand, 80G disaster donation, CSR flood relief"
         canonicalUrl="https://www.thegivingcircle.in/flood-relief-cause-details"
         ogImage="https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg"
       />
@@ -541,6 +541,39 @@ const FloodReliefCauseDetailPage = () => {
                     <a href="http://www.gusdisasterrelief.org" target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base text-gray-700 hover:text-green-700 hover:underline">www.gusdisasterrelief.org</a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            {/* Guide: Understanding flood relief */}
+            <section aria-label="Understanding flood relief in Uttarakhand" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                How Flood Relief Works in Uttarakhand — A Donor&apos;s Guide
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  Uttarakhand&apos;s geography makes it uniquely vulnerable: steep valleys funnel monsoon rain into flash floods; glacial lake outbursts can arrive with minutes of warning; and remote hamlets may be cut off from district headquarters for days. Relief is not one event — it is a cycle of <strong>alert → evacuation → emergency camp → health surveillance → rebuild</strong> that repeats every year between June and October.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mt-6">What happens in the first 72 hours</h3>
+                <p>
+                  GUS Disaster Relief pre-positions tarpaulins, dry rations, water purification tablets, and medical kits at nodal points before peak monsoon. When IMD issues orange or red alerts, rapid teams move to Chamoli, Pithoragarh, Rudraprayag, and Tehri corridors. Priority actions: evacuate stranded families to higher ground, set up temporary shelters with separate sanitation for women and children, and establish a medical triage tent for waterborne illness and trauma injuries.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900 mt-6">Where your donation goes</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li><strong>Emergency phase (days 1–14):</strong> shelter kits, cooked meals, chlorine tablets, blankets, baby formula.</li>
+                  <li><strong>Stabilisation (weeks 2–8):</strong> temporary classrooms, livelihood cash grants for lost livestock, psychosocial first aid.</li>
+                  <li><strong>Rehabilitation (months 3–18):</strong> home repairs, bridge access, seed grants for farmers, school reopening support.</li>
+                </ul>
+                <p>
+                  Corporates mapping Schedule VII disaster-management CSR can pair financial support with employee volunteering for kit packing days. Individuals giving ₹1,000+ receive email updates with geotagged photos from the field team.
+                </p>
+                <p className="text-sm text-gray-600">
+                  Related: <a href="/flood-animal-rescue-cause-details" className="text-green-700 hover:underline">Flood animal rescue operations</a>
+                  {' · '}
+                  <a href="/csr-projects-in-india" className="text-green-700 hover:underline">CSR disaster projects</a>
+                  {' · '}
+                  <a href="/how-to-volunteer-india" className="text-green-700 hover:underline">Volunteer in India</a>
+                </p>
               </div>
             </section>
 

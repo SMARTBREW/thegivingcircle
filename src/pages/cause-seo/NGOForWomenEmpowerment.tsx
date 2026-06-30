@@ -10,6 +10,8 @@ const faqs = [
   { q: 'Are 80G limits and eligibility the same as being a philanthropist?', a: 'No. Section 80G is a tax rule for qualifying donations and receipts; philanthropy is about sustained intent and how you choose causes. Limits and eligible percentages depend on IT rules and each trust\'s registration  -  always confirm on your receipt and with a tax adviser if needed.' },
   { q: 'Can I designate my donation for a specific programme like menstrual health?', a: 'Yes. When donating through a specific cause page, your funds are directed to that programme. You can also contact us for custom giving arrangements.' },
   { q: 'How does corporate CSR for women empowerment work?', a: 'Women empowerment, gender equality and education for girls are all eligible under Schedule VII of the Companies Act. The Giving Circle can structure your CSR contribution with full documentation for compliance.' },
+  { q: 'How do I choose a trustworthy women empowerment NGO?', a: 'Check: registered trust/society with 12A/80G, published annual report, named programme lead (not just a donation page), and clear beneficiary numbers. Avoid organisations that cannot explain how funds reach women on the ground.' },
+  { q: 'What can ₹500 vs ₹5,000 vs ₹50,000 fund?', a: 'At programme scale: ₹500 may cover sanitary kits or one week of supplementary nutrition for a girl in bridge education; ₹5,000 can sponsor a month of after-school support; ₹50,000 can fund a skills cohort or classroom materials for 20+ girls. Exact splits vary by partner — see live cause pages for current milestones.' },
 ];
 
 const NGOForWomenEmpowerment = () => {
@@ -98,6 +100,120 @@ const NGOForWomenEmpowerment = () => {
               <div key={label} className="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100">
                 <div className="text-3xl font-bold text-green-700 mb-2">{stat}</div>
                 <div className="text-gray-700 text-sm">{label}</div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* India context — narrative */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Why Women&apos;s Empowerment NGOs Matter in India Today</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="prose prose-lg max-w-none text-gray-700 space-y-4">
+            <p className="leading-relaxed">
+              India has made measurable progress on girls&apos; enrolment in primary school, yet millions of adolescent girls still drop out when families face income shocks, when schools lack separate toilets, or when menstruation begins without products or education. NFHS-5 data continues to show wide gaps in women&apos;s workforce participation outside agriculture — especially in northern states where early marriage and care burdens pull women out of paid work in their twenties.
+            </p>
+            <p className="leading-relaxed">
+              Women empowerment NGOs fill gaps that government schemes alone cannot close quickly: last-mile counselling in slums, safe spaces after domestic violence, livelihood training that respects local language and caste realities, and menstrual health programmes that keep girls in school. The best organisations pair services with dignity — not charity photography, but measurable outcomes like girls returning to Class 9, women opening bank accounts, or self-help groups repaying micro-loans on schedule.
+            </p>
+            <p className="leading-relaxed">
+              Donating through a verified platform matters because women&apos;s programmes are sensitive. Beneficiary data must be protected. Funds must not sit in opaque intermediaries. The Giving Circle lists partners with FCRA/80G documentation and publishes utilisation updates so you know rupees reached programmes, not marketing.
+            </p>
+          </div>
+        </section>
+
+        {/* How to choose */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">How to Choose a Women Empowerment NGO (Checklist)</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="grid md:grid-cols-2 gap-4">
+            {[
+              { check: 'Legal registration', detail: 'Society/Trust registration, 12A, valid 80G certificate, FCRA if receiving foreign funds.' },
+              { check: 'Named programmes', detail: 'Can they describe specific cohorts (e.g. "200 girls in Okhla bridge education") not vague "women welfare"?' },
+              { check: 'Safeguarding policy', detail: 'Written rules for working with minors and survivors; trained staff for trauma-sensitive intake.' },
+              { check: 'Financial transparency', detail: 'Audited statements or annual report in the public domain; programme vs admin split stated.' },
+              { check: 'Local partnerships', detail: 'Anganwadi links, school MOUs, or SHG federations — proof they are embedded, not fly-by-night.' },
+              { check: 'Impact evidence', detail: 'Before/after metrics: attendance, income, legal cases resolved — not only beneficiary photos.' },
+            ].map(({ check, detail }) => (
+              <div key={check} className="flex gap-3 bg-white rounded-lg p-4 border border-gray-100">
+                <CheckCircle className="text-green-700 shrink-0 mt-0.5" size={20} />
+                <div>
+                  <h3 className="font-semibold text-gray-900 text-sm">{check}</h3>
+                  <p className="text-gray-600 text-sm">{detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Donation impact table */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">What Your Donation Can Fund</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <p className="text-gray-600 mb-4 text-sm">Illustrative programme costs — actual allocations follow partner budgets and audited plans.</p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border border-gray-200 rounded-xl overflow-hidden bg-white">
+              <thead className="bg-gray-50">
+                <tr>
+                  <th className="text-left p-4 font-semibold">Amount</th>
+                  <th className="text-left p-4 font-semibold">Example impact</th>
+                  <th className="text-left p-4 font-semibold">Programme area</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-100">
+                {[
+                  { amt: '₹500', impact: 'Menstrual hygiene kit + counselling session for one adolescent girl', area: 'Menstrual health / education retention' },
+                  { amt: '₹2,000', impact: 'One month of supplementary learning materials for bridge-school student', area: 'Girl child education' },
+                  { amt: '₹5,000', impact: 'Vocational tool kit (sewing machine deposit, beauty course fees)', area: 'Livelihood' },
+                  { amt: '₹25,000', impact: 'Community legal awareness camp for 50+ women', area: 'Safety & rights' },
+                  { amt: '₹50,000+', impact: 'Sponsor a skills cohort or classroom upgrade for 20–30 girls', area: 'Education / CSR block grant' },
+                ].map((row) => (
+                  <tr key={row.amt}>
+                    <td className="p-4 font-bold text-green-800">{row.amt}</td>
+                    <td className="p-4 text-gray-700">{row.impact}</td>
+                    <td className="p-4 text-gray-600">{row.area}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* Programme deep dives */}
+        <section className="mb-12">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Programme Types Explained</h2>
+          <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+          <div className="space-y-6">
+            {[
+              {
+                title: 'Educational empowerment',
+                body: 'Scholarships, bridge schools, and after-school tutoring keep girls in formal education when family income dips. JWP\'s Wings of Hope programme combines menstrual health support with learning continuity — when girls miss school for period stigma, empowerment stalls before it starts.',
+                href: '/jwp-cause-details',
+                cta: 'Support JWP',
+              },
+              {
+                title: 'Formal school bridge (#PehliClass)',
+                body: 'Pehli Class moves children from informal learning into registered schools — many beneficiaries are girls who would otherwise never sit for board exams. Donors fund uniforms, admissions, and transport bursaries with 80G where applicable.',
+                href: '/pehli-class-cause-details',
+                cta: 'See Pehli Class',
+              },
+              {
+                title: 'Economic independence',
+                body: 'Self-help groups, micro-enterprise training, and market linkages turn single-income vulnerability into household resilience. Look for NGOs that track income six months after training — not just graduation photos.',
+                href: '/csr-projects-in-india',
+                cta: 'CSR for livelihoods',
+              },
+              {
+                title: 'Health & menstrual dignity',
+                body: 'Programmes distributing pads, building school toilets, and training teachers on menarche reduce dropout spikes in Classes 6–8. Pair donations with awareness — behaviour change sustains product donations.',
+                href: '/blog/how-to-donate-for-women-empowerment-india',
+                cta: 'Read donation guide',
+              },
+            ].map(({ title, body, href, cta }) => (
+              <div key={title} className="bg-white rounded-xl p-6 border border-gray-100 shadow-sm">
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{title}</h3>
+                <p className="text-gray-700 text-sm leading-relaxed mb-3">{body}</p>
+                <Link to={href} className="text-green-700 font-medium text-sm hover:underline">{cta} →</Link>
               </div>
             ))}
           </div>

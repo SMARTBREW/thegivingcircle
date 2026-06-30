@@ -133,7 +133,7 @@ const PehliClassCauseDetailPage = () => {
       <SEOHead
         title="#PehliClass | Donate for Child Education India · Bridge to Formal School | JWP"
         description="Donate for child education in India through verified partner Joint Women’s Programme: #PehliClass bridge at Mera Sahara, Nithari—fund school readiness for underprivileged children, close learning gaps, secure documents, enrol into formal school. Girl-child & first-generation learner focus. ₹1,600/month or ₹19,000/year. 80G where applicable · Delhi NCR."
-        keywords="PehliClass, donate child education India, donate for child education India, NGO education donation 80G, fund school fees India, girl child education donate, JWP education NGO Delhi NCR, donate for underprivileged children, verified education NGO, 80G donation education, Joint Womens Programme education, bridge learning centre Nithari, Mera Sahara, out of school children India, sponsor child formal school, first generation learners India, NIOS IGNOU adolescent girls, donate education Delhi NCR"
+        keywords="PehliClass, donate child education India, JWP education NGO Delhi NCR, sponsor child formal school, girl child education 80G, bridge learning Noida"
         canonicalUrl="https://www.thegivingcircle.in/pehli-class-cause-details"
         ogImage={OG_ABSOLUTE}
       />
@@ -406,6 +406,36 @@ const PehliClassCauseDetailPage = () => {
                     </a>
                   </div>
                 </div>
+              </div>
+            </section>
+
+            <section aria-label="Child education bridge guide" className="mb-8 sm:mb-12">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                Why Out-of-School Children Need a Bridge Programme
+              </h2>
+              <div className="w-16 h-1 bg-green-700 mb-6 sm:mb-8"></div>
+              <div className="prose prose-lg max-w-none text-gray-700 space-y-4 text-sm sm:text-base">
+                <p>
+                  Millions of Indian children never enter formal school — or drop out when migration, paperwork gaps, or learning delays make re-entry impossible. ASER reports continue to show foundational literacy gaps in upper primary grades. A bridge centre is not a replacement for school; it is the airlock between informal settlements and a registered classroom.
+                </p>
+                <p>
+                  #PehliClass at Mera Sahara (Nithari) handles what schools cannot absorb mid-year: birth certificates, address proofs, catch-up maths and Hindi, parent counselling, and confidence for first-generation learners — especially girls who face higher dropout risk after Class 5.
+                </p>
+                <h3 className="text-lg font-semibold text-gray-900">What ₹19,000/year per child typically covers</h3>
+                <ul className="list-disc list-inside space-y-2">
+                  <li>Bridge classroom hours with trained facilitators</li>
+                  <li>Documentation support for school admission</li>
+                  <li>Learning materials and uniform assistance</li>
+                  <li>Progress tracking until enrolment is confirmed</li>
+                </ul>
+                <p className="text-sm text-gray-600">
+                  Related:{' '}
+                  <a href="/jwp-cause-details" className="text-green-700 hover:underline">JWP Wings of Hope</a>
+                  {' · '}
+                  <a href="/ngo-for-women-empowerment" className="text-green-700 hover:underline">Women empowerment NGOs</a>
+                  {' · '}
+                  <a href="/pehli-class/cause-champion" className="text-green-700 hover:underline">Become a Cause Champion</a>
+                </p>
               </div>
             </section>
 

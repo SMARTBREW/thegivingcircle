@@ -18,7 +18,6 @@ const NGOPartner = lazy(() => import('./pages/NGOPartner').then(module => ({ def
 const NGOList = lazy(() => import('./pages/ngo-list').then(module => ({ default: module.NGOList })));
 const ChampionStoryDetail = lazy(() => import('./pages/ChampionStoryDetail'));
 const AnimalCareNGODetailContainer = lazy(() => import('./pages/AnimalCareNGODetailContainer'));
-const LocationSEOBase = lazy(() => import('./pages/local-seo/LocationSEOBase'));
 const GivingCircleLanding = lazy(() => import('./pages/seo/GivingCircleLanding'));
 const NonprofitOrganizationsLanding = lazy(() => import('./pages/seo/NonprofitOrganizationsLanding'));
 const LiveCausesPage = lazy(() => import('./components/liveCauses/browseCauses'));
@@ -36,7 +35,7 @@ const YoungChampions = lazy(() => import('./pages/YoungChampions'));
 const NotFoundPage = lazy(() => import('./pages/notFoundPage'));
 
 // Lazy load SEO Hub Pages
-const SEOHubIndex = lazy(() => import('./pages/local-seo/SEOHubIndex'));
+// SEOHubIndex removed — it duplicated /ngos and linked to variant URLs Google should not index.
 // One canonical city page is kept per city. The adjective variants
 // (top/verified/trusted/leading-ngo-in-*) 301-redirect to these to remove
 // near-duplicate "doorway" pages and keyword cannibalization.
@@ -50,6 +49,7 @@ const NGOIndexPage = lazy(() => import('./pages/local-seo/NGOIndexPage'));
 import {
   LocalSEOSlugRedirect,
   NGODetailLegacyRedirect,
+  NGOLocationFallbackRedirect,
   NGOSlugLegacyRedirect,
 } from './pages/SEORedirects';
 const NGOForWomenEmpowerment = lazy(() => import('./pages/cause-seo/NGOForWomenEmpowerment'));
@@ -70,6 +70,9 @@ const AnimalWelfareCityPage = lazy(() => import('./pages/animal-welfare/AnimalWe
 const BLOG_SLUGS = [
   'meaningful-summer-projects-india',
   'community-service-college-applications-india',
+  'cas-duke-of-edinburgh-volunteer-certificate-india',
+  'volunteer-project-ideas-students-india',
+  'parents-guide-meaningful-summer-india',
   'how-to-donate-for-child-education-in-india-80g',
   'verified-ngos-in-delhi',
   'csr-projects-in-india',
@@ -154,44 +157,9 @@ export const routes: RouteRecord[] = [
       // SEO Landing Pages (Orphan Routes)
       { path: 'giving-circle', element: <GivingCircleLanding /> },
       { path: 'nonprofit-organizations', element: <NonprofitOrganizationsLanding /> },
-      {
-        path: 'ngo-in-noida',
-        element: (
-          <LocationSEOBase
-            location="Noida"
-            locationSlug="ngo-in-noida"
-            canonicalPath="/ngo-in-noida"
-            heroHeadline="Verified NGOs in Noida & Greater Noida"
-            heroLead="FCRA-listed, 80G-eligible charities you can support with confidence: education, women’s programmes, animal care, hunger relief, and CSR-ready partners across Noida Extension and Delhi NCR."
-            title="NGOs in Noida (Verified) | Donate, Volunteer & CSR | The Giving Circle"
-            description="Find verified NGOs in Noida & Greater Noida—education, women’s empowerment, animal welfare & relief. Transparent impact reports, secure giving, Delhi NCR–focused listings."
-            keywords="ngo in noida, verified ngo noida, donate noida ngo, charity noida, csr noida, best ngo noida, ngo sector 62 noida, greater noida ngo"
-            primaryKeyword="Trusted NGOs"
-            relatedKeywords={[
-              { keyword: 'Best NGOs in Noida', slug: 'best-ngo-in-noida' },
-            ]}
-          />
-        ),
-      },
-      {
-        path: 'ngo-in-gurugram',
-        element: (
-          <LocationSEOBase
-            location="Gurugram"
-            locationSlug="ngo-in-gurugram"
-            canonicalPath="/ngo-in-gurugram"
-            heroHeadline="Verified NGOs in Gurugram (Gurgaon)"
-            heroLead="Corporate hub, large informal settlements, and peri-urban wards need trusted NGOs. Every partner listed here meets our verification bar—ideal for salaries CSR, volunteering, or one-off donations."
-            title="NGOs in Gurugram (Verified Gurgaon) | Donate & CSR | The Giving Circle"
-            description="Verified NGOs in Gurugram / Gurgaon: education, livelihoods, health, animal welfare. FCRA · 80G partners with impact reporting—for residents and corporates."
-            keywords="ngo in gurugram, ngo gurgaon, verified ngo gurugram, charity gurgaon, csr gurugram"
-            primaryKeyword="Trusted NGOs"
-            relatedKeywords={[
-              { keyword: 'Best NGOs in Gurugram', slug: 'best-ngo-in-gurugram' },
-            ]}
-          />
-        ),
-      },
+      // Legacy root city URLs → one canonical page per city under /ngos/best-ngo-in-*
+      { path: 'ngo-in-noida', element: <Navigate to="/ngos/best-ngo-in-noida" replace /> },
+      { path: 'ngo-in-gurugram', element: <Navigate to="/ngos/best-ngo-in-gurugram" replace /> },
 
       // NGO Directory Index - fixes /ngos 404
       { path: 'ngos', element: <NGOIndexPage /> },
@@ -217,12 +185,9 @@ export const routes: RouteRecord[] = [
         getStaticPaths: () => BLOG_SLUGS.map((slug) => `/blog/${slug}`),
       },
 
-      // Cannibal URLs → canonical hubs (must be above /ngos/:location)
-      { path: 'ngos/ngo-in-noida', element: <Navigate to="/ngo-in-noida" replace /> },
-      { path: 'ngos/ngo-in-gurugram', element: <Navigate to="/ngo-in-gurugram" replace /> },
-
-      // Dynamic Local SEO
-      { path: 'ngos/:location', element: <SEOHubIndex /> },
+      // Legacy /ngos/ngo-in-* → canonical city pages
+      { path: 'ngos/ngo-in-noida', element: <Navigate to="/ngos/best-ngo-in-noida" replace /> },
+      { path: 'ngos/ngo-in-gurugram', element: <Navigate to="/ngos/best-ngo-in-gurugram" replace /> },
 
       // City NGO pages — ONE canonical page per city. Adjective variants
       // 301-redirect to it (server 301s via CloudFront; these are client fallbacks).
@@ -253,6 +218,9 @@ export const routes: RouteRecord[] = [
       { path: 'ngos/verified-ngo-in-faridabad', element: <Navigate to="/ngos/best-ngo-in-faridabad" replace /> },
       { path: 'ngos/trusted-ngo-in-faridabad', element: <Navigate to="/ngos/best-ngo-in-faridabad" replace /> },
       { path: 'ngos/leading-ngo-in-faridabad', element: <Navigate to="/ngos/best-ngo-in-faridabad" replace /> },
+
+      // Unknown /legacy /ngos/* slugs → canonical city page or /ngos hub (never duplicate hub)
+      { path: 'ngos/:location', element: <NGOLocationFallbackRedirect /> },
 
       { path: '*', element: <NotFoundPage /> },
     ],
