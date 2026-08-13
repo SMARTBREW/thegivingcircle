@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
+import FAQSchema from '../../components/SEO/FAQSchema';
 
 const faqs = [
   { q: 'Is The Giving Circle the same as a giving circle?', a: 'Yes The Giving Circle is a platform built on the giving circle model. It enables groups of people to pool charitable donations and give collectively to verified causes.' },
@@ -36,6 +37,7 @@ const WhatIsAGivingCircle = () => {
         dateModified={currentDate}
         category="Giving Guide"
       />
+      <FAQSchema faqs={faqs} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">

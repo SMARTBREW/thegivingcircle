@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { User, Mail, MapPin, Target, Phone } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
@@ -39,23 +39,6 @@ const CauseChampionOnboarding: React.FC = () => {
   const [submittedEmail, setSubmittedEmail] = useState('');
   const formContainerRef = useRef<HTMLDivElement>(null);
   const emailInputRef = useRef<HTMLInputElement>(null);
-
-  // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Become a Cause Champion - Start Your Giving Circle | Community Support Platform';
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Become a Cause Champion through our giving platform and community support platform. Join our giving community to support social causes and create your own circle of support. Give and help through social giving and community support. Start your giving journey and support social causes through our communities support platform.');
-    }
-
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'causes to support, community causes, community giving, community support platform, corporate giving platforms, give and help, giving circle, giving community, giving platform, social causes to support, social giving, support social causes, community care, become cause champion, start giving circle, giving pledge, community helpers, act of kindness, fundraising meaning, empowering youth');
-    }
-  }, []);
 
   // Generate a daily number between 10-80 that changes each day
   const getDailyNumber = () => {
@@ -247,9 +230,9 @@ const CauseChampionOnboarding: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 mt-10">
       <SEOHead
-        title="NGO Onboarding | Partner With The Giving Circle"
-        description="Join our NGO partner network and gain access to donors, credibility tools and nationwide impact opportunities"
-        keywords="become cause champion, start giving circle, cause champion program, community fundraising, rally for cause, amplify social impact, cause champion registration, volunteer for causes, lead social change, community giving leader, giving pledge, empowering youth, act of kindness"
+        title="Become a Cause Champion | Start Your Giving Circle"
+        description="Sign up to lead a giving circle on The Giving Circle. Rally your network around verified NGOs, track impact, and turn collective donations into measurable change across India."
+        keywords="become cause champion, start giving circle, cause champion program, community fundraising, volunteer for causes, lead social change"
         canonicalUrl="https://www.thegivingcircle.in/onboarding"
       />
       {/* Simple Background */}

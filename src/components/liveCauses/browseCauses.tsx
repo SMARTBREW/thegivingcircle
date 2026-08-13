@@ -165,56 +165,30 @@ const LiveCausesPage = () => {
         '80G eligible · verified AnimalCare India partner'
       ]
     },
-    // id: 6 (NGOs for Women Empowerment)  -  hidden
-    // id: 7 (CSR Projects in India)  -  hidden
-    // JWP / Wings of Hope (legacy sample)
-    // {
-    //   id: 5,
-    //   title: 'Pads for Freedom',
-    //   organizer: 'Dr. Meera Singh',
-    //   ngo: 'JWP',
-    //   location: 'Delhi, India',
-    //   category: 'Women Health',
-    //   goalAmount: '₹3,50,000',
-    //   raisedAmount: '₹2,80,000',
-    //   progressPercentage: 80,
-    //   supporters: 189,
-    //   daysLeft: 15,
-    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183056/images/jwp/_DSC9767.jpg',
-    //   urgency: 'High',
-    //   description: 'Providing free sanitary pads and menstrual hygiene education to girls and women in rural and urban slum areas to ensure dignity and continued education.',
-    //   beneficiaries: '2000 girls and women',
-    //   timeline: '6 months',
-    //   updates: [
-    //     '1500 pad kits distributed',
-    //     '50 awareness sessions conducted',
-    //     'School dropout prevention program active'
-    //   ]
-    // },
-    // GUS causes
-    // {
-    //   id: 6,
-    //   title: 'Flood Relief in Uttarakhand',
-    //   organizer: 'GUS Disaster Relief',
-    //   ngo: 'GUS',
-    //   location: 'Uttarakhand, India',
-    //   category: 'Disaster Relief India',
-    //   goalAmount: '₹8,50,000',
-    //   raisedAmount: '₹6,20,000',
-    //   progressPercentage: 73,
-    //   supporters: 267,
-    //   daysLeft: 30,
-    //   image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
-    //   urgency: 'Critical',
-    //   description: 'How to help flood victims in Uttarakhand? Emergency disaster relief providing shelter, food, medical aid, and rehabilitation to 2,000+ flood-affected families.',
-    //   beneficiaries: '2,000+ flood-affected families',
-    //   timeline: '18 months',
-    //   updates: [
-    //     '500 families provided emergency shelter',
-    //     'Medical camps serving 1,000+ people',
-    //     'Infrastructure rebuilding initiated'
-    //   ]
-    // }
+    // GUS — Flood Relief Uttarakhand
+    {
+      id: 5,
+      title: 'Flood Relief in Uttarakhand',
+      organizer: 'GUS Disaster Relief',
+      ngo: 'GUS',
+      location: 'Uttarakhand, India',
+      category: 'Disaster Relief India',
+      goalAmount: '₹8,50,000',
+      raisedAmount: '₹6,20,000',
+      progressPercentage: 73,
+      supporters: 267,
+      daysLeft: 30,
+      image: 'https://res.cloudinary.com/dcdhhylin/image/upload/v1758183109/images/Uttarakhand-rescue.jpg',
+      urgency: 'Critical',
+      description: 'How to help flood victims in Uttarakhand? Emergency disaster relief providing shelter, food, medical aid, and rehabilitation to 2,000+ flood-affected families.',
+      beneficiaries: '2,000+ flood-affected families',
+      timeline: '18 months',
+      updates: [
+        '500 families provided emergency shelter',
+        'Medical camps serving 1,000+ people',
+        'Infrastructure rebuilding initiated'
+      ]
+    }
   ];
 
 
@@ -245,6 +219,7 @@ const LiveCausesPage = () => {
       2: '/pawsitive-protectors-cause-details',
       3: '/bowls-of-hope-cause-details',
       4: '/flood-animal-rescue-cause-details',
+      5: '/flood-relief-cause-details',
       6: '/ngo-for-women-empowerment',
       7: '/csr-projects-in-india',
       8: '/pehli-class-cause-details',

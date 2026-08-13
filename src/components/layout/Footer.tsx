@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
               </h3>
               <div className="space-y-3 sm:space-y-4">
                 <Link
-                  to="/impact-stories"
+                  to="/live-causes"
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-xs sm:text-sm md:text-base break-words">Live Causes</span>
@@ -89,6 +89,27 @@ export const Footer: React.FC = () => {
                   className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
                 >
                   <span className="text-xs sm:text-sm md:text-base break-words">NGO Directory</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                </Link>
+                <Link
+                  to="/what-is-a-giving-circle"
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-xs sm:text-sm md:text-base break-words">What is a Giving Circle?</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                </Link>
+                <Link
+                  to="/how-to-volunteer-india"
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-xs sm:text-sm md:text-base break-words">Volunteer in India</span>
+                  <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                </Link>
+                <Link
+                  to="/top-verified-ngos-india-2026"
+                  className="flex items-center group text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span className="text-xs sm:text-sm md:text-base break-words">Top Verified NGOs</span>
                   <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
                 </Link>
                 <Link

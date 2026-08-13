@@ -18,8 +18,6 @@ const NGOPartner = lazy(() => import('./pages/NGOPartner').then(module => ({ def
 const NGOList = lazy(() => import('./pages/ngo-list').then(module => ({ default: module.NGOList })));
 const ChampionStoryDetail = lazy(() => import('./pages/ChampionStoryDetail'));
 const AnimalCareNGODetailContainer = lazy(() => import('./pages/AnimalCareNGODetailContainer'));
-const GivingCircleLanding = lazy(() => import('./pages/seo/GivingCircleLanding'));
-const NonprofitOrganizationsLanding = lazy(() => import('./pages/seo/NonprofitOrganizationsLanding'));
 const LiveCausesPage = lazy(() => import('./components/liveCauses/browseCauses'));
 const JwpCauseDetailPage = lazy(() => import('./components/liveCauses/jwpCauseDetails'));
 const PawsitiveProtectorsCauseDetailPage = lazy(() => import('./components/liveCauses/pawsitiveProtectorsCauseDetails'));
@@ -154,9 +152,9 @@ export const routes: RouteRecord[] = [
       { path: 'the-giving-circle', element: <OurStory /> },
       { path: 'young-champions', element: <YoungChampions /> },
 
-      // SEO Landing Pages (Orphan Routes)
-      { path: 'giving-circle', element: <GivingCircleLanding /> },
-      { path: 'nonprofit-organizations', element: <NonprofitOrganizationsLanding /> },
+      // Thin SEO landers → canonical hubs (301 via CloudFront; client fallback)
+      { path: 'giving-circle', element: <Navigate to="/what-is-a-giving-circle" replace /> },
+      { path: 'nonprofit-organizations', element: <Navigate to="/ngos" replace /> },
       // Legacy root city URLs → one canonical page per city under /ngos/best-ngo-in-*
       { path: 'ngo-in-noida', element: <Navigate to="/ngos/best-ngo-in-noida" replace /> },
       { path: 'ngo-in-gurugram', element: <Navigate to="/ngos/best-ngo-in-gurugram" replace /> },

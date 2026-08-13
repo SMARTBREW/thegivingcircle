@@ -125,10 +125,10 @@ const NavbarComponent = () => {
     >
       <div className="max-w-7xl mx-auto">
         <div className={`
-          bg-white/80 backdrop-blur-2xl border border-white/20 
+          bg-white border border-gray-200 
           rounded-lg sm:rounded-xl md:rounded-2xl px-2 py-1.5 sm:px-3 sm:py-2 md:px-4 md:py-3 lg:px-6 lg:py-3 
-          shadow-2xl shadow-black/10 transition-all duration-500 backdrop-saturate-150
-          ${scrolled ? 'bg-white/90 backdrop-blur-3xl shadow-3xl border-white/30' : ''}
+          shadow-2xl shadow-black/10 transition-all duration-500
+          ${scrolled ? 'shadow-3xl border-gray-200' : ''}
         `}>
           <div className="flex items-center justify-between">
             <motion.div

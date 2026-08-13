@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Search, Filter, CheckCircle, MapPin, ChevronDown, Shield, Award, ExternalLink } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
@@ -307,8 +307,12 @@ export const NGOList: React.FC = () => {
             </span>
           </h1>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto px-4 sm:px-0 leading-relaxed">
-            Discover our network of verified NGO partners creating meaningful change across India.
-            Every organization here has been thoroughly vetted for transparency and impact, ensuring your social giving creates real value for the india community through our community giving platform.
+            Discover verified NGO partners creating meaningful change across India.
+            Every organisation listed here is background-checked for FCRA, 80G, and audited accounts.
+            For a fuller directory by city and cause, see our{' '}
+            <Link to="/ngos" className="text-green-700 hover:text-green-900 underline font-medium">NGO directory</Link>
+            {' '}or read{' '}
+            <Link to="/top-verified-ngos-india-2026" className="text-green-700 hover:text-green-900 underline font-medium">top verified NGOs in India</Link>.
           </p>
         </motion.div>
 

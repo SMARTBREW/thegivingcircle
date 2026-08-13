@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
+import FAQSchema from '../../components/SEO/FAQSchema';
 
 const faqs = [
   { q: 'Is this guide meant for volunteering in India only (not overseas)?', a: 'Yes. It is written for people who live in India or intend to volunteer with registered Indian NGOs, including timelines, Hindi/English realities, FCRA norms and 80G giving. If you are in Delhi NCR, use our Delhi volunteer roster as a shortcut; elsewhere, apply the verification checklist locally.' },
@@ -22,21 +23,22 @@ const HowToVolunteerIndia = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <SEOHead
-        title="How to Volunteer in India (Delhi NCR + India) | Verified NGO Guide 2026"
-        description="India-only guide: how to find verified NGO volunteer roles, what to expect, weekend vs corporate programmes, and Delhi NCR roles you can apply to this week. Not a generic overseas checklist."
-        keywords="how to volunteer in India, volunteer NGO India, Delhi NCR volunteer NGO, weekend volunteer Delhi, corporate volunteering India, NGO volunteer India, volunteer in Noida Gurgaon, how to volunteer for NGO India, csr volunteering India, how to start volunteering India"
+        title="How to Volunteer with NGOs in India (2026) | Free Roles + Certificates"
+        description="Step-by-step: find verified NGO volunteer roles in India, avoid scam listings, log hours for CAS/DofE, and apply to Delhi NCR openings this week. Includes weekend, student & corporate options."
+        keywords="how to volunteer in India, volunteer NGO India, NGO volunteer certificate India, weekend volunteer Delhi NCR, how to start volunteering India, corporate volunteering India"
         canonicalUrl="https://www.thegivingcircle.in/how-to-volunteer-india"
-        ogTitle="How to Volunteer in India — Delhi NCR & nationwide | The Giving Circle"
-        ogDescription="For residents in India: verified NGO volunteering, Delhi NCR fast path, corporate programmes, and what to ask before you commit."
+        ogTitle="How to Volunteer with NGOs in India (2026 Guide)"
+        ogDescription="Verified NGO volunteering in India: vetting checklist, Delhi NCR fast path, student certificates, and roles you can start this month."
       />
       <ArticleSchema
-        title="How to Volunteer in India (Delhi NCR + India) — Verified NGO Guide 2026"
-        description="India-focused practical guide: verified NGOs, Delhi NCR volunteer paths, corporate volunteering, and how to start without wasting time on unverified listings."
+        title="How to Volunteer with NGOs in India (2026) — Verified Roles & Certificates"
+        description="India-focused practical guide: find verified NGOs, avoid scams, log hours for CAS/DofE, and start volunteering in Delhi NCR or nationwide."
         image="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
         datePublished={currentDate}
         dateModified={currentDate}
         category="Volunteering"
       />
+      <FAQSchema faqs={faqs} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">
@@ -53,11 +55,21 @@ const HowToVolunteerIndia = () => {
 
           <span className="inline-block bg-green-100 text-green-800 text-sm font-semibold px-4 py-1 rounded-full mb-4">India · Delhi NCR fast path · 2026</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-4">
-            How to Volunteer in India: Verified NGOs &amp; Real Roles
+            How to Volunteer with NGOs in India
           </h1>
           <p className="text-base sm:text-lg text-gray-700 max-w-3xl mb-6 leading-relaxed">
-            Built for people in India—not generic global advice. If you are in <strong>Delhi NCR</strong>, jump to mapped weekend and skills roles; everywhere else, use the same vetting steps to avoid scam listings.
+            A practical 2026 guide for residents in India — not generic overseas advice. Learn how to vet NGOs, log hours for CAS or Duke of Edinburgh, and find{' '}
+            <Link to="/volunteer-opportunities-delhi" className="text-green-700 hover:text-green-900 underline font-medium">weekend roles in Delhi NCR</Link>
+            {' '}or{' '}
+            <Link to="/live-causes" className="text-green-700 hover:text-green-900 underline font-medium">donate while you prepare to volunteer</Link>.
           </p>
+          <div className="flex flex-wrap gap-3 mb-6">
+            {['FCRA & 80G verified partners', 'Student & CAS certificates', 'Weekend + remote roles'].map((badge) => (
+              <span key={badge} className="inline-block bg-white border border-green-200 text-green-800 text-xs sm:text-sm font-medium px-3 py-1.5 rounded-full shadow-sm">
+                {badge}
+              </span>
+            ))}
+          </div>
           <div className="flex items-center gap-4 text-sm text-gray-500">
             <span>By The Giving Circle Team</span><span>•</span><span>12 min read</span>
           </div>
@@ -66,6 +78,32 @@ const HowToVolunteerIndia = () => {
 
       {/* Content */}
       <div className="container max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        {/* How it works — conversion + intent match */}
+        <section className="mb-12 bg-white rounded-xl p-6 sm:p-8 border border-gray-100 shadow-sm">
+          <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">How volunteering works (4 steps)</h2>
+          <p className="text-gray-600 text-sm mb-6">Most people waste time on unverified WhatsApp groups. This is the faster path:</p>
+          <ol className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { step: '1', title: 'Pick a cause', body: 'Education, animal welfare, women\'s empowerment — browse verified partners on our NGO directory.' },
+              { step: '2', title: 'Verify the NGO', body: 'Check FCRA/80G, physical address, and supervisor contact before your first visit.' },
+              { step: '3', title: 'Commit 3+ months', body: '2–4 hours/week is typical. Consistency beats one-off photo ops for certificates and impact.' },
+              { step: '4', title: 'Log & get certified', body: 'Track hours from day one. NGOs issue experience letters; TGC issues Cause Champion recognition.' },
+            ].map(({ step, title, body }) => (
+              <li key={step} className="bg-green-50 rounded-lg p-4 border border-green-100 list-none">
+                <span className="text-green-700 font-bold text-lg">{step}.</span>
+                <h3 className="font-semibold text-gray-900 mt-1 mb-1">{title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{body}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-5 text-sm text-gray-600">
+            In Delhi NCR? Skip to{' '}
+            <Link to="/volunteer-opportunities-delhi" className="text-green-700 font-medium hover:underline">mapped volunteer roles by neighbourhood</Link>
+            . Donating instead? See{' '}
+            <Link to="/verified-ngos-in-delhi" className="text-green-700 font-medium hover:underline">verified NGOs in Delhi</Link>.
+          </p>
+        </section>
 
         {/* TOC */}
         <div className="bg-white rounded-xl p-6 mb-12 border border-gray-100 shadow-sm">
@@ -407,10 +445,13 @@ const HowToVolunteerIndia = () => {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link to="/onboarding" className="w-full sm:w-auto bg-white text-green-700 hover:bg-green-50 font-bold px-8 py-4 rounded-lg shadow-lg hover:shadow-xl transition-all hover:-translate-y-1">
-              Become a Cause Champion
+              Start Volunteering — Free Sign-up
             </Link>
             <Link to="/volunteer-opportunities-delhi" className="w-full sm:w-auto bg-transparent border-2 border-white text-white hover:bg-white/10 font-bold px-8 py-4 rounded-lg transition-all hover:-translate-y-1">
-              Delhi Opportunities
+              Delhi NCR Roles This Week
+            </Link>
+            <Link to="/live-causes" className="w-full sm:w-auto text-green-100 hover:text-white font-semibold underline underline-offset-4">
+              Or donate to a live cause →
             </Link>
           </div>
         </div>

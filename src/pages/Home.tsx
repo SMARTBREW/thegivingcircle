@@ -13,7 +13,7 @@ export const Home: React.FC = () => {
       <SEOHead
         title="The Giving Circle | Trusted Donation Platform India"
         description="Support verified NGOs across India. Donate for education, menstrual hygiene, medical treatment, hunger relief, disaster response, and stray animal care with full transparency."
-        keywords="giving circle, giving community, giving platform, giving pledge, community helpers, donate sanitary pads, period poverty, poverty percentage, rabies prevention, stray dog vaccination, animal welfare ngo, community giving, community support, support social causes, social giving, community care, corporate giving platforms, give and help, donate for education, donate for medical treatment, NGO donation platform, act of kindness, helping the poor, fundraising meaning, csr initiatives"
+        keywords="giving circle, verified NGOs India, donate online, 80G donation, CSR projects, volunteer India, animal welfare NGO"
         canonicalUrl="https://www.thegivingcircle.in/"
         ogImage="https://www.thegivingcircle.in/Giving_Circle..-removebg-preview.png"
       />

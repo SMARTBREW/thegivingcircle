@@ -9,6 +9,8 @@
   RewriteRule ^khushi-ngo-detail/?$ /jwp-cause-details [R=301,L]
   RewriteRule ^khushi-cause-details/?$ /jwp-cause-details [R=301,L]
   RewriteRule ^donate-for-education-india/?$ /pehli-class-cause-details [R=301,L]
+  RewriteRule ^giving-circle/?$ /what-is-a-giving-circle [R=301,L]
+  RewriteRule ^nonprofit-organizations/?$ /ngos [R=301,L]
   RewriteRule ^causes/?$ /live-causes [R=301,L]
   RewriteRule ^local-seo/?$ /ngos [R=301,L]
   RewriteRule ^local-seo/(top|verified|trusted|leading)-ngo-in-delhi/?$ /ngos/best-ngo-in-delhi [R=301,L]

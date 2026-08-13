@@ -1,0 +1,23 @@
+# robots.txt for The Giving Circle
+
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+
+Sitemap: https://www.thegivingcircle.in/sitemap.xml
+
+# Allow SEO tools for monitoring
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+# Block harmful bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

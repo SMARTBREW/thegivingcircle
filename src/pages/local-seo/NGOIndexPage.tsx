@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, CheckCircle, TrendingUp, ChevronDown, ChevronUp } from 'lucide-react';
 import SEOHead from '../../components/SEO/SEOHead';
 import ArticleSchema from '../../components/SEO/ArticleSchema';
+import FAQSchema from '../../components/SEO/FAQSchema';
 
 const CAUSE_PAGES = [
   { title: '#PehliClass · Child education donate India', description: 'JWP bridge programme—underprivileged & out-of-school children into formal school (verified · 80G where applicable).', href: '/pehli-class-cause-details', icon: '📚' },
@@ -49,6 +50,7 @@ const NGOIndexPage = () => {
         dateModified={currentDate}
         category="NGO Directory"
       />
+      <FAQSchema faqs={faqs} />
 
       {/* Hero */}
       <section className="bg-gradient-to-br from-green-50 via-white to-green-100 pt-32 pb-12 sm:pb-16">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useMemo, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Building2, Mail, User, Phone, Send, MapPin } from 'lucide-react';
 import PrimaryButton from '../components/ui/PrimaryButton';
@@ -59,23 +59,6 @@ export const NGOPartner: React.FC = () => {
   };
 
   const dailyPartnerCount = getDailyPartnerCount();
-
-  // Set page title and meta tags for SEO
-  useEffect(() => {
-    document.title = 'Become Partner - Join Verified Partner Network | Community Support Platform';
-
-    // Update meta description
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', 'Become a partner with our giving platform and community support platform. Join our giving community to support social causes through partnership. Partner registration for NGOs to collaborate through social giving and community support. Give and help through our support circle and create a circle of support for communities in India.');
-    }
-
-    // Update keywords
-    const metaKeywords = document.querySelector('meta[name="keywords"]');
-    if (metaKeywords) {
-      metaKeywords.setAttribute('content', 'NGO partnership, partner with verified NGO, corporate social responsibility NGOs, donate for social impact, CSR for animal welfare, CSR project for animal nutrition, CSR project for menstrual health, community giving, corporate giving platforms, give and help, csr initiatives, csr by companies, why csr is important, csr funding means');
-    }
-  }, []);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;

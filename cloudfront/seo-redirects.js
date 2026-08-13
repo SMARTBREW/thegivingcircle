@@ -25,6 +25,24 @@ function handler(event) {
     };
   }
 
+  // Temporary hold: robots.txt + sitemap removed until content/tech cleanup is done.
+  // Run before host redirect so /robots.txt never falls through to the SPA.
+  var rawPath = uri;
+  if (rawPath.length > 1 && rawPath.charAt(rawPath.length - 1) === '/') {
+    rawPath = rawPath.slice(0, -1);
+  }
+  if (rawPath === '/robots.txt' || rawPath === '/sitemap.xml') {
+    return {
+      statusCode: 404,
+      statusDescription: 'Not Found',
+      headers: {
+        'content-type': { value: 'text/plain; charset=utf-8' },
+        'cache-control': { value: 'no-cache, no-store, must-revalidate' },
+      },
+      body: 'Not Found',
+    };
+  }
+
   // 1. Force canonical host: apex (and any non-www) -> https://www, one hop,
   //    preserving the original path + query string.
   if (host !== CANONICAL_HOST) {
@@ -103,6 +121,8 @@ function handler(event) {
     '/khushi-ngo-detail': '/jwp-cause-details',
     '/khushi-cause-details': '/jwp-cause-details',
     '/donate-for-education-india': '/pehli-class-cause-details',
+    '/giving-circle': '/what-is-a-giving-circle',
+    '/nonprofit-organizations': '/ngos',
     '/impact-stories-details': '/impact-stories/wings-of-hope',
     '/ngo-detail/1': '/jwp-cause-details',
     '/ngo-detail/2': '/animalcare-ngo-detail',

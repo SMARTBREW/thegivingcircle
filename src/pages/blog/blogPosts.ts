@@ -169,6 +169,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { title: 'Become a Cause Champion', href: '/onboarding' },
       { title: 'How to Donate for Child Education in India (Step-by-Step + 80G)', href: '/blog/how-to-donate-for-child-education-in-india-80g' },
       { title: 'Volunteer Opportunities (Delhi focus)', href: '/volunteer-opportunities-delhi' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
       {
         title: 'Does Community Service Help with US/UK College Applications?',
         href: '/blog/community-service-college-applications-india',
@@ -293,6 +294,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { title: 'Become a Cause Champion', href: '/onboarding' },
       { title: 'Wings of Hope · menstrual health education', href: '/jwp-cause-details' },
       { title: 'Volunteer Opportunities (Delhi focus)', href: '/volunteer-opportunities-delhi' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
     ],
   },
   {
@@ -571,6 +573,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { title: 'CSR Projects in India', href: '/csr-projects-in-india' },
       { title: 'Verified NGOs Directory', href: '/ngos' },
       { title: 'Verified NGOs in Delhi', href: '/verified-ngos-in-delhi' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
       { title: 'Explore Live Causes', href: '/live-causes' },
     ],
   },
@@ -791,6 +794,7 @@ export const BLOG_POSTS: BlogPost[] = [
       { title: 'What is a Philanthropist?', href: '/blog/what-is-a-philanthropist-india' },
       { title: 'Verified NGO list (India)', href: '/ngo-list' },
       { title: 'CSR Projects in India', href: '/csr-projects-in-india' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
       { title: 'Explore Live Causes', href: '/live-causes' },
     ],
   },
@@ -1131,6 +1135,7 @@ export const BLOG_POSTS: BlogPost[] = [
         href: '/blog/parents-guide-meaningful-summer-india',
       },
       { title: 'Browse Campaigns', href: '/live-causes' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
     ],
   },
   {
@@ -1273,6 +1278,7 @@ export const BLOG_POSTS: BlogPost[] = [
         href: '/blog/parents-guide-meaningful-summer-india',
       },
       { title: 'Browse Campaigns', href: '/live-causes' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
     ],
   },
   {
@@ -1397,6 +1403,7 @@ export const BLOG_POSTS: BlogPost[] = [
         href: '/blog/volunteer-project-ideas-students-india',
       },
       { title: 'Browse Campaigns', href: '/live-causes' },
+      { title: 'How to Volunteer in India (full guide)', href: '/how-to-volunteer-india' },
     ],
   },
 ];

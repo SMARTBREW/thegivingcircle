@@ -14,6 +14,8 @@ const EXCLUDED_FROM_SSG = new Set([
   'animal-emergency',
   'causes',
   'donate-for-education-india',
+  'giving-circle',
+  'nonprofit-organizations',
   'ngo-in-noida',
   'ngo-in-gurugram',
   'ngos/ngo-in-noida',
