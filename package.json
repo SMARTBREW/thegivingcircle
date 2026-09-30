@@ -15,6 +15,7 @@
     "upload:images:blogs": "env CLD_LOCAL_SUBDIR=blogs node ./scripts/upload-cloudinary.cjs",
     "deploy:cloudfront-redirects": "bash scripts/deploy-cloudfront-redirects.sh",
     "optimize:images": "node ./scripts/optimize-images.mjs",
+    "export:images": "bash scripts/export-all-images.sh",
     "server": "node server/index.js",
     "server:dev": "nodemon server/index.js",
     "start": "node server/index.js"

@@ -48,6 +48,7 @@ const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, customCrumbs }) => {
       'causes-details': 'Cause Details',
       'about-champion': 'About Champions',
       'the-giving-circle': 'About Us',
+      'privacy-policy': 'Privacy Policy',
       'young-champions': 'Young Champions',
       'local-seo': 'NGO Directory',
       'ngos': 'NGO Directory',

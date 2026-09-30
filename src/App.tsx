@@ -31,6 +31,7 @@ const AboutChampions = lazy(() => import('./pages/aboutChampion').then(module =>
 const OurStory = lazy(() => import('./pages/aboutGivingCircle').then(module => ({ default: module.OurStory })));
 const YoungChampions = lazy(() => import('./pages/YoungChampions'));
 const NotFoundPage = lazy(() => import('./pages/notFoundPage'));
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 
 // Lazy load SEO Hub Pages
 // SEOHubIndex removed — it duplicated /ngos and linked to variant URLs Google should not index.
@@ -137,7 +138,7 @@ export const routes: RouteRecord[] = [
         getStaticPaths: () =>
           ANIMAL_WELFARE_CITY_SLUGS.map((slug) => `/animal-welfare/${slug}`),
       },
-      { path: 'causes', element: <Navigate to="/live-causes" replace /> },
+      // { path: 'causes', element: <Navigate to="/live-causes" replace /> },
       { path: 'live-causes', element: <LiveCausesPage /> },
       { path: 'champion-story/:id', element: <ChampionStoryDetail /> },
       { path: 'jwp-cause-details', element: <JwpCauseDetailPage /> },
@@ -150,6 +151,7 @@ export const routes: RouteRecord[] = [
       { path: 'flood-relief-cause-details', element: <FloodReliefCauseDetailPage /> },
       { path: 'about-champion', element: <AboutChampions /> },
       { path: 'the-giving-circle', element: <OurStory /> },
+      { path: 'privacy-policy', element: <PrivacyPolicy /> },
       { path: 'young-champions', element: <YoungChampions /> },
 
       // Thin SEO landers → canonical hubs (301 via CloudFront; client fallback)

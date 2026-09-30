@@ -250,7 +250,7 @@ export const Footer: React.FC = () => {
 
             <div className="flex flex-wrap items-center gap-3 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base">
               <Link
-                to="/the-giving-circle"
+                to="/privacy-policy"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-200 flex items-center space-x-1 break-words"
               >
                 <Scale className="w-3 h-3 flex-shrink-0" />
